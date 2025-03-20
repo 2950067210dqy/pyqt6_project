@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="images">
+    <file>mouse.png</file>
+  </qresource>
+  <qresource prefix="icon">
+    <file>monitor_white.svg</file>
+    <file>save_white.svg</file>
+    <file>correct_white.svg</file>
+    <file>default_white.svg</file>
+    <file>import_white.svg</file>
+    <file>export_white.svg</file>
+    <file>dark_mode_white.svg</file>
+    <file>setting_computer_white.svg</file>
+    <file>market_analysis_white.svg</file>
+    <file>material_three_white.svg</file>
+    <file>setting_config_white.svg</file>
+    <file>alarm_white.svg</file>
+    <file>help_white.svg</file>
+    <file>me_white.svg</file>
+    <file>generate.svg</file>
+    <file>generate_white.svg</file>
+  </qresource>
+</RCC>

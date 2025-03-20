@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>tab6_frame</class>
+ <widget class="QWidget" name="tab6_frame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>911</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+border:none;
+}
+QWidget{
+
+	background:rgb(40, 48,65);
+color:white;
+}
+QGraphicsView{
+border:1px solid white;
+}
+QGroupBox{
+border:1px solid white
+}
+</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>19</y>
+     <width>891</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>系统设置</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

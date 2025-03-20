@@ -1,0 +1,38 @@
+window: #主程序窗口项
+  title: '颗粒技术与生物医工实验室上位机' #程序窗口名
+logo: #logo项
+  title: '颗粒技术与生物医工实验室上位机' #程序logo名
+  pict_path: 'mouse.png' #程序logo图标
+  pict_width: 50 #程序logo长 单位px
+  pict_height: 50 #程序logo高 单位px
+left_menu: #左侧菜单项
+  - id: 1 #对应相应的tab
+    title: '动物概况' #菜单名称
+    icon_path: 'generate_white.svg' #菜单图标路径
+    default: true #默认显示菜单
+  - id: 2
+    title: '监测数据'
+    icon_path: 'market_analysis_white.svg'
+    default: false
+  - id: 3
+    title: '实验配置'
+    icon_path: 'setting_config_white.svg'
+    default: false
+  - id: 4
+    title: '三维数据'
+    icon_path: 'material_three_white.svg'
+    default: false
+  - id: 5
+    title: '视频监控'
+    icon_path: 'monitor_white.svg'
+    default: false
+  - id: 6
+    title: '系统设置'
+    icon_path: 'setting_computer_white.svg'
+    default: false
+tab: #菜单窗口项
+  position: #显示位置
+    x: 120 #菜单窗口基于父窗口的左上角的点的x坐标 单位px
+    y: 80 #菜单窗口基于父窗口的左上角的点的y坐标 单位px
+    width: 911 #菜单窗口长 单位px
+    height: 591 #菜单窗口高 单位px

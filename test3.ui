@@ -1,0 +1,1892 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1355</width>
+    <height>834</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+background:rgb(27,36,49)
+}
+QGraphicsView{
+border:1px solid white;
+border-radius:0px;
+}</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>131</width>
+     <height>831</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>129</width>
+         <height>829</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(40, 48,65);</string>
+       </property>
+       <widget class="QPushButton" name="btn1">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>121</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+        </property>
+        <property name="text">
+         <string>动物概况</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/generate_white.svg</normaloff>:/icon/generate_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>90</y>
+          <width>121</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+        </property>
+        <property name="text">
+         <string>监测数据</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/market_analysis_white.svg</normaloff>:/icon/market_analysis_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>121</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+        </property>
+        <property name="text">
+         <string>实验配置</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/setting_config_white.svg</normaloff>:/icon/setting_config_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>250</y>
+          <width>121</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+        </property>
+        <property name="text">
+         <string>三维数据</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/material_three_white.svg</normaloff>:/icon/material_three_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btn5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>330</y>
+          <width>121</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+        </property>
+        <property name="text">
+         <string>系统设置</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/setting_computer_white.svg</normaloff>:/icon/setting_computer_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>0</y>
+     <width>1261</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea_2">
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1259</width>
+         <height>69</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(40, 48,65);</string>
+       </property>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resource/mainPage.qrc">:/images/mouse.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;</string>
+        </property>
+        <property name="text">
+         <string> 动物能量代谢监测</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>1120</x>
+          <y>0</y>
+          <width>91</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:7px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:13px;
+}</string>
+        </property>
+        <property name="text">
+         <string>邓亲优</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/me_white.svg</normaloff>:/icon/me_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="geometry">
+         <rect>
+          <x>1010</x>
+          <y>0</y>
+          <width>101</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:7px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:13px;
+}</string>
+        </property>
+        <property name="text">
+         <string>帮助文档</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/help_white.svg</normaloff>:/icon/help_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>900</x>
+          <y>0</y>
+          <width>101</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>20</horstretch>
+          <verstretch>21</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:7px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:13px;
+}</string>
+        </property>
+        <property name="text">
+         <string>暗夜模式</string>
+        </property>
+        <property name="icon">
+         <iconset resource="resource/mainPage.qrc">
+          <normaloff>:/icon/dark_mode_white.svg</normaloff>:/icon/dark_mode_white.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_14">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>20</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;</string>
+        </property>
+        <property name="text">
+         <string>2025-03-01 08:23:56</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="tab2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>80</y>
+     <width>1171</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <widget class="QScrollArea" name="scrollArea_3">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>-10</y>
+      <width>1191</width>
+      <height>751</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1189</width>
+       <height>749</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	color:rgb(245, 245, 245);
+
+	background:rgb(40, 48,65);
+border-radius:15px;</string>
+     </property>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>1131</width>
+        <height>691</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QScrollArea" name="scrollArea_4">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_4">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1129</width>
+            <height>689</height>
+           </rect>
+          </property>
+          <widget class="QLabel" name="label_3">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>370</y>
+             <width>91</width>
+             <height>39</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>当前源：</string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="comboBox">
+           <property name="geometry">
+            <rect>
+             <x>120</x>
+             <y>370</y>
+             <width>101</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>大鼠1</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>91</width>
+             <height>39</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>公共设置</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_5">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>60</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>70</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_6">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>110</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_2">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>120</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_7">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>60</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_3">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>70</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_8">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>110</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_4">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>120</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_9">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>60</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_5">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>70</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_10">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>110</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_6">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>120</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_11">
+           <property name="geometry">
+            <rect>
+             <x>680</x>
+             <y>60</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_7">
+           <property name="geometry">
+            <rect>
+             <x>750</x>
+             <y>70</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_12">
+           <property name="geometry">
+            <rect>
+             <x>680</x>
+             <y>110</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_8">
+           <property name="geometry">
+            <rect>
+             <x>750</x>
+             <y>120</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_13">
+           <property name="geometry">
+            <rect>
+             <x>880</x>
+             <y>60</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_9">
+           <property name="geometry">
+            <rect>
+             <x>950</x>
+             <y>70</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_15">
+           <property name="geometry">
+            <rect>
+             <x>880</x>
+             <y>110</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_10">
+           <property name="geometry">
+            <rect>
+             <x>950</x>
+             <y>120</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_16">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>160</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_11">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>170</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_17">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>210</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_12">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>220</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_18">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>160</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_13">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>170</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_19">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>210</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_14">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>220</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_20">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>160</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_15">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>170</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_21">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>210</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_16">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>220</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn3_2">
+           <property name="geometry">
+            <rect>
+             <x>900</x>
+             <y>0</y>
+             <width>161</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>20</horstretch>
+             <verstretch>21</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+           </property>
+           <property name="text">
+            <string>导入公共设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/import_white.svg</normaloff>:/icon/import_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn3_3">
+           <property name="geometry">
+            <rect>
+             <x>740</x>
+             <y>0</y>
+             <width>161</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>20</horstretch>
+             <verstretch>21</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+           </property>
+           <property name="text">
+            <string>导出公共设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/export_white.svg</normaloff>:/icon/export_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>270</y>
+             <width>141</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>确定公共设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/correct_white.svg</normaloff>:/icon/correct_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_5">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>270</y>
+             <width>141</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>默认公共设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/default_white.svg</normaloff>:/icon/default_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_22">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>320</y>
+             <width>91</width>
+             <height>39</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>鼠笼设置</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn3_4">
+           <property name="geometry">
+            <rect>
+             <x>740</x>
+             <y>320</y>
+             <width>161</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>20</horstretch>
+             <verstretch>21</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+           </property>
+           <property name="text">
+            <string>导出鼠笼设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/export_white.svg</normaloff>:/icon/export_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn3_5">
+           <property name="geometry">
+            <rect>
+             <x>890</x>
+             <y>320</y>
+             <width>161</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+             <horstretch>20</horstretch>
+             <verstretch>21</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>-1</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	color:rgb(245, 245, 245);
+	padding:15px;
+	background:rgb(40, 48,65);
+border：none;
+font-size:17px;
+}</string>
+           </property>
+           <property name="text">
+            <string>导入鼠笼设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/import_white.svg</normaloff>:/icon/import_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_17">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>600</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_23">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>440</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_18">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>450</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_24">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>590</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_25">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>540</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_26">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>490</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_19">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>550</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_20">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>500</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_21">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>600</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_27">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>440</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_22">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>450</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_28">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>590</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_29">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>540</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_30">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>490</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_23">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>550</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_24">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>500</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_25">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>600</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_31">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>440</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_26">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>450</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_32">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>590</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_33">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>540</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_34">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>490</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_27">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>550</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_28">
+           <property name="geometry">
+            <rect>
+             <x>560</x>
+             <y>500</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_6">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>640</y>
+             <width>141</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>默认鼠笼设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/default_white.svg</normaloff>:/icon/default_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_7">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>640</y>
+             <width>141</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>确定鼠笼设置</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource/mainPage.qrc">
+             <normaloff>:/icon/correct_white.svg</normaloff>:/icon/correct_white.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_29">
+           <property name="geometry">
+            <rect>
+             <x>950</x>
+             <y>450</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_35">
+           <property name="geometry">
+            <rect>
+             <x>690</x>
+             <y>490</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_36">
+           <property name="geometry">
+            <rect>
+             <x>880</x>
+             <y>440</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_37">
+           <property name="geometry">
+            <rect>
+             <x>880</x>
+             <y>490</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_30">
+           <property name="geometry">
+            <rect>
+             <x>760</x>
+             <y>450</y>
+             <width>101</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_31">
+           <property name="geometry">
+            <rect>
+             <x>760</x>
+             <y>500</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QPlainTextEdit" name="plainTextEdit_32">
+           <property name="geometry">
+            <rect>
+             <x>950</x>
+             <y>500</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="placeholderText">
+            <string>输入设置信息</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_38">
+           <property name="geometry">
+            <rect>
+             <x>690</x>
+             <y>440</y>
+             <width>72</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>设置1</string>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <zorder>tab2</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+  <zorder>horizontalLayoutWidget</zorder>
+ </widget>
+ <resources>
+  <include location="resource/mainPage.qrc"/>
+  <include location="UI/resource/mainPage.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btn1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tab2</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>61</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>745</x>
+     <y>425</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

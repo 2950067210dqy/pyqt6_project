@@ -1,0 +1,31 @@
+window:
+  title: '颗粒技术与生物医工实验室上位机'
+logo:
+  title: '颗粒技术与生物医工实验室上位机'
+  pict_path: 'mouse.png'
+  pict_width: 50
+  pict_height: 50
+left_menu:
+  - id: 1
+    title: '动物概况'
+    icon_path: 'generate_white.svg'
+    default: true
+  - id: 2
+    title: '监测数据'
+    icon_path: 'market_analysis_white.svg'
+    default: false
+  - id: 4
+    title: '三维数据'
+    icon_path: 'material_three_white.svg'
+    default: false
+  - id: 5
+    title: '视频监控'
+    icon_path: 'monitor_white.svg'
+    default: false
+
+tab:
+  position:
+    x: 120
+    y: 80
+    width: 911
+    height: 591
