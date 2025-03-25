@@ -15,27 +15,14 @@ from theme.ThemeManager import ThemeManager
 def load_global_setting():
     # 加载配置存储到全局类中
     configer = YamlParserObject.yaml_parser.load_single("./config/configer.yaml")
+    
     global_setting.set_setting("configer", configer)
+    # 当前左侧菜单项id 这里的值1是设个默认值无意义 会在实例化左菜单时根据真正的默认菜单覆盖这个值
+    global_setting.set_setting("menu_id_now", 1)
     # 风格默认是dark  light
-    global_setting.set_setting("style", "light")
+    global_setting.set_setting("style", "dark")
     # 图标风格 white black
     global_setting.set_setting("icon_style", "white")
-    # style_sheet = {}
-    # style_sheet['dark'] = """
-    # *{
-    #     color:white;
-    #     background:rgb(27,36,49);
-    #     border:none;
-    #   }
-    # """
-    # style_sheet['light'] = """
-    #    *{
-    #        color:black;
-    #        background:rgb(237,246,249);
-    #        border:none;
-    #      }
-    #    """
-    # global_setting.set_setting("style_sheet", style_sheet)
     theme_manager = ThemeManager()
     global_setting.set_setting("theme_manager", theme_manager)
     pass

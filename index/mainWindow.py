@@ -172,7 +172,7 @@ class MainWindow(QWidget, ThemedWidget):
         style_btn = self.frame.findChild(QPushButton, "mode_btn")
         # 设置默认文字
         style_btn.setText(_translate(self.frame.objectName(), "白天模式" if global_setting.get_setting(
-            "theme_manager").current_theme == "light" else "暗夜模式"))
+            "style") == "light" else "暗夜模式"))
         # 绑定事件
         style_btn.clicked.connect(self.toggle_theme)
         pass
@@ -188,6 +188,17 @@ class MainWindow(QWidget, ThemedWidget):
         global_setting.get_setting("theme_manager").current_theme = new_theme
         # 更改样式
         self.frame.setStyleSheet(global_setting.get_setting("theme_manager").get_style_sheet())
+        # 更改自定义组件样式
+        # 找到主窗口中的所有QPushButton对象
+        pushBtns = self.frame.findChildren(QPushButton)
+        # 给每个QPushButton对象 添加相关样式 start
+        for btn in pushBtns:
+            btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
+        # 给默认菜单项设置样式
+        default_menu_btn = self.frame.findChild(QPushButton, "btn" + str(global_setting.get_setting("menu_id_now")))
+        default_menu_btn.setStyleSheet(
+            global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
+        # 给每个QPushButton对象 添加相关样式 end
         # 按钮设置显示文字
         style_btn.setText(_translate(self.frame.objectName(), "白天模式" if global_setting.get_setting(
             "theme_manager").current_theme == "light" else "暗夜模式"))

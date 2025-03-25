@@ -1,27 +1,10 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from config.global_setting import global_setting
 from index.tab import Tab
 
 
 class Ui_left_menu_btn(QtWidgets.QPushButton):
-    selection_btn_qss = """ QPushButton{
-         background: rgb(0, 0, 0);
-         color: rgb(255, 255, 255);
-        
-    }"""
-    default_btn_qss = """ QPushButton{
-         background: rgb(40, 48, 65);
-         color: rgb(255, 255, 255);
-      
-    }"""
-    hover_pressed_btn_qss = """QPushButton:hover{
-                     background:rgb(27,36,49);
-                    color:rgb(173, 173, 173);
-                    }
-                QPushButton:pressed {
-                               background:rgb(0, 0, 0);
-                color:rgb(255, 255, 255);
-                            }"""
 
     def __init__(self, parentWidget: QtWidgets.QWidget, parentLayout: QtWidgets.QVBoxLayout, id, title, icon_path,
                  root_object_name):
@@ -35,7 +18,7 @@ class Ui_left_menu_btn(QtWidgets.QPushButton):
         font.setPointSize(-1)
         font.setBold(False)
         self.btn.setFont(font)
-        self.btn.setStyleSheet(Ui_left_menu_btn.default_btn_qss + Ui_left_menu_btn.hover_pressed_btn_qss)
+        self.btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icon/" + icon_path), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.btn.setIcon(icon)
@@ -56,7 +39,8 @@ class Ui_left_menu_btn(QtWidgets.QPushButton):
         pass
 
     def click_method(self, index, frame: QtWidgets.QWidget, tab_ids):
-
+        # 设置全局变量当前菜单id
+        global_setting.set_setting("menu_id_now", index)
         base_objectname_pre = "tab"
         base_objectname_suff = "_frame"
         current_tab = frame.findChild(QtWidgets.QWidget, base_objectname_pre + str(index) + base_objectname_suff)
@@ -69,9 +53,9 @@ class Ui_left_menu_btn(QtWidgets.QPushButton):
 
         base_objectname_pre_btn = "btn"
         current_btn = frame.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(index))
-        current_btn.setStyleSheet(Ui_left_menu_btn.selection_btn_qss + Ui_left_menu_btn.hover_pressed_btn_qss)
+        current_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
         for i in tab_ids:
             if i != index:
                 other_btn = frame.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(i))
-                other_btn.setStyleSheet(Ui_left_menu_btn.default_btn_qss + Ui_left_menu_btn.hover_pressed_btn_qss)
+                other_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         pass
