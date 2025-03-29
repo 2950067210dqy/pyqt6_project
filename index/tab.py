@@ -14,7 +14,7 @@ from ui.tab6 import Ui_tab6_frame
 
 
 # 左侧菜单按钮控制的菜单窗口类
-class Tab(QWidget, ThemedWidget):
+class Tab(ThemedWidget):
     # 不同的菜单窗口类
     classes = [Ui_tab1_frame, Ui_tab2_frame, Ui_tab3_frame, Ui_tab4_frame, Ui_tab5_frame, Ui_tab6_frame]
 

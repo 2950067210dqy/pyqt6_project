@@ -4,6 +4,7 @@ from PyQt6 import uic, QtCore
 from PyQt6.QtWidgets import QPushButton
 
 from config.global_setting import global_setting
+from config.logo_config import logger_diy
 from config.yamlParser import YamlParserObject
 from index.mainWindow import MainWindow
 
@@ -57,9 +58,6 @@ class AllWindows():
         default_menu_btn = self.mainWindow.frame.findChild(QPushButton,
                                                            "btn" + str(global_setting.get_setting("menu_id_now")))
         default_menu_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
-    
-        print("初始化菜单按钮的样式：",
-              default_menu_btn.styleSheet())
 
     # 私有方法 添加左侧菜单 从配置文件中
     def _set_left_menu_tab(self):

@@ -48,7 +48,7 @@ class Time_thread(QThread):
 # 主窗口类
 #
 # ###
-class MainWindow(QWidget, ThemedWidget):
+class MainWindow(ThemedWidget):
     # update_time的更新界面的主信号
     update_time_main_signal_gui_update = pyqtSignal(str)
 
@@ -64,12 +64,14 @@ class MainWindow(QWidget, ThemedWidget):
         self._init_customize_ui()
         # 实例化功能
         self._init_function()
+        # 加载qss样式表
+        self._init_style_sheet()
         pass
 
     # 实例化ui
     def _init_ui(self, title=""):
         # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码
-        self.frame = QWidget()
+        self.frame = ThemedWidget()
         self.ui = Ui_mainWindow()
         self.ui.setupUi(self.frame)
 

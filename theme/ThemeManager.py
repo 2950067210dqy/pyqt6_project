@@ -2,6 +2,7 @@ from PyQt6.QtCore import QObject, pyqtSignal, pyqtProperty
 from PyQt6.QtGui import QColor
 
 from config.global_setting import global_setting
+from config.logo_config import logger_diy
 
 
 class ThemeManager(QObject):
@@ -40,7 +41,7 @@ class ThemeManager(QObject):
             },
             "light": {
                 "--primary": "#F0F0F0",
-                "--secondary": "#FFFFFF",
+                "--secondary": "#F0F0F0",
                 "--text": "#333333",
                 "--text_hover": "rgb(0, 0, 0)",
                 "--highlight": "rgb(225,225,225)",
@@ -49,7 +50,7 @@ class ThemeManager(QObject):
             }
         }
         instance._current_theme = global_setting.get_setting("style")
-        print("ThemeManger:instance._current_theme:", instance._current_theme)
+        logger_diy.log.info("ThemeManger:instance._current_theme:  " + instance._current_theme)
 
     def get_button_style(self, isSelected=False):
         theme = self._themes[self._current_theme]
@@ -57,34 +58,36 @@ class ThemeManager(QObject):
             return f"""
                 QPushButton{{
                     background-color: {theme['--selected']};
-                    color:{theme['--text']}
-                    padding: 5px 10px;
+                    color:{theme['--text']};
+                   padding: 25px;
                     border-radius: 4px;
+                    font-size:13px;
                 }}
                 QPushButton:hover{{
                     background:{theme['--highlight']};
-                    color:{theme['--text_hover']}
+                    color:{theme['--text_hover']};
                 }}
                 QPushButton:pressed {{
                     background:{theme['--selected']};    
-                    color:{theme['--text_hover']}
+                    color:{theme['--text_hover']};
                 }}
             """
         else:
             return f"""
                 QPushButton{{
                     background-color: {theme['--secondary']};
-                    color:{theme['--text']}
-                    padding: 5px 10px;
+                    color:{theme['--text']};
+                    padding: 25px;
                     border-radius: 4px;
+                    font-size:13px;
                 }}
                 QPushButton:hover{{
                     background:{theme['--highlight']};
-                    color:{theme['--text_hover']}
+                    color:{theme['--text_hover']};
                 }}
                 QPushButton:pressed {{
                     background:{theme['--selected']};  
-                    color:{theme['--text_hover']}  
+                    color:{theme['--text_hover']}  ;
                 }}
                     """
 
@@ -109,5 +112,5 @@ class ThemeManager(QObject):
                 padding: 5px;
             }}
         """ + self.get_button_style(isSelected=False)
-        print("ThemeManager的get_style_sheet", style_sheet)
+        # logger_diy.log.info("ThemeManager的get_style_sheet：" + style_sheet)
         return style_sheet

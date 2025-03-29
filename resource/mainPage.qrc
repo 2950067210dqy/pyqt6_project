@@ -2,22 +2,39 @@
   <qresource prefix="images">
     <file>mouse.png</file>
   </qresource>
-  <qresource prefix="icon">
-    <file>monitor_white.svg</file>
-    <file>save_white.svg</file>
-    <file>correct_white.svg</file>
-    <file>default_white.svg</file>
-    <file>import_white.svg</file>
-    <file>export_white.svg</file>
-    <file>dark_mode_white.svg</file>
-    <file>setting_computer_white.svg</file>
-    <file>market_analysis_white.svg</file>
-    <file>material_three_white.svg</file>
-    <file>setting_config_white.svg</file>
-    <file>alarm_white.svg</file>
-    <file>help_white.svg</file>
-    <file>me_white.svg</file>
-    <file>generate.svg</file>
-    <file>generate_white.svg</file>
+  <qresource>
+    <file>./dark/alarm.svg</file>
+    <file>./dark/correct.svg</file>
+    <file>./dark/dark_mode.svg</file>
+    <file>./dark/default.svg</file>
+    <file>./dark/export.svg</file>
+    <file>./dark/generate.svg</file>
+    <file>./dark/help.svg</file>
+    <file>./dark/import.svg</file>
+    <file>./dark/market_analysis.svg</file>
+    <file>./dark/material_three.svg</file>
+    <file>./dark/me.svg</file>
+    <file>./dark/monitor.svg</file>
+    <file>./dark/save.svg</file>
+    <file>./dark/setting_computer.svg</file>
+    <file>./dark/setting_config.svg</file>
+
+    <file>./light/alarm.svg</file>
+    <file>./light/correct.svg</file>
+    <file>./light/dark_mode.svg</file>
+    <file>./light/default.svg</file>
+    <file>./light/export.svg</file>
+    <file>./light/generate.svg</file>
+    <file>./light/help.svg</file>
+    <file>./light/import.svg</file>
+    <file>./light/market_analysis.svg</file>
+    <file>./light/material_three.svg</file>
+    <file>./light/me.svg</file>
+    <file>./light/monitor.svg</file>
+    <file>./light/save.svg</file>
+    <file>./light/setting_computer.svg</file>
+    <file>./light/setting_config.svg</file>
   </qresource>
+
+
 </RCC>

@@ -20,7 +20,8 @@ class Ui_left_menu_btn(QtWidgets.QPushButton):
         self.btn.setFont(font)
         self.btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/" + icon_path), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/{icon_path}"), QtGui.QIcon.Mode.Normal,
+                       QtGui.QIcon.State.Off)
         self.btn.setIcon(icon)
         self.btn.setIconSize(QtCore.QSize(20, 20))
         self.btn.setAutoDefault(False)

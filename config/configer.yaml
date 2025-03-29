@@ -8,27 +8,27 @@ logo: #logo项
 left_menu: #左侧菜单项
   - id: 1 #对应相应的tab
     title: '动物概况' #菜单名称
-    icon_path: 'generate_white.svg' #菜单图标路径
+    icon_path: 'generate.svg' #菜单图标路径
     default: true #默认显示菜单
   - id: 2
     title: '监测数据'
-    icon_path: 'market_analysis_white.svg'
+    icon_path: 'market_analysis.svg'
     default: false
   - id: 3
     title: '实验配置'
-    icon_path: 'setting_config_white.svg'
+    icon_path: 'setting_config.svg'
     default: false
   - id: 4
     title: '三维数据'
-    icon_path: 'material_three_white.svg'
+    icon_path: 'material_three.svg'
     default: false
   - id: 5
     title: '视频监控'
-    icon_path: 'monitor_white.svg'
+    icon_path: 'monitor.svg'
     default: false
   - id: 6
     title: '系统设置'
-    icon_path: 'setting_computer_white.svg'
+    icon_path: 'setting_computer.svg'
     default: false
 tab: #菜单窗口项
   position: #显示位置

@@ -8,26 +8,28 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from config.global_setting import global_setting
+
 
 class Ui_tab4_frame(object):
     def setupUi(self, tab4_frame):
         tab4_frame.setObjectName("tab4_frame")
         tab4_frame.resize(929, 592)
         tab4_frame.setStyleSheet("*{\n"
-"border:none;\n"
-"}\n"
-"QWidget{\n"
-"\n"
-"    background:rgb(40, 48,65);\n"
-"color:white;\n"
-"}\n"
-"QGraphicsView{\n"
-"border:1px solid white;\n"
-"}\n"
-"QGroupBox{\n"
-"border:1px solid white\n"
-"}\n"
-"")
+                                 "border:none;\n"
+                                 "}\n"
+                                 "QWidget{\n"
+                                 "\n"
+                                 "    background:rgb(40, 48,65);\n"
+                                 "color:white;\n"
+                                 "}\n"
+                                 "QGraphicsView{\n"
+                                 "border:1px solid white;\n"
+                                 "}\n"
+                                 "QGroupBox{\n"
+                                 "border:1px solid white\n"
+                                 "}\n"
+                                 "")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=tab4_frame)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 911, 41))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
@@ -37,7 +39,8 @@ class Ui_tab4_frame(object):
         self.label_4 = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout.addWidget(self.label_4)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding,
+                                           QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(parent=tab4_frame)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(20, 60, 891, 54))
@@ -54,7 +57,8 @@ class Ui_tab4_frame(object):
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.horizontalLayout_2.addWidget(self.comboBox)
-        spacerItem1 = QtWidgets.QSpacerItem(800, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(800, 20, QtWidgets.QSizePolicy.Policy.Expanding,
+                                            QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
         self.btn3_2 = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Maximum)
@@ -67,14 +71,15 @@ class Ui_tab4_frame(object):
         font.setBold(False)
         self.btn3_2.setFont(font)
         self.btn3_2.setStyleSheet("QPushButton{\n"
-"    color:rgb(245, 245, 245);\n"
-"    padding:15px;\n"
-"    background:rgb(40, 48,65);\n"
-"border：none;\n"
-"font-size:13px;\n"
-"}")
+                                  "    color:rgb(245, 245, 245);\n"
+                                  "    padding:15px;\n"
+                                  "    background:rgb(40, 48,65);\n"
+                                  "border：none;\n"
+                                  "font-size:13px;\n"
+                                  "}")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/save_white.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/save.svg"), QtGui.QIcon.Mode.Normal,
+                       QtGui.QIcon.State.Off)
         self.btn3_2.setIcon(icon)
         self.btn3_2.setIconSize(QtCore.QSize(15, 15))
         self.btn3_2.setAutoDefault(False)

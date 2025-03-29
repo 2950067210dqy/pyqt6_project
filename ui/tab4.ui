@@ -138,7 +138,7 @@ font-size:13px;
       </property>
       <property name="icon">
        <iconset resource="../resource/mainPage.qrc">
-        <normaloff>:/icon/save_white.svg</normaloff>:/icon/save_white.svg</iconset>
+        <normaloff>:/dark/save.svg</normaloff>:/dark/save.svg</iconset>
       </property>
       <property name="iconSize">
        <size>

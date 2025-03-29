@@ -8,22 +8,14 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
+from config.global_setting import global_setting
+
 
 class Ui_tab2_frame(object):
     def setupUi(self, tab2_frame):
         tab2_frame.setObjectName("tab2_frame")
         tab2_frame.resize(929, 592)
-        tab2_frame.setStyleSheet("*{\n"
-"border:none;\n"
-"}\n"
-"QWidget{\n"
-"\n"
-"    background:rgb(40, 48,65);\n"
-"color:white;\n"
-"}\n"
-"QGraphicsView{\n"
-"border:1px solid white;\n"
-"}")
+        tab2_frame.setStyleSheet("")
         self.tab2 = QtWidgets.QWidget(parent=tab2_frame)
         self.tab2.setGeometry(QtCore.QRect(0, 0, 929, 592))
         self.tab2.setObjectName("tab2")
@@ -43,11 +35,13 @@ class Ui_tab2_frame(object):
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.top_layout.addWidget(self.comboBox)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding,
+                                           QtWidgets.QSizePolicy.Policy.Minimum)
         self.top_layout.addItem(spacerItem)
         self.pushButton = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/export_white.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/export.svg"), QtGui.QIcon.Mode.Normal,
+                       QtGui.QIcon.State.Off)
         self.pushButton.setIcon(icon)
         self.pushButton.setObjectName("pushButton")
         self.top_layout.addWidget(self.pushButton)
@@ -60,20 +54,7 @@ class Ui_tab2_frame(object):
         self.content_layout_son = QtWidgets.QVBoxLayout()
         self.content_layout_son.setObjectName("content_layout_son")
         self.tabWidget = QtWidgets.QTabWidget(parent=self.horizontalLayoutWidget_2)
-        self.tabWidget.setStyleSheet("QTabWidget::pane{\n"
-"border:1 solid #ccc;\n"
-"\n"
-"}\n"
-"   QTabBar::tab {\n"
-"\n"
-"    background:rgb(40, 48,65);\n"
-"       color: rgb(215,215,215);\n"
-"    }\n"
-"   \n"
-"   QTabBar::tab:selected {\n"
-"      background:rgb(27,36,49);\n"
-"               color: white;\n"
-"    }")
+        self.tabWidget.setStyleSheet("")
         self.tabWidget.setObjectName("tabWidget")
         self.tab_1 = QtWidgets.QWidget()
         self.tab_1.setObjectName("tab_1")
@@ -87,7 +68,7 @@ class Ui_tab2_frame(object):
         self.tab_1_layout_scroll.setWidgetResizable(True)
         self.tab_1_layout_scroll.setObjectName("tab_1_layout_scroll")
         self.tab_1_layout_scroll_content = QtWidgets.QWidget()
-        self.tab_1_layout_scroll_content.setGeometry(QtCore.QRect(0, 0, 899, 609))
+        self.tab_1_layout_scroll_content.setGeometry(QtCore.QRect(0, 0, 897, 607))
         self.tab_1_layout_scroll_content.setObjectName("tab_1_layout_scroll_content")
         self.nowdata_label = QtWidgets.QLabel(parent=self.tab_1_layout_scroll_content)
         self.nowdata_label.setGeometry(QtCore.QRect(20, 50, 121, 31))
@@ -102,10 +83,10 @@ class Ui_tab2_frame(object):
         self.nowdata_trend_label.setObjectName("nowdata_trend_label")
         self.nowdata_trend_charts = QtWidgets.QGraphicsView(parent=self.tab_1_layout_scroll_content)
         self.nowdata_trend_charts.setGeometry(QtCore.QRect(390, 0, 411, 91))
-        self.nowdata_trend_charts.setStyleSheet("border-radius:0px;")
+        self.nowdata_trend_charts.setStyleSheet("")
         self.nowdata_trend_charts.setObjectName("nowdata_trend_charts")
         self.alldata_export = QtWidgets.QPushButton(parent=self.tab_1_layout_scroll_content)
-        self.alldata_export.setGeometry(QtCore.QRect(830, 10, 61, 28))
+        self.alldata_export.setGeometry(QtCore.QRect(810, 10, 61, 28))
         self.alldata_export.setIcon(icon)
         self.alldata_export.setObjectName("alldata_export")
         self.history_label1 = QtWidgets.QLabel(parent=self.tab_1_layout_scroll_content)
@@ -126,7 +107,7 @@ class Ui_tab2_frame(object):
         self.history_export.setObjectName("history_export")
         self.history_charts = QtWidgets.QGraphicsView(parent=self.tab_1_layout_scroll_content)
         self.history_charts.setGeometry(QtCore.QRect(20, 180, 331, 121))
-        self.history_charts.setStyleSheet("border-radius:0px")
+        self.history_charts.setStyleSheet("")
         self.history_charts.setObjectName("history_charts")
         self.history_detail_label = QtWidgets.QLabel(parent=self.tab_1_layout_scroll_content)
         self.history_detail_label.setGeometry(QtCore.QRect(20, 310, 91, 31))
@@ -140,17 +121,14 @@ class Ui_tab2_frame(object):
         self.history_detail_export.setObjectName("history_detail_export")
         self.history_detail_charts = QtWidgets.QGraphicsView(parent=self.tab_1_layout_scroll_content)
         self.history_detail_charts.setGeometry(QtCore.QRect(20, 350, 331, 111))
-        self.history_detail_charts.setStyleSheet("border-radius:0px;")
+        self.history_detail_charts.setStyleSheet("")
         self.history_detail_charts.setObjectName("history_detail_charts")
         self.data_alarm = QtWidgets.QLabel(parent=self.tab_1_layout_scroll_content)
         self.data_alarm.setGeometry(QtCore.QRect(20, 10, 121, 31))
         self.data_alarm.setObjectName("data_alarm")
         self.detaildata_groupbox = QtWidgets.QGroupBox(parent=self.tab_1_layout_scroll_content)
         self.detaildata_groupbox.setGeometry(QtCore.QRect(360, 120, 531, 341))
-        self.detaildata_groupbox.setStyleSheet("QGroupBox{\n"
-"border:1px solid white\n"
-"}\n"
-"")
+        self.detaildata_groupbox.setStyleSheet("")
         self.detaildata_groupbox.setFlat(False)
         self.detaildata_groupbox.setObjectName("detaildata_groupbox")
         self.detaildata_scroll = QtWidgets.QScrollArea(parent=self.detaildata_groupbox)
@@ -158,22 +136,13 @@ class Ui_tab2_frame(object):
         self.detaildata_scroll.setWidgetResizable(True)
         self.detaildata_scroll.setObjectName("detaildata_scroll")
         self.detaildata_scroll_content = QtWidgets.QWidget()
-        self.detaildata_scroll_content.setGeometry(QtCore.QRect(0, 0, 511, 301))
+        self.detaildata_scroll_content.setGeometry(QtCore.QRect(0, 0, 509, 299))
         self.detaildata_scroll_content.setObjectName("detaildata_scroll_content")
         self.detaildata_table = QtWidgets.QTableWidget(parent=self.detaildata_scroll_content)
         self.detaildata_table.setGeometry(QtCore.QRect(0, 10, 511, 301))
-        self.detaildata_table.setStyleSheet(" QHeaderView::section {\n"
-"             \n"
-"                color: black;                 /* 表头文字颜色 */\n"
-"                padding: 4px;\n"
-"                border: 1px solid gray;\n"
-"  }\n"
-"QTableView{\n"
-"color:white;\n"
-"}\n"
-"")
-        self.detaildata_table.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.MultiSelection)
-        self.detaildata_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
+        self.detaildata_table.setStyleSheet("")
+        self.detaildata_table.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.NoSelection)
+        self.detaildata_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectItems)
         self.detaildata_table.setObjectName("detaildata_table")
         self.detaildata_table.setColumnCount(4)
         self.detaildata_table.setRowCount(4)
