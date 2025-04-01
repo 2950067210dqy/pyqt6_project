@@ -198,8 +198,8 @@ class Ui_tab1_frame(object):
     def retranslateUi(self, tab1_frame):
         _translate = QtCore.QCoreApplication.translate
         tab1_frame.setWindowTitle(_translate("tab1_frame", "Form"))
-        self.frame2_toplayout_title.setText(_translate("tab1_frame", "各鼠笼信息汇总"))
-        self.frame3_toplayout_title.setText(_translate("tab1_frame", "各鼠笼信息汇总"))
+        self.frame2_toplayout_title.setText(_translate("tab1_frame", "信息汇总"))
+        self.frame3_toplayout_title.setText(_translate("tab1_frame", "信息汇总"))
         self.frame1_toplayout_title.setText(_translate("tab1_frame", "预警信息"))
         self.frame1_toplayout_count.setText(_translate("tab1_frame", "12"))
         item = self.frame1_contentlayout_table.horizontalHeaderItem(0)

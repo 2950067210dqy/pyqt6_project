@@ -13,21 +13,7 @@ class Ui_tab5_frame(object):
     def setupUi(self, tab5_frame):
         tab5_frame.setObjectName("tab5_frame")
         tab5_frame.resize(929, 592)
-        tab5_frame.setStyleSheet("*{\n"
-"border:none;\n"
-"}\n"
-"QWidget{\n"
-"\n"
-"    background:rgb(40, 48,65);\n"
-"color:white;\n"
-"}\n"
-"QGraphicsView{\n"
-"border:1px solid white;\n"
-"}\n"
-"QGroupBox{\n"
-"border:1px solid white\n"
-"}\n"
-"")
+        tab5_frame.setStyleSheet("")
         self.gridLayoutWidget = QtWidgets.QWidget(parent=tab5_frame)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(10, 10, 911, 571))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
@@ -91,7 +77,7 @@ class Ui_tab5_frame(object):
         self.groupBox = QtWidgets.QGroupBox(parent=self.gridLayoutWidget)
         self.groupBox.setObjectName("groupBox")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.groupBox)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 19, 431, 111))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 19, 431, 152))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -258,26 +244,26 @@ class Ui_tab5_frame(object):
         _translate = QtCore.QCoreApplication.translate
         tab5_frame.setWindowTitle(_translate("tab5_frame", "Form"))
         self.groupBox_4.setTitle(_translate("tab5_frame", "源：小鼠2"))
-        self.label_3.setText(_translate("tab5_frame", "左相机："))
-        self.label_4.setText(_translate("tab5_frame", "右相机："))
+        self.label_3.setText(_translate("tab5_frame", "相机："))
+        self.label_4.setText(_translate("tab5_frame", "红外："))
         self.groupBox_2.setTitle(_translate("tab5_frame", "源：小鼠3"))
-        self.label_9.setText(_translate("tab5_frame", "左相机："))
-        self.label_10.setText(_translate("tab5_frame", "右相机："))
+        self.label_9.setText(_translate("tab5_frame", "相机："))
+        self.label_10.setText(_translate("tab5_frame", "红外："))
         self.groupBox.setTitle(_translate("tab5_frame", "源：小鼠1"))
-        self.label.setText(_translate("tab5_frame", "左相机："))
-        self.label_2.setText(_translate("tab5_frame", "右相机："))
+        self.label.setText(_translate("tab5_frame", "相机："))
+        self.label_2.setText(_translate("tab5_frame", "红外："))
         self.groupBox_6.setTitle(_translate("tab5_frame", "源：小鼠5"))
-        self.label_11.setText(_translate("tab5_frame", "左相机："))
-        self.label_12.setText(_translate("tab5_frame", "右相机："))
+        self.label_11.setText(_translate("tab5_frame", "相机："))
+        self.label_12.setText(_translate("tab5_frame", "红外："))
         self.groupBox_3.setTitle(_translate("tab5_frame", "源：小鼠4"))
-        self.label_5.setText(_translate("tab5_frame", "左相机："))
-        self.label_6.setText(_translate("tab5_frame", "右相机："))
+        self.label_5.setText(_translate("tab5_frame", "相机："))
+        self.label_6.setText(_translate("tab5_frame", "红外："))
         self.groupBox_7.setTitle(_translate("tab5_frame", "源：小鼠7"))
-        self.label_17.setText(_translate("tab5_frame", "左相机："))
-        self.label_18.setText(_translate("tab5_frame", "右相机："))
+        self.label_17.setText(_translate("tab5_frame", "相机："))
+        self.label_18.setText(_translate("tab5_frame", "红外："))
         self.groupBox_8.setTitle(_translate("tab5_frame", "源：小鼠8"))
-        self.label_15.setText(_translate("tab5_frame", "左相机："))
-        self.label_16.setText(_translate("tab5_frame", "右相机："))
+        self.label_15.setText(_translate("tab5_frame", "相机："))
+        self.label_16.setText(_translate("tab5_frame", "红外："))
         self.groupBox_5.setTitle(_translate("tab5_frame", "源：小鼠6"))
-        self.label_13.setText(_translate("tab5_frame", "左相机："))
-        self.label_14.setText(_translate("tab5_frame", "右相机："))
+        self.label_13.setText(_translate("tab5_frame", "相机："))
+        self.label_14.setText(_translate("tab5_frame", "红外："))

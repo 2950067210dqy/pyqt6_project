@@ -155,7 +155,7 @@
             <string>颗粒技术与生物医工实验室</string>
            </property>
            <property name="icon">
-            <iconset resource="../resource/mainPage.qrc">
+            <iconset>
              <normaloff>:/images/mouse.png</normaloff>:/images/mouse.png</iconset>
            </property>
            <property name="iconSize">
@@ -240,7 +240,7 @@
            </property>
            <property name="icon">
             <iconset resource="../resource/mainPage.qrc">
-             <normaloff>:/dark/dark_mode.svg</normaloff>:/dark/dark_mode.svg</iconset>
+             <normaloff>:/dark/mode.svg</normaloff>:/dark/mode.svg</iconset>
            </property>
            <property name="iconSize">
             <size>

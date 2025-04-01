@@ -14,23 +14,9 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-border:none;
-}
-QWidget{
-
-	background:rgb(40, 48,65);
-color:white;
-}
-QGraphicsView{
-border:1px solid white;
-}
-QGroupBox{
-border:1px solid white
-}
-</string>
+   <string notr="true"/>
   </property>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QGroupBox" name="tab3_groupBox">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -40,8 +26,7 @@ border:1px solid white
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QTextEdit{border:1px solid white}
-QFormLayout{font-size:20px;}</string>
+    <string notr="true"/>
    </property>
    <property name="title">
     <string>设置</string>
@@ -76,7 +61,7 @@ QFormLayout{font-size:20px;}</string>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="btn3_2">
+      <widget class="QPushButton" name="import_tab3_setting_btn">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
          <horstretch>20</horstretch>
@@ -89,20 +74,14 @@ QFormLayout{font-size:20px;}</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton{
-	color:rgb(245, 245, 245);
-	padding:15px;
-	background:rgb(40, 48,65);
-border：none;
-
-}</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>导入设置</string>
+        <string/>
        </property>
        <property name="icon">
         <iconset resource="../resource/mainPage.qrc">
-         <normaloff>:/dark/export.svg</normaloff>:/dark/export.svg</iconset>
+         <normaloff>:/dark/import.svg</normaloff>:/dark/import.svg</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -122,7 +101,7 @@ border：none;
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn3_3">
+      <widget class="QPushButton" name="export_tab3_setting_btn">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
          <horstretch>20</horstretch>
@@ -135,16 +114,10 @@ border：none;
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton{
-	color:rgb(245, 245, 245);
-	padding:15px;
-	background:rgb(40, 48,65);
-border：none;
-
-}</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>导出设置</string>
+        <string/>
        </property>
        <property name="icon">
         <iconset resource="../resource/mainPage.qrc">
@@ -188,6 +161,9 @@ border：none;
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="LineEdit">
+       <property name="text">
+        <string>das </string>
+       </property>
        <property name="placeholderText">
         <string>请输入设置</string>
        </property>
@@ -426,7 +402,7 @@ border：none;
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="ok_setting_btn">
        <property name="font">
         <font>
          <pointsize>10</pointsize>
@@ -438,7 +414,7 @@ border：none;
        </property>
        <property name="icon">
         <iconset resource="../resource/mainPage.qrc">
-         <normaloff>:/dark/correct.svg</normaloff>:/dark/correct.svg</iconset>
+         <normaloff>:/dark/ok.svg</normaloff>:/dark/ok.svg</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -462,7 +438,7 @@ border：none;
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="default_setting_btn">
        <property name="font">
         <font>
          <pointsize>10</pointsize>

@@ -8,28 +8,12 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-from config.global_setting import global_setting
-
 
 class Ui_tab4_frame(object):
     def setupUi(self, tab4_frame):
         tab4_frame.setObjectName("tab4_frame")
         tab4_frame.resize(929, 592)
-        tab4_frame.setStyleSheet("*{\n"
-                                 "border:none;\n"
-                                 "}\n"
-                                 "QWidget{\n"
-                                 "\n"
-                                 "    background:rgb(40, 48,65);\n"
-                                 "color:white;\n"
-                                 "}\n"
-                                 "QGraphicsView{\n"
-                                 "border:1px solid white;\n"
-                                 "}\n"
-                                 "QGroupBox{\n"
-                                 "border:1px solid white\n"
-                                 "}\n"
-                                 "")
+        tab4_frame.setStyleSheet("")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=tab4_frame)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 911, 41))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
@@ -39,8 +23,7 @@ class Ui_tab4_frame(object):
         self.label_4 = QtWidgets.QLabel(parent=self.horizontalLayoutWidget)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout.addWidget(self.label_4)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding,
-                                           QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(parent=tab4_frame)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(20, 60, 891, 54))
@@ -57,36 +40,28 @@ class Ui_tab4_frame(object):
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.horizontalLayout_2.addWidget(self.comboBox)
-        spacerItem1 = QtWidgets.QSpacerItem(800, 20, QtWidgets.QSizePolicy.Policy.Expanding,
-                                            QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(800, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
-        self.btn3_2 = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
+        self.save_tab4_btn = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(20)
         sizePolicy.setVerticalStretch(21)
-        sizePolicy.setHeightForWidth(self.btn3_2.sizePolicy().hasHeightForWidth())
-        self.btn3_2.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.save_tab4_btn.sizePolicy().hasHeightForWidth())
+        self.save_tab4_btn.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(-1)
         font.setBold(False)
-        self.btn3_2.setFont(font)
-        self.btn3_2.setStyleSheet("QPushButton{\n"
-                                  "    color:rgb(245, 245, 245);\n"
-                                  "    padding:15px;\n"
-                                  "    background:rgb(40, 48,65);\n"
-                                  "border：none;\n"
-                                  "font-size:13px;\n"
-                                  "}")
+        self.save_tab4_btn.setFont(font)
+        self.save_tab4_btn.setStyleSheet("")
+        self.save_tab4_btn.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/save.svg"), QtGui.QIcon.Mode.Normal,
-                       QtGui.QIcon.State.Off)
-        self.btn3_2.setIcon(icon)
-        self.btn3_2.setIconSize(QtCore.QSize(15, 15))
-        self.btn3_2.setAutoDefault(False)
-        self.btn3_2.setDefault(False)
-        self.btn3_2.setFlat(True)
-        self.btn3_2.setObjectName("btn3_2")
-        self.horizontalLayout_2.addWidget(self.btn3_2)
+        icon.addPixmap(QtGui.QPixmap(":/dark/save.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.save_tab4_btn.setIcon(icon)
+        self.save_tab4_btn.setIconSize(QtCore.QSize(15, 15))
+        self.save_tab4_btn.setAutoDefault(False)
+        self.save_tab4_btn.setDefault(False)
+        self.save_tab4_btn.setFlat(True)
+        self.save_tab4_btn.setObjectName("save_tab4_btn")
+        self.horizontalLayout_2.addWidget(self.save_tab4_btn)
         self.graphicsView = QtWidgets.QGraphicsView(parent=tab4_frame)
         self.graphicsView.setGeometry(QtCore.QRect(20, 130, 891, 441))
         self.graphicsView.setObjectName("graphicsView")
@@ -100,4 +75,3 @@ class Ui_tab4_frame(object):
         self.label_4.setText(_translate("tab4_frame", "三维重建"))
         self.label_3.setText(_translate("tab4_frame", "当前源："))
         self.comboBox.setItemText(0, _translate("tab4_frame", "大鼠1"))
-        self.btn3_2.setText(_translate("tab4_frame", "保存文件"))

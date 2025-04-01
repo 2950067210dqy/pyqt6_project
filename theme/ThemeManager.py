@@ -1,8 +1,8 @@
 from PyQt6.QtCore import QObject, pyqtSignal, pyqtProperty
 from PyQt6.QtGui import QColor
+from loguru import logger
 
 from config.global_setting import global_setting
-from config.logo_config import logger_diy
 
 
 class ThemeManager(QObject):
@@ -50,7 +50,7 @@ class ThemeManager(QObject):
             }
         }
         instance._current_theme = global_setting.get_setting("style")
-        logger_diy.log.info("ThemeManger:instance._current_theme:  " + instance._current_theme)
+        logger.info("ThemeManger:instance._current_theme:  " + instance._current_theme)
 
     def get_button_style(self, isSelected=False):
         theme = self._themes[self._current_theme]

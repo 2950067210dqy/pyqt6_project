@@ -1,40 +1,35 @@
 <RCC>
-  <qresource prefix="images">
-    <file>mouse.png</file>
-  </qresource>
-  <qresource>
-    <file>./dark/alarm.svg</file>
-    <file>./dark/correct.svg</file>
-    <file>./dark/dark_mode.svg</file>
-    <file>./dark/default.svg</file>
-    <file>./dark/export.svg</file>
-    <file>./dark/generate.svg</file>
-    <file>./dark/help.svg</file>
-    <file>./dark/import.svg</file>
-    <file>./dark/market_analysis.svg</file>
-    <file>./dark/material_three.svg</file>
-    <file>./dark/me.svg</file>
-    <file>./dark/monitor.svg</file>
-    <file>./dark/save.svg</file>
-    <file>./dark/setting_computer.svg</file>
-    <file>./dark/setting_config.svg</file>
-
-    <file>./light/alarm.svg</file>
-    <file>./light/correct.svg</file>
-    <file>./light/dark_mode.svg</file>
-    <file>./light/default.svg</file>
-    <file>./light/export.svg</file>
-    <file>./light/generate.svg</file>
-    <file>./light/help.svg</file>
-    <file>./light/import.svg</file>
-    <file>./light/market_analysis.svg</file>
-    <file>./light/material_three.svg</file>
-    <file>./light/me.svg</file>
-    <file>./light/monitor.svg</file>
-    <file>./light/save.svg</file>
-    <file>./light/setting_computer.svg</file>
-    <file>./light/setting_config.svg</file>
-  </qresource>
-
-
+    <qresource prefix="images">
+        <file>logo.png</file>
+    </qresource>
+    <qresource>
+        <file>./dark/ok.svg</file>
+        <file>./dark/mode.svg</file>
+        <file>./dark/default.svg</file>
+        <file>./dark/export.svg</file>
+        <file>./dark/generate.svg</file>
+        <file>./dark/help.svg</file>
+        <file>./dark/import.svg</file>
+        <file>./dark/marketAnalysis.svg</file>
+        <file>./dark/materialThree.svg</file>
+        <file>./dark/me.svg</file>
+        <file>./dark/monitor.svg</file>
+        <file>./dark/save.svg</file>
+        <file>./dark/settingSystem.svg</file>
+        <file>./dark/settingConfig.svg</file>
+        <file>./light/ok.svg</file>
+        <file>./light/mode.svg</file>
+        <file>./light/default.svg</file>
+        <file>./light/export.svg</file>
+        <file>./light/generate.svg</file>
+        <file>./light/help.svg</file>
+        <file>./light/import.svg</file>
+        <file>./light/marketAnalysis.svg</file>
+        <file>./light/materialThree.svg</file>
+        <file>./light/me.svg</file>
+        <file>./light/monitor.svg</file>
+        <file>./light/save.svg</file>
+        <file>./light/settingSystem.svg</file>
+        <file>./light/settingConfig.svg</file>
+    </qresource>
 </RCC>

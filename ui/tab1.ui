@@ -67,7 +67,7 @@
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>各鼠笼信息汇总</string>
+            <string>信息汇总</string>
            </property>
           </widget>
          </item>
@@ -158,7 +158,7 @@
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>各鼠笼信息汇总</string>
+            <string>信息汇总</string>
            </property>
           </widget>
          </item>

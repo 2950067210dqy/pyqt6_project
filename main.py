@@ -1,9 +1,9 @@
 import sys
 
 from PyQt6.QtWidgets import QApplication
+from loguru import logger
 
 from config.global_setting import global_setting
-from config.logo_config import logger_diy
 from config.yamlParser import YamlParserObject
 from index.all_windows import AllWindows
 
@@ -30,19 +30,25 @@ def load_global_setting():
 
 if __name__ == '__main__':
     # 加载日志配置
-    logger_diy.add_env()
-    logger_diy.log.info("start")
+    logger.add(
+        "prod_{time:YYYY-MM-DD}.log",
+        rotation="00:00",
+        retention="7 days",
+        enqueue=True,
+        format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+    )
+    logger.info("start")
     # 加载全局配置
-    logger_diy.log.info("loading config start")
+    logger.info("loading config start")
     load_global_setting()
-    logger_diy.log.info("loading config finish")
+    logger.info("loading config finish")
     # 启动qt
-    logger_diy.log.info("start Qt")
+    logger.info("start Qt")
     app = QApplication(sys.argv)
     # 主窗口实例化
     allWindows = AllWindows()
     # 主窗口显示
-    logger_diy.log.info("Appliacation start")
+    logger.info("Appliacation start")
     allWindows.show()
     # 系统退出
     sys.exit(app.exec())

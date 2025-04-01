@@ -14,21 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-border:none;
-}
-QWidget{
-
-	background:rgb(40, 48,65);
-color:white;
-}
-QGraphicsView{
-border:1px solid white;
-}
-QGroupBox{
-border:1px solid white
-}
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">

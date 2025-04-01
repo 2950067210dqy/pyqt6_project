@@ -3,10 +3,13 @@ import time
 from datetime import datetime
 
 from PyQt6 import uic, QtCore, QtWidgets, QtGui
-from PyQt6.QtCore import QRect, QThread, pyqtSignal
+from PyQt6.QtCore import QRect, QThread, pyqtSignal, QFile
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QWidget, QLabel, QPushButton
+from loguru import logger
 
 from config.global_setting import global_setting
+
 from config.yamlParser import YamlParserObject
 from index.tab import Tab
 from resource_py import mainPage_rc
@@ -17,6 +20,7 @@ from ui.main_window_ui import Ui_mainWindow
 
 
 # 更新时间子线程
+
 class Time_thread(QThread):
     # 线程信号
     update_time_thread_doing = pyqtSignal()
@@ -48,6 +52,7 @@ class Time_thread(QThread):
 # 主窗口类
 #
 # ###
+
 class MainWindow(ThemedWidget):
     # update_time的更新界面的主信号
     update_time_main_signal_gui_update = pyqtSignal(str)
@@ -90,6 +95,8 @@ class MainWindow(ThemedWidget):
         self.update_time_function_start()
         # 切换白天黑夜主题功能
         self.toggle_style_mode()
+        # logo按钮返回主页功能
+        self.logo_return_default_page()
         pass
 
     #  实例化左侧菜单
@@ -144,7 +151,7 @@ class MainWindow(ThemedWidget):
         self.ui.logolabel_btn.setText(_translate(self.frame.objectName(), logo_title))
         # lable中的icon实例化
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/images/" + logo_path), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("./resource/" + logo_path), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.logolabel_btn.setIcon(icon)
         self.ui.logolabel_btn.setIconSize(QtCore.QSize(logo_width, logo_height))
         pass
@@ -187,14 +194,42 @@ class MainWindow(ThemedWidget):
         # 根据当前主题变换主题
         new_theme = "dark" if global_setting.get_setting("theme_manager").current_theme == "light" else "light"
         # 将新主题关键字赋值回去
+        global_setting.set_setting('style', new_theme)
         global_setting.get_setting("theme_manager").current_theme = new_theme
         # 更改样式
         self.frame.setStyleSheet(global_setting.get_setting("theme_manager").get_style_sheet())
         # 更改自定义组件样式
         # 找到主窗口中的所有QPushButton对象
         pushBtns = self.frame.findChildren(QPushButton)
-        # 给每个QPushButton对象 添加相关样式 start
+        # 给每个QPushButton对象 添加相关样式 并且更换icon样式 start
         for btn in pushBtns:
+            # 更换图标样式 start
+            # 更换左侧菜单图标样式
+            if btn.property("icon_name") != None:
+                icon_name = btn.property("icon_name")
+                icon = QtGui.QIcon()
+                icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/{icon_name}"),
+                               QtGui.QIcon.Mode.Normal,
+                               QtGui.QIcon.State.Off)
+                btn.setIcon(icon)
+                btn.setIconSize(QtCore.QSize(20, 20))
+            # 更换其他按钮图标样式
+            else:
+                #  获得其他图标的objectname的前缀 注意我们的带有图标的QPushButton的ObjectName的前缀必须要和我们所设置得图标文件的名字一样，否则这里将不起效果
+                other_btn_object_name_prefix = btn.objectName().split("_")[0]
+                path = f":/{global_setting.get_setting('style')}/{other_btn_object_name_prefix}.svg"
+                # 找不到图标文件就写进日志
+                if not QFile.exists(path):
+                    logger.warning(f"{btn.objectName()}按钮的图标资源文件未找到！")
+                # 否则就更新图标
+                else:
+                    icon = QtGui.QIcon()
+                    icon.addPixmap(QtGui.QPixmap(path),
+                                   QtGui.QIcon.Mode.Normal,
+                                   QtGui.QIcon.State.Off)
+                    btn.setIcon(icon)
+                    btn.setIconSize(QtCore.QSize(20, 20))
+            # 给每个QPushButton对象 添加相关样式
             btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         # 给默认菜单项设置样式
         default_menu_btn = self.frame.findChild(QPushButton, "btn" + str(global_setting.get_setting("menu_id_now")))
@@ -205,6 +240,43 @@ class MainWindow(ThemedWidget):
         style_btn.setText(_translate(self.frame.objectName(), "白天模式" if global_setting.get_setting(
             "theme_manager").current_theme == "light" else "暗夜模式"))
 
+        pass
+
+    # logo按钮返回主页功能
+    def logo_return_default_page(self):
+        # 获取按钮组件
+        logo_label_btn = self.frame.findChild(QPushButton, "logolabel_btn")
+        # 绑定事件
+        logo_label_btn.clicked.connect(self.logo_return_default_page_click_method)
+
+    # logo按钮返回主页功能 按钮绑定事件
+    def logo_return_default_page_click_method(self):
+        # 找到默认菜单按钮
+        default_btn_id = next(x['id'] for x in self.left_menu_btns if x['visible'])
+        # 找到与之对应的tab组件
+        base_objectname_pre = "tab"
+        base_objectname_suff = "_frame"
+        current_tab = self.frame.findChild(QtWidgets.QWidget,
+                                           base_objectname_pre + str(default_btn_id) + base_objectname_suff)
+        # 并将tab页设为可见
+        current_tab.setVisible(True)
+        # 找到所有的菜单按钮的id
+        tab_ids = [x['id'] for x in self.left_menu_btns]
+        # 将其他tab页设为不可见
+        for i in tab_ids:
+            if i != default_btn_id:
+                other_tab = self.frame.findChild(QtWidgets.QWidget,
+                                                 base_objectname_pre + str(i) + base_objectname_suff)
+                other_tab.setVisible(False)
+        # 更改当前按钮的样式
+        base_objectname_pre_btn = "btn"
+        current_btn = self.frame.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(default_btn_id))
+        current_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
+        # 更改其他按钮的样式
+        for i in tab_ids:
+            if i != default_btn_id:
+                other_btn = self.frame.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(i))
+                other_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         pass
 
     # 显示窗口

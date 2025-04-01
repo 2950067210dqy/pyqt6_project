@@ -2,9 +2,10 @@ import sys
 
 from PyQt6 import uic, QtCore
 from PyQt6.QtWidgets import QPushButton
+from loguru import logger
 
 from config.global_setting import global_setting
-from config.logo_config import logger_diy
+
 from config.yamlParser import YamlParserObject
 from index.mainWindow import MainWindow
 
@@ -17,6 +18,7 @@ from ui.customize_ui.left_menu_btn import Ui_left_menu_btn
 # 显示窗口类 对主窗口进行相关加载ui 并可以显示
 #
 # ###
+
 class AllWindows():
     # 实例化
     def __init__(self):
@@ -66,7 +68,7 @@ class AllWindows():
             # 设置当前选中菜单id到全局类中
             if i['visible']:
                 global_setting.set_setting("menu_id_now", i['id'])
-            self.mainWindow.set_child(child=i['tab'].frame,
+            self.mainWindow.set_child(child=i['tab'].tab.frame,
                                       geometry=QtCore.QRect(
                                           global_setting.get_setting("configer")['tab']['position']['x'],
                                           global_setting.get_setting("configer")['tab']['position']['y'],

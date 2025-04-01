@@ -2,7 +2,7 @@ window: #主程序窗口项
   title: '颗粒技术与生物医工实验室上位机' #程序窗口名
 logo: #logo项
   title: '颗粒技术与生物医工实验室上位机' #程序logo名
-  pict_path: 'mouse.png' #程序logo图标
+  pict_path: 'logo.png' #程序logo图标
   pict_width: 50 #程序logo长 单位px
   pict_height: 50 #程序logo高 单位px
 left_menu: #左侧菜单项
@@ -12,15 +12,15 @@ left_menu: #左侧菜单项
     default: true #默认显示菜单
   - id: 2
     title: '监测数据'
-    icon_path: 'market_analysis.svg'
+    icon_path: 'marketAnalysis.svg'
     default: false
   - id: 3
     title: '实验配置'
-    icon_path: 'setting_config.svg'
+    icon_path: 'settingConfig.svg'
     default: false
   - id: 4
     title: '三维数据'
-    icon_path: 'material_three.svg'
+    icon_path: 'materialThree.svg'
     default: false
   - id: 5
     title: '视频监控'
@@ -28,7 +28,7 @@ left_menu: #左侧菜单项
     default: false
   - id: 6
     title: '系统设置'
-    icon_path: 'setting_computer.svg'
+    icon_path: 'settingSystem.svg'
     default: false
 tab: #菜单窗口项
   position: #显示位置

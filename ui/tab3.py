@@ -8,93 +8,66 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-from config.global_setting import global_setting
-
 
 class Ui_tab3_frame(object):
     def setupUi(self, tab3_frame):
         tab3_frame.setObjectName("tab3_frame")
         tab3_frame.resize(929, 592)
-        tab3_frame.setStyleSheet("*{\n"
-                                 "border:none;\n"
-                                 "}\n"
-                                 "QWidget{\n"
-                                 "\n"
-                                 "    background:rgb(40, 48,65);\n"
-                                 "color:white;\n"
-                                 "}\n"
-                                 "QGraphicsView{\n"
-                                 "border:1px solid white;\n"
-                                 "}\n"
-                                 "QGroupBox{\n"
-                                 "border:1px solid white\n"
-                                 "}\n"
-                                 "")
-        self.groupBox = QtWidgets.QGroupBox(parent=tab3_frame)
-        self.groupBox.setGeometry(QtCore.QRect(10, 20, 901, 561))
-        self.groupBox.setStyleSheet("QTextEdit{border:1px solid white}\n"
-                                    "QFormLayout{font-size:20px;}")
-        self.groupBox.setFlat(True)
-        self.groupBox.setObjectName("groupBox")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.groupBox)
+        tab3_frame.setStyleSheet("")
+        self.tab3_groupBox = QtWidgets.QGroupBox(parent=tab3_frame)
+        self.tab3_groupBox.setGeometry(QtCore.QRect(10, 20, 901, 561))
+        self.tab3_groupBox.setStyleSheet("")
+        self.tab3_groupBox.setFlat(True)
+        self.tab3_groupBox.setObjectName("tab3_groupBox")
+        self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.tab3_groupBox)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(30, 13, 861, 55))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(900, 10, QtWidgets.QSizePolicy.Policy.Expanding,
-                                           QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(900, 10, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
-        self.btn3_2 = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
+        self.import_tab3_setting_btn = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(20)
         sizePolicy.setVerticalStretch(21)
-        sizePolicy.setHeightForWidth(self.btn3_2.sizePolicy().hasHeightForWidth())
-        self.btn3_2.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.import_tab3_setting_btn.sizePolicy().hasHeightForWidth())
+        self.import_tab3_setting_btn.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setBold(False)
-        self.btn3_2.setFont(font)
-        self.btn3_2.setStyleSheet("QPushButton{\n"
-                                  "    color:rgb(245, 245, 245);\n"
-                                  "    padding:15px;\n"
-                                  "    background:rgb(40, 48,65);\n"
-                                  "border：none;\n"
-                                  "\n"
-                                  "}")
+        self.import_tab3_setting_btn.setFont(font)
+        self.import_tab3_setting_btn.setStyleSheet("")
+        self.import_tab3_setting_btn.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/export.svg"), QtGui.QIcon.Mode.Normal,
-                       QtGui.QIcon.State.Off)
-        self.btn3_2.setIcon(icon)
-        self.btn3_2.setIconSize(QtCore.QSize(15, 15))
-        self.btn3_2.setAutoDefault(False)
-        self.btn3_2.setDefault(False)
-        self.btn3_2.setFlat(True)
-        self.btn3_2.setObjectName("btn3_2")
-        self.horizontalLayout.addWidget(self.btn3_2)
-        self.btn3_3 = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
+        icon.addPixmap(QtGui.QPixmap(":/dark/import.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.import_tab3_setting_btn.setIcon(icon)
+        self.import_tab3_setting_btn.setIconSize(QtCore.QSize(15, 15))
+        self.import_tab3_setting_btn.setAutoDefault(False)
+        self.import_tab3_setting_btn.setDefault(False)
+        self.import_tab3_setting_btn.setFlat(True)
+        self.import_tab3_setting_btn.setObjectName("import_tab3_setting_btn")
+        self.horizontalLayout.addWidget(self.import_tab3_setting_btn)
+        self.export_tab3_setting_btn = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(20)
         sizePolicy.setVerticalStretch(21)
-        sizePolicy.setHeightForWidth(self.btn3_3.sizePolicy().hasHeightForWidth())
-        self.btn3_3.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.export_tab3_setting_btn.sizePolicy().hasHeightForWidth())
+        self.export_tab3_setting_btn.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setBold(False)
-        self.btn3_3.setFont(font)
-        self.btn3_3.setStyleSheet("QPushButton{\n"
-                                  "    color:rgb(245, 245, 245);\n"
-                                  "    padding:15px;\n"
-                                  "    background:rgb(40, 48,65);\n"
-                                  "border：none;\n"
-                                  "\n"
-                                  "}")
-        self.btn3_3.setIcon(icon)
-        self.btn3_3.setIconSize(QtCore.QSize(15, 15))
-        self.btn3_3.setAutoDefault(False)
-        self.btn3_3.setDefault(False)
-        self.btn3_3.setFlat(True)
-        self.btn3_3.setObjectName("btn3_3")
-        self.horizontalLayout.addWidget(self.btn3_3)
-        self.formLayoutWidget = QtWidgets.QWidget(parent=self.groupBox)
+        self.export_tab3_setting_btn.setFont(font)
+        self.export_tab3_setting_btn.setStyleSheet("")
+        self.export_tab3_setting_btn.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/dark/export.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.export_tab3_setting_btn.setIcon(icon1)
+        self.export_tab3_setting_btn.setIconSize(QtCore.QSize(15, 15))
+        self.export_tab3_setting_btn.setAutoDefault(False)
+        self.export_tab3_setting_btn.setDefault(False)
+        self.export_tab3_setting_btn.setFlat(True)
+        self.export_tab3_setting_btn.setObjectName("export_tab3_setting_btn")
+        self.horizontalLayout.addWidget(self.export_tab3_setting_btn)
+        self.formLayoutWidget = QtWidgets.QWidget(parent=self.tab3_groupBox)
         self.formLayoutWidget.setGeometry(QtCore.QRect(200, 70, 471, 381))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
@@ -185,44 +158,39 @@ class Ui_tab3_frame(object):
         self.fontComboBox = QtWidgets.QFontComboBox(parent=self.formLayoutWidget)
         self.fontComboBox.setObjectName("fontComboBox")
         self.formLayout.setWidget(9, QtWidgets.QFormLayout.ItemRole.FieldRole, self.fontComboBox)
-        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(parent=self.groupBox)
+        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(parent=self.tab3_groupBox)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(20, 470, 871, 81))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        spacerItem1 = QtWidgets.QSpacerItem(300, 20, QtWidgets.QSizePolicy.Policy.Expanding,
-                                            QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(300, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
-        self.pushButton = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
+        self.ok_setting_btn = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
-        self.pushButton.setFont(font)
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/correct.svg"), QtGui.QIcon.Mode.Normal,
-                        QtGui.QIcon.State.Off)
-        self.pushButton.setIcon(icon1)
-        self.pushButton.setIconSize(QtCore.QSize(20, 20))
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_2.addWidget(self.pushButton)
-        spacerItem2 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Policy.Expanding,
-                                            QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem2)
-        self.pushButton_5 = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        self.pushButton_5.setFont(font)
+        self.ok_setting_btn.setFont(font)
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/default.svg"), QtGui.QIcon.Mode.Normal,
-                        QtGui.QIcon.State.Off)
-        self.pushButton_5.setIcon(icon2)
-        self.pushButton_5.setIconSize(QtCore.QSize(20, 20))
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.horizontalLayout_2.addWidget(self.pushButton_5)
-        spacerItem3 = QtWidgets.QSpacerItem(300, 20, QtWidgets.QSizePolicy.Policy.Expanding,
-                                            QtWidgets.QSizePolicy.Policy.Minimum)
+        icon2.addPixmap(QtGui.QPixmap(":/dark/ok.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.ok_setting_btn.setIcon(icon2)
+        self.ok_setting_btn.setIconSize(QtCore.QSize(20, 20))
+        self.ok_setting_btn.setObjectName("ok_setting_btn")
+        self.horizontalLayout_2.addWidget(self.ok_setting_btn)
+        spacerItem2 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem2)
+        self.default_setting_btn = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        self.default_setting_btn.setFont(font)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/dark/default.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.default_setting_btn.setIcon(icon3)
+        self.default_setting_btn.setIconSize(QtCore.QSize(20, 20))
+        self.default_setting_btn.setObjectName("default_setting_btn")
+        self.horizontalLayout_2.addWidget(self.default_setting_btn)
+        spacerItem3 = QtWidgets.QSpacerItem(300, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem3)
 
         self.retranslateUi(tab3_frame)
@@ -231,10 +199,9 @@ class Ui_tab3_frame(object):
     def retranslateUi(self, tab3_frame):
         _translate = QtCore.QCoreApplication.translate
         tab3_frame.setWindowTitle(_translate("tab3_frame", "Form"))
-        self.groupBox.setTitle(_translate("tab3_frame", "设置"))
-        self.btn3_2.setText(_translate("tab3_frame", "导入设置"))
-        self.btn3_3.setText(_translate("tab3_frame", "导出设置"))
+        self.tab3_groupBox.setTitle(_translate("tab3_frame", "设置"))
         self.Label_2.setText(_translate("tab3_frame", "设置1："))
+        self.LineEdit.setText(_translate("tab3_frame", "das "))
         self.LineEdit.setPlaceholderText(_translate("tab3_frame", "请输入设置"))
         self.Label_3.setText(_translate("tab3_frame", "设置2："))
         self.ComboBox.setItemText(0, _translate("tab3_frame", "123"))
@@ -259,5 +226,5 @@ class Ui_tab3_frame(object):
         self.radioButton_2.setText(_translate("tab3_frame", "234"))
         self.Label_9.setText(_translate("tab3_frame", "设置9："))
         self.Label.setText(_translate("tab3_frame", "设置10："))
-        self.pushButton.setText(_translate("tab3_frame", "确定公共设置"))
-        self.pushButton_5.setText(_translate("tab3_frame", "默认公共设置"))
+        self.ok_setting_btn.setText(_translate("tab3_frame", "确定公共设置"))
+        self.default_setting_btn.setText(_translate("tab3_frame", "默认公共设置"))

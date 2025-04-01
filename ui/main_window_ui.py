@@ -8,8 +8,6 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-from config.global_setting import global_setting
-
 
 class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
@@ -34,9 +32,9 @@ class Ui_mainWindow(object):
         self.left_layout_scroll_widget = QtWidgets.QWidget()
         self.left_layout_scroll_widget.setGeometry(QtCore.QRect(0, 0, 107, 667))
         self.left_layout_scroll_widget.setStyleSheet("*{\n"
-                                                     "\n"
-                                                     "\n"
-                                                     "                                ")
+"\n"
+"\n"
+"                                ")
         self.left_layout_scroll_widget.setObjectName("left_layout_scroll_widget")
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(parent=self.left_layout_scroll_widget)
         self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(0, 0, 111, 671))
@@ -62,9 +60,9 @@ class Ui_mainWindow(object):
         self.top_layout_scroll_content = QtWidgets.QWidget()
         self.top_layout_scroll_content.setGeometry(QtCore.QRect(0, 0, 907, 69))
         self.top_layout_scroll_content.setStyleSheet("*{\n"
-                                                     "\n"
-                                                     "\n"
-                                                     "                                ")
+"\n"
+"\n"
+"                                ")
         self.top_layout_scroll_content.setObjectName("top_layout_scroll_content")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(parent=self.top_layout_scroll_content)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(0, 0, 901, 71))
@@ -92,8 +90,7 @@ class Ui_mainWindow(object):
         self.logolabel_btn.setFlat(True)
         self.logolabel_btn.setObjectName("logolabel_btn")
         self.top_layout_scroll_content_layout.addWidget(self.logolabel_btn)
-        spacerItem = QtWidgets.QSpacerItem(80, 20, QtWidgets.QSizePolicy.Policy.Expanding,
-                                           QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(80, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.top_layout_scroll_content_layout.addItem(spacerItem)
         self.time_label = QtWidgets.QLabel(parent=self.horizontalLayoutWidget_2)
         font = QtGui.QFont()
@@ -102,8 +99,7 @@ class Ui_mainWindow(object):
         self.time_label.setStyleSheet("")
         self.time_label.setObjectName("time_label")
         self.top_layout_scroll_content_layout.addWidget(self.time_label)
-        spacerItem1 = QtWidgets.QSpacerItem(450, 20, QtWidgets.QSizePolicy.Policy.Expanding,
-                                            QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(450, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.top_layout_scroll_content_layout.addItem(spacerItem1)
         self.mode_btn = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Maximum)
@@ -116,8 +112,7 @@ class Ui_mainWindow(object):
         self.mode_btn.setFont(font)
         self.mode_btn.setStyleSheet("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/dark_mode.svg"),
-                        QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/dark/mode.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.mode_btn.setIcon(icon1)
         self.mode_btn.setIconSize(QtCore.QSize(24, 24))
         self.mode_btn.setAutoDefault(False)
@@ -136,8 +131,7 @@ class Ui_mainWindow(object):
         self.help_btn.setFont(font)
         self.help_btn.setStyleSheet("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/help.svg"), QtGui.QIcon.Mode.Normal,
-                        QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/dark/help.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.help_btn.setIcon(icon2)
         self.help_btn.setIconSize(QtCore.QSize(24, 24))
         self.help_btn.setAutoDefault(False)

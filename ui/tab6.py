@@ -13,21 +13,7 @@ class Ui_tab6_frame(object):
     def setupUi(self, tab6_frame):
         tab6_frame.setObjectName("tab6_frame")
         tab6_frame.resize(911, 591)
-        tab6_frame.setStyleSheet("*{\n"
-"border:none;\n"
-"}\n"
-"QWidget{\n"
-"\n"
-"    background:rgb(40, 48,65);\n"
-"color:white;\n"
-"}\n"
-"QGraphicsView{\n"
-"border:1px solid white;\n"
-"}\n"
-"QGroupBox{\n"
-"border:1px solid white\n"
-"}\n"
-"")
+        tab6_frame.setStyleSheet("")
         self.groupBox = QtWidgets.QGroupBox(parent=tab6_frame)
         self.groupBox.setGeometry(QtCore.QRect(9, 19, 891, 561))
         self.groupBox.setObjectName("groupBox")

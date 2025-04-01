@@ -1,7 +1,9 @@
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QPushButton, QWidget
+from loguru import logger
 
 from config.global_setting import global_setting
-from config.logo_config import logger_diy
+
 from theme.ThemeManager import ThemeManager
 
 
@@ -10,7 +12,7 @@ class ThemedWidget(QWidget):
 
     def __init__(self):
         super().__init__()
-  
+
         global_setting.get_setting("theme_manager").theme_changed.connect(self._update_theme)
         self._init_style_sheet()
 
@@ -24,7 +26,12 @@ class ThemedWidget(QWidget):
         self.setStyleSheet(global_setting.get_setting("theme_manager").get_style_sheet())
 
 
-class ThemedButton(QPushButton, ThemedWidget):
-    def __init__(self):
+class ThemeIconButton(QPushButton):
+    def __init__(self, icon_name):
         super().__init__()
-        self._update_theme()
+        self.icon_name = icon_name
+        self.update_icon()
+
+    def update_icon(self):
+        path = f":/{global_setting.get_setting('style')}/{self.icon_name}.svg"
+        self.setIcon(QIcon(path))

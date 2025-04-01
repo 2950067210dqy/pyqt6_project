@@ -14,21 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-border:none;
-}
-QWidget{
-
-	background:rgb(40, 48,65);
-color:white;
-}
-QGraphicsView{
-border:1px solid white;
-}
-QGroupBox{
-border:1px solid white
-}
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
@@ -111,7 +97,7 @@ border:1px solid white
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="btn3_2">
+     <widget class="QPushButton" name="save_tab4_btn">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
         <horstretch>20</horstretch>
@@ -120,21 +106,14 @@ border:1px solid white
       </property>
       <property name="font">
        <font>
-        <pointsize>-1</pointsize>
         <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton{
-	color:rgb(245, 245, 245);
-	padding:15px;
-	background:rgb(40, 48,65);
-border：none;
-font-size:13px;
-}</string>
+       <string notr="true"/>
       </property>
       <property name="text">
-       <string>保存文件</string>
+       <string/>
       </property>
       <property name="icon">
        <iconset resource="../resource/mainPage.qrc">
