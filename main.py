@@ -33,11 +33,11 @@ if __name__ == '__main__':
     logger.add(
         "prod_{time:YYYY-MM-DD}.log",
         rotation="00:00",
-        retention="7 days",
+        retention="30 days",
         enqueue=True,
-        format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+        format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {name} : {module}:{line} | {message}"
     )
-    logger.info("start")
+    logger.info(f"{'-' * 30}start{'-' * 30}")
     # 加载全局配置
     logger.info("loading config start")
     load_global_setting()

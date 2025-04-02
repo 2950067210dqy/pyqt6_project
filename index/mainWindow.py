@@ -162,6 +162,7 @@ class MainWindow(ThemedWidget):
         self.update_time_main_signal_gui_update.connect(self.update_time_function_start_gui_update)
         # 启动子线程
         self.time_thread = Time_thread(update_time_main_signal=self.update_time_main_signal_gui_update)
+        logger.info("time update thread start")
         self.time_thread.start()
 
         pass
@@ -192,6 +193,7 @@ class MainWindow(ThemedWidget):
         # 获取按钮
         style_btn: QPushButton = self.frame.findChild(QPushButton, "mode_btn")
         # 根据当前主题变换主题
+
         new_theme = "dark" if global_setting.get_setting("theme_manager").current_theme == "light" else "light"
         # 将新主题关键字赋值回去
         global_setting.set_setting('style', new_theme)
@@ -220,7 +222,7 @@ class MainWindow(ThemedWidget):
                 path = f":/{global_setting.get_setting('style')}/{other_btn_object_name_prefix}.svg"
                 # 找不到图标文件就写进日志
                 if not QFile.exists(path):
-                    logger.warning(f"{btn.objectName()}按钮的图标资源文件未找到！")
+                    logger.warning(f"{btn.objectName()} button's icon resource file was not found！")
                 # 否则就更新图标
                 else:
                     icon = QtGui.QIcon()
@@ -236,6 +238,18 @@ class MainWindow(ThemedWidget):
         default_menu_btn.setStyleSheet(
             global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
         # 给每个QPushButton对象 添加相关样式 end
+
+        # 给图表进行主题更新 每个tab里的图表都更新
+        for menu in self.left_menu_btns:
+            tab = menu['tab']
+            # 找到每个chart对象
+            if 'charts_list' not in tab.tab.__dict__:
+                logger.warning(f"menu{menu['id']}'s tab page not exists charts_list ！")
+                continue
+            charts = tab.tab.charts_list
+
+            for chart in charts:
+                chart.set_style()
         # 按钮设置显示文字
         style_btn.setText(_translate(self.frame.objectName(), "白天模式" if global_setting.get_setting(
             "theme_manager").current_theme == "light" else "暗夜模式"))

@@ -1,6 +1,6 @@
 from PyQt6 import QtCore
 from PyQt6.QtCore import QRect
-from PyQt6.QtWidgets import QWidget
+from PyQt6.QtWidgets import QWidget, QVBoxLayout
 from loguru import logger
 
 from theme.ThemeQt6 import ThemedWidget
@@ -12,6 +12,8 @@ from ui.tab1 import Ui_tab1_frame
 class Tab_1(ThemedWidget):
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
+        # 图像列表
+        self.charts_list = []
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 实例化自定义ui
@@ -39,9 +41,22 @@ class Tab_1(ThemedWidget):
         pass
 
     # 实例化自定义ui
+    @logger.catch
     def _init_customize_ui(self):
-        # 图表1
-        self.charts_1 = charts(parent=self.frame)
+        # 图表 左下布局
+        frame_left_bottom = self.frame.findChild(QVBoxLayout, "frame2_contentlayout")
+        charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1")
+        # charts_left_bottom_2 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_2")
+        # charts_left_bottom_3 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_3")
+        # 图表 右边布局
+        frame_right = self.frame.findChild(QVBoxLayout, "frame3_contentlayout")
+        charts_right_1 = charts(parent=frame_right, object_name="charts_tab1_right_1")
+        charts_right_2 = charts(parent=frame_right, object_name="charts_tab1_right_2")
+        charts_right_3 = charts(parent=frame_right, object_name="charts_tab1_right_3")
+        self.charts_list.append(charts_left_bottom_1)
+        self.charts_list.append(charts_right_1)
+        self.charts_list.append(charts_right_2)
+        self.charts_list.append(charts_right_3)
         pass
 
     # 实例化功能

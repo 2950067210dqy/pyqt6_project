@@ -131,11 +131,7 @@
           <height>491</height>
          </rect>
         </property>
-        <layout class="QVBoxLayout" name="frame3_contentlayout">
-         <item>
-          <widget class="QGraphicsView" name="frame3_contentlayout_charts"/>
-         </item>
-        </layout>
+        <layout class="QVBoxLayout" name="frame3_contentlayout"/>
        </widget>
        <widget class="QWidget" name="horizontalLayoutWidget_4">
         <property name="geometry">

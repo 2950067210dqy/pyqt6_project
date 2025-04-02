@@ -12,6 +12,8 @@ from theme.ThemeQt6 import ThemedWidget
 class Tab_2(ThemedWidget):
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
+        # 图像列表
+        self.charts_list = []
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 实例化自定义ui

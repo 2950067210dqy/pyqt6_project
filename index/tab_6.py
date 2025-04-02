@@ -12,6 +12,7 @@ from ui.tab6 import Ui_tab6_frame
 class Tab_6(ThemedWidget):
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
+  
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 实例化自定义ui
