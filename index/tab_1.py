@@ -45,14 +45,18 @@ class Tab_1(ThemedWidget):
     def _init_customize_ui(self):
         # 图表 左下布局
         frame_left_bottom = self.frame.findChild(QVBoxLayout, "frame2_contentlayout")
-        charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1")
+        charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1",
+                                      charts_type=charts.Line, data_origin_nums=2, is_span=True)
         # charts_left_bottom_2 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_2")
         # charts_left_bottom_3 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_3")
         # 图表 右边布局
         frame_right = self.frame.findChild(QVBoxLayout, "frame3_contentlayout")
-        charts_right_1 = charts(parent=frame_right, object_name="charts_tab1_right_1")
-        charts_right_2 = charts(parent=frame_right, object_name="charts_tab1_right_2")
-        charts_right_3 = charts(parent=frame_right, object_name="charts_tab1_right_3")
+        charts_right_1 = charts(parent=frame_right, object_name="charts_tab1_right_1", charts_type=charts.Line,
+                                data_origin_nums=1)
+        charts_right_2 = charts(parent=frame_right, object_name="charts_tab1_right_2", charts_type=charts.Line,
+                                data_origin_nums=1)
+        charts_right_3 = charts(parent=frame_right, object_name="charts_tab1_right_3", charts_type=charts.Line,
+                                data_origin_nums=2)
         self.charts_list.append(charts_left_bottom_1)
         self.charts_list.append(charts_right_1)
         self.charts_list.append(charts_right_2)
