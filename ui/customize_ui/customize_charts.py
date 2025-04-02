@@ -43,6 +43,11 @@ class charts(ThemedWidget):
         self.x_axis: QValueAxis = None
         # y轴
         self.y_axis: QValueAxis = None
+        # 数据
+        self.data = None
+        # 数据的最大值 和最小值
+        self.min_and_max_x = []
+        self.min_and_max_y = []
         self._init_ui()
 
     def _init_ui(self):
@@ -68,6 +73,8 @@ class charts(ThemedWidget):
 
         # 获取数据
         self.get_data()
+        # 将数据放入series中
+        self.set_data_to_series()
         # 设置坐标轴
         self._set_x_axis()
         self._set_y_axis()
@@ -104,27 +111,62 @@ class charts(ThemedWidget):
     def _set_x_axis(self):
         # 将坐标轴关联到图表
         self.x_axis = QValueAxis()
-
+        # 设置坐标轴范围
+        self.x_axis.setRange(self.min_and_max_x[0], self.min_and_max_x[1])
+        self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
         for single_series in self.series:
             single_series.attachAxis(self.x_axis)
-        self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
+
         pass
 
     # 设置y轴
     def _set_y_axis(self):
         # 将坐标轴关联到图表
         self.y_axis = QValueAxis()
-
+        # 设置坐标轴范围
+        self.y_axis.setRange(self.min_and_max_y[0], self.min_and_max_y[1])
+        self.chart.addAxis(self.y_axis, Qt.AlignmentFlag.AlignLeft)
         for single_series in self.series:
             single_series.attachAxis(self.y_axis)
-        self.chart.addAxis(self.y_axis, Qt.AlignmentFlag.AlignLeft)
+
         pass
 
     # 获取数据
     def get_data(self):
+        self.data = [[QPointF(1, 1 + 1 * 200), QPointF(2, 2 - 1 * 200), QPointF(3, 3 + 1 * 200)],
+                     [QPointF(1, 1 + 2 * 200), QPointF(2, 2 - 2 * 200), QPointF(3, 3 + 2 * 200)]]
+        self.get_max_and_min_data()
+
+    # 获取数据的最大x最小x最大y最小y
+    def get_max_and_min_data(self):
+        rows = len(self.data)
+        # 如果没有数据 直接传0为最大最小值
+        if rows == 0:
+            self.min_and_max_x = [0, 0]
+            self.min_and_max_y = [0, 0]
+            return
+        columns = len(self.data[0])
+
+        # 将数据的第一个值设为初始值
+        max_x = self.data[0][0].x()
+        max_y = self.data[0][0].y()
+        min_x = self.data[0][0].x()
+        min_y = self.data[0][0].y()
+        for row in range(rows):
+            for column in range(columns):
+                max_x = max(max_x, self.data[row][column].x())
+                max_y = max(max_y, self.data[row][column].y())
+                min_x = min(min_x, self.data[row][column].x())
+                min_y = min(min_y, self.data[row][column].y())
+        self.min_and_max_x = [min_x, max_x]
+        self.min_and_max_y = [min_y, max_y]
+        logger.info(f"{self.object_name}‘s data’s min&max x=[{min_x},{max_x}] y=[{min_y},{max_y}]")
+
+    # 将数据放入series中
+    def set_data_to_series(self):
         for i in range(self.data_origin_nums):
             self.series[i].append(
-                [QPointF(1, 1 + i * 200), QPointF(2, 2 - i * 200), QPointF(3, 3 + i * 200)])
+                self.data[i])
             # 添加该序列
             self.chart.addSeries(self.series[i])
         pass
@@ -142,7 +184,8 @@ class charts(ThemedWidget):
                          labels_color: QColor = QColor("#34495E"), grid_line_color: QColor = QColor("#BDC3C7")):
         _translate = QtCore.QCoreApplication.translate
 
-        self.x_axis.setTitleText(_translate(root_object_name, x_axis_title))
+        # self.x_axis.setTitleText(_translate(root_object_name, x_axis_title))
+        self.x_axis.setTitleText(x_axis_title)
         self.x_axis.setTitleFont(title_font_style)
         self.x_axis.setLabelsColor(labels_color)  # 标签颜色
         self.x_axis.setGridLineColor(grid_line_color)  # 网格线颜色
@@ -151,33 +194,32 @@ class charts(ThemedWidget):
     # 设置y坐标轴样式
     def set_y_axis_style(self, root_object_name: str = "", y_axis_title: str = "y",
                          title_font_style: QFont = QFont("微软雅黑", 6),
-                         labels_color: QColor = QColor("#34495E")):
+                         labels_color: QColor = QColor("#34495E"), grid_line_color: QColor = QColor("#BDC3C7")):
         _translate = QtCore.QCoreApplication.translate
-        self.y_axis.setTitleText(_translate(root_object_name, y_axis_title))
+        # self.y_axis.setTitleText(_translate(root_object_name, y_axis_title))
+        self.y_axis.setTitleText(y_axis_title)
         self.y_axis.setTitleFont(title_font_style)
         self.y_axis.setLabelsColor(labels_color)  # 标签颜色
+        self.y_axis.setGridLineColor(grid_line_color)  # 网格线颜色
         pass
 
     # 设置图例样式
-    def set_legend_style(self, align=Qt.AlignmentFlag.AlignBottom):
+    def set_legend_style(self, align=Qt.AlignmentFlag.AlignBottom, font_colors: [QColor] = [QColor("#121212")]):
         legend = self.chart.legend()
 
         self.chart.legend().setVisible(True)
         self.chart.legend().setAlignment(align)
-        i = 1
-        for marker in self.chart.legend().markers():
-            if i == 1:
-                marker.setLabelBrush(QBrush(QColor(200, 0, 0)))  # 暗红文字
-            else:
-                marker.setLabelBrush(QBrush(QColor(200, 200, 0)))  # 暗红文字
-            i += 1
+        # 给每个图例设置文字颜色
+        markers = self.chart.legend().markers()
+        for i in range(len(markers)):
+            markers[i].setLabelBrush(QBrush(font_colors[i]))
 
     # 设置series样式
-    def set_series_style(self, font_color: [QColor] = [QColor("#121212")]):
+    def set_series_style(self, font_colors: [QColor] = [QColor("#121212")]):
         for i in range(self.data_origin_nums):
-            self.series[i].setColor(font_color[i])
-            self.series[i].setPen(QPen(font_color[i], i + 2))
-            self.series[i].setBrush(QBrush(font_color[i]))
+            self.series[i].setColor(font_colors[i])
+            self.series[i].setPen(QPen(font_colors[i], i + 2))
+            self.series[i].setBrush(QBrush(font_colors[i]))
         # for single_series in self.series:
         #     single_series.setColor(QColor(theme['--text_hover']))
 
@@ -195,9 +237,13 @@ class charts(ThemedWidget):
         self.theme = global_setting.get_setting("theme_manager").get_themes_color(mode=1)
         theme = self.theme
         self.set_chart_style(backgroud_color=QBrush(QColor(theme['--secondary'])),
-                             plotarea_color=QBrush(QColor(theme['--secondary'])))
-        self.set_series_style(font_color=[QColor(theme['--text']), QColor(theme['--text_hover'])])
-        self.set_x_axis_style(labels_color=QColor(theme['--text']), grid_line_color=QColor(theme['--text']))
-        self.set_y_axis_style(labels_color=QColor(theme['--text']))
-        self.set_legend_style()
+                             plotarea_color=QBrush(QColor(theme['--secondary'])),
+                             title_font_color=QColor(theme['--text']),
+                             title_font_style=QFont("Arial", 8, QFont.Weight.Bold))
+        self.set_series_style(font_colors=[QColor(theme['--text']), QColor(theme['--text_hover'])])
+        self.set_x_axis_style(root_object_name=self.parent_layout.objectName(), labels_color=QColor(theme['--text']),
+                              grid_line_color=QColor(theme['--text_hover']))
+        self.set_y_axis_style(root_object_name=self.parent_layout.objectName(), labels_color=QColor(theme['--text']),
+                              grid_line_color=QColor(theme['--text_hover']))
+        self.set_legend_style(font_colors=[QColor(theme['--text']), QColor(theme['--text_hover'])])
         pass

@@ -3368,3 +3368,476 @@ AttributeError: 'QXYLegendMarker' object has no attribute 'setLabelColor'
 2025-04-02 17:19:35 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
 2025-04-02 17:19:36 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
 2025-04-02 17:19:36 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:08:40 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:08:40 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:08:40 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:08:40 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:08:40 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:08:41 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:08:41 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:12:13 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:12:13 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:12:13 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:12:13 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:12:13 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:12:14 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:12:14 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:13:39 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:13:39 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:13:39 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:13:39 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:13:39 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:13:40 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:13:40 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:14:42 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:14:42 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:14:42 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:14:42 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:14:42 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:14:43 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:14:43 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:17:03 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:17:03 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:17:03 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:17:03 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:17:03 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:17:04 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:17:04 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:17:39 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:17:39 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:17:39 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:17:39 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:17:39 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:17:41 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:17:41 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:18:57 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:18:57 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:18:57 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:18:57 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:18:57 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:18:58 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:18:58 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:21:37 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:21:37 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:21:37 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:21:37 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:21:37 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:21:38 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:21:38 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:22:05 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:22:05 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:22:05 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:22:05 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:22:05 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:22:06 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:22:06 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:22:32 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:22:32 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:22:32 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:22:32 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:22:32 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:22:33 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:22:33 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:23:26 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:23:26 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:23:27 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:23:27 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:23:28 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:23:28 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:23:45 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:23:45 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:23:46 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:23:46 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:05 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:25:05 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:25:05 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:25:05 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:25:05 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:25:06 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:25:06 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:25:15 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:15 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:18 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:18 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:19 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:19 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:22 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:22 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:22 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:22 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:23 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:23 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:24 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:24 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:24 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:24 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:25:25 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 19:25:25 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 19:38:30 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:38:30 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:38:30 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:38:30 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:38:30 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:38:31 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:38:31 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:49:03 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:49:03 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:49:03 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:49:03 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:49:03 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:49:03 | ERROR | index.tab_1 : tab_1:20 | An error has been caught in function '__init__', process 'MainProcess' (82604), thread 'MainThread' (86852):
+Traceback (most recent call last):
+
+  File "D:\WorkSpace\pythonProjectAnimal\main.py", line 49, in <module>
+    allWindows = AllWindows()
+                 └ <class 'index.all_windows.AllWindows'>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\all_windows.py", line 25, in __init__
+    self._init_ui()
+    │    └ <function AllWindows._init_ui at 0x0000018C0275CE00>
+    └ <index.all_windows.AllWindows object at 0x0000018C03592F10>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\all_windows.py", line 32, in _init_ui
+    self.mainWindow = MainWindow(title=global_setting.get_setting("configer")['window']['title'])
+    │                 │                │              └ <classmethod(<function global_setting.get_setting at 0x0000018C02635EE0>)>
+    │                 │                └ <class 'config.global_setting.global_setting'>
+    │                 └ <class 'index.mainWindow.MainWindow'>
+    └ <index.all_windows.AllWindows object at 0x0000018C03592F10>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 69, in __init__
+    self._init_customize_ui()
+    │    └ <function MainWindow._init_customize_ui at 0x0000018C0292E3E0>
+    └ <index.mainWindow.MainWindow object at 0x0000018C0350B6D0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 89, in _init_customize_ui
+    self._init_left_menu()
+    │    └ <function MainWindow._init_left_menu at 0x0000018C0292E520>
+    └ <index.mainWindow.MainWindow object at 0x0000018C0350B6D0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 118, in _init_left_menu
+    btn_obj['tab'] = Tab(id=i['id'])
+    │                │      └ {'id': 1, 'title': '动物概况', 'icon_path': 'generate.svg', 'default': True}
+    │                └ <class 'index.tab.Tab'>
+    └ {'btn': <ui.customize_ui.left_menu_btn.Ui_left_menu_btn object at 0x0000018C03B984C0>, 'id': 1}
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab.py", line 28, in __init__
+    self._init_ui(parent, geometry, title, id)
+    │    │        │       │         │      └ 1
+    │    │        │       │         └ ''
+    │    │        │       └ None
+    │    │        └ None
+    │    └ <function Tab._init_ui at 0x0000018C02814900>
+    └ <index.tab.Tab object at 0x0000018C03B99EA0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab.py", line 34, in _init_ui
+    self.tab = Tab.classes[id - 1]()
+    │          │   │       └ 1
+    │          │   └ [<class 'index.tab_1.Tab_1'>, <class 'index.tab_2.Tab_2'>, <class 'index.tab_3.Tab_3'>, <class 'index.tab_4.Tab_4'>, <class '...
+    │          └ <class 'index.tab.Tab'>
+    └ <index.tab.Tab object at 0x0000018C03B99EA0>
+
+> File "D:\WorkSpace\pythonProjectAnimal\index\tab_1.py", line 20, in __init__
+    self._init_customize_ui()
+    │    └ <function Tab_1._init_customize_ui at 0x0000018C027A6200>
+    └ <index.tab_1.Tab_1 object at 0x0000018C03B99F30>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab_1.py", line 48, in _init_customize_ui
+    charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1",
+                           │             └ <PyQt6.QtWidgets.QVBoxLayout object at 0x0000018C03B9A560>
+                           └ <class 'ui.customize_ui.customize_charts.charts'>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 51, in __init__
+    self._init_ui()
+    │    └ <function charts._init_ui at 0x0000018C0275E520>
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000018C03B9BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 62, in _init_ui
+    self._init_chart()
+    │    └ <function charts._init_chart at 0x0000018C0275E5C0>
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000018C03B9BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 77, in _init_chart
+    self.set_data_to_series()
+    │    └ <function charts.set_data_to_series at 0x0000018C0275E8E0>
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000018C03B9BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 138, in set_data_to_series
+    self.series[i].append(
+    │    │      └ 0
+    │    └ [<PyQt6.QtCharts.QSplineSeries object at 0x0000018C03BCC310>, <PyQt6.QtCharts.QSplineSeries object at 0x0000018C03BCC3A0>]
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000018C03B9BF40>
+
+TypeError: index 0 has type 'tuple' but 'QPointF' is expected
+2025-04-02 19:49:03 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:49:03 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:52:19 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:52:19 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:52:19 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:52:19 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:52:19 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:52:20 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:52:20 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:54:59 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:54:59 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:54:59 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:54:59 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:54:59 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:55:00 | ERROR | index.tab_1 : tab_1:20 | An error has been caught in function '__init__', process 'MainProcess' (90856), thread 'MainThread' (90584):
+Traceback (most recent call last):
+
+  File "D:\WorkSpace\pythonProjectAnimal\main.py", line 49, in <module>
+    allWindows = AllWindows()
+                 └ <class 'index.all_windows.AllWindows'>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\all_windows.py", line 25, in __init__
+    self._init_ui()
+    │    └ <function AllWindows._init_ui at 0x000001CADDE5CE00>
+    └ <index.all_windows.AllWindows object at 0x000001CADDF6AA90>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\all_windows.py", line 32, in _init_ui
+    self.mainWindow = MainWindow(title=global_setting.get_setting("configer")['window']['title'])
+    │                 │                │              └ <classmethod(<function global_setting.get_setting at 0x000001CADDD15EE0>)>
+    │                 │                └ <class 'config.global_setting.global_setting'>
+    │                 └ <class 'index.mainWindow.MainWindow'>
+    └ <index.all_windows.AllWindows object at 0x000001CADDF6AA90>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 69, in __init__
+    self._init_customize_ui()
+    │    └ <function MainWindow._init_customize_ui at 0x000001CADE08E480>
+    └ <index.mainWindow.MainWindow object at 0x000001CADEC7F6D0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 89, in _init_customize_ui
+    self._init_left_menu()
+    │    └ <function MainWindow._init_left_menu at 0x000001CADE08E5C0>
+    └ <index.mainWindow.MainWindow object at 0x000001CADEC7F6D0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 118, in _init_left_menu
+    btn_obj['tab'] = Tab(id=i['id'])
+    │                │      └ {'id': 1, 'title': '动物概况', 'icon_path': 'generate.svg', 'default': True}
+    │                └ <class 'index.tab.Tab'>
+    └ {'btn': <ui.customize_ui.left_menu_btn.Ui_left_menu_btn object at 0x000001CADF3084C0>, 'id': 1}
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab.py", line 28, in __init__
+    self._init_ui(parent, geometry, title, id)
+    │    │        │       │         │      └ 1
+    │    │        │       │         └ ''
+    │    │        │       └ None
+    │    │        └ None
+    │    └ <function Tab._init_ui at 0x000001CADDF749A0>
+    └ <index.tab.Tab object at 0x000001CADF309EA0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab.py", line 34, in _init_ui
+    self.tab = Tab.classes[id - 1]()
+    │          │   │       └ 1
+    │          │   └ [<class 'index.tab_1.Tab_1'>, <class 'index.tab_2.Tab_2'>, <class 'index.tab_3.Tab_3'>, <class 'index.tab_4.Tab_4'>, <class '...
+    │          └ <class 'index.tab.Tab'>
+    └ <index.tab.Tab object at 0x000001CADF309EA0>
+
+> File "D:\WorkSpace\pythonProjectAnimal\index\tab_1.py", line 20, in __init__
+    self._init_customize_ui()
+    │    └ <function Tab_1._init_customize_ui at 0x000001CADDEA62A0>
+    └ <index.tab_1.Tab_1 object at 0x000001CADF309F30>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab_1.py", line 48, in _init_customize_ui
+    charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1",
+                           │             └ <PyQt6.QtWidgets.QVBoxLayout object at 0x000001CADF30A560>
+                           └ <class 'ui.customize_ui.customize_charts.charts'>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 51, in __init__
+    self._init_ui()
+    │    └ <function charts._init_ui at 0x000001CADDE5E520>
+    └ <ui.customize_ui.customize_charts.charts object at 0x000001CADF30BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 62, in _init_ui
+    self._init_chart()
+    │    └ <function charts._init_chart at 0x000001CADDE5E5C0>
+    └ <ui.customize_ui.customize_charts.charts object at 0x000001CADF30BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 77, in _init_chart
+    self.set_data_to_series()
+    │    └ <function charts.set_data_to_series at 0x000001CADDE5E980>
+    └ <ui.customize_ui.customize_charts.charts object at 0x000001CADF30BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 147, in set_data_to_series
+    self.data[i])
+    │    │    └ 1
+    │    └ [[PyQt6.QtCore.QPointF(1.0, 201.0), PyQt6.QtCore.QPointF(2.0, -198.0), PyQt6.QtCore.QPointF(3.0, 203.0)]]
+    └ <ui.customize_ui.customize_charts.charts object at 0x000001CADF30BF40>
+
+IndexError: list index out of range
+2025-04-02 19:55:00 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:55:00 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:55:49 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:55:49 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:55:49 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:55:49 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:55:49 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:55:50 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:55:50 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 19:56:13 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 19:56:13 | INFO | __main__ : main:42 | loading config start
+2025-04-02 19:56:13 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 19:56:13 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 19:56:13 | INFO | __main__ : main:46 | start Qt
+2025-04-02 19:56:13 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 19:56:14 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 20:07:17 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 20:07:17 | INFO | __main__ : main:42 | loading config start
+2025-04-02 20:07:17 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 20:07:17 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 20:07:17 | INFO | __main__ : main:46 | start Qt
+2025-04-02 20:07:17 | ERROR | index.tab_1 : tab_1:20 | An error has been caught in function '__init__', process 'MainProcess' (90248), thread 'MainThread' (87692):
+Traceback (most recent call last):
+
+  File "D:\WorkSpace\pythonProjectAnimal\main.py", line 49, in <module>
+    allWindows = AllWindows()
+                 └ <class 'index.all_windows.AllWindows'>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\all_windows.py", line 25, in __init__
+    self._init_ui()
+    │    └ <function AllWindows._init_ui at 0x0000013CB256CE00>
+    └ <index.all_windows.AllWindows object at 0x0000013CB34FED90>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\all_windows.py", line 32, in _init_ui
+    self.mainWindow = MainWindow(title=global_setting.get_setting("configer")['window']['title'])
+    │                 │                │              └ <classmethod(<function global_setting.get_setting at 0x0000013CB2425EE0>)>
+    │                 │                └ <class 'config.global_setting.global_setting'>
+    │                 └ <class 'index.mainWindow.MainWindow'>
+    └ <index.all_windows.AllWindows object at 0x0000013CB34FED90>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 69, in __init__
+    self._init_customize_ui()
+    │    └ <function MainWindow._init_customize_ui at 0x0000013CB286E520>
+    └ <index.mainWindow.MainWindow object at 0x0000013CB347B6D0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 89, in _init_customize_ui
+    self._init_left_menu()
+    │    └ <function MainWindow._init_left_menu at 0x0000013CB286E660>
+    └ <index.mainWindow.MainWindow object at 0x0000013CB347B6D0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\mainWindow.py", line 118, in _init_left_menu
+    btn_obj['tab'] = Tab(id=i['id'])
+    │                │      └ {'id': 1, 'title': '动物概况', 'icon_path': 'generate.svg', 'default': True}
+    │                └ <class 'index.tab.Tab'>
+    └ {'btn': <ui.customize_ui.left_menu_btn.Ui_left_menu_btn object at 0x0000013CB3A284C0>, 'id': 1}
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab.py", line 28, in __init__
+    self._init_ui(parent, geometry, title, id)
+    │    │        │       │         │      └ 1
+    │    │        │       │         └ ''
+    │    │        │       └ None
+    │    │        └ None
+    │    └ <function Tab._init_ui at 0x0000013CB2674A40>
+    └ <index.tab.Tab object at 0x0000013CB3A29EA0>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab.py", line 34, in _init_ui
+    self.tab = Tab.classes[id - 1]()
+    │          │   │       └ 1
+    │          │   └ [<class 'index.tab_1.Tab_1'>, <class 'index.tab_2.Tab_2'>, <class 'index.tab_3.Tab_3'>, <class 'index.tab_4.Tab_4'>, <class '...
+    │          └ <class 'index.tab.Tab'>
+    └ <index.tab.Tab object at 0x0000013CB3A29EA0>
+
+> File "D:\WorkSpace\pythonProjectAnimal\index\tab_1.py", line 20, in __init__
+    self._init_customize_ui()
+    │    └ <function Tab_1._init_customize_ui at 0x0000013CB25B6340>
+    └ <index.tab_1.Tab_1 object at 0x0000013CB3A29F30>
+
+  File "D:\WorkSpace\pythonProjectAnimal\index\tab_1.py", line 48, in _init_customize_ui
+    charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1",
+                           │             └ <PyQt6.QtWidgets.QVBoxLayout object at 0x0000013CB3A2A560>
+                           └ <class 'ui.customize_ui.customize_charts.charts'>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 51, in __init__
+    self._init_ui()
+    │    └ <function charts._init_ui at 0x0000013CB256E5C0>
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000013CB3A2BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 62, in _init_ui
+    self._init_chart()
+    │    └ <function charts._init_chart at 0x0000013CB256E660>
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000013CB3A2BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 75, in _init_chart
+    self.get_data()
+    │    └ <function charts.get_data at 0x0000013CB256E8E0>
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000013CB3A2BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 138, in get_data
+    self.get_max_and_min_data()
+    │    └ <function charts.get_max_and_min_data at 0x0000013CB256E980>
+    └ <ui.customize_ui.customize_charts.charts object at 0x0000013CB3A2BF40>
+
+  File "D:\WorkSpace\pythonProjectAnimal\ui\customize_ui\customize_charts.py", line 144, in get_max_and_min_data
+    max_x, max_y, min_x, min_y = 0
+
+TypeError: cannot unpack non-iterable int object
+2025-04-02 20:07:17 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 20:07:17 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 20:08:13 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 20:08:13 | INFO | __main__ : main:42 | loading config start
+2025-04-02 20:08:13 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 20:08:13 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 20:08:13 | INFO | __main__ : main:46 | start Qt
+2025-04-02 20:08:13 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_left_bottom_1‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:08:14 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_right_1‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:08:14 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_right_2‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:08:14 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_right_3‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:08:14 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 20:08:14 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 20:09:15 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 20:09:15 | INFO | __main__ : main:42 | loading config start
+2025-04-02 20:09:15 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 20:09:15 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 20:09:15 | INFO | __main__ : main:46 | start Qt
+2025-04-02 20:09:15 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_left_bottom_1‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:09:16 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_right_1‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:09:16 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_right_2‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:09:16 | INFO | ui.customize_ui.customize_charts : customize_charts:156 | charts_tab1_right_3‘s data’s min&max x=[0,3.0] y=[-398.0,403.0]
+2025-04-02 20:09:16 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 20:09:16 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 20:10:56 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 20:10:56 | INFO | __main__ : main:42 | loading config start
+2025-04-02 20:10:56 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 20:10:56 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 20:10:56 | INFO | __main__ : main:46 | start Qt
+2025-04-02 20:10:56 | INFO | ui.customize_ui.customize_charts : customize_charts:157 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:10:57 | INFO | ui.customize_ui.customize_charts : customize_charts:157 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:10:57 | INFO | ui.customize_ui.customize_charts : customize_charts:157 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:10:57 | INFO | ui.customize_ui.customize_charts : customize_charts:157 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:10:57 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 20:10:57 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 20:13:06 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 20:13:06 | INFO | __main__ : main:42 | loading config start
+2025-04-02 20:13:06 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 20:13:06 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 20:13:06 | INFO | __main__ : main:46 | start Qt
+2025-04-02 20:13:06 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:13:07 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:13:07 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:13:07 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:13:07 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 20:13:07 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 20:16:25 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-02 20:16:25 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-02 20:17:39 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 20:17:39 | INFO | __main__ : main:42 | loading config start
+2025-04-02 20:17:39 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 20:17:39 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 20:17:39 | INFO | __main__ : main:46 | start Qt
+2025-04-02 20:17:39 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:17:40 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:17:40 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:17:40 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:17:40 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 20:17:40 | INFO | __main__ : main:51 | Appliacation start
+2025-04-02 20:18:07 | INFO | __main__ : main:40 | ------------------------------start------------------------------
+2025-04-02 20:18:07 | INFO | __main__ : main:42 | loading config start
+2025-04-02 20:18:07 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-02 20:18:07 | INFO | __main__ : main:44 | loading config finish
+2025-04-02 20:18:07 | INFO | __main__ : main:46 | start Qt
+2025-04-02 20:18:07 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:18:08 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:18:08 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:18:08 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-02 20:18:08 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-02 20:18:08 | INFO | __main__ : main:51 | Appliacation start
