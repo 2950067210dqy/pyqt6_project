@@ -9,7 +9,7 @@ from index.all_windows import AllWindows
 
 # Author: Qinyou Deng
 # Create Time:2025-03-01
-# Update Time:2025-03-19
+# Update Time:2025-04-07
 from theme.ThemeManager import ThemeManager
 
 
@@ -23,8 +23,27 @@ def load_global_setting():
     global_setting.set_setting("style", "dark")
     # 图标风格 white black
     global_setting.set_setting("icon_style", "white")
+    # 主题管理
     theme_manager = ThemeManager()
     global_setting.set_setting("theme_manager", theme_manager)
+    pass
+
+
+def start_qt_application():
+    """
+    qt程序开始
+    :return: 无
+    """
+    # 启动qt
+    logger.info("start Qt")
+    app = QApplication(sys.argv)
+    # 主窗口实例化
+    allWindows = AllWindows()
+    # 主窗口显示
+    logger.info("Appliacation start")
+    allWindows.show()
+    # 系统退出
+    sys.exit(app.exec())
     pass
 
 
@@ -42,13 +61,6 @@ if __name__ == '__main__':
     logger.info("loading config start")
     load_global_setting()
     logger.info("loading config finish")
-    # 启动qt
-    logger.info("start Qt")
-    app = QApplication(sys.argv)
-    # 主窗口实例化
-    allWindows = AllWindows()
-    # 主窗口显示
-    logger.info("Appliacation start")
-    allWindows.show()
-    # 系统退出
-    sys.exit(app.exec())
+    
+    # qt程序开始
+    start_qt_application()
