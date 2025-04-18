@@ -6,7 +6,7 @@ from loguru import logger
 from config.global_setting import global_setting
 from config.yamlParser import YamlParserObject
 from index.all_windows import AllWindows
-
+from communication.communication_root import communication_root
 # Author: Qinyou Deng
 # Create Time:2025-03-01
 # Update Time:2025-04-07
@@ -15,7 +15,7 @@ from theme.ThemeManager import ThemeManager
 
 def load_global_setting():
     # 加载配置存储到全局类中
-    configer = YamlParserObject.yaml_parser.load_single("./config/configer.yaml")
+    configer = YamlParserObject.yaml_parser.load_single("./gui_configer.yaml")
     global_setting.set_setting("configer", configer)
     # 当前左侧菜单项id 这里的值1是设个默认值无意义 会在实例化左菜单时根据真正的默认菜单覆盖这个值
     global_setting.set_setting("menu_id_now", 1)
@@ -47,6 +47,16 @@ def start_qt_application():
     pass
 
 
+def recieve_serial_port_data():
+    """
+    接收串口数据
+    :return:无
+    """
+    communication_root_obj = communication_root()
+    logger.info("start serial port communication!")
+    communication_root_obj.start()
+
+
 if __name__ == '__main__':
     # 加载日志配置
     logger.add(
@@ -61,6 +71,7 @@ if __name__ == '__main__':
     logger.info("loading config start")
     load_global_setting()
     logger.info("loading config finish")
-    
+    # 接收串口数据
+    recieve_serial_port_data()
     # qt程序开始
     start_qt_application()

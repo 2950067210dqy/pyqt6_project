@@ -1,0 +1,200 @@
+2025-04-18 15:25:20 | INFO | __main__ : main:68 | ------------------------------start------------------------------
+2025-04-18 15:25:20 | INFO | __main__ : main:70 | loading config start
+2025-04-18 15:25:20 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:25:20 | INFO | __main__ : main:72 | loading config finish
+2025-04-18 15:25:40 | INFO | __main__ : main:68 | ------------------------------start------------------------------
+2025-04-18 15:25:40 | INFO | __main__ : main:70 | loading config start
+2025-04-18 15:25:40 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:25:40 | INFO | __main__ : main:72 | loading config finish
+2025-04-18 15:26:37 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:26:37 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:26:37 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:26:37 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:27:07 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:27:07 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:27:07 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:27:07 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:27:46 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:27:46 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:27:46 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:27:46 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:32:07 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:32:07 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:32:07 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:32:07 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:32:14 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:32:14 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:32:14 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:32:14 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:32:35 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:32:35 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:32:35 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:32:35 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:33:42 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:33:42 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:33:42 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:33:42 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:34:55 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:34:55 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:34:55 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:34:55 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:35:05 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:35:05 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:35:05 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:35:05 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:35:58 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:35:58 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:35:58 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:35:58 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:35:58 | ERROR | communication.ini_pareser.ini_parser : ini_parser:56 | 'gbk' codec can't decode byte 0xaf in position 14: illegal multibyte sequence
+2025-04-18 15:36:13 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:36:13 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:36:13 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:36:13 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:36:13 | ERROR | communication.ini_pareser.ini_parser : ini_parser:56 | 'gbk' codec can't decode byte 0xaf in position 14: illegal multibyte sequence
+2025-04-18 15:37:42 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:37:42 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:37:42 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:37:42 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:39:08 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:39:08 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:39:08 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:39:08 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:42:17 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:42:17 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:42:17 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:42:17 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:42:35 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:42:35 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:42:35 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:42:35 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:43:20 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:43:20 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:43:20 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:43:20 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:48:55 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:48:55 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:48:55 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:48:55 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:48:55 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 15:49:07 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:49:07 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:49:07 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:49:07 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:49:07 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 15:51:54 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:51:54 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:51:54 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:51:54 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:51:54 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 15:51:54 | ERROR | communication.communication : communication:48 | 串口COM3连接--当前设备无可用的端口
+2025-04-18 15:51:54 | ERROR | communication.communication : communication:71 | 串口连接--当前设备所设置端口错误！
+2025-04-18 15:51:54 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-18 15:51:54 | INFO | communication.communication : communication:112 | 串口开始接收数据
+2025-04-18 15:51:54 | INFO | __main__ : main:38 | start Qt
+2025-04-18 15:51:54 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:51:57 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:51:57 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:51:57 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:51:57 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-18 15:51:57 | INFO | __main__ : main:43 | Appliacation start
+2025-04-18 15:53:03 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:53:03 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:53:03 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:53:03 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:53:03 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 15:55:10 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:55:10 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:55:10 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:55:10 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:55:10 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 15:55:10 | ERROR | communication.communication : communication:48 | 串口COM3连接--当前设备无可用的端口
+2025-04-18 15:55:10 | ERROR | communication.communication : communication:71 | 串口连接--当前设备所设置端口错误！
+2025-04-18 15:55:10 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-18 15:55:10 | INFO | __main__ : main:38 | start Qt
+2025-04-18 15:55:10 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:11 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:11 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:11 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:11 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-18 15:55:11 | INFO | __main__ : main:43 | Appliacation start
+2025-04-18 15:55:46 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:55:46 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:55:46 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:55:46 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:55:46 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 15:55:46 | ERROR | communication.communication : communication:48 | 串口COM3连接--当前设备无可用的端口
+2025-04-18 15:55:46 | ERROR | communication.communication : communication:71 | 串口连接--当前设备所设置端口错误！
+2025-04-18 15:55:46 | ERROR | communication.communication : communication:72 | 串口实例化失败
+2025-04-18 15:55:46 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-18 15:55:46 | INFO | __main__ : main:38 | start Qt
+2025-04-18 15:55:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:47 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:47 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:47 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:55:47 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-18 15:55:47 | INFO | __main__ : main:43 | Appliacation start
+2025-04-18 15:58:56 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 15:58:56 | INFO | __main__ : main:71 | loading config start
+2025-04-18 15:58:56 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 15:58:56 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 15:58:56 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 15:58:56 | ERROR | communication.communication : communication:48 | 串口COM3连接--当前设备无可用的端口
+2025-04-18 15:58:56 | ERROR | communication.communication : communication:71 | 串口连接--当前设备所设置端口错误！
+2025-04-18 15:58:56 | ERROR | communication.communication : communication:72 | 串口实例化失败
+2025-04-18 15:58:56 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-18 15:58:56 | INFO | __main__ : main:38 | start Qt
+2025-04-18 15:58:56 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:58:56 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:58:56 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:58:56 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 15:58:56 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-18 15:58:56 | INFO | __main__ : main:43 | Appliacation start
+2025-04-18 16:03:42 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 16:03:42 | INFO | __main__ : main:71 | loading config start
+2025-04-18 16:03:42 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 16:03:42 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 16:03:42 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 16:03:42 | ERROR | communication.communication : communication:48 | 串口COM3连接--当前设备无可用的端口
+2025-04-18 16:03:42 | ERROR | communication.communication : communication:71 | 串口连接--当前设备所设置端口错误！
+2025-04-18 16:03:42 | ERROR | communication.communication : communication:72 | 串口实例化失败
+2025-04-18 16:03:42 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-18 16:03:42 | INFO | __main__ : main:38 | start Qt
+2025-04-18 16:03:42 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:03:43 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:03:43 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:03:43 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:03:43 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-18 16:03:43 | INFO | __main__ : main:43 | Appliacation start
+2025-04-18 16:04:18 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 16:04:18 | INFO | __main__ : main:71 | loading config start
+2025-04-18 16:04:18 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 16:04:18 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 16:04:18 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 16:04:18 | ERROR | communication.communication : communication:48 | 串口COM3连接--当前设备无可用的端口
+2025-04-18 16:04:18 | ERROR | communication.communication : communication:71 | 串口连接--当前设备所设置端口错误！
+2025-04-18 16:04:18 | ERROR | communication.communication : communication:72 | 串口实例化失败
+2025-04-18 16:04:18 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-18 16:04:18 | INFO | __main__ : main:38 | start Qt
+2025-04-18 16:04:18 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:04:18 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:04:18 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:04:18 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:04:19 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-18 16:04:19 | INFO | __main__ : main:43 | Appliacation start
+2025-04-18 16:06:12 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-18 16:06:12 | INFO | __main__ : main:71 | loading config start
+2025-04-18 16:06:12 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-18 16:06:12 | INFO | __main__ : main:73 | loading config finish
+2025-04-18 16:06:12 | INFO | communication.communication : communication:29 | 串口配置文件读取成功。
+2025-04-18 16:06:12 | ERROR | communication.communication : communication:48 | 串口COM3连接--当前设备无可用的端口
+2025-04-18 16:06:12 | ERROR | communication.communication : communication:71 | 串口连接--当前设备所设置端口错误！
+2025-04-18 16:06:12 | ERROR | communication.communication : communication:72 | 串口实例化失败
+2025-04-18 16:06:12 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-18 16:06:12 | INFO | __main__ : main:38 | start Qt
+2025-04-18 16:06:12 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:06:12 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:06:12 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:06:12 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-18 16:06:13 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-18 16:06:13 | INFO | __main__ : main:43 | Appliacation start
