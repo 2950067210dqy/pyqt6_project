@@ -47,7 +47,7 @@ def start_qt_application():
     pass
 
 
-def recieve_serial_port_data():
+def receive_serial_port_data():
     """
     接收串口数据
     :return:无
@@ -72,6 +72,6 @@ if __name__ == '__main__':
     load_global_setting()
     logger.info("loading config finish")
     # 接收串口数据
-    recieve_serial_port_data()
+    receive_serial_port_data()
     # qt程序开始
     start_qt_application()
