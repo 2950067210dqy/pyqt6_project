@@ -1,0 +1,650 @@
+2025-04-19 08:20:44 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-19 08:20:44 | INFO | __main__ : main:71 | loading config start
+2025-04-19 08:20:45 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-19 08:20:45 | INFO | __main__ : main:73 | loading config finish
+2025-04-19 08:20:45 | INFO | communication.communication : communication:31 | 串口配置文件读取成功。
+2025-04-19 08:20:45 | ERROR | communication.communication : communication:51 | receive串口COM3连接--当前设备无可用的端口
+2025-04-19 08:20:45 | ERROR | communication.communication : communication:75 | receive串口COM3连接--当前设备所设置端口COM3错误！
+2025-04-19 08:20:45 | ERROR | communication.communication : communication:77 | receive串口COM3实例化失败！
+2025-04-19 08:20:45 | INFO | communication.communication : communication:31 | 串口配置文件读取成功。
+2025-04-19 08:20:45 | ERROR | communication.communication : communication:51 | send串口COM5连接--当前设备无可用的端口
+2025-04-19 08:20:45 | ERROR | communication.communication : communication:75 | send串口COM5连接--当前设备所设置端口COM5错误！
+2025-04-19 08:20:45 | ERROR | communication.communication : communication:77 | send串口COM5实例化失败！
+2025-04-19 08:20:45 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-19 08:20:45 | INFO | __main__ : main:38 | start Qt
+2025-04-19 08:20:45 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 08:20:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 08:20:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 08:20:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 08:20:46 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-19 08:20:46 | INFO | __main__ : main:43 | Appliacation start
+2025-04-19 09:12:27 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-19 09:12:27 | INFO | __main__ : main:71 | loading config start
+2025-04-19 09:12:27 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-19 09:12:27 | INFO | __main__ : main:73 | loading config finish
+2025-04-19 09:12:27 | INFO | communication.communication : communication:122 | 串口配置文件读取成功。
+2025-04-19 09:12:27 | INFO | communication.communication : communication:149 | receive串口COM3连接--当前可用端口:['COM5', 'COM3']
+2025-04-19 09:12:27 | INFO | communication.communication : communication:184 | receive串口COM3连接成功
+2025-04-19 09:12:27 | INFO | communication.communication : communication:122 | 串口配置文件读取成功。
+2025-04-19 09:12:27 | INFO | communication.communication : communication:149 | send串口COM5连接--当前可用端口:['COM5', 'COM3']
+2025-04-19 09:12:27 | INFO | communication.communication : communication:184 | send串口COM5连接成功
+2025-04-19 09:12:27 | INFO | communication.communication : communication:35 | 串口配置文件读取成功。
+2025-04-19 09:12:27 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-19 09:12:27 | INFO | communication.communication : communication:243 | receive串口COM3开始接收数据
+2025-04-19 09:12:27 | INFO | communication.communication : communication:228 | send串口COM5开始发送数据
+2025-04-19 09:12:27 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:27.292
+2025-04-19 09:12:27 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:27.292
+2025-04-19 09:12:28 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:28.292
+2025-04-19 09:12:28 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:28.292
+2025-04-19 09:12:29 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:29.294
+2025-04-19 09:12:29 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:29.294
+2025-04-19 09:12:30 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:30.294
+2025-04-19 09:12:30 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:30.294
+2025-04-19 09:12:31 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:31.296
+2025-04-19 09:12:31 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:31.296
+2025-04-19 09:12:32 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:32.296
+2025-04-19 09:12:32 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:32.296
+2025-04-19 09:12:33 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:33.297
+2025-04-19 09:12:33 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:33.297
+2025-04-19 09:12:34 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:34.298
+2025-04-19 09:12:34 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:34.298
+2025-04-19 09:12:35 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:35.298
+2025-04-19 09:12:35 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:35.298
+2025-04-19 09:12:36 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:36.299
+2025-04-19 09:12:36 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:36.299
+2025-04-19 09:12:37 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:37.300
+2025-04-19 09:12:37 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:37.300
+2025-04-19 09:12:38 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:38.301
+2025-04-19 09:12:38 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:38.301
+2025-04-19 09:12:39 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:39.302
+2025-04-19 09:12:39 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:39.302
+2025-04-19 09:12:40 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:40.302
+2025-04-19 09:12:40 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:40.302
+2025-04-19 09:12:41 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:41.303
+2025-04-19 09:12:41 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:41.303
+2025-04-19 09:12:42 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:42.304
+2025-04-19 09:12:42 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:42.304
+2025-04-19 09:12:43 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:43.305
+2025-04-19 09:12:43 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:43.305
+2025-04-19 09:12:44 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:44.305
+2025-04-19 09:12:44 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:44.305
+2025-04-19 09:12:45 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:45.306
+2025-04-19 09:12:45 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:45.306
+2025-04-19 09:12:46 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:46.307
+2025-04-19 09:12:46 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:46.307
+2025-04-19 09:12:47 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:47.308
+2025-04-19 09:12:47 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:47.308
+2025-04-19 09:12:48 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:48.309
+2025-04-19 09:12:48 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:48.309
+2025-04-19 09:12:49 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:49.309
+2025-04-19 09:12:49 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:49.309
+2025-04-19 09:12:50 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:12:50.310
+2025-04-19 09:12:50 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:12:50.310
+2025-04-19 09:13:03 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-19 09:13:03 | INFO | __main__ : main:71 | loading config start
+2025-04-19 09:13:03 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-19 09:13:03 | INFO | __main__ : main:73 | loading config finish
+2025-04-19 09:13:03 | INFO | communication.communication : communication:122 | 串口配置文件读取成功。
+2025-04-19 09:13:03 | INFO | communication.communication : communication:149 | receive串口COM3连接--当前可用端口:['COM5', 'COM3']
+2025-04-19 09:13:03 | INFO | communication.communication : communication:184 | receive串口COM3连接成功
+2025-04-19 09:13:03 | INFO | communication.communication : communication:122 | 串口配置文件读取成功。
+2025-04-19 09:13:03 | INFO | communication.communication : communication:149 | send串口COM5连接--当前可用端口:['COM5', 'COM3']
+2025-04-19 09:13:03 | INFO | communication.communication : communication:184 | send串口COM5连接成功
+2025-04-19 09:13:03 | INFO | communication.communication : communication:35 | 串口配置文件读取成功。
+2025-04-19 09:13:03 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-19 09:13:03 | INFO | communication.communication : communication:243 | receive串口COM3开始接收数据
+2025-04-19 09:13:03 | INFO | communication.communication : communication:228 | send串口COM5开始发送数据
+2025-04-19 09:13:03 | INFO | communication.communication : communication:58 | 存储数据线程开始工作
+2025-04-19 09:13:03 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:03.837
+2025-04-19 09:13:03 | INFO | __main__ : main:38 | start Qt
+2025-04-19 09:13:03 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:03.837
+2025-04-19 09:13:03 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:03.837
+2025-04-19 09:13:04 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:13:04 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:04.933
+2025-04-19 09:13:05 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:04.933
+2025-04-19 09:13:05 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:04.933
+2025-04-19 09:13:05 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:13:05 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:13:05 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:13:05 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:05.988
+2025-04-19 09:13:06 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:05.988
+2025-04-19 09:13:06 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:05.988
+2025-04-19 09:13:06 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-19 09:13:07 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:07.053
+2025-04-19 09:13:07 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:07.053
+2025-04-19 09:13:07 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:07.053
+2025-04-19 09:13:08 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:08.150
+2025-04-19 09:13:08 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:08.150
+2025-04-19 09:13:08 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:08.150
+2025-04-19 09:13:08 | INFO | __main__ : main:43 | Appliacation start
+2025-04-19 09:13:09 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:09.168
+2025-04-19 09:13:09 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:09.168
+2025-04-19 09:13:09 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:09.168
+2025-04-19 09:13:10 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:10.211
+2025-04-19 09:13:10 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:10.211
+2025-04-19 09:13:10 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:10.211
+2025-04-19 09:13:11 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:11.250
+2025-04-19 09:13:11 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:11.250
+2025-04-19 09:13:11 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:11.250
+2025-04-19 09:13:12 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:12.319
+2025-04-19 09:13:12 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:12.319
+2025-04-19 09:13:12 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:12.319
+2025-04-19 09:13:13 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:13.362
+2025-04-19 09:13:13 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:13.362
+2025-04-19 09:13:13 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:13.362
+2025-04-19 09:13:14 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:14.469
+2025-04-19 09:13:14 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:14.469
+2025-04-19 09:13:14 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:14.469
+2025-04-19 09:13:15 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:15.537
+2025-04-19 09:13:15 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:15.537
+2025-04-19 09:13:15 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:15.537
+2025-04-19 09:13:16 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:16.563
+2025-04-19 09:13:16 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:16.563
+2025-04-19 09:13:16 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:16.563
+2025-04-19 09:13:17 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:17.579
+2025-04-19 09:13:17 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:17.579
+2025-04-19 09:13:17 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:17.579
+2025-04-19 09:13:18 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:18.630
+2025-04-19 09:13:18 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:13:18 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:13:18 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:18.630
+2025-04-19 09:13:18 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:18.630
+2025-04-19 09:13:19 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:19.699
+2025-04-19 09:13:19 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:19.699
+2025-04-19 09:13:19 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:19.699
+2025-04-19 09:13:20 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:20.713
+2025-04-19 09:13:21 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:20.713
+2025-04-19 09:13:21 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:20.713
+2025-04-19 09:13:21 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:21.805
+2025-04-19 09:13:22 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:21.805
+2025-04-19 09:13:22 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:21.805
+2025-04-19 09:13:22 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:22.875
+2025-04-19 09:13:23 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:22.875
+2025-04-19 09:13:23 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:22.875
+2025-04-19 09:13:23 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:23.898
+2025-04-19 09:13:24 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:23.898
+2025-04-19 09:13:24 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:23.898
+2025-04-19 09:13:24 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:24.952
+2025-04-19 09:13:25 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:24.952
+2025-04-19 09:13:25 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:24.952
+2025-04-19 09:13:26 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:26.034
+2025-04-19 09:13:26 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:26.034
+2025-04-19 09:13:26 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:26.034
+2025-04-19 09:13:27 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:27.047
+2025-04-19 09:13:27 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:27.047
+2025-04-19 09:13:27 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:27.047
+2025-04-19 09:13:28 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:28.195
+2025-04-19 09:13:28 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:28.195
+2025-04-19 09:13:28 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:28.195
+2025-04-19 09:13:29 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:29.258
+2025-04-19 09:13:29 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:29.258
+2025-04-19 09:13:29 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:29.258
+2025-04-19 09:13:30 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:30.375
+2025-04-19 09:13:30 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:30.375
+2025-04-19 09:13:30 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:30.375
+2025-04-19 09:13:31 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:31.407
+2025-04-19 09:13:31 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:31.407
+2025-04-19 09:13:31 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:31.407
+2025-04-19 09:13:31 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:13:32 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:13:32 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:32.453
+2025-04-19 09:13:32 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:32.453
+2025-04-19 09:13:32 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:32.453
+2025-04-19 09:13:33 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:33.500
+2025-04-19 09:13:33 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:33.500
+2025-04-19 09:13:33 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:33.500
+2025-04-19 09:13:34 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:34.549
+2025-04-19 09:13:34 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:34.549
+2025-04-19 09:13:34 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:34.549
+2025-04-19 09:13:35 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:35.687
+2025-04-19 09:13:35 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:35.687
+2025-04-19 09:13:35 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:35.687
+2025-04-19 09:13:36 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:36.757
+2025-04-19 09:13:36 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:36.757
+2025-04-19 09:13:36 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:36.757
+2025-04-19 09:13:37 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:37.834
+2025-04-19 09:13:37 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:37.834
+2025-04-19 09:13:37 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:37.834
+2025-04-19 09:13:38 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:38.852
+2025-04-19 09:13:38 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:38.852
+2025-04-19 09:13:38 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:38.852
+2025-04-19 09:13:39 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:39.879
+2025-04-19 09:13:39 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:39.879
+2025-04-19 09:13:39 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:39.879
+2025-04-19 09:13:40 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:40.937
+2025-04-19 09:13:41 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:40.937
+2025-04-19 09:13:41 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:40.937
+2025-04-19 09:13:41 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:41.969
+2025-04-19 09:13:42 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:41.969
+2025-04-19 09:13:42 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:41.969
+2025-04-19 09:13:43 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:43.001
+2025-04-19 09:13:43 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:43.001
+2025-04-19 09:13:43 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:43.001
+2025-04-19 09:13:44 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:44.046
+2025-04-19 09:13:44 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:44.046
+2025-04-19 09:13:44 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:44.046
+2025-04-19 09:13:45 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:45.156
+2025-04-19 09:13:45 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:45.156
+2025-04-19 09:13:45 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:45.156
+2025-04-19 09:13:46 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:46.213
+2025-04-19 09:13:46 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:46.213
+2025-04-19 09:13:46 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:46.213
+2025-04-19 09:13:47 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:47.243
+2025-04-19 09:13:47 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:47.243
+2025-04-19 09:13:47 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:47.243
+2025-04-19 09:13:48 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:48.311
+2025-04-19 09:13:48 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:48.311
+2025-04-19 09:13:48 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:48.311
+2025-04-19 09:13:49 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:49.373
+2025-04-19 09:13:49 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:49.373
+2025-04-19 09:13:49 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:49.373
+2025-04-19 09:13:50 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:50.407
+2025-04-19 09:13:50 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:50.407
+2025-04-19 09:13:50 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:50.407
+2025-04-19 09:13:51 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:51.446
+2025-04-19 09:13:51 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:51.446
+2025-04-19 09:13:51 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:51.446
+2025-04-19 09:13:52 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:52.522
+2025-04-19 09:13:52 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:52.522
+2025-04-19 09:13:52 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:52.522
+2025-04-19 09:13:53 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:53.589
+2025-04-19 09:13:53 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:53.589
+2025-04-19 09:13:53 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:53.589
+2025-04-19 09:13:54 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:54.646
+2025-04-19 09:13:54 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:54.646
+2025-04-19 09:13:54 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:54.646
+2025-04-19 09:13:55 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:55.695
+2025-04-19 09:13:55 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:55.695
+2025-04-19 09:13:55 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:55.695
+2025-04-19 09:13:56 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:56.766
+2025-04-19 09:13:56 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:56.766
+2025-04-19 09:13:56 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:56.766
+2025-04-19 09:13:57 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:57.773
+2025-04-19 09:13:57 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:57.773
+2025-04-19 09:13:57 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:57.773
+2025-04-19 09:13:58 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:58.803
+2025-04-19 09:13:58 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:58.803
+2025-04-19 09:13:58 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:58.803
+2025-04-19 09:13:59 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:13:59.862
+2025-04-19 09:13:59 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:13:59.862
+2025-04-19 09:13:59 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:13:59.862
+2025-04-19 09:14:00 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:00.933
+2025-04-19 09:14:01 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:00.933
+2025-04-19 09:14:01 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:00.933
+2025-04-19 09:14:01 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:01.969
+2025-04-19 09:14:02 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:01.969
+2025-04-19 09:14:02 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:01.969
+2025-04-19 09:14:02 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:02.992
+2025-04-19 09:14:03 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:02.992
+2025-04-19 09:14:03 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:02.992
+2025-04-19 09:14:04 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:04.029
+2025-04-19 09:14:04 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:04.029
+2025-04-19 09:14:04 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:04.029
+2025-04-19 09:14:05 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:05.120
+2025-04-19 09:14:05 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:05.120
+2025-04-19 09:14:05 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:05.120
+2025-04-19 09:14:06 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:06.133
+2025-04-19 09:14:06 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:06.133
+2025-04-19 09:14:06 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:06.133
+2025-04-19 09:14:07 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:07.223
+2025-04-19 09:14:07 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:07.223
+2025-04-19 09:14:07 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:07.223
+2025-04-19 09:14:08 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:08.272
+2025-04-19 09:14:08 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:08.272
+2025-04-19 09:14:08 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:08.272
+2025-04-19 09:14:09 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:09.322
+2025-04-19 09:14:09 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:09.322
+2025-04-19 09:14:09 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:09.322
+2025-04-19 09:14:10 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:10.354
+2025-04-19 09:14:10 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:10.354
+2025-04-19 09:14:10 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:10.354
+2025-04-19 09:14:11 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:11.388
+2025-04-19 09:14:11 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:11.388
+2025-04-19 09:14:11 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:11.388
+2025-04-19 09:14:12 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:12.434
+2025-04-19 09:14:12 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:12.434
+2025-04-19 09:14:12 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:12.434
+2025-04-19 09:14:13 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:13.480
+2025-04-19 09:14:13 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:13.480
+2025-04-19 09:14:13 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:13.480
+2025-04-19 09:14:14 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:14.558
+2025-04-19 09:14:14 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:14.558
+2025-04-19 09:14:14 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:14.558
+2025-04-19 09:14:15 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:15.620
+2025-04-19 09:14:15 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:15.620
+2025-04-19 09:14:15 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:15.620
+2025-04-19 09:14:16 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:16.671
+2025-04-19 09:14:16 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:16.671
+2025-04-19 09:14:16 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:16.671
+2025-04-19 09:14:17 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:17.740
+2025-04-19 09:14:17 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:17.740
+2025-04-19 09:14:17 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:17.740
+2025-04-19 09:14:18 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:18.824
+2025-04-19 09:14:18 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:18.824
+2025-04-19 09:14:18 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:18.824
+2025-04-19 09:14:19 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:19.868
+2025-04-19 09:14:19 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:19.868
+2025-04-19 09:14:19 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:19.868
+2025-04-19 09:14:20 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:20.921
+2025-04-19 09:14:21 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:20.921
+2025-04-19 09:14:21 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:20.921
+2025-04-19 09:14:21 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:21.983
+2025-04-19 09:14:22 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:21.983
+2025-04-19 09:14:22 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:21.983
+2025-04-19 09:14:23 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:23.033
+2025-04-19 09:14:23 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:23.033
+2025-04-19 09:14:23 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:23.033
+2025-04-19 09:14:24 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:24.075
+2025-04-19 09:14:24 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:24.075
+2025-04-19 09:14:24 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:24.075
+2025-04-19 09:14:25 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:25.108
+2025-04-19 09:14:25 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:25.108
+2025-04-19 09:14:25 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:25.108
+2025-04-19 09:14:26 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:26.232
+2025-04-19 09:14:26 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:26.232
+2025-04-19 09:14:26 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:26.232
+2025-04-19 09:14:26 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:14:27 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:14:27 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:27.322
+2025-04-19 09:14:27 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:27.322
+2025-04-19 09:14:27 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:27.322
+2025-04-19 09:14:28 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:28.360
+2025-04-19 09:14:28 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:28.360
+2025-04-19 09:14:28 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:28.360
+2025-04-19 09:14:29 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:29.420
+2025-04-19 09:14:29 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:29.420
+2025-04-19 09:14:29 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:29.420
+2025-04-19 09:14:30 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:30.497
+2025-04-19 09:14:30 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:30.497
+2025-04-19 09:14:30 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:30.497
+2025-04-19 09:14:31 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:31.588
+2025-04-19 09:14:31 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:31.588
+2025-04-19 09:14:31 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:31.588
+2025-04-19 09:14:32 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:32.625
+2025-04-19 09:14:32 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:32.625
+2025-04-19 09:14:32 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:32.625
+2025-04-19 09:14:33 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:33.703
+2025-04-19 09:14:33 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:33.703
+2025-04-19 09:14:33 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:33.703
+2025-04-19 09:14:34 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:34.776
+2025-04-19 09:14:34 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:34.776
+2025-04-19 09:14:34 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:34.776
+2025-04-19 09:14:35 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:35.824
+2025-04-19 09:14:35 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:35.824
+2025-04-19 09:14:35 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:35.824
+2025-04-19 09:14:36 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:36.878
+2025-04-19 09:14:36 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:36.878
+2025-04-19 09:14:36 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:36.878
+2025-04-19 09:14:38 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:38.003
+2025-04-19 09:14:38 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:38.003
+2025-04-19 09:14:38 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:38.003
+2025-04-19 09:14:39 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:39.042
+2025-04-19 09:14:39 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:39.042
+2025-04-19 09:14:39 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:39.042
+2025-04-19 09:14:40 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:40.100
+2025-04-19 09:14:40 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:40.100
+2025-04-19 09:14:40 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:40.100
+2025-04-19 09:14:41 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:41.144
+2025-04-19 09:14:41 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:41.144
+2025-04-19 09:14:41 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:41.144
+2025-04-19 09:14:42 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:42.184
+2025-04-19 09:14:42 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:42.184
+2025-04-19 09:14:42 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:42.184
+2025-04-19 09:14:43 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:43.223
+2025-04-19 09:14:43 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:43.223
+2025-04-19 09:14:43 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:43.223
+2025-04-19 09:14:44 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:44.278
+2025-04-19 09:14:44 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:44.278
+2025-04-19 09:14:44 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:44.278
+2025-04-19 09:14:45 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:45.350
+2025-04-19 09:14:45 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:45.350
+2025-04-19 09:14:45 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:45.350
+2025-04-19 09:14:46 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:46.433
+2025-04-19 09:14:46 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:46.433
+2025-04-19 09:14:46 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:46.433
+2025-04-19 09:14:47 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:47.468
+2025-04-19 09:14:47 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:47.468
+2025-04-19 09:14:47 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:47.468
+2025-04-19 09:14:48 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:48.560
+2025-04-19 09:14:48 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:48.560
+2025-04-19 09:14:48 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:48.560
+2025-04-19 09:14:49 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:49.601
+2025-04-19 09:14:49 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:49.601
+2025-04-19 09:14:49 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:49.601
+2025-04-19 09:14:50 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:50.662
+2025-04-19 09:14:50 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:50.662
+2025-04-19 09:14:50 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:50.662
+2025-04-19 09:14:51 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:51.742
+2025-04-19 09:14:51 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:51.742
+2025-04-19 09:14:51 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:51.742
+2025-04-19 09:14:52 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:52.801
+2025-04-19 09:14:52 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:52.801
+2025-04-19 09:14:52 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:52.801
+2025-04-19 09:14:53 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:53.838
+2025-04-19 09:14:53 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:53.838
+2025-04-19 09:14:53 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:53.838
+2025-04-19 09:14:54 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:54.860
+2025-04-19 09:14:55 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:54.860
+2025-04-19 09:14:55 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:54.860
+2025-04-19 09:14:55 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:55.885
+2025-04-19 09:14:56 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:55.885
+2025-04-19 09:14:56 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:55.885
+2025-04-19 09:14:56 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:56.910
+2025-04-19 09:14:57 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:56.910
+2025-04-19 09:14:57 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:56.910
+2025-04-19 09:14:57 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:57.932
+2025-04-19 09:14:58 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:57.932
+2025-04-19 09:14:58 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:57.932
+2025-04-19 09:14:58 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:58.960
+2025-04-19 09:14:59 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:58.960
+2025-04-19 09:14:59 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:58.960
+2025-04-19 09:14:59 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:14:59.968
+2025-04-19 09:15:00 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:14:59.968
+2025-04-19 09:15:00 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:14:59.968
+2025-04-19 09:15:01 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:01.013
+2025-04-19 09:15:01 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:01.013
+2025-04-19 09:15:01 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:01.013
+2025-04-19 09:15:02 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:02.039
+2025-04-19 09:15:02 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:02.039
+2025-04-19 09:15:02 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:02.039
+2025-04-19 09:15:03 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:03.072
+2025-04-19 09:15:03 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:03.072
+2025-04-19 09:15:03 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:03.072
+2025-04-19 09:15:04 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:04.101
+2025-04-19 09:15:04 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:04.101
+2025-04-19 09:15:04 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:04.101
+2025-04-19 09:15:05 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:05.170
+2025-04-19 09:15:05 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:05.170
+2025-04-19 09:15:05 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:05.170
+2025-04-19 09:15:06 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:06.187
+2025-04-19 09:15:06 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:06.187
+2025-04-19 09:15:06 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:06.187
+2025-04-19 09:15:07 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:07.231
+2025-04-19 09:15:07 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:07.231
+2025-04-19 09:15:07 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:07.231
+2025-04-19 09:15:08 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:08.341
+2025-04-19 09:15:08 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:08.341
+2025-04-19 09:15:08 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:08.341
+2025-04-19 09:15:09 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:09.448
+2025-04-19 09:15:09 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:09.448
+2025-04-19 09:15:09 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:09.448
+2025-04-19 09:15:10 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:10.516
+2025-04-19 09:15:10 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:10.516
+2025-04-19 09:15:10 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:10.516
+2025-04-19 09:15:11 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:11.574
+2025-04-19 09:15:12 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:11.574
+2025-04-19 09:15:12 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:11.574
+2025-04-19 09:15:12 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:12.672
+2025-04-19 09:15:13 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:12.672
+2025-04-19 09:15:13 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:12.672
+2025-04-19 09:15:13 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:13.738
+2025-04-19 09:15:14 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:13.738
+2025-04-19 09:15:14 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:13.738
+2025-04-19 09:15:14 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:14.862
+2025-04-19 09:15:15 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:14.862
+2025-04-19 09:15:15 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:14.862
+2025-04-19 09:15:15 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:15:15 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:15:15 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:15.940
+2025-04-19 09:15:16 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:15.940
+2025-04-19 09:15:16 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:15.940
+2025-04-19 09:15:17 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:17.042
+2025-04-19 09:15:17 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:17.042
+2025-04-19 09:15:17 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:17.042
+2025-04-19 09:15:18 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:18.068
+2025-04-19 09:15:18 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:18.068
+2025-04-19 09:15:18 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:18.068
+2025-04-19 09:15:19 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:15:19.123
+2025-04-19 09:15:19 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:15:19.123
+2025-04-19 09:15:19 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:15:19.123
+2025-04-19 09:19:40 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-19 09:19:40 | INFO | __main__ : main:71 | loading config start
+2025-04-19 09:19:40 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-19 09:19:40 | INFO | __main__ : main:73 | loading config finish
+2025-04-19 09:19:40 | INFO | communication.communication : communication:122 | 串口配置文件读取成功。
+2025-04-19 09:19:40 | INFO | communication.communication : communication:149 | receive串口COM3连接--当前可用端口:['COM5', 'COM3']
+2025-04-19 09:19:40 | INFO | communication.communication : communication:184 | receive串口COM3连接成功
+2025-04-19 09:19:40 | INFO | communication.communication : communication:122 | 串口配置文件读取成功。
+2025-04-19 09:19:40 | INFO | communication.communication : communication:149 | send串口COM5连接--当前可用端口:['COM5', 'COM3']
+2025-04-19 09:19:40 | INFO | communication.communication : communication:184 | send串口COM5连接成功
+2025-04-19 09:19:40 | INFO | communication.communication : communication:35 | 串口配置文件读取成功。
+2025-04-19 09:19:40 | INFO | __main__ : main:56 | start serial port communication!
+2025-04-19 09:19:40 | INFO | communication.communication : communication:243 | receive串口COM3开始接收数据
+2025-04-19 09:19:40 | INFO | communication.communication : communication:228 | send串口COM5开始发送数据
+2025-04-19 09:19:40 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:40.145
+2025-04-19 09:19:40 | INFO | communication.communication : communication:58 | 存储数据线程开始工作
+2025-04-19 09:19:40 | INFO | __main__ : main:38 | start Qt
+2025-04-19 09:19:40 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:40.145
+2025-04-19 09:19:40 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:40.145
+2025-04-19 09:19:40 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:19:41 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:41.186
+2025-04-19 09:19:41 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:19:41 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:41.186
+2025-04-19 09:19:41 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:41.186
+2025-04-19 09:19:41 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:19:41 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:19:42 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:42.212
+2025-04-19 09:19:42 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:42.212
+2025-04-19 09:19:42 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:42.212
+2025-04-19 09:19:42 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-19 09:19:43 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:43.260
+2025-04-19 09:19:43 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:43.260
+2025-04-19 09:19:43 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:43.260
+2025-04-19 09:19:44 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:44.275
+2025-04-19 09:19:44 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:44.275
+2025-04-19 09:19:44 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:44.275
+2025-04-19 09:19:45 | INFO | __main__ : main:43 | Appliacation start
+2025-04-19 09:19:45 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:45.404
+2025-04-19 09:19:45 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:45.404
+2025-04-19 09:19:45 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:45.404
+2025-04-19 09:19:46 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:46.490
+2025-04-19 09:19:46 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:46.490
+2025-04-19 09:19:46 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:46.490
+2025-04-19 09:19:47 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:47.576
+2025-04-19 09:19:47 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:47.576
+2025-04-19 09:19:47 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:47.576
+2025-04-19 09:19:48 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:48.685
+2025-04-19 09:19:48 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:48.685
+2025-04-19 09:19:48 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:48.685
+2025-04-19 09:19:49 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:49.820
+2025-04-19 09:19:49 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:49.820
+2025-04-19 09:19:49 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:49.820
+2025-04-19 09:19:50 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:50.949
+2025-04-19 09:19:51 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:50.949
+2025-04-19 09:19:51 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:50.949
+2025-04-19 09:19:52 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:52.061
+2025-04-19 09:19:52 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:52.061
+2025-04-19 09:19:52 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:52.061
+2025-04-19 09:19:53 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:53.112
+2025-04-19 09:19:53 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:53.112
+2025-04-19 09:19:53 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:53.112
+2025-04-19 09:19:54 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:54.208
+2025-04-19 09:19:54 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:54.208
+2025-04-19 09:19:54 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:54.208
+2025-04-19 09:19:55 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:55.257
+2025-04-19 09:19:55 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:55.257
+2025-04-19 09:19:55 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:55.257
+2025-04-19 09:19:56 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:56.315
+2025-04-19 09:19:56 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:56.315
+2025-04-19 09:19:56 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:56.315
+2025-04-19 09:19:57 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:57.393
+2025-04-19 09:19:57 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:19:57 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:19:57 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:57.393
+2025-04-19 09:19:57 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:57.393
+2025-04-19 09:19:58 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:58.457
+2025-04-19 09:19:58 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:58.457
+2025-04-19 09:19:58 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:58.457
+2025-04-19 09:19:59 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:19:59.497
+2025-04-19 09:19:59 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:19:59.497
+2025-04-19 09:19:59 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:19:59.497
+2025-04-19 09:20:00 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:00.531
+2025-04-19 09:20:00 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:00.531
+2025-04-19 09:20:00 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:00.531
+2025-04-19 09:20:01 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:01.599
+2025-04-19 09:20:01 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:01.599
+2025-04-19 09:20:01 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:01.599
+2025-04-19 09:20:02 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:02.640
+2025-04-19 09:20:02 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:02.640
+2025-04-19 09:20:02 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:02.640
+2025-04-19 09:20:03 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:03.743
+2025-04-19 09:20:03 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:03.743
+2025-04-19 09:20:03 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:03.743
+2025-04-19 09:20:04 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:04.785
+2025-04-19 09:20:05 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:04.785
+2025-04-19 09:20:05 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:04.785
+2025-04-19 09:20:05 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:05.888
+2025-04-19 09:20:06 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:05.888
+2025-04-19 09:20:06 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:05.888
+2025-04-19 09:20:06 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:06.933
+2025-04-19 09:20:07 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:06.933
+2025-04-19 09:20:07 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:06.933
+2025-04-19 09:20:07 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:07.962
+2025-04-19 09:20:08 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:07.962
+2025-04-19 09:20:08 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:07.962
+2025-04-19 09:20:09 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:09.045
+2025-04-19 09:20:09 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:09.045
+2025-04-19 09:20:09 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:09.045
+2025-04-19 09:20:10 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:10.080
+2025-04-19 09:20:10 | INFO | communication.communication : communication:260 | receive串口COM3接收数据: 2025-04-19 09:20:10.080
+2025-04-19 09:20:10 | INFO | communication.communication : communication:99 | 存储数据线程开始存储数据: 2025-04-19 09:20:10.080
+2025-04-19 09:20:11 | INFO | communication.communication : communication:232 | send串口COM5发送数据: 2025-04-19 09:20:11.160
+2025-04-19 09:22:19 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-19 09:22:19 | INFO | __main__ : main:71 | loading config start
+2025-04-19 09:22:19 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-19 09:22:19 | INFO | __main__ : main:73 | loading config finish
+2025-04-19 09:22:19 | INFO | __main__ : main:38 | start Qt
+2025-04-19 09:22:19 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:22:19 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:22:19 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:22:19 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:22:19 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-19 09:22:20 | INFO | __main__ : main:43 | Appliacation start
+2025-04-19 09:22:21 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:22:21 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:22:59 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:22:59 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:23:00 | WARNING | index.mainWindow : mainWindow:225 | logolabel_btn button's icon resource file was not found！
+2025-04-19 09:23:00 | WARNING | index.mainWindow : mainWindow:247 | menu6's tab page not exists charts_list ！
+2025-04-19 09:29:03 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-19 09:29:03 | INFO | __main__ : main:71 | loading config start
+2025-04-19 09:29:03 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-19 09:29:03 | INFO | __main__ : main:73 | loading config finish
+2025-04-19 09:29:03 | INFO | __main__ : main:38 | start Qt
+2025-04-19 09:29:04 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:29:04 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:29:04 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:29:04 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:29:04 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-19 09:29:04 | INFO | __main__ : main:43 | Appliacation start
+2025-04-19 09:30:46 | INFO | __main__ : main:69 | ------------------------------start------------------------------
+2025-04-19 09:30:46 | INFO | __main__ : main:71 | loading config start
+2025-04-19 09:30:46 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-19 09:30:46 | INFO | __main__ : main:73 | loading config finish
+2025-04-19 09:30:46 | INFO | __main__ : main:38 | start Qt
+2025-04-19 09:30:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:30:47 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:30:47 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:30:47 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-19 09:30:47 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-19 09:30:47 | INFO | __main__ : main:43 | Appliacation start

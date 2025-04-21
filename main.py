@@ -1,12 +1,13 @@
+import os
 import sys
 
 from PyQt6.QtWidgets import QApplication
 from loguru import logger
 
+from communication.ini_pareser.ini_parser import ini_parser
 from config.global_setting import global_setting
 from config.yamlParser import YamlParserObject
 from index.all_windows import AllWindows
-from communication.communication_root import communication_root
 # Author: Qinyou Deng
 # Create Time:2025-03-01
 # Update Time:2025-04-07
@@ -14,7 +15,18 @@ from theme.ThemeManager import ThemeManager
 
 
 def load_global_setting():
-    # 加载配置存储到全局类中
+    # 加载串口通讯配置
+    config_file_path = global_setting.get_setting("communiation_project_path") + "/communication/communicate_config.ini"
+
+    # 串口配置数据{"section":{"key1":value1,"key2":value2,....}，...}
+    serial_config = ini_parser(config_file_path).read()
+    if (len(serial_config) != 0):
+        logger.info("串口通讯配置文件读取成功。")
+    else:
+        logger.error("串口通讯配置文件读取失败。")
+        return
+    global_setting.set_setting("serial_config", serial_config)
+    # 加载gui配置存储到全局类中
     configer = YamlParserObject.yaml_parser.load_single("./gui_configer.yaml")
     global_setting.set_setting("configer", configer)
     # 当前左侧菜单项id 这里的值1是设个默认值无意义 会在实例化左菜单时根据真正的默认菜单覆盖这个值
@@ -29,6 +41,14 @@ def load_global_setting():
     pass
 
 
+def quit_qt_application():
+    """
+    退出QT程序
+    :return:
+    """
+    logger.info(f"{'-' * 40}quit Qt application{'-' * 40}")
+
+
 def start_qt_application():
     """
     qt程序开始
@@ -37,6 +57,8 @@ def start_qt_application():
     # 启动qt
     logger.info("start Qt")
     app = QApplication(sys.argv)
+    # 绑定突出事件
+    app.aboutToQuit.connect(quit_qt_application)
     # 主窗口实例化
     allWindows = AllWindows()
     # 主窗口显示
@@ -52,26 +74,37 @@ def receive_serial_port_data():
     接收串口数据
     :return:无
     """
-    communication_root_obj = communication_root()
-    logger.info("start serial port communication!")
-    communication_root_obj.start()
+
+
+def get_communiation_project_path():
+    """
+    获取串口通讯项目的路径
+    :return:
+    """
+    value = os.getenv('HOST_COMPUTER_DATA_STORAGE_LOC', 'Default')
+    # 放到全局变量当中
+    global_setting.set_setting("communiation_project_path", value)
+    logger.info(f"HOST_COMPUTER_DATA_STORAGE_LOC={value}")
 
 
 if __name__ == '__main__':
     # 加载日志配置
     logger.add(
-        "prod_{time:YYYY-MM-DD}.log",
+        "./log/prod_{time:YYYY-MM-DD}.log",
         rotation="00:00",
         retention="30 days",
         enqueue=True,
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {name} : {module}:{line} | {message}"
     )
-    logger.info(f"{'-' * 30}start{'-' * 30}")
+    logger.info(f"{'-' * 40}start{'-' * 40}")
+    # 获取串口通讯项目路径
+    get_communiation_project_path()
     # 加载全局配置
     logger.info("loading config start")
     load_global_setting()
     logger.info("loading config finish")
-    # 接收串口数据
-    receive_serial_port_data()
+    # # 接收串口数据
+    # receive_serial_port_data()
+
     # qt程序开始
     start_qt_application()

@@ -20,6 +20,7 @@ class ini_parser():
 
     def is_exist(self, section: str = None, dict: str = None, value: str = None):
         """
+        判断节值或配置值是否存在
         :param section:ini文件的节值
         :param dict:ini文件该节值的键值对的键
         :param value:ini文件该节值的键值对的值

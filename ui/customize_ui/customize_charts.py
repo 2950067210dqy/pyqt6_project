@@ -9,7 +9,9 @@ from PyQt6 import QtCore
 from loguru import logger
 
 from config.global_setting import global_setting
+from dao.data_read import data_read
 from theme.ThemeQt6 import ThemedWidget
+from util.folder_util import File_Types
 
 
 class charts(ThemedWidget):
@@ -21,14 +23,20 @@ class charts(ThemedWidget):
     Pie = 3
 
     def __init__(self, parent: QVBoxLayout = None, object_name: str = "", charts_type=Line, data_origin_nums=1,
+                 data_origin_ports=['COM3'],
                  is_span=False):
         super().__init__()
+        # 数据获取器
+        self.data_read = data_read(file_type=global_setting.get_setting('serial_config')['Storage']['file_type'],
+                                   data_origin_port=data_origin_ports)
         # 主题颜色
         self.theme = global_setting.get_setting("theme_manager").get_themes_color(mode=1)
         # 是否平滑图表
         self.is_span = is_span
         # 数据源数量
         self.data_origin_nums = data_origin_nums
+        # 数据源端口号
+        self.data_origin_ports = data_origin_ports
         # 图表类型
         self.charts_type = charts_type
         # obejctName
@@ -131,10 +139,28 @@ class charts(ThemedWidget):
 
         pass
 
+    # 转换数据 将读取的数据格式转换成[[QPointF(1, 1 + 1 * 200), QPointF(2, 2 - 1 * 200), QPointF(3, 3 + 1 * 200)],
+    #         #              [QPointF(1, 1 + 2 * 200), QPointF(2, 2 - 2 * 200), QPointF(3, 3 + 2 * 200)]]
+    def transfer_data(self, origin_datas):
+        new_datas = []
+        for origin_datas_row in origin_datas:
+            new_datas_row = []
+            for origin_data in origin_datas_row:
+                # 使用match
+                if global_setting.get_setting('serial_config')['Storage']['file_type'] == File_Types.TXT.value:
+                    q_point = QPointF(origin_data.id, 1 + 1 * 200)
+                else:
+                    pass
+
+            pass
+        pass
+
+    pass
+
     # 获取数据
     def get_data(self):
-        self.data = [[QPointF(1, 1 + 1 * 200), QPointF(2, 2 - 1 * 200), QPointF(3, 3 + 1 * 200)],
-                     [QPointF(1, 1 + 2 * 200), QPointF(2, 2 - 2 * 200), QPointF(3, 3 + 2 * 200)]]
+        # self.data = [[QPointF(1, 1 + 1 * 200), QPointF(2, 2 - 1 * 200), QPointF(3, 3 + 1 * 200)],
+        #              [QPointF(1, 1 + 2 * 200), QPointF(2, 2 - 2 * 200), QPointF(3, 3 + 2 * 200)]]
         self.get_max_and_min_data()
 
     # 获取数据的最大x最小x最大y最小y

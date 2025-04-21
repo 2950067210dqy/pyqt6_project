@@ -1,6 +1,6 @@
 from PyQt6 import QtCore
 from PyQt6.QtCore import QRect
-from PyQt6.QtWidgets import QWidget, QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QScrollArea
 from loguru import logger
 
 from theme.ThemeQt6 import ThemedWidget
@@ -45,8 +45,11 @@ class Tab_1(ThemedWidget):
     def _init_customize_ui(self):
         # 图表 左下布局
         frame_left_bottom = self.frame.findChild(QVBoxLayout, "frame2_contentlayout")
+        # 添加滑动条区域
+        scroll_left_bottom = QScrollArea()
         charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1",
-                                      charts_type=charts.Line, data_origin_nums=2, is_span=True)
+                                      charts_type=charts.Line, data_origin_nums=2, data_origin_ports=['COM3', 'COM3'],
+                                      is_span=True)
         # charts_left_bottom_2 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_2")
         # charts_left_bottom_3 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_3")
         # 图表 右边布局

@@ -1,0 +1,11 @@
+2025-04-11 15:54:45 | INFO | __main__ : main:41 | ------------------------------start------------------------------
+2025-04-11 15:54:45 | INFO | __main__ : main:43 | loading config start
+2025-04-11 15:54:45 | INFO | theme.ThemeManager : ThemeManager:53 | ThemeManger:instance._current_theme:  dark
+2025-04-11 15:54:45 | INFO | __main__ : main:45 | loading config finish
+2025-04-11 15:54:45 | INFO | __main__ : main:47 | start Qt
+2025-04-11 15:54:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_left_bottom_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-11 15:54:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_1‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-11 15:54:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_2‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-11 15:54:46 | INFO | ui.customize_ui.customize_charts : customize_charts:163 | charts_tab1_right_3‘s data’s min&max x=[1.0,3.0] y=[-398.0,403.0]
+2025-04-11 15:54:46 | INFO | index.mainWindow : mainWindow:165 | time update thread start
+2025-04-11 15:54:46 | INFO | __main__ : main:52 | Appliacation start
