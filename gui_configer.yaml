@@ -37,4 +37,6 @@ tab: #菜单窗口项
     width: 911 #菜单窗口长 单位px
     height: 591 #菜单窗口高 单位px
 graphic: #图表项
-  data_show_nums: 200 #图表中显示数据的数量 其中-1为显示全部数据
+  data_read_nums: 1 #每次读几个数据
+  data_show_nums: 10 #图表中显示数据的数量
+  delay: 1000 #每隔多少毫秒获取一次数据 单位毫秒

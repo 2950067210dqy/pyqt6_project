@@ -99,15 +99,14 @@ class txt_parser():
         return counts
         pass
 
-    def read_seq(self, files_path=[], data_nums: list = [1], data_start: int = 1,
-                 data_step: int = 1) -> [[
+    def read_seq(self, files_path=[], data_nums: list = [1], data_start: list = [], data_step: list = []) -> [[
         txt_data()]]:
         """
         顺序读取数据
         :param files_path 文件地址list
         :param data_nums 读取数据数量[nums]
-        :param data_start 数据范围开始 读取范围data_start到data_start+data_nums 的数据
-        :param data_step 数据步长 每隔几个数据取数据 如果为负值则从后往前隔着取
+        :param data_start [] 数据范围开始 读取范围data_start到data_start+data_nums 的数据
+        :param data_step [] 数据步长 每隔几个数据取数据 如果为负值则从后往前隔着取
         :return: 返回数据列表 [[txt_data() ,...],....]
         """
         if len(files_path) == 0 and len(self.files_path) == 0:
@@ -137,7 +136,6 @@ class txt_parser():
                     with open(dict_temp['file_path'], 'r') as file:
                         lines = file.readlines()  # 读取所有行
                         lines = [line.strip() for line in lines]  # 去掉换行符
-                        print(lines)
                 except Exception as e:
                     logger.error(f"读取文件{dict_temp['file_path']}失败,失败原因：{e}")
                 # 蒋读取的数据转换为数据格式 [txt_data(),...]
@@ -145,11 +143,11 @@ class txt_parser():
                 nums_temp = 1
                 id = 1
                 # 步长小于0 逆序输出
-                if data_step >= 0:
+                if data_step[index] >= 0:
                     for line in lines:
                         # 空格分割 [0]是数据 [1]是日期
-                        if nums_temp >= data_start and nums_temp <= data_start + data_nums[
-                            index] and nums_temp % data_step == 0:
+                        if nums_temp >= data_start[index] and nums_temp < data_start[index] + data_nums[
+                            index] and nums_temp % data_step[index] == 0:
                             line_datas = line.split(" ")
                             data = txt_data(id, line_datas[0], line_datas[1])
                             return_data.append(data)
@@ -159,8 +157,8 @@ class txt_parser():
                 else:
                     for line in reversed(lines):
                         # 空格分割 [0]是数据 [1]是日期
-                        if nums_temp >= data_start and nums_temp <= data_start + data_nums[
-                            index] and nums_temp % data_step == 0:
+                        if nums_temp >= data_start[index] and nums_temp < data_start[index] + data_nums[
+                            index] and nums_temp % data_step[index] == 0:
                             line_datas = line.split(" ")
                             data = txt_data(id, line_datas[0], line_datas[1])
                             return_data.append(data)

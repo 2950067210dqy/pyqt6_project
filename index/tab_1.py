@@ -3,6 +3,7 @@ from PyQt6.QtCore import QRect
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QScrollArea
 from loguru import logger
 
+from config.global_setting import global_setting
 from theme.ThemeQt6 import ThemedWidget
 from ui.customize_ui import customize_charts
 from ui.customize_ui.customize_charts import charts
@@ -48,18 +49,23 @@ class Tab_1(ThemedWidget):
         # 添加滑动条区域
         scroll_left_bottom = QScrollArea()
         charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1",
-                                      charts_type=charts.Line, data_origin_nums=2, data_origin_ports=['COM3', 'COM3'],
-                                      is_span=True)
+                                      charts_type=charts.Line, data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
+                                      is_span=True, data_read_counts=global_setting.get_setting("configer")['graphic'][
+                'data_read_nums'])
         # charts_left_bottom_2 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_2")
         # charts_left_bottom_3 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_3")
         # 图表 右边布局
         frame_right = self.frame.findChild(QVBoxLayout, "frame3_contentlayout")
         charts_right_1 = charts(parent=frame_right, object_name="charts_tab1_right_1", charts_type=charts.Line,
-                                data_origin_nums=1)
+                                data_origin_nums=1, data_read_counts=global_setting.get_setting("configer")['graphic'][
+                'data_read_nums'])
         charts_right_2 = charts(parent=frame_right, object_name="charts_tab1_right_2", charts_type=charts.Line,
-                                data_origin_nums=1)
+                                data_origin_nums=1, data_read_counts=global_setting.get_setting("configer")['graphic'][
+                'data_read_nums'])
         charts_right_3 = charts(parent=frame_right, object_name="charts_tab1_right_3", charts_type=charts.Line,
-                                data_origin_nums=2)
+                                data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
+                                data_read_counts=global_setting.get_setting("configer")['graphic'][
+                                    'data_read_nums'])
         self.charts_list.append(charts_left_bottom_1)
         self.charts_list.append(charts_right_1)
         self.charts_list.append(charts_right_2)

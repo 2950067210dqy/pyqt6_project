@@ -7,7 +7,10 @@ class global_setting():
         pass
 
     @classmethod
-    def get_setting(cls, key):
-        return cls._setting[key]
+    def get_setting(cls, key, default=None):
+        if default != None:
+            return cls._setting.get(key, default)
+        else:
+            return cls._setting.get(key)
 
     pass

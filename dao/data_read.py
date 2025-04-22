@@ -1,5 +1,6 @@
 from loguru import logger
 
+from config.global_setting import global_setting
 from dao.data_read_txt import data_read_txt
 from util.folder_util import File_Types
 
@@ -13,7 +14,9 @@ class data_read():
         self.file_type = file_type.lower()
         match self.file_type:
             case File_Types.TXT.value:
-                self.read_service = data_read_txt(data_origin_port=data_origin_port)
+                self.read_service = data_read_txt(data_origin_port=data_origin_port,
+                                                  data_storage_loc=global_setting.get_setting(
+                                                      "communiation_project_path"))
                 pass
             case File_Types.CSV.value:
                 pass

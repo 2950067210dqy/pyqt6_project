@@ -1,11 +1,11 @@
-import dataclasses
+from dataclasses import dataclass
 
 
-@dataclasses
+@dataclass
 class txt_data():
     """
     txt数据的格式
     """
-    id: int
-    data: float | str
-    date: str | int
+    id: int = 1
+    data: float | str = 1
+    date: str | int = 1

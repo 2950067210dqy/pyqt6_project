@@ -16,7 +16,7 @@ from theme.ThemeManager import ThemeManager
 
 def load_global_setting():
     # 加载串口通讯配置
-    config_file_path = global_setting.get_setting("communiation_project_path") + "/communication/communicate_config.ini"
+    config_file_path = global_setting.get_setting("communiation_project_path") + "/communicate_config.ini"
 
     # 串口配置数据{"section":{"key1":value1,"key2":value2,....}，...}
     serial_config = ini_parser(config_file_path).read()
@@ -24,7 +24,6 @@ def load_global_setting():
         logger.info("串口通讯配置文件读取成功。")
     else:
         logger.error("串口通讯配置文件读取失败。")
-        return
     global_setting.set_setting("serial_config", serial_config)
     # 加载gui配置存储到全局类中
     configer = YamlParserObject.yaml_parser.load_single("./gui_configer.yaml")

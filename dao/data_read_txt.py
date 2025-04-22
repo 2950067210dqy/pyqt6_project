@@ -12,7 +12,6 @@ class data_read_txt():
     """
     读取txt数据类
     """
-    data_loc_prex = "/data/"
     suffix = "txt"
 
     def __init__(self, data_storage_loc=global_setting.get_setting("communiation_project_path"),
@@ -43,13 +42,17 @@ class data_read_txt():
         else:
             data_origin_port_temp = data_origin_port
         year, week, day = time_util.get_times_week_info(times)
-        path = self.data_storage_loc + self.data_loc_prex + data_origin_port_temp + "/" + str(
+        path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
+            'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+                   'port_prefix'] + data_origin_port_temp + "/" + str(
             year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
-        data = self.txt_parser.read_seq(files_path=[path], data_start=1,
-                                        data_nums=[self.txt_parser.get_file_data_nums(file_path=path)], data_step=1)[0]
+
+        data = self.txt_parser.read_seq(files_path=[path], data_start=[1],
+                                        data_nums=[self.txt_parser.get_file_data_nums(file_path=path)], data_step=[1])[
+            0]
         return data
 
-    pass
+        pass
 
     def read_all_datas_seq(self, times: datetime = datetime.now(), data_origin_port: str = []) -> [[
         txt_data()]]:
@@ -70,15 +73,22 @@ class data_read_txt():
             data_origin_port_temp = data_origin_port
         year, week, day = time_util.get_times_week_info(times)
         path_s = []
+        data_start = []
+        data_step = []
         for port in data_origin_port_temp:
-            path = self.data_storage_loc + self.data_loc_prex + port + "/" + str(
+            data_start.append(1)
+            data_step.append(1)
+            path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
+                'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+                       'port_prefix'] + port + "/" + str(
                 year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
             path_dict = {}
             path_dict['port'] = port
             path_dict['file_path'] = path
             path_s.append(path_dict)
-        datas = self.txt_parser.read_seq(files_path=path_s, data_start=1,
-                                         data_nums=self.txt_parser.get_files_data_nums(file_path=path_s), data_step=1)
+        datas = self.txt_parser.read_seq(files_path=path_s, data_start=data_start,
+                                         data_nums=self.txt_parser.get_files_data_nums(files_path=path_s),
+                                         data_step=data_step)
         return datas
         pass
 
@@ -104,14 +114,16 @@ class data_read_txt():
         else:
             data_origin_port_temp = data_origin_port
         year, week, day = time_util.get_times_week_info(times)
-        path = self.data_storage_loc + self.data_loc_prex + data_origin_port_temp + "/" + str(
+        path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
+            'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+                   'port_prefix'] + data_origin_port_temp + "/" + str(
             year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
-        data = self.txt_parser.read_seq(files_path=[path], data_start=data_start,
-                                        data_nums=data_nums, data_step=data_step)[0]
+        data = self.txt_parser.read_seq(files_path=[path], data_start=[data_start],
+                                        data_nums=[data_nums], data_step=[data_step])[0]
         return data
 
-    def read_range_datas_seq(self, times: datetime = datetime.now(), data_origin_port: list = [], data_start: int = 1,
-                             data_nums: int = 1, data_step: int = 1) -> [[
+    def read_range_datas_seq(self, times: datetime = datetime.now(), data_origin_port: list = [], data_start: list = [],
+                             data_nums: list = [], data_step: list = []) -> [[
         txt_data()]]:
         """
         顺序获取多个文件范围数据
@@ -133,20 +145,18 @@ class data_read_txt():
             data_origin_port_temp = data_origin_port
         year, week, day = time_util.get_times_week_info(times)
 
-        # 设置data_nums列表
-        data_nums_list = []
-        for port in data_origin_port_temp:
-            data_nums_list.append(data_nums)
         path_s = []
         for port in data_origin_port_temp:
-            path = self.data_storage_loc + self.data_loc_prex + port + "/" + str(
+            path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
+                'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+                       'port_prefix'] + port + "/" + str(
                 year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
             path_dict = {}
             path_dict['port'] = port
             path_dict['file_path'] = path
             path_s.append(path_dict)
         datas = self.txt_parser.read_seq(files_path=path_s, data_start=data_start,
-                                         data_nums=data_nums_list,
+                                         data_nums=data_nums,
                                          data_step=data_step)
         return datas
         pass

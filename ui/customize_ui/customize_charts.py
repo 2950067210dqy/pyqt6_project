@@ -1,10 +1,11 @@
 # 自定义图表类
 import enum
+from datetime import datetime
 
 from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries
-from PyQt6.QtCore import Qt, QPointF
+from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent
 from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
-from PyQt6.QtWidgets import QWidget, QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QToolTip
 from PyQt6 import QtCore
 from loguru import logger
 
@@ -12,6 +13,55 @@ from config.global_setting import global_setting
 from dao.data_read import data_read
 from theme.ThemeQt6 import ThemedWidget
 from util.folder_util import File_Types
+
+
+class MouseFilter(QObject):
+    def __init__(self, chart_view):
+        super().__init__()
+
+        self.chart_view = chart_view
+
+    def eventFilter(self, obj, event):
+        # 如果是图表view 且事件是鼠标移动时
+        logger.error("---------------------------------------------------------------")
+        if obj == self.chart_view and event.type() == QEvent.Type.MouseMove:
+
+            pos = event.pos()
+            chart_pos = self.chart_view.mapToScene(pos)
+            chart = self.chart_view.chart()
+            chart_item_pos = chart.mapToValue(chart_pos)
+
+            threshold = 0.5  # 距离阈值，视数据范围调整
+            tooltip_texts = []
+
+            # 遍历所有系列
+            for series in self.chart_view.chart().series():
+                if not isinstance(series, QLineSeries):
+                    continue
+                closest_point = None
+                min_dist = float('inf')
+                for point in series.points():
+                    dx = point.x() - chart_item_pos.x()
+                    dy = point.y() - chart_item_pos.y()
+                    dist = (dx * dx + dy * dy) ** 0.5  # 欧氏距离
+                    if dist < min_dist:
+                        min_dist = dist
+                        closest_point = point
+
+                if min_dist < threshold and closest_point is not None:
+                    # 这里可以加上系列名称或索引
+                    name = series.name() if series.name() else f"Series {chart.series().index(series) + 1}"
+                    tooltip_texts.append(f"{name}: x={closest_point.x():.2f}, y={closest_point.y():.2f}")
+
+            if tooltip_texts:
+                global_pos = self.chart_view.mapToGlobal(pos)
+                QToolTip.showText(global_pos, "\n".join(tooltip_texts))
+            else:
+                QToolTip.hideText()
+
+            return False
+
+        return super().eventFilter(obj, event)
 
 
 class charts(ThemedWidget):
@@ -23,8 +73,18 @@ class charts(ThemedWidget):
     Pie = 3
 
     def __init__(self, parent: QVBoxLayout = None, object_name: str = "", charts_type=Line, data_origin_nums=1,
-                 data_origin_ports=['COM3'],
+                 data_origin_ports=['COM3'], data_read_counts=10,
                  is_span=False):
+        """
+
+        :param parent:父组件
+        :param object_name:图表objectName
+        :param charts_type:图表类型
+        :param data_origin_nums:数据源数量
+        :param data_origin_ports: 数据源串口[]
+        :param data_counts:图表数据展示的总数量
+        :param is_span:图表是否平滑
+        """
         super().__init__()
         # 数据获取器
         self.data_read = data_read(file_type=global_setting.get_setting('serial_config')['Storage']['file_type'],
@@ -52,16 +112,29 @@ class charts(ThemedWidget):
         # y轴
         self.y_axis: QValueAxis = None
         # 数据
-        self.data = None
+        self.data = []
+        # 图表一共读取的数据总数量
+        self.data_all_counts = []
+        for i in range(data_origin_nums):
+            self.data.append([])
+            self.data_all_counts.append(0)
+        # 图表每次读取的数据数量
+        self.data_read_counts = data_read_counts
+        # 定时器
+        self.timer = None
         # 数据的最大值 和最小值
-        self.min_and_max_x = []
-        self.min_and_max_y = []
+        self.min_and_max_x = [0, 0]
+        self.min_and_max_y = [0, 0]
         self._init_ui()
 
     def _init_ui(self):
         # 创建布局和图表视图
         self.chart_view = QChartView()
+        self.chart_view.setMouseTracking(True)  # 开启鼠标追踪
 
+        # 安装事件过滤器 图表鼠标移动显示数值
+        filter = MouseFilter(self.chart_view)
+        self.chart_view.installEventFilter(filter)
         self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)  # 关键设置 抗锯齿
         self.chart_view.setObjectName(f"{self.object_name}")
         self.parent_layout.addWidget(self.chart_view)
@@ -81,7 +154,7 @@ class charts(ThemedWidget):
 
         # 获取数据
         self.get_data()
-        # 将数据放入series中
+        # 将数据放入series中 更新数据
         self.set_data_to_series()
         # 设置坐标轴
         self._set_x_axis()
@@ -111,7 +184,7 @@ class charts(ThemedWidget):
                 else:
                     single_series = QLineSeries()
                 single_series.setObjectName(f"{self.object_name}_series_{i + 1}")
-                single_series.setName(f"测试{i + 1}")
+                single_series.setName(f"源{self.data_origin_ports[i]}")
                 self.series.append(single_series)
             pass
 
@@ -148,20 +221,78 @@ class charts(ThemedWidget):
             for origin_data in origin_datas_row:
                 # 使用match
                 if global_setting.get_setting('serial_config')['Storage']['file_type'] == File_Types.TXT.value:
-                    q_point = QPointF(origin_data.id, 1 + 1 * 200)
+                    q_point = QPointF(float(origin_data.id), float(origin_data.data))
                 else:
                     pass
-
+                new_datas_row.append(q_point)
             pass
-        pass
+            new_datas.append(new_datas_row)
+        return new_datas
 
     pass
 
     # 获取数据
     def get_data(self):
+
+        # 定时器，每delay毫秒更新一次数据
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.get_data_func)
+        self.timer.start(global_setting.get_setting("configer")['graphic'][
+                             'delay'])
+
+    # 获取数据的函数
+    def get_data_func(self):
         # self.data = [[QPointF(1, 1 + 1 * 200), QPointF(2, 2 - 1 * 200), QPointF(3, 3 + 1 * 200)],
         #              [QPointF(1, 1 + 2 * 200), QPointF(2, 2 - 2 * 200), QPointF(3, 3 + 2 * 200)]]
-        self.get_max_and_min_data()
+        # 读取数据
+        try:
+            data_temp = self.transfer_data(
+                self.data_read.read_service.read_range_datas_seq(data_origin_port=self.data_origin_ports,
+                                                                 times=datetime.now(),
+                                                                 data_start=[x + 1 for x in self.data_all_counts],
+                                                                 data_nums=[self.data_read_counts for i in
+                                                                            self.data_origin_ports],
+                                                                 data_step=[1 for i in self.data_origin_ports]))
+        except Exception as e:
+            logger.error(f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e}")
+
+        # 插入数据
+        for origin_data_index in range(len(data_temp)):
+            logger.info(
+                f"图表{self.object_name}读取数据源{origin_data_index}数据长度为{len(data_temp[origin_data_index])}，data_start={self.data_all_counts}data_nums={self.data_read_counts - 1}")
+            # 把每次获取的数据数量记录起来
+            self.data_all_counts[origin_data_index] += len(data_temp[origin_data_index])
+            for data_index in range(len(data_temp[origin_data_index])):
+                self.data[origin_data_index].append(data_temp[origin_data_index][data_index])
+                pass
+            pass
+        # 插入数据之后的数据长度
+        show_nums = global_setting.get_setting("configer")['graphic'][
+            'data_show_nums']
+        try:
+
+            for origin_data_index in range(len(self.data)):
+                # 不同数据源在图表显示的时候需要同步 只要有一方数据源的数量一直是show_nums，而其他数据源出现数据更新暂停 则在图表移除数据
+                if len(data_temp[origin_data_index]) == 0 and len(self.data[origin_data_index]) != 0:
+                    self.data[origin_data_index].pop(0)
+                # 每个数据源需要遵守的规则
+                while len(self.data[origin_data_index]) >= show_nums and len(self.data[origin_data_index]) != 0:
+                    logger.info(f"图表{self.object_name}持数据源{origin_data_index}长度为{len(self.data[origin_data_index])}")
+                    self.data[origin_data_index].pop(0)  # 保持数据长度为show_nums
+
+
+        except Exception as e:
+            logger.error(f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+        try:
+            # 获取 x 和y值的最大值和最小值来确定坐标轴范围
+            self.get_max_and_min_data()
+            self.update_series()
+            # 设置坐标轴范围
+            self.x_axis.setRange(self.min_and_max_x[0], self.min_and_max_x[1])
+            self.y_axis.setRange(self.min_and_max_y[0], self.min_and_max_y[1])
+        except Exception as e:
+            logger.error(f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+        pass
 
     # 获取数据的最大x最小x最大y最小y
     def get_max_and_min_data(self):
@@ -171,27 +302,56 @@ class charts(ThemedWidget):
             self.min_and_max_x = [0, 0]
             self.min_and_max_y = [0, 0]
             return
-        columns = len(self.data[0])
 
-        # 将数据的第一个值设为初始值
-        max_x = self.data[0][0].x()
-        max_y = self.data[0][0].y()
-        min_x = self.data[0][0].x()
-        min_y = self.data[0][0].y()
+        # 找一个初始值
+        max_x = 0
+        max_y = 0
+        min_x = 0
+        min_y = 0
         for row in range(rows):
-            for column in range(columns):
-                max_x = max(max_x, self.data[row][column].x())
-                max_y = max(max_y, self.data[row][column].y())
-                min_x = min(min_x, self.data[row][column].x())
-                min_y = min(min_y, self.data[row][column].y())
-        self.min_and_max_x = [min_x, max_x]
-        self.min_and_max_y = [min_y, max_y]
-        logger.info(f"{self.object_name}‘s data’s min&max x=[{min_x},{max_x}] y=[{min_y},{max_y}]")
+            if len(self.data[row]) != 0:
+                max_x = self.data[row][0].x()
+                min_x = self.data[row][0].x()
+                max_y = self.data[row][0].y()
+                min_y = self.data[row][0].y()
+
+        for row in range(rows):
+            if len(self.data[row]) != 0:
+                for column in range(len(self.data[row])):
+                    max_x = max(max_x, self.data[row][column].x())
+                    max_y = max(max_y, self.data[row][column].y())
+                    min_x = min(min_x, self.data[row][column].x())
+                    min_y = min(min_y, self.data[row][column].y())
+        # 如果调整的数据的最大值和最小值都还是比之前的最大值和最小值小或大就不进行改变 大部分时间固定坐标轴 x轴不需要大部分时间固定
+        # if min_x < self.min_and_max_x[0]:
+        #     self.min_and_max_x[0] = min_x
+        # if max_x > self.min_and_max_x[1]:
+        #     self.min_and_max_x[1] = max_x
+        self.min_and_max_x[0] = min_x
+        self.min_and_max_x[1] = max_x
+        if min_y < self.min_and_max_y[0]:
+            self.min_and_max_y[0] = min_y
+        if max_y > self.min_and_max_y[1]:
+            self.min_and_max_y[1] = max_y
+
+        logger.info(
+            f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_x[1]}]")
+
+    # 更新series中的数据
+    def update_series(self):
+        for i in range(self.data_origin_nums):
+            self.series[i].replace(
+                self.data[i])
+            # 移出该序列
+            self.chart.removeSeries(self.series[i])
+            # 添加该序列
+            self.chart.addSeries(self.series[i])
+        pass
 
     # 将数据放入series中
     def set_data_to_series(self):
         for i in range(self.data_origin_nums):
-            self.series[i].append(
+            self.series[i].replace(
                 self.data[i])
             # 添加该序列
             self.chart.addSeries(self.series[i])
