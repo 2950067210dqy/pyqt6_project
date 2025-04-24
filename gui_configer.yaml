@@ -1,3 +1,5 @@
+theme: #样式
+  default: 'light' #默认样式值 light dark
 window: #主程序窗口项
   title: '颗粒技术与生物医工实验室上位机' #程序窗口名
 logo: #logo项
@@ -38,5 +40,6 @@ tab: #菜单窗口项
     height: 591 #菜单窗口高 单位px
 graphic: #图表项
   data_read_nums: 1 #每次读几个数据
-  data_show_nums: 10 #图表中显示数据的数量
-  delay: 1000 #每隔多少毫秒获取一次数据 单位毫秒
+  data_show_nums: 20 #图表中显示数据的数量
+  delay: 1000 #每隔多少毫秒获取一次数据 单位毫秒 该值必须要小于串口通讯接收数据的delay值
+  data_delay: 1 #读取几秒钟前的数据 单位秒 实际是读delay+data_delay前的数据

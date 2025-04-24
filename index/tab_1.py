@@ -1,6 +1,6 @@
 from PyQt6 import QtCore
-from PyQt6.QtCore import QRect
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QScrollArea
+from PyQt6.QtCore import QRect, Qt
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QScrollArea, QScrollBar
 from loguru import logger
 
 from config.global_setting import global_setting
@@ -45,28 +45,58 @@ class Tab_1(ThemedWidget):
     @logger.catch
     def _init_customize_ui(self):
         # 图表 左下布局
-        frame_left_bottom = self.frame.findChild(QVBoxLayout, "frame2_contentlayout")
+        frame_left_bottom: QVBoxLayout = self.frame.findChild(QVBoxLayout, "frame2_contentlayout")
+
         # 添加滑动条区域
-        scroll_left_bottom = QScrollArea()
-        charts_left_bottom_1 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_1",
+        # 创建滚动区域
+        scroll_area_left_bottom = QScrollArea()
+        scroll_area_left_bottom.setWidgetResizable(True)  # 使滚动区域内容自适应大小
+        # 滚动区域的内容widget和布局
+        scroll_content_left_bottom = QWidget()
+        scroll_layout_left_bottom = QVBoxLayout(scroll_content_left_bottom)
+        charts_left_bottom_1 = charts(parent=scroll_layout_left_bottom, object_name="charts_tab1_left_bottom_1",
                                       charts_type=charts.Line, data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
                                       is_span=True, data_read_counts=global_setting.get_setting("configer")['graphic'][
                 'data_read_nums'])
+        charts_left_bottom_2 = charts(parent=scroll_layout_left_bottom, object_name="charts_tab1_left_bottom_2",
+                                      charts_type=charts.Line, data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
+                                      is_span=True, data_read_counts=global_setting.get_setting("configer")['graphic'][
+                'data_read_nums'])
+        scroll_content_left_bottom.setLayout(scroll_layout_left_bottom)
+        # 把内容widget设置到滚动区域
+        scroll_area_left_bottom.setWidget(scroll_content_left_bottom)
+        # 将滚动区域添加到主布局
+        frame_left_bottom.addWidget(scroll_area_left_bottom)
+
         # charts_left_bottom_2 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_2")
         # charts_left_bottom_3 = charts(parent=frame_left_bottom, object_name="charts_tab1_left_bottom_3")
         # 图表 右边布局
         frame_right = self.frame.findChild(QVBoxLayout, "frame3_contentlayout")
-        charts_right_1 = charts(parent=frame_right, object_name="charts_tab1_right_1", charts_type=charts.Line,
+        # 添加滑动条区域
+        # 创建滚动区域
+        scroll_area_right = QScrollArea()
+        scroll_area_right.setWidgetResizable(True)  # 使滚动区域内容自适应大小
+        # 滚动区域的内容widget和布局
+        scroll_content_right = QWidget()
+        scroll_layout_right = QVBoxLayout(scroll_content_right)
+        charts_right_1 = charts(parent=scroll_layout_right, object_name="charts_tab1_right_1", charts_type=charts.Line,
                                 data_origin_nums=1, data_read_counts=global_setting.get_setting("configer")['graphic'][
                 'data_read_nums'])
-        charts_right_2 = charts(parent=frame_right, object_name="charts_tab1_right_2", charts_type=charts.Line,
+        charts_right_2 = charts(parent=scroll_layout_right, object_name="charts_tab1_right_2", charts_type=charts.Line,
                                 data_origin_nums=1, data_read_counts=global_setting.get_setting("configer")['graphic'][
                 'data_read_nums'])
-        charts_right_3 = charts(parent=frame_right, object_name="charts_tab1_right_3", charts_type=charts.Line,
+        charts_right_3 = charts(parent=scroll_layout_right, object_name="charts_tab1_right_3", charts_type=charts.Line,
                                 data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
                                 data_read_counts=global_setting.get_setting("configer")['graphic'][
                                     'data_read_nums'])
+        scroll_content_right.setLayout(scroll_layout_right)
+        # 把内容widget设置到滚动区域
+        scroll_area_right.setWidget(scroll_content_right)
+        # 将滚动区域添加到主布局
+        frame_right.addWidget(scroll_area_right)
+        # 保证图表的生命周期
         self.charts_list.append(charts_left_bottom_1)
+        self.charts_list.append(charts_left_bottom_2)
         self.charts_list.append(charts_right_1)
         self.charts_list.append(charts_right_2)
         self.charts_list.append(charts_right_3)

@@ -1,8 +1,15 @@
+from enum import Enum
+
 from PyQt6.QtCore import QObject, pyqtSignal, pyqtProperty
 from PyQt6.QtGui import QColor
 from loguru import logger
 
 from config.global_setting import global_setting
+
+
+# 图表样式名称枚举类
+class Charts_Style_Name(Enum):
+    NORMAL = 'normal'
 
 
 class ThemeManager(QObject):
@@ -31,27 +38,75 @@ class ThemeManager(QObject):
         # 定义主题配置
         cls._themes = {
             "dark": {
-                "--primary": "rgb(40, 48, 65)",
-                "--secondary": "rgb(40, 48, 65)",
-                "--text": "rgb(245, 245, 245)",
-                "--text_hover": "rgb(215, 215, 215)",
-                "--highlight": "rgb(27,36,49)",
-                "--selected": "rgb(0, 0, 0)",
+                "--primary": "#283041",
+                "--secondary": "#283041",
+                "--text": "#E1E1E1",
+                "--text_hover": "#C3C3C3",
+                "--highlight": "#1B2431",
+                "--selected": "#000000",
                 "--border": "#555555"
             },
             "light": {
                 "--primary": "#F0F0F0",
                 "--secondary": "#F0F0F0",
                 "--text": "#333333",
-                "--text_hover": "rgb(0, 0, 0)",
-                "--highlight": "rgb(225,225,225)",
-                "--selected": "rgb(215, 215, 215)",
+                "--text_hover": "#000000",
+                "--highlight": "#E1E1E1",
+                "--selected": "#D7D7D7",
                 "--border": "#CCCCCC"
             }
         }
         instance._current_theme = global_setting.get_setting("style")
         logger.info("ThemeManger:instance._current_theme:  " + instance._current_theme)
 
+    # 获取图表样式集
+    def get_charts_style(self):
+        theme = self._themes[self._current_theme]
+        themes = {
+            "dark": {
+                Charts_Style_Name.NORMAL.value: {
+                    'chart': {
+                        'chart_background_color': theme['--secondary'],
+                        'plot_area_color': theme['--secondary'],
+                        'title_font_color': theme['--text']
+                    },
+                    'series': {
+                        'series_color': '#E1E1E1'
+                    },
+                    'axis': {
+                        'axis_label_color': '#E1E1E1',
+                        'axis_grid_line_color': '#C3C3C3'
+                    },
+                    'legend': {
+                        'legend_font_color': '#E1E1E1'
+                    }
+                },
+
+            },
+            "light": {
+                Charts_Style_Name.NORMAL.value: {
+                    'chart': {
+                        'chart_background_color': theme['--secondary'],
+                        'plot_area_color': theme['--secondary'],
+                        'title_font_color': theme['--text']
+                    },
+                    'series': {
+                        'series_color': '#333333'
+                    },
+                    'axis': {
+                        'axis_label_color': '#333333',
+                        'axis_grid_line_color': '#000000'
+                    },
+                    'legend': {
+                        'legend_font_color': '#333333'
+                    }
+                },
+            }
+        }
+        return themes[self._current_theme]
+        pass
+
+    # 获取图表style
     def get_button_style(self, isSelected=False):
         theme = self._themes[self._current_theme]
         if isSelected:

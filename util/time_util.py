@@ -35,15 +35,47 @@ class time_util():
         return year, week_number, weekday
 
     @classmethod
-    def get_times_before_days(cls, times: datetime = datetime.today(), before_days: int = 1):
+    def get_times_before_days(cls, times: datetime = datetime.today(), before_days: float = 1):
         """
         获取times的几天前的日期信息
         :param times datetime类型
         :param before_days 几天前
         :return: days_ago (int)日期的int值 和 格式化的日期字符串days_ago.strftime("%Y-%m-%d")
         """
-        days_ago = times - timedelta(days=before_days)
-        # weekday: 1=Monday, 2=Tuesday, ..., 7=Sunday
-        return days_ago, days_ago.strftime("%Y-%m-%d")
+        days_ago = (times - timedelta(days=before_days)).timestamp()
+        return days_ago, datetime.fromtimestamp(days_ago).strftime("%Y-%m-%d")
+
+    @classmethod
+    def get_times_before_hours(cls, times: datetime = datetime.now(), before_hours: float = 1):
+        """
+        获取times的几小时前的日期信息
+        :param times datetime类型
+        :param before_hours 几小时前
+        :return: days_ago (int)日期的int值 和 格式化的日期字符串days_ago.strftime("%Y-%m-%d")
+        """
+        days_ago = (times - timedelta(hours=before_hours)).timestamp()
+        return days_ago, datetime.fromtimestamp(days_ago).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+
+    @classmethod
+    def get_times_before_minutes(cls, times: datetime = datetime.now(), before_minutes: float = 1):
+        """
+        获取times的几分钟前的日期信息
+        :param times datetime类型
+        :param before_minutes 几分钟前
+        :return: days_ago (int)日期的int值 和 格式化的日期字符串days_ago.strftime("%Y-%m-%d")
+        """
+        days_ago = (times - timedelta(minutes=before_minutes)).timestamp()
+        return days_ago, datetime.fromtimestamp(days_ago).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+
+    @classmethod
+    def get_times_before_seconds(cls, times: datetime = datetime.now(), before_seconds: float = 1):
+        """
+        获取times的几秒前的日期信息
+        :param times datetime类型
+        :param before_seconds 几秒前
+        :return: days_ago (int)日期的int值 和 格式化的日期字符串days_ago.strftime("%Y-%m-%d")
+        """
+        days_ago = (times - timedelta(seconds=before_seconds)).timestamp()
+        return days_ago, datetime.fromtimestamp(days_ago).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
 
     pass

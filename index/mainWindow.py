@@ -71,6 +71,7 @@ class MainWindow(ThemedWidget):
         self._init_function()
         # 加载qss样式表
         self._init_style_sheet()
+        self.init_icon_style()
         pass
 
     # 实例化ui
@@ -87,6 +88,42 @@ class MainWindow(ThemedWidget):
     def _init_customize_ui(self):
         #  实例化左侧菜单
         self._init_left_menu()
+        pass
+
+    # 实例化图标样式
+    def init_icon_style(self):
+        # 找到主窗口中的所有QPushButton对象
+        pushBtns = self.frame.findChildren(QPushButton)
+        # 给每个QPushButton对象 添加相关样式 并且更换icon样式 start
+        for btn in pushBtns:
+            # 更换图标样式 start
+            # 更换左侧菜单图标样式
+            if btn.property("icon_name") != None:
+                icon_name = btn.property("icon_name")
+                icon = QtGui.QIcon()
+                icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/{icon_name}"),
+                               QtGui.QIcon.Mode.Normal,
+                               QtGui.QIcon.State.Off)
+                btn.setIcon(icon)
+                btn.setIconSize(QtCore.QSize(20, 20))
+            # 更换其他按钮图标样式
+            else:
+                #  获得其他图标的objectname的前缀 注意我们的带有图标的QPushButton的ObjectName的前缀必须要和我们所设置得图标文件的名字一样，否则这里将不起效果
+                other_btn_object_name_prefix = btn.objectName().split("_")[0]
+                path = f":/{global_setting.get_setting('style')}/{other_btn_object_name_prefix}.svg"
+                # 找不到图标文件就写进日志
+                if not QFile.exists(path):
+                    logger.warning(f"{btn.objectName()} button's icon resource file was not found！")
+                # 否则就更新图标
+                else:
+                    icon = QtGui.QIcon()
+                    icon.addPixmap(QtGui.QPixmap(path),
+                                   QtGui.QIcon.Mode.Normal,
+                                   QtGui.QIcon.State.Off)
+                    btn.setIcon(icon)
+                    btn.setIconSize(QtCore.QSize(20, 20))
+            # 给每个QPushButton对象 添加相关样式
+            btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         pass
 
     # 实例化功能
@@ -201,38 +238,8 @@ class MainWindow(ThemedWidget):
         # 更改样式
         self.frame.setStyleSheet(global_setting.get_setting("theme_manager").get_style_sheet())
         # 更改自定义组件样式
-        # 找到主窗口中的所有QPushButton对象
-        pushBtns = self.frame.findChildren(QPushButton)
-        # 给每个QPushButton对象 添加相关样式 并且更换icon样式 start
-        for btn in pushBtns:
-            # 更换图标样式 start
-            # 更换左侧菜单图标样式
-            if btn.property("icon_name") != None:
-                icon_name = btn.property("icon_name")
-                icon = QtGui.QIcon()
-                icon.addPixmap(QtGui.QPixmap(f":/{global_setting.get_setting('style')}/{icon_name}"),
-                               QtGui.QIcon.Mode.Normal,
-                               QtGui.QIcon.State.Off)
-                btn.setIcon(icon)
-                btn.setIconSize(QtCore.QSize(20, 20))
-            # 更换其他按钮图标样式
-            else:
-                #  获得其他图标的objectname的前缀 注意我们的带有图标的QPushButton的ObjectName的前缀必须要和我们所设置得图标文件的名字一样，否则这里将不起效果
-                other_btn_object_name_prefix = btn.objectName().split("_")[0]
-                path = f":/{global_setting.get_setting('style')}/{other_btn_object_name_prefix}.svg"
-                # 找不到图标文件就写进日志
-                if not QFile.exists(path):
-                    logger.warning(f"{btn.objectName()} button's icon resource file was not found！")
-                # 否则就更新图标
-                else:
-                    icon = QtGui.QIcon()
-                    icon.addPixmap(QtGui.QPixmap(path),
-                                   QtGui.QIcon.Mode.Normal,
-                                   QtGui.QIcon.State.Off)
-                    btn.setIcon(icon)
-                    btn.setIconSize(QtCore.QSize(20, 20))
-            # 给每个QPushButton对象 添加相关样式
-            btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
+        # 更改图标样式
+        self.init_icon_style()
         # 给默认菜单项设置样式
         default_menu_btn = self.frame.findChild(QPushButton, "btn" + str(global_setting.get_setting("menu_id_now")))
         default_menu_btn.setStyleSheet(
