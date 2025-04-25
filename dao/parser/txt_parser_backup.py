@@ -229,8 +229,15 @@ class txt_parser():
                         # 空格分割 [0]是数据 [1]是日期
                         line_datas = line.split(" ")
                         data_date_time = datetime.strptime(line_datas[1], "%Y-%m-%d/%H:%M:%S.%f").timestamp()
+                        before_time_value, before_time_str = time_util.get_times_before_seconds(times=data_start[index],
+                                                                                                before_seconds=
+                                                                                                float(
+                                                                                                    global_setting.get_setting(
+                                                                                                        "configer")[
+                                                                                                        'graphic'][
+                                                                                                        'data_delay']))
 
-                        if data_date_time >= data_start[index] and nums_temp <= data_nums[
+                        if data_date_time >= before_time_value and nums_temp <= data_nums[
                             index] and nums_temp % data_step[index] == 0:
                             data = txt_data(id, line_datas[0], line_datas[1])
                             return_data.append(data)
@@ -243,8 +250,14 @@ class txt_parser():
                         # 空格分割 [0]是数据 [1]是日期
                         line_datas = line.split(" ")
                         data_date_time = datetime.strptime(line_datas[1], "%Y-%m-%d/%H:%M:%S.%f").timestamp()
-
-                        if data_date_time >= data_start[index] and nums_temp <= data_nums[
+                        before_time_value, before_time_str = time_util.get_times_before_seconds(times=data_start[index],
+                                                                                                before_seconds=
+                                                                                                float(
+                                                                                                    global_setting.get_setting(
+                                                                                                        "configer")[
+                                                                                                        'graphic'][
+                                                                                                        'data_delay']))
+                        if data_date_time >= before_time_value and nums_temp <= data_nums[
                             index] and nums_temp % data_step[index] == 0:
                             data = txt_data(id, line_datas[0], line_datas[1])
                             return_data.append(data)

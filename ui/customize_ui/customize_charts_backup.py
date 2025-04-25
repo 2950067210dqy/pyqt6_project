@@ -4,83 +4,17 @@ from datetime import datetime
 
 from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries, \
     QDateTimeAxis
-from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent, QDateTime, QRunnable, pyqtSignal
+from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent, QDateTime, QRunnable
 from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
 from PyQt6.QtWidgets import QVBoxLayout, QToolTip
 from PyQt6 import QtCore
-from PySide6.QtCore import Slot
 from loguru import logger
 
 from config.global_setting import global_setting
 from dao.data_read import data_read
-from dao.data_read_enum import Data_Read_Where_Start_Func
-
 from theme.ThemeManager import Charts_Style_Name
 from theme.ThemeQt6 import ThemedWidget
 from util.folder_util import File_Types
-
-# 单独的 QObject 用于发射信号
-from util.time_util import time_util
-
-
-class WorkerSignals(QObject):
-    data_ready = pyqtSignal(list)
-
-
-#  请求数据线程任务类
-class request_data_task(QRunnable):
-
-    def __init__(self, data_func_choose, data_all_counts, data_read, data_origin_ports, data_read_counts, object_name):
-        self.data_func_choose = data_func_choose
-        self.data_all_counts = data_all_counts
-        self.data_read = data_read
-        self.data_origin_ports = data_origin_ports
-        self.data_read_counts = data_read_counts
-        self.object_name = object_name
-        self.signals = WorkerSignals()
-        super().__init__()
-
-    def run(self):
-        # 根据时间的前几秒来开始读取
-        # 读取数据
-        try:
-            # 不同方式的data_start 和读取数据方式
-            data_start = []
-            for choose_index in range(len(self.data_func_choose)):
-                match self.data_func_choose[choose_index]:
-                    case Data_Read_Where_Start_Func.DELAY_1:
-                        before_time_value, before_time_str = time_util.get_times_before_seconds(times=datetime.now(),
-                                                                                                before_seconds=1
-                                                                                                )
-                        data_start.append(before_time_value)
-                        pass
-                    case Data_Read_Where_Start_Func.INDEX:
-                        data_start.append(self.data_all_counts[choose_index] + 1)
-                        pass
-                    case Data_Read_Where_Start_Func.DELAY_CONFIG | _:
-                        before_time_value, before_time_str = time_util.get_times_before_seconds(times=datetime.now(),
-                                                                                                before_seconds=
-                                                                                                float(
-                                                                                                    global_setting.get_setting(
-                                                                                                        "configer")[
-                                                                                                        'graphic'][
-                                                                                                        'data_delay']))
-                        data_start.append(before_time_value)
-                        pass
-
-            data_temp = self.data_read.read_service.read_range_datas_seq_from_times_index_start(
-                data_origin_port=self.data_origin_ports,
-                times=datetime.now(),
-                data_start=data_start,
-                data_func_choose=self.data_func_choose,
-                data_nums=[self.data_read_counts for i in
-                           self.data_origin_ports],
-                data_step=[1 for i in self.data_origin_ports])
-
-        except Exception as e:
-            logger.error(f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e}")
-
-        self.signals.data_ready.emit(data_temp)
 
 
 class charts(ThemedWidget):
@@ -144,7 +78,7 @@ class charts(ThemedWidget):
             self.data.append([])
             self.data_all_counts.append(0)
             self.data_last_read_counts.append(0)
-            self.data_func_choose.append(Data_Read_Where_Start_Func.DELAY_CONFIG)
+            self.data_func_choose.append(True)
         # 图表每次读取的数据数量
         self.data_read_counts = data_read_counts
         # 定时器
@@ -261,7 +195,7 @@ class charts(ThemedWidget):
                     if self.object_name == "charts_tab1_left_bottom_1":
                         logger.error(f"{self.object_name}|{origin_data.id}|{origin_data.data}|{origin_data.date}")
                         logger.error(
-                            f"in_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
+                            f"{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
                     q_point = QPointF(
                         int(datetime.strptime(origin_data.date, "%Y-%m-%d/%H:%M:%S.%f").timestamp() * 1000),
                         float(origin_data.data))
@@ -283,44 +217,103 @@ class charts(ThemedWidget):
         # 定时器，每delay毫秒更新一次数据
         # ！！！！！！！！！！！！！！！！！！！！！！用线程池 不然卡死！
         self.timer = QTimer()
-        self.timer.timeout.connect(self.request_data)
-        self.timer.start(int(global_setting.get_setting("configer")['graphic'][
-                                 'delay']))
+        self.timer.timeout.connect(self.get_data_func_from_times_start)
+        # self.timer.timeout.connect(self.start_read_data_task)
+        self.timer.start(global_setting.get_setting("configer")['graphic'][
+                             'delay'])
         pass
 
-    # 获取数据线程请求
-    def request_data(self):
-        try:
-            if self.object_name == "charts_tab1_left_bottom_1":
-                logger.error(
-                    f"before_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
-            # 线程任务实例化
-            self.request_data_task_generator = request_data_task(data_func_choose=self.data_func_choose,
-                                                                 data_all_counts=self.data_all_counts,
-                                                                 data_read=self.data_read,
-                                                                 data_origin_ports=self.data_origin_ports,
-                                                                 data_read_counts=self.data_read_counts,
-                                                                 object_name=self.object_name)
-            # 信号绑定槽函数
-            self.request_data_task_generator.signals.data_ready.connect(self.update_data_func_from_times_start)
-            # 开启线程
-            global_setting.get_setting("thread_pool").start(self.request_data_task_generator)
-        except Exception as e:
-            logger.error(f"{self.object_name}开启线程失败！，失败原因：{e}")
+    # def start_read_data_task(self):
+    #     self.task = read_data_task(chart=self)
+    #     global_setting.get_setting('thread_pool').start(self.task)
+    #     pass
 
+    def get_data_func_from_index_start(self):
+        # 从index来开始读取数据
+        try:
+            data_temp, data_ids = self.transfer_data(
+                self.data_read.read_service.read_range_datas_seq_from_index_start(
+                    data_origin_port=self.data_origin_ports,
+                    times=datetime.now(),
+                    data_start=[x + 1 for x in self.data_all_counts],
+                    data_nums=[self.data_read_counts for i in
+                               self.data_origin_ports],
+                    data_step=[1 for i in self.data_origin_ports]))
+
+
+        except Exception as e:
+            logger.error(f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e}")
+
+        # 插入数据
+        for origin_data_index in range(len(data_temp)):
+            # logger.info(
+            #     f"图表{self.object_name}读取数据源{origin_data_index}数据长度为{len(data_temp[origin_data_index])}，data_start={self.data_all_counts}data_nums={self.data_read_counts - 1}")
+            # 把每次获取的数据数量记录起来
+            self.data_all_counts[origin_data_index] += len(data_temp[origin_data_index])
+            for data_index in range(len(data_temp[origin_data_index])):
+                self.data[origin_data_index].append(data_temp[origin_data_index][data_index])
+                pass
+            pass
+        # 插入数据之后的数据长度
+        show_nums = global_setting.get_setting("configer")['graphic'][
+            'data_show_nums']
+        try:
+
+            for origin_data_index in range(len(self.data)):
+                # 不同数据源在图表显示的时候需要同步 只要有一方数据源的数量一直是show_nums，而其他数据源出现数据更新暂停 则在图表移除数据
+                if len(data_temp[origin_data_index]) == 0 and len(self.data[origin_data_index]) != 0:
+                    self.data[origin_data_index].pop(0)
+                # 每个数据源需要遵守的规则
+                while len(self.data[origin_data_index]) >= show_nums and len(self.data[origin_data_index]) != 0:
+                    # logger.info(f"图表{self.object_name}持数据源{origin_data_index}长度为{len(self.data[origin_data_index])}")
+                    self.data[origin_data_index].pop(0)  # 保持数据长度为show_nums
+
+
+        except Exception as e:
+            logger.error(f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+        try:
+            # 获取 x 和y值的最大值和最小值来确定坐标轴范围
+            self.get_max_and_min_data()
+            self.update_series()
+            # 设置坐标轴范围
+            self._set_x_axis()
+            self._set_y_axis()
+            # 更新样式
+            self.set_series_lenged_style()
+        except Exception as e:
+            logger.error(f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
         pass
 
     # 获取数据的函数
-    def update_data_func_from_times_start(self, data):
-
+    def get_data_func_from_times_start(self):
+        # 根据时间的前几秒来开始读取
         # 读取数据
-        data_temp, data_ids = self.transfer_data(data)
+        try:
+            # 如果没读取到数据 优先从times位置开始读取 否则从index位置开始读取
+            self.data_func_choose = [len(self.data[i]) == 0 or self.data_last_read_counts[i] == 0 for i in
+                                     range(len(self.data))]
+            # 不同方式的data_start
+            data_start = [
+                datetime.now() if self.data_func_choose[choose_index] else self.data_all_counts[choose_index] + 1
+                for choose_index in range(len(self.data_func_choose))]
+            data_temp, data_ids = self.transfer_data(
+                self.data_read.read_service.read_range_datas_seq_from_times_index_start(
+                    data_origin_port=self.data_origin_ports,
+                    times=datetime.now(),
+                    data_start=data_start,
+                    data_func_choose=self.data_func_choose,
+                    data_nums=[self.data_read_counts for i in
+                               self.data_origin_ports],
+                    data_step=[1 for i in self.data_origin_ports]))
+
+
+        except Exception as e:
+            logger.error(f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e}")
 
         # 插入数据
         for origin_data_index in range(len(data_temp)):
             # 把读取的数据量存储
             self.data_last_read_counts[origin_data_index] = len(data_temp[origin_data_index])
-
             # 把这次获取的数据的最大id放入我们的data_all_counts
             if len(data_ids[origin_data_index]) != 0:
                 self.data_all_counts[origin_data_index] = data_ids[origin_data_index][
@@ -333,23 +326,6 @@ class charts(ThemedWidget):
             for data_index in range(len(data_temp[origin_data_index])):
                 self.data[origin_data_index].append(data_temp[origin_data_index][data_index])
             pass
-        # 如果没读取到数据 优先从times位置开始读取 否则从index位置开始读取
-        for i in range(len(self.data)):
-            # 一开始没数据 则一直从delay秒前读
-            if len(self.data[i]) == 0:
-                self.data_func_choose[i] = Data_Read_Where_Start_Func.DELAY_CONFIG
-                continue
-            # 读的过程中读不到数据了 则从1秒前读
-            if self.data_last_read_counts[i] == 0:
-                self.data_func_choose[i] = Data_Read_Where_Start_Func.DELAY_1
-                continue
-            # 读取到了数据则转为index读取
-            self.data_func_choose[i] = Data_Read_Where_Start_Func.INDEX
-            pass
-
-        if self.object_name == "charts_tab1_left_bottom_1":
-            logger.error(
-                f"after_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
         # 插入数据之后的数据长度
         show_nums = global_setting.get_setting("configer")['graphic'][
             'data_show_nums']
@@ -528,3 +504,83 @@ class charts(ThemedWidget):
                               grid_line_color=QColor(self.theme[self.theme_name]['axis']['axis_grid_line_color']))
 
         pass
+
+# class read_data_task(QRunnable):
+#     def __init__(self, chart: charts = charts()):
+#         super().__init__()
+#         self.chart = chart
+#         pass
+#
+#     # 读取数据任务线程池
+#     def run(self):
+#         self.get_data_func_from_times_start()
+#
+#     # 获取数据的函数
+#     def get_data_func_from_times_start(self):
+#         # 根据时间的前几秒来开始读取
+#         # 读取数据
+#         try:
+#             # 如果没读取到数据 优先从times位置开始读取 否则从index位置开始读取
+#             self.data_func_choose = [len(self.chart.data[i]) == 0 or self.chart.data_last_read_counts[i] == 0 for i in
+#                                      range(len(self.chart.data))]
+#             # 不同方式的data_start
+#             data_start = [
+#                 datetime.now() if self.data_func_choose[choose_index] else self.chart.data_all_counts[choose_index] + 1
+#                 for choose_index in range(len(self.data_func_choose))]
+#             data_temp, data_ids = self.chart.transfer_data(
+#                 self.chart.data_read.read_service.read_range_datas_seq_from_times_index_start(
+#                     data_origin_port=self.chart.data_origin_ports,
+#                     times=datetime.now(),
+#                     data_start=data_start,
+#                     data_func_choose=self.data_func_choose,
+#                     data_nums=[self.chart.data_read_counts for i in
+#                                self.chart.data_origin_ports],
+#                     data_step=[1 for i in self.chart.data_origin_ports]))
+#
+#
+#         except Exception as e:
+#             logger.error(f"图表{self.chart.object_name}读取数据源{self.chart.data_origin_ports}数据失败，失败原因：{e}")
+#
+#         # 插入数据
+#         for origin_data_index in range(len(data_temp)):
+#             # 把读取的数据量存储
+#             self.chart.data_last_read_counts[origin_data_index] = len(data_temp[origin_data_index])
+#             # 把这次获取的数据的最大id放入我们的data_all_counts
+#             if len(data_ids[origin_data_index]) != 0:
+#                 self.chart.data_all_counts[origin_data_index] = data_ids[origin_data_index][
+#                     len(data_ids[origin_data_index]) - 1]
+#                 pass
+#             else:
+#                 self.chart.data_all_counts[origin_data_index] = 0
+#                 pass
+#             # 插入数据
+#             for data_index in range(len(data_temp[origin_data_index])):
+#                 self.chart.data[origin_data_index].append(data_temp[origin_data_index][data_index])
+#             pass
+#         # 插入数据之后的数据长度
+#         show_nums = global_setting.get_setting("configer")['graphic'][
+#             'data_show_nums']
+#         try:
+#             for origin_data_index in range(len(self.chart.data)):
+#                 # 不同数据源在图表显示的时候需要同步 只要有一方数据源的数量一直是show_nums，而其他数据源出现数据更新暂停 则在图表移除数据
+#                 if len(data_temp[origin_data_index]) == 0 and len(self.chart.data[origin_data_index]) != 0:
+#                     self.chart.data[origin_data_index].pop(0)
+#                 # 每个数据源需要遵守的规则
+#                 while len(self.chart.data[origin_data_index]) >= show_nums and len(
+#                         self.chart.data[origin_data_index]) != 0:
+#                     # logger.info(f"图表{self.object_name}持数据源{origin_data_index}长度为{len(self.data[origin_data_index])}")
+#                     self.chart.data[origin_data_index].pop(0)  # 保持数据长度为show_nums
+#         except Exception as e:
+#             logger.error(f"图表{self.chart.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.chart.data[0])}，失败原因：{e}")
+#         try:
+#             # 获取 x 和y值的最大值和最小值来确定坐标轴范围
+#             self.chart.get_max_and_min_data()
+#             self.chart.update_series()
+#             # 设置坐标轴范围
+#             self.chart._set_x_axis()
+#             self.chart._set_y_axis()
+#             # 更新样式
+#             self.chart.set_series_lenged_style()
+#         except Exception as e:
+#             logger.error(f"图表{self.chart.object_name}更新series失败，series[0]数据长度{len(self.chart.data[0])}，失败原因：{e}")
+#         pass
