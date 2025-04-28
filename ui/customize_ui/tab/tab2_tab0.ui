@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>891</width>
+    <height>479</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="current_data_label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>60</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>电量数据：</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="current_data_tab_frame">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>791</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <widget class="QWidget" name="current_tab_0">
+    <attribute name="title">
+     <string>A相</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="current_tab_1">
+    <attribute name="title">
+     <string>B相</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="current_tab_3">
+    <attribute name="title">
+     <string>C相</string>
+    </attribute>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

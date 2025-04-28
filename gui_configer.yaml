@@ -38,6 +38,13 @@ tab: #菜单窗口项
     y: 80 #菜单窗口基于父窗口的左上角的点的y坐标 单位px
     width: 911 #菜单窗口长 单位px
     height: 591 #菜单窗口高 单位px
+monitoring_data: #监测数据项
+  - id: 1 #对应相应的tab
+    title: '电量' #菜单名称
+    object_name: 'current' #菜单object_name 取title的英文名即可
+  - id: 2
+    title: '温度'
+    object_name: 'temperature'
 graphic: #图表项
   data_read_nums: 1 #每次读几个数据
   data_show_nums: 20 #图表中显示数据的数量

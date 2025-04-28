@@ -1,15 +1,22 @@
 from loguru import logger
+from pyqt6_plugins.examplebutton import QtWidgets
 
+from config.global_setting import global_setting
 from theme.ThemeQt6 import ThemedWidget
+from ui.customize_ui.tab.tab2_tab0 import tab2_tab0
+from ui.customize_ui.tab.tab2_tab1 import tab2_tab1
 from ui.tab2 import Ui_tab2_frame
 from PyQt6 import QtCore
 from PyQt6.QtCore import QRect
-from PyQt6.QtWidgets import QWidget
+from PyQt6.QtWidgets import QWidget, QVBoxLayout
 
 from theme.ThemeQt6 import ThemedWidget
 
 
 class Tab_2(ThemedWidget):
+    # 不同的tab的frame
+    classes = [tab2_tab0, tab2_tab1]
+
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
         # 图像列表
@@ -42,7 +49,31 @@ class Tab_2(ThemedWidget):
 
     # 实例化自定义ui
     def _init_customize_ui(self):
+        # 根据监测数据项配置tab页
+        self._init_monitor_data_tab_page()
         pass
+
+    # 根据监测数据项配置tab页
+    def _init_monitor_data_tab_page(self):
+        # tab页布局
+        content_layout_son: QVBoxLayout = self.frame.findChild(QVBoxLayout, "content_layout_son")
+        self.tabWidget = QtWidgets.QTabWidget()
+        self.tabWidget.setObjectName("tab_2_tabWidget")
+        self.tabWidget.setStyleSheet("")
+        monitor_data_tab_page_config = global_setting.get_setting("configer")['monitoring_data']
+        for monitor_data in monitor_data_tab_page_config:
+            tab = QtWidgets.QWidget()
+            tab.setObjectName(f"tab_{monitor_data['id'] - 1}_{monitor_data['object_name']}")
+            # 绑定相关的tab页
+            tab_frame = self.classes[monitor_data['id'] - 1]()
+            if hasattr(tab_frame, 'set_parent') and callable(getattr(tab_frame, 'set_parent')):
+                tab_frame.set_parent(parent=tab)
+            else:
+                tab_frame.setupUi(tab)
+            self.tabWidget.addTab(tab, monitor_data['title'])
+            pass
+            pass
+        content_layout_son.addWidget(self.tabWidget)
 
     # 实例化功能
     def _init_function(self):

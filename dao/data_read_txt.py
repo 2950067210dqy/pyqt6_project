@@ -6,6 +6,7 @@ from config.global_setting import global_setting
 from dao.data_read_enum import Data_Read_Where_Start_Func
 from dao.parser.txt_parser import txt_parser
 from entity.txt_data import txt_data
+from util.folder_util import File_Types
 from util.time_util import time_util
 
 
@@ -13,7 +14,7 @@ class data_read_txt():
     """
     读取txt数据类
     """
-    suffix = "txt"
+    suffix = File_Types.TXT.value
 
     def __init__(self, data_storage_loc=global_setting.get_setting("communiation_project_path"),
                  data_origin_port=[]):
@@ -44,7 +45,7 @@ class data_read_txt():
             data_origin_port_temp = data_origin_port
         year, week, day = time_util.get_times_week_info(times)
         path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
-            'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+            'fold_path'] + "charts" + global_setting.get_setting("serial_config")['Storage'][
                    'port_prefix'] + data_origin_port_temp + "/" + str(
             year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
         path_dict = {}
@@ -82,7 +83,7 @@ class data_read_txt():
             data_start.append(1)
             data_step.append(1)
             path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
-                'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+                'fold_path'] + "charts" + global_setting.get_setting("serial_config")['Storage'][
                        'port_prefix'] + port + "/" + str(
                 year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
             path_dict = {}
@@ -120,7 +121,7 @@ class data_read_txt():
             data_origin_port_temp = data_origin_port
         year, week, day = time_util.get_times_week_info(times)
         path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
-            'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+            'fold_path'] + "charts" + global_setting.get_setting("serial_config")['Storage'][
                    'port_prefix'] + data_origin_port_temp + "/" + str(
             year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
         path_dict = {}
@@ -157,7 +158,7 @@ class data_read_txt():
         path_s = []
         for port in data_origin_port_temp:
             path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
-                'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+                'fold_path'] + "charts" + global_setting.get_setting("serial_config")['Storage'][
                        'port_prefix'] + port + "/" + str(
                 year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
             path_dict = {}
@@ -194,7 +195,7 @@ class data_read_txt():
             data_origin_port_temp = data_origin_port
         year, week, day = time_util.get_times_week_info(times)
         path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
-            'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+            'fold_path'] + "charts" + global_setting.get_setting("serial_config")['Storage'][
                    'port_prefix'] + data_origin_port_temp + "/" + str(
             year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
         path_dict = {}
@@ -231,7 +232,7 @@ class data_read_txt():
         path_s = []
         for port in data_origin_port_temp:
             path = self.data_storage_loc + global_setting.get_setting("serial_config")['Storage'][
-                'fold_path'] + global_setting.get_setting("serial_config")['Storage'][
+                'fold_path'] + "charts" + global_setting.get_setting("serial_config")['Storage'][
                        'port_prefix'] + port + "/" + str(
                 year) + "/" + f"{week}week" + "/" + str(day) + f".{self.suffix}"
             path_dict = {}

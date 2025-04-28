@@ -65,6 +65,7 @@ class ThemeManager(QObject):
         themes = {
             "dark": {
                 Charts_Style_Name.NORMAL.value: {
+                    'background_color': theme['--secondary'],
                     'chart': {
                         'chart_background_color': theme['--secondary'],
                         'plot_area_color': theme['--secondary'],
@@ -85,6 +86,7 @@ class ThemeManager(QObject):
             },
             "light": {
                 Charts_Style_Name.NORMAL.value: {
+                    'background_color': theme['--secondary'],
                     'chart': {
                         'chart_background_color': theme['--secondary'],
                         'plot_area_color': theme['--secondary'],
@@ -103,7 +105,49 @@ class ThemeManager(QObject):
                 },
             }
         }
+        # 获得背景色的强对比度颜色
         return themes[self._current_theme]
+        pass
+
+    def hex_to_rgb(self, hex_color):
+        """将16进制颜色转为RGB元组"""
+        hex_color = hex_color.lstrip('#')
+        return tuple(int(hex_color[i:i + 2], 16) for i in (0, 2, 4))
+
+    def rgb_to_hex(self, rgb):
+        """将RGB元组转为16进制颜色"""
+        return '#{:02x}{:02x}{:02x}'.format(*rgb)
+
+    def luminance(self, rgb):
+        """计算颜色的亮度"""
+        r, g, b = rgb
+        return 0.299 * r + 0.587 * g + 0.114 * b
+
+    # 获得强对比度颜色
+    def get_contrast_color(self, colorHex: str = "", color_delta_start: int = -30, color_delta_end: int = 30,
+                           color_nums: int = 5):
+        """根据亮度计算对比度颜色（黑色或白色）"""
+        rgb = self.hex_to_rgb(colorHex)
+        contrast_color = '#ffffff' if self.luminance(rgb) < 128 else '#000000'
+        return self.get_neighbor_color(colorHex=contrast_color, color_delta_start=color_delta_start,
+                                       color_delta_end=color_delta_start + color_delta_end,
+                                       color_nums=color_nums) if contrast_color == '#ffffff' else self.get_neighbor_color(
+            colorHex=contrast_color, color_delta_start=color_delta_start + color_delta_end,
+            color_delta_end=color_delta_end,
+            color_nums=color_nums)
+        pass
+
+    # 获得邻近渐变颜色
+    def get_neighbor_color(self, colorHex: str = "", color_delta_start: int = -30, color_delta_end: int = 30,
+                           color_nums: int = 5):
+        """生成邻近颜色"""
+        rgb = self.hex_to_rgb(colorHex)
+        adj_colors = []
+        for delta in range(color_delta_start, color_delta_end,
+                           (color_delta_end - color_delta_start) // color_nums):  # 微调RGB值
+            adj_color = tuple(max(0, min(255, c + delta)) for c in rgb)
+            adj_colors.append(self.rgb_to_hex(adj_color))
+        return adj_colors
         pass
 
     # 获取图表style

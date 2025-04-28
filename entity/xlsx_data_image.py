@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class csv_data():
+class xlsx_data():
     """
     csv数据的格式
     """
