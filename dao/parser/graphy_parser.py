@@ -1,3 +1,5 @@
+import os
+
 from PyQt6.QtGui import QPixmap
 from loguru import logger
 
@@ -54,7 +56,12 @@ class graphy_parser():
         return folder_util.is_exist_file(file_path)
         pass
 
-    def read_data(self, files_path=[]):
+    # 获取文件夹下的所有文件的名称 不递归
+    def get_file_names_in_current_dir(self, folder_path):
+        return [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+
+    # 获取文件夹下的所有图片
+    def read_data(self, files_path=[], suffix="png"):
         """
         获取xlsx数据
         :return:
@@ -80,16 +87,22 @@ class graphy_parser():
             # 判断数据文件是否存在
             correct_data = {}
             correct_data['name'] = 'correct'
-            is_data_file_exist = self.is_file_exist(dict_temp['file_path'][0])
-            if is_data_file_exist:
-                # 读取整个表格为 DataFrame
-                correct_data['data'] = QPixmap(dict_temp['file_path'][0])
+            correct_data['data'] = []
+            is_folder_file_exist = folder_util.is_exist_folder(dict_temp['file_path'][0])
+            if is_folder_file_exist:
+                # 读取
+                file_names = self.get_file_names_in_current_dir(dict_temp['file_path'][0])
+                for name in file_names:
+                    correct_data['data'].append(QPixmap(dict_temp['file_path'][0] + name))
             error_data = {}
             error_data['name'] = 'error'
-            is_data_file_exist = self.is_file_exist(dict_temp['file_path'][1])
-            if is_data_file_exist:
-                # 读取整个表格为 DataFrame
-                error_data['data'] = QPixmap(dict_temp['file_path'][1])
+            error_data['data'] = []
+            is_folder_file_exist = folder_util.is_exist_folder(dict_temp['file_path'][1])
+            if is_folder_file_exist:
+                # 读取
+                file_names = self.get_file_names_in_current_dir(dict_temp['file_path'][1])
+                for name in file_names:
+                    error_data['data'].append(QPixmap(dict_temp['file_path'][1] + name))
             return_data.append(correct_data)
             return_data.append(error_data)
             return_datas.append(return_data)

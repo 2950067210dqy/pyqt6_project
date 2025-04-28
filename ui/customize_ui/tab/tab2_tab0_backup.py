@@ -74,7 +74,7 @@ class tab2_tab0(object):
 
         self.current_data_label_rated_frequency = QtWidgets.QLabel(parent=self.parent)
         self.current_data_label_rated_frequency.setText(
-            f" 额定频率")
+            f" 额定功率")
 
         self.current_data_label_rated_frequency.setGeometry(QtCore.QRect(20, 105, 60, 16))
         self.current_data_label_rated_frequency.setObjectName("current_data_config_rated_frequency")
@@ -92,7 +92,7 @@ class tab2_tab0(object):
         for phase_len in range(len(self.datas.data)):
             current_tab = QtWidgets.QWidget()
             current_tab.setObjectName(f"current_tab_{phase_len}")
-            self.current_data_tab_frame.addTab(current_tab, self.datas.data[phase_len].name)
+            self.current_data_tab_frame.addTab(current_tab, self.datas.datas[phase_len].name)
             self.current_data_tab_frame_items.append(current_tab)
         self.current_data_tab_frame.setCurrentIndex(0)
         self.current_data_tab_frame.setParent(self.parent)

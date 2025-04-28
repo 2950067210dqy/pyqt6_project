@@ -41,8 +41,8 @@ class data_read_graphy():
             year) + "/" + f"{week}week" + "/" + str(day) + "/"
         path_dict = {}
         path_dict['port'] = data_origin_port_temp
-        path_dict['file_path'] = [path + "correct." + self.suffix, path + "error." + self.suffix]
+        path_dict['file_path'] = [path + "correct/", path + "error/"]
 
-        datas = self.graphy_parser.read_data(files_path=[path_dict])
+        datas = self.graphy_parser.read_data(files_path=[path_dict], suffix=self.suffix)
         return datas[0]
         pass

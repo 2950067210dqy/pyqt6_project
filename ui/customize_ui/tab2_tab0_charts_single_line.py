@@ -17,7 +17,7 @@ from theme.ThemeQt6 import ThemedWidget
 from util.folder_util import File_Types
 
 
-class tab2_tab0_charts_single(ThemedWidget):
+class tab2_tab0_charts_single_line(ThemedWidget):
 
     def __init__(self, datas, parent: QVBoxLayout | QHBoxLayout = None, object_name: str = "",
                  title: str = "", x_name: str = "x", y_name: str = "y",
@@ -41,7 +41,7 @@ class tab2_tab0_charts_single(ThemedWidget):
         self.is_span = is_span
         self.title = title
         # 图表类型
-        self.charts_type = charts_type
+  
         # obejctName
         self.object_name = object_name
         # 父布局

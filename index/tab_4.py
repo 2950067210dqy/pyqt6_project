@@ -62,32 +62,45 @@ class Tab_4(ThemedWidget):
     def _init_customize_ui(self):
         self.parent_layout = self.frame.findChild(QHBoxLayout, "tab4_layout")
         self.graphics_view_list = self.frame.findChildren(QGraphicsView)
+        graphics_view_left = []
+        graphics_view_right = []
         for i in range(len(self.graphics_view_list)):
             logger.info(self.graphics_view_list[i].objectName())
             if "left" in self.graphics_view_list[i].objectName():
-                scene = QGraphicsScene()
+                logger.error(f"left{i}")
 
-                pixmap_item = QGraphicsPixmapItem(self.data[0]['data'])
-                scene.addItem(pixmap_item)
-
-                # 设置场景给视图
-                self.graphics_view_list[i].setScene(scene)
+                graphics_view_left.append(self.graphics_view_list[i])
                 # 自动缩放视图，使图片完全显示，保持宽高比
                 # self.graphics_view_list[i].fitInView(pixmap_item, Qt.AspectRatioMode.KeepAspectRatio)
                 pass
             elif "right" in self.graphics_view_list[i].objectName():
-                scene = QGraphicsScene()
+                logger.error(f"right{i}")
 
-                pixmap_item = QGraphicsPixmapItem(self.data[1]['data'])
-                scene.addItem(pixmap_item)
-
-                # 设置场景给视图
-                self.graphics_view_list[i].setScene(scene)
+                graphics_view_right.append(self.graphics_view_list[i])
                 # 自动缩放视图，使图片完全显示，保持宽高比
                 # self.graphics_view_list[i].fitInView(pixmap_item, Qt.AspectRatioMode.KeepAspectRatio)
                 pass
             else:
                 pass
+
+            for i in range(len(graphics_view_left)):
+                scene = QGraphicsScene()
+                # 按比例缩放到目标宽高内
+                scaled_pixmap = self.data[0]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
+                pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
+                scene.addItem(pixmap_item)
+
+                # 设置场景给视图
+                graphics_view_left[i].setScene(scene)
+            for i in range(len(graphics_view_right)):
+                scene = QGraphicsScene()
+                # 按比例缩放到目标宽高内
+                scaled_pixmap = self.data[1]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
+                pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
+                scene.addItem(pixmap_item)
+
+                # 设置场景给视图
+                graphics_view_right[i].setScene(scene)
             self.graphics_view_list[i].setDragMode(QGraphicsView.DragMode.ScrollHandDrag)  # 开启拖拽模式
 
             # # 可选：关闭滚动条，避免出现滚动条

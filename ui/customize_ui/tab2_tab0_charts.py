@@ -19,7 +19,8 @@ from config.global_setting import global_setting
 from dao.data_read import data_read
 from entity.xlsx_data import xlsx_datas
 from theme.ThemeManager import Charts_Style_Name
-from ui.customize_ui.tab2_tab0_charts_single_line import tab2_tab0_charts_single
+from ui.customize_ui.tab2_tab0_charts_single_column import tab2_tab0_charts_single_column
+from ui.customize_ui.tab2_tab0_charts_single_line import tab2_tab0_charts_single_line
 
 
 class tab2_tab0_charts():
@@ -49,225 +50,28 @@ class tab2_tab0_charts():
         self.object_name = object_name
         # 父布局
         self.parent_layout = parent
-        self.transfer_data()
+
         self._init_ui()
 
-    def transfer_data(self):
-        self.transfer_datas = list()
-
-        # 三个相位角
-        for i in range(len(self.datas.data)):
-            transfer_data_items = dict()
-            transfer_data_items['data'] = list()
-
-            transfer_data_items[
-                'rated_phase_angle'] = f"相角{self.datas.data[i].rated_phase_angle}{self.datas.data[i].rated_phase_angle_unit}"
-
-            for j in range(4):
-                transfer_data_phase_angle_items = dict()
-                # 4 个数据项
-                transfer_data_phase_angle_items['data'] = list()
-                match j:  # 4个数据项
-                    case 0:
-                        transfer_data_phase_angle_items[
-                            "data_name"] = f"实际功率"
-                        pass
-                    case 1:
-                        transfer_data_phase_angle_items[
-                            "data_name"] = f"实际电压U"
-                        pass
-                    case 2:
-                        transfer_data_phase_angle_items[
-                            "data_name"] = f"实际电流I"
-                        pass
-                    case 3 | _:
-                        transfer_data_phase_angle_items[
-                            "data_name"] = f"实际相角"
-                        pass
-
-                transfer_data_result_items = dict()
-                transfer_data_error_items = dict()
-                transfer_data_result_items['name'] = "结果"
-                transfer_data_error_items['name'] = "误差"
-                transfer_data_result_items['data'] = list()
-                transfer_data_error_items['data'] = list()
-                for k in range(2):  # 2 结果与误差
-                    transfer_datas_device_item = dict()
-                    transfer_datas_device_item['data'] = list()
-
-                    for l in range(len(self.datas.data[i].data)):  # 两个设备
-                        transfer_datas_device_data_single = dict()
-
-                        transfer_datas_device_data_single['series_name'] = self.datas.data[i].data[l].device_name
-
-                        transfer_datas_device_data_single['data'] = dict()
-                        transfer_datas_device_data_single['data']['x'] = []
-                        transfer_datas_device_data_single['data']['y'] = []
-                        for m in range(len(self.datas.data[i].data[l].data.rated_current_datas)):
-                            transfer_datas_device_data_single[
-                                'x_name'] = f"额定电流({self.datas.data[i].data[l].data.rated_current_datas[m].result_unit})"
-                            transfer_datas_device_item[
-                                "x_name"] = f"额定电流({self.datas.data[i].data[l].data.rated_current_datas[m].result_unit})"
-                            match j:  # 4个数据项
-                                case 0:
-                                    if k == 0:  # result
-
-                                        transfer_datas_device_data_single['name'] = "实际功率"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_power_datas[m].result)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_power_datas[m].result_unit})"
-                                        transfer_datas_device_item[
-                                            "y_name"] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_power_datas[m].result_unit})"
-                                        pass
-                                    else:  # error
-                                        transfer_datas_device_data_single['name'] = "实际功率误差"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_power_datas[m].result_error)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_power_datas[m].result_error_unit})"
-                                        transfer_datas_device_item[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_power_datas[m].result_error_unit})"
-                                        pass
-                                    transfer_datas_device_data_single['data']['x'].append(
-                                        self.datas.data[i].data[l].data.rated_current_datas[m].result)
-                                    pass
-                                case 1:
-                                    if k == 0:  # result
-                                        transfer_datas_device_data_single['name'] = "实际电压U"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_voltage_datas[m].result)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_voltage_datas[m].result_error_unit})"
-                                        transfer_datas_device_item[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_voltage_datas[m].result_error_unit})"
-                                        pass
-                                    else:  # error
-                                        transfer_datas_device_data_single['name'] = "实际电压U误差"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_voltage_datas[m].result_error)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_voltage_datas[m].result_error_unit})"
-                                        transfer_datas_device_item[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_voltage_datas[m].result_error_unit})"
-                                        pass
-                                    transfer_datas_device_data_single['data']['x'].append(
-                                        self.datas.data[i].data[l].data.rated_current_datas[m].result)
-                                    pass
-                                case 2:
-                                    if k == 0:  # result
-                                        transfer_datas_device_data_single['name'] = "实际电流I"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_current_datas[m].result)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_current_datas[m].result_error_unit})"
-                                        transfer_datas_device_item[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_current_datas[m].result_error_unit})"
-                                        pass
-                                    else:  # error
-                                        transfer_datas_device_data_single['name'] = "实际电流I误差"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_current_datas[m].result_error)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_current_datas[m].result_error_unit})"
-                                        transfer_datas_device_item[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_current_datas[m].result_error_unit})"
-                                        pass
-                                    transfer_datas_device_data_single['data']['x'].append(
-                                        self.datas.data[i].data[l].data.rated_current_datas[m].result)
-                                    pass
-                                case 3 | _:
-                                    if k == 0:  # result
-                                        transfer_datas_device_data_single['name'] = "相角°"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_phase_datas[m].result)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_phase_datas[m].result_error_unit})"
-                                        transfer_datas_device_item[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_phase_datas[m].result_error_unit})"
-                                        pass
-                                    else:  # error
-                                        transfer_datas_device_data_single['name'] = "相角°误差"
-                                        transfer_datas_device_data_single['data']['y'].append(
-                                            self.datas.data[i].data[l].data.result_phase_datas[m].result_error)
-                                        transfer_datas_device_data_single[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_phase_datas[m].result_error_unit})"
-                                        transfer_datas_device_item[
-                                            'y_name'] = f"{transfer_datas_device_data_single['name']}({self.datas.data[i].data[l].data.result_phase_datas[m].result_error_unit})"
-                                        pass
-                                    transfer_datas_device_data_single['data']['x'].append(
-                                        self.datas.data[i].data[l].data.rated_current_datas[m].result)
-                                    pass
-                            pass
-                        # for m in range(len(self.datas.data[i].data[j].data.rated_current_datas)): end
-                        transfer_datas_device_item['data'].append(transfer_datas_device_data_single)
-                        pass
-                    # for l in range(len(self.datas.data[i].data)): end
-                    if k == 0:  # result
-                        transfer_data_result_items['data'].append(transfer_datas_device_item)
-                        pass
-                    else:  # error
-                        transfer_data_error_items['data'].append(transfer_datas_device_item)
-                        pass
-                    pass
-                transfer_data_phase_angle_items['data'].append(transfer_data_result_items)
-                transfer_data_phase_angle_items['data'].append(transfer_data_error_items)
-
-                transfer_data_items['data'].append(transfer_data_phase_angle_items)
-                # for k in range(2): end
-            pass
-            # for j in range(4): end
-            self.transfer_datas.append(transfer_data_items)
-        # for i in range(len(self.datas.data)) end
-        pass
-
     def _init_ui(self):
-        # 主布局，3个子图（行） 3行4列 每个单元格再有两个图表
+        # 添加滑动条区域
+        # 创建滚动区域
+        main_layout = QVBoxLayout(self.parent_layout)
+        scroll_area_left_bottom = QScrollArea()
+        scroll_area_left_bottom.setWidgetResizable(True)  # 使滚动区域内容自适应大小
+        # 滚动区域的内容widget和布局
+        scroll_content_left_bottom = QWidget()
+        sub_layout = QVBoxLayout(scroll_content_left_bottom)
+        sub_layout.setObjectName(f"layout_sub")
+        chart = tab2_tab0_charts_single_column(datas=self.datas, parent=sub_layout,
+                                               object_name=self.parent_layout.objectName(), title=f"{self.datas.name}")
 
-        current_data_tab_frame = QtWidgets.QTabWidget(parent=self.parent_layout)
-        current_data_tab_frame.setGeometry(QtCore.QRect(0, 0, 791, 451))
-        current_data_tab_frame.setObjectName(f"current_data_tab_frame_sub")
-        for i in range(len(self.transfer_datas)):  # 3个相角
-            current_tab = QtWidgets.QWidget()
-            current_tab.setObjectName(f"current_data_tab_frame_sub_{i}")
-            current_data_tab_frame.addTab(current_tab, f"{self.transfer_datas[i]['rated_phase_angle']}")
-
-            current_data_tab_frame_sub = QtWidgets.QTabWidget(parent=current_tab)
-            current_data_tab_frame_sub.setGeometry(QtCore.QRect(0, 0, 791, 451))
-            current_data_tab_frame_sub.setObjectName(f"current_data_tab_frame_sub_{i}_sub")
-            for j in range(len(self.transfer_datas[i]['data'])):  # 4个 数据项
-                current_tab_Sub = QtWidgets.QWidget()
-                current_tab_Sub.setObjectName(f"current_data_tab_frame_sub_{i}_{j}")
-                current_data_tab_frame_sub.addTab(current_tab_Sub, f"{self.transfer_datas[i]['data'][j]['data_name']}")
-
-                current_data_tab_frame_sub_Sub = QtWidgets.QTabWidget(parent=current_tab_Sub)
-                current_data_tab_frame_sub_Sub.setGeometry(QtCore.QRect(0, 0, 791, 421))
-                current_data_tab_frame_sub_Sub.setObjectName(f"current_data_tab_frame_sub_{i}_sub_{j}_Sub")
-                for k in range(len(self.transfer_datas[i]['data'][j]['data'])):  # result 和 error
-                    current_tab_Sub_Sub = QtWidgets.QWidget()
-                    current_tab_Sub_Sub.setObjectName(f"current_data_tab_frame_sub_{i}_{j}_{k}")
-                    current_data_tab_frame_sub_Sub.addTab(current_tab_Sub_Sub,
-                                                          f"{self.transfer_datas[i]['data'][j]['data'][k]['name']}")
-                    main_layout = QVBoxLayout(current_tab_Sub_Sub)
-                    chart = tab2_tab0_charts_single(
-                        datas=self.transfer_datas[i]['data'][j]['data'][k]['data'][0]['data'],
-                        x_name=self.transfer_datas[i]['data'][j]['data'][k]['data'][0]['x_name'],
-                        y_name=self.transfer_datas[i]['data'][j]['data'][k]['data'][0]['y_name'],
-                        parent=main_layout, object_name=current_tab_Sub_Sub.objectName(),
-                        title=f"{self.datas.phase_name}-{self.transfer_datas[i]['rated_phase_angle']}-{self.transfer_datas[i]['data'][j]['data_name']}-{self.transfer_datas[i]['data'][j]['data'][k]['name']}-图表",
-                       
-                        is_span=True)
-                    self.charts.append(chart)
-                    main_layout.setParent(current_tab_Sub_Sub)
-                current_data_tab_frame_sub_Sub.setCurrentIndex(0)
-                current_data_tab_frame_sub_Sub.setParent(current_tab_Sub)
-
-                pass
-            current_data_tab_frame_sub.setCurrentIndex(0)
-            current_data_tab_frame_sub.setParent(current_tab)
-        current_data_tab_frame.setCurrentIndex(0)
-        current_data_tab_frame.setParent(self.parent_layout)
-
+        self.charts.append(chart)
+        scroll_content_left_bottom.setLayout(sub_layout)
+        # 把内容widget设置到滚动区域
+        scroll_area_left_bottom.setWidget(scroll_content_left_bottom)
+        # 将滚动区域添加到主布局
+        main_layout.addWidget(scroll_area_left_bottom)
         pass
 
     def _init_ui_BACUKP(self):
@@ -300,7 +104,7 @@ class tab2_tab0_charts():
                 error_data = temp_data[1][0][0]  # error数据
                 result_data.append(error_data)
 
-                chart = tab2_tab0_charts_single(
+                chart = tab2_tab0_charts_single_line(
                     datas=result_data,
                     parent=sub_layout, object_name=sub_layout.objectName(),
                     title="", is_span=True)
