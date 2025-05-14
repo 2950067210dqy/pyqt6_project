@@ -103,6 +103,7 @@ class graphy_parser():
                 file_names = self.get_file_names_in_current_dir(dict_temp['file_path'][1])
                 for name in file_names:
                     error_data['data'].append(QPixmap(dict_temp['file_path'][1] + name))
+        
             return_data.append(correct_data)
             return_data.append(error_data)
             return_datas.append(return_data)

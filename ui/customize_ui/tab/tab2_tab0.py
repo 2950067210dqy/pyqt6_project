@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'table_tab0.ui'
+# Form implementation generated from reading ui file 'tab2_tab0.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.0
 #
@@ -7,107 +7,225 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from loguru import logger
-
-from config.global_setting import global_setting
-from dao.data_read import data_read
-from entity.xlsx_data import xlsx_datas
-from ui.customize_ui.tab2_tab0_charts import tab2_tab0_charts
 
 
 class tab2_tab0(object):
-    def __init__(self, parent: QtWidgets.QWidget = None):
-        # 数据获取器
-        self.data_read = data_read(file_type=global_setting.get_setting('serial_config')['Storage']['file_type'],
-                                   data_origin_port=["COM3"])
-        self.parent: QtWidgets.QWidget = parent
-        if self.parent != None:
-            self.parent.resize(891, 479)
-        self.parent_obj_name = self.parent.objectName() if self.parent != None else ""
+    def setupUi(self, tab_0_frame):
+        tab_0_frame.setObjectName("tab_0_frame")
+        tab_0_frame.resize(891, 479)
+        self.verticalLayoutWidget_4 = QtWidgets.QWidget(parent=tab_0_frame)
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(0, 0, 901, 611))
+        self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
+        self.tab_0_layout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_4)
+        self.tab_0_layout.setContentsMargins(0, 0, 0, 0)
+        self.tab_0_layout.setObjectName("tab_0_layout")
+        self.tab_0_layout_scroll = QtWidgets.QScrollArea(parent=self.verticalLayoutWidget_4)
+        self.tab_0_layout_scroll.setWidgetResizable(True)
+        self.tab_0_layout_scroll.setObjectName("tab_0_layout_scroll")
+        self.tab_0_layout_scroll_content = QtWidgets.QWidget()
+        self.tab_0_layout_scroll_content.setGeometry(QtCore.QRect(0, 0, 897, 607))
+        self.tab_0_layout_scroll_content.setObjectName("tab_0_layout_scroll_content")
+        self.nowdata_label = QtWidgets.QLabel(parent=self.tab_0_layout_scroll_content)
+        self.nowdata_label.setGeometry(QtCore.QRect(20, 50, 121, 31))
+        self.nowdata_label.setObjectName("nowdata_label")
+        self.nowdata_lcdnumber = QtWidgets.QLCDNumber(parent=self.tab_0_layout_scroll_content)
+        self.nowdata_lcdnumber.setGeometry(QtCore.QRect(130, 50, 91, 41))
+        self.nowdata_lcdnumber.setDigitCount(3)
+        self.nowdata_lcdnumber.setProperty("value", 37.0)
+        self.nowdata_lcdnumber.setObjectName("nowdata_lcdnumber")
+        self.nowdata_trend_label = QtWidgets.QLabel(parent=self.tab_0_layout_scroll_content)
+        self.nowdata_trend_label.setGeometry(QtCore.QRect(280, 10, 81, 31))
+        self.nowdata_trend_label.setObjectName("nowdata_trend_label")
+        self.nowdata_trend_charts = QtWidgets.QGraphicsView(parent=self.tab_0_layout_scroll_content)
+        self.nowdata_trend_charts.setGeometry(QtCore.QRect(390, 0, 411, 91))
+        self.nowdata_trend_charts.setStyleSheet("")
+        self.nowdata_trend_charts.setObjectName("nowdata_trend_charts")
+        self.export_alldata_btn = QtWidgets.QPushButton(parent=self.tab_0_layout_scroll_content)
+        self.export_alldata_btn.setGeometry(QtCore.QRect(810, 10, 61, 28))
+        self.export_alldata_btn.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/dark/export.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.export_alldata_btn.setIcon(icon)
+        self.export_alldata_btn.setObjectName("export_alldata_btn")
+        self.history_label1 = QtWidgets.QLabel(parent=self.tab_0_layout_scroll_content)
+        self.history_label1.setGeometry(QtCore.QRect(20, 130, 31, 31))
+        self.history_label1.setObjectName("history_label1")
+        self.history_label2 = QtWidgets.QLabel(parent=self.tab_0_layout_scroll_content)
+        self.history_label2.setGeometry(QtCore.QRect(170, 130, 51, 31))
+        self.history_label2.setObjectName("history_label2")
+        self.history_combox = QtWidgets.QComboBox(parent=self.tab_0_layout_scroll_content)
+        self.history_combox.setGeometry(QtCore.QRect(60, 120, 101, 41))
+        self.history_combox.setObjectName("history_combox")
+        self.history_combox.addItem("")
+        self.history_combox.addItem("")
+        self.history_combox.addItem("")
+        self.export_history_btn = QtWidgets.QPushButton(parent=self.tab_0_layout_scroll_content)
+        self.export_history_btn.setGeometry(QtCore.QRect(230, 130, 91, 28))
+        self.export_history_btn.setText("")
+        self.export_history_btn.setIcon(icon)
+        self.export_history_btn.setObjectName("export_history_btn")
+        self.history_charts = QtWidgets.QGraphicsView(parent=self.tab_0_layout_scroll_content)
+        self.history_charts.setGeometry(QtCore.QRect(20, 180, 331, 121))
+        self.history_charts.setStyleSheet("")
+        self.history_charts.setObjectName("history_charts")
+        self.history_detail_label = QtWidgets.QLabel(parent=self.tab_0_layout_scroll_content)
+        self.history_detail_label.setGeometry(QtCore.QRect(20, 310, 91, 31))
+        self.history_detail_label.setObjectName("history_detail_label")
+        self.history_detail_dateedit = QtWidgets.QDateEdit(parent=self.tab_0_layout_scroll_content)
+        self.history_detail_dateedit.setGeometry(QtCore.QRect(120, 310, 110, 22))
+        self.history_detail_dateedit.setObjectName("history_detail_dateedit")
+        self.export_history_detail_btn = QtWidgets.QPushButton(parent=self.tab_0_layout_scroll_content)
+        self.export_history_detail_btn.setGeometry(QtCore.QRect(250, 310, 61, 21))
+        self.export_history_detail_btn.setText("")
+        self.export_history_detail_btn.setIcon(icon)
+        self.export_history_detail_btn.setObjectName("export_history_detail_btn")
+        self.history_detail_charts = QtWidgets.QGraphicsView(parent=self.tab_0_layout_scroll_content)
+        self.history_detail_charts.setGeometry(QtCore.QRect(20, 350, 331, 111))
+        self.history_detail_charts.setStyleSheet("")
+        self.history_detail_charts.setObjectName("history_detail_charts")
+        self.data_alarm = QtWidgets.QLabel(parent=self.tab_0_layout_scroll_content)
+        self.data_alarm.setGeometry(QtCore.QRect(20, 10, 121, 31))
+        self.data_alarm.setObjectName("data_alarm")
+        self.detaildata_groupbox = QtWidgets.QGroupBox(parent=self.tab_0_layout_scroll_content)
+        self.detaildata_groupbox.setGeometry(QtCore.QRect(360, 120, 531, 341))
+        self.detaildata_groupbox.setStyleSheet("")
+        self.detaildata_groupbox.setFlat(False)
+        self.detaildata_groupbox.setObjectName("detaildata_groupbox")
+        self.detaildata_scroll = QtWidgets.QScrollArea(parent=self.detaildata_groupbox)
+        self.detaildata_scroll.setGeometry(QtCore.QRect(10, 30, 511, 301))
+        self.detaildata_scroll.setWidgetResizable(True)
+        self.detaildata_scroll.setObjectName("detaildata_scroll")
+        self.detaildata_scroll_content = QtWidgets.QWidget()
+        self.detaildata_scroll_content.setGeometry(QtCore.QRect(0, 0, 509, 299))
+        self.detaildata_scroll_content.setObjectName("detaildata_scroll_content")
+        self.detaildata_table = QtWidgets.QTableWidget(parent=self.detaildata_scroll_content)
+        self.detaildata_table.setGeometry(QtCore.QRect(0, 10, 511, 301))
+        self.detaildata_table.setStyleSheet("")
+        self.detaildata_table.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.NoSelection)
+        self.detaildata_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectItems)
+        self.detaildata_table.setObjectName("detaildata_table")
+        self.detaildata_table.setColumnCount(4)
+        self.detaildata_table.setRowCount(4)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setVerticalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setVerticalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setVerticalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setVerticalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(0, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(0, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(0, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(0, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(1, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(1, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(1, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(1, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(2, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(2, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(2, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(2, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(3, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(3, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(3, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.detaildata_table.setItem(3, 3, item)
+        self.detaildata_table.horizontalHeader().setVisible(True)
+        self.detaildata_table.horizontalHeader().setHighlightSections(True)
+        self.detaildata_table.verticalHeader().setVisible(False)
+        self.detaildata_scroll.setWidget(self.detaildata_scroll_content)
+        self.detaildata_dateEdit = QtWidgets.QDateEdit(parent=self.detaildata_groupbox)
+        self.detaildata_dateEdit.setGeometry(QtCore.QRect(70, 10, 110, 22))
+        self.detaildata_dateEdit.setObjectName("detaildata_dateEdit")
+        self.export_detaildata_btn = QtWidgets.QPushButton(parent=self.detaildata_groupbox)
+        self.export_detaildata_btn.setGeometry(QtCore.QRect(450, 10, 61, 20))
+        self.export_detaildata_btn.setText("")
+        self.export_detaildata_btn.setIcon(icon)
+        self.export_detaildata_btn.setObjectName("export_detaildata_btn")
+        self.tab_0_layout_scroll.setWidget(self.tab_0_layout_scroll_content)
+        self.tab_0_layout.addWidget(self.tab_0_layout_scroll)
 
-        self.current_data_tab_frame = None
-        self.current_data_tab_frame_items = []
+        self.retranslateUi(tab_0_frame)
+        QtCore.QMetaObject.connectSlotsByName(tab_0_frame)
 
-    def set_parent(self, parent: QtWidgets.QWidget = None):
-        self.parent = parent
-        if self.parent != None:
-            self.parent.resize(891, 479)
-            # 初始ui
-            self.init_ui()
-            # 获取数据
-            self.get_data()
-            self.init_tab_frame()
-            # 初始化功能
-            self.init_func()
-
-    def get_data(self):
-        self.datas = self.data_read.read_service.get_three_phase_flow_data_column()
-
-        pass
-
-    def init_ui(self):
-        self.current_data_label = QtWidgets.QLabel(parent=self.parent)
-        self.current_data_label.setText("电量数据：")
-        self.current_data_label.setGeometry(QtCore.QRect(20, 20, 60, 16))
-        self.current_data_label.setObjectName("current_data_label")
-
-        QtCore.QMetaObject.connectSlotsByName(self.parent)
-        pass
-
-    def init_tab_frame(self):
-        self.current_data_label_config = QtWidgets.QLabel(parent=self.parent)
-        self.current_data_label_config.setText("-电量配置-")
-
-        self.current_data_label_config.setGeometry(QtCore.QRect(20, 45, 60, 16))
-        self.current_data_label_config.setObjectName("current_data_config_label")
-
-        self.current_data_label_rated_voltage = QtWidgets.QLabel(parent=self.parent)
-        self.current_data_label_rated_voltage.setText(f" 额定电压")
-        self.current_data_label_rated_voltage.setGeometry(QtCore.QRect(20, 65, 60, 16))
-        self.current_data_label_rated_voltage.setObjectName("current_data_config_rated_voltage")
-
-        self.current_data_label_rated_voltage_result = QtWidgets.QLabel(parent=self.parent)
-        self.current_data_label_rated_voltage_result.setText(
-            f" {self.datas.rated_voltage}{self.datas.rated_voltage_unit}")
-        self.current_data_label_rated_voltage_result.setGeometry(QtCore.QRect(20, 85, 60, 16))
-        self.current_data_label_rated_voltage_result.setObjectName("current_data_config_rated_voltage_result")
-
-        self.current_data_label_rated_frequency = QtWidgets.QLabel(parent=self.parent)
-        self.current_data_label_rated_frequency.setText(
-            f" 额定频率")
-
-        self.current_data_label_rated_frequency.setGeometry(QtCore.QRect(20, 105, 60, 16))
-        self.current_data_label_rated_frequency.setObjectName("current_data_config_rated_frequency")
-
-        self.current_data_label_rated_frequency_result = QtWidgets.QLabel(parent=self.parent)
-        self.current_data_label_rated_frequency_result.setText(
-            f" {self.datas.rated_frequency}{self.datas.rated_frequency_unit}")
-
-        self.current_data_label_rated_frequency_result.setGeometry(QtCore.QRect(20, 125, 60, 16))
-        self.current_data_label_rated_frequency_result.setObjectName("current_data_config_rated_frequency_result")
-
-        self.current_data_tab_frame = QtWidgets.QTabWidget(parent=self.parent)
-        self.current_data_tab_frame.setGeometry(QtCore.QRect(90, 20, 791, 451))
-        self.current_data_tab_frame.setObjectName("current_data_tab_frame")
-        for phase_len in range(len(self.datas.data)):
-            current_tab = QtWidgets.QWidget()
-            current_tab.setObjectName(f"current_tab_{phase_len}")
-            self.current_data_tab_frame.addTab(current_tab, self.datas.data[phase_len].name)
-            self.current_data_tab_frame_items.append(current_tab)
-        self.current_data_tab_frame.setCurrentIndex(0)
-        self.current_data_tab_frame.setParent(self.parent)
-
-        self.init_charts()
-
-    def init_charts(self):
-        for tab_frame_index in range(len(self.current_data_tab_frame_items)):
-            charts = tab2_tab0_charts(datas=self.datas.data[tab_frame_index],
-                                      parent=self.current_data_tab_frame_items[tab_frame_index],
-                                      title=f"{self.datas.data[tab_frame_index].name}电量情况",
-                                      object_name=self.current_data_tab_frame_items[tab_frame_index].objectName(),
-                                      )
-            pass
-        pass
-
-    def init_func(self):
-        pass
+    def retranslateUi(self, tab_0_frame):
+        _translate = QtCore.QCoreApplication.translate
+        tab_0_frame.setWindowTitle(_translate("tab_0_frame", "Form"))
+        self.nowdata_label.setText(_translate("tab_0_frame", "当前湿度（%）："))
+        self.nowdata_trend_label.setText(_translate("tab_0_frame", "当前湿度趋势"))
+        self.history_label1.setText(_translate("tab_0_frame", "历史"))
+        self.history_label2.setText(_translate("tab_0_frame", "湿度趋势"))
+        self.history_combox.setItemText(0, _translate("tab_0_frame", "7天"))
+        self.history_combox.setItemText(1, _translate("tab_0_frame", "3天"))
+        self.history_combox.setItemText(2, _translate("tab_0_frame", "1天"))
+        self.history_detail_label.setText(_translate("tab_0_frame", "历史湿度数据"))
+        self.data_alarm.setText(_translate("tab_0_frame", "湿度预警位"))
+        self.detaildata_groupbox.setTitle(_translate("tab_0_frame", "详细数据"))
+        self.detaildata_table.setSortingEnabled(True)
+        item = self.detaildata_table.horizontalHeaderItem(0)
+        item.setText(_translate("tab_0_frame", "表头1"))
+        item = self.detaildata_table.horizontalHeaderItem(1)
+        item.setText(_translate("tab_0_frame", "表头2"))
+        item = self.detaildata_table.horizontalHeaderItem(2)
+        item.setText(_translate("tab_0_frame", "表头3"))
+        item = self.detaildata_table.horizontalHeaderItem(3)
+        item.setText(_translate("tab_0_frame", "表头4"))
+        __sortingEnabled = self.detaildata_table.isSortingEnabled()
+        self.detaildata_table.setSortingEnabled(False)
+        item = self.detaildata_table.item(0, 0)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(0, 1)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(0, 2)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(0, 3)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(1, 0)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(1, 1)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(1, 2)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(1, 3)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(2, 0)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(2, 1)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(2, 2)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(2, 3)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(3, 0)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(3, 1)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(3, 2)
+        item.setText(_translate("tab_0_frame", "1"))
+        item = self.detaildata_table.item(3, 3)
+        item.setText(_translate("tab_0_frame", "1"))
+        self.detaildata_table.setSortingEnabled(__sortingEnabled)

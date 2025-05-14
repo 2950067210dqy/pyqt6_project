@@ -418,8 +418,8 @@ class charts(ThemedWidget):
         if max_y > self.min_and_max_y[1]:
             self.min_and_max_y[1] = max_y
 
-        logger.info(
-            f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_y[1]}]")
+        # logger.info(
+        #     f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_y[1]}]")
 
     # 更新series中的数据
     def update_series(self):

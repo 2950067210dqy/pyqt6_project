@@ -13,7 +13,7 @@ left_menu: #左侧菜单项
     icon_path: 'generate.svg' #菜单图标路径
     default: true #默认显示菜单
   - id: 2
-    title: '电量数据'
+    title: '其他数据'
     icon_path: 'marketAnalysis.svg'
     default: false
   - id: 3
@@ -21,13 +21,13 @@ left_menu: #左侧菜单项
     icon_path: 'settingConfig.svg'
     default: false
   - id: 4
-    title: '几何数据'
+    title: '设备监控'
     icon_path: 'materialThree.svg'
     default: false
-  #  - id: 5
-  #    title: '视频监控'
-  #    icon_path: 'monitor.svg'
-  #    default: false
+  - id: 5
+    title: '视频监控'
+    icon_path: 'monitor.svg'
+    default: false
   - id: 6
     title: '系统设置'
     icon_path: 'settingSystem.svg'
@@ -40,7 +40,7 @@ tab: #菜单窗口项
     height: 591 #菜单窗口高 单位px
 monitoring_data: #监测数据项
   - id: 1 #对应相应的tab
-    title: '电量' #菜单名称
+    title: '湿度' #菜单名称
     object_name: 'current' #菜单object_name 取title的英文名即可
   - id: 2
     title: '温度'

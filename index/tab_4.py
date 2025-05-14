@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from PyQt6.QtGui import QPixmap
 from loguru import logger
 
 from config.global_setting import global_setting
@@ -28,12 +29,13 @@ class Tab_4(ThemedWidget):
         self._init_ui(parent, geometry, title)
         # 获取数据
         self.get_data()
-        # 实例化自定义ui
-        self._init_customize_ui()
-        # 实例化功能
-        self._init_function()
-        # 加载qss样式表
-        self._init_style_sheet()
+        if self.data != None and len(self.data) != 0:
+            # 实例化自定义ui
+            self._init_customize_ui()
+            # 实例化功能
+            self._init_function()
+            # 加载qss样式表
+            self._init_style_sheet()
         pass
 
         # 实例化ui
@@ -82,26 +84,32 @@ class Tab_4(ThemedWidget):
                 pass
             else:
                 pass
-
-            for i in range(len(graphics_view_left)):
-                scene = QGraphicsScene()
-                # 按比例缩放到目标宽高内
-                scaled_pixmap = self.data[0]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
-                pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
-                scene.addItem(pixmap_item)
-
-                # 设置场景给视图
-                graphics_view_left[i].setScene(scene)
-            for i in range(len(graphics_view_right)):
-                scene = QGraphicsScene()
-                # 按比例缩放到目标宽高内
-                scaled_pixmap = self.data[1]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
-                pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
-                scene.addItem(pixmap_item)
-
-                # 设置场景给视图
-                graphics_view_right[i].setScene(scene)
             self.graphics_view_list[i].setDragMode(QGraphicsView.DragMode.ScrollHandDrag)  # 开启拖拽模式
+        for i in range(len(graphics_view_left)):
+            scene = QGraphicsScene()
+            # 按比例缩放到目标宽高内
+            if len(self.data[0]['data']) != 0:
+                scaled_pixmap = self.data[0]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
+            else:
+                scaled_pixmap = QPixmap()
+            pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
+            scene.addItem(pixmap_item)
+
+            # 设置场景给视图
+            graphics_view_left[i].setScene(scene)
+
+        for i in range(len(graphics_view_right)):
+            scene = QGraphicsScene()
+            # 按比例缩放到目标宽高内
+            if len(self.data[1]['data']) != 0:
+                scaled_pixmap = self.data[1]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
+            else:
+                scaled_pixmap = QPixmap()
+            pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
+            scene.addItem(pixmap_item)
+
+            # 设置场景给视图
+            graphics_view_right[i].setScene(scene)
 
             # # 可选：关闭滚动条，避免出现滚动条
             # self.graphics_view_list[i].setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
