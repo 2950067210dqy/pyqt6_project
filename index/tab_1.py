@@ -55,11 +55,15 @@ class Tab_1(ThemedWidget):
         scroll_content_left_bottom = QWidget()
         scroll_layout_left_bottom = QVBoxLayout(scroll_content_left_bottom)
         charts_left_bottom_1 = charts(parent=scroll_layout_left_bottom, object_name="charts_tab1_left_bottom_1",
-                                      charts_type=charts.Line, data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
+                                      charts_type=charts.Line, data_origin_nums=8,
+                                      data_origin_ports=['COM2', 'COM3', 'COM7', 'COM9', 'COM11', 'COM13',
+                                                         'COM15', 'COM17'],
                                       is_span=True, data_read_counts=global_setting.get_setting("configer")['graphic'][
                 'data_read_nums'])
         charts_left_bottom_2 = charts(parent=scroll_layout_left_bottom, object_name="charts_tab1_left_bottom_2",
-                                      charts_type=charts.Line, data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
+                                      charts_type=charts.Line, data_origin_nums=8,
+                                      data_origin_ports=['COM2', 'COM3', 'COM7', 'COM9', 'COM11', 'COM13',
+                                                         'COM15', 'COM17'],
                                       is_span=True, data_read_counts=global_setting.get_setting("configer")['graphic'][
                 'data_read_nums'])
         scroll_content_left_bottom.setLayout(scroll_layout_left_bottom)
@@ -80,13 +84,15 @@ class Tab_1(ThemedWidget):
         scroll_content_right = QWidget()
         scroll_layout_right = QVBoxLayout(scroll_content_right)
         charts_right_1 = charts(parent=scroll_layout_right, object_name="charts_tab1_right_1", charts_type=charts.Line,
-                                data_origin_nums=1, data_read_counts=global_setting.get_setting("configer")['graphic'][
-                'data_read_nums'])
+                                data_origin_nums=2, data_origin_ports=['COM2', 'COM3'],
+                                data_read_counts=global_setting.get_setting("configer")['graphic'][
+                                    'data_read_nums'])
         charts_right_2 = charts(parent=scroll_layout_right, object_name="charts_tab1_right_2", charts_type=charts.Line,
                                 data_origin_nums=1, data_read_counts=global_setting.get_setting("configer")['graphic'][
                 'data_read_nums'])
         charts_right_3 = charts(parent=scroll_layout_right, object_name="charts_tab1_right_3", charts_type=charts.Line,
-                                data_origin_nums=2, data_origin_ports=['COM3', 'COM5'],
+                                data_origin_nums=8, data_origin_ports=['COM2', 'COM3', 'COM7', 'COM9', 'COM11', 'COM13',
+                                                                       'COM15', 'COM17'],
                                 data_read_counts=global_setting.get_setting("configer")['graphic'][
                                     'data_read_nums'])
         scroll_content_right.setLayout(scroll_layout_right)

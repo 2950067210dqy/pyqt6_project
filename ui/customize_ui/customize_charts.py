@@ -159,7 +159,7 @@ class charts(ThemedWidget):
         self.chart_view = QChartView()
         self.chart_view.setMouseTracking(True)  # 开启鼠标追踪
 
-        self.chart_view.setFixedSize(500, 400)  # 固定大小
+        self.chart_view.setFixedSize(500 + 200 * (self.data_origin_nums - 1), 400)  # 固定大小
 
         self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)  # 关键设置 抗锯齿
         self.chart_view.setObjectName(f"{self.object_name}")
@@ -490,7 +490,7 @@ class charts(ThemedWidget):
     def set_series_style(self, font_colors: [QColor] = [QColor("#121212")]):
         for i in range(self.data_origin_nums):
             self.series[i].setColor(font_colors[i])
-            self.series[i].setPen(QPen(font_colors[i], i + 2))
+            self.series[i].setPen(QPen(font_colors[i]))
             self.series[i].setBrush(QBrush(font_colors[i]))
 
     # 设置chart样式
@@ -504,10 +504,19 @@ class charts(ThemedWidget):
 
     # 设置series和legend样式
     def set_series_lenged_style(self):
-        self.set_series_style(font_colors=[QColor(self.theme[self.theme_name]['series']['series_color']),
-                                           QColor(self.theme[self.theme_name]['series']['series_color'])])
-        self.set_legend_style(font_colors=[QColor(self.theme[self.theme_name]['legend']['legend_font_color']),
-                                           QColor(self.theme[self.theme_name]['legend']['legend_font_color'])
+        theme_manager = global_setting.get_setting("theme_manager")
+        series_colors = theme_manager.get_neighbor_color(
+            colorHex=self.theme[self.theme_name]['series']['series_color'], color_delta_start=-60, color_delta_end=60,
+            color_nums=self.data_origin_nums)
+        legend_font_colors = theme_manager.get_neighbor_color(
+            colorHex=self.theme[self.theme_name]['legend']['legend_font_color'], color_delta_start=-60,
+            color_delta_end=60,
+            color_nums=self.data_origin_nums)
+
+        self.set_series_style(font_colors=[QColor(color) for color in
+                                           series_colors])
+        self.set_legend_style(font_colors=[QColor(color) for color in
+                                           legend_font_colors
                                            ])
         pass
 

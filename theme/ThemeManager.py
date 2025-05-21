@@ -41,18 +41,22 @@ class ThemeManager(QObject):
                 "--primary": "#283041",
                 "--secondary": "#283041",
                 "--text": "#E1E1E1",
+                "--text_disabled": "#969696",
                 "--text_hover": "#C3C3C3",
                 "--highlight": "#1B2431",
                 "--selected": "#000000",
+                "--disabled": "#283041",
                 "--border": "#555555"
             },
             "light": {
                 "--primary": "#F0F0F0",
-                "--secondary": "#F0F0F0",
+                "--secondary": "#dcdcdc",
                 "--text": "#333333",
+                "--text_disabled": "#969696",
                 "--text_hover": "#000000",
                 "--highlight": "#E1E1E1",
                 "--selected": "#D7D7D7",
+                "--disabled": "#dcdcdc",
                 "--border": "#CCCCCC"
             }
         }
@@ -166,6 +170,10 @@ class ThemeManager(QObject):
                     background:{theme['--highlight']};
                     color:{theme['--text_hover']};
                 }}
+                QPushButton:disabled {{
+                    background-color: {theme['--selected']};
+                    color:{theme['--text_disabled']};
+                }}
                 QPushButton:pressed {{
                     background:{theme['--selected']};    
                     color:{theme['--text_hover']};
@@ -174,7 +182,7 @@ class ThemeManager(QObject):
         else:
             return f"""
                 QPushButton{{
-                    background-color: {theme['--secondary']};
+                    background-color: {theme['--primary']};
                     color:{theme['--text']};
                     padding: 25px;
                     border-radius: 4px;
@@ -183,6 +191,10 @@ class ThemeManager(QObject):
                 QPushButton:hover{{
                     background:{theme['--highlight']};
                     color:{theme['--text_hover']};
+                }}
+                QPushButton:disabled {{
+                    background-color: {theme['--primary']};
+                    color:{theme['--text_disabled']};
                 }}
                 QPushButton:pressed {{
                     background:{theme['--selected']};  

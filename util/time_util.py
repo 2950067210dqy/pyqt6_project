@@ -1,3 +1,4 @@
+import time
 from datetime import datetime, timedelta
 
 
@@ -78,4 +79,20 @@ class time_util():
         days_ago = (times - timedelta(seconds=before_seconds)).timestamp()
         return days_ago, datetime.fromtimestamp(days_ago).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
 
-    pass
+    @classmethod
+    def get_format_from_time(cls, time_vir=time.time()):
+        formatted_time = datetime.fromtimestamp(time_vir).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+        return formatted_time
+        pass
+
+    @classmethod
+    def get_format_minute_from_time(cls, time_vir=time.time()):
+        formatted_time = datetime.fromtimestamp(time_vir).strftime("%M分%S秒%f")[:-3] + "毫秒"
+        return formatted_time
+        pass
+
+    @classmethod
+    def get_format_file_from_time(cls, time_vir=time.time()):
+        formatted_time = datetime.fromtimestamp(time_vir).strftime("%Y_%m_%d_%H_%M_%S_%f")[:-3]
+        return formatted_time
+        pass

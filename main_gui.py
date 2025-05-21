@@ -72,35 +72,32 @@ def start_qt_application():
     pass
 
 
-def receive_serial_port_data():
-    """
-    接收串口数据
-    :return:无
-    """
-
-
 def get_communiation_project_path():
     """
-    获取串口通讯项目的路径
+    获取串口通讯项目的路径  因为之前是通讯开了另一个项目所以需要保存通讯的工作目录到环境变量中，现在集成到一个程序中就不需要了
     :return:
     """
-    value = os.getenv('HOST_COMPUTER_DATA_STORAGE_LOC', 'Default')
+    # value = os.getenv('HOST_COMPUTER_DATA_STORAGE_LOC', 'Default')
     # 放到全局变量当中
+    value = os.getcwd()
     global_setting.set_setting("communiation_project_path", value)
     logger.info(f"HOST_COMPUTER_DATA_STORAGE_LOC={value}")
 
 
+# 移除默认的控制台处理器（默认id是0）
+logger.remove()
 # 加载日志配置
 logger.add(
-    "./log/prod_{time:YYYY-MM-DD}.log",
-    rotation="00:00",
-    retention="30 days",
+    "./log/gui/gui_{time:YYYY-MM-DD}.log",
+    rotation="00:00",  # 日志文件转存
+    retention="30 days",  # 多长时间之后清理
     enqueue=True,
-    format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {name} : {module}:{line} | {message}"
+    format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
 )
-logger.info(f"{'-' * 40}start{'-' * 40}")
+logger.info(f"{'-' * 40}gui_start{'-' * 40}")
 # 获取串口通讯项目路径
 get_communiation_project_path()
+
 # 加载全局配置
 logger.info("loading config start")
 load_global_setting()
@@ -109,4 +106,7 @@ logger.info("loading config finish")
 # receive_serial_port_data()
 
 # qt程序开始
-start_qt_application()
+try:
+    start_qt_application()
+except Exception as e:
+    logger.error(f"gui程序运行异常，原因：{e}，终止gui进程和comm进程")
