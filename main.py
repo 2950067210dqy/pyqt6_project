@@ -46,8 +46,9 @@ def kill_process_tree(pid, including_parent=True):
     for p in alive:
         p.kill()
     if including_parent:
-        parent.terminate()
-        parent.wait(5)
+        if psutil.pid_exists(pid):
+            parent.terminate()
+            parent.wait(5)
 
 
 if __name__ == "__main__":
@@ -73,6 +74,7 @@ if __name__ == "__main__":
         logger.error(f"p_comm子进程发生异常：{e}，准备终止该子进程")
         if p_comm.is_alive():
             kill_process_tree(p_comm.pid)
+            p_comm.join(timeout=5)
         pass
     try:
         logger.info(f"p_deep_camera子进程开始运行")
@@ -81,6 +83,7 @@ if __name__ == "__main__":
         logger.error(f"p_deep_camera子进程发生异常：{e}，准备终止该子进程")
         if p_deep_camera.is_alive():
             kill_process_tree(p_deep_camera.pid)
+            p_deep_camera.join(timeout=5)
     try:
         logger.info(f"p_infrared_camera子进程开始运行")
         p_infrared_camera.start()
@@ -88,6 +91,7 @@ if __name__ == "__main__":
         logger.error(f"p_infrared_camera子进程发生异常：{e}，准备终止该子进程")
         if p_infrared_camera.is_alive():
             kill_process_tree(p_infrared_camera.pid)
+            p_infrared_camera.join(timeout=5)
     try:
         logger.info(f"p_gui子进程开始运行")
         p_gui.start()
@@ -95,29 +99,35 @@ if __name__ == "__main__":
         logger.error(f"p_gui子进程发生异常：{e}，准备终止该子进程")
         if p_gui.is_alive():
             kill_process_tree(p_gui.pid)
+            p_gui.join(timeout=5)
     # 如果gui进程死亡 则将其他的进程全部终止
     is_loop = True
     while is_loop:
         # 检测 gui 进程是否存活
         if not p_gui.is_alive():
             logger.error(f"p_gui子进程已停止，同步终止p_comm子进程")
+            if p_deep_camera.is_alive():
+                kill_process_tree(p_deep_camera.pid)
+                logger.error(f"终止p_deep_camera子进程")
+                p_deep_camera.join(timeout=5)
+                pass
+            if p_infrared_camera.is_alive():
+                kill_process_tree(p_infrared_camera.pid)
+                logger.error(f"终止p_infrared_camera子进程")
+                p_infrared_camera.join(timeout=5)
+                pass
             if p_comm.is_alive():
                 # 先尝试正常终止
                 kill_process_tree(p_comm.pid)
                 logger.error(f"终止p_comm子进程")
-                kill_process_tree(p_deep_camera.pid)
-                logger.error(f"终止p_deep_camera子进程")
-                kill_process_tree(p_infrared_camera.pid)
-                logger.error(f"终止p_infrared_camera子进程")
                 # 等待一会儿，确保结束
                 p_comm.join(timeout=5)
-                p_deep_camera.join(timeout=5)
-                p_infrared_camera.join(timeout=5)
-                is_loop = False
+            is_loop = False
             break
         time.sleep(0.5)
 
     # 等待所有子进程退出
     p_comm.join()
-
+    p_infrared_camera.join()
+    p_deep_camera.join()
     p_gui.join()

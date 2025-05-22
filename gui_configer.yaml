@@ -50,3 +50,6 @@ graphic: #图表项
   data_show_nums: 20 #图表中显示数据的数量
   delay: 1150 #每隔多少毫秒获取一次数据 单位毫秒 该值必须要小于串口通讯接收数据的delay值
   data_delay: 30 #读取几秒钟前的数据 单位秒 实际是读delay+data_delay前的数据
+tab4_pic: #tab4中的图片读取
+  delay: 1 #每隔多少秒读取一次 单位 秒
+  data_delay: 0 #读取几秒钟前的数据 单位秒 实际是读delay+data_delay前的数据

@@ -1,4 +1,6 @@
-from datetime import datetime
+import os
+import time
+from datetime import datetime, timedelta
 
 from PyQt6.QtGui import QPixmap
 from loguru import logger
@@ -7,7 +9,7 @@ from config.global_setting import global_setting
 from dao.data_read import data_read
 from theme.ThemeQt6 import ThemedWidget
 from PyQt6 import QtCore
-from PyQt6.QtCore import QRect, Qt
+from PyQt6.QtCore import QRect, Qt, QThread, pyqtSignal
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QGraphicsView, QGraphicsScene, QGraphicsPixmapItem, QPushButton, \
     QLabel
 
@@ -16,22 +18,118 @@ from ui.tab4 import Ui_tab4_frame
 from util.folder_util import File_Types
 
 
+class ImageLoaderThread(QThread):
+    """
+    连续获取早几秒钟的文件路径
+    """
+    image_loaded = pyqtSignal(dict)
+
+    def __init__(self):
+        super().__init__()
+        # 相机数量
+        self.infrared_camera_nums = int(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['nums'])
+        self.deep_camera_nums = int(global_setting.get_setting("camera_config")['DEEP_CAMERA']['nums'])
+        # 每个相机的图片路径
+        self.infrared_path = [global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+                              global_setting.get_setting("camera_config")['INFRARED_CAMERA'][
+                                  'path'] + f"camera_{i + 1}/" +
+                              global_setting.get_setting("camera_config")['INFRARED_CAMERA']['pic_dir']
+                              for i in range(self.infrared_camera_nums)
+                              ]
+        self.deep_path = [global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+                          global_setting.get_setting("camera_config")['DEEP_CAMERA'][
+                              'path'] + f"camera_{i + 1}/" +
+                          global_setting.get_setting("camera_config")['DEEP_CAMERA']['result_dir'] +
+                          global_setting.get_setting("camera_config")['DEEP_CAMERA']['result_img_dir']
+                          for i in range(self.deep_camera_nums)
+                          ]
+        self.images = {"deep_camera": [], "infrared_camera": []}
+        self.running = True
+
+    def parse_filename_datetime(self, filename):
+        """
+        从文件名中解析日期时间，假设格式为 '2025_05_22_14_30_45_123456.ext'
+        """
+        base = os.path.splitext(filename)[0]  # 去掉后缀
+        try:
+            dt = datetime.strptime(base, "%Y_%m_%d_%H_%M_%S_%f")
+            return dt
+        except ValueError:
+            # 文件名格式不匹配，返回None
+            return None
+
+    def filter_files_earlier_than(self, folder, delta_seconds=10):
+        """
+        寻找文件夹内比现在时间早几秒的文件
+        :param folder:
+        :param delta_seconds:
+        :return:
+        """
+        now = datetime.now()
+        threshold = now - timedelta(seconds=delta_seconds)
+
+        result_files = []
+        for fn in os.listdir(folder):
+            dt = self.parse_filename_datetime(fn)
+            if dt and dt < threshold:
+                result_files.append(fn)
+        if len(result_files) == 0:
+            return None
+        else:
+            return result_files[len(result_files) - 1]
+
+    def run(self):
+        while self.running:
+            try:
+                deep_camera_list = []
+                infrared_camera_list = []
+                for path in self.deep_path:
+                    if not os.path.exists(path):
+                        os.makedirs(path)
+                    file_name_path = self.filter_files_earlier_than(folder=path, delta_seconds=float(
+                        global_setting.get_setting("configer")['tab4_pic']['data_delay']))
+                    if file_name_path is None:
+                        deep_camera_list.append("")
+                    else:
+                        deep_camera_list.append(path + file_name_path)
+                    pass
+                for path in self.infrared_path:
+                    if not os.path.exists(path):
+                        os.makedirs(path)
+                    file_name_path = self.filter_files_earlier_than(folder=path, delta_seconds=float(
+                        global_setting.get_setting("configer")['tab4_pic']['data_delay']))
+                    if file_name_path is None:
+                        infrared_camera_list.append("")
+                    else:
+                        infrared_camera_list.append(path + "/" + file_name_path)
+                    pass
+                self.images["deep_camera"] = deep_camera_list
+                self.images["infrared_camera"] = infrared_camera_list
+                self.image_loaded.emit(self.images)
+                time.sleep(float(global_setting.get_setting("configer")['tab4_pic']['delay']))
+            except Exception as e:
+                logger.error(f"tab4线程异常，原因：{e}")
+
+    def stop(self):
+        self.running = False
+        self.wait()
+
+
 class Tab_4(ThemedWidget):
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
         # 图像列表
         self.charts_list = []
-        self.data = None
-        # 数据获取器
-        self.data_read = data_read(file_type=File_Types.GRAPHY.value,
-                                   data_origin_port=["COM3"])
+
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 实例化自定义ui
         self._init_customize_ui()
         # 获取数据
-        # self.get_data()
+        self.loader_thread = ImageLoaderThread()
+        self.loader_thread.image_loaded.connect(self.update_image)
+        self.loader_thread.start()
         # 实例化功能
         self._init_function()
         # 加载qss样式表
@@ -57,15 +155,11 @@ class Tab_4(ThemedWidget):
 
         pass
 
-    def get_data(self):
-        self.data = self.data_read.read_service.get_data_image(times=datetime.now(), data_origin_port="COM3")
-        pass
-
     # 实例化自定义ui
     def _init_customize_ui(self):
         self.init_btn_label()
-        if self.data != None and len(self.data) != 0:
-            self.init_graphy()
+
+        self.init_graphy()
 
         pass
 
@@ -83,6 +177,62 @@ class Tab_4(ThemedWidget):
 
         pass
 
+    def update_image(self, pixmap_path_dict):
+        if pixmap_path_dict is None or "deep_camera" not in pixmap_path_dict or "infrared_camera" not in pixmap_path_dict:
+            logger.error("未获取到数据")
+            return
+        for i in range(len(pixmap_path_dict['deep_camera'])):
+            logger.critical(f"deep_camera | {pixmap_path_dict['deep_camera'][i]}")
+            if pixmap_path_dict['deep_camera'][i] == "":
+                pixmap = QPixmap()
+            else:
+                # 按比例缩放到目标宽高内
+                pixmap = QPixmap(pixmap_path_dict['deep_camera'][i]).scaled(200, 200,
+                                                                            Qt.AspectRatioMode.KeepAspectRatio)
+            if self.graphics_view_left[i].scene() is None:
+                # 无就创建
+                scene = QGraphicsScene()
+                pixmap_item = QGraphicsPixmapItem(pixmap)
+                scene.addItem(pixmap_item)
+
+                # 设置场景给视图
+                self.graphics_view_left[i].setScene(scene)
+            else:
+                # 有就更新
+                self.graphics_view_left[i].scene().clear()
+                self.graphics_view_left[i].scene().addPixmap(pixmap)
+
+                pass
+
+            pass
+        for i in range(len(pixmap_path_dict['infrared_camera'])):
+            logger.critical(f"infrared_camera | {pixmap_path_dict['infrared_camera'][i]}")
+            if pixmap_path_dict['infrared_camera'][i] == "":
+                pixmap = QPixmap()
+            else:
+                # 按比例缩放到目标宽高内
+                pixmap = QPixmap(pixmap_path_dict['infrared_camera'][i]).scaled(200, 200,
+                                                                                Qt.AspectRatioMode.KeepAspectRatio)
+            if self.graphics_view_right[i].scene() is None:
+                # 无就创建
+                scene = QGraphicsScene()
+                pixmap_item = QGraphicsPixmapItem(pixmap)
+                scene.addItem(pixmap_item)
+
+                # 设置场景给视图
+                self.graphics_view_right[i].setScene(scene)
+            else:
+                # 有就更新
+                self.graphics_view_right[i].scene().clear()
+                self.graphics_view_right[i].scene().addPixmap(pixmap)
+                pass
+
+            pass
+
+    def closeEvent(self, event):
+        self.loader_thread.stop()
+        super().closeEvent(event)
+
     def init_graphy(self):
         """
         实例化图片组件
@@ -90,56 +240,27 @@ class Tab_4(ThemedWidget):
         """
         self.parent_layout = self.frame.findChild(QHBoxLayout, "tab4_layout")
         self.graphics_view_list = self.frame.findChildren(QGraphicsView)
-        graphics_view_left = []
-        graphics_view_right = []
+        self.graphics_view_left = []
+        self.graphics_view_right = []
         for i in range(len(self.graphics_view_list)):
-            logger.info(self.graphics_view_list[i].objectName())
+            # logger.info(self.graphics_view_list[i].objectName())
             if "left" in self.graphics_view_list[i].objectName():
-                logger.error(f"left{i}")
+                # logger.error(f"left{i}")
 
-                graphics_view_left.append(self.graphics_view_list[i])
+                self.graphics_view_left.append(self.graphics_view_list[i])
                 # 自动缩放视图，使图片完全显示，保持宽高比
                 # self.graphics_view_list[i].fitInView(pixmap_item, Qt.AspectRatioMode.KeepAspectRatio)
                 pass
             elif "right" in self.graphics_view_list[i].objectName():
-                logger.error(f"right{i}")
+                # logger.error(f"right{i}")
 
-                graphics_view_right.append(self.graphics_view_list[i])
+                self.graphics_view_right.append(self.graphics_view_list[i])
                 # 自动缩放视图，使图片完全显示，保持宽高比
                 # self.graphics_view_list[i].fitInView(pixmap_item, Qt.AspectRatioMode.KeepAspectRatio)
                 pass
             else:
                 pass
             self.graphics_view_list[i].setDragMode(QGraphicsView.DragMode.ScrollHandDrag)  # 开启拖拽模式
-        for i in range(len(graphics_view_left)):
-            scene = QGraphicsScene()
-            # 按比例缩放到目标宽高内
-            if len(self.data[0]['data']) != 0:
-                scaled_pixmap = self.data[0]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
-            else:
-                scaled_pixmap = QPixmap()
-            pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
-            scene.addItem(pixmap_item)
-
-            # 设置场景给视图
-            graphics_view_left[i].setScene(scene)
-
-        for i in range(len(graphics_view_right)):
-            scene = QGraphicsScene()
-            # 按比例缩放到目标宽高内
-            if len(self.data[1]['data']) != 0:
-                scaled_pixmap = self.data[1]['data'][i].scaled(100, 100, Qt.AspectRatioMode.KeepAspectRatio)
-            else:
-                scaled_pixmap = QPixmap()
-            pixmap_item = QGraphicsPixmapItem(scaled_pixmap)
-            scene.addItem(pixmap_item)
-
-            # 设置场景给视图
-            graphics_view_right[i].setScene(scene)
-
-            # # 可选：关闭滚动条，避免出现滚动条
-            # self.graphics_view_list[i].setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-            # self.graphics_view_list[i].setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
 
     # 实例化功能
     def _init_function(self):

@@ -16,6 +16,17 @@ from theme.ThemeManager import ThemeManager
 
 
 def load_global_setting():
+    # 加载相机配置
+    config_file_path = os.getcwd() + "/camera_config.ini"
+
+    # 串口配置数据{"section":{"key1":value1,"key2":value2,....}，...}
+    config = ini_parser(config_file_path).read()
+    if (len(config) != 0):
+        logger.info("相机配置文件读取成功。")
+    else:
+        logger.error("相机配置文件读取失败。")
+    global_setting.set_setting("camera_config", config)
+
     # 加载串口通讯配置
     config_file_path = global_setting.get_setting("communiation_project_path") + "/communicate_config.ini"
 
@@ -85,7 +96,7 @@ def get_communiation_project_path():
 
 
 # 移除默认的控制台处理器（默认id是0）
-logger.remove()
+# logger.remove()
 # 加载日志配置
 logger.add(
     "./log/gui/gui_{time:YYYY-MM-DD}.log",

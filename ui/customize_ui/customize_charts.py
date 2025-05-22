@@ -258,10 +258,10 @@ class charts(ThemedWidget):
             for origin_data in origin_datas_row:
                 # 使用match
                 if global_setting.get_setting('serial_config')['Storage']['file_type'] == File_Types.TXT.value:
-                    if self.object_name == "charts_tab1_left_bottom_1":
-                        logger.error(f"{self.object_name}|{origin_data.id}|{origin_data.data}|{origin_data.date}")
-                        logger.error(
-                            f"in_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
+                    # if self.object_name == "charts_tab1_left_bottom_1":
+                    #     logger.error(f"{self.object_name}|{origin_data.id}|{origin_data.data}|{origin_data.date}")
+                    #     logger.error(
+                    #         f"in_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
                     q_point = QPointF(
                         int(datetime.strptime(origin_data.date, "%Y-%m-%d/%H:%M:%S.%f").timestamp() * 1000),
                         float(origin_data.data))
@@ -291,9 +291,9 @@ class charts(ThemedWidget):
     # 获取数据线程请求
     def request_data(self):
         try:
-            if self.object_name == "charts_tab1_left_bottom_1":
-                logger.error(
-                    f"before_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
+            # if self.object_name == "charts_tab1_left_bottom_1":
+            #     logger.error(
+            #         f"before_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
             # 线程任务实例化
             self.request_data_task_generator = request_data_task(data_func_choose=self.data_func_choose,
                                                                  data_all_counts=self.data_all_counts,
@@ -347,9 +347,9 @@ class charts(ThemedWidget):
             self.data_func_choose[i] = Data_Read_Where_Start_Func.INDEX
             pass
 
-        if self.object_name == "charts_tab1_left_bottom_1":
-            logger.error(
-                f"after_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
+        # if self.object_name == "charts_tab1_left_bottom_1":
+        #     logger.error(
+        #         f"after_read{self.data_all_counts}|{self.data_last_read_counts}|{self.data_func_choose}")
         # 插入数据之后的数据长度
         show_nums = global_setting.get_setting("configer")['graphic'][
             'data_show_nums']

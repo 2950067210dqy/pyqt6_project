@@ -1,0 +1,5 @@
+2025-05-21 21:00:40 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:40 | ------------------------------infrared_camera_start------------------------------
+2025-05-21 21:00:40 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:19 | 相机配置文件读取成功。
+2025-05-21 21:00:59 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:40 | ------------------------------infrared_camera_start------------------------------
+2025-05-21 21:00:59 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:19 | 相机配置文件读取成功。
+2025-05-21 21:00:59 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:26 | 相机连接开始时间：2025-05-21 21:00:59.116
