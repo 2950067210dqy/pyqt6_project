@@ -1,3 +1,4 @@
+import asyncio
 import json
 import os
 import threading
@@ -26,9 +27,15 @@ import numpy as np
 frame_nums = 0
 lock = threading.Lock()
 
+# 删除线程和图像处理线程锁 保证同步
+delete_process_lock = threading.Lock()
+
 processed_log_lock = threading.Lock()
 # 相机参数
-intrinsics = "./equipment/deep_camera/intrinsics.json"
+intrinsics = "./deep_camera_intrinsics.json"
+
+# 为每个文件创建一个锁，存储在字典里
+file_locks = {}
 
 
 class coordinate_writing:
@@ -108,11 +115,15 @@ class Detection:
         if os.path.exists(color_image) and os.path.isfile(color_image) and os.path.exists(
                 depth_frame) and os.path.isfile(depth_frame):
             try:
-                imge = cv2.imread(color_image)
+                if file_base_name + ".bmp" in file_locks:
+                    with file_locks[file_base_name + ".bmp"]:
+                        imge = cv2.imread(color_image)
+                else:
+                    imge = cv2.imread(color_image)
             except Exception as e:
                 logger.error(f"camera_{self.camera_id}图像处理程序读取{file_base_name}.bmp文件出错，原因：{e}")
                 return
-            results = self.model(imge, classes=[62], verbose=False)
+            results = self.model(imge, classes=[0], verbose=False)
             # 处理检测结果
             for result in results:
                 boxes = result.boxes.xyxy.cpu().numpy()
@@ -130,7 +141,11 @@ class Detection:
                 center_y = (y1 + y2) // 2
                 # 获取深度坐标
                 try:
-                    depth = np.load(depth_frame)
+                    if file_base_name + ".npy" in file_locks:
+                        with file_locks[file_base_name + ".npy"]:
+                            depth = np.load(depth_frame)
+                    else:
+                        depth = np.load(depth_frame)
                 except Exception as e:
                     logger.error(f"camera_{self.camera_id}图像处理程序读取{file_base_name}.npy文件出错，原因：{e}")
                     return
@@ -151,7 +166,12 @@ class Detection:
                 #     logger.info(
                 #         f'深度相机camera_{self.camera_id}的图像{file_base_name}处理结果保存成功. | x, y, z ={x},{y},{z}')
         else:
-            logger.error(f"{file_base_name}的bmp文件或npy文件不存在")
+            if os.path.exists(color_image) or os.path.isfile(color_image):
+                logger.error(f"deep_camera_{self.camera_id} | {file_base_name}.bmp文件不存在")
+                pass
+            if os.path.exists(depth_frame) or os.path.isfile(depth_frame):
+                logger.error(f"deep_camera_{self.camera_id} | {file_base_name}.npy文件不存在")
+                pass
 
     # 绘制可视化信息
     def draw_overlay(self, image, x1, y1, x2, y2, center_x, center_y, x, y, z):
@@ -174,6 +194,11 @@ class Img_process(Thread):
         self.camera_id = camera_id
         self.running = None
         self.dection = Detection(path=self.path, camera_id=self.camera_id)
+        # 创建存储路径
+        if not os.path.exists(self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir']):
+            os.makedirs(self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir'])
+        if not os.path.exists(self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['depth_dir']):
+            os.makedirs(self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['depth_dir'])
         pass
 
     def clear_processed(self):
@@ -234,60 +259,64 @@ class Img_process(Thread):
 
     def run(self) -> None:
         self.running = True
-        logger.info(f"相机{self.camera_id}图像处理线程开始运行")
+        logger.info(f"深度相机{self.camera_id}图像处理线程开始运行")
         while self.running:
-            start_time = time.time()
-            """处理文件夹中的文件"""
-            # color文件夹下的 对bmp文件名牌序
-            files = sorted(f for f in os.listdir(
-                self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir']) if
-                           f.endswith(".bmp"))
+            with delete_process_lock:
+                start_time = time.time()
+                """处理文件夹中的文件"""
+                # color文件夹下的 对bmp文件名牌序
 
-            # 从日志文件中获取最后处理的文件名
-            last_processed_file = None
-            processed_log_path = self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA'][
-                'processed_log_filename']
-            if os.path.exists(processed_log_path):
-                with processed_log_lock:
-                    with open(processed_log_path, 'r') as f:
-                        log = json.load(f)
-                if log:
-                    last_processed_file = log[-1]  # 获取最后处理的文件
+                files = sorted(f for f in os.listdir(
+                    self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir']) if
+                               f.endswith(".bmp"))
 
-            # 如果是增量处理，从上次未处理的文件开始
-            start_processing = False
-            # 一次处理文件的数量
-            handle_files_nums = 0
-            for file in files:
-                if last_processed_file:
-                    if not start_processing and file == last_processed_file:
-                        start_processing = True
-                    if not start_processing:
-                        continue  # 如果未到达上次处理的文件，跳过
-                base_name = os.path.splitext(file)[0]
-                # 在这里进行文件处理（可以替换为实际的处理函数）
-                bmp_path = os.path.join(
-                    self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir'], file)
-                npy_path = os.path.join(
-                    self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['depth_dir'],
-                    base_name + ".npy")
+                # 从日志文件中获取最后处理的文件名
+                last_processed_file = None
+                processed_log_path = self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA'][
+                    'processed_log_filename']
+                if os.path.exists(processed_log_path):
+                    with processed_log_lock:
+                        try:
+                            with open(processed_log_path, 'r') as f:
+                                log = json.load(f)
+                        except FileNotFoundError:
+                            # 如果文件不存在，则创建文件并写入默认内容
+                            with open(processed_log_path, 'w') as f:
+                                json.dump([], f)
+                    if log:
+                        last_processed_file = log[-1]  # 获取最后处理的文件
 
-                if not os.path.exists(npy_path):
-                    logger.error(f"深度相机{self.camera_id}的图像处理缺少对应的npy文件: {npy_path}")
-                    continue
-                self.dection.detect(bmp_path, npy_path, base_name)
+                # 如果是增量处理，从上次未处理的文件开始
+                start_processing = False
+                # 一次处理文件的数量
+                handle_files_nums = 0
+                for file in files:
+                    if last_processed_file:
+                        if not start_processing and file == last_processed_file:
+                            start_processing = True
+                        if not start_processing:
+                            continue  # 如果未到达上次处理的文件，跳过
+                    base_name = os.path.splitext(file)[0]
+                    # 在这里进行文件处理（可以替换为实际的处理函数）
+                    bmp_path = os.path.join(
+                        self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir'], file)
+                    npy_path = os.path.join(
+                        self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['depth_dir'],
+                        base_name + ".npy")
 
-                # 处理完毕后，标记文件为已处理
-                with processed_log_lock:
-                    self.mark_as_processed(file)
-                handle_files_nums += 1
-            # 如果遍历完所有文件start_processing还是False 则processed_log日志文件出现问题，直接清空processed_log日志文件
-            if not start_processing:
-                self.clear_processed()
-            self.dection.data_save.csv_close()
-            end_time = time.time()
-            logger.debug(
-                f"camera_{self.camera_id} | 图像处理程序一次处理时间：{end_time - start_time}秒 | 共处理{handle_files_nums}个图像文件 | 此时总图像帧数量:{frame_nums}")
+                    self.dection.detect(bmp_path, npy_path, base_name)
+
+                    # 处理完毕后，标记文件为已处理
+                    with processed_log_lock:
+                        self.mark_as_processed(file)
+                    handle_files_nums += 1
+                # 如果遍历完所有文件start_processing还是False 则processed_log日志文件出现问题，直接清空processed_log日志文件
+                if not start_processing:
+                    self.clear_processed()
+                self.dection.data_save.csv_close()
+                end_time = time.time()
+                logger.debug(
+                    f"deep_camera_{self.camera_id} | image_process |  图像处理线程一次处理时间：{end_time - start_time}秒 | 共处理{handle_files_nums}个图像文件 | 此时总图像帧数量:{frame_nums}")
             time.sleep(float(global_setting.get_setting("camera_config")['DEEP_CAMERA']['process_delay']))
         pass
 
@@ -304,7 +333,7 @@ class Delete_file(Thread):
 
     # 获得删除文件的大小
     def get_and_delete_files(self):
-
+        global file_locks
         total_size = 0
         total_nums = 0
         for root, dirs, files in os.walk(self.path):
@@ -318,9 +347,19 @@ class Delete_file(Thread):
                     size = float(size / 1204 / 1024 / 1024)  # 将字节B转成GB
                     total_size += size
                     total_nums += 1
-                    os.remove(file_path)  # 删除文件
+                    if file.split(".")[1] in ['bmp', 'npy']:
+                        # 对bmp和npy文件锁删除
+                        if file in file_locks:
+                            with file_locks[file]:
+                                os.remove(file_path)  # 删除文件
+                        else:
+                            os.remove(file_path)  # 删除文件
+                        # 删除文件后释放锁
+                        del file_locks[file]
+                    else:
+                        os.remove(file_path)  # 删除文件
                 except Exception as e:
-                    logger.error(f"deep_camera Failed to delete {file_path}: reason:{e}")
+                    logger.trace(f"deep_camera Failed to delete {file_path}: reason:{e}")
         global frame_nums
         with lock:
             logger.warning(f"深度相机 | 删除文件总大小: {total_size} G-bytes | 删除文件总数量： {total_nums} | 此时相机拍摄的图像数量：{frame_nums}")
@@ -335,19 +374,20 @@ class Delete_file(Thread):
             logger.info(f"深度相机删除文件线程开始运行")
             self.running = True
             while self.running:
-                # 获取现在时间与上次删除时间之差
-                current_time = time.time()
-                elapsed = current_time - self.start_time
-                if elapsed >= float(global_setting.get_setting("camera_config")['DELETE']['interval_seconds']):
-                    # 尝试删除文件
-                    # 获取删除文件内的所有文件大小
-                    self.get_and_delete_files()
+                with delete_process_lock:
+                    # 获取现在时间与上次删除时间之差
+                    current_time = time.time()
+                    elapsed = current_time - self.start_time
+                    if elapsed >= float(global_setting.get_setting("camera_config")['DELETE']['interval_seconds']):
+                        # 尝试删除文件
+                        # 获取删除文件内的所有文件大小
+                        self.get_and_delete_files()
 
-                    logger.info(f"deep_camera 删除文件成功")
-                    self.start_time = time.time()
+                        logger.info(f"deep_camera 删除文件成功")
+                        self.start_time = time.time()
 
-                    pass
-                # logger.info(f"时间差{time_util.get_format_minute_from_time(elapsed)}")
+                        pass
+                    # logger.info(f"时间差{time_util.get_format_minute_from_time(elapsed)}")
                 time.sleep(float(global_setting.get_setting("camera_config")['DELETE']['delay']))
         except Exception as e:
             logger.error(f"深度相机删除文件线程运行异常，异常原因：{e}")
@@ -355,28 +395,61 @@ class Delete_file(Thread):
 
 
 class RealSenseProcessor(Thread):
+    """
+    相机线程
+    """
+
     def __init__(self, path='', id=1):
         super().__init__()
         self.running = None
         self.id = id
         self.path = path
+        self.init_state = self.init_camera()
+
+    def check_pipeline_status(self):
+        try:
+            # 获取当前的传输状态
+            frames = self.pipeline.wait_for_frames(timeout_ms=500)
+            return True
+        except Exception as e:
+            return False
+
+    def init_camera(self):
+        """
+        初始化相机
+        :return:True 连接成功 False连接失败
+        """
+        # 帧率
+        self.fps = 30
         self.pipeline = rs.pipeline()
         self.config = rs.config()
-        self.config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 30)
-        self.config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 30)
-        self.pipeline.start(self.config)
+        self.config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, self.fps)
+        self.config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, self.fps)
         self.align = rs.align(rs.stream.color)
+        try:
+            # 尝试启动 RealSense 流
+            self.pipeline.start(self.config)
+            # logger.info(f"深度相机_{self.id} | 设备已连接。")
+            return True
+        except Exception as e:
+            logger.error(f"深度相机_{self.id} | 设备未连接: 异常原因{e}")
+            return False
 
     def img_save(self, image, depth_image):
+        global file_locks
         timestrf = time_util.get_format_file_from_time(time.time())
         directory_color = self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir']
         if not os.path.exists(directory_color):
             os.makedirs(directory_color)  # 递归创建目录
         cv2.imwrite(directory_color + f"/{timestrf}.bmp", image)
+        #  为文件添加线程锁
+        file_locks[f'{timestrf}.bmp'] = threading.Lock()
         directory_depth = self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['depth_dir']
         if not os.path.exists(directory_depth):
             os.makedirs(directory_depth)  # 递归创建目录
         np.save(directory_depth + f"/{timestrf}.npy", depth_image)
+        #  为文件添加线程锁
+        file_locks[f'{timestrf}.npy'] = threading.Lock()
 
     # 运行结束
     def join(self):
@@ -392,7 +465,7 @@ class RealSenseProcessor(Thread):
     # 启动，获取一帧
     def run(self):
         try:
-            logger.info(f"相机{self.id}开始运行")
+            logger.info(f"深度相机{self.id}开始运行")
             global frame_nums
             # 读取之前存储了多少图像
             with os.scandir(self.path + global_setting.get_setting("camera_config")['DEEP_CAMERA']['color_dir']) as it:
@@ -401,10 +474,35 @@ class RealSenseProcessor(Thread):
                         with lock:
                             frame_nums += 1
             self.running = True
+            last_frame_number = None
             while self.running:
+                # 如果初始化相机失败，则一直尝试初始化相机
+                if not self.init_state:
+                    self.init_state = self.init_camera()
+                    if not self.init_state:
+                        continue
+                # if not self.check_pipeline_status():
+                #     self.init_camera()
+                #     pass
+
                 # 等待一帧 连续拍
-                frames = self.pipeline.poll_for_frames()
+                # asyncio.run()
+                # 本来wait_for_frames就是同步等待帧，
+                start_time = time.time()
+                try:
+                    frames = self.pipeline.wait_for_frames()
+                except Exception as e:
+                    logger.error(f"deep_camera{self.id}获取帧失败，异常原因：{e}")
+                    self.init_state = False
+                    continue
+                    pass
                 if not frames:
+                    if last_frame_number is None:
+                        last_frame_number = 0
+                    # 帧不存在
+                    last_frame_number += (
+                        float(global_setting.get_setting("camera_config")['DEEP_CAMERA']['delay']))
+                    logger.error(f"deep_camera_{self.id} | lose frame | 丢帧！| frames = None")
                     continue
                 # 对其深度与RGB帧
                 frames = self.align.process(frames)
@@ -412,8 +510,26 @@ class RealSenseProcessor(Thread):
                 depth_frame = frames.get_depth_frame()
 
                 if not color_frame or not depth_frame:
+                    # 帧不存在
+                    if last_frame_number is None:
+                        last_frame_number = 0
+                    last_frame_number += (
+                        float(global_setting.get_setting("camera_config")['DEEP_CAMERA']['delay']))
+                    logger.error(f"deep_camera_{self.id}| lose frame | 丢帧！| color_frame or depth_frame = None")
                     continue
+                current_frame_number = color_frame.get_frame_number()
+                logger.debug(
+                    f"deep_camera_{self.id} | image_get_frame_number |  获取当前帧，帧序号为：{current_frame_number} | 上一帧序号为：{last_frame_number} | 两帧相差:{current_frame_number if last_frame_number is None else current_frame_number - last_frame_number}")
+                # 检查是否跳帧
+                if last_frame_number is not None and (
+                        current_frame_number < last_frame_number + self.fps - (float(
+                    global_setting.get_setting("camera_config")['DEEP_CAMERA'][
+                        'delay']) + 1) or current_frame_number > last_frame_number + self.fps + (
+                                float(global_setting.get_setting("camera_config")['DEEP_CAMERA']['delay']) + 1)):
+                    logger.error(
+                        f"deep_camera_{self.id} | lose frame | 发现丢帧！上帧编号: {last_frame_number} | 当前帧编号: {current_frame_number - self.fps - (float(global_setting.get_setting('camera_config')['DEEP_CAMERA']['delay']))} |真实当前帧编号：{current_frame_number}")
 
+                last_frame_number = current_frame_number
                 # 转换图像格式
                 color_image = np.asanyarray(color_frame.get_data())
                 depth_image = np.asanyarray(depth_frame.get_data())
@@ -421,9 +537,12 @@ class RealSenseProcessor(Thread):
                 with lock:
                     frame_nums += 1
                 # self.running = False
+                end_time = time.time()
+                logger.debug(
+                    f"deep_camera_{self.id} | image_read | 图像获取帧线程一次处理时间：{end_time - start_time}秒  | 此时总图像帧数量:{frame_nums}")
                 time.sleep(float(global_setting.get_setting("camera_config")['DEEP_CAMERA']['delay']))
         except Exception as e:
-            logger.error(f"相机{self.id}运行异常，异常原因：{e}")
+            logger.error(f"deep_相机{self.id}运行异常，异常原因：{e}")
 
 
 def load_global_setting():
@@ -447,64 +566,64 @@ def load_global_setting():
     return config
 
 
-# 加载日志配置
-logger.add(
-    "./log/deep_camera/d_camera_{time:YYYY-MM-DD}.log",
-    rotation="00:00",
-    retention="30 days",
-    enqueue=True,
-    format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
-)
-logger.info(f"{'-' * 30}deep_camera_start{'-' * 30}")
-# 设置全局变量
-load_global_setting()
-# 初始化保存路径
-path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
-       global_setting.get_setting("camera_config")['DEEP_CAMERA']['path']
-# 删除文件线程
-delete_file_thread = Delete_file(path=path, start_time=global_setting.get_setting("start_time"))
-delete_file_thread.start()
-# 根据设置的相机数量来连接
-camera_nums = int(global_setting.get_setting("camera_config")['DEEP_CAMERA']['nums'])
-camera_list = []
-for num in range(camera_nums):
-    camera_struct = {}
-    camera = None
-    try:
-        # 相机初始化
-        camera = RealSenseProcessor(path=path + f"camera_{num + 1}/", id=num + 1)
-    except Exception as e:
-        logger.error(f"deep相机{num + 1}初始化失败，失败原因：{e}")
-        # 所有线程停止
-        delete_file_thread.stop()
-        for camera_struct_l in camera_list:
-            if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
-                camera_struct_l['camera'].stop()
-            if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
-                camera_struct_l['img_process'].stop()
-        continue
-    img_process = None
+def main():
+    # 加载日志配置
+    logger.add(
+        "./log/deep_camera/d_camera_{time:YYYY-MM-DD}.log",
+        rotation="00:00",
+        retention="30 days",
+        enqueue=True,
+        format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
+    )
+    logger.info(f"{'-' * 30}deep_camera_start{'-' * 30}")
+    # 设置全局变量
+    load_global_setting()
+    # 初始化保存路径
+    path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+           global_setting.get_setting("camera_config")['DEEP_CAMERA']['path']
+    # 删除文件线程
+    delete_file_thread = Delete_file(path=path, start_time=global_setting.get_setting("start_time"))
+    delete_file_thread.start()
+    # 根据设置的相机数量来连接
+    camera_nums = int(global_setting.get_setting("camera_config")['DEEP_CAMERA']['nums'])
+    camera_list = []
+    for num in range(camera_nums):
+        camera_struct = {}
+        camera = None
+        try:
+            # 相机初始化
+            camera = RealSenseProcessor(path=path + f"camera_{num + 1}/", id=num + 1)
+        except Exception as e:
+            logger.error(f"deep相机{num + 1}初始化失败，失败原因：{e}")
+            # 所有线程停止
+            delete_file_thread.stop()
+            for camera_struct_l in camera_list:
+                if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
+                    camera_struct_l['camera'].stop()
+                if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
+                    camera_struct_l['img_process'].stop()
+            continue
+        img_process = None
+        try:
+            # 图像处理初始化
+            img_process = Img_process(path=path + f"camera_{num + 1}/", camera_id=num + 1)
+        except Exception as e:
+            logger.error(f"deep 图像处理相机{num + 1}初始化失败，失败原因：{e}")
+            # 所有线程停止
+            delete_file_thread.stop()
+            for camera_struct_l in camera_list:
+                if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
+                    camera_struct_l['camera'].stop()
+                if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
+                    camera_struct_l['img_process'].stop()
+            continue
+        camera.start()
+        img_process.start()
+        camera_struct['id'] = num + 1
+        camera_struct['camera'] = camera
+        camera_struct['img_process'] = img_process
+        camera_list.append(camera_struct)
+        pass
 
-    try:
-        # 图像处理初始化
-        img_process = Img_process(path=path + f"camera_{num + 1}/", camera_id=num + 1)
-    except Exception as e:
-        logger.error(f"deep 图像处理相机{num + 1}初始化失败，失败原因：{e}")
-        # 所有线程停止
-        delete_file_thread.stop()
-        for camera_struct_l in camera_list:
-            if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
-                camera_struct_l['camera'].stop()
-            if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
-                camera_struct_l['img_process'].stop()
-        continue
-    camera.start()
-    img_process.start()
-    camera_struct['id'] = num + 1
-    camera_struct['camera'] = camera
-    camera_struct['img_process'] = img_process
-    camera_list.append(camera_struct)
-    pass
-
-# stop
-# camera1.pipeline.stop()
+    # stop
+    # camera1.pipeline.stop()

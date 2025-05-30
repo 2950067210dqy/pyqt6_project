@@ -1,4 +1,5 @@
-import multiprocessing
+from multiprocessing import Process, freeze_support
+import os
 import subprocess
 import sys
 import time
@@ -6,25 +7,26 @@ import time
 import psutil
 from loguru import logger
 
-from config.global_setting import global_setting
-
-venv_python = sys.executable
+import main_comm
+import main_deep_camera
+import main_gui
+import main_infrared_camera
 
 
 def run_comm_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_comm.py"])
+    subprocess.run([sys.executable, "./main_comm.py"])
 
 
 def run_gui_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_gui.py"])
+    subprocess.run([sys.executable, "./main_gui.py"])
 
 
 def run_deep_camera_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_deep_camera.py"])
+    subprocess.run([sys.executable, "./main_deep_camera.py"])
 
 
 def run_infrared_camera_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_infrared_camera.py"])
+    subprocess.run([sys.executable, "./main_infrared_camera.py"])
 
 
 """
@@ -51,7 +53,8 @@ def kill_process_tree(pid, including_parent=True):
             parent.wait(5)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
+    freeze_support()
     # 加载日志配置
     logger.add(
         "./log/main/main_{time:YYYY-MM-DD}.log",
@@ -61,12 +64,15 @@ if __name__ == "__main__":
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
     )
     logger.info(f"{'-' * 40}main_start{'-' * 40}")
-
-    p_comm = multiprocessing.Process(target=run_comm_program)
-
-    p_gui = multiprocessing.Process(target=run_gui_program)
-    p_deep_camera = multiprocessing.Process(target=run_deep_camera_program)
-    p_infrared_camera = multiprocessing.Process(target=run_infrared_camera_program)
+    logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
+    # p_comm = Process(target=run_comm_program, name="p_comm")
+    # p_gui = Process(target=run_gui_program, name="p_gui")
+    # p_deep_camera = Process(target=run_deep_camera_program, name="p_deep_camera")
+    # p_infrared_camera = Process(target=run_infrared_camera_program, name="p_infrared_camera")
+    p_comm = Process(target=main_comm.main, name="p_comm")
+    p_gui = Process(target=main_gui.main, name="p_gui")
+    p_deep_camera = Process(target=main_deep_camera.main, name="p_deep_camera")
+    p_infrared_camera = Process(target=main_infrared_camera.main, name="p_infrared_camera")
     try:
         logger.info(f"p_comm子进程开始运行")
         p_comm.start()
@@ -103,6 +109,7 @@ if __name__ == "__main__":
     # 如果gui进程死亡 则将其他的进程全部终止
     is_loop = True
     while is_loop:
+
         # 检测 gui 进程是否存活
         if not p_gui.is_alive():
             logger.error(f"p_gui子进程已停止，同步终止p_comm子进程")
@@ -131,3 +138,6 @@ if __name__ == "__main__":
     p_infrared_camera.join()
     p_deep_camera.join()
     p_gui.join()
+   
+else:
+    pass

@@ -27,7 +27,8 @@ from imutils.video import VideoStream
 np.set_printoptions(precision=1)
 
 # global constants
-
+# 删除线程和图像处理线程锁 保证同步
+delete_process_lock = threading.Lock()
 TIP_SEGM_PARAM = {
     # threshold-based segmentation
     # ----------------------------
@@ -198,7 +199,10 @@ class Thermal_process(Thread):
         self.display = None
         self.vs = None
         self.test_frame = None
-        self.senxor_init()
+        self.init_state = None
+        # 显示初始化失败的日志的控制变量
+        self.init_error_log_show = False
+        self.init_state = self.senxor_init()
 
     def parse_args(self):
         """
@@ -235,7 +239,7 @@ class Thermal_process(Thread):
     def senxor_init(self):
         """
         温度传感器初始化
-        :return:
+        :return:True or False
         """
         args = self.parse_args()
         save_dir = args.save_dir if hasattr(args, 'save_dir') else './data'
@@ -243,9 +247,12 @@ class Thermal_process(Thread):
 
         self.mi48, connected_port, port_names = connect_senxor(src=args.tis_id)
         if self.mi48 is None:
-            logger.error(f'infrared camera_{self.id} | Cannot connect to SenXor')
-            logger.error(f'infrared camera_{self.id} | The following ports have SenXor attached {port_names}')
-            sys.exit(1)
+            if not self.init_error_log_show:
+                logger.error(
+                    f'infrared camera_{self.id} | Cannot connect to SenXor | The following ports have SenXor attached {port_names}')
+                self.init_error_log_show = True
+            return False
+            # sys.exit(1)
         else:
             logger.info(f'infrared camera_{self.id} | {self.mi48.sn} connected to {connected_port}')
         logger.info(f'infrared camera_{self.id} | camera_info: {self.mi48.camera_info}')
@@ -292,6 +299,7 @@ class Thermal_process(Thread):
 
         self.datasave = coordinate_writing(path=self.path, camera_id=self.id)
         self.datasave.csv_create()
+        return True
 
     def stop(self):
         self.mi48.stop()
@@ -317,33 +325,49 @@ class Thermal_process(Thread):
         logger.info(f"红外相机{self.id}开始运行")
         while self.running:
             # while True:
-            start_time = time.time()
-            raw_data, header = self.mi48.read()
-            frame = data_to_frame(raw_data, (self.mi48.cols, self.mi48.rows), hflip=False)  # hflip与USB正反有关，朝上要翻转为true
+            # 如果初始化相机失败，则一直尝试初始化相机
+            if not self.init_state:
+                self.init_state = self.senxor_init()
+                if not self.init_state:
+                    continue
+            with delete_process_lock:
+                start_time = time.time()
+                try:
+                    raw_data, header = self.mi48.read()
+                except Exception as e:
+                    logger.error(f"红外相机_{self.id} | 异常，原因：{e}")
+                    self.init_state = False
+                    self.init_error_log_show = False
+                    continue
+                if raw_data is None:
+                    logger.error(f"红外相机_{self.id} | raw_data is None")
+                    continue
+                frame = data_to_frame(raw_data, (self.mi48.cols, self.mi48.rows),
+                                      hflip=False)  # hflip与USB正反有关，朝上要翻转为true
 
-            #
-            Tmin, Tmax = self.RA_Tmin(frame.min()), self.RA_Tmax(frame.max())
-            frame = np.clip(frame, Tmin, Tmax)
-            _imgs, _struct = self.tip(frame)
-            self.images['thermal'].update(_imgs)
-            self.struct['thermal'].update(_struct)
-            self.display.img = self.display.composer([self.images['thermal']['raw']])
+                #
+                Tmin, Tmax = self.RA_Tmin(frame.min()), self.RA_Tmax(frame.max())
+                frame = np.clip(frame, Tmin, Tmax)
+                _imgs, _struct = self.tip(frame)
+                self.images['thermal'].update(_imgs)
+                self.struct['thermal'].update(_struct)
+                self.display.img = self.display.composer([self.images['thermal']['raw']])
 
-            # self.display(self.display.img)  # 显示，可删除
-            self.display.dir = Path(pic_save_path)
-            file_base_name = time_util.get_format_file_from_time(time.time())
-            self.display.save('{0}.bmp'.format(file_base_name))
-            with lock:
-                frame_nums += 1
-            self.datasave.csv_write(file_base_name, self.struct['thermal']['hs_mean'])  # 数据保存
+                # self.display(self.display.img)  # 显示，可删除
+                self.display.dir = Path(pic_save_path)
+                file_base_name = time_util.get_format_file_from_time(time.time())
+                self.display.save('{0}.bmp'.format(file_base_name))
+                with lock:
+                    frame_nums += 1
+                self.datasave.csv_write(file_base_name, self.struct['thermal']['hs_mean'])  # 数据保存
 
-            key = cv.waitKey(1) & 0xFF
-            if key != -1:
-                if key == ord("q") or key == 27:
-                    self.stop()
-            end_time = time.time()
-            logger.debug(
-                f"infrared_camera_{self.id} | 图像处理程序一次处理时间：{end_time - start_time}秒 | 此时总图像帧数量:{frame_nums}")
+                key = cv.waitKey(1) & 0xFF
+                if key != -1:
+                    if key == ord("q") or key == 27:
+                        self.stop()
+                end_time = time.time()
+                logger.debug(
+                    f"infrared_camera_{self.id}| image_process  | 图像处理线程一次处理时间：{end_time - start_time}秒 | 此时总图像帧数量:{frame_nums}")
             time.sleep(float(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['delay']))
 
         pass
@@ -387,25 +411,26 @@ class Delete_file(Thread):
 
     def run(self) -> None:
         try:
-            logger.info(f"深度相机删除文件线程开始运行")
+            logger.info(f"红外相机删除文件线程开始运行")
             self.running = True
             while self.running:
-                # 获取现在时间与上次删除时间之差
-                current_time = time.time()
-                elapsed = current_time - self.start_time
-                if elapsed >= float(global_setting.get_setting("camera_config")['DELETE']['interval_seconds']):
-                    # 尝试删除文件
-                    # 获取删除文件内的所有文件大小
-                    self.get_and_delete_files()
+                with delete_process_lock:
+                    # 获取现在时间与上次删除时间之差
+                    current_time = time.time()
+                    elapsed = current_time - self.start_time
+                    if elapsed >= float(global_setting.get_setting("camera_config")['DELETE']['interval_seconds']):
+                        # 尝试删除文件
+                        # 获取删除文件内的所有文件大小
+                        self.get_and_delete_files()
 
-                    logger.info(f"deep_camera 删除文件成功")
-                    self.start_time = time.time()
+                        logger.info(f"deep_camera 删除文件成功")
+                        self.start_time = time.time()
 
-                    pass
-                # logger.info(f"时间差{time_util.get_format_minute_from_time(elapsed)}")
+                        pass
+                    # logger.info(f"时间差{time_util.get_format_minute_from_time(elapsed)}")
                 time.sleep(float(global_setting.get_setting("camera_config")['DELETE']['delay']))
         except Exception as e:
-            logger.error(f"深度相机删除文件线程运行异常，异常原因：{e}")
+            logger.error(f"红外相机删除文件线程运行异常，异常原因：{e}")
         pass
 
 
@@ -430,43 +455,48 @@ def load_global_setting():
     return config
 
 
-logger.add(
-    "./log/infrared_camera/i_camera_{time:YYYY-MM-DD}.log",
-    rotation="00:00",
-    retention="30 days",
-    enqueue=True,
-    format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
-)
-logger.info(f"{'-' * 30}infrared_camera_start{'-' * 30}")
-# 设置全局变量
-load_global_setting()
-# 初始化保存路径
-path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
-       global_setting.get_setting("camera_config")['INFRARED_CAMERA']['path']
-# 删除文件线程
-delete_file_thread = Delete_file(path=path, start_time=global_setting.get_setting("start_time"))
-delete_file_thread.start()
+def main():
+    logger.add(
+        "./log/infrared_camera/i_camera_{time:YYYY-MM-DD}.log",
+        rotation="00:00",
+        retention="30 days",
+        enqueue=True,
+        format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
+    )
+    logger.info(f"{'-' * 30}infrared_camera_start{'-' * 30}")
+    # 设置全局变量
+    load_global_setting()
+    # 初始化保存路径
+    path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+           global_setting.get_setting("camera_config")['INFRARED_CAMERA']['path']
+    # 删除文件线程
+    delete_file_thread = Delete_file(path=path, start_time=global_setting.get_setting("start_time"))
+    delete_file_thread.start()
 
-camera_nums = int(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['nums'])
-camera_list = []
-for num in range(camera_nums):
-    camera_struct = {}
-    camera = None
-    try:
-        # 初始化
-        camera = Thermal_process(path=path + f"camera_{num + 1}/", id=num + 1)
-    except Exception as e:
-        logger.error(f"红外相机{num + 1}初始化失败，失败原因：{e}")
-        # 所有线程停止
-        delete_file_thread.stop()
-        for camera_struct_l in camera_list:
-            if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
-                camera_struct_l['camera'].stop()
-        continue
+    camera_nums = int(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['nums'])
+    camera_list = []
+    for num in range(camera_nums):
+        camera_struct = {}
+        camera = None
+        try:
+            # 初始化
+            camera = Thermal_process(path=path + f"camera_{num + 1}/", id=num + 1)
+        except Exception as e:
+            logger.error(f"红外相机{num + 1}初始化失败，失败原因：{e}")
+            # 所有线程停止
+            delete_file_thread.stop()
+            for camera_struct_l in camera_list:
+                if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
+                    camera_struct_l['camera'].stop()
+            continue
 
-    camera.start()
+        camera.start()
 
-    camera_struct['id'] = num + 1
-    camera_struct['camera'] = camera
-    camera_list.append(camera_struct)
-    pass
+        camera_struct['id'] = num + 1
+        camera_struct['camera'] = camera
+        camera_list.append(camera_struct)
+        pass
+
+
+if __name__ == "__main__":
+    main()
