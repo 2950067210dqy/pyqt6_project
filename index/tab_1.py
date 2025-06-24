@@ -18,9 +18,9 @@ class Tab_1(ThemedWidget):
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 实例化自定义ui
-        self._init_customize_ui()
+        # self._init_customize_ui()
         # 实例化功能
-        self._init_function()
+        # self._init_function()
         # 加载qss样式表
         self._init_style_sheet()
         pass

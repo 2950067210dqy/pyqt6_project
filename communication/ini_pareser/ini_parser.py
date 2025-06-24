@@ -1,4 +1,6 @@
 import configparser
+import traceback
+
 from loguru import logger
 
 
@@ -56,7 +58,11 @@ class ini_parser():
         # except Exception as e:
         #     logger.error(Exception)
         #     return None
-        self.config.read(self.file_path, encoding='utf-8')
+        try:
+            self.config.read(self.file_path, encoding='utf-8-sig')
+        except Exception as e:
+            logger.error(f"读取{self.file_path}配置文件失败！失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
+            return None
         self.is_read = True
         # 获取所有节的名称
         sections = self.config.sections()
@@ -84,9 +90,9 @@ class ini_parser():
             self.file_path = filepath
         # 读取 INI 文件
         try:
-            self.config.read(self.file_path, encoding='utf-8')
+            self.config.read(self.file_path, encoding='utf-8-sig')
         except Exception as e:
-            logger.error(e)
+            logger.error(f"读取{self.file_path}配置文件失败！失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             return None
         self.is_read = True
         # 获取所有节的名称

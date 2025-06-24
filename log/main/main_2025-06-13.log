@@ -1,0 +1,17 @@
+2025-06-13 09:45:51 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-13 09:45:51 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|24640|22240
+2025-06-13 09:45:51 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-13 09:45:51 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-13 09:45:51 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-13 09:45:51 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-13 09:46:02 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-13 09:46:02 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-13 09:46:02 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-13 09:46:02 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-13 09:46:32 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-13 09:46:32 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|12988|27888
+2025-06-13 09:46:32 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-13 09:46:32 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-13 09:46:32 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-13 09:46:32 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-13 09:47:47 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:(<class 'KeyboardInterrupt'>, KeyboardInterrupt())|堆栈追踪：None

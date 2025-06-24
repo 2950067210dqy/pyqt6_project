@@ -9,11 +9,10 @@ from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeri
     QDateTimeAxis
 from PyQt6.QtCore import Qt, QPointF, QTimer, QDateTime
 from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
-from PyQt6 import QtCore
+from PyQt6 import QtCore, QtWidgets
 from PyQt6.QtCharts import QChart
 from PyQt6.QtWidgets import QVBoxLayout, QWidget, QHBoxLayout, QScrollArea
 from loguru import logger
-from pyqt6_plugins.examplebutton import QtWidgets
 
 from config.global_setting import global_setting
 from dao.data_read import data_read
@@ -255,7 +254,7 @@ class tab2_tab0_charts():
                         y_name=self.transfer_datas[i]['data'][j]['data'][k]['data'][0]['y_name'],
                         parent=main_layout, object_name=current_tab_Sub_Sub.objectName(),
                         title=f"{self.datas.phase_name}-{self.transfer_datas[i]['rated_phase_angle']}-{self.transfer_datas[i]['data'][j]['data_name']}-{self.transfer_datas[i]['data'][j]['data'][k]['name']}-图表",
-                       
+
                         is_span=True)
                     self.charts.append(chart)
                     main_layout.setParent(current_tab_Sub_Sub)

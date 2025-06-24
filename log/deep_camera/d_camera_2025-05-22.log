@@ -1,0 +1,340 @@
+2025-05-22 17:27:50 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 17:27:50 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 17:27:50 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 17:27:50.212
+2025-05-22 17:27:50 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 17:27:50 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 17:27:50 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 17:27:55 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：4.7732391357421875秒 | 共处理26个图像文件 | 此时总图像帧数量:31
+2025-05-22 17:27:58 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：1.7196969985961914秒 | 共处理32个图像文件 | 此时总图像帧数量:33
+2025-05-22 17:28:01 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：1.761589527130127秒 | 共处理34个图像文件 | 此时总图像帧数量:36
+2025-05-22 17:28:04 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：1.8975791931152344秒 | 共处理37个图像文件 | 此时总图像帧数量:39
+2025-05-22 17:28:07 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：2.127138137817383秒 | 共处理40个图像文件 | 此时总图像帧数量:42
+2025-05-22 17:28:56 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 17:28:56 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 17:28:56 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 17:28:56.671
+2025-05-22 17:28:56 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 17:28:57 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 17:28:57 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 17:29:01 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.786114454269409秒 | 共处理6个图像文件 | 此时总图像帧数量:50
+2025-05-22 17:29:01 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.28324608628536024 G-bytes | 删除文件总数量： 148 | 此时相机拍摄的图像数量：50
+2025-05-22 17:29:01 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 17:29:02 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.08915328979492188秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 17:29:03 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.13420867919921875秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 17:29:04 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.23039603233337402秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 17:29:05 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.2835886478424072秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 19:16:23 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 19:16:23 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 19:16:23 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 19:16:23.387
+2025-05-22 19:16:23 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 19:16:24 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 19:16:24 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 19:16:28 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.04161084609174253 G-bytes | 删除文件总数量： 24 | 此时相机拍摄的图像数量：9
+2025-05-22 19:16:28 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 19:16:28 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_17_29_02_977.npy
+2025-05-22 19:16:28 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_17_29_03_991.npy
+2025-05-22 19:16:28 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_17_29_05_003.npy
+2025-05-22 19:16:28 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_17_29_06_019.npy
+2025-05-22 19:16:28 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：4.4097020626068115秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 19:16:30 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.18012380599975586秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 19:16:31 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.22570490837097168秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 19:16:32 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.2561020851135254秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 19:16:33 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.02920075587656014 G-bytes | 删除文件总数量： 17 | 此时相机拍摄的图像数量：5
+2025-05-22 19:16:33 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 19:16:33 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.0010089874267578125秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 19:16:34 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.14303088188171387秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 19:16:35 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.24364662170410156秒 | 共处理2个图像文件 | 此时总图像帧数量:3
+2025-05-22 19:16:37 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.29276204109191895秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 19:16:38 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.02701086617783454 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 19:16:38 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 19:16:38 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.2973363399505615秒 | 共处理5个图像文件 | 此时总图像帧数量:0
+2025-05-22 19:16:39 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.06765556335449219秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 19:16:40 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.15269923210144043秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 19:21:55 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 19:21:55 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 19:21:55 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 19:21:55.541
+2025-05-22 19:21:55 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 19:21:56 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 19:21:56 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 19:21:59 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.4612648487091064秒 | 共处理3个图像文件 | 此时总图像帧数量:6
+2025-05-22 19:22:00 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.03431074563847032 G-bytes | 删除文件总数量： 20 | 此时相机拍摄的图像数量：7
+2025-05-22 19:22:00 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 19:22:00 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.0010046958923339844秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 19:22:01 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.09465909004211426秒 | 共处理1个图像文件 | 此时总图像帧数量:2
+2025-05-22 19:22:03 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.6633157730102539秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 19:38:34 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 19:38:34 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 19:38:34 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 19:38:34.846
+2025-05-22 19:38:34 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 19:38:35 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 19:38:35 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 19:38:39 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.6970882415771484秒 | 共处理4个图像文件 | 此时总图像帧数量:8
+2025-05-22 19:38:39 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.037960888143393684 G-bytes | 删除文件总数量： 22 | 此时相机拍摄的图像数量：8
+2025-05-22 19:38:39 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 19:38:40 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.0709841251373291秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 19:38:41 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.12811946868896484秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 19:46:56 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 19:46:56 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 19:46:56 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 19:46:56.821
+2025-05-22 19:46:56 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 19:46:57 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 19:46:57 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 19:47:01 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.629666328430176秒 | 共处理3个图像文件 | 此时总图像帧数量:7
+2025-05-22 19:47:01 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.03212080920653486 G-bytes | 删除文件总数量： 19 | 此时相机拍摄的图像数量：7
+2025-05-22 19:47:01 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 19:47:02 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.09239673614501953秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 19:47:03 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.20078635215759277秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:01:19 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:01:19 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:01:19 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:01:19.766
+2025-05-22 20:01:19 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:01:20 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:01:20 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:01:24 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.5365965366363525秒 | 共处理3个图像文件 | 此时总图像帧数量:6
+2025-05-22 20:01:24 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.032120747423647254 G-bytes | 删除文件总数量： 19 | 此时相机拍摄的图像数量：7
+2025-05-22 20:01:24 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:01:25 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.0010457038879394531秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 20:01:26 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.09455180168151855秒 | 共处理1个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:04:22.110
+2025-05-22 20:04:22 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:04:22 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:04:22 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:04:26 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.5887234210968018秒 | 共处理3个图像文件 | 此时总图像帧数量:7
+2025-05-22 20:04:27 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.032120745839470645 G-bytes | 删除文件总数量： 19 | 此时相机拍摄的图像数量：7
+2025-05-22 20:04:27 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:04:27 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.10925507545471191秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:06:48 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:06:48 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:06:48 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:06:48.760
+2025-05-22 20:06:48 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:06:49 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:06:49 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:06:53 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.6157946586608887秒 | 共处理1个图像文件 | 此时总图像帧数量:5
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:10:10.175
+2025-05-22 20:10:10 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:10:10 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:10:10 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:10:14 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.8695526123046875秒 | 共处理5个图像文件 | 此时总图像帧数量:9
+2025-05-22 20:10:15 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.04380101856599218 G-bytes | 删除文件总数量： 25 | 此时相机拍摄的图像数量：9
+2025-05-22 20:10:15 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:10:15 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.06957173347473145秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:10:16 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.1365969181060791秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:10:18 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.18308091163635254秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:10:19 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.4025871753692627秒 | 共处理4个图像文件 | 此时总图像帧数量:5
+2025-05-22 20:10:20 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.027010796474063903 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 20:10:20 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:10:20 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.10711789131164551秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:10:21 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.1309971809387207秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:10:22 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.19676756858825684秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:10:24 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.21878647804260254秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 20:10:25 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:154 | 2025_05_22_20_10_22_499的bmp文件或npy文件不存在
+2025-05-22 20:10:25 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_10_23_512.npy
+2025-05-22 20:10:25 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_10_24_525.npy
+2025-05-22 20:10:25 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.027010829741772616 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 20:10:25 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:10:25 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.11355948448181152秒 | 共处理3个图像文件 | 此时总图像帧数量:0
+2025-05-22 20:10:26 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.07952022552490234秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:10:27 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.16416120529174805秒 | 共处理2个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:10:28 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.21217751502990723秒 | 共处理3个图像文件 | 此时总图像帧数量:4
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:10:58.177
+2025-05-22 20:10:58 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:10:58 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:10:58 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:11:02 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.7473206520080566秒 | 共处理4个图像文件 | 此时总图像帧数量:8
+2025-05-22 20:11:03 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.04161102272743402 G-bytes | 删除文件总数量： 24 | 此时相机拍摄的图像数量：9
+2025-05-22 20:11:03 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:11:03 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_10_27_567.npy
+2025-05-22 20:11:03 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_10_28_581.npy
+2025-05-22 20:11:03 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_10_59_336.npy
+2025-05-22 20:11:03 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_11_00_359.npy
+2025-05-22 20:11:03 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_11_01_373.npy
+2025-05-22 20:11:03 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_11_02_387.npy
+2025-05-22 20:11:03 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_11_03_402.npy
+2025-05-22 20:11:03 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.13910865783691406秒 | 共处理2个图像文件 | 此时总图像帧数量:0
+2025-05-22 20:11:04 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.12557101249694824秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:11:06 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.3304316997528076秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:11:07 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.23315167427062988秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:17:14.162
+2025-05-22 20:17:14 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:17:14 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:17:14 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:17:18 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.719935178756714秒 | 共处理4个图像文件 | 此时总图像帧数量:8
+2025-05-22 20:17:19 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.040150865763920886 G-bytes | 删除文件总数量： 23 | 此时相机拍摄的图像数量：8
+2025-05-22 20:17:19 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:17:19 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.066009521484375秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:17:20 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.1642308235168457秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:17:22 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.23560237884521484秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:458 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:22:17.123
+2025-05-22 20:22:17 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:22:17 | INFO |MainProcess | Thread-2 |  __main__ : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:22:17 | INFO |MainProcess | Thread-3 |  __main__ : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:22:21 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.5230813026428223秒 | 共处理3个图像文件 | 此时总图像帧数量:6
+2025-05-22 20:22:22 | ERROR |MainProcess | Thread-1 |  __main__ : main_deep_camera:323 | deep_camera Failed to delete ./data/deep_camera/camera_1\processed_log.json: reason:[WinError 32] 另一个程序正在使用此文件，进程无法访问。: './data/deep_camera/camera_1\\processed_log.json'
+2025-05-22 20:22:22 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:154 | 2025_05_22_20_22_20_395的bmp文件或npy文件不存在
+2025-05-22 20:22:22 | ERROR |MainProcess | Thread-3 |  __main__ : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_20_22_21_412.npy
+2025-05-22 20:22:22 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.3416104316711426秒 | 共处理6个图像文件 | 此时总图像帧数量:8
+2025-05-22 20:22:22 | WARNING |MainProcess | Thread-1 |  __main__ : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.040151122400530946 G-bytes | 删除文件总数量： 23 | 此时相机拍摄的图像数量：8
+2025-05-22 20:22:22 | INFO |MainProcess | Thread-1 |  __main__ : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:22:23 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.0931396484375秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:22:25 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.1792595386505127秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:22:26 | DEBUG |MainProcess | Thread-3 |  __main__ : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.19729375839233398秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:35:51 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:35:51 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:35:51 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:35:51.050
+2025-05-22 20:35:51 | INFO |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:35:51 | INFO |p_deep_camera | Thread-8 |  main_deep_camera : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:35:51 | INFO |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:35:55 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.6111762523651123秒 | 共处理4个图像文件 | 此时总图像帧数量:8
+2025-05-22 20:35:56 | WARNING |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.037960888143393684 G-bytes | 删除文件总数量： 22 | 此时相机拍摄的图像数量：8
+2025-05-22 20:35:56 | INFO |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:35:56 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.07019782066345215秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:35:57 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.22769498825073242秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:35:59 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.2271103858947754秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:36:00 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.23678231239318848秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 20:36:01 | WARNING |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.027010757661737075 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 20:36:01 | INFO |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:36:01 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.001007080078125秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 20:36:02 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.10508537292480469秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:36:03 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.15017318725585938秒 | 共处理2个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:36:04 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.2811565399169922秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 20:36:06 | WARNING |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.027010878851247384 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 20:36:06 | INFO |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:36:06 | ERROR |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:135 | camera_1图像处理程序读取2025_05_22_20_36_05_527.npy文件出错，原因：[Errno 2] No such file or directory: './data/deep_camera/camera_1/depth\\2025_05_22_20_36_05_527.npy'
+2025-05-22 20:36:06 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.2658107280731201秒 | 共处理5个图像文件 | 此时总图像帧数量:0
+2025-05-22 20:36:07 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.07912492752075195秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:36:08 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.15629267692565918秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 20:36:09 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.21197009086608887秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 20:36:10 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.28430724143981934秒 | 共处理4个图像文件 | 此时总图像帧数量:5
+2025-05-22 20:36:11 | WARNING |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.027010788553180877 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 20:36:11 | INFO |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:36:12 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.15323758125305176秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 20:43:45 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 20:43:45 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 20:43:45 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:443 | 相机连接开始时间：2025-05-22 20:43:45.873
+2025-05-22 20:43:45 | INFO |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 20:43:46 | INFO |p_deep_camera | Thread-8 |  main_deep_camera : main_deep_camera:395 | 相机1开始运行
+2025-05-22 20:43:46 | INFO |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 20:43:50 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：4.037309169769287秒 | 共处理1个图像文件 | 此时总图像帧数量:5
+2025-05-22 20:43:51 | WARNING |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.020440507172746116 G-bytes | 删除文件总数量： 13 | 此时相机拍摄的图像数量：5
+2025-05-22 20:43:51 | INFO |p_deep_camera | Thread-7 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 20:43:51 | DEBUG |p_deep_camera | Thread-9 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.08264279365539551秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 21:26:12 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 21:26:12 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 21:26:12 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:443 | 相机连接开始时间：2025-05-22 21:26:12.887
+2025-05-22 21:26:12 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 21:26:13 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:395 | 相机1开始运行
+2025-05-22 21:26:13 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 21:26:17 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.3479156494140625秒 | 共处理2个图像文件 | 此时总图像帧数量:5
+2025-05-22 21:26:17 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.026280684328554474 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：6
+2025-05-22 21:26:17 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 21:26:18 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.0010068416595458984秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 21:26:19 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.07303953170776367秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 21:26:20 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.16159820556640625秒 | 共处理2个图像文件 | 此时总图像帧数量:3
+2025-05-22 21:26:21 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.24177980422973633秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 21:26:22 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.2832765579223633秒 | 共处理5个图像文件 | 此时总图像帧数量:5
+2025-05-22 21:26:22 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.0292007740945911 G-bytes | 删除文件总数量： 17 | 此时相机拍摄的图像数量：5
+2025-05-22 21:26:22 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 21:26:23 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.0725243091583252秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 21:26:25 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.15967035293579102秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 21:26:26 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.21572279930114746秒 | 共处理3个图像文件 | 此时总图像帧数量:4
+2025-05-22 21:26:27 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.36405062675476074秒 | 共处理5个图像文件 | 此时总图像帧数量:5
+2025-05-22 21:26:27 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.02920074953985372 G-bytes | 删除文件总数量： 17 | 此时相机拍摄的图像数量：5
+2025-05-22 21:26:27 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 21:26:28 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.06807923316955566秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 21:26:29 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.17553186416625977秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 21:26:32 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：1.1645066738128662秒 | 共处理3个图像文件 | 此时总图像帧数量:4
+2025-05-22 21:26:32 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.024820609742224803 G-bytes | 删除文件总数量： 15 | 此时相机拍摄的图像数量：5
+2025-05-22 21:26:32 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 21:26:33 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.001007080078125秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 21:44:47 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 21:44:47 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 21:44:47 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:443 | 相机连接开始时间：2025-05-22 21:44:47.877
+2025-05-22 21:44:47 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 21:44:48 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:395 | 相机1开始运行
+2025-05-22 21:44:48 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 21:44:52 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：3.704190492630005秒 | 共处理1个图像文件 | 此时总图像帧数量:5
+2025-05-22 21:44:53 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 0.024090583934340364 G-bytes | 删除文件总数量： 15 | 此时相机拍摄的图像数量：6
+2025-05-22 21:44:53 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 21:44:53 | ERROR |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_21_44_49_173.npy
+2025-05-22 21:44:53 | ERROR |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_21_44_50_196.npy
+2025-05-22 21:44:53 | ERROR |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_21_44_51_211.npy
+2025-05-22 21:44:53 | ERROR |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_21_44_52_222.npy
+2025-05-22 21:44:53 | ERROR |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:276 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_21_44_53_236.npy
+2025-05-22 21:44:53 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.11969709396362305秒 | 共处理1个图像文件 | 此时总图像帧数量:0
+2025-05-22 21:44:54 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:289 | camera_1 | 图像处理程序一次处理时间：0.07839274406433105秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 22:07:24 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:459 | ------------------------------deep_camera_start------------------------------
+2025-05-22 22:07:24 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:436 | 相机配置文件读取成功。
+2025-05-22 22:07:24 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:443 | 相机连接开始时间：2025-05-22 22:07:24.354
+2025-05-22 22:07:24 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:335 | 深度相机删除文件线程开始运行
+2025-05-22 22:07:25 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:395 | 相机1开始运行
+2025-05-22 22:07:25 | ERROR |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:426 | 相机1运行异常，异常原因：[WinError 3] 系统找不到指定的路径。: './data/deep_camera/camera_1/color'
+2025-05-22 22:07:25 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 22:07:29 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:326 | 深度相机 | 删除文件总大小: 2.6931002290541945e-08 G-bytes | 删除文件总数量： 1 | 此时相机拍摄的图像数量：0
+2025-05-22 22:07:29 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:346 | deep_camera 删除文件成功
+2025-05-22 22:09:31 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:461 | ------------------------------deep_camera_start------------------------------
+2025-05-22 22:09:31 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:438 | 相机配置文件读取成功。
+2025-05-22 22:09:31 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:445 | 相机连接开始时间：2025-05-22 22:09:31.707
+2025-05-22 22:09:31 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:337 | 深度相机删除文件线程开始运行
+2025-05-22 22:09:32 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:397 | 相机1开始运行
+2025-05-22 22:09:32 | ERROR |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:428 | 相机1运行异常，异常原因：[WinError 3] 系统找不到指定的路径。: './data/deep_camera/camera_1/color'
+2025-05-22 22:09:32 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:237 | 相机1图像处理线程开始运行
+2025-05-22 22:09:33 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:291 | camera_1 | 图像处理程序一次处理时间：0.0010006427764892578秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:09:34 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:291 | camera_1 | 图像处理程序一次处理时间：0.0020084381103515625秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:09:35 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:291 | camera_1 | 图像处理程序一次处理时间：0.0014317035675048828秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:09:36 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:291 | camera_1 | 图像处理程序一次处理时间：0.0010044574737548828秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:12:44 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:465 | ------------------------------deep_camera_start------------------------------
+2025-05-22 22:12:44 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:442 | 相机配置文件读取成功。
+2025-05-22 22:12:44 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:449 | 相机连接开始时间：2025-05-22 22:12:44.990
+2025-05-22 22:12:44 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:341 | 深度相机删除文件线程开始运行
+2025-05-22 22:12:45 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:401 | 相机1开始运行
+2025-05-22 22:12:45 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:242 | 相机1图像处理线程开始运行
+2025-05-22 22:12:46 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.18423938751220703秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:12:50 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:332 | 深度相机 | 删除文件总大小: 0.014600376750147618 G-bytes | 删除文件总数量： 10 | 此时相机拍摄的图像数量：4
+2025-05-22 22:12:50 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:352 | deep_camera 删除文件成功
+2025-05-22 22:12:50 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：3.0947773456573486秒 | 共处理1个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:13:44 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:465 | ------------------------------deep_camera_start------------------------------
+2025-05-22 22:13:44 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:442 | 相机配置文件读取成功。
+2025-05-22 22:13:44 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:449 | 相机连接开始时间：2025-05-22 22:13:44.016
+2025-05-22 22:13:44 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:341 | 深度相机删除文件线程开始运行
+2025-05-22 22:13:44 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:401 | 相机1开始运行
+2025-05-22 22:13:44 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:242 | 相机1图像处理线程开始运行
+2025-05-22 22:13:48 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：3.472722291946411秒 | 共处理1个图像文件 | 此时总图像帧数量:4
+2025-05-22 22:13:49 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:332 | 深度相机 | 删除文件总大小: 0.02263050538756918 G-bytes | 删除文件总数量： 14 | 此时相机拍摄的图像数量：5
+2025-05-22 22:13:49 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:352 | deep_camera 删除文件成功
+2025-05-22 22:13:49 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.0012776851654052734秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:13:50 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.06410932540893555秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 22:13:51 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.12054038047790527秒 | 共处理2个图像文件 | 此时总图像帧数量:3
+2025-05-22 22:13:52 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.28115177154541016秒 | 共处理4个图像文件 | 此时总图像帧数量:4
+2025-05-22 22:13:54 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:332 | 深度相机 | 删除文件总大小: 0.027010788553180877 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 22:13:54 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:352 | deep_camera 删除文件成功
+2025-05-22 22:13:54 | ERROR |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:282 | 深度相机1的图像处理缺少对应的npy文件: ./data/deep_camera/camera_1/depth\2025_05_22_22_13_53_449.npy
+2025-05-22 22:13:54 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.3507819175720215秒 | 共处理4个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:13:55 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.416642427444458秒 | 共处理1个图像文件 | 此时总图像帧数量:2
+2025-05-22 22:14:30 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:465 | ------------------------------deep_camera_start------------------------------
+2025-05-22 22:14:30 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:442 | 相机配置文件读取成功。
+2025-05-22 22:14:30 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:449 | 相机连接开始时间：2025-05-22 22:14:30.479
+2025-05-22 22:14:30 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:341 | 深度相机删除文件线程开始运行
+2025-05-22 22:14:31 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:401 | 相机1开始运行
+2025-05-22 22:14:31 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:242 | 相机1图像处理线程开始运行
+2025-05-22 22:14:31 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.08152484893798828秒 | 共处理0个图像文件 | 此时总图像帧数量:0
+2025-05-22 22:14:35 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：2.9043805599212646秒 | 共处理1个图像文件 | 此时总图像帧数量:4
+2025-05-22 22:14:35 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:332 | 深度相机 | 删除文件总大小: 0.016790409816856002 G-bytes | 删除文件总数量： 11 | 此时相机拍摄的图像数量：4
+2025-05-22 22:14:35 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:352 | deep_camera 删除文件成功
+2025-05-22 22:14:36 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.0575101375579834秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 22:14:37 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.19759297370910645秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 22:14:38 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.18454861640930176秒 | 共处理3个图像文件 | 此时总图像帧数量:3
+2025-05-22 22:14:39 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.27089524269104004秒 | 共处理4个图像文件 | 此时总图像帧数量:5
+2025-05-22 22:14:40 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:332 | 深度相机 | 删除文件总大小: 0.027010716473145336 G-bytes | 删除文件总数量： 16 | 此时相机拍摄的图像数量：5
+2025-05-22 22:14:40 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:352 | deep_camera 删除文件成功
+2025-05-22 22:14:41 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.06853222846984863秒 | 共处理1个图像文件 | 此时总图像帧数量:1
+2025-05-22 22:14:42 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.12404513359069824秒 | 共处理2个图像文件 | 此时总图像帧数量:2
+2025-05-22 22:14:43 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:295 | camera_1 | 图像处理程序一次处理时间：0.2010955810546875秒 | 共处理3个图像文件 | 此时总图像帧数量:3

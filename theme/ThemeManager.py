@@ -162,7 +162,7 @@ class ThemeManager(QObject):
                 QPushButton{{
                     background-color: {theme['--selected']};
                     color:{theme['--text']};
-                   padding: 25px;
+                   padding:20px;
                     border-radius: 4px;
                     font-size:13px;
                 }}
@@ -184,7 +184,7 @@ class ThemeManager(QObject):
                 QPushButton{{
                     background-color: {theme['--primary']};
                     color:{theme['--text']};
-                    padding: 25px;
+                    padding: 20px;
                     border-radius: 4px;
                     font-size:13px;
                 }}

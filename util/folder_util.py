@@ -1,4 +1,5 @@
 import os
+import traceback
 from enum import Enum
 
 from loguru import logger
@@ -34,7 +35,7 @@ class folder_util():
         except PermissionError:
             logger.error(f"权限错误：无法创建目录 '{path}'。")
         except Exception as e:
-            logger.error(f"创建目录时发生错误: {e}")
+            logger.error(f"创建目录时发生错误: {e} |  异常堆栈跟踪：{traceback.print_exc()}")
         pass
 
     @classmethod

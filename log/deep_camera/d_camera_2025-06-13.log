@@ -1,0 +1,14 @@
+2025-06-13 09:45:56 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:582 | ------------------------------deep_camera_start------------------------------
+2025-06-13 09:45:56 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:559 | 相机配置文件读取成功。
+2025-06-13 09:45:56 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:566 | 相机连接开始时间：2025-06-13 09:45:56.113
+2025-06-13 09:46:36 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:582 | ------------------------------deep_camera_start------------------------------
+2025-06-13 09:46:36 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:559 | 相机配置文件读取成功。
+2025-06-13 09:46:36 | INFO |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:566 | 相机连接开始时间：2025-06-13 09:46:36.829
+2025-06-13 09:46:36 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:378 | 深度相机删除文件线程开始运行
+2025-06-13 09:46:51 | ERROR |p_deep_camera | MainThread |  main_deep_camera : main_deep_camera:439 | 深度相机_1 | 设备未连接: 异常原因No device connected |   异常堆栈跟踪：None
+2025-06-13 09:46:52 | WARNING |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:369 | 深度相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-13 09:46:52 | INFO |p_deep_camera | Thread-1 |  main_deep_camera : main_deep_camera:390 | deep_camera 删除文件成功
+2025-06-13 09:46:52 | INFO |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:472 | 深度相机1开始运行
+2025-06-13 09:46:52 | INFO |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:265 | 深度相机1图像处理线程开始运行
+2025-06-13 09:47:07 | ERROR |p_deep_camera | Thread-2 |  main_deep_camera : main_deep_camera:439 | 深度相机_1 | 设备未连接: 异常原因No device connected |   异常堆栈跟踪：None
+2025-06-13 09:47:22 | DEBUG |p_deep_camera | Thread-3 |  main_deep_camera : main_deep_camera:321 | deep_camera_1 | image_process |  图像处理线程一次处理时间：30.2808837890625秒 | 共处理0个图像文件 | 此时总图像帧数量:0

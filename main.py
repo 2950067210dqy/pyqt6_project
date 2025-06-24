@@ -1,4 +1,6 @@
-import multiprocessing
+import traceback
+from multiprocessing import Process, freeze_support
+import os
 import subprocess
 import sys
 import time
@@ -6,25 +8,26 @@ import time
 import psutil
 from loguru import logger
 
-from config.global_setting import global_setting
-
-venv_python = sys.executable
+import main_comm
+import main_deep_camera
+import main_gui
+import main_infrared_camera
 
 
 def run_comm_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_comm.py"])
+    subprocess.run([sys.executable, "./main_comm.py"])
 
 
 def run_gui_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_gui.py"])
+    subprocess.run([sys.executable, "./main_gui.py"])
 
 
 def run_deep_camera_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_deep_camera.py"])
+    subprocess.run([sys.executable, "./main_deep_camera.py"])
 
 
 def run_infrared_camera_program():
-    subprocess.run([venv_python, "D:\WorkSpace\pythonProjectAnimal\main_infrared_camera.py"])
+    subprocess.run([sys.executable, "./main_infrared_camera.py"])
 
 
 """
@@ -51,7 +54,21 @@ def kill_process_tree(pid, including_parent=True):
             parent.wait(5)
 
 
-if __name__ == "__main__":
+def custom_excepthook(exc_type, exc_value, exc_traceback):
+    """
+    自定义捕获未知的异常
+    :param exc_type:
+    :param exc_value:
+    :param exc_traceback:
+    :return:
+    """
+    logger.error(f"发生未捕获异常:{exc_type, exc_value}|堆栈追踪：{traceback.print_exception(exc_type, exc_value, exc_traceback)}")
+
+
+if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
+
+    sys.excepthook = custom_excepthook
+    freeze_support()
     # 加载日志配置
     logger.add(
         "./log/main/main_{time:YYYY-MM-DD}.log",
@@ -61,26 +78,30 @@ if __name__ == "__main__":
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
     )
     logger.info(f"{'-' * 40}main_start{'-' * 40}")
+    logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
+    # p_comm = Process(target=run_comm_program, name="p_comm")
+    # p_gui = Process(target=run_gui_program, name="p_gui")
+    # p_deep_camera = Process(target=run_deep_camera_program, name="p_deep_camera")
+    # p_infrared_camera = Process(target=run_infrared_camera_program, name="p_infrared_camera")
 
-    p_comm = multiprocessing.Process(target=run_comm_program)
-
-    p_gui = multiprocessing.Process(target=run_gui_program)
-    p_deep_camera = multiprocessing.Process(target=run_deep_camera_program)
-    p_infrared_camera = multiprocessing.Process(target=run_infrared_camera_program)
-    try:
-        logger.info(f"p_comm子进程开始运行")
-        p_comm.start()
-    except Exception as e:
-        logger.error(f"p_comm子进程发生异常：{e}，准备终止该子进程")
-        if p_comm.is_alive():
-            kill_process_tree(p_comm.pid)
-            p_comm.join(timeout=5)
-        pass
+    # p_comm = Process(target=main_comm.main, name="p_comm")
+    p_gui = Process(target=main_gui.main, name="p_gui")
+    p_deep_camera = Process(target=main_deep_camera.main, name="p_deep_camera")
+    p_infrared_camera = Process(target=main_infrared_camera.main, name="p_infrared_camera")
+    # try:
+    #     logger.info(f"p_comm子进程开始运行")
+    #     p_comm.start()
+    # except Exception as e:
+    #     logger.error(f"p_comm子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
+    #     if p_comm.is_alive():
+    #         kill_process_tree(p_comm.pid)
+    #         p_comm.join(timeout=5)
+    #     pass
     try:
         logger.info(f"p_deep_camera子进程开始运行")
         p_deep_camera.start()
     except Exception as e:
-        logger.error(f"p_deep_camera子进程发生异常：{e}，准备终止该子进程")
+        logger.error(f"p_deep_camera子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
         if p_deep_camera.is_alive():
             kill_process_tree(p_deep_camera.pid)
             p_deep_camera.join(timeout=5)
@@ -88,7 +109,7 @@ if __name__ == "__main__":
         logger.info(f"p_infrared_camera子进程开始运行")
         p_infrared_camera.start()
     except Exception as e:
-        logger.error(f"p_infrared_camera子进程发生异常：{e}，准备终止该子进程")
+        logger.error(f"p_infrared_camera子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
         if p_infrared_camera.is_alive():
             kill_process_tree(p_infrared_camera.pid)
             p_infrared_camera.join(timeout=5)
@@ -96,13 +117,14 @@ if __name__ == "__main__":
         logger.info(f"p_gui子进程开始运行")
         p_gui.start()
     except Exception as e:
-        logger.error(f"p_gui子进程发生异常：{e}，准备终止该子进程")
+        logger.error(f"p_gui子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
         if p_gui.is_alive():
             kill_process_tree(p_gui.pid)
             p_gui.join(timeout=5)
     # 如果gui进程死亡 则将其他的进程全部终止
     is_loop = True
     while is_loop:
+
         # 检测 gui 进程是否存活
         if not p_gui.is_alive():
             logger.error(f"p_gui子进程已停止，同步终止p_comm子进程")
@@ -116,18 +138,21 @@ if __name__ == "__main__":
                 logger.error(f"终止p_infrared_camera子进程")
                 p_infrared_camera.join(timeout=5)
                 pass
-            if p_comm.is_alive():
-                # 先尝试正常终止
-                kill_process_tree(p_comm.pid)
-                logger.error(f"终止p_comm子进程")
-                # 等待一会儿，确保结束
-                p_comm.join(timeout=5)
+            # if p_comm.is_alive():
+            #     # 先尝试正常终止
+            #     kill_process_tree(p_comm.pid)
+            #     logger.error(f"终止p_comm子进程")
+            #     # 等待一会儿，确保结束
+            #     p_comm.join(timeout=5)
             is_loop = False
             break
         time.sleep(0.5)
 
     # 等待所有子进程退出
-    p_comm.join()
+    # p_comm.join()
     p_infrared_camera.join()
     p_deep_camera.join()
     p_gui.join()
+
+else:
+    pass

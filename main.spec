@@ -4,8 +4,16 @@
 a = Analysis(
     ['main.py'],
     pathex=[],
-    binaries=[],
-    datas=[],
+    binaries=[
+
+    ],
+    datas=[
+    ('D:/WorkSpace/pythonProjectAnimal/camera_config.ini', '.'),
+    ('D:/WorkSpace/pythonProjectAnimal/communicate_config.ini', '.'),
+    ('D:/WorkSpace/pythonProjectAnimal/deep_camera_intrinsics.json', '.'),
+    ('D:/WorkSpace/pythonProjectAnimal/gui_configer.yaml', '.'),
+    ('D:/WorkSpace/pythonProjectAnimal/model/yolo11n.pt', 'model')
+    ],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -19,20 +27,26 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
     [],
+    exclude_binaries=True,
     name='main',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    upx_exclude=[],
-    runtime_tmpdir=None,
     console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+)
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    name='main',
 )
