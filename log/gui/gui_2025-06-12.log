@@ -1,0 +1,1062 @@
+2025-06-12 08:41:20 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 08:41:20 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 08:41:20 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-06-12 08:41:20 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-06-12 08:41:20 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-06-12 08:51:03 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 08:51:03 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 08:51:03 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-06-12 08:51:03 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-06-12 08:51:03 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-06-12 08:51:03 | ERROR |p_gui | MainThread |  config.yamlParser : yamlParser:22 | 读取./gui_configer.yaml配置文件失败！失败原因：mapping values are not allowed here
+  in "./gui_configer.yaml", line 36, column 12
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  main_gui : main_gui:115 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  main_gui : main_gui:101 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  main_gui : main_gui:120 | loading config start
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  main_gui : main_gui:37 | 串口通讯配置文件读取成功。
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | loading config finish
+2025-06-12 08:55:51 | INFO |p_gui | MainThread |  main_gui : main_gui:78 | start Qt
+2025-06-12 08:55:52 | ERROR |p_gui | MainThread |  main_gui : main_gui:130 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  main_gui : main_gui:115 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  main_gui : main_gui:101 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  main_gui : main_gui:120 | loading config start
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  main_gui : main_gui:37 | 串口通讯配置文件读取成功。
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | loading config finish
+2025-06-12 08:56:52 | INFO |p_gui | MainThread |  main_gui : main_gui:78 | start Qt
+2025-06-12 08:56:52 | ERROR |p_gui | MainThread |  main_gui : main_gui:130 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  main_gui : main_gui:108 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | loading config start
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  main_gui : main_gui:129 | loading config finish
+2025-06-12 08:58:36 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 08:58:37 | ERROR |p_gui | MainThread |  main_gui : main_gui:137 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  main_gui : main_gui:123 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  main_gui : main_gui:128 | loading config start
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  main_gui : main_gui:130 | loading config finish
+2025-06-12 08:59:24 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 08:59:24 | ERROR |p_gui | MainThread |  main_gui : main_gui:138 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  main_gui : main_gui:108 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | loading config start
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  main_gui : main_gui:129 | loading config finish
+2025-06-12 09:00:42 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:00:42 | ERROR |p_gui | MainThread |  main_gui : main_gui:137 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  main_gui : main_gui:108 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | loading config start
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  main_gui : main_gui:129 | loading config finish
+2025-06-12 09:01:06 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:01:06 | ERROR |p_gui | MainThread |  main_gui : main_gui:137 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 09:01:40 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:01:40 | INFO |p_gui | MainThread |  main_gui : main_gui:108 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:01:40 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | loading config start
+2025-06-12 09:01:40 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:01:40 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:01:40 | ERROR |p_gui | MainThread |  config.yamlParser : yamlParser:22 | 读取./gui_configer.yaml配置文件失败！失败原因：mapping values are not allowed here
+  in "./gui_configer.yaml", line 36, column 12
+2025-06-12 09:01:40 | ERROR |p_gui | MainThread |  main_gui : main_gui:46 | ./gui_configer.yaml配置文件读取失败
+2025-06-12 09:01:40 | INFO |p_gui | MainThread |  main_gui : main_gui:69 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  main_gui : main_gui:108 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | loading config start
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  main_gui : main_gui:129 | loading config finish
+2025-06-12 09:02:53 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:02:54 | ERROR |p_gui | MainThread |  main_gui : main_gui:137 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  main_gui : main_gui:123 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  main_gui : main_gui:128 | loading config start
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  main_gui : main_gui:130 | loading config finish
+2025-06-12 09:03:50 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 09:03:51 | ERROR |p_gui | MainThread |  main_gui : main_gui:138 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:122 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:108 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | loading config start
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:129 | loading config finish
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 09:04:48 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 09:04:48 | INFO |p_gui | MainThread |  main_gui : main_gui:92 | Appliacation start
+2025-06-12 09:04:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:192 | deep_camera | 
+2025-06-12 09:04:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:216 | infrared_camera | 
+2025-06-12 09:04:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:192 | deep_camera | 
+2025-06-12 09:04:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:216 | infrared_camera | 
+2025-06-12 09:04:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:192 | deep_camera | 
+2025-06-12 09:04:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:216 | infrared_camera | 
+2025-06-12 09:04:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:192 | deep_camera | 
+2025-06-12 09:04:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:216 | infrared_camera | 
+2025-06-12 09:04:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:192 | deep_camera | 
+2025-06-12 09:04:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:216 | infrared_camera | 
+2025-06-12 09:04:52 | INFO |p_gui | MainThread |  main_gui : main_gui:69 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  main_gui : main_gui:125 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  main_gui : main_gui:111 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  main_gui : main_gui:130 | loading config start
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config finish
+2025-06-12 09:07:18 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:07:19 | ERROR |p_gui | MainThread |  main_gui : main_gui:93 | gui程序实例化失败，原因:list index out of range
+2025-06-12 09:07:19 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | Appliacation start
+2025-06-12 09:07:19 | ERROR |p_gui | MainThread |  main_gui : main_gui:140 | gui程序运行异常，原因：cannot access local variable 'allWindows' where it is not associated with a value，终止gui进程和comm进程
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  main_gui : main_gui:126 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  main_gui : main_gui:112 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  main_gui : main_gui:131 | loading config start
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  main_gui : main_gui:133 | loading config finish
+2025-06-12 09:08:02 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:09:55 | ERROR |p_gui | MainThread |  main_gui : main_gui:93 | gui程序实例化失败，原因:list index out of range
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  main_gui : main_gui:126 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  main_gui : main_gui:112 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  main_gui : main_gui:131 | loading config start
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  main_gui : main_gui:133 | loading config finish
+2025-06-12 09:10:50 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:10:51 | ERROR |p_gui | MainThread |  main_gui : main_gui:93 | gui程序实例化失败，原因:list index out of range
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  main_gui : main_gui:126 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  main_gui : main_gui:112 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  main_gui : main_gui:131 | loading config start
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  main_gui : main_gui:26 | 相机配置文件读取成功。
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  main_gui : main_gui:38 | 串口通讯配置文件读取成功。
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  main_gui : main_gui:133 | loading config finish
+2025-06-12 09:11:48 | INFO |p_gui | MainThread |  main_gui : main_gui:85 | start Qt
+2025-06-12 09:11:48 | ERROR |p_gui | MainThread |  main_gui : main_gui:141 | gui程序运行异常，原因：list index out of range，终止gui进程和comm进程
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 14:22:26 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 14:22:27 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:None
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 14:23:50 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 14:23:51 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:None
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 14:29:27 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 14:29:27 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 14:29:28 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 14:29:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:56 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:29:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:29:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:56 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:56 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:30:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:30:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:56 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:56 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:31:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:31:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:32:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:32:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 14:34:14 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 14:34:15 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 14:34:15 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 14:34:15 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 14:34:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:34:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:34:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 14:35:24 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 14:35:24 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 14:35:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:30 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:44 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:35:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:35:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 14:37:56 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 14:37:57 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 14:37:57 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 14:37:57 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 14:37:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:37:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:37:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:37:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:37:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:37:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:11 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:12 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:38:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:193 | deep_camera | 
+2025-06-12 14:38:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:217 | infrared_camera | 
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 14:41:43 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 14:41:43 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 14:42:35 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:14:19 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:14:20 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:14:20 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:14:20 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 15:15:20 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:22:47 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'main.py': [], 'main_comm.py': [], 'main_deep_camera.py': ['Delete_file', 'Detection', 'Img_process', 'RealSenseProcessor', 'coordinate_writing'], 'main_gui.py': [], 'main_infrared_camera.py': ['Delete_file', 'TIP', 'Thermal_process', 'coordinate_writing']}
+2025-06-12 15:22:48 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'main.py': [], 'main_comm.py': [], 'main_deep_camera.py': ['Delete_file', 'Detection', 'Img_process', 'RealSenseProcessor', 'coordinate_writing'], 'main_gui.py': [], 'main_infrared_camera.py': ['Delete_file', 'TIP', 'Thermal_process', 'coordinate_writing']}
+2025-06-12 15:22:48 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'main.py': [], 'main_comm.py': [], 'main_deep_camera.py': ['Delete_file', 'Detection', 'Img_process', 'RealSenseProcessor', 'coordinate_writing'], 'main_gui.py': [], 'main_infrared_camera.py': ['Delete_file', 'TIP', 'Thermal_process', 'coordinate_writing']}
+2025-06-12 15:22:48 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'main.py': [], 'main_comm.py': [], 'main_deep_camera.py': ['Delete_file', 'Detection', 'Img_process', 'RealSenseProcessor', 'coordinate_writing'], 'main_gui.py': [], 'main_infrared_camera.py': ['Delete_file', 'TIP', 'Thermal_process', 'coordinate_writing']}
+2025-06-12 15:22:48 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'main.py': [], 'main_comm.py': [], 'main_deep_camera.py': ['Delete_file', 'Detection', 'Img_process', 'RealSenseProcessor', 'coordinate_writing'], 'main_gui.py': [], 'main_infrared_camera.py': ['Delete_file', 'TIP', 'Thermal_process', 'coordinate_writing']}
+2025-06-12 15:22:48 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'main.py': [], 'main_comm.py': [], 'main_deep_camera.py': ['Delete_file', 'Detection', 'Img_process', 'RealSenseProcessor', 'coordinate_writing'], 'main_gui.py': [], 'main_infrared_camera.py': ['Delete_file', 'TIP', 'Thermal_process', 'coordinate_writing']}
+2025-06-12 15:22:48 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'main.py': [], 'main_comm.py': [], 'main_deep_camera.py': ['Delete_file', 'Detection', 'Img_process', 'RealSenseProcessor', 'coordinate_writing'], 'main_gui.py': [], 'main_infrared_camera.py': ['Delete_file', 'TIP', 'Thermal_process', 'coordinate_writing']}
+2025-06-12 15:22:48 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:22:48 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:22:49 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 15:22:50 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'all_windows.py': ['AllWindows'], 'mainWindow.py': ['MainWindow', 'Time_thread'], 'tab.py': ['Tab'], 'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'all_windows.py': ['AllWindows'], 'mainWindow.py': ['MainWindow', 'Time_thread'], 'tab.py': ['Tab'], 'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'all_windows.py': ['AllWindows'], 'mainWindow.py': ['MainWindow', 'Time_thread'], 'tab.py': ['Tab'], 'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'all_windows.py': ['AllWindows'], 'mainWindow.py': ['MainWindow', 'Time_thread'], 'tab.py': ['Tab'], 'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'all_windows.py': ['AllWindows'], 'mainWindow.py': ['MainWindow', 'Time_thread'], 'tab.py': ['Tab'], 'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'all_windows.py': ['AllWindows'], 'mainWindow.py': ['MainWindow', 'Time_thread'], 'tab.py': ['Tab'], 'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'all_windows.py': ['AllWindows'], 'mainWindow.py': ['MainWindow', 'Time_thread'], 'tab.py': ['Tab'], 'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:23:14 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:23:14 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 15:26:02 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:29:52 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:29:53 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:29:53 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 15:29:54 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:33:04 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['ImageLoaderThread', 'Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:33:05 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:33:05 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 15:33:19 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:36:55 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  index.tab : tab:31 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:36:56 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:36:56 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 15:37:04 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:39:49 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:39:50 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:39:50 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 15:39:58 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 15:53:25 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  index.tab : tab:31 | ['Tab_1', 'Tab_2', 'Tab_3', 'Tab_4', 'Tab_5', 'Tab_6', 'Tab_7']
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 15:53:26 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 15:53:26 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 16:00:28 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:17:55 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 16:17:56 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 16:17:56 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 16:17:59 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:21:34 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:21:35 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:21:35 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:21:35 | INFO |p_gui | MainThread |  index.tab : tab:32 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:21:35 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 16:21:35 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 16:21:35 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 16:22:07 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:24:37 | INFO |p_gui | MainThread |  index.tab : tab:33 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:24:37 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:No module named 'tab_1' |  异常堆栈跟踪：None
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:26:12 | INFO |p_gui | MainThread |  index.tab : tab:33 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:26:12 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:the 'package' argument is required to perform a relative import for './index/tab_1.py' |  异常堆栈跟踪：None
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:26:51 | INFO |p_gui | MainThread |  index.tab : tab:33 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:26:51 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:No module named 'index.tab_1.py'; 'index.tab_1' is not a package |  异常堆栈跟踪：None
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:27:36 | INFO |p_gui | MainThread |  index.tab : tab:33 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:27:36 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:the 'package' argument is required to perform a relative import for './index/tab_1.py' |  异常堆栈跟踪：None
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:33:22 | INFO |p_gui | MainThread |  index.tab : tab:33 | {'tab_1.py': ['Tab_1'], 'tab_2.py': ['Tab_2'], 'tab_3.py': ['Tab_3'], 'tab_4.py': ['Tab_4'], 'tab_5.py': ['Tab_5'], 'tab_6.py': ['Tab_6'], 'tab_7.py': ['Tab_7']}
+2025-06-12 16:33:22 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:attribute name must be string, not 'list' |  异常堆栈跟踪：None
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:35:12 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:35:12 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:attribute name must be string, not 'list' |  异常堆栈跟踪：None
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:36:20 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:38:32 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:38:33 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:attribute name must be string, not 'list' |  异常堆栈跟踪：None
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:42:44 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:42:44 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:attribute name must be string, not 'list' |  异常堆栈跟踪：None
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:43:27 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:43:27 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:attribute name must be string, not 'list' |  异常堆栈跟踪：None
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:43:42 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:43:42 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:attribute name must be string, not 'list' |  异常堆栈跟踪：None
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 16:44:08 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 16:44:08 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 16:44:10 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:48:38 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:48:38 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:'dict' object has no attribute 'rsplit' |  异常堆栈跟踪：None
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:50:19 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:50:19 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:[Errno 2] No such file or directory: 'D:\\WorkSpace\\pythonProjectAnimal\\./indextab_1.py' |  异常堆栈跟踪：None
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:51:01 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:51:01 | ERROR |p_gui | MainThread |  main_gui : main_gui:94 | gui程序实例化失败，原因:type object 'Tab' has no attribute 'classes' |  异常堆栈跟踪：None
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-12 16:51:25 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-12 16:51:25 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-12 16:51:26 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-12 16:51:30 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------

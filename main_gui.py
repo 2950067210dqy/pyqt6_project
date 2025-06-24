@@ -1,5 +1,7 @@
 import os
 import sys
+import time
+import traceback
 
 from PyQt6.QtCore import QThreadPool
 from PyQt6.QtWidgets import QApplication
@@ -25,6 +27,7 @@ def load_global_setting():
         logger.info("相机配置文件读取成功。")
     else:
         logger.error("相机配置文件读取失败。")
+        quit_qt_application()
     global_setting.set_setting("camera_config", config)
 
     # 加载串口通讯配置
@@ -36,9 +39,13 @@ def load_global_setting():
         logger.info("串口通讯配置文件读取成功。")
     else:
         logger.error("串口通讯配置文件读取失败。")
+        quit_qt_application()
     global_setting.set_setting("serial_config", serial_config)
     # 加载gui配置存储到全局类中
     configer = YamlParserObject.yaml_parser.load_single("./gui_configer.yaml")
+    if configer is None:
+        logger.error(f"./gui_configer.yaml配置文件读取失败")
+        quit_qt_application()
     global_setting.set_setting("configer", configer)
     # 当前左侧菜单项id 这里的值1是设个默认值无意义 会在实例化左菜单时根据真正的默认菜单覆盖这个值
     global_setting.set_setting("menu_id_now", 1)
@@ -61,6 +68,13 @@ def quit_qt_application():
     :return:
     """
     logger.info(f"{'-' * 40}quit Qt application{'-' * 40}")
+    #
+    # 等待5秒系统退出
+    step = 5
+    while step >= 0:
+        step -= 1
+        time.sleep(1)
+    sys.exit(0)
 
 
 def start_qt_application():
@@ -74,7 +88,11 @@ def start_qt_application():
     # 绑定突出事件
     app.aboutToQuit.connect(quit_qt_application)
     # 主窗口实例化
+    # try:
     allWindows = AllWindows()
+    # except Exception as e:
+    #     logger.error(f"gui程序实例化失败，原因:{e} |  异常堆栈跟踪：{traceback.print_exc()}")
+    #     return
     # 主窗口显示
     logger.info("Appliacation start")
     allWindows.show()
@@ -97,7 +115,7 @@ def get_communiation_project_path():
 
 def main():
     # 移除默认的控制台处理器（默认id是0）
-    logger.remove()
+    # logger.remove()
     # 加载日志配置
     logger.add(
         "./log/gui/gui_{time:YYYY-MM-DD}.log",
@@ -118,7 +136,7 @@ def main():
     # receive_serial_port_data()
 
     # qt程序开始
-    try:
-        start_qt_application()
-    except Exception as e:
-        logger.error(f"gui程序运行异常，原因：{e}，终止gui进程和comm进程")
+    # try:
+    start_qt_application()
+    # except Exception as e:
+    #     logger.error(f"gui程序运行异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}，终止gui进程和comm进程")

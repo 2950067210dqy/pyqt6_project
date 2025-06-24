@@ -1,0 +1,457 @@
+2025-06-12 08:41:15 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 08:41:15 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|20796|12796
+2025-06-12 08:41:15 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 08:41:15 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 08:41:15 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 08:41:15 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 08:41:20 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 08:41:20 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 08:41:20 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 08:41:20 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 08:50:59 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 08:50:59 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|24016|18252
+2025-06-12 08:50:59 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 08:50:59 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 08:50:59 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 08:50:59 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 08:51:04 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 08:51:04 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 08:51:04 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 08:51:04 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 08:55:46 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 08:55:46 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|25132|24916
+2025-06-12 08:55:46 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 08:55:47 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 08:55:47 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 08:55:47 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 08:55:52 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 08:55:52 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 08:55:52 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 08:55:52 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 08:56:47 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 08:56:47 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|10904|3816
+2025-06-12 08:56:47 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 08:56:47 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 08:56:47 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 08:56:47 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 08:56:53 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 08:56:53 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 08:56:53 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 08:56:53 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 08:58:32 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 08:58:32 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|5040|2564
+2025-06-12 08:58:32 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 08:58:32 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 08:58:32 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 08:58:32 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 08:58:38 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 08:58:38 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 08:58:38 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 08:58:38 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 08:59:19 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 08:59:19 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|6028|22648
+2025-06-12 08:59:19 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 08:59:19 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 08:59:19 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 08:59:19 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 08:59:25 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 08:59:25 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 08:59:25 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 08:59:25 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:00:37 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:00:37 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|12704|21492
+2025-06-12 09:00:37 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:00:37 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:00:37 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:00:37 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:00:43 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:00:43 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:00:43 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:00:43 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:00:56 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:00:56 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|24468|19884
+2025-06-12 09:00:56 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:00:56 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:00:57 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:00:58 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:01:07 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:01:07 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:01:07 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:01:07 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:01:36 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:01:36 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|24600|24564
+2025-06-12 09:01:36 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:01:36 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:01:36 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:01:36 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:01:47 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:01:47 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:01:47 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:01:47 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:02:49 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:02:49 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|16784|16144
+2025-06-12 09:02:49 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:02:49 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:02:49 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:02:49 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:02:55 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:02:55 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:02:55 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:02:55 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:03:46 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:03:46 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|23704|9540
+2025-06-12 09:03:46 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:03:46 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:03:46 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:03:46 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:03:52 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:03:52 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:03:52 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:03:52 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:04:43 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:04:43 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|24480|416
+2025-06-12 09:04:43 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:04:43 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:04:43 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:04:43 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:07:14 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:07:14 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|26020|22108
+2025-06-12 09:07:14 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:07:14 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:07:14 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:07:14 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:07:19 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:07:20 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:07:20 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:07:20 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:07:53 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:07:53 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|14644|26300
+2025-06-12 09:07:53 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:07:53 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:07:54 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:07:55 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:10:46 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:10:46 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|24524|15720
+2025-06-12 09:10:46 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:10:46 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:10:46 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:10:46 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:10:51 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:10:51 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:10:51 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:10:51 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 09:11:43 | INFO |MainProcess | MainThread |  __main__ : main:66 | ----------------------------------------main_start----------------------------------------
+2025-06-12 09:11:43 | INFO |MainProcess | MainThread |  __main__ : main:67 | __main__ | main.py|5676|26456
+2025-06-12 09:11:43 | INFO |MainProcess | MainThread |  __main__ : main:77 | p_comm子进程开始运行
+2025-06-12 09:11:43 | INFO |MainProcess | MainThread |  __main__ : main:86 | p_deep_camera子进程开始运行
+2025-06-12 09:11:43 | INFO |MainProcess | MainThread |  __main__ : main:94 | p_infrared_camera子进程开始运行
+2025-06-12 09:11:44 | INFO |MainProcess | MainThread |  __main__ : main:102 | p_gui子进程开始运行
+2025-06-12 09:11:49 | ERROR |MainProcess | MainThread |  __main__ : main:115 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 09:11:49 | ERROR |MainProcess | MainThread |  __main__ : main:118 | 终止p_deep_camera子进程
+2025-06-12 09:11:49 | ERROR |MainProcess | MainThread |  __main__ : main:123 | 终止p_infrared_camera子进程
+2025-06-12 09:11:49 | ERROR |MainProcess | MainThread |  __main__ : main:129 | 终止p_comm子进程
+2025-06-12 14:22:22 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 14:22:22 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|58136|54372
+2025-06-12 14:22:22 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 14:22:22 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 14:22:22 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 14:22:22 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 14:22:28 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 14:22:28 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 14:22:28 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 14:22:28 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 14:23:45 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 14:23:45 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|53260|55628
+2025-06-12 14:23:45 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 14:23:45 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 14:23:45 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 14:23:45 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 14:23:52 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 14:23:52 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 14:23:52 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 14:23:52 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 14:29:22 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 14:29:22 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|41328|53400
+2025-06-12 14:29:22 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 14:29:22 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 14:29:22 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 14:29:23 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 14:32:17 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:None
+2025-06-12 14:34:10 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 14:34:10 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|55332|49560
+2025-06-12 14:34:10 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 14:34:10 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 14:34:10 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 14:34:10 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 14:34:42 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:None
+2025-06-12 14:35:19 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 14:35:19 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|59276|54736
+2025-06-12 14:35:19 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 14:35:19 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 14:35:19 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 14:35:19 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 14:35:49 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:None
+2025-06-12 14:37:52 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 14:37:52 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|45684|39740
+2025-06-12 14:37:52 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 14:37:52 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 14:37:52 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 14:37:52 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 14:38:22 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:None
+2025-06-12 14:41:38 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 14:41:38 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|46052|56588
+2025-06-12 14:41:38 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 14:41:38 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 14:41:38 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 14:41:38 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 14:42:36 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:None
+2025-06-12 15:14:15 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:14:15 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|62388|58060
+2025-06-12 15:14:15 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:14:15 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:14:15 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:14:15 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 15:15:27 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 15:15:27 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 15:15:27 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 15:15:27 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 15:22:43 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:22:43 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|60404|61652
+2025-06-12 15:22:43 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:22:43 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:22:43 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:22:43 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 15:22:57 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 15:22:57 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 15:22:57 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 15:22:57 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 15:23:09 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:23:09 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|64448|64404
+2025-06-12 15:23:09 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:23:09 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:23:10 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:23:10 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 15:26:09 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 15:26:09 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 15:26:09 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 15:26:09 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 15:29:48 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:29:48 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|62932|59704
+2025-06-12 15:29:48 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:29:48 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:29:48 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:29:48 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 15:29:54 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:(<class 'KeyboardInterrupt'>, KeyboardInterrupt())|堆栈追踪：None
+2025-06-12 15:33:00 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:33:00 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|28824|63260
+2025-06-12 15:33:00 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:33:00 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:33:00 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:33:00 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 15:33:26 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 15:33:26 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 15:33:26 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 15:33:26 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 15:36:51 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:36:51 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|63084|55336
+2025-06-12 15:36:51 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:36:51 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:36:51 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:36:51 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 15:37:11 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 15:37:11 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 15:37:11 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 15:37:11 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 15:39:45 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:39:45 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|2152|53724
+2025-06-12 15:39:45 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:39:45 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:39:45 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:39:45 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 15:40:05 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 15:40:05 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 15:40:06 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 15:40:06 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 15:53:21 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 15:53:21 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|65060|66000
+2025-06-12 15:53:21 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 15:53:21 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 15:53:21 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 15:53:21 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:00:35 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:00:35 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:00:35 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:00:35 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:17:50 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:17:51 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|64852|56464
+2025-06-12 16:17:51 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:17:51 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:17:51 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:17:51 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:18:06 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:18:06 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:18:06 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:18:06 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:21:30 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:21:30 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|52668|30704
+2025-06-12 16:21:30 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:21:30 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:21:30 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:21:30 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:22:14 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:22:14 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:22:14 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:22:14 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:24:33 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:24:33 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|61268|38056
+2025-06-12 16:24:33 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:24:33 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:24:33 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:24:33 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:24:38 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:24:38 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:24:38 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:24:38 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:26:08 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:26:08 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|61768|63176
+2025-06-12 16:26:08 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:26:08 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:26:08 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:26:08 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:26:13 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:26:13 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:26:13 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:26:13 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:26:47 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:26:47 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|52748|59504
+2025-06-12 16:26:47 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:26:47 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:26:47 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:26:47 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:26:51 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:26:51 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:26:52 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:26:52 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:27:32 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:27:32 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|64984|45192
+2025-06-12 16:27:32 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:27:32 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:27:32 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:27:32 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:27:37 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:27:37 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:27:37 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:27:37 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:33:18 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:33:18 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|48920|55668
+2025-06-12 16:33:18 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:33:18 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:33:18 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:33:18 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:33:23 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:33:23 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:33:23 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:33:23 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|60232|60516
+2025-06-12 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:35:07 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:35:12 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:35:13 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:35:13 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:35:13 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:36:11 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:36:11 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|45340|70552
+2025-06-12 16:36:11 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:36:11 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:36:12 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:36:13 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:38:28 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:38:28 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|52328|31792
+2025-06-12 16:38:28 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:38:28 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:38:28 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:38:28 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:38:33 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:38:33 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:38:33 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:38:33 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:42:40 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:42:40 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|69912|66088
+2025-06-12 16:42:40 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:42:40 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:42:40 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:42:40 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:42:45 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:42:45 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:42:45 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:42:45 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:43:23 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:43:23 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|66688|62324
+2025-06-12 16:43:23 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:43:23 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:43:23 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:43:23 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:43:27 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:43:27 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:43:27 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:43:27 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:43:38 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:43:38 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|51948|40256
+2025-06-12 16:43:38 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:43:38 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:43:38 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:43:38 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:43:43 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:43:43 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:43:43 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:43:43 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:44:03 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:44:03 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|68280|39060
+2025-06-12 16:44:03 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:44:03 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:44:03 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:44:04 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:44:17 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:44:17 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:44:17 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:44:17 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:48:34 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:48:34 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|43572|60852
+2025-06-12 16:48:34 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:48:34 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:48:34 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:48:34 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:48:39 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:48:39 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:48:39 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:48:39 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:50:14 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:50:14 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|62224|69504
+2025-06-12 16:50:14 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:50:14 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:50:14 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:50:15 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:50:20 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:50:20 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:50:20 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:50:20 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:50:56 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:50:56 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|70772|58372
+2025-06-12 16:50:56 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:50:57 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:50:57 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:50:57 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:51:01 | ERROR |MainProcess | MainThread |  __main__ : main:129 | p_gui子进程已停止，同步终止p_comm子进程
+2025-06-12 16:51:01 | ERROR |MainProcess | MainThread |  __main__ : main:132 | 终止p_deep_camera子进程
+2025-06-12 16:51:01 | ERROR |MainProcess | MainThread |  __main__ : main:137 | 终止p_infrared_camera子进程
+2025-06-12 16:51:01 | ERROR |MainProcess | MainThread |  __main__ : main:143 | 终止p_comm子进程
+2025-06-12 16:51:20 | INFO |MainProcess | MainThread |  __main__ : main:80 | ----------------------------------------main_start----------------------------------------
+2025-06-12 16:51:20 | INFO |MainProcess | MainThread |  __main__ : main:81 | __main__ | main.py|64660|62760
+2025-06-12 16:51:20 | INFO |MainProcess | MainThread |  __main__ : main:91 | p_comm子进程开始运行
+2025-06-12 16:51:20 | INFO |MainProcess | MainThread |  __main__ : main:100 | p_deep_camera子进程开始运行
+2025-06-12 16:51:20 | INFO |MainProcess | MainThread |  __main__ : main:108 | p_infrared_camera子进程开始运行
+2025-06-12 16:51:21 | INFO |MainProcess | MainThread |  __main__ : main:116 | p_gui子进程开始运行
+2025-06-12 16:51:31 | ERROR |MainProcess | MainThread |  __main__ : main:65 | 发生未捕获异常:(<class 'KeyboardInterrupt'>, KeyboardInterrupt())|堆栈追踪：None

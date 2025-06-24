@@ -3,6 +3,7 @@ import os
 import queue
 import random
 import threading
+import traceback
 from datetime import datetime
 
 from communication.ini_pareser.ini_parser import ini_parser
@@ -108,8 +109,11 @@ class store_data(threading.Thread):
         :return:
         """
         # 获取年 第几周 第几天
-        data_dict = json.loads(data)
-
+        try:
+            data_dict = json.loads(data)
+        except Exception as e:
+            logger.warning("data数据格式错误！")
+            return
         year, week_number, weekday = time_util.get_current_week_info()
         file_type = str(self.config['Storage']['file_type']).lower()
         folder_path = self.save_pre_paths[data_dict['index']] + str(year) + "/" + f"{str(week_number)}week" + "/"
@@ -222,7 +226,8 @@ class communication(threading.Thread):
                 logger.error(f"{self.category}串口{str(self.config['Serial']['port'])}连接--程序被用户终止！")
                 self.running = False
             except Exception as e:
-                logger.error(f"{self.category}串口{str(self.config['Serial']['port'])}连接--发生错误: {e}！")
+                logger.error(
+                    f"{self.category}串口{str(self.config['Serial']['port'])}连接--发生错误: {e} |  异常堆栈跟踪：{traceback.print_exc()}！")
                 self.running = False
             finally:
                 pass

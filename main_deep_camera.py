@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 import threading
+import traceback
 from threading import Thread
 
 from loguru import logger
@@ -121,7 +122,8 @@ class Detection:
                 else:
                     imge = cv2.imread(color_image)
             except Exception as e:
-                logger.error(f"camera_{self.camera_id}图像处理程序读取{file_base_name}.bmp文件出错，原因：{e}")
+                logger.error(
+                    f"camera_{self.camera_id}图像处理程序读取{file_base_name}.bmp文件出错，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
                 return
             results = self.model(imge, classes=[0], verbose=False)
             # 处理检测结果
@@ -147,7 +149,8 @@ class Detection:
                     else:
                         depth = np.load(depth_frame)
                 except Exception as e:
-                    logger.error(f"camera_{self.camera_id}图像处理程序读取{file_base_name}.npy文件出错，原因：{e}")
+                    logger.error(
+                        f"camera_{self.camera_id}图像处理程序读取{file_base_name}.npy文件出错，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
                     return
                     #  读取到的深度信息/1000 为真实的深度信息，单位为m
                 depth = depth[center_y, center_x] * self.unit
@@ -359,7 +362,8 @@ class Delete_file(Thread):
                     else:
                         os.remove(file_path)  # 删除文件
                 except Exception as e:
-                    logger.trace(f"deep_camera Failed to delete {file_path}: reason:{e}")
+                    logger.trace(
+                        f"deep_camera Failed to delete {file_path}: reason:{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         global frame_nums
         with lock:
             logger.warning(f"深度相机 | 删除文件总大小: {total_size} G-bytes | 删除文件总数量： {total_nums} | 此时相机拍摄的图像数量：{frame_nums}")
@@ -390,7 +394,7 @@ class Delete_file(Thread):
                     # logger.info(f"时间差{time_util.get_format_minute_from_time(elapsed)}")
                 time.sleep(float(global_setting.get_setting("camera_config")['DELETE']['delay']))
         except Exception as e:
-            logger.error(f"深度相机删除文件线程运行异常，异常原因：{e}")
+            logger.error(f"深度相机删除文件线程运行异常，异常原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         pass
 
 
@@ -432,7 +436,7 @@ class RealSenseProcessor(Thread):
             # logger.info(f"深度相机_{self.id} | 设备已连接。")
             return True
         except Exception as e:
-            logger.error(f"深度相机_{self.id} | 设备未连接: 异常原因{e}")
+            logger.error(f"深度相机_{self.id} | 设备未连接: 异常原因{e} |   异常堆栈跟踪：{traceback.print_exc()}")
             return False
 
     def img_save(self, image, depth_image):
@@ -492,7 +496,7 @@ class RealSenseProcessor(Thread):
                 try:
                     frames = self.pipeline.wait_for_frames()
                 except Exception as e:
-                    logger.error(f"deep_camera{self.id}获取帧失败，异常原因：{e}")
+                    logger.error(f"deep_camera{self.id}获取帧失败，异常原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
                     self.init_state = False
                     continue
                     pass
@@ -542,7 +546,7 @@ class RealSenseProcessor(Thread):
                     f"deep_camera_{self.id} | image_read | 图像获取帧线程一次处理时间：{end_time - start_time}秒  | 此时总图像帧数量:{frame_nums}")
                 time.sleep(float(global_setting.get_setting("camera_config")['DEEP_CAMERA']['delay']))
         except Exception as e:
-            logger.error(f"deep_相机{self.id}运行异常，异常原因：{e}")
+            logger.error(f"deep_相机{self.id}运行异常，异常原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
 
 
 def load_global_setting():
@@ -594,7 +598,7 @@ def main():
             # 相机初始化
             camera = RealSenseProcessor(path=path + f"camera_{num + 1}/", id=num + 1)
         except Exception as e:
-            logger.error(f"deep相机{num + 1}初始化失败，失败原因：{e}")
+            logger.error(f"deep相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止
             delete_file_thread.stop()
             for camera_struct_l in camera_list:
@@ -608,7 +612,7 @@ def main():
             # 图像处理初始化
             img_process = Img_process(path=path + f"camera_{num + 1}/", camera_id=num + 1)
         except Exception as e:
-            logger.error(f"deep 图像处理相机{num + 1}初始化失败，失败原因：{e}")
+            logger.error(f"deep 图像处理相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止
             delete_file_thread.stop()
             for camera_struct_l in camera_list:

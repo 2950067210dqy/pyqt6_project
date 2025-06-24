@@ -1,0 +1,904 @@
+2025-06-12 08:41:20 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 08:41:20 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 08:41:20 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 08:41:20.269
+2025-06-12 08:41:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 08:41:20 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 08:41:20 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 08:51:03 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 08:51:03 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 08:51:03 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 08:51:03.760
+2025-06-12 08:51:03 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 08:51:03 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 08:51:03 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 08:55:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 08:55:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 08:55:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 08:55:51.257
+2025-06-12 08:55:51 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 08:55:51 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 08:55:51 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 08:56:52 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 08:56:52 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 08:56:52 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 08:56:52.131
+2025-06-12 08:56:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 08:56:52 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 08:56:52 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 08:58:36 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 08:58:36 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 08:58:36 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 08:58:36.592
+2025-06-12 08:58:36 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 08:58:36 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 08:58:36 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 08:59:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 08:59:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 08:59:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 08:59:24.079
+2025-06-12 08:59:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 08:59:24 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 08:59:24 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:00:41 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:00:41 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:00:41 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:00:41.979
+2025-06-12 09:00:41 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:00:42 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:00:42 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:01:04 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:01:04 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:01:04 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:01:04.959
+2025-06-12 09:01:04 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:01:04 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:01:04 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:01:40 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:01:40 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:01:40 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:01:40.847
+2025-06-12 09:01:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:01:40 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:01:40 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:01:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:01:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:02:53 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:02:53 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:02:53 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:02:53.920
+2025-06-12 09:02:53 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:02:53 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:02:53 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:03:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:03:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:03:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:03:50.833
+2025-06-12 09:03:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:03:50 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:03:50 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:04:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:04:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:04:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:04:48.076
+2025-06-12 09:04:48 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:04:48 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:04:48 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:04:53 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:04:53 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:07:18 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:07:18 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:07:18 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:07:18.497
+2025-06-12 09:07:18 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:07:18 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:07:18 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:08:01 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:08:01 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:08:01 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:08:01.737
+2025-06-12 09:08:01 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:08:01 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:08:01 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:08:06 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:06 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:11 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:11 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:16 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:16 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:21 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:21 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:26 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:26 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:31 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:31 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:36 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:36 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:41 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:41 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:46 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:46 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:51 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:51 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:08:56 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:08:56 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:01 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:01 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:06 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:06 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:11 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:11 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:16 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:16 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:21 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:21 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:26 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:26 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:31 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:31 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:36 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:36 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:41 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:41 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:46 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:46 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:51 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:51 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:09:56 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:09:56 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:10:01 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:10:01 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:10:06 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:10:06 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:10:11 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:10:11 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:10:16 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:405 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 09:10:16 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:426 | deep_camera 删除文件成功
+2025-06-12 09:10:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:10:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:10:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:10:50.375
+2025-06-12 09:10:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:10:50 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:10:50 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 09:11:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:466 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 09:11:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:444 | 相机配置文件读取成功。
+2025-06-12 09:11:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:451 | 相机连接开始时间：2025-06-12 09:11:48.055
+2025-06-12 09:11:48 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:414 | 红外相机删除文件线程开始运行
+2025-06-12 09:11:48 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 09:11:48 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:325 | 红外相机1开始运行
+2025-06-12 14:22:26 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:467 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 14:22:26 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:445 | 相机配置文件读取成功。
+2025-06-12 14:22:26 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:452 | 相机连接开始时间：2025-06-12 14:22:26.477
+2025-06-12 14:22:26 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:415 | 红外相机删除文件线程开始运行
+2025-06-12 14:22:26 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 14:22:26 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 14:23:49 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:467 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 14:23:49 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:445 | 相机配置文件读取成功。
+2025-06-12 14:23:49 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:452 | 相机连接开始时间：2025-06-12 14:23:49.780
+2025-06-12 14:23:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:415 | 红外相机删除文件线程开始运行
+2025-06-12 14:23:49 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 14:23:49 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 14:29:27 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:467 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 14:29:27 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:445 | 相机配置文件读取成功。
+2025-06-12 14:29:27 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:452 | 相机连接开始时间：2025-06-12 14:29:27.354
+2025-06-12 14:29:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:415 | 红外相机删除文件线程开始运行
+2025-06-12 14:29:27 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 14:29:27 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 14:29:32 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:29:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:29:37 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:29:37 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:29:42 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:29:42 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:29:47 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:29:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:29:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:29:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:29:57 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:29:57 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:02 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:02 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:07 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:07 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:12 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:17 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:17 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:22 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:22 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:27 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:32 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:37 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:37 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:42 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:42 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:47 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:30:57 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:30:57 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:02 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:02 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:07 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:07 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:12 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:17 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:17 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:22 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:22 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:27 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:32 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:37 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:37 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:42 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:42 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:47 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:31:57 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:31:57 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:32:02 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:32:02 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:32:07 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:32:07 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:32:12 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:32:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:32:17 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:32:17 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:34:14 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:467 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 14:34:14 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:445 | 相机配置文件读取成功。
+2025-06-12 14:34:14 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:452 | 相机连接开始时间：2025-06-12 14:34:14.406
+2025-06-12 14:34:14 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:415 | 红外相机删除文件线程开始运行
+2025-06-12 14:34:14 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 14:34:14 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 14:34:19 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:34:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:34:24 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:34:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:34:29 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:34:29 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:34:34 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:34:34 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:34:39 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:34:39 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:35:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:467 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 14:35:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:445 | 相机配置文件读取成功。
+2025-06-12 14:35:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:452 | 相机连接开始时间：2025-06-12 14:35:24.020
+2025-06-12 14:35:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:415 | 红外相机删除文件线程开始运行
+2025-06-12 14:35:24 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 14:35:24 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 14:35:29 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:35:29 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:35:34 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:35:34 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:35:39 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:35:39 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:35:44 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:35:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:35:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:406 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:35:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:427 | deep_camera 删除文件成功
+2025-06-12 14:37:56 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 14:37:56 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 14:37:56 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 14:37:56.571
+2025-06-12 14:37:56 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 14:37:56 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 14:37:56 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 14:38:01 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:38:01 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:38:06 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:38:06 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:38:11 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:38:11 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:38:16 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:38:16 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:38:21 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:38:21 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:41:43 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 14:41:43 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 14:41:43 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 14:41:43.128
+2025-06-12 14:41:43 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 14:41:43 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 14:41:43 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 14:41:48 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:41:48 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:41:53 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:41:53 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:41:58 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:41:58 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:42:03 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:42:03 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:42:08 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:42:08 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:42:13 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:42:13 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:42:18 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:42:18 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:42:23 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:42:23 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:42:28 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:42:28 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 14:42:33 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 14:42:33 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:14:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:14:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:14:19.539
+2025-06-12 15:14:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:14:19 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:14:19 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:14:24 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:29 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:29 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:34 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:34 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:39 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:39 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:44 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:54 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:54 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:14:59 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:14:59 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:15:04 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:15:04 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:15:09 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:15:09 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:15:14 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:15:14 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:15:19 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:15:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:15:24 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:15:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:22:47 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:22:47 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:22:47 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:22:47.802
+2025-06-12 15:22:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:22:47 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:22:47 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:22:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:22:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:14 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:23:14 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:23:14 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:23:14.186
+2025-06-12 15:23:14 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:23:14 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:23:14 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:23:19 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:24 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:29 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:29 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:34 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:34 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:39 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:39 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:44 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:54 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:54 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:23:59 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:23:59 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:04 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:04 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:09 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:09 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:14 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:14 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:19 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:24 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:29 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:29 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:34 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:34 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:39 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:39 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:44 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:54 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:54 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:24:59 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:24:59 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:04 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:04 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:09 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:09 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:14 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:14 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:19 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:24 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:29 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:29 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:34 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:34 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:39 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:39 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:44 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:54 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:54 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:25:59 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:25:59 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:26:04 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:26:04 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:26:09 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:26:09 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:29:52 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:29:52 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:29:52 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:29:52.386
+2025-06-12 15:29:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:29:52 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:29:52 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:29:57 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:29:57 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:02 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:02 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:07 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:07 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:12 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:17 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:17 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:22 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:22 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:27 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:32 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:37 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:37 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:42 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:42 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:47 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:30:57 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:30:57 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:02 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:02 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:07 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:07 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:12 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:17 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:17 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:22 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:22 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:27 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:32 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:37 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:37 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:42 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:42 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:47 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:31:57 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:31:57 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:02 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:02 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:07 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:07 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:12 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:17 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:17 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:22 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:22 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:27 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:32 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:37 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:37 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:42 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:42 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:47 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:32:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:32:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:33:04 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:33:04 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:33:04 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:33:04.797
+2025-06-12 15:33:04 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:33:04 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:33:04 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:33:09 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:33:09 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:33:14 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:33:14 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:33:19 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:33:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:33:24 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:33:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:36:55 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:36:55 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:36:55 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:36:55.596
+2025-06-12 15:36:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:36:55 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:36:55 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:37:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:37:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:37:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:37:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:37:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:37:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:39:49 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:39:49 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:39:49 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:39:49.914
+2025-06-12 15:39:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:39:49 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:39:49 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:39:54 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:39:54 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:39:59 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:39:59 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:40:04 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:40:04 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:53:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 15:53:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 15:53:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 15:53:25.456
+2025-06-12 15:53:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 15:53:25 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 15:53:25 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 15:53:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:53:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:53:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:53:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:53:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:53:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:53:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:53:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:53:50 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:53:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:53:55 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:53:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:15 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:15 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:20 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:25 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:50 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:54:55 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:54:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:15 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:15 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:20 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:25 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:50 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:55:55 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:55:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:15 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:15 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:20 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:25 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:50 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:56:55 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:56:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:15 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:15 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:20 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:25 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:50 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:57:55 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:57:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:15 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:15 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:20 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:25 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:50 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:58:55 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:58:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:15 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:15 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:20 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:25 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:45 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:45 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:50 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:50 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 15:59:55 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 15:59:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:10 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:10 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:15 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:15 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:20 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:20 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:25 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:00:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:00:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:17:55 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:17:55 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:17:55 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:17:55.310
+2025-06-12 16:17:55 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:17:55 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:17:55 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:18:00 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:18:00 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:18:05 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:18:05 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:21:34 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:21:34 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:21:34 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:21:34.352
+2025-06-12 16:21:34 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:21:34 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:21:34 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:21:39 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:21:39 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:21:44 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:21:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:21:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:21:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:21:54 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:21:54 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:21:59 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:21:59 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:22:04 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:22:04 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:22:09 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:22:09 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:22:14 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:22:14 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:24:37 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:24:37 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:24:37 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:24:37.826
+2025-06-12 16:24:37 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:24:37 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:24:37 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:26:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:26:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:26:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:26:12.588
+2025-06-12 16:26:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:26:12 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:26:12 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:26:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:26:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:26:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:26:51.392
+2025-06-12 16:26:51 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:26:51 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:26:51 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:27:36 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:27:36 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:27:36 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:27:36.402
+2025-06-12 16:27:36 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:27:36 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:27:36 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:33:22 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:33:22 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:33:22 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:33:22.738
+2025-06-12 16:33:22 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:33:22 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:33:22 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:35:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:35:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:35:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:35:12.020
+2025-06-12 16:35:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:35:12 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:35:12 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:36:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:36:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:36:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:36:19.607
+2025-06-12 16:36:19 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:36:19 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:36:19 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:36:24 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:24 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:36:29 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:29 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:36:34 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:34 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:36:39 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:39 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:36:44 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:44 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:36:49 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:49 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:36:54 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:54 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:36:59 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:36:59 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:04 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:04 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:09 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:09 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:14 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:14 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:19 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:19 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:24 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:24 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:29 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:29 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:34 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:34 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:39 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:39 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:44 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:44 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:49 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:49 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:54 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:54 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:37:59 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:37:59 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:38:04 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:38:04 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:38:09 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:38:09 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:38:14 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:38:14 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:38:19 | WARNING |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:38:19 | INFO |p_infrared_camera | Thread-6 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:38:32 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:38:32 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:38:32 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:38:32.892
+2025-06-12 16:38:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:38:32 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:38:32 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:42:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:42:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:42:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:42:44.800
+2025-06-12 16:42:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:42:44 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:42:44 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:43:27 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:43:27 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:43:27 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:43:27.140
+2025-06-12 16:43:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:43:27 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:43:27 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:43:42 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:43:42 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:43:42 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:43:42.835
+2025-06-12 16:43:42 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:43:42 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:43:42 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:44:08 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:44:08 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:44:08 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:44:08.075
+2025-06-12 16:44:08 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:44:08 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:44:08 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:44:13 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:44:13 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功
+2025-06-12 16:48:38 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:48:38 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:48:38 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:48:38.526
+2025-06-12 16:48:38 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:48:38 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:48:38 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:50:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:50:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:50:19 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:50:19.216
+2025-06-12 16:50:19 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:50:19 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:50:19 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:51:01 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:51:01 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:51:01 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:51:01.128
+2025-06-12 16:51:01 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:51:01 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:51:01 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:51:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:468 | ------------------------------infrared_camera_start------------------------------
+2025-06-12 16:51:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:446 | 相机配置文件读取成功。
+2025-06-12 16:51:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:453 | 相机连接开始时间：2025-06-12 16:51:25.218
+2025-06-12 16:51:25 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:416 | 红外相机删除文件线程开始运行
+2025-06-12 16:51:25 | ERROR |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:252 | infrared camera_1 | Cannot connect to SenXor | The following ports have SenXor attached []
+2025-06-12 16:51:25 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:326 | 红外相机1开始运行
+2025-06-12 16:51:30 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:407 | 红外相机 | 删除文件总大小: 0 G-bytes | 删除文件总数量： 0 | 此时相机拍摄的图像数量：0
+2025-06-12 16:51:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:428 | deep_camera 删除文件成功

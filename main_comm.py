@@ -1,3 +1,5 @@
+import traceback
+
 from loguru import logger
 
 # Author: Qinyou Deng
@@ -47,4 +49,4 @@ def main():
     try:
         receive_serial_port_data()
     except Exception as e:
-        logger.error(f"comm程序运行异常，原因：{e}，终止comm进程")
+        logger.error(f"comm程序运行异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}，终止comm进程")

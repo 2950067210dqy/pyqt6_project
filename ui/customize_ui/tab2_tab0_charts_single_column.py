@@ -48,6 +48,115 @@ class CustomChartView(QChartView):
         self.rubberBandRect = rubberBandRect
 
 
+import sys
+import random
+from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCharts import QChart, QChartView, QBarSet, QBarSeries, QBarCategoryAxis, QValueAxis
+from PyQt6.QtCore import Qt, QPointF
+from PyQt6.QtGui import QPainter, QColor, QLinearGradient, QBrush
+
+
+class BarChartWindow(ThemedWidget):
+    def __init__(self, datas, parent: QVBoxLayout | QHBoxLayout = None, object_name: str = "",
+                 title: str = "",
+                 is_span=False):
+        super().__init__()
+        self.setWindowTitle(title)
+        self.resize(800, 600)
+        # 主题颜色
+        self.theme = global_setting.get_setting("theme_manager").get_charts_style()
+        # 当前样式名
+        self.theme_name = Charts_Style_Name.NORMAL.value
+        # 是否平滑图表
+        self.is_span = is_span
+        self.title = title
+        # obejctName
+        self.object_name = object_name
+        # 父布局
+        self.parent_layout = parent
+
+        # 创建图表数据
+        self.create_bar_chart()
+
+    def create_bar_chart(self):
+        # 1. 创建条形数据集
+        set_data = QBarSet("测试专用")
+
+        # 生成随机数据
+        months = ["1月", "2月", "3月", "4月", "5月", "6月"]
+        values = [random.randint(50, 150) for _ in range(len(months))]
+
+        # 添加数据到条形集
+        for value in values:
+            set_data.append(value)
+
+        # 2. 创建条形系列并添加数据集
+        series = QBarSeries()
+        series.append(set_data)
+
+        # 3. 创建图表并添加系列
+        chart = QChart()
+        chart.addSeries(series)
+        chart.setTitle(self.title)
+        chart.setAnimationOptions(QChart.AnimationOption.SeriesAnimations)
+
+        # 4. 自定义柱状图颜色和样式
+        self.customize_bar_style(series)
+
+        # 5. 创建X轴（类别轴）
+        axisX = QBarCategoryAxis()
+        axisX.append(months)
+        chart.addAxis(axisX, Qt.AlignmentFlag.AlignBottom)
+        series.attachAxis(axisX)
+
+        # 6. 创建Y轴（数值轴）
+        axisY = QValueAxis()
+        axisY.setRange(0, max(values) + 50)  # 留出顶部空间
+        axisY.setTitleText("value")
+
+        chart.addAxis(axisY, Qt.AlignmentFlag.AlignLeft)
+        series.attachAxis(axisY)
+
+        # 7. 设置图表主题和字体
+        chart.setTheme(QChart.ChartTheme.ChartThemeLight)
+        chart.setTitleFont(QtGui.QFont("Arial", 16, QtGui.QFont.Weight.Bold))
+
+        # 8. 创建图表视图
+        chart_view = QChartView(chart)
+        chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)
+
+        # 9. 添加数据标签
+        # self.add_data_labels(chart, series, values)
+
+        self.parent_layout.addWidget(chart_view)
+
+    def customize_bar_style(self, series):
+        """自定义条形样式和颜色"""
+        # 为每个柱子设置不同的渐变颜色
+        for bar_set in series.barSets():
+            for i in range(bar_set.count()):
+                gradient = QLinearGradient(QPointF(0, 0), QPointF(0, 1))
+                gradient.setColorAt(0.0, QColor(70, 130, 180))  # 顶部深蓝色
+                gradient.setColorAt(1.0, QColor(100, 149, 237))  # 底部浅蓝色
+                bar_set.setBrush(QBrush(gradient))
+                bar_set.setBorderColor(Qt.GlobalColor.transparent)
+
+    def add_data_labels(self, chart, series, values):
+        """在条形顶部添加数据标签"""
+        for i, bar_set in enumerate(series.barSets()):
+            for j in range(bar_set.count()):
+                # 创建文本项显示数值
+                text = chart.scene().addText(str(values[j]))
+                text.setDefaultTextColor(QColor(50, 50, 50))
+                text.setFont(QtGui.QFont("Arial", 10))
+
+                # 将文本定位在柱子顶部中心
+                # bar_rect = chart.mapToPosition(bar_set.at(j))
+                # x = bar_rect.x() + bar_rect.width() / 2 - text.boundingRect().width() / 2
+                # y = bar_rect.y() - text.boundingRect().height() - 5
+                # text.setPos(x, y)
+
+
 class tab2_tab0_charts_single_column(ThemedWidget):
 
     def __init__(self, datas, parent: QVBoxLayout | QHBoxLayout = None, object_name: str = "",
@@ -87,7 +196,7 @@ class tab2_tab0_charts_single_column(ThemedWidget):
         # 数据
         self.data = {}
         self.origin_datas = datas
-        self.data_origin_nums = len(datas.data.y)
+        self.data_origin_nums = 1
         # 数据的最大值 和最小值
         # self.min_and_max_x = [0, 0]
         self.min_and_max_y = [0, 0]
@@ -160,11 +269,10 @@ class tab2_tab0_charts_single_column(ThemedWidget):
         # self.x_axis.setLabelsAngle(90)  # 旋转90°竖着显示日期
 
         self.chart.removeAxis(self.x_axis)
-        for i in self.data.data.x.data:
-            result = ','.join(str(x) for x in i)
-            self.categories.append(result)
+        for i in range(10):
+            self.categories.append(i)
             pass
-        self.x_axis.setTitleText(','.join(str(x) for x in self.data.data.x.name))
+        self.x_axis.setTitleText('COM')
         self.x_axis.append(self.categories)
         self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
         for i in range(len(self.series)):
@@ -210,18 +318,18 @@ class tab2_tab0_charts_single_column(ThemedWidget):
         max_y = 0
 
         min_y = 0
-        for row in range(len(self.data.data.y)):
-            if len(self.data.data.y) != 0:
-                for j in range(len(self.data.data.y[row].data)):
-                    if len(self.data.data.y[row].data) != 0 and len(self.data.data.y[row].data[j].data) != 0:
-                        max_y = self.data.data.y[row].data[j].data[0]
-                        min_y = self.data.data.y[row].data[j].data[0]
-        for row in range(len(self.data.data.y)):
-            for j in range(len(self.data.data.y[row].data)):
-                for k in range(len(self.data.data.y[row].data[j].data)):
-                    max_y = max(max_y, self.data.data.y[row].data[j].data[k])
-                    min_y = min(min_y, self.data.data.y[row].data[j].data[k])
-                    pass
+        # for row in range(len(self.data.data.y)):
+        #     if len(self.data.data.y) != 0:
+        #         for j in range(len(self.data.data.y[row].data)):
+        #             if len(self.data.data.y[row].data) != 0 and len(self.data.data.y[row].data[j].data) != 0:
+        #                 max_y = self.data.data.y[row].data[j].data[0]
+        #                 min_y = self.data.data.y[row].data[j].data[0]
+        # for row in range(len(self.data.data.y)):
+        #     for j in range(len(self.data.data.y[row].data)):
+        #         for k in range(len(self.data.data.y[row].data[j].data)):
+        #             max_y = max(max_y, self.data.data.y[row].data[j].data[k])
+        #             min_y = min(min_y, self.data.data.y[row].data[j].data[k])
+        #             pass
 
         # 如果调整的数据的最大值和最小值都还是比之前的最大值和最小值小或大就不进行改变 大部分时间固定坐标轴 x轴不需要大部分时间固定
         # if min_x < self.min_and_max_x[0]:
@@ -240,21 +348,21 @@ class tab2_tab0_charts_single_column(ThemedWidget):
     # 将数据放入series中
     def set_data_to_series(self):
         # A\B\C相
-        for row in range(len(self.data.data.y)):
-            self.chart.removeSeries(self.series[row])
-            # 两个device
-            for j in range(len(self.data.data.y[row].data)):
-                set = QBarSet(f"{self.data.data.y[row].name}{self.data.data.y[row].data[j].name}")
-                set.append(self.data.data.y[row].data[j].data)
+        # for row in range(len(self.data.data.y)):
+        #     self.chart.removeSeries(self.series[row])
+        #     # 两个device
+        #     for j in range(len(self.data.data.y[row].data)):
+        #         set = QBarSet(f"{self.data.data.y[row].name}{self.data.data.y[row].data[j].name}")
+        #         set.append(self.data.data.y[row].data[j].data)
+        #
+        #         self.set.append(set)
+        #         self.series[row].append(set)
+        #     # 在柱头添加数值标签
+        #     # self.series[row].setLabelsVisible(True)
+        #     self.chart.addSeries(self.series[row])
+        pass
 
-                self.set.append(set)
-                self.series[row].append(set)
-            # 在柱头添加数值标签
-            # self.series[row].setLabelsVisible(True)
-            self.chart.addSeries(self.series[row])
-            pass
-
-            # 设置标题字体和颜色
+        # 设置标题字体和颜色
 
     def set_title_style(self, font_style: QFont = QFont("Arial", 8, QFont.Weight.Bold),
                         font_color: QColor = QColor("#2C3E50")):

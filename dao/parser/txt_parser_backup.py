@@ -1,3 +1,4 @@
+import traceback
 from datetime import datetime
 
 from loguru import logger
@@ -73,7 +74,7 @@ class txt_parser():
                         count += 1
             except Exception as e:
                 count = 0
-                logger.error(f"读取文件{file_path}失败,失败原因：{e}")
+                logger.error(f"读取文件{file_path}失败,失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             pass
         return count
 
@@ -142,7 +143,7 @@ class txt_parser():
                         lines = file.readlines()  # 读取所有行
                         lines = [line.strip() for line in lines]  # 去掉换行符
                 except Exception as e:
-                    logger.error(f"读取文件{dict_temp['file_path']}失败,失败原因：{e}")
+                    logger.error(f"读取文件{dict_temp['file_path']}失败,失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
                 # 蒋读取的数据转换为数据格式 [txt_data(),...]
                 return_data = []
                 nums_temp = 1
@@ -217,7 +218,7 @@ class txt_parser():
                         lines = file.readlines()  # 读取所有行
                         lines = [line.strip() for line in lines]  # 去掉换行符
                 except Exception as e:
-                    logger.error(f"读取文件{dict_temp['file_path']}失败,失败原因：{e}")
+                    logger.error(f"读取文件{dict_temp['file_path']}失败,失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
                 # 蒋读取的数据转换为数据格式 [txt_data(),...]
                 return_data = []
                 nums_temp = 1

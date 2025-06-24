@@ -1,5 +1,6 @@
 # 自定义图表类
 import enum
+import traceback
 from datetime import datetime
 
 from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries, \
@@ -242,7 +243,8 @@ class charts(ThemedWidget):
 
 
         except Exception as e:
-            logger.error(f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
 
         # 插入数据
         for origin_data_index in range(len(data_temp)):
@@ -270,7 +272,8 @@ class charts(ThemedWidget):
 
 
         except Exception as e:
-            logger.error(f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         try:
             # 获取 x 和y值的最大值和最小值来确定坐标轴范围
             self.get_max_and_min_data()
@@ -281,7 +284,8 @@ class charts(ThemedWidget):
             # 更新样式
             self.set_series_lenged_style()
         except Exception as e:
-            logger.error(f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         pass
 
     # 获取数据的函数
@@ -308,7 +312,8 @@ class charts(ThemedWidget):
 
 
         except Exception as e:
-            logger.error(f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
 
         # 插入数据
         for origin_data_index in range(len(data_temp)):
@@ -339,7 +344,8 @@ class charts(ThemedWidget):
                     # logger.info(f"图表{self.object_name}持数据源{origin_data_index}长度为{len(self.data[origin_data_index])}")
                     self.data[origin_data_index].pop(0)  # 保持数据长度为show_nums
         except Exception as e:
-            logger.error(f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         try:
             # 获取 x 和y值的最大值和最小值来确定坐标轴范围
             self.get_max_and_min_data()
@@ -350,7 +356,8 @@ class charts(ThemedWidget):
             # 更新样式
             self.set_series_lenged_style()
         except Exception as e:
-            logger.error(f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         pass
 
     # 获取数据的最大x最小x最大y最小y
@@ -539,7 +546,7 @@ class charts(ThemedWidget):
 #
 #
 #         except Exception as e:
-#             logger.error(f"图表{self.chart.object_name}读取数据源{self.chart.data_origin_ports}数据失败，失败原因：{e}")
+#             logger.error(f"图表{self.chart.object_name}读取数据源{self.chart.data_origin_ports}数据失败，失败原因：{ traceback.print_exc()}")
 #
 #         # 插入数据
 #         for origin_data_index in range(len(data_temp)):
@@ -571,7 +578,7 @@ class charts(ThemedWidget):
 #                     # logger.info(f"图表{self.object_name}持数据源{origin_data_index}长度为{len(self.data[origin_data_index])}")
 #                     self.chart.data[origin_data_index].pop(0)  # 保持数据长度为show_nums
 #         except Exception as e:
-#             logger.error(f"图表{self.chart.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.chart.data[0])}，失败原因：{e}")
+#             logger.error(f"图表{self.chart.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.chart.data[0])}，失败原因：{ traceback.print_exc()}")
 #         try:
 #             # 获取 x 和y值的最大值和最小值来确定坐标轴范围
 #             self.chart.get_max_and_min_data()
@@ -582,5 +589,5 @@ class charts(ThemedWidget):
 #             # 更新样式
 #             self.chart.set_series_lenged_style()
 #         except Exception as e:
-#             logger.error(f"图表{self.chart.object_name}更新series失败，series[0]数据长度{len(self.chart.data[0])}，失败原因：{e}")
+#             logger.error(f"图表{self.chart.object_name}更新series失败，series[0]数据长度{len(self.chart.data[0])}，失败原因：{ traceback.print_exc()}")
 #         pass

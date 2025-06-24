@@ -9,17 +9,16 @@ from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeri
     QDateTimeAxis
 from PyQt6.QtCore import Qt, QPointF, QTimer, QDateTime
 from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
-from PyQt6 import QtCore
+from PyQt6 import QtCore, QtWidgets
 from PyQt6.QtCharts import QChart
 from PyQt6.QtWidgets import QVBoxLayout, QWidget, QHBoxLayout, QScrollArea
 from loguru import logger
-from pyqt6_plugins.examplebutton import QtWidgets
 
 from config.global_setting import global_setting
 from dao.data_read import data_read
 from entity.xlsx_data import xlsx_datas
 from theme.ThemeManager import Charts_Style_Name
-from ui.customize_ui.tab2_tab0_charts_single_column import tab2_tab0_charts_single_column
+from ui.customize_ui.tab2_tab0_charts_single_column import tab2_tab0_charts_single_column, BarChartWindow
 from ui.customize_ui.tab2_tab0_charts_single_line import tab2_tab0_charts_single_line
 
 
@@ -63,8 +62,8 @@ class tab2_tab0_charts():
         scroll_content_left_bottom = QWidget()
         sub_layout = QVBoxLayout(scroll_content_left_bottom)
         sub_layout.setObjectName(f"layout_sub")
-        chart = tab2_tab0_charts_single_column(datas=self.datas, parent=sub_layout,
-                                               object_name=self.parent_layout.objectName(), title=f"{self.datas.name}")
+        chart = BarChartWindow(datas=self.datas, parent=sub_layout,
+                               object_name=self.parent_layout.objectName(), title=f"{self.title}")
 
         self.charts.append(chart)
         scroll_content_left_bottom.setLayout(sub_layout)

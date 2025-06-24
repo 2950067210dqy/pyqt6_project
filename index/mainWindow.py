@@ -149,7 +149,7 @@ class MainWindow(ThemedWidget):
                                   root_object_name=self.frame.objectName())
             # 添加按钮信号槽
             bt.click_connect(i['id'], self.frame, tab_ids=[item["id"] for item in menu_config])
-
+           
             btn_obj['btn'] = bt
             btn_obj['id'] = i['id']
             btn_obj['tab'] = Tab(id=i['id'])

@@ -1,12 +1,12 @@
 from loguru import logger
-from pyqt6_plugins.examplebutton import QtWidgets
+# from pyqt6_plugins.examplebutton import QtWidgets
 
 from config.global_setting import global_setting
 from theme.ThemeQt6 import ThemedWidget
 from ui.customize_ui.tab.tab2_tab0 import tab2_tab0
 from ui.customize_ui.tab.tab2_tab1 import tab2_tab1
 from ui.tab2 import Ui_tab2_frame
-from PyQt6 import QtCore
+from PyQt6 import QtCore, QtWidgets
 from PyQt6.QtCore import QRect
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
 

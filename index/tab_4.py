@@ -1,5 +1,6 @@
 import os
 import time
+import traceback
 from datetime import datetime, timedelta
 
 from PyQt6.QtGui import QPixmap
@@ -108,7 +109,7 @@ class ImageLoaderThread(QThread):
                 self.image_loaded.emit(self.images)
                 time.sleep(float(global_setting.get_setting("configer")['tab4_pic']['delay']))
             except Exception as e:
-                logger.error(f"tab4线程异常，原因：{e}")
+                logger.error(f"tab4线程异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
 
     def stop(self):
         self.running = False
@@ -127,9 +128,7 @@ class Tab_4(ThemedWidget):
         # 实例化自定义ui
         self._init_customize_ui()
         # 获取数据
-        self.loader_thread = ImageLoaderThread()
-        self.loader_thread.image_loaded.connect(self.update_image)
-        self.loader_thread.start()
+        self.get_data()
         # 实例化功能
         self._init_function()
         # 加载qss样式表
@@ -138,6 +137,15 @@ class Tab_4(ThemedWidget):
         pass
 
         # 实例化ui
+
+    def get_data(self):
+        """
+        获取数据
+        :return:
+        """
+        self.loader_thread = ImageLoaderThread()
+        self.loader_thread.image_loaded.connect(self.update_image)
+        self.loader_thread.start()
 
     def _init_ui(self, parent=None, geometry: QRect = None, title=""):
         # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码
@@ -182,7 +190,7 @@ class Tab_4(ThemedWidget):
             logger.error("未获取到数据")
             return
         for i in range(len(pixmap_path_dict['deep_camera'])):
-            logger.critical(f"deep_camera | {pixmap_path_dict['deep_camera'][i]}")
+            # logger.critical(f"deep_camera | {pixmap_path_dict['deep_camera'][i]}")
             if pixmap_path_dict['deep_camera'][i] == "":
                 pixmap = QPixmap()
             else:
@@ -206,7 +214,7 @@ class Tab_4(ThemedWidget):
 
             pass
         for i in range(len(pixmap_path_dict['infrared_camera'])):
-            logger.critical(f"infrared_camera | {pixmap_path_dict['infrared_camera'][i]}")
+            # logger.critical(f"infrared_camera | {pixmap_path_dict['infrared_camera'][i]}")
             if pixmap_path_dict['infrared_camera'][i] == "":
                 pixmap = QPixmap()
             else:

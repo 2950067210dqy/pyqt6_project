@@ -1,0 +1,180 @@
+[33mcommit 1579d9f6621954baab4bfa9c760bf388e6b14b87[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: dqy <2950067210@qq.com>
+Date:   Tue Jun 24 10:05:25 2025 +0800
+
+    2.4 fixed bug
+
+[33mcommit 960647a2a2cb27c582bb0b575b7dbe441453979b[m
+Author: dqy <2950067210@qq.com>
+Date:   Sat Jun 21 09:52:03 2025 +0800
+
+    2.3.3 fixed the tab new obj()
+
+[33mcommit 695f3527ec9ec884d8f28223c6ad3e9806e40497[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri Jun 13 21:53:41 2025 +0800
+
+    2.3.2 fixed the tab new obj()
+
+[33mcommit de44160aef8eedcc5d1ccadb071b4bf2145ccfea[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri Jun 13 21:04:50 2025 +0800
+
+    2.3.2 fixed the tab new obj()
+
+[33mcommit ba2d27a17edb5fe333f5a70c49cc6eaf30ed7925[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri May 30 17:36:39 2025 +0800
+
+    2.3.1 修复深度相机删除文件线程导致的图像处理线程报错文件不存在，修复深度相机丢帧问题，添加动态监测相机是否连接功能，并且一直尝试重新初始 删除main.zip大文件
+
+[33mcommit b97de38022f0a9739fe2e101d88319bbdbf014be[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri May 30 17:04:57 2025 +0800
+
+    2.3 修复深度相机删除文件线程导致的图像处理线程报错文件不存在，修复深度相机丢帧问题，添加动态监测相机是否连接功能，并且一直尝试重新初始化
+
+[33mcommit bf8f5fd4735cceae87953da7ce82a8dd36024882[m[33m ([m[1;32mcurrent[m[33m)[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri May 30 09:57:32 2025 +0800
+
+    2.3 修复深度相机删除文件线程导致的图像处理线程报错文件不存在，修复深度相机丢帧问题，添加动态监测相机是否连接功能，并且一直尝试重新初始化
+
+[33mcommit 49edd1d23f01c56679c5823a0ec86ea894899c27[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: dqy <2950067210@qq.com>
+Date:   Thu May 22 17:30:58 2025 +0800
+
+    2.2 集成了深度相机的初始化连接与红外相机的初始化连接 并且可以记录删除文件的信息，最后与gui界面连接显示图片。
+
+[33mcommit 2c72f460f672653c30e9a6aa63995e2e02d07ef2[m
+Author: dqy <2950067210@qq.com>
+Date:   Wed May 21 21:02:32 2025 +0800
+
+    2.1 集成了深度相机的初始化连接
+
+[33mcommit a94d5dd19a5c523deadab9b03883dab13958043d[m
+Author: dqy <2950067210@qq.com>
+Date:   Wed May 14 08:35:17 2025 +0800
+
+    2.0 更改相关信息
+
+[33mcommit 72293fcb600342092ceb764ad3d42ac6747531c4[m[33m ([m[1;31morigin/current[m[33m)[m
+Author: dqy <2950067210@qq.com>
+Date:   Mon Apr 28 15:13:20 2025 +0800
+
+    1.9.2 current图表
+
+[33mcommit 5a20b627429eaecd7a9053e1a3c138fdee7ee275[m
+Author: dqy <2950067210@qq.com>
+Date:   Mon Apr 28 10:16:44 2025 +0800
+
+    1.9.1 更新图表格式
+
+[33mcommit ca31f7011674c366e7864d1f7a828540b502c86a[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri Apr 25 16:22:32 2025 +0800
+
+    1.9 更新图表获取数据为多线程获取
+
+[33mcommit 26399cc7a785518273965cca07aca60251420434[m
+Author: dqy <2950067210@qq.com>
+Date:   Thu Apr 24 16:18:40 2025 +0800
+
+    1.8 更新x坐标轴为时间 并且可以读取几秒前的数据
+
+[33mcommit 5734e263b5a6fba559673694336dd893af7fdb8d[m
+Author: dqy <2950067210@qq.com>
+Date:   Tue Apr 22 20:41:05 2025 +0800
+
+    1.7 将读取存储的数据动态显示到图表中
+
+[33mcommit b36228e197403671723d72c8fe2a4d1ea7156b0d[m
+Author: dqy <2950067210@qq.com>
+Date:   Mon Apr 21 20:55:01 2025 +0800
+
+    1.6 读取存储的数据
+
+[33mcommit 24abb8b523de998d7cc0bd45e67a61c0ecb0b8ed[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri Apr 18 20:58:57 2025 +0800
+
+    1.5.2 更新通讯模块
+
+[33mcommit 9e862a8ba49c2bd5df0c657d708bbb6aa78c12b3[m
+Author: dqy <2950067210@qq.com>
+Date:   Fri Apr 18 16:09:03 2025 +0800
+
+    1.5.1 更新通讯模块
+
+[33mcommit d87c612ce0cb77b18d1d6330afe075dbe4d4b46c[m
+Author: dqy <2950067210@qq.com>
+Date:   Thu Apr 17 20:36:32 2025 +0800
+
+    1.5 新增通讯模块
+
+[33mcommit f5eccf90fb6639fc3a3ddd147351b1653b43303a[m
+Author: dqy <2950067210@qq.com>
+Date:   Wed Apr 2 20:22:37 2025 +0800
+
+    1.4.3 图表样式进一步优化，下一步优化图表大小异常问题
+
+[33mcommit dab56c35f9ed92b8f8929e4bb983a51c0e997471[m
+Author: dqy <2950067210@qq.com>
+Date:   Wed Apr 2 17:20:14 2025 +0800
+
+    1.4.2 图表样式增加，调式两条线，优化代码逻辑
+
+[33mcommit 643d0d80bc5aa3d1e6b67c8063ff72edde16a5eb[m
+Author: dqy <2950067210@qq.com>
+Date:   Wed Apr 2 11:00:40 2025 +0800
+
+    1.4.1 图表初始化成功，并且适配主题切换
+
+[33mcommit 9aff06c39243609bcc7af23cde20d88c166c5b36[m
+Author: dqy <2950067210@qq.com>
+Date:   Tue Apr 1 20:50:31 2025 +0800
+
+    1.4 修改样式图标完成 修改了qtdesigner的图标路径以及按钮的objectname 并且更改了图标文件的名称，确保按钮的objectname的前缀与图标名称一样，这样切换图标的时候可以直接找到！
+
+[33mcommit 9f13f989270be5d42bb58d15e7bc0b0bcd14e537[m
+Author: dqy <2950067210@qq.com>
+Date:   Sat Mar 29 15:12:55 2025 +0800
+
+    1.3 修改样式图标
+
+[33mcommit 5d904f3264b91fb80968752318f04b05dd2993b3[m
+Author: dqy <2950067210@qq.com>
+Date:   Tue Mar 25 20:56:57 2025 +0800
+
+    1.2 修改样式，但是现在样式还是不起作用
+
+[33mcommit 5b999253975c86dff2068f07da24c97264f01f3b[m
+Merge: 29b28ea a4df3e7
+Author: dqy <2950067210@qq.com>
+Date:   Thu Mar 20 20:25:11 2025 +0800
+
+    Merge branch 'master' of https://github.com/2950067210dqy/pyqt6_project
+
+[33mcommit a4df3e786bd82be053c4a5d4a3c4035e5e43ba97[m
+Author: cave <48778078+2950067210dqy@users.noreply.github.com>
+Date:   Thu Mar 20 20:23:07 2025 +0800
+
+    Delete README.md
+
+[33mcommit 29b28ea4086a04b6fa7865b9802b1ea8000c2929[m
+Author: dqy <2950067210@qq.com>
+Date:   Thu Mar 20 20:19:57 2025 +0800
+
+    1.1 初步创建相关代码
+
+[33mcommit 14fdba022d6b44133f145b313f670cb8f3a5ca36[m
+Author: cave <48778078+2950067210dqy@users.noreply.github.com>
+Date:   Thu Mar 20 20:12:26 2025 +0800
+
+    Initial commit
+
+[33mcommit e69e0f339b04ffaa657717d8eaaa663e08b7962b[m
+Author: dqy <2950067210@qq.com>
+Date:   Thu Mar 20 20:10:00 2025 +0800
+
+    1.0 初步创建相关代码

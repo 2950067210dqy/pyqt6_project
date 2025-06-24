@@ -1,5 +1,6 @@
 # 自定义图表类
 import enum
+import traceback
 from datetime import datetime
 
 from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries, \
@@ -8,7 +9,6 @@ from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent, QDateTime, QRunna
 from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
 from PyQt6.QtWidgets import QVBoxLayout, QToolTip
 from PyQt6 import QtCore
-from PySide6.QtCore import Slot
 from loguru import logger
 
 from config.global_setting import global_setting
@@ -78,7 +78,8 @@ class request_data_task(QRunnable):
                 data_step=[1 for i in self.data_origin_ports])
 
         except Exception as e:
-            logger.error(f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}读取数据源{self.data_origin_ports}数据失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
 
         self.signals.data_ready.emit(data_temp)
 
@@ -306,7 +307,7 @@ class charts(ThemedWidget):
             # 开启线程
             global_setting.get_setting("thread_pool").start(self.request_data_task_generator)
         except Exception as e:
-            logger.error(f"{self.object_name}开启线程失败！，失败原因：{e}")
+            logger.error(f"{self.object_name}开启线程失败！，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
 
         pass
 
@@ -363,7 +364,8 @@ class charts(ThemedWidget):
                     # logger.info(f"图表{self.object_name}持数据源{origin_data_index}长度为{len(self.data[origin_data_index])}")
                     self.data[origin_data_index].pop(0)  # 保持数据长度为show_nums
         except Exception as e:
-            logger.error(f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}持数据长度为show_nums失败，series[0]数据长度{len(self.data[0])}，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         try:
             # 获取 x 和y值的最大值和最小值来确定坐标轴范围
             self.get_max_and_min_data()
@@ -374,7 +376,8 @@ class charts(ThemedWidget):
             # 更新样式
             self.set_series_lenged_style()
         except Exception as e:
-            logger.error(f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e}")
+            logger.error(
+                f"图表{self.object_name}更新series失败，series[0]数据长度{len(self.data[0])}，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         pass
 
     # 获取数据的最大x最小x最大y最小y

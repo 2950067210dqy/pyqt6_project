@@ -1,0 +1,484 @@
+2025-05-22 17:27:47 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 17:27:47 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 17:27:47 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 17:27:47.434
+2025-05-22 17:27:47 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 17:27:48 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 17:27:48 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 17:27:48 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 17:27:48 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.27998971939086914秒 | 此时总图像帧数量:29
+2025-05-22 17:27:49 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01153564453125秒 | 此时总图像帧数量:30
+2025-05-22 17:27:50 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0105133056640625秒 | 此时总图像帧数量:31
+2025-05-22 17:27:51 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010542154312133789秒 | 此时总图像帧数量:32
+2025-05-22 17:27:52 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.004520893096923828秒 | 此时总图像帧数量:33
+2025-05-22 17:27:53 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011514902114868164秒 | 此时总图像帧数量:34
+2025-05-22 17:27:54 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0195620059967041秒 | 此时总图像帧数量:35
+2025-05-22 17:27:56 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.21514534950256348秒 | 此时总图像帧数量:36
+2025-05-22 17:27:57 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.015546798706054688秒 | 此时总图像帧数量:37
+2025-05-22 17:27:58 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.015599727630615234秒 | 此时总图像帧数量:38
+2025-05-22 17:27:59 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009514331817626953秒 | 此时总图像帧数量:39
+2025-05-22 17:28:00 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005528688430786133秒 | 此时总图像帧数量:40
+2025-05-22 17:28:01 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01050877571105957秒 | 此时总图像帧数量:41
+2025-05-22 17:28:02 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.015471458435058594秒 | 此时总图像帧数量:42
+2025-05-22 17:28:03 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2295072078704834秒 | 此时总图像帧数量:43
+2025-05-22 17:28:04 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.014514684677124023秒 | 此时总图像帧数量:44
+2025-05-22 17:28:05 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011520624160766602秒 | 此时总图像帧数量:45
+2025-05-22 17:28:06 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.016038179397583008秒 | 此时总图像帧数量:46
+2025-05-22 17:28:07 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22729992866516113秒 | 此时总图像帧数量:47
+2025-05-22 17:28:08 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011019706726074219秒 | 此时总图像帧数量:48
+2025-05-22 17:28:09 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.020078182220458984秒 | 此时总图像帧数量:49
+2025-05-22 17:28:10 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008518457412719727秒 | 此时总图像帧数量:50
+2025-05-22 17:28:53 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 17:28:53 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 17:28:53 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 17:28:53.889
+2025-05-22 17:28:53 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 17:28:54 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 17:28:54 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 17:28:55 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 17:28:55 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.28487300872802734秒 | 此时总图像帧数量:51
+2025-05-22 17:28:56 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.013029813766479492秒 | 此时总图像帧数量:52
+2025-05-22 17:28:57 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010015010833740234秒 | 此时总图像帧数量:53
+2025-05-22 17:28:58 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.21680116653442383秒 | 此时总图像帧数量:54
+2025-05-22 17:28:58 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.010185760517056995 G-bytes | 删除文件总数量： 55 | 此时相机拍摄的图像数量：54
+2025-05-22 17:28:58 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 17:28:59 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009030580520629883秒 | 此时总图像帧数量:1
+2025-05-22 17:29:00 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009519100189208984秒 | 此时总图像帧数量:2
+2025-05-22 17:29:01 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.013533353805541992秒 | 此时总图像帧数量:3
+2025-05-22 17:29:02 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011070966720581055秒 | 此时总图像帧数量:4
+2025-05-22 17:29:03 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.016375064849853516秒 | 此时总图像帧数量:5
+2025-05-22 17:29:03 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 17:29:03 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 17:29:04 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008006572723388672秒 | 此时总图像帧数量:1
+2025-05-22 17:29:05 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.006520509719848633秒 | 此时总图像帧数量:2
+2025-05-22 19:16:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 19:16:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 19:16:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 19:16:19.107
+2025-05-22 19:16:19 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 19:16:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 19:16:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 6.375}
+2025-05-22 19:16:20 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 19:16:20 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.3102900981903076秒 | 此时总图像帧数量:3
+2025-05-22 19:16:21 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.013520240783691406秒 | 此时总图像帧数量:4
+2025-05-22 19:16:22 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.015012979507446289秒 | 此时总图像帧数量:5
+2025-05-22 19:16:23 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008023500442504883秒 | 此时总图像帧数量:6
+2025-05-22 19:16:24 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0011318371541476327 G-bytes | 删除文件总数量： 7 | 此时相机拍摄的图像数量：6
+2025-05-22 19:16:24 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:16:24 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.00903010368347168秒 | 此时总图像帧数量:1
+2025-05-22 19:16:25 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2237861156463623秒 | 此时总图像帧数量:2
+2025-05-22 19:16:26 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.006779670715332031秒 | 此时总图像帧数量:3
+2025-05-22 19:16:27 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005510807037353516秒 | 此时总图像帧数量:4
+2025-05-22 19:16:28 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008013486862182617秒 | 此时总图像帧数量:5
+2025-05-22 19:16:29 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 19:16:29 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:16:29 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22489690780639648秒 | 此时总图像帧数量:1
+2025-05-22 19:16:30 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005016326904296875秒 | 此时总图像帧数量:2
+2025-05-22 19:16:31 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01451730728149414秒 | 此时总图像帧数量:3
+2025-05-22 19:16:32 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011513710021972656秒 | 此时总图像帧数量:4
+2025-05-22 19:16:34 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005513191223144531秒 | 此时总图像帧数量:5
+2025-05-22 19:16:34 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 19:16:34 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:16:35 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.007019996643066406秒 | 此时总图像帧数量:1
+2025-05-22 19:16:36 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22977042198181152秒 | 此时总图像帧数量:2
+2025-05-22 19:16:37 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.016043901443481445秒 | 此时总图像帧数量:3
+2025-05-22 19:16:38 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01844644546508789秒 | 此时总图像帧数量:4
+2025-05-22 19:16:39 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545750006488787 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 19:16:39 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:16:39 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008005380630493164秒 | 此时总图像帧数量:1
+2025-05-22 19:16:40 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.006034135818481445秒 | 此时总图像帧数量:2
+2025-05-22 19:21:52 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 19:21:52 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 19:21:52 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 19:21:52.798
+2025-05-22 19:21:52 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 19:21:53 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 19:21:53 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 19:21:53 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 19:21:54 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2814211845397949秒 | 此时总图像帧数量:3
+2025-05-22 19:21:55 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.014019012451171875秒 | 此时总图像帧数量:4
+2025-05-22 19:21:56 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.013516426086425781秒 | 此时总图像帧数量:5
+2025-05-22 19:21:57 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009529590606689453秒 | 此时总图像帧数量:6
+2025-05-22 19:21:57 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0011318371541476327 G-bytes | 删除文件总数量： 7 | 此时相机拍摄的图像数量：6
+2025-05-22 19:21:57 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:21:58 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01763129234313965秒 | 此时总图像帧数量:1
+2025-05-22 19:21:59 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008004188537597656秒 | 此时总图像帧数量:2
+2025-05-22 19:22:00 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22364258766174316秒 | 此时总图像帧数量:3
+2025-05-22 19:22:01 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01306462287902832秒 | 此时总图像帧数量:4
+2025-05-22 19:22:02 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010014772415161133秒 | 此时总图像帧数量:5
+2025-05-22 19:22:02 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 19:22:02 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:22:03 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2309572696685791秒 | 此时总图像帧数量:1
+2025-05-22 19:38:31 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 19:38:31 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 19:38:31 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 19:38:31.980
+2025-05-22 19:38:31 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 19:38:32 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 19:38:32 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 19:38:33 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 19:38:33 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.28032708168029785秒 | 此时总图像帧数量:2
+2025-05-22 19:38:34 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.013069629669189453秒 | 此时总图像帧数量:3
+2025-05-22 19:38:35 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22463631629943848秒 | 此时总图像帧数量:4
+2025-05-22 19:38:36 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.020045757293701172秒 | 此时总图像帧数量:5
+2025-05-22 19:38:36 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432139982812823 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 19:38:36 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:38:37 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005521297454833984秒 | 此时总图像帧数量:1
+2025-05-22 19:38:38 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22438478469848633秒 | 此时总图像帧数量:2
+2025-05-22 19:38:39 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01862025260925293秒 | 此时总图像帧数量:3
+2025-05-22 19:38:40 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01068568229675293秒 | 此时总图像帧数量:4
+2025-05-22 19:38:41 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012528181076049805秒 | 此时总图像帧数量:5
+2025-05-22 19:38:41 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 19:38:41 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:46:54 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 19:46:54 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 19:46:54 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 19:46:54.011
+2025-05-22 19:46:54 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 19:46:54 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 19:46:54 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 19:46:55 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 19:46:55 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.28086423873901367秒 | 此时总图像帧数量:1
+2025-05-22 19:46:56 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018081188201904297秒 | 此时总图像帧数量:2
+2025-05-22 19:46:57 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010006189346313477秒 | 此时总图像帧数量:3
+2025-05-22 19:46:58 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22411179542541504秒 | 此时总图像帧数量:4
+2025-05-22 19:46:59 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545908424149319 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 19:46:59 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:46:59 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.019516944885253906秒 | 此时总图像帧数量:1
+2025-05-22 19:47:00 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22887492179870605秒 | 此时总图像帧数量:2
+2025-05-22 19:47:01 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011582612991333008秒 | 此时总图像帧数量:3
+2025-05-22 19:47:03 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22696518898010254秒 | 此时总图像帧数量:4
+2025-05-22 19:47:04 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545750006488787 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 19:47:04 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 19:47:04 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.013007402420043945秒 | 此时总图像帧数量:1
+2025-05-22 20:01:16 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:01:16 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:01:16 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:01:16.935
+2025-05-22 20:01:16 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:01:17 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:01:17 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:01:18 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:01:18 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2783973217010498秒 | 此时总图像帧数量:2
+2025-05-22 20:01:19 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009008407592773438秒 | 此时总图像帧数量:3
+2025-05-22 20:01:20 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010016202926635742秒 | 此时总图像帧数量:4
+2025-05-22 20:01:21 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.019295930862426758秒 | 此时总图像帧数量:5
+2025-05-22 20:01:21 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432139982812823 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:01:21 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:01:22 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011003732681274414秒 | 此时总图像帧数量:1
+2025-05-22 20:01:23 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012890815734863281秒 | 此时总图像帧数量:2
+2025-05-22 20:01:24 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0188143253326416秒 | 此时总图像帧数量:3
+2025-05-22 20:01:25 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.014020919799804688秒 | 此时总图像帧数量:4
+2025-05-22 20:01:26 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22515082359313965秒 | 此时总图像帧数量:5
+2025-05-22 20:01:26 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:01:26 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:04:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:04:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:04:19 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:04:19.194
+2025-05-22 20:04:19 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:04:20 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:04:20 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:04:20 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:04:20 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2879633903503418秒 | 此时总图像帧数量:1
+2025-05-22 20:04:21 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012515544891357422秒 | 此时总图像帧数量:2
+2025-05-22 20:04:22 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010220527648925781秒 | 此时总图像帧数量:3
+2025-05-22 20:04:23 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22666525840759277秒 | 此时总图像帧数量:4
+2025-05-22 20:04:24 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545908424149319 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 20:04:24 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:04:24 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.007515430450439453秒 | 此时总图像帧数量:1
+2025-05-22 20:04:25 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005587339401245117秒 | 此时总图像帧数量:2
+2025-05-22 20:04:27 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22301983833312988秒 | 此时总图像帧数量:3
+2025-05-22 20:04:28 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011014223098754883秒 | 此时总图像帧数量:4
+2025-05-22 20:06:45 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:06:45 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:06:45 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:06:45.806
+2025-05-22 20:06:45 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:06:46 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:06:46 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:06:46 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:06:47 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2826104164123535秒 | 此时总图像帧数量:5
+2025-05-22 20:06:48 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018526554107666016秒 | 此时总图像帧数量:6
+2025-05-22 20:06:49 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.23331189155578613秒 | 此时总图像帧数量:7
+2025-05-22 20:06:50 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.015535116195678711秒 | 此时总图像帧数量:8
+2025-05-22 20:06:50 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0015090834658803335 G-bytes | 删除文件总数量： 9 | 此时相机拍摄的图像数量：8
+2025-05-22 20:06:50 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:06:51 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010127544403076172秒 | 此时总图像帧数量:1
+2025-05-22 20:06:52 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018004179000854492秒 | 此时总图像帧数量:2
+2025-05-22 20:06:53 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.014194726943969727秒 | 此时总图像帧数量:3
+2025-05-22 20:10:07 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:10:07 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:10:07 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:10:07.402
+2025-05-22 20:10:07 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:10:08 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:10:08 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:10:08 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:10:08 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.28181886672973633秒 | 此时总图像帧数量:4
+2025-05-22 20:10:09 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010005474090576172秒 | 此时总图像帧数量:5
+2025-05-22 20:10:11 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2261183261871338秒 | 此时总图像帧数量:6
+2025-05-22 20:10:12 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01002955436706543秒 | 此时总图像帧数量:7
+2025-05-22 20:10:12 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.001320460310013983 G-bytes | 删除文件总数量： 8 | 此时相机拍摄的图像数量：7
+2025-05-22 20:10:12 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:10:13 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008009910583496094秒 | 此时总图像帧数量:1
+2025-05-22 20:10:14 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.007021188735961914秒 | 此时总图像帧数量:2
+2025-05-22 20:10:15 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.00955653190612793秒 | 此时总图像帧数量:3
+2025-05-22 20:10:16 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2260112762451172秒 | 此时总图像帧数量:4
+2025-05-22 20:10:17 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009597301483154297秒 | 此时总图像帧数量:5
+2025-05-22 20:10:17 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:10:17 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:10:18 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009316205978393555秒 | 此时总图像帧数量:1
+2025-05-22 20:10:19 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.23194646835327148秒 | 此时总图像帧数量:2
+2025-05-22 20:10:20 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011507511138916016秒 | 此时总图像帧数量:3
+2025-05-22 20:10:21 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009533166885375977秒 | 此时总图像帧数量:4
+2025-05-22 20:10:22 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545750006488787 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 20:10:22 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:10:22 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.014086484909057617秒 | 此时总图像帧数量:1
+2025-05-22 20:10:23 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.019526004791259766秒 | 此时总图像帧数量:2
+2025-05-22 20:10:24 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.23166131973266602秒 | 此时总图像帧数量:3
+2025-05-22 20:10:25 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018550872802734375秒 | 此时总图像帧数量:4
+2025-05-22 20:10:26 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009536266326904297秒 | 此时总图像帧数量:5
+2025-05-22 20:10:27 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:10:27 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:10:27 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008011579513549805秒 | 此时总图像帧数量:1
+2025-05-22 20:10:28 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012015342712402344秒 | 此时总图像帧数量:2
+2025-05-22 20:10:55 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:10:55 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:10:55 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:10:55.366
+2025-05-22 20:10:55 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:10:56 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:10:56 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:10:56 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:10:56 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.28551340103149414秒 | 此时总图像帧数量:3
+2025-05-22 20:10:57 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012561559677124023秒 | 此时总图像帧数量:4
+2025-05-22 20:10:58 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011139869689941406秒 | 此时总图像帧数量:5
+2025-05-22 20:11:00 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2335057258605957秒 | 此时总图像帧数量:6
+2025-05-22 20:11:00 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0011318371541476327 G-bytes | 删除文件总数量： 7 | 此时相机拍摄的图像数量：6
+2025-05-22 20:11:00 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:11:01 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018053293228149414秒 | 此时总图像帧数量:1
+2025-05-22 20:11:02 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010012626647949219秒 | 此时总图像帧数量:2
+2025-05-22 20:11:03 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2203218936920166秒 | 此时总图像帧数量:3
+2025-05-22 20:11:04 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0110321044921875秒 | 此时总图像帧数量:4
+2025-05-22 20:11:05 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012024164199829102秒 | 此时总图像帧数量:5
+2025-05-22 20:11:05 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:11:05 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:11:06 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.02003765106201172秒 | 此时总图像帧数量:1
+2025-05-22 20:11:07 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011006355285644531秒 | 此时总图像帧数量:2
+2025-05-22 20:17:11 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:17:11 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:17:11 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:17:11.229
+2025-05-22 20:17:11 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:17:12 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:17:12 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:17:12 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:17:12 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.28057026863098145秒 | 此时总图像帧数量:3
+2025-05-22 20:17:13 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0095367431640625秒 | 此时总图像帧数量:4
+2025-05-22 20:17:14 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009874582290649414秒 | 此时总图像帧数量:5
+2025-05-22 20:17:15 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011010169982910156秒 | 此时总图像帧数量:6
+2025-05-22 20:17:16 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0011318371541476327 G-bytes | 删除文件总数量： 7 | 此时相机拍摄的图像数量：6
+2025-05-22 20:17:16 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:17:16 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008353948593139648秒 | 此时总图像帧数量:1
+2025-05-22 20:17:17 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005526065826416016秒 | 此时总图像帧数量:2
+2025-05-22 20:17:18 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009656906127929688秒 | 此时总图像帧数量:3
+2025-05-22 20:17:19 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012002944946289062秒 | 此时总图像帧数量:4
+2025-05-22 20:17:20 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.021038532257080078秒 | 此时总图像帧数量:5
+2025-05-22 20:17:21 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:17:21 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:17:21 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2276139259338379秒 | 此时总图像帧数量:1
+2025-05-22 20:22:14 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:440 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:22:14 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:22:14 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:22:14.319
+2025-05-22 20:22:14 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:22:15 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:22:15 | INFO |MainProcess | MainThread |  __main__ : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:22:15 | INFO |MainProcess | Thread-2 |  __main__ : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:22:15 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.28244543075561523秒 | 此时总图像帧数量:2
+2025-05-22 20:22:16 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.016513586044311523秒 | 此时总图像帧数量:3
+2025-05-22 20:22:17 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010006427764892578秒 | 此时总图像帧数量:4
+2025-05-22 20:22:19 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22395038604736328秒 | 此时总图像帧数量:5
+2025-05-22 20:22:19 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432139982812823 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:22:19 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:22:20 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0050084590911865234秒 | 此时总图像帧数量:1
+2025-05-22 20:22:21 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2262582778930664秒 | 此时总图像帧数量:2
+2025-05-22 20:22:22 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005009889602661133秒 | 此时总图像帧数量:3
+2025-05-22 20:22:23 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22718262672424316秒 | 此时总图像帧数量:4
+2025-05-22 20:22:24 | WARNING |MainProcess | Thread-1 |  __main__ : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545750006488787 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 20:22:24 | INFO |MainProcess | Thread-1 |  __main__ : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:22:24 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009006500244140625秒 | 此时总图像帧数量:1
+2025-05-22 20:22:25 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011510372161865234秒 | 此时总图像帧数量:2
+2025-05-22 20:22:26 | DEBUG |MainProcess | Thread-2 |  __main__ : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.004514932632446289秒 | 此时总图像帧数量:3
+2025-05-22 20:35:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:35:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:35:50 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:35:50.894
+2025-05-22 20:35:50 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:35:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:35:51 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:35:52 | INFO |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:35:52 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.29644274711608887秒 | 此时总图像帧数量:4
+2025-05-22 20:35:53 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.006006479263305664秒 | 此时总图像帧数量:5
+2025-05-22 20:35:54 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22818899154663086秒 | 此时总图像帧数量:6
+2025-05-22 20:35:55 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.00700831413269043秒 | 此时总图像帧数量:7
+2025-05-22 20:35:55 | WARNING |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.001320460310013983 G-bytes | 删除文件总数量： 8 | 此时相机拍摄的图像数量：7
+2025-05-22 20:35:55 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:35:56 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22963809967041016秒 | 此时总图像帧数量:1
+2025-05-22 20:35:57 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.02052140235900879秒 | 此时总图像帧数量:2
+2025-05-22 20:35:59 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.23515629768371582秒 | 此时总图像帧数量:3
+2025-05-22 20:36:00 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012085914611816406秒 | 此时总图像帧数量:4
+2025-05-22 20:36:00 | WARNING |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545750006488787 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 20:36:00 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:36:01 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018513917922973633秒 | 此时总图像帧数量:1
+2025-05-22 20:36:02 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005014657974243164秒 | 此时总图像帧数量:2
+2025-05-22 20:36:03 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018533706665039062秒 | 此时总图像帧数量:3
+2025-05-22 20:36:04 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.004008769989013672秒 | 此时总图像帧数量:4
+2025-05-22 20:36:05 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01602625846862793秒 | 此时总图像帧数量:5
+2025-05-22 20:36:05 | WARNING |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:36:05 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:36:06 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2266857624053955秒 | 此时总图像帧数量:1
+2025-05-22 20:36:07 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01301264762878418秒 | 此时总图像帧数量:2
+2025-05-22 20:36:08 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.015515804290771484秒 | 此时总图像帧数量:3
+2025-05-22 20:36:09 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2197575569152832秒 | 此时总图像帧数量:4
+2025-05-22 20:36:10 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.013031005859375秒 | 此时总图像帧数量:5
+2025-05-22 20:36:10 | WARNING |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:36:10 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:36:11 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22408390045166016秒 | 此时总图像帧数量:1
+2025-05-22 20:43:45 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 20:43:45 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 20:43:45 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 20:43:45.867
+2025-05-22 20:43:45 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 20:43:46 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 20:43:46 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 20:43:47 | INFO |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 20:43:47 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2829620838165283秒 | 此时总图像帧数量:2
+2025-05-22 20:43:48 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018528461456298828秒 | 此时总图像帧数量:3
+2025-05-22 20:43:49 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.015020608901977539秒 | 此时总图像帧数量:4
+2025-05-22 20:43:50 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.00952458381652832秒 | 此时总图像帧数量:5
+2025-05-22 20:43:50 | WARNING |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432139982812823 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 20:43:50 | INFO |p_infrared_camera | Thread-7 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 20:43:51 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22443866729736328秒 | 此时总图像帧数量:1
+2025-05-22 20:43:52 | DEBUG |p_infrared_camera | Thread-8 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.017285585403442383秒 | 此时总图像帧数量:2
+2025-05-22 21:26:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 21:26:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 21:26:12 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 21:26:12.840
+2025-05-22 21:26:12 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 21:26:13 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 21:26:13 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 21:26:13 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 21:26:14 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.27750468254089355秒 | 此时总图像帧数量:3
+2025-05-22 21:26:15 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0052089691162109375秒 | 此时总图像帧数量:4
+2025-05-22 21:26:16 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.007737874984741211秒 | 此时总图像帧数量:5
+2025-05-22 21:26:17 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22644710540771484秒 | 此时总图像帧数量:6
+2025-05-22 21:26:17 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0011318371541476327 G-bytes | 删除文件总数量： 7 | 此时相机拍摄的图像数量：6
+2025-05-22 21:26:17 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 21:26:18 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018528461456298828秒 | 此时总图像帧数量:1
+2025-05-22 21:26:19 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01660466194152832秒 | 此时总图像帧数量:2
+2025-05-22 21:26:20 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.019090652465820312秒 | 此时总图像帧数量:3
+2025-05-22 21:26:21 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.007003068923950195秒 | 此时总图像帧数量:4
+2025-05-22 21:26:22 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22425580024719238秒 | 此时总图像帧数量:5
+2025-05-22 21:26:22 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 21:26:22 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 21:26:23 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.017020702362060547秒 | 此时总图像帧数量:1
+2025-05-22 21:26:24 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011078834533691406秒 | 此时总图像帧数量:2
+2025-05-22 21:26:25 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01677417755126953秒 | 此时总图像帧数量:3
+2025-05-22 21:26:26 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008089303970336914秒 | 此时总图像帧数量:4
+2025-05-22 21:26:27 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545750006488787 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 21:26:27 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 21:26:28 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.23067355155944824秒 | 此时总图像帧数量:1
+2025-05-22 21:26:29 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01752948760986328秒 | 此时总图像帧数量:2
+2025-05-22 21:26:30 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2190406322479248秒 | 此时总图像帧数量:3
+2025-05-22 21:26:31 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.02955174446105957秒 | 此时总图像帧数量:4
+2025-05-22 21:26:32 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01657557487487793秒 | 此时总图像帧数量:5
+2025-05-22 21:26:32 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 21:26:32 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 21:26:33 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005015134811401367秒 | 此时总图像帧数量:1
+2025-05-22 21:44:47 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 21:44:47 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 21:44:47 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 21:44:47.828
+2025-05-22 21:44:47 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 21:44:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 21:44:48 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 21:44:48 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 21:44:49 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.27277231216430664秒 | 此时总图像帧数量:2
+2025-05-22 21:44:50 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0182034969329834秒 | 此时总图像帧数量:3
+2025-05-22 21:44:51 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010045051574707031秒 | 此时总图像帧数量:4
+2025-05-22 21:44:52 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.007521390914916992秒 | 此时总图像帧数量:5
+2025-05-22 21:44:52 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432139982812823 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 21:44:52 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 21:44:53 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22443222999572754秒 | 此时总图像帧数量:1
+2025-05-22 21:44:54 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008007526397705078秒 | 此时总图像帧数量:2
+2025-05-22 22:07:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 22:07:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 22:07:24 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 22:07:24.314
+2025-05-22 22:07:24 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 22:07:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 22:07:25 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 22:07:25 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 22:07:25 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2720012664794922秒 | 此时总图像帧数量:3
+2025-05-22 22:07:26 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.019008874893188477秒 | 此时总图像帧数量:4
+2025-05-22 22:07:27 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22117853164672852秒 | 此时总图像帧数量:5
+2025-05-22 22:07:29 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.022028684616088867秒 | 此时总图像帧数量:6
+2025-05-22 22:07:29 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0011318371541476327 G-bytes | 删除文件总数量： 7 | 此时相机拍摄的图像数量：6
+2025-05-22 22:07:29 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 22:09:31 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 22:09:31 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 22:09:31 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 22:09:31.617
+2025-05-22 22:09:31 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 22:09:32 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 22:09:32 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 22:09:32 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 22:09:33 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2829608917236328秒 | 此时总图像帧数量:1
+2025-05-22 22:09:34 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005540132522583008秒 | 此时总图像帧数量:2
+2025-05-22 22:09:35 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0075037479400634766秒 | 此时总图像帧数量:3
+2025-05-22 22:09:36 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22556138038635254秒 | 此时总图像帧数量:4
+2025-05-22 22:09:36 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545908424149319 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 22:09:36 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 22:09:37 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.02077507972717285秒 | 此时总图像帧数量:1
+2025-05-22 22:12:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 22:12:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 22:12:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 22:12:44.970
+2025-05-22 22:12:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 22:12:45 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 22:12:45 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 22:12:46 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 22:12:46 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2710878849029541秒 | 此时总图像帧数量:2
+2025-05-22 22:12:47 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.011009693145751953秒 | 此时总图像帧数量:3
+2025-05-22 22:12:48 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2355048656463623秒 | 此时总图像帧数量:4
+2025-05-22 22:12:49 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.017019033432006836秒 | 此时总图像帧数量:5
+2025-05-22 22:12:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432139982812823 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 22:12:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 22:12:50 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2250657081604004秒 | 此时总图像帧数量:1
+2025-05-22 22:13:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 22:13:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 22:13:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 22:13:44.012
+2025-05-22 22:13:44 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 22:13:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 22:13:44 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 22:13:45 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 22:13:45 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.27483129501342773秒 | 此时总图像帧数量:2
+2025-05-22 22:13:46 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.008006572723388672秒 | 此时总图像帧数量:3
+2025-05-22 22:13:47 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005003929138183594秒 | 此时总图像帧数量:4
+2025-05-22 22:13:48 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.005003213882446289秒 | 此时总图像帧数量:5
+2025-05-22 22:13:49 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432139982812823 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 22:13:49 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 22:13:49 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.018019914627075195秒 | 此时总图像帧数量:1
+2025-05-22 22:13:50 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.012515544891357422秒 | 此时总图像帧数量:2
+2025-05-22 22:13:51 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009004354476928711秒 | 此时总图像帧数量:3
+2025-05-22 22:13:52 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.007515668869018555秒 | 此时总图像帧数量:4
+2025-05-22 22:13:53 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.23046422004699707秒 | 此时总图像帧数量:5
+2025-05-22 22:13:54 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0009432187508110982 G-bytes | 删除文件总数量： 6 | 此时相机拍摄的图像数量：5
+2025-05-22 22:13:54 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 22:13:54 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01701807975769043秒 | 此时总图像帧数量:1
+2025-05-22 22:13:55 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.033518314361572266秒 | 此时总图像帧数量:2
+2025-05-22 22:14:30 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:441 | ------------------------------infrared_camera_start------------------------------
+2025-05-22 22:14:30 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:419 | 相机配置文件读取成功。
+2025-05-22 22:14:30 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:426 | 相机连接开始时间：2025-05-22 22:14:30.496
+2025-05-22 22:14:30 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:390 | 深度相机删除文件线程开始运行
+2025-05-22 22:14:31 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:250 | infrared camera_1 | SN152E010346A6 connected to COM18
+2025-05-22 22:14:31 | INFO |p_infrared_camera | MainThread |  main_infrared_camera : main_infrared_camera:251 | infrared camera_1 | camera_info: {'NAME': 'COM18', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '152e010346a6', 'CAMERA_MFG': '2021.46.1.0346a6', 'SN': 'SN152e010346a6', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 5.1}
+2025-05-22 22:14:31 | INFO |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:317 | 红外相机1开始运行
+2025-05-22 22:14:31 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2822425365447998秒 | 此时总图像帧数量:3
+2025-05-22 22:14:32 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01753067970275879秒 | 此时总图像帧数量:4
+2025-05-22 22:14:34 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.2327880859375秒 | 此时总图像帧数量:5
+2025-05-22 22:14:35 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.009017229080200195秒 | 此时总图像帧数量:6
+2025-05-22 22:14:35 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0011318371541476327 G-bytes | 删除文件总数量： 7 | 此时相机拍摄的图像数量：6
+2025-05-22 22:14:35 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 22:14:36 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.23402762413024902秒 | 此时总图像帧数量:1
+2025-05-22 22:14:37 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.010521411895751953秒 | 此时总图像帧数量:2
+2025-05-22 22:14:38 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22364091873168945秒 | 此时总图像帧数量:3
+2025-05-22 22:14:39 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.01250600814819336秒 | 此时总图像帧数量:4
+2025-05-22 22:14:40 | WARNING |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:381 | 红外相机 | 删除文件总大小: 0.0007545750006488787 G-bytes | 删除文件总数量： 5 | 此时相机拍摄的图像数量：4
+2025-05-22 22:14:40 | INFO |p_infrared_camera | Thread-1 |  main_infrared_camera : main_infrared_camera:401 | deep_camera 删除文件成功
+2025-05-22 22:14:40 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.22063302993774414秒 | 此时总图像帧数量:1
+2025-05-22 22:14:41 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.006006717681884766秒 | 此时总图像帧数量:2
+2025-05-22 22:14:42 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.0065386295318603516秒 | 此时总图像帧数量:3
+2025-05-22 22:14:43 | DEBUG |p_infrared_camera | Thread-2 |  main_infrared_camera : main_infrared_camera:345 | infrared_camera_1 | 图像处理程序一次处理时间：0.014009952545166016秒 | 此时总图像帧数量:4

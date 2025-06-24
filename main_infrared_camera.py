@@ -3,6 +3,7 @@ import csv
 import os
 import threading
 import time
+import traceback
 from pathlib import Path
 from threading import Thread
 
@@ -335,7 +336,7 @@ class Thermal_process(Thread):
                 try:
                     raw_data, header = self.mi48.read()
                 except Exception as e:
-                    logger.error(f"红外相机_{self.id} | 异常，原因：{e}")
+                    logger.error(f"红外相机_{self.id} | 异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
                     self.init_state = False
                     self.init_error_log_show = False
                     continue
@@ -399,7 +400,8 @@ class Delete_file(Thread):
                     total_nums += 1
                     os.remove(file_path)  # 删除文件
                 except Exception as e:
-                    logger.error(f"infrared_camera Failed to delete {file_path}: reason:{e}")
+                    logger.error(
+                        f"infrared_camera Failed to delete {file_path}: reason:{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         global frame_nums
         with lock:
             logger.warning(f"红外相机 | 删除文件总大小: {total_size} G-bytes | 删除文件总数量： {total_nums} | 此时相机拍摄的图像数量：{frame_nums}")
@@ -430,7 +432,7 @@ class Delete_file(Thread):
                     # logger.info(f"时间差{time_util.get_format_minute_from_time(elapsed)}")
                 time.sleep(float(global_setting.get_setting("camera_config")['DELETE']['delay']))
         except Exception as e:
-            logger.error(f"红外相机删除文件线程运行异常，异常原因：{e}")
+            logger.error(f"红外相机删除文件线程运行异常，异常原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
         pass
 
 
@@ -482,7 +484,7 @@ def main():
             # 初始化
             camera = Thermal_process(path=path + f"camera_{num + 1}/", id=num + 1)
         except Exception as e:
-            logger.error(f"红外相机{num + 1}初始化失败，失败原因：{e}")
+            logger.error(f"红外相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止
             delete_file_thread.stop()
             for camera_struct_l in camera_list:

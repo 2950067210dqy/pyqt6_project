@@ -14524,3 +14524,551 @@
 2025-05-22 17:29:03 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_17_29_02_977.bmp
 2025-05-22 17:29:03 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_17_29_03_629.bmp
 2025-05-22 17:29:04 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 19:16:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 19:16:27 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 19:16:27 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 19:16:28 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 19:16:28 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_17_29_05_003.bmp
+2025-05-22 19:16:28 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_27_726.bmp
+2025-05-22 19:16:28 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 19:16:28 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_28_732.bmp
+2025-05-22 19:16:29 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_17_29_01_964.bmp
+2025-05-22 19:16:29 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 19:16:30 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_29_850.bmp
+2025-05-22 19:16:30 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_29_956.bmp
+2025-05-22 19:16:31 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_30_863.bmp
+2025-05-22 19:16:31 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_30_967.bmp
+2025-05-22 19:16:32 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_31_878.bmp
+2025-05-22 19:16:32 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_31_972.bmp
+2025-05-22 19:16:33 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 19:16:33 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_32_988.bmp
+2025-05-22 19:16:34 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_33_907.bmp
+2025-05-22 19:16:34 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 19:16:35 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_33_907.bmp
+2025-05-22 19:16:35 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_35_007.bmp
+2025-05-22 19:16:36 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_34_921.bmp
+2025-05-22 19:16:36 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_36_230.bmp
+2025-05-22 19:16:37 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_36_955.bmp
+2025-05-22 19:16:37 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_37_247.bmp
+2025-05-22 19:16:38 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_37_968.bmp
+2025-05-22 19:16:38 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_38_264.bmp
+2025-05-22 19:16:39 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_38_984.bmp
+2025-05-22 19:16:39 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_16_39_283.bmp
+2025-05-22 19:16:40 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  __main__ : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  __main__ : main_gui:114 | loading config start
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  __main__ : main_gui:116 | loading config finish
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 19:21:56 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 19:21:56 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 19:21:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 19:21:57 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_39_999.bmp
+2025-05-22 19:21:57 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_21_56_252.bmp
+2025-05-22 19:21:57 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_39_999.bmp
+2025-05-22 19:21:57 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 19:21:58 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_39_999.bmp
+2025-05-22 19:21:58 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_21_58_278.bmp
+2025-05-22 19:21:59 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_16_41_017.bmp
+2025-05-22 19:21:59 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_21_59_296.bmp
+2025-05-22 19:22:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 19:22:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_22_00_520.bmp
+2025-05-22 19:22:01 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_22_00_849.bmp
+2025-05-22 19:22:01 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_22_01_530.bmp
+2025-05-22 19:22:02 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  __main__ : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  __main__ : main_gui:114 | loading config start
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  __main__ : main_gui:116 | loading config finish
+2025-05-22 19:38:35 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 19:38:36 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 19:38:36 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 19:38:36 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 19:38:36 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_22_02_878.bmp
+2025-05-22 19:38:36 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_38_35_652.bmp
+2025-05-22 19:38:37 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_22_02_878.bmp
+2025-05-22 19:38:37 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 19:38:38 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_22_02_878.bmp
+2025-05-22 19:38:38 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_38_37_683.bmp
+2025-05-22 19:38:39 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_22_02_878.bmp
+2025-05-22 19:38:39 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_38_38_904.bmp
+2025-05-22 19:38:40 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 19:38:40 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_38_39_914.bmp
+2025-05-22 19:38:41 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_38_40_180.bmp
+2025-05-22 19:38:41 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_38_40_933.bmp
+2025-05-22 19:38:41 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:114 | loading config start
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:116 | loading config finish
+2025-05-22 19:46:57 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 19:46:58 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 19:46:58 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 19:46:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 19:46:58 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_38_41_193.bmp
+2025-05-22 19:46:58 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_46_57_471.bmp
+2025-05-22 19:46:59 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_38_41_193.bmp
+2025-05-22 19:46:59 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 19:47:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_38_41_193.bmp
+2025-05-22 19:47:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_46_59_706.bmp
+2025-05-22 19:47:01 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_38_41_193.bmp
+2025-05-22 19:47:01 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_47_00_942.bmp
+2025-05-22 19:47:02 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 19:47:02 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_47_01_956.bmp
+2025-05-22 19:47:03 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_47_02_047.bmp
+2025-05-22 19:47:03 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_19_47_01_956.bmp
+2025-05-22 19:47:03 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 20:01:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 20:01:21 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:01:21 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:01:21 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 20:01:21 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_47_03_064.bmp
+2025-05-22 20:01:21 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_01_20_386.bmp
+2025-05-22 20:01:22 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_47_03_064.bmp
+2025-05-22 20:01:22 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:01:23 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_47_03_064.bmp
+2025-05-22 20:01:23 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_01_22_418.bmp
+2025-05-22 20:01:24 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_19_47_04_080.bmp
+2025-05-22 20:01:24 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_01_23_429.bmp
+2025-05-22 20:01:25 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 20:01:25 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_01_24_443.bmp
+2025-05-22 20:01:26 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_01_25_050.bmp
+2025-05-22 20:01:26 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_01_25_463.bmp
+2025-05-22 20:01:26 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 20:04:22 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 20:04:23 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:04:23 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:04:23 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 20:04:23 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_01_25_050.bmp
+2025-05-22 20:04:23 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_04_22_661.bmp
+2025-05-22 20:04:24 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_01_25_050.bmp
+2025-05-22 20:04:24 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:04:25 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_01_25_050.bmp
+2025-05-22 20:04:25 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_04_24_899.bmp
+2025-05-22 20:04:26 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_01_26_064.bmp
+2025-05-22 20:04:26 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_04_25_908.bmp
+2025-05-22 20:04:27 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 20:06:49 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 20:06:50 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:06:50 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:06:50 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 20:06:50 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_04_27_432.bmp
+2025-05-22 20:06:50 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_06_49_485.bmp
+2025-05-22 20:06:51 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_04_27_432.bmp
+2025-05-22 20:06:51 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:06:52 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_04_27_432.bmp
+2025-05-22 20:06:52 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_06_51_521.bmp
+2025-05-22 20:06:52 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 20:10:10 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 20:10:11 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:10:11 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:10:11 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 20:10:12 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_04_27_432.bmp
+2025-05-22 20:10:12 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_10_11_074.bmp
+2025-05-22 20:10:12 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_04_27_432.bmp
+2025-05-22 20:10:12 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:10:13 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_04_27_432.bmp
+2025-05-22 20:10:13 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_10_13_096.bmp
+2025-05-22 20:10:14 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_06_50_961.bmp
+2025-05-22 20:10:14 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_10_14_107.bmp
+2025-05-22 20:10:15 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 20:10:15 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_10_15_114.bmp
+2025-05-22 20:10:16 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_15_400.bmp
+2025-05-22 20:10:16 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_10_16_340.bmp
+2025-05-22 20:10:17 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_16_413.bmp
+2025-05-22 20:10:17 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:10:18 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 20:10:58 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 20:10:59 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:10:59 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:10:59 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 20:11:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_27_567.bmp
+2025-05-22 20:11:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_10_58_826.bmp
+2025-05-22 20:11:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_27_567.bmp
+2025-05-22 20:11:00 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:11:01 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_27_567.bmp
+2025-05-22 20:11:01 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_11_01_071.bmp
+2025-05-22 20:11:02 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_28_581.bmp
+2025-05-22 20:11:02 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_11_02_090.bmp
+2025-05-22 20:11:03 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_28_581.bmp
+2025-05-22 20:11:03 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_11_03_316.bmp
+2025-05-22 20:11:04 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_10_26_553.bmp
+2025-05-22 20:11:04 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_11_04_322.bmp
+2025-05-22 20:11:05 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 20:17:14 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 20:17:15 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:17:15 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:17:15 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 20:17:16 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_11_06_489.bmp
+2025-05-22 20:17:16 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_17_14_681.bmp
+2025-05-22 20:17:16 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_11_06_489.bmp
+2025-05-22 20:17:16 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:17:17 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_11_06_489.bmp
+2025-05-22 20:17:17 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_17_16_704.bmp
+2025-05-22 20:17:18 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_11_07_504.bmp
+2025-05-22 20:17:18 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_17_17_713.bmp
+2025-05-22 20:17:19 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 20:17:19 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_17_18_720.bmp
+2025-05-22 20:17:20 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_gui:108 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_gui:113 | loading config start
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_gui:115 | loading config finish
+2025-05-22 20:22:17 | INFO |MainProcess | MainThread |  __main__ : main_gui:72 | start Qt
+2025-05-22 20:22:18 | INFO |MainProcess | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:22:18 | WARNING |MainProcess | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:22:18 | INFO |MainProcess | MainThread |  __main__ : main_gui:79 | Appliacation start
+2025-05-22 20:22:18 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_17_21_480.bmp
+2025-05-22 20:22:18 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_22_17_783.bmp
+2025-05-22 20:22:19 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_17_21_480.bmp
+2025-05-22 20:22:19 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:22:20 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_17_21_480.bmp
+2025-05-22 20:22:20 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_22_20_018.bmp
+2025-05-22 20:22:21 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_17_21_480.bmp
+2025-05-22 20:22:21 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_22_21_238.bmp
+2025-05-22 20:22:22 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_17_21_480.bmp
+2025-05-22 20:22:22 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_22_22_250.bmp
+2025-05-22 20:22:23 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 20:22:23 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_22_23_471.bmp
+2025-05-22 20:22:24 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_22_23_443.bmp
+2025-05-22 20:22:24 | CRITICAL |MainProcess | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_22_24_484.bmp
+2025-05-22 20:22:24 | INFO |MainProcess | MainThread |  __main__ : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:35:51 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:35:51 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 20:35:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_22_25_473.bmp
+2025-05-22 20:35:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_22_26_505.bmp
+2025-05-22 20:35:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_22_25_473.bmp
+2025-05-22 20:35:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_35_52_329.bmp
+2025-05-22 20:35:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_22_25_473.bmp
+2025-05-22 20:35:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_35_53_354.bmp
+2025-05-22 20:35:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_22_25_473.bmp
+2025-05-22 20:35:54 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_35_54_577.bmp
+2025-05-22 20:35:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_22_26_488.bmp
+2025-05-22 20:35:55 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_35_55_590.bmp
+2025-05-22 20:35:56 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_35_56_395.bmp
+2025-05-22 20:35:56 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:35:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_35_56_395.bmp
+2025-05-22 20:35:57 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_35_56_813.bmp
+2025-05-22 20:35:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_35_57_410.bmp
+2025-05-22 20:35:58 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_35_57_829.bmp
+2025-05-22 20:35:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_35_58_424.bmp
+2025-05-22 20:35:59 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_35_59_065.bmp
+2025-05-22 20:36:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_35_59_437.bmp
+2025-05-22 20:36:00 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_00_085.bmp
+2025-05-22 20:36:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 20:36:01 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_01_099.bmp
+2025-05-22 20:36:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_01_467.bmp
+2025-05-22 20:36:02 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_02_118.bmp
+2025-05-22 20:36:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_02_481.bmp
+2025-05-22 20:36:03 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_03_124.bmp
+2025-05-22 20:36:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_02_481.bmp
+2025-05-22 20:36:04 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_04_143.bmp
+2025-05-22 20:36:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_04_512.bmp
+2025-05-22 20:36:05 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_05_149.bmp
+2025-05-22 20:36:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 20:36:06 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_06_381.bmp
+2025-05-22 20:36:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_06_542.bmp
+2025-05-22 20:36:07 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_07_392.bmp
+2025-05-22 20:36:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_07_561.bmp
+2025-05-22 20:36:08 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_08_407.bmp
+2025-05-22 20:36:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_08_576.bmp
+2025-05-22 20:36:09 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_09_637.bmp
+2025-05-22 20:36:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_08_576.bmp
+2025-05-22 20:36:10 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_10_643.bmp
+2025-05-22 20:36:11 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 20:43:45 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 20:43:46 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 20:43:46 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 20:43:46 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 20:43:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_11_630.bmp
+2025-05-22 20:43:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_36_11_873.bmp
+2025-05-22 20:43:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_11_630.bmp
+2025-05-22 20:43:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_43_47_295.bmp
+2025-05-22 20:43:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_11_630.bmp
+2025-05-22 20:43:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_43_48_319.bmp
+2025-05-22 20:43:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_11_630.bmp
+2025-05-22 20:43:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_43_49_338.bmp
+2025-05-22 20:43:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_36_11_630.bmp
+2025-05-22 20:43:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_43_50_354.bmp
+2025-05-22 20:43:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 20:43:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 20:43:52 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 21:26:12 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 21:26:13 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 21:26:13 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 21:26:13 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 21:26:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_43_51_252.bmp
+2025-05-22 21:26:13 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_20_43_52_590.bmp
+2025-05-22 21:26:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_43_51_252.bmp
+2025-05-22 21:26:14 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_14_256.bmp
+2025-05-22 21:26:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_43_51_252.bmp
+2025-05-22 21:26:15 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_15_277.bmp
+2025-05-22 21:26:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_43_51_252.bmp
+2025-05-22 21:26:16 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_16_283.bmp
+2025-05-22 21:26:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_20_43_52_266.bmp
+2025-05-22 21:26:17 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_16_283.bmp
+2025-05-22 21:26:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 21:26:18 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 21:26:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_18_135.bmp
+2025-05-22 21:26:19 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_18_519.bmp
+2025-05-22 21:26:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_19_149.bmp
+2025-05-22 21:26:20 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_19_539.bmp
+2025-05-22 21:26:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_20_162.bmp
+2025-05-22 21:26:21 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_20_557.bmp
+2025-05-22 21:26:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_21_174.bmp
+2025-05-22 21:26:22 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_21_576.bmp
+2025-05-22 21:26:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 21:26:23 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 21:26:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_23_203.bmp
+2025-05-22 21:26:24 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_23_809.bmp
+2025-05-22 21:26:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_24_215.bmp
+2025-05-22 21:26:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_24_826.bmp
+2025-05-22 21:26:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_25_230.bmp
+2025-05-22 21:26:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_25_839.bmp
+2025-05-22 21:26:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_25_230.bmp
+2025-05-22 21:26:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_26_855.bmp
+2025-05-22 21:26:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 21:26:28 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_28_081.bmp
+2025-05-22 21:26:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_28_272.bmp
+2025-05-22 21:26:29 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_29_097.bmp
+2025-05-22 21:26:30 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 21:44:47 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 21:44:48 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 21:44:48 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 21:44:48 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 21:44:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 21:44:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_26_33_382.bmp
+2025-05-22 21:44:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 21:44:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_44_49_254.bmp
+2025-05-22 21:44:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 21:44:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_44_50_271.bmp
+2025-05-22 21:44:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 21:44:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_44_51_289.bmp
+2025-05-22 21:44:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_33_436.bmp
+2025-05-22 21:44:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_44_52_301.bmp
+2025-05-22 21:44:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_21_26_33_436.bmp
+2025-05-22 21:44:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 21:44:54 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 22:07:24 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 22:07:24 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 22:07:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:07:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_21_44_54_535.bmp
+2025-05-22 22:07:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:07:25 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_07_25_732.bmp
+2025-05-22 22:07:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:07:26 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_07_26_748.bmp
+2025-05-22 22:07:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:07:27 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_07_26_748.bmp
+2025-05-22 22:07:28 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 22:09:31 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 22:09:32 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 22:09:32 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 22:09:32 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 22:09:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:09:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 22:09:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:09:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_09_33_038.bmp
+2025-05-22 22:09:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:09:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_09_34_067.bmp
+2025-05-22 22:09:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:09:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_09_35_074.bmp
+2025-05-22 22:09:36 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 22:12:44 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 22:12:45 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 22:12:45 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 22:12:45 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 22:12:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:12:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_09_37_309.bmp
+2025-05-22 22:12:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:12:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_12_46_390.bmp
+2025-05-22 22:12:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:12:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_12_47_404.bmp
+2025-05-22 22:12:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:12:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_12_47_404.bmp
+2025-05-22 22:12:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:12:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_12_48_632.bmp
+2025-05-22 22:12:50 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 22:13:44 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 22:13:44 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 22:13:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_12_46_229.bmp
+2025-05-22 22:13:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_12_50_886.bmp
+2025-05-22 22:13:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_12_46_229.bmp
+2025-05-22 22:13:45 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_45_433.bmp
+2025-05-22 22:13:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_12_46_229.bmp
+2025-05-22 22:13:46 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_46_453.bmp
+2025-05-22 22:13:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_12_46_229.bmp
+2025-05-22 22:13:47 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_47_462.bmp
+2025-05-22 22:13:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_12_50_346.bmp
+2025-05-22 22:13:48 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_48_467.bmp
+2025-05-22 22:13:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:13:49 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_49_473.bmp
+2025-05-22 22:13:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_13_49_390.bmp
+2025-05-22 22:13:50 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_50_492.bmp
+2025-05-22 22:13:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_13_50_406.bmp
+2025-05-22 22:13:51 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_51_505.bmp
+2025-05-22 22:13:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_13_51_420.bmp
+2025-05-22 22:13:52 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_52_516.bmp
+2025-05-22 22:13:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_13_52_435.bmp
+2025-05-22 22:13:53 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_52_516.bmp
+2025-05-22 22:13:54 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  main_gui : main_gui:109 | ----------------------------------------gui_start----------------------------------------
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  main_gui : main_gui:95 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  main_gui : main_gui:114 | loading config start
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  main_gui : main_gui:25 | 相机配置文件读取成功。
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  main_gui : main_gui:36 | 串口通讯配置文件读取成功。
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  main_gui : main_gui:116 | loading config finish
+2025-05-22 22:14:30 | INFO |p_gui | MainThread |  main_gui : main_gui:72 | start Qt
+2025-05-22 22:14:31 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-05-22 22:14:31 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-05-22 22:14:31 | INFO |p_gui | MainThread |  main_gui : main_gui:79 | Appliacation start
+2025-05-22 22:14:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:14:31 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_13_55_785.bmp
+2025-05-22 22:14:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:14:32 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_31_919.bmp
+2025-05-22 22:14:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:14:33 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_32_945.bmp
+2025-05-22 22:14:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | 
+2025-05-22 22:14:34 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_34_179.bmp
+2025-05-22 22:14:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_31_739.bmp
+2025-05-22 22:14:35 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_35_198.bmp
+2025-05-22 22:14:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_35_792.bmp
+2025-05-22 22:14:36 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | 
+2025-05-22 22:14:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_35_792.bmp
+2025-05-22 22:14:37 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_36_423.bmp
+2025-05-22 22:14:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_36_803.bmp
+2025-05-22 22:14:38 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_37_442.bmp
+2025-05-22 22:14:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_37_814.bmp
+2025-05-22 22:14:39 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_38_669.bmp
+2025-05-22 22:14:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_38_829.bmp
+2025-05-22 22:14:40 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_39_678.bmp
+2025-05-22 22:14:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_40_856.bmp
+2025-05-22 22:14:41 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_40_907.bmp
+2025-05-22 22:14:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_41_870.bmp
+2025-05-22 22:14:42 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_41_914.bmp
+2025-05-22 22:14:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:185 | deep_camera | ./data/deep_camera/camera_1/result/img/2025_05_22_22_14_41_870.bmp
+2025-05-22 22:14:43 | CRITICAL |p_gui | MainThread |  index.tab_4 : tab_4:209 | infrared_camera | ./data/infrared_camera/camera_1/pic/2025_05_22_22_14_42_920.bmp
+2025-05-22 22:14:43 | INFO |p_gui | MainThread |  main_gui : main_gui:63 | ----------------------------------------quit Qt application----------------------------------------

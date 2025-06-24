@@ -60,7 +60,7 @@ class AllWindows():
         default_menu_btn = self.mainWindow.frame.findChild(QPushButton,
                                                            "btn" + str(global_setting.get_setting("menu_id_now")))
         default_menu_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
-
+       
     # 私有方法 添加左侧菜单 从配置文件中
     def _set_left_menu_tab(self):
         # 通过配置信息 将左侧菜单按钮和tab进行绑定

@@ -1,0 +1,21 @@
+2025-06-13 09:45:56 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 09:45:56 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-13 09:45:56 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-13 09:45:56 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-13 09:45:56 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-13 09:45:56 | ERROR |p_gui | MainThread |  config.yamlParser : yamlParser:24 | 读取./gui_configer.yaml配置文件失败！失败原因：mapping values are not allowed here
+  in "./gui_configer.yaml", line 36, column 12 |  异常堆栈跟踪：None
+2025-06-13 09:45:56 | ERROR |p_gui | MainThread |  main_gui : main_gui:47 | ./gui_configer.yaml配置文件读取失败
+2025-06-13 09:45:56 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  main_gui : main_gui:127 | ----------------------------------------gui_start----------------------------------------
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  main_gui : main_gui:113 | HOST_COMPUTER_DATA_STORAGE_LOC=D:\WorkSpace\pythonProjectAnimal
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  main_gui : main_gui:132 | loading config start
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  main_gui : main_gui:27 | 相机配置文件读取成功。
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  main_gui : main_gui:39 | 串口通讯配置文件读取成功。
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  theme.ThemeManager : ThemeManager:64 | ThemeManger:instance._current_theme:  light
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  main_gui : main_gui:134 | loading config finish
+2025-06-13 09:46:36 | INFO |p_gui | MainThread |  main_gui : main_gui:86 | start Qt
+2025-06-13 09:46:37 | INFO |p_gui | MainThread |  index.mainWindow : mainWindow:202 | time update thread start
+2025-06-13 09:46:37 | WARNING |p_gui | MainThread |  index.mainWindow : mainWindow:116 | logolabel_btn button's icon resource file was not found！
+2025-06-13 09:46:38 | INFO |p_gui | MainThread |  main_gui : main_gui:97 | Appliacation start
+2025-06-13 09:47:45 | INFO |p_gui | MainThread |  main_gui : main_gui:70 | ----------------------------------------quit Qt application----------------------------------------
