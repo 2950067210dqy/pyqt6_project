@@ -1,5 +1,3 @@
-from enum import Enum
-
 from loguru import logger
 
 from config.global_setting import global_setting

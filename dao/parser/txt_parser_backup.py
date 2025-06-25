@@ -4,7 +4,6 @@ from datetime import datetime
 from loguru import logger
 
 from config.global_setting import global_setting
-from entity.xlsx_data import csv_data
 from entity.txt_data import txt_data
 from util.folder_util import folder_util
 from util.time_util import time_util

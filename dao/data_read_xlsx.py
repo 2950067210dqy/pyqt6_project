@@ -8,8 +8,7 @@ from config.global_setting import global_setting
 from dao.parser.xlsx_parser import xlsx_parser
 from entity.xlsx_data import xlsx_datas, xlsx_datas_item_three_phase, xlsx_datas_item_three_phase_item, \
     xlsx_datas_item_device, xlsx_datas_item_each, xlsx_datas_item_each_result
-from entity.xlsx_data_column import xlsx_data, xlsx_datas_type_item, xlsx_datas_item, xlsx_datas_item_x, \
-    xlsx_datas_phase_item, xlsx_datas_device_item
+from entity.xlsx_data_column import xlsx_data, xlsx_datas_type_item, xlsx_datas_phase_item, xlsx_datas_device_item
 from util.folder_util import File_Types
 from util.time_util import time_util
 

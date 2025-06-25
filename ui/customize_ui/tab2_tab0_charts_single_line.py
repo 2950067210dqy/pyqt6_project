@@ -1,20 +1,15 @@
 # 自定义图表类
-import enum
-from datetime import datetime
 
-from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries, \
-    QDateTimeAxis
-from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent, QDateTime, QRunnable
-from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
-from PyQt6.QtWidgets import QVBoxLayout, QToolTip, QHBoxLayout
 from PyQt6 import QtCore
+from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries
+from PyQt6.QtCore import Qt, QPointF
+from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
+from PyQt6.QtWidgets import QVBoxLayout, QHBoxLayout
 from loguru import logger
 
 from config.global_setting import global_setting
-from dao.data_read import data_read
 from theme.ThemeManager import Charts_Style_Name
 from theme.ThemeQt6 import ThemedWidget
-from util.folder_util import File_Types
 
 
 class tab2_tab0_charts_single_line(ThemedWidget):

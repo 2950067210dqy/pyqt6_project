@@ -1,24 +1,21 @@
 # 自定义图表类
-import enum
 import traceback
 from datetime import datetime
 
+from PyQt6 import QtCore
 from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries, \
     QDateTimeAxis
-from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent, QDateTime, QRunnable, pyqtSignal
+from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QDateTime, QRunnable, pyqtSignal
 from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
-from PyQt6.QtWidgets import QVBoxLayout, QToolTip
-from PyQt6 import QtCore
+from PyQt6.QtWidgets import QVBoxLayout
 from loguru import logger
 
 from config.global_setting import global_setting
 from dao.data_read import data_read
 from dao.data_read_enum import Data_Read_Where_Start_Func
-
 from theme.ThemeManager import Charts_Style_Name
 from theme.ThemeQt6 import ThemedWidget
 from util.folder_util import File_Types
-
 # 单独的 QObject 用于发射信号
 from util.time_util import time_util
 

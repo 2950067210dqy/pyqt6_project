@@ -12,6 +12,8 @@ a = Analysis(
     ('D:/WorkSpace/pythonProjectAnimal/communicate_config.ini', '.'),
     ('D:/WorkSpace/pythonProjectAnimal/deep_camera_intrinsics.json', '.'),
     ('D:/WorkSpace/pythonProjectAnimal/gui_configer.yaml', '.'),
+    ('D:/WorkSpace/pythonProjectAnimal/gui_smart_device_configer.ini', '.'),
+    ('D:/WorkSpace/pythonProjectAnimal/smart_device_server_config.ini', '.'),
     ('D:/WorkSpace/pythonProjectAnimal/model/yolo11n.pt', 'model')
     ],
     hiddenimports=[],

@@ -1,8 +1,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from loguru import logger
 
 from config.global_setting import global_setting
-from index.tab import Tab
 
 
 class Ui_left_menu_btn(QtWidgets.QPushButton):

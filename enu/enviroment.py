@@ -1,9 +1,9 @@
 import os
 import platform
-import subprocess
 import winreg
 from enum import Enum
 from pathlib import Path
+
 from loguru import logger
 
 
