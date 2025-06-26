@@ -18,8 +18,6 @@ from theme.ThemeQt6 import ThemedWidget
 from util.time_util import time_util
 
 
-# 更新时间子线程
-
 class Send_thread(QThread):
     # 线程信号
 
