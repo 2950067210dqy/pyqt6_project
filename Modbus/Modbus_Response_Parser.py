@@ -1,61 +1,61 @@
 """
 响应报文解析
 """
+from enum import Enum
 
 
-class Modbus_Slave_Ids():
+class Modbus_Slave_Ids(Enum):
     """
     远程地址大全
     """
-    ids = [
-        {
-            "name": "UFC",
-            "description": "气流控制模块",
-            'address': 0x02
-        },
-        {
-            "name": "UGC",
-            "description": "二氧化碳含量模块",
-            'address': 0x03
-        },
-        {
-            "name": "ZOS",
-            "description": "氧气含量测量模块",
-            'address': 0x04
-        },
-        {
-            "name": "ENM",
-            "description": "鼠笼环境监控模块",
-            'address': 0x01
-            # 每个鼠笼都有该模块，
-            # 地址还要加上当前鼠笼号*16
-            # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
-        },
-        {
-            "name": "EM",
-            "description": "进食监控模块",
-            'address': 0x02
-            # 每个鼠笼都有该模块，
-            # 地址还要加上当前鼠笼号*16
-            # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
-        },
-        {
-            "name": "DWM",
-            "description": "饮水监控模块",
-            'address': 0x03
-            # 每个鼠笼都有该模块，
-            # 地址还要加上当前鼠笼号*16
-            # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
-        },
-        {
-            "name": "WM",
-            "description": "称重模块",
-            'address': 0x04
-            # 每个鼠笼都有该模块，
-            # 地址还要加上当前鼠笼号*16
-            # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
-        },
-    ]
+
+    UFC = {
+        "name": "UFC",
+        "description": "气流控制模块",
+        'address': 0x02
+    }
+    UGC = {
+        "name": "UGC",
+        "description": "二氧化碳含量模块",
+        'address': 0x03
+    }
+    ZOS = {
+        "name": "ZOS",
+        "description": "氧气含量测量模块",
+        'address': 0x04
+    }
+    ENM = {
+        "name": "ENM",
+        "description": "鼠笼环境监控模块",
+        'address': 0x01
+        # 每个鼠笼都有该模块，
+        # 地址还要加上当前鼠笼号*16
+        # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
+    }
+    EM = {
+        "name": "EM",
+        "description": "进食监控模块",
+        'address': 0x02
+        # 每个鼠笼都有该模块，
+        # 地址还要加上当前鼠笼号*16
+        # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
+    }
+    DWM = {
+        "name": "DWM",
+        "description": "饮水监控模块",
+        'address': 0x03
+        # 每个鼠笼都有该模块，
+        # 地址还要加上当前鼠笼号*16
+        # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
+    }
+    WM = {
+        "name": "WM",
+        "description": "称重模块",
+        'address': 0x04
+        # 每个鼠笼都有该模块，
+        # 地址还要加上当前鼠笼号*16
+        # 例如鼠笼1的鼠笼环境监控模块地址就是0x11
+    }
 
 
 class Modbus_Response_Parser():
