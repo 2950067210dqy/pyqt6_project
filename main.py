@@ -12,6 +12,7 @@ import main_comm
 import main_deep_camera
 import main_gui
 import main_infrared_camera
+import main_response_Modbus
 import main_smart_device
 
 
@@ -91,6 +92,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     # p_infrared_camera = Process(target=run_infrared_camera_program, name="p_infrared_camera")
 
     # p_comm = Process(target=main_comm.main, name="p_comm")
+    p_response_comm = Process(target=main_response_Modbus.main,name="p_response_comm")
     p_gui = Process(target=main_gui.main, name="p_gui")
     # p_smart_device = Process(target=main_smart_device.main, name="p_smart_device")
     p_deep_camera = Process(target=main_deep_camera.main, name="p_deep_camera")
@@ -112,6 +114,14 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     #     if p_smart_device.is_alive():
     #         kill_process_tree(p_smart_device.pid)
     #         p_smart_device.join(timeout=5)
+    try:
+        logger.info(f"p_response_comm子进程开始运行")
+        p_response_comm.start()
+    except Exception as e:
+        logger.error(f"p_response_comm子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
+        if p_response_comm.is_alive():
+            kill_process_tree(p_response_comm.pid)
+            p_response_comm.join(timeout=5)
     try:
         logger.info(f"p_deep_camera子进程开始运行")
         p_deep_camera.start()
@@ -153,6 +163,11 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
                 logger.error(f"终止p_infrared_camera子进程")
                 p_infrared_camera.join(timeout=5)
                 pass
+            if p_response_comm.is_alive():
+                kill_process_tree(p_infrared_camera.pid)
+                logger.error(f"终止p_response_comm子进程")
+                p_response_comm.join(timeout=5)
+                pass
             # if p_smart_device.is_alive():
             #     # 先尝试正常终止
             #     kill_process_tree(p_smart_device.pid)
@@ -172,6 +187,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     # 等待所有子进程退出
     # p_comm.join()
     # p_smart_device.join()
+    p_response_comm.join()
     p_infrared_camera.join()
     p_deep_camera.join()
     p_gui.join()
