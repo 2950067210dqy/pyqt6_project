@@ -9,7 +9,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class tab2_tab0(object):
+class Ui_tab_0_frame(object):
     def setupUi(self, tab_0_frame):
         tab_0_frame.setObjectName("tab_0_frame")
         tab_0_frame.resize(891, 479)

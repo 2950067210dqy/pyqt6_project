@@ -44,11 +44,26 @@ tab: #菜单窗口项
     height: 591 #菜单窗口高 单位px
 monitoring_data: #监测数据项
   - id: 1 #对应相应的tab
-    title: '湿度' #菜单名称
-    object_name: 'current' #菜单object_name 取title的英文名即可
+    title: '气流' #菜单名称
+    object_name: 'airflow' #菜单object_name 取title的英文名即可
   - id: 2
-    title: '温度'
-    object_name: 'temperature'
+    title: '二氧化碳'
+    object_name: 'carbon'
+  - id: 3
+    title: '氧气'
+    object_name: 'oxgen'
+  - id: 4
+    title: '鼠笼环境'
+    object_name: 'mouse_evr'
+  - id: 5
+    title: '进食'
+    object_name: 'eat'
+  - id: 6
+    title: '饮水'
+    object_name: 'drink'
+  - id: 7
+    title: '称重'
+    object_name: 'weight'
 graphic: #图表项
   data_read_nums: 1 #每次读几个数据
   data_show_nums: 20 #图表中显示数据的数量

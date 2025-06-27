@@ -1,20 +1,14 @@
 # 自定义图表类
-import enum
-from datetime import datetime
 
-from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries, \
-    QDateTimeAxis, QBarCategoryAxis, QStackedBarSeries, QBarSet, QLogValueAxis
-from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent, QDateTime, QRunnable, QRectF
-from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
-from PyQt6.QtWidgets import QVBoxLayout, QToolTip, QHBoxLayout
-from PyQt6 import QtCore
+from PyQt6.QtCharts import QChartView, QLineSeries, QPieSeries, QStackedBarSeries, QLogValueAxis
+from PyQt6.QtCore import QRectF
+from PyQt6.QtGui import QFont, QPen
+from PyQt6.QtWidgets import QVBoxLayout, QHBoxLayout
 from loguru import logger
 
 from config.global_setting import global_setting
-from dao.data_read import data_read
 from theme.ThemeManager import Charts_Style_Name
 from theme.ThemeQt6 import ThemedWidget
-from util.folder_util import File_Types
 
 
 class CustomChartView(QChartView):
@@ -48,9 +42,8 @@ class CustomChartView(QChartView):
         self.rubberBandRect = rubberBandRect
 
 
-import sys
 import random
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui
 from PyQt6.QtCharts import QChart, QChartView, QBarSet, QBarSeries, QBarCategoryAxis, QValueAxis
 from PyQt6.QtCore import Qt, QPointF
 from PyQt6.QtGui import QPainter, QColor, QLinearGradient, QBrush

@@ -5,3 +5,6 @@ pyinstaller -d main.py --hidden-import=pyqt6-plugin
 
 2025-05-27
 控制是否丢帧
+
+pipreqs --encoding=utf8  ./communication,./config,./dao,./entity,./enu,./equipment,./index,./Modbus,./resource_py,./smart_device,./theme,./ui,./util,main.py,main_comm.py,main_deep_camera.py,main_gui.py,main_infrared_camera.py,main_smart_device.py --force
+pipreqs . --encoding=utf8 --ignore ./build,./dist,./entity,./log,./model,./resource,./ui_backup,./venv --force

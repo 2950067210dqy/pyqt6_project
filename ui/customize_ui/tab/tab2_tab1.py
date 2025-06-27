@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'table_tab1.ui'
+# Form implementation generated from reading ui file 'tab2_tab1.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.0
 #
@@ -9,7 +9,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class tab2_tab1(object):
+class Ui_tab_1_frame(object):
     def setupUi(self, tab_1_frame):
         tab_1_frame.setObjectName("tab_1_frame")
         tab_1_frame.resize(891, 479)

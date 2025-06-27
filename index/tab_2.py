@@ -1,21 +1,68 @@
+import time
+
 from loguru import logger
 # from pyqt6_plugins.examplebutton import QtWidgets
-
+from Modbus.Modbus import ModbusRTUMaster
 from config.global_setting import global_setting
 from theme.ThemeQt6 import ThemedWidget
-from ui.customize_ui.tab.tab2_tab0 import tab2_tab0
-from ui.customize_ui.tab.tab2_tab1 import tab2_tab1
+from ui.customize_ui.component.Scroll import Scroll
+from ui.customize_ui.tab.index.tab2_tab import Tab2_tab
+
 from ui.tab2 import Ui_tab2_frame
 from PyQt6 import QtCore, QtWidgets
-from PyQt6.QtCore import QRect
+from PyQt6.QtCore import QRect, QThread, pyqtSignal
 from PyQt6.QtWidgets import QWidget, QVBoxLayout
 
 from theme.ThemeQt6 import ThemedWidget
+from util.time_util import time_util
+
+
+class Send_thread(QThread):
+    # 线程信号
+
+    def __init__(self, update_time_main_signal, modbus, send_message):
+        super().__init__()
+        # 获取主线程更新界面信号
+        self.update_time_main_signal: pyqtSignal = update_time_main_signal
+        self.modbus = modbus
+        self.send_message = send_message
+        self.is_strat = True
+        pass
+
+    def set_send_message(self, send_message):
+        self.send_message = send_message
+
+    def set_modbus(self, modbus):
+        self.modbus = modbus
+
+    def run(self):
+        while True:
+
+            if self.is_strat:
+                self.modbus = ModbusRTUMaster(port=self.send_message['port'], timeout=self.send_message['timeout'],
+                                              update_status_main_signal=self.update_time_main_signal)
+                try:
+                    logger.info(self.send_message)
+                    response, response_hex, send_state = self.modbus.send_command(
+                        slave_id=self.send_message['slave_id'],
+                        function_code=self.send_message['function_code'],
+                        data_hex_list=self.send_message['data'])
+                    # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
+                    if send_state:
+                        pass
+                    self.is_strat = False
+                except Exception as e:
+                    logger.error(e)
+                    self.update_time_main_signal.emit(f"{time_util.get_format_from_time(time.time())}-{e}")
+                finally:
+                    self.is_strat = False
+            time.sleep(1)
+        pass
+
+    pass
 
 
 class Tab_2(ThemedWidget):
-    # 不同的tab的frame
-    classes = [tab2_tab0, tab2_tab1]
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
@@ -57,20 +104,27 @@ class Tab_2(ThemedWidget):
     def _init_monitor_data_tab_page(self):
         # tab页布局
         content_layout_son: QVBoxLayout = self.frame.findChild(QVBoxLayout, "content_layout_son")
+
         self.tabWidget = QtWidgets.QTabWidget()
         self.tabWidget.setObjectName("tab_2_tabWidget")
         self.tabWidget.setStyleSheet("")
         monitor_data_tab_page_config = global_setting.get_setting("configer")['monitoring_data']
+        i = 0
         for monitor_data in monitor_data_tab_page_config:
+            tab_parent = QtWidgets.QWidget()
+            tab_parent.setObjectName(f"tab_parent_{monitor_data['id'] - 1}_{monitor_data['object_name']}")
+            tab_parent_layout = QVBoxLayout(tab_parent)
+            tab_parent_layout.setObjectName(f"tab_parent_layout{monitor_data['id'] - 1}_{monitor_data['object_name']}")
             tab = QtWidgets.QWidget()
             tab.setObjectName(f"tab_{monitor_data['id'] - 1}_{monitor_data['object_name']}")
-            # 绑定相关的tab页
-            tab_frame = self.classes[monitor_data['id'] - 1]()
-            if hasattr(tab_frame, 'set_parent') and callable(getattr(tab_frame, 'set_parent')):
-                tab_frame.set_parent(parent=tab)
-            else:
-                tab_frame.setupUi(tab)
-            self.tabWidget.addTab(tab, monitor_data['title'])
+            tab_layout = QVBoxLayout(tab)  # 为tab添加垂直布局
+            tab_layout.setObjectName(f"tab_layout_{i}")
+
+            tab_frame = Tab2_tab(monitor_data['id'] - 1)
+            Scroll.set_scroll_to_component(component=tab_frame.tab.frame, component_parent_layout=tab_parent_layout,
+                                           scroll_object_name=f"scroll_tab_{i}")
+            self.tabWidget.addTab(tab_parent, monitor_data['title'])
+            i += 1
             pass
             pass
         content_layout_son.addWidget(self.tabWidget)

@@ -1,14 +1,13 @@
 # 自定义图表类
-import enum
 import traceback
 from datetime import datetime
 
+from PyQt6 import QtCore
 from PyQt6.QtCharts import QChartView, QChart, QLineSeries, QValueAxis, QBarSeries, QPieSeries, QSplineSeries, \
     QDateTimeAxis
-from PyQt6.QtCore import Qt, QPointF, QTimer, QObject, QEvent, QDateTime, QRunnable
+from PyQt6.QtCore import Qt, QPointF, QTimer, QDateTime
 from PyQt6.QtGui import QFont, QColor, QBrush, QPainter, QPen
-from PyQt6.QtWidgets import QVBoxLayout, QToolTip
-from PyQt6 import QtCore
+from PyQt6.QtWidgets import QVBoxLayout
 from loguru import logger
 
 from config.global_setting import global_setting
