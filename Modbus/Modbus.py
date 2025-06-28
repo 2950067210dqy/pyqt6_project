@@ -7,6 +7,7 @@ import time
 from PyQt6.QtCore import pyqtSignal
 from loguru import logger
 
+from Modbus.Modbus_Response_Parser import Modbus_Response_Parser
 from util.time_util import time_util
 
 
@@ -51,16 +52,14 @@ class ModbusRTUMaster:
             # 组装帧
             frame = struct.pack('>B B B B B B', slave_id, function_code, *data_bytes)
             crc = self.calculate_crc(frame)
-            str_frame =frame.hex()
-            str_crc =crc.hex()
+            str_frame = frame.hex()
+            str_crc = crc.hex()
             logger.info(f"frame: {frame} , {str_frame}|crc: {crc} , {str_crc}")
             return frame + crc
         except Exception as e:
             self.update_status_main_signal.emit(f"构造报文出错: {e}")
             logger.error(f"{time_util.get_format_from_time(time.time())}-{self.sport}-构造报文出错: {e}")
             return None
-
-
 
     def send_command(self, slave_id, function_code, data_hex_list):
         """
@@ -102,7 +101,7 @@ class ModbusRTUMaster:
             if not response:
                 self.update_status_main_signal.emit(
                     f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT1-未获取到响应数据")
-                logger.error(  f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT1-未获取到响应数据")
+                logger.error(f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT1-未获取到响应数据")
                 if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                     logger.error("关闭连接")
                     self.ser.close()
@@ -113,7 +112,7 @@ class ModbusRTUMaster:
             if len(response) < 5:
                 self.update_status_main_signal.emit(
                     f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT2-返回数据位数错误")
-                logger.error( f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT2-返回数据位数错误")
+                logger.error(f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT2-返回数据位数错误")
                 if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                     self.ser.close()
                     self.ser = None
@@ -139,19 +138,22 @@ class ModbusRTUMaster:
                 exception_code = response[2]
                 self.update_status_main_signal.emit(
                     f"{time_util.get_format_from_time(time.time())}-{self.sport}-异常：功能码=0x{function_code:02X}, 异常码=0x{exception_code:02X}")
-                logger.error( f"{time_util.get_format_from_time(time.time())}-{self.sport}-异常：功能码=0x{function_code:02X}, 异常码=0x{exception_code:02X}")
+                logger.error(
+                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-异常：功能码=0x{function_code:02X}, 异常码=0x{exception_code:02X}")
                 if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                     self.ser.close()
                     self.ser = None
                 return response, response.hex(), False
             self.update_status_main_signal.emit(
                 f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
-            logger.info( f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
+            logger.info(f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
             self.update_status_main_signal.emit(
                 f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到消息-{response.hex()}-数据部分{data_part.hex()})")
             if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                 self.ser.close()
                 self.ser = None
+            self.parse_response(response=response, response_hex=response.hex(), send_state=True, slave_id=slave_id,
+                                function_code=function_code)
             return data_part, data_part.hex(), True
 
         except Exception as e:
@@ -162,3 +164,14 @@ class ModbusRTUMaster:
                 self.ser.close()
                 self.ser = None
             return None, None, False
+
+    def parse_response(self, response, response_hex, send_state, slave_id, function_code):
+        # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
+        logger.info(f"response-{response}|response_hex-{response_hex}|send_state-{send_state}")
+        if send_state:
+            logger.info("开始解析报文")
+            modbus_response_parser = Modbus_Response_Parser(slave_id=slave_id,
+                                                            function_code=function_code, response=response,
+                                                            response_hex=response_hex,
+                                                            update_status_main_signal=self.update_status_main_signal)
+            modbus_response_parser.parser()

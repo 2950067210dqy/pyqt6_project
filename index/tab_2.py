@@ -3,6 +3,7 @@ import time
 from loguru import logger
 # from pyqt6_plugins.examplebutton import QtWidgets
 from Modbus.Modbus import ModbusRTUMaster
+from Modbus.Modbus_Response_Parser import Modbus_Response_Parser
 from config.global_setting import global_setting
 from theme.ThemeQt6 import ThemedWidget
 from ui.customize_ui.component.Scroll import Scroll
@@ -47,9 +48,7 @@ class Send_thread(QThread):
                         slave_id=self.send_message['slave_id'],
                         function_code=self.send_message['function_code'],
                         data_hex_list=self.send_message['data'])
-                    # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
-                    if send_state:
-                        pass
+                   
                     self.is_strat = False
                 except Exception as e:
                     logger.error(e)

@@ -10,6 +10,8 @@ import serial
 from loguru import logger
 from serial.tools import list_ports
 
+from util.time_util import time_util
+
 
 class communication(threading.Thread):
     """
@@ -28,7 +30,7 @@ class communication(threading.Thread):
         self.index = index
         self.category = category
 
-        self.port="COM4"
+        self.port = "COM3"
         self.ser = None  # 串口类
         self.running = True  # 控制线程运行的标志
         # 串口接收实例化
@@ -77,11 +79,11 @@ class communication(threading.Thread):
             try:
                 self.ser = serial.Serial(
                     port=self.port,
-                    baudrate = 115200,
-                    bytesize = 8,
-                    parity = 'N',
-                    stopbits = 1,
-                    timeout = 1
+                    baudrate=115200,
+                    bytesize=8,
+                    parity='N',
+                    stopbits=1,
+                    timeout=1
                 )
                 logger.info(f"{self.category}串口{str(self.port)}连接成功")
             except KeyboardInterrupt:
@@ -111,8 +113,6 @@ class communication(threading.Thread):
 
     def stop(self):
 
-
-
         self.running = False
         logger.warning(f"{self.category}串口{str(self.port)}连接线程停止")
         self.join()  # 等待线程结束
@@ -137,7 +137,7 @@ class communication(threading.Thread):
         #     self.ser.write(datas_str.encode())
         #     time.sleep(float(self.config['Serial']['delay']))
 
-    def binary_to_hex(self,binary_str):
+    def binary_to_hex(self, binary_str):
         """
         根据二进制字符串的位数转成相应个数的16进制数
         :param binary_str:
@@ -168,6 +168,44 @@ class communication(threading.Thread):
             hex_values.append(hex(hex_value)[2:].upper())
 
         return hex_values
+
+    def calculate_crc(self, data: bytes) -> bytes:
+        '''计算Modbus RTU CRC-16，小端返回'''
+        crc = 0xFFFF
+        for byte in data:
+            crc ^= byte
+            for _ in range(8):
+                if crc & 0x0001:
+                    crc >>= 1
+                    crc ^= 0xA001
+                else:
+                    crc >>= 1
+        return struct.pack('<H', crc)
+
+    def build_frame(self, slave_id, function_code, data_hex_list):
+        '''
+        构造完整 Modbus RTU 报文（包含CRC）
+        data_hex_list: 4个字节数据，十六进制字符串，如 ['00', '00', '00', 'FF']
+        返回: 完整的 bytes 报文
+        '''
+        try:
+            # 字符串转整数
+            slave_id = int(slave_id, 16)
+            function_code = int(function_code, 16)
+            logger.info(f"data_hex_list: {data_hex_list}")
+            data_bytes = [int(x, 16) for x in data_hex_list]
+            logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
+            # 组装帧
+            frame = struct.pack('>B B B B B', slave_id, function_code, *data_bytes)
+            crc = self.calculate_crc(frame)
+            str_frame = frame.hex()
+            str_crc = crc.hex()
+            logger.info(f"frame: {frame} , {str_frame}|crc: {crc} , {str_crc}")
+            return frame + crc
+        except Exception as e:
+            logger.error(f"{time_util.get_format_from_time(time.time())}-{self.port}-构造报文出错: {e}")
+            return None
+
     def receive(self):
         """
         接收数据
@@ -184,13 +222,17 @@ class communication(threading.Thread):
                 self.ser.flushInput()
                 if data:
                     try:
-                        return_bytes =struct.pack("< B B B B B B B",2,2,1,*self.binary_to_hex("00111111"),12,12)
-                        # 根据发送来的数据进行响应
-                        self.ser.write()
                         logger.info(f"{self.category}串口{str(self.port)}接收数据: {data}|未转义：{data.hex()}")
+                        return_bytes = self.build_frame(slave_id='2', function_code='2',
+                                                        data_hex_list=['1'] + self.binary_to_hex("00111111"))
+                        # 根据发送来的数据进行响应
+                        self.ser.write(return_bytes)
+
                     except UnicodeDecodeError:
                         logger.info(f"{self.category}串口{str(self.port)}接收原始字节: {data.hex()}")
                 time.sleep(1)  # 避免CPU占用过高
+
+
 def main():
     # 加载日志配置
     logger.add(
@@ -202,7 +244,7 @@ def main():
     )
     logger.info(f"{'-' * 30}comm_start{'-' * 30}")
     try:
-        communication_received_thread = communication(category="receive",index=0 )
+        communication_received_thread = communication(category="receive", index=0)
         communication_received_thread.start()
     except Exception as e:
         logger.error(f"模拟响应串口出错！:{e}")
