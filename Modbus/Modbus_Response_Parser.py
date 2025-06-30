@@ -139,7 +139,7 @@ class Modbus_Response_Parents():
 
         pass
 
-    def parser_response_pack(self, pack_struct, struct_type):
+    def parser_response_pack(self, pack_struct, struct_type,is_pack_return_bytes_nums):
         """
         :param pack_struct: example: self.pack_struct_slave_id_and_function_code + pack_struct + self.pack_struct_crc= '> B B B B B B B'
         :return:
@@ -148,8 +148,18 @@ class Modbus_Response_Parents():
             self.pack_struct_slave_id_and_function_code + pack_struct + self.pack_struct_crc, self.response)
         logger.info(f"响应报文{self.response}-{self.response_hex}-解析结构:{response_unpack}")
         self.response_struct['slave_id'] = response_unpack[0]
+        # 返回字节数 :有时候响应报文会不带返回字节数，这时候改变数据比特的index,并且不unpack return_bytes_nums,这时候使用直接计算data长度充当return_bytes_nums
+        if is_pack_return_bytes_nums:
+            data_start_index=3
+            self.response_struct['return_bytes_nums'] = response_unpack[2]
+            pass
+        else:
+            data_start_index=2
+            # 减去slave_id,function_code 和crc2位
+            self.response_struct['return_bytes_nums'] =len(response_unpack)-4
+            pass
         self.response_struct['function_code'] = response_unpack[1]
-        self.response_struct['return_bytes_nums'] = response_unpack[2]
+
         self.response_struct['crc'] = [response_unpack[-2], response_unpack[-1]]
         """
         给的数据位数和我们整个数据解析的个数对不对
@@ -158,12 +168,12 @@ class Modbus_Response_Parents():
         #     logger.error(
         #         f"响应报文{self.response}-{self.response_hex}的数据位数{5 + int(self.response_struct['return_bytes_nums'])}和解析的总位数{len(response_unpack)}不一致！")
         #     return
-        if struct_type == "B":
+        if isinstance(struct_type, str) and struct_type.upper() == "B":
             for i in range(int(self.response_struct['return_bytes_nums'])):
-                self.response_struct['data'].append(response_unpack[3 + i])
+                self.response_struct['data'].append(response_unpack[data_start_index + i])
         else:
             for i in range(int(self.response_struct['return_bytes_nums']) // 2):
-                self.response_struct['data'].append(response_unpack[3 + i])
+                self.response_struct['data'].append(response_unpack[data_start_index + i])
 
     def int_to_8bit_binary(self, num_list):
         """
@@ -218,8 +228,8 @@ class Modbus_Response_URC(Modbus_Response_Parents):
                 self.parser_function_code_5()
             case 6:
                 self.parser_function_code_6()
-            case 7:
-                self.parser_function_code_7()
+            case 17:
+                self.parser_function_code_17()
             case _:
                 self.parser_function_code_others()
                 pass
@@ -229,13 +239,16 @@ class Modbus_Response_URC(Modbus_Response_Parents):
             f"响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
         pass
 
+    """
+        02 01 X
+        """
     def parser_function_code_1(self):
         function_desc = """
         读输出端口状态信息
         参数长度：3
         """
         pack_struct = "B B B"
-        self.parser_response_pack(pack_struct, struct_type="B")
+        self.parser_response_pack(pack_struct, struct_type="B",is_pack_return_bytes_nums=True)
         logger.info(
             f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析报文：{self.response_hex}|{self.response_struct}")
         data_binary_str_list = self.int_to_8bit_binary(num_list=self.response_struct['data'])
@@ -262,14 +275,16 @@ class Modbus_Response_URC(Modbus_Response_Parents):
             f"{time_util.get_format_from_time(time.time())}-响应报文解析-{function_desc}-{return_data_str}")
 
     pass
-
+    """
+        02 02 X
+        """
     def parser_function_code_2(self):
         function_desc = """
                 读传感器状态信息
                 参数长度：2
                 """
         pack_struct = "B B"
-        self.parser_response_pack(pack_struct, struct_type="B")
+        self.parser_response_pack(pack_struct, struct_type="B",is_pack_return_bytes_nums=True)
         logger.info(
             f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析报文：{self.response_hex}|{self.response_struct}")
         data_binary_str = self.int_to_8bit_binary(num_list=self.response_struct['data'])[0]
@@ -294,13 +309,16 @@ class Modbus_Response_URC(Modbus_Response_Parents):
             f"{time_util.get_format_from_time(time.time())}-响应报文解析-{function_desc}-{return_data_str}")
         pass
 
+    """
+        02 03 X
+        """
     def parser_function_code_3(self):
         function_desc = """
                         读配置寄存器
                         参数长度：7
                         """
         pack_struct = "B H H H"
-        self.parser_response_pack(pack_struct, struct_type="H")
+        self.parser_response_pack(pack_struct, struct_type="H",is_pack_return_bytes_nums=True)
         logger.info(
             f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析报文：{self.response_hex}|{self.response_struct}")
         return_datas = []
@@ -336,17 +354,262 @@ class Modbus_Response_URC(Modbus_Response_Parents):
             f"{time_util.get_format_from_time(time.time())}-响应报文解析-{function_desc}-{return_data_str}")
         pass
 
+    """
+        02 04 X
+        """
     def parser_function_code_4(self):
-
+        function_desc = """
+                        读传感器测量值
+                        参数长度：13
+                         """
+        pack_struct = "B B B B B B B B B B B B B"
+        self.parser_response_pack(pack_struct, struct_type="B",is_pack_return_bytes_nums=True)
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析报文：{self.response_hex}|{self.response_struct}")
+        return_datas = []
+        port_types = ['流量计测量值(sccm)', '差压计测量值(kPa)', '气压计1测量值(kPa)', '气压计2测量值(kPa)', '备用1测量值', '备用2测量值']
+        j=0
+        for i in range(len(self.response_struct['data'])):
+            match i:
+                case 1:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value': int("".join(self.int_to_8bit_binary(num_list=[self.response_struct['data'][i-1],self.response_struct['data'][i]])),2)
+                    }
+                    )
+                    j+=1
+                    pass
+                case 3:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value': float(str(self.response_struct['data'][i-1]-7)+"."+str(self.response_struct['data'][i]))
+                    }
+                    )
+                    j += 1
+                    pass
+                case 5:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value': float(
+                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                    }
+                    )
+                    j += 1
+                    pass
+                case 7:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value': float(
+                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                    }
+                    )
+                    j += 1
+                    pass
+                case 9:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value': float(
+                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                    }
+                    )
+                    j += 1
+                    pass
+                    pass
+                case 11:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value': float(
+                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                    }
+                    )
+                    j += 1
+                    pass
+                    pass
+                case _:
+                    pass
+        return_data_str = ""
+        for return_data in return_datas:
+            return_data_str += f"{return_data['desc']}:{return_data['value']} | "
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
+        self.update_status_main_signal.emit(
+            f"{time_util.get_format_from_time(time.time())}-响应报文解析-{function_desc}-{return_data_str}")
         pass
 
+    """
+        02 05 X
+        """
     def parser_function_code_5(self):
+        function_desc = """
+                       写从机单个开关量输出（ON/OFF）
+                       参数长度：4
+                       """
+        pack_struct = "B B B B"
+        self.parser_response_pack(pack_struct, struct_type="B",is_pack_return_bytes_nums=False)
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析报文：{self.response_hex}|{self.response_struct}")
+        return_datas = []
+        port_types = ['电磁阀起始地址值', '电磁阀开、关控制']
+        j = 0
+        for i in range(len(self.response_struct['data'])):
+            match i:
+                case 1:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value':f"0X{self.response_struct['data'][i - 1]:02X}{self.response_struct['data'][i]:02X}"
+                    }
+                    )
+                    j += 1
+                    pass
+                case 2:
+                    return_datas.append({
+                        "desc": port_types[j],
+                        'value': "ON" if int(self.response_struct['data'][i])==255 else "OFF"
+                    }
+                    )
+                    j += 1
+                    pass
+                case _:
+                    pass
+
+        return_data_str = ""
+        for return_data in return_datas:
+            return_data_str += f"{return_data['desc']}:{return_data['value']} |"
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
+        self.update_status_main_signal.emit(
+            f"{time_util.get_format_from_time(time.time())}-响应报文解析-{function_desc}-{return_data_str}")
         pass
 
+    """
+    02 06 X
+    """
     def parser_function_code_6(self):
+        function_desc = """
+                            写单个保持寄存器
+                            参数长度：4
+                        """
+        pack_struct = "B B B B"
+        self.parser_response_pack(pack_struct, struct_type="B", is_pack_return_bytes_nums=False)
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析报文：{self.response_hex}|{self.response_struct}")
+        return_datas = []
+        port_types_0 = ['模块地址地址', '新分配的模块地址值']
+        port_types_1 = ['寄存器地址', '流量计测量范围']
+        port_types_2 = ['寄存器地址', '调节阀1开度']
+        port_types_3 = ['寄存器地址', '调节阀2开度']
+        j = 0
+        for i in range(len(self.response_struct['data'])):
+            match i:
+                case 1:
+                    match self.response_struct['data'][i]:
+                        case 0:
+                            return_datas.append({
+                                "desc": port_types_0[j],
+                                'value': f"0X{self.response_struct['data'][i - 1]:02X}{self.response_struct['data'][i]:02X}"
+                            }
+                            )
+                            pass
+                        case 1:
+                            return_datas.append({
+                                "desc": port_types_1[j],
+                                'value': f"0X{self.response_struct['data'][i - 1]:02X}{self.response_struct['data'][i]:02X}"
+                            }
+                            )
+                            pass
+                        case 2:
+                            return_datas.append({
+                                "desc": port_types_2[j],
+                                'value':f"0X{self.response_struct['data'][i - 1]:02X}{self.response_struct['data'][i]:02X}"
+                            }
+                            )
+                            pass
+                        case 3:
+                            return_datas.append({
+                                "desc": port_types_3[j],
+                                'value': f"0X{self.response_struct['data'][i - 1]:02X}{self.response_struct['data'][i]:02X}"
+                            }
+                            )
+                            pass
+                        case _:
+                            pass
+                    j += 1
+                    pass
+                case 3:
+                    match self.response_struct['data'][1]:
+                        case 0:
+                            return_datas.append({
+                                "desc": port_types_0[j],
+                                'value':f"0X{self.response_struct['data'][i - 1]:02X}{self.response_struct['data'][i]:02X}"
+                            }
+                            )
+                            pass
+                        case 1:
+                            return_datas.append({
+                                "desc": port_types_1[j],
+                                'value':'0~3L/min' if int("".join(self.int_to_8bit_binary(num_list=[self.response_struct['data'][i-1],self.response_struct['data'][i]])),2)==0 else '0-10L/min'
+                            }
+                            )
+                            pass
+                        case 2:
+                            return_datas.append({
+                                "desc": port_types_2[j],
+                                'value': f"{int(''.join(self.int_to_8bit_binary(num_list=[self.response_struct['data'][i-1],self.response_struct['data'][i]])),2)}%"
+                            }
+                            )
+                            pass
+                        case 3:
+                            return_datas.append({
+                                "desc": port_types_3[j],
+                                'value': f"{int(''.join(self.int_to_8bit_binary(num_list=[self.response_struct['data'][i-1],self.response_struct['data'][i]])),2)}%"
+                            }
+                            )
+                            pass
+                        case _:
+                            pass
+                    j += 1
+                    pass
+                case _:
+                    pass
+
+        return_data_str = ""
+        for return_data in return_datas:
+            return_data_str += f"{return_data['desc']}:{return_data['value']} |"
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
+        self.update_status_main_signal.emit(
+            f"{time_util.get_format_from_time(time.time())}-响应报文解析-{function_desc}-{return_data_str}")
         pass
 
-    def parser_function_code_7(self):
+    """
+        02 11 X
+    """
+    def parser_function_code_17(self):
+        function_desc = """
+                                读取模块ID信息等
+                                参数长度：17
+                                """
+        pack_struct = "B H H H H H H H H"
+        self.parser_response_pack(pack_struct, struct_type="H", is_pack_return_bytes_nums=True)
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析报文：{self.response_hex}|{self.response_struct}")
+        return_datas = []
+        port_types = ['生产厂商', '硬件版本', '软件版本','出厂地址','当前地址','预留1','预留2','预留3']
+        index = 0
+        for data_single in self.response_struct['data']:
+            return_datas.append({
+                "desc": port_types[index],
+                'value': f"{data_single:016b}"
+            }
+            )
+            index += 1
+        return_data_str = ""
+        for return_data in return_datas:
+            return_data_str += f"{return_data['desc']}:{return_data['value']} | "
+        logger.info(
+            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
+        self.update_status_main_signal.emit(
+            f"{time_util.get_format_from_time(time.time())}-响应报文解析-{function_desc}-{return_data_str}")
         pass
 
 

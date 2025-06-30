@@ -206,6 +206,7 @@ class communication(threading.Thread):
     def build_frame(self, slave_id, function_code, return_bytes_nums, data_hex_list, struct_type):
         '''
         构造完整 Modbus RTU 报文（包含CRC）
+        return_bytes_nums:为16进制字符  返回字节数 :有时候响应报文会不带返回字节数，这时候使用data_bytes的长度充当return_bytes_nums,并且不pack return_bytes_nums
         data_hex_list: 4个字节数据，十六进制字符串，如 ['00', '00', '00', 'FF']
         struct_type B是一个字节 H是两个字节
         返回: 完整的 bytes 报文
@@ -214,21 +215,36 @@ class communication(threading.Thread):
             # 字符串转整数
             slave_id = int(slave_id, 16)
             function_code = int(function_code, 16)
-            return_bytes_nums = int(return_bytes_nums, 16)
+            if return_bytes_nums is not None:
+                return_bytes_nums = int(return_bytes_nums, 16)
             logger.info(f"data_hex_list: {data_hex_list}")
             data_bytes = [int(x, 16) for x in data_hex_list]
             logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
             # 组装帧
-            pack_struct = ">B B B"
-            if struct_type == "B":
+            if return_bytes_nums is not None:
+                pack_struct = ">B B B"
+                is_pack_return_bytes_nums = True
+            else:
+                pack_struct = ">B B"
+                return_bytes_nums = len(data_bytes)
+                is_pack_return_bytes_nums = False
+
+            if isinstance(struct_type,str) and struct_type.upper() == "B":
+
                 for i in range(return_bytes_nums):
                     pack_struct += " B"
                 pass
+                logger.info(f"struct_type: {struct_type}|struct_type is B | pack_struct: {pack_struct}| return_bytes_nums: {return_bytes_nums}")
             else:
+                logger.info(f"struct_type: {struct_type}|struct_type is H")
                 for i in range(return_bytes_nums // 2):
                     pack_struct += " H"
                 pass
-            frame = struct.pack(pack_struct, slave_id, function_code, return_bytes_nums, *data_bytes)
+                logger.info(f"struct_type: {struct_type}|struct_type is H | pack_struct: {pack_struct} |  return_bytes_nums: {return_bytes_nums}")
+            if is_pack_return_bytes_nums:
+                frame = struct.pack(pack_struct, slave_id, function_code, return_bytes_nums, *data_bytes)
+            else:
+                frame = struct.pack(pack_struct, slave_id, function_code,*data_bytes)
             crc = self.calculate_crc(frame)
             str_frame = frame.hex()
             str_crc = crc.hex()
@@ -290,11 +306,12 @@ class communication(threading.Thread):
                                     match function_code_int:
                                         case 1:
                                             """
+                                            02 01 X
                                             读输出端口状态信息
                                             参数长度：3
                                             """
                                             return_bytes = self.build_frame(slave_id=str(slave_id_int),
-                                                                            function_code=str(function_code_int),
+                                                                            function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='2',
                                                                             data_hex_list=[
                                                                                 self.binary_to_hex_for_all("00000010"),
@@ -305,11 +322,12 @@ class communication(threading.Thread):
                                             pass
                                         case 2:
                                             """
+                                            02 02 X
                                             读传感器状态信息
                                             参数长度：2
                                             """
                                             return_bytes = self.build_frame(slave_id=str(slave_id_int),
-                                                                            function_code=str(function_code_int),
+                                                                            function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='1',
                                                                             data_hex_list=[
                                                                                 self.binary_to_hex_for_all("00011111")],
@@ -318,11 +336,12 @@ class communication(threading.Thread):
                                             pass
                                         case 3:
                                             """
+                                            02 03 X
                                             读配置寄存器
                                             参数长度：7
                                             """
                                             return_bytes = self.build_frame(slave_id=str(slave_id_int),
-                                                                            function_code=str(function_code_int),
+                                                                            function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='6',
 
                                                                             data_hex_list=[
@@ -334,12 +353,122 @@ class communication(threading.Thread):
 
                                                                             )
                                         case 4:
+                                            """
+                                            02 04 X
+                                            读传感器测量值
+                                            参数长度：13
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='C',
+
+                                                                            data_hex_list=[
+                                                                                "0x01",
+                                                                                "0x1F",
+                                                                                "0x05",
+                                                                                "0x08",
+                                                                                "0x1F",
+                                                                                "0x04",
+                                                                                "0x1a",
+                                                                                "0x01",
+                                                                                "0xAC",
+                                                                                "0xB1",
+                                                                                "0xC2",
+                                                                                "0x41",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
                                         case 5:
+                                            """
+                                               02 05 X
+                                               写从机单个开关量输出（ON/OFF）
+                                               参数长度：4
+                                             """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x02",
+                                                                                "0xFF",
+                                                                                "0x00",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
                                         case 6:
+                                            """
+                                            02 06 X
+                                                写单个保持寄存器
+                                                参数长度：4
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x02",
+                                                                                "0x00",
+                                                                                "0x2F",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+
                                             pass
-                                        case 7:
+                                        case 17:
+                                            """
+                                            02 11 X
+                                            读取模块ID信息等
+                                            参数长度：17
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='11',
+                                                                            data_hex_list=[
+                                                                                "0xAFCF",
+                                                                                "0x2311",
+                                                                                "0xFF32",
+                                                                                "0xABCD",
+                                                                                "0xE21F",
+                                                                                "0xDDDD",
+                                                                                "0x1234",
+                                                                                "0x1111",
+                                                                            ],
+                                                                            struct_type="H"
+                                                                            )
+                                            pass
+                                        case _:
+                                            pass
+
+                                    pass
+                                case 3:
+                                    # UGC	二氧化碳含量模块
+                                    # 功能码
+                                    match function_code_int:
+                                        case 1:
+                                            """
+                                            读输出端口状态信息
+                                            参数长度：3
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='2',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000001"),
+                                                                                self.binary_to_hex_for_all("10101110")
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case _:
+                                            pass
+                                    pass
+                                case 4:
+                                    # ZOS	氧气含量测量模块
+                                    # 功能码
+                                    match function_code_int:
+                                        case 1:
                                             pass
                                         case _:
                                             pass
