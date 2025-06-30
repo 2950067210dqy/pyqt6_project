@@ -572,6 +572,7 @@ def load_global_setting():
 
 def main():
     # 加载日志配置
+    logger.remove(0)
     logger.add(
         "./log/deep_camera/d_camera_{time:YYYY-MM-DD}.log",
         rotation="00:00",

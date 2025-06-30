@@ -148,10 +148,13 @@ class ModbusRTUMaster:
                 f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
             logger.info(f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
             self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到消息-{response.hex()}-数据部分{data_part.hex()})")
+                f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到消息-{response.hex()}-数据部分{data_part.hex()}")
             if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                 self.ser.close()
                 self.ser = None
+            """
+            解析响应报文
+            """
             self.parse_response(response=response, response_hex=response.hex(), send_state=True, slave_id=slave_id,
                                 function_code=function_code)
             return data_part, data_part.hex(), True

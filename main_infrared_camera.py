@@ -458,6 +458,7 @@ def load_global_setting():
 
 
 def main():
+    logger.remove(0)
     logger.add(
         "./log/infrared_camera/i_camera_{time:YYYY-MM-DD}.log",
         rotation="00:00",

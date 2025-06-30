@@ -137,7 +137,7 @@ class communication(threading.Thread):
         #     self.ser.write(datas_str.encode())
         #     time.sleep(float(self.config['Serial']['delay']))
 
-    def binary_to_hex(self, binary_str):
+    def binary_to_hex_for_each_4(self, binary_str):
         """
         根据二进制字符串的位数转成相应个数的16进制数
         :param binary_str:
@@ -169,6 +169,27 @@ class communication(threading.Thread):
 
         return hex_values
 
+    def binary_to_hex_for_all(self, binary_str):
+        """
+        将8位二进制数转成二位16进制数
+        :param binary_str:
+        :return:
+        """
+        # 检查输入是否为有效的二进制字符串
+        if not all(bit in '01' for bit in binary_str):
+            raise ValueError("Input must be a binary string.")
+
+        # 确保字符串长度为8位，前面补零
+        binary_string = binary_str.zfill(8)
+
+        # 将二进制字符串转换为整数
+        decimal_value = int(binary_string, 2)
+
+        # 将整数转换为两位的十六进制字符串
+        # 使用 zfill(2) 确保输出为两位，如果是单个十六进制数字则前面补零
+        hex_value = hex(decimal_value)[2:].zfill(2).upper()  # 将十六进制转换为大写并保持两位数
+        return hex_value
+
     def calculate_crc(self, data: bytes) -> bytes:
         '''计算Modbus RTU CRC-16，小端返回'''
         crc = 0xFFFF
@@ -182,21 +203,32 @@ class communication(threading.Thread):
                     crc >>= 1
         return struct.pack('<H', crc)
 
-    def build_frame(self, slave_id, function_code, data_hex_list):
+    def build_frame(self, slave_id, function_code, return_bytes_nums, data_hex_list, struct_type):
         '''
         构造完整 Modbus RTU 报文（包含CRC）
         data_hex_list: 4个字节数据，十六进制字符串，如 ['00', '00', '00', 'FF']
+        struct_type B是一个字节 H是两个字节
         返回: 完整的 bytes 报文
         '''
         try:
             # 字符串转整数
             slave_id = int(slave_id, 16)
             function_code = int(function_code, 16)
+            return_bytes_nums = int(return_bytes_nums, 16)
             logger.info(f"data_hex_list: {data_hex_list}")
             data_bytes = [int(x, 16) for x in data_hex_list]
             logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
             # 组装帧
-            frame = struct.pack('>B B B B B', slave_id, function_code, *data_bytes)
+            pack_struct = ">B B B"
+            if struct_type == "B":
+                for i in range(return_bytes_nums):
+                    pack_struct += " B"
+                pass
+            else:
+                for i in range(return_bytes_nums // 2):
+                    pack_struct += " H"
+                pass
+            frame = struct.pack(pack_struct, slave_id, function_code, return_bytes_nums, *data_bytes)
             crc = self.calculate_crc(frame)
             str_frame = frame.hex()
             str_crc = crc.hex()
@@ -222,9 +254,101 @@ class communication(threading.Thread):
                 self.ser.flushInput()
                 if data:
                     try:
-                        logger.info(f"{self.category}串口{str(self.port)}接收数据: {data}|未转义：{data.hex()}")
-                        return_bytes = self.build_frame(slave_id='2', function_code='2',
-                                                        data_hex_list=['1'] + self.binary_to_hex("00111111"))
+
+                        unpack_send = struct.unpack("> B B B B B B B B", data)
+                        send_struct = {}
+                        send_struct['slave_id'] = unpack_send[0]
+                        send_struct['function_code'] = unpack_send[1]
+                        send_struct['data'] = [unpack_send[2], unpack_send[3], unpack_send[4], unpack_send[5]]
+                        send_struct['crc'] = [unpack_send[-2], unpack_send[-1]]
+                        logger.info(f"{self.category}串口{str(self.port)}接收数据: {data}|未转义：{data.hex()}|{send_struct}")
+                        function_code_int = int(send_struct['function_code'], 16) if isinstance(
+                            send_struct['function_code'], str) else \
+                            send_struct['function_code']
+                        slave_id_int = int(send_struct['slave_id'], 16) if isinstance(send_struct['slave_id'], str) else \
+                            send_struct['slave_id']
+
+                        return_bytes = 0
+                        if slave_id_int > 16:
+                            # 鼠笼内传感器
+                            mouse_cage_number = slave_id_int // 16
+                            match (slave_id_int % 16):
+                                case 1:
+                                    pass
+                                case _:
+                                    pass
+                            pass
+                        else:
+                            # 非鼠笼内传感器
+                            match (slave_id_int % 16):
+                                case 1:
+                                    # 通讯模块	通讯CI-BUS
+                                    pass
+                                case 2:
+                                    # UFC	气流控制模块
+                                    # 功能码
+                                    match function_code_int:
+                                        case 1:
+                                            """
+                                            读输出端口状态信息
+                                            参数长度：3
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=str(function_code_int),
+                                                                            return_bytes_nums='2',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000010"),
+                                                                                self.binary_to_hex_for_all("10011001")
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 2:
+                                            """
+                                            读传感器状态信息
+                                            参数长度：2
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=str(function_code_int),
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00011111")],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 3:
+                                            """
+                                            读配置寄存器
+                                            参数长度：7
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=str(function_code_int),
+                                                                            return_bytes_nums='6',
+
+                                                                            data_hex_list=[
+                                                                                "0x0001",
+                                                                                "0x0063",
+                                                                                "0x0048",
+                                                                            ],
+                                                                            struct_type="H"
+
+                                                                            )
+                                        case 4:
+                                            pass
+                                        case 5:
+                                            pass
+                                        case 6:
+                                            pass
+                                        case 7:
+                                            pass
+                                        case _:
+                                            pass
+                                    pass
+                                case _:
+                                    pass
+                            pass
+                            pass
+
                         # 根据发送来的数据进行响应
                         self.ser.write(return_bytes)
 
