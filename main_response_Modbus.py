@@ -229,22 +229,24 @@ class communication(threading.Thread):
                 return_bytes_nums = len(data_bytes)
                 is_pack_return_bytes_nums = False
 
-            if isinstance(struct_type,str) and struct_type.upper() == "B":
+            if isinstance(struct_type, str) and struct_type.upper() == "B":
 
                 for i in range(return_bytes_nums):
                     pack_struct += " B"
                 pass
-                logger.info(f"struct_type: {struct_type}|struct_type is B | pack_struct: {pack_struct}| return_bytes_nums: {return_bytes_nums}")
+                logger.info(
+                    f"struct_type: {struct_type}|struct_type is B | pack_struct: {pack_struct}| return_bytes_nums: {return_bytes_nums}")
             else:
                 logger.info(f"struct_type: {struct_type}|struct_type is H")
                 for i in range(return_bytes_nums // 2):
                     pack_struct += " H"
                 pass
-                logger.info(f"struct_type: {struct_type}|struct_type is H | pack_struct: {pack_struct} |  return_bytes_nums: {return_bytes_nums}")
+                logger.info(
+                    f"struct_type: {struct_type}|struct_type is H | pack_struct: {pack_struct} |  return_bytes_nums: {return_bytes_nums}")
             if is_pack_return_bytes_nums:
                 frame = struct.pack(pack_struct, slave_id, function_code, return_bytes_nums, *data_bytes)
             else:
-                frame = struct.pack(pack_struct, slave_id, function_code,*data_bytes)
+                frame = struct.pack(pack_struct, slave_id, function_code, *data_bytes)
             crc = self.calculate_crc(frame)
             str_frame = frame.hex()
             str_crc = crc.hex()
@@ -289,7 +291,222 @@ class communication(threading.Thread):
                             # 鼠笼内传感器
                             mouse_cage_number = slave_id_int // 16
                             match (slave_id_int % 16):
+                                case 0:
+                                    # 通讯HUB1模块
+                                    pass
                                 case 1:
+                                    # ENM 鼠笼环境监控模块
+                                    # 功能码
+                                    match function_code_int:
+                                        case 1:
+                                            """
+                                            11 01 X
+                                            读输出端口状态信息
+                                            参数长度：2
+                                            """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000010")
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 2:
+                                            """
+                                            11 02 X
+                                            读传感器状态信息
+                                            参数长度：2
+                                            """
+
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000110")
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 3:
+                                            """
+                                            11 03 X
+                                            读配置寄存器
+                                            参数长度：7
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='6',
+
+                                                                            data_hex_list=[
+                                                                                "0xB0A1",
+                                                                                "0xC0F1",
+                                                                                "0xA0DC",
+                                                                            ],
+                                                                            struct_type="H"
+
+                                                                            )
+                                            pass
+                                        case 4:
+                                            """
+                                            11 04 X
+                                            读传感器测量值
+                                            参数长度：13
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='C',
+
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("10001001"),
+                                                                                "0x05",
+                                                                                "0x1F",
+                                                                                "0x01",
+                                                                                "0xAC",
+                                                                                "0x03",
+
+                                                                                "0x04",
+                                                                                "0x1a",
+                                                                                "0x01",
+
+                                                                                "0x14",
+                                                                                "0x21",
+                                                                                "0x07",
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 5:
+                                            """
+                                            11 05 X
+                                            写从机单个开关量输出（ON/OFF）
+                                            参数长度：4
+                                            """
+                                            pass
+                                        case 6:
+                                            """
+                                            11 06 X
+                                            写单个保持寄存器
+                                            参数长度：4
+                                            """
+                                            pass
+                                        case 17:
+                                            """
+                                            11 11 X
+                                            读取模块ID信息等
+                                            参数长度：17
+                                            """
+                                            pass
+                                        case _:
+                                            pass
+                                    pass
+                                case 2:
+                                    # EM 进食监控模块
+                                    # 功能码
+                                    match function_code_int:
+                                        case 2:
+                                            """
+                                            12 02 X
+                                            读传感器状态信息
+                                            参数长度：2
+                                            """
+                                            pass
+
+                                        case 4:
+                                            """
+                                            12 04 X
+                                            读传感器测量值
+                                            参数长度：13
+                                            """
+                                            pass
+
+                                        case 17:
+                                            """
+                                            12 11 X
+                                            读取模块ID信息等
+                                            参数长度：17
+                                            """
+                                            pass
+                                        case _:
+                                            pass
+                                    pass
+                                case 3:
+                                    # DWM 饮水监控模块
+                                    # 功能码
+                                    match function_code_int:
+                                        case 1:
+                                            """
+                                            13 01 X
+                                            读输出端口状态信息
+                                            参数长度：2
+                                            """
+                                            pass
+                                        case 2:
+                                            """
+                                            13 02 X
+                                            读传感器状态信息
+                                            参数长度：2
+                                            """
+                                            pass
+
+                                        case 4:
+                                            """
+                                            13 04 X
+                                            读传感器测量值
+                                            参数长度：13
+                                            """
+                                            pass
+                                        case 5:
+                                            """
+                                            13 05 X
+                                            写从机单个开关量输出（ON/OFF）
+                                            参数长度：4
+                                            """
+                                            pass
+
+                                        case 17:
+                                            """
+                                            13 11 X
+                                            读取模块ID信息等
+                                            参数长度：17
+                                            """
+                                            pass
+                                        case _:
+                                            pass
+                                    pass
+                                case 4:
+                                    # WM 称重模块
+                                    # 功能码
+                                    match function_code_int:
+
+                                        case 2:
+                                            """
+                                            14 02 X
+                                            读传感器状态信息
+                                            参数长度：2
+                                            """
+                                            pass
+
+                                        case 4:
+                                            """
+                                            14 04 X
+                                            读传感器测量值
+                                            参数长度：13
+                                            """
+                                            pass
+
+                                        case 17:
+                                            """
+                                            14 11 X
+                                            读取模块ID信息等
+                                            参数长度：17
+                                            """
+                                            pass
+                                        case _:
+                                            pass
                                     pass
                                 case _:
                                     pass
@@ -448,6 +665,7 @@ class communication(threading.Thread):
                                     match function_code_int:
                                         case 1:
                                             """
+                                            03 01 X
                                             读输出端口状态信息
                                             参数长度：3
                                             """
@@ -461,6 +679,135 @@ class communication(threading.Thread):
                                                                             struct_type="B"
                                                                             )
                                             pass
+                                        case 2:
+                                            """
+                                            03 02 X
+                                            读输传感器状态信息
+                                            参数长度：3
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='2',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000001"),
+                                                                                self.binary_to_hex_for_all("11000111")
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 3:
+                                            """
+                                                   03 03 X
+                                                   读配置寄存器
+                                                   参数长度：9
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='8',
+
+                                                                            data_hex_list=[
+                                                                                "0x0001",
+                                                                                "0x0063",
+                                                                                "0x0048",
+                                                                                "0x0028",
+                                                                            ],
+                                                                            struct_type="H"
+
+                                                                            )
+                                            pass
+                                        case 4:
+                                            """
+                                           03 04 X
+                                           读传感器测量值
+                                            参数长度：21
+                                           """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='14',
+
+                                                                            data_hex_list=[
+                                                                                "0x01",
+                                                                                "0x1F",
+                                                                                "0x05",
+                                                                                "0x08",
+                                                                                "0x1F",
+                                                                                "0x04",
+                                                                                "0x1a",
+                                                                                "0x01",
+                                                                                "0x3D",
+                                                                                "0x02",
+                                                                                "0x2B",
+                                                                                "0x03",
+                                                                                "0x4E",
+                                                                                "0x05",
+                                                                                "0x1A",
+                                                                                "0x09",
+                                                                                "0xAC",
+                                                                                "0x61",
+                                                                                "0xC2",
+                                                                                "0x41",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 5:
+                                            """
+                                           03 05 X
+                                           写从机单个开关量输出（ON/OFF）
+                                           参数长度：4
+                                         """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x02",
+                                                                                "0xFF",
+                                                                                "0x00",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 6:
+                                            """
+                                            03 06 X
+                                                写单个保持寄存器
+                                                参数长度：4
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x02",
+                                                                                "0x00",
+                                                                                "0x2F",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 17:
+                                            """
+                                           03 11 X
+                                               读取模块ID信息等
+                                            参数长度：17
+                                           """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='11',
+                                                                            data_hex_list=[
+                                                                                "0xAFCF",
+                                                                                "0x2311",
+                                                                                "0xFF32",
+                                                                                "0xABCD",
+                                                                                "0xE21F",
+                                                                                "0xDDDD",
+                                                                                "0x1234",
+                                                                                "0x1111",
+                                                                            ],
+                                                                            struct_type="H")
+
+                                            pass
                                         case _:
                                             pass
                                     pass
@@ -469,7 +816,136 @@ class communication(threading.Thread):
                                     # 功能码
                                     match function_code_int:
                                         case 1:
+                                            """
+                                            04 01 X
+                                            读输出端口状态信息
+                                            参数长度：3
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000001")
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+
                                             pass
+                                        case 2:
+                                            """
+                                           04 02 X
+                                           读输传感器状态信息
+                                           参数长度：2
+                                           """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000010")
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 3:
+                                            """
+                                                   04 03 X
+                                                   读配置寄存器
+                                                   参数长度：3
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='2',
+
+                                                                            data_hex_list=[
+                                                                                "0x0001",
+
+                                                                            ],
+                                                                            struct_type="H"
+
+                                                                            )
+
+                                            pass
+                                        case 4:
+                                            """
+                                          04 04 X
+                                          读传感器测量值
+                                           参数长度：5
+                                          """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='4',
+
+                                                                            data_hex_list=[
+                                                                                "0x2D",
+                                                                                "0x1F",
+                                                                                "0x05",
+                                                                                "0x08",
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 5:
+                                            """
+                                             04 05 X
+                                             写从机单个开关量输出（ON/OFF）
+                                             参数长度：4
+                                                                                   """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x00",
+                                                                                "0xFF",
+                                                                                "0x00",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                        case 6:
+                                            """
+                                            04 06 X
+                                                写单个保持寄存器
+                                                参数长度：4
+                                            """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x01",
+                                                                                "0x00",
+                                                                                "0x2F",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
+                                            pass
+                                            pass
+                                        case 17:
+                                            """
+                                           04 11 X
+                                               读取模块ID信息等
+                                            参数长度：17
+                                           """
+                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='11',
+                                                                            data_hex_list=[
+                                                                                "0xAFCF",
+                                                                                "0x2311",
+                                                                                "0xFF32",
+                                                                                "0xABCD",
+                                                                                "0xE21F",
+                                                                                "0xDDDD",
+                                                                                "0x1234",
+                                                                                "0x1111",
+                                                                            ],
+                                                                            struct_type="H")
+
+                                            pass
+
                                         case _:
                                             pass
                                     pass
