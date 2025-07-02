@@ -217,7 +217,7 @@ class communication(threading.Thread):
             function_code = int(function_code, 16)
             if return_bytes_nums is not None:
                 return_bytes_nums = int(return_bytes_nums, 16)
-            logger.info(f"data_hex_list: {data_hex_list}")
+            logger.info(f"slave_id：{slave_id}|function_code：{function_code}|data_hex_list: {data_hex_list}")
             data_bytes = [int(x, 16) for x in data_hex_list]
             logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
             # 组装帧
@@ -285,7 +285,7 @@ class communication(threading.Thread):
                             send_struct['function_code']
                         slave_id_int = int(send_struct['slave_id'], 16) if isinstance(send_struct['slave_id'], str) else \
                             send_struct['slave_id']
-
+                        logger.info(f"slave_id_handle:{slave_id_int}")
                         return_bytes = 0
                         if slave_id_int > 16:
                             # 鼠笼内传感器
@@ -320,7 +320,7 @@ class communication(threading.Thread):
                                             参数长度：2
                                             """
 
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='1',
                                                                             data_hex_list=[
@@ -336,7 +336,7 @@ class communication(threading.Thread):
                                             读配置寄存器
                                             参数长度：7
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='6',
 
@@ -355,7 +355,7 @@ class communication(threading.Thread):
                                             读传感器测量值
                                             参数长度：13
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='C',
 
@@ -385,6 +385,17 @@ class communication(threading.Thread):
                                             写从机单个开关量输出（ON/OFF）
                                             参数长度：4
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x01",
+                                                                                "0xFF",
+                                                                                "0x00",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
                                         case 6:
                                             """
@@ -392,6 +403,17 @@ class communication(threading.Thread):
                                             写单个保持寄存器
                                             参数长度：4
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x01",
+                                                                                "0x00",
+                                                                                "0x2F",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
                                         case 17:
                                             """
@@ -399,28 +421,73 @@ class communication(threading.Thread):
                                             读取模块ID信息等
                                             参数长度：17
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='11',
+                                                                            data_hex_list=[
+                                                                                "0xAFCF",
+                                                                                "0x2311",
+                                                                                "0xFF32",
+                                                                                "0xABCD",
+                                                                                "0xE21F",
+                                                                                "0xDDDD",
+                                                                                "0x1234",
+                                                                                "0x1111",
+                                                                            ],
+                                                                            struct_type="H")
                                             pass
                                         case _:
+                                            """
+                                            11 _ X
+                                            没有该function_code
+                                            """
+                                            logger.warning(
+                                                f"传感器slave_id:{slave_id_int:X}没有该function_code{function_code_int:X},把接收的报文直接传回去。")
+                                            return_bytes = data
                                             pass
                                     pass
                                 case 2:
-                                    # EM 进食监控模块
+                                    # DWM 饮水监控模块
                                     # 功能码
                                     match function_code_int:
+
                                         case 2:
                                             """
                                             12 02 X
                                             读传感器状态信息
                                             参数长度：2
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000001")
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
 
                                         case 4:
                                             """
                                             12 04 X
                                             读传感器测量值
-                                            参数长度：13
+                                            参数长度：5
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='4',
+
+                                                                            data_hex_list=[
+
+                                                                                "0x00",
+                                                                                "0x00",
+                                                                                "0x00",
+                                                                                "0xAC",
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
 
                                         case 17:
@@ -429,12 +496,33 @@ class communication(threading.Thread):
                                             读取模块ID信息等
                                             参数长度：17
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='11',
+                                                                            data_hex_list=[
+                                                                                "0xAFCF",
+                                                                                "0x2311",
+                                                                                "0xFF32",
+                                                                                "0xABCD",
+                                                                                "0xE21F",
+                                                                                "0xDDDD",
+                                                                                "0x1234",
+                                                                                "0x1111",
+                                                                            ],
+                                                                            struct_type="H")
                                             pass
                                         case _:
+                                            """
+                                            12 _ X
+                                            没有该function_code
+                                            """
+                                            logger.warning(
+                                                f"传感器slave_id:{slave_id_int:X}没有该function_code{function_code_int:X},把接收的报文直接传回去。")
+                                            return_bytes = data
                                             pass
                                     pass
                                 case 3:
-                                    # DWM 饮水监控模块
+                                    # EM 进食监控模块
                                     # 功能码
                                     match function_code_int:
                                         case 1:
@@ -443,6 +531,15 @@ class communication(threading.Thread):
                                             读输出端口状态信息
                                             参数长度：2
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000001")
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
                                         case 2:
                                             """
@@ -450,33 +547,88 @@ class communication(threading.Thread):
                                             读传感器状态信息
                                             参数长度：2
                                             """
+
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000010")
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
 
                                         case 4:
                                             """
                                             13 04 X
                                             读传感器测量值
-                                            参数长度：13
+                                            参数长度：5
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='4',
+
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x00",
+                                                                                "0x00",
+                                                                                "0xAC",
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
                                         case 5:
                                             """
                                             13 05 X
                                             写从机单个开关量输出（ON/OFF）
                                             参数长度：4
-                                            """
+                                                                                          """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums=None,
+                                                                            data_hex_list=[
+                                                                                "0x00",
+                                                                                "0x01",
+                                                                                "0xFF",
+                                                                                "0x00",
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
-
                                         case 17:
                                             """
                                             13 11 X
                                             读取模块ID信息等
                                             参数长度：17
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='11',
+                                                                            data_hex_list=[
+                                                                                "0xAFCF",
+                                                                                "0x2311",
+                                                                                "0xFF32",
+                                                                                "0xABCD",
+                                                                                "0xE21F",
+                                                                                "0xDDDD",
+                                                                                "0x1234",
+                                                                                "0x1111",
+                                                                            ],
+                                                                            struct_type="H")
                                             pass
                                         case _:
+                                            """
+                                            13 _ X
+                                            没有该function_code
+                                            """
+                                            logger.warning(
+                                                f"传感器slave_id:{slave_id_int:X}没有该function_code{function_code_int:X},把接收的报文直接传回去。")
+                                            return_bytes = data
                                             pass
                                     pass
+
                                 case 4:
                                     # WM 称重模块
                                     # 功能码
@@ -488,6 +640,15 @@ class communication(threading.Thread):
                                             读传感器状态信息
                                             参数长度：2
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='1',
+                                                                            data_hex_list=[
+                                                                                self.binary_to_hex_for_all("00000001")
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
 
                                         case 4:
@@ -496,6 +657,20 @@ class communication(threading.Thread):
                                             读传感器测量值
                                             参数长度：13
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='4',
+
+                                                                            data_hex_list=[
+
+                                                                                "0x00",
+                                                                                "0x00",
+                                                                                "0x00",
+                                                                                "0xBD",
+
+                                                                            ],
+                                                                            struct_type="B"
+                                                                            )
                                             pass
 
                                         case 17:
@@ -504,11 +679,35 @@ class communication(threading.Thread):
                                             读取模块ID信息等
                                             参数长度：17
                                             """
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
+                                                                            function_code=f"{function_code_int:X}",
+                                                                            return_bytes_nums='11',
+                                                                            data_hex_list=[
+                                                                                "0xAFCF",
+                                                                                "0x2311",
+                                                                                "0xFF32",
+                                                                                "0xABCD",
+                                                                                "0xE21F",
+                                                                                "0xDDDD",
+                                                                                "0x1234",
+                                                                                "0x1111",
+                                                                            ],
+                                                                            struct_type="H")
                                             pass
+
                                         case _:
+                                            """
+                                            14 _ X
+                                            没有该function_code
+                                            """
+                                            logger.warning(
+                                                f"传感器slave_id:{slave_id_int:X}没有该function_code{function_code_int:X},把接收的报文直接传回去。")
+                                            return_bytes = data
                                             pass
                                     pass
                                 case _:
+                                    logger.warning(f"没有该鼠笼内传感器地址slave_id:{slave_id_int:X},把接收的报文直接传回去。")
+                                    return_bytes = data
                                     pass
                             pass
                         else:
@@ -527,7 +726,7 @@ class communication(threading.Thread):
                                             读输出端口状态信息
                                             参数长度：3
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='2',
                                                                             data_hex_list=[
@@ -543,7 +742,7 @@ class communication(threading.Thread):
                                             读传感器状态信息
                                             参数长度：2
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='1',
                                                                             data_hex_list=[
@@ -557,7 +756,7 @@ class communication(threading.Thread):
                                             读配置寄存器
                                             参数长度：7
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='6',
 
@@ -575,7 +774,7 @@ class communication(threading.Thread):
                                             读传感器测量值
                                             参数长度：13
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='C',
 
@@ -602,7 +801,7 @@ class communication(threading.Thread):
                                                写从机单个开关量输出（ON/OFF）
                                                参数长度：4
                                              """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums=None,
                                                                             data_hex_list=[
@@ -620,7 +819,7 @@ class communication(threading.Thread):
                                                 写单个保持寄存器
                                                 参数长度：4
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums=None,
                                                                             data_hex_list=[
@@ -639,7 +838,7 @@ class communication(threading.Thread):
                                             读取模块ID信息等
                                             参数长度：17
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='11',
                                                                             data_hex_list=[
@@ -656,6 +855,13 @@ class communication(threading.Thread):
                                                                             )
                                             pass
                                         case _:
+                                            """
+                                            02 _ X
+                                            没有该function_code
+                                            """
+                                            logger.warning(
+                                                f"传感器slave_id:{slave_id_int:X}没有该function_code{function_code_int:X},把接收的报文直接传回去。")
+                                            return_bytes = data
                                             pass
 
                                     pass
@@ -669,7 +875,7 @@ class communication(threading.Thread):
                                             读输出端口状态信息
                                             参数长度：3
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='2',
                                                                             data_hex_list=[
@@ -685,7 +891,7 @@ class communication(threading.Thread):
                                             读输传感器状态信息
                                             参数长度：3
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='2',
                                                                             data_hex_list=[
@@ -701,7 +907,7 @@ class communication(threading.Thread):
                                                    读配置寄存器
                                                    参数长度：9
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='8',
 
@@ -721,7 +927,7 @@ class communication(threading.Thread):
                                            读传感器测量值
                                             参数长度：21
                                            """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='14',
 
@@ -756,7 +962,7 @@ class communication(threading.Thread):
                                            写从机单个开关量输出（ON/OFF）
                                            参数长度：4
                                          """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums=None,
                                                                             data_hex_list=[
@@ -774,7 +980,7 @@ class communication(threading.Thread):
                                                 写单个保持寄存器
                                                 参数长度：4
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums=None,
                                                                             data_hex_list=[
@@ -792,7 +998,7 @@ class communication(threading.Thread):
                                                读取模块ID信息等
                                             参数长度：17
                                            """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='11',
                                                                             data_hex_list=[
@@ -809,6 +1015,13 @@ class communication(threading.Thread):
 
                                             pass
                                         case _:
+                                            """
+                                            03 _ X
+                                            没有该function_code
+                                            """
+                                            logger.warning(
+                                                f"传感器slave_id:{slave_id_int:X}没有该function_code{function_code_int:X},把接收的报文直接传回去。")
+                                            return_bytes = data
                                             pass
                                     pass
                                 case 4:
@@ -821,7 +1034,7 @@ class communication(threading.Thread):
                                             读输出端口状态信息
                                             参数长度：3
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='1',
                                                                             data_hex_list=[
@@ -837,7 +1050,7 @@ class communication(threading.Thread):
                                            读输传感器状态信息
                                            参数长度：2
                                            """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='1',
                                                                             data_hex_list=[
@@ -853,7 +1066,7 @@ class communication(threading.Thread):
                                                    读配置寄存器
                                                    参数长度：3
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='2',
 
@@ -872,7 +1085,7 @@ class communication(threading.Thread):
                                           读传感器测量值
                                            参数长度：5
                                           """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='4',
 
@@ -892,7 +1105,7 @@ class communication(threading.Thread):
                                              写从机单个开关量输出（ON/OFF）
                                              参数长度：4
                                                                                    """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums=None,
                                                                             data_hex_list=[
@@ -910,7 +1123,7 @@ class communication(threading.Thread):
                                                 写单个保持寄存器
                                                 参数长度：4
                                             """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums=None,
                                                                             data_hex_list=[
@@ -929,7 +1142,7 @@ class communication(threading.Thread):
                                                读取模块ID信息等
                                             参数长度：17
                                            """
-                                            return_bytes = self.build_frame(slave_id=str(slave_id_int),
+                                            return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='11',
                                                                             data_hex_list=[
@@ -947,10 +1160,18 @@ class communication(threading.Thread):
                                             pass
 
                                         case _:
+                                            """
+                                            04 _ X
+                                            没有该function_code
+                                            """
+                                            logger.warning(
+                                                f"传感器slave_id:{slave_id_int:X}没有该function_code{function_code_int:X},把接收的报文直接传回去。")
+                                            return_bytes = data
                                             pass
                                     pass
                                 case _:
-                                    pass
+                                    logger.warning(f"没有该鼠笼外传感器地址slave_id:{slave_id_int:X},把接收的报文直接传回去。")
+                                    return_bytes = data
                             pass
                             pass
 
