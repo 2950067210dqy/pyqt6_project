@@ -7,13 +7,13 @@ from Modbus.Modbus import ModbusRTUMaster
 from Modbus.Modbus_Response_Parser import Modbus_Response_Parser
 from config.global_setting import global_setting
 from theme.ThemeQt6 import ThemedWidget
-from ui.customize_ui.component.Scroll import Scroll
+
 from ui.customize_ui.tab.index.tab2_tab import Tab2_tab
 
 from ui.tab2 import Ui_tab2_frame
 from PyQt6 import QtCore, QtWidgets, QtGui
 from PyQt6.QtCore import QRect, QThread, pyqtSignal
-from PyQt6.QtWidgets import QWidget, QVBoxLayout
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QScrollArea, QPushButton, QStyle
 
 from theme.ThemeQt6 import ThemedWidget
 from util.time_util import time_util
@@ -82,6 +82,7 @@ class Tab_2(ThemedWidget):
         # 实例化功能
         self._init_function()
         self._init_style_sheet()
+        self._init_customize_style_sheet()
         pass
 
         # 实例化ui
@@ -120,20 +121,31 @@ class Tab_2(ThemedWidget):
             monitor_data_tab_page_config = global_setting.get_setting("configer")['monitoring_data']
             i = 0
             for monitor_data in monitor_data_tab_page_config:
-                tab_parent = QtWidgets.QWidget()
-                tab_parent.setObjectName(f"tab_parent_{monitor_data['id'] - 1}_{monitor_data['object_name']}")
-                tab_parent_layout = QVBoxLayout(tab_parent)
-                tab_parent_layout.setObjectName(
-                    f"tab_parent_layout{monitor_data['id'] - 1}_{monitor_data['object_name']}")
-                tab = QtWidgets.QWidget()
-                tab.setObjectName(f"tab_{monitor_data['id'] - 1}_{monitor_data['object_name']}")
-                tab_layout = QVBoxLayout(tab)  # 为tab添加垂直布局
-                tab_layout.setObjectName(f"tab_layout_{i}")
+                tab_content = QtWidgets.QWidget()
+                tab_content.setObjectName(f"tab_{monitor_data['id'] - 1}_{monitor_data['object_name']}")
+                # 创建一个 QScrollArea
+                scroll_area = QScrollArea(tab_content)
+                scroll_area.setObjectName(f"scroll_tab_{i}")
+                scroll_area.setWidgetResizable(True)  # 使内容小部件可以调整大小
 
+                # 创建一个内容小部件并填充内容
+                content_widget = QWidget()
+                content_widget.setObjectName(f"scroll_tab_{i}_content_widget")
+                content_widget.setFixedSize(self.size().width(), self.size().height() + 200)
+                layout = QVBoxLayout(content_widget)
+                layout.setObjectName(f"scroll_tab_{i}_content_widget_layout")
                 tab_frame = Tab2_tab(id=monitor_data['id'])
-                Scroll.set_scroll_to_component(component=tab_frame.tab, component_parent_layout=tab_layout,
-                                               scroll_object_name=f"scroll_tab_{i}")
-                self.tabWidget.addTab(tab_parent, monitor_data['title'])
+                layout.addWidget(tab_frame.tab)
+
+                # 将内容小部件添加到 QScrollArea
+                scroll_area.setWidget(content_widget)
+                # 创建一个布局将 scroll_area 添加进去
+                tab_layout = QVBoxLayout(tab_content)
+                tab_layout.setObjectName(f"tab_{monitor_data['id'] - 1}_{monitor_data['object_name']}_layout")
+                tab_layout.addWidget(scroll_area)
+                tab_content.setLayout(tab_layout)
+
+                self.tabWidget.addTab(tab_content, monitor_data['title'])
                 i += 1
                 pass
                 pass
@@ -141,4 +153,17 @@ class Tab_2(ThemedWidget):
 
     # 实例化功能
     def _init_function(self):
+        pass
+
+    # 个性化css
+    def _init_customize_style_sheet(self):
+        pushbtns: [QPushButton] = self.findChildren(QPushButton)
+        for btn in pushbtns:
+            btn.setStyleSheet("""
+            QPushButton{{
+                    
+                    padding: 10px;
+                   
+                }}
+            """)
         pass
