@@ -77,9 +77,9 @@ class MainWindow(ThemedWidget):
     # 实例化ui
     def _init_ui(self, title=""):
         # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码
-        self.frame = ThemedWidget()
+
         self.ui = Ui_mainWindow()
-        self.ui.setupUi(self.frame)
+        self.ui.setupUi(self)
 
         self._retranslateUi(windows_title=global_setting.get_setting("configer")['window']['title'])
         pass
@@ -93,7 +93,7 @@ class MainWindow(ThemedWidget):
     # 实例化图标样式
     def init_icon_style(self):
         # 找到主窗口中的所有QPushButton对象
-        pushBtns = self.frame.findChildren(QPushButton)
+        pushBtns = self.findChildren(QPushButton)
         # 给每个QPushButton对象 添加相关样式 并且更换icon样式 start
         for btn in pushBtns:
             # 更换图标样式 start
@@ -146,10 +146,10 @@ class MainWindow(ThemedWidget):
             bt = Ui_left_menu_btn(parentWidget=self.ui.left_layout_scroll_widget,
                                   parentLayout=self.ui.left_layout_scroll_widget_layout, id=i['id'],
                                   title=i['title'], icon_path=i['icon_path'],
-                                  root_object_name=self.frame.objectName())
+                                  root_object_name=self.objectName())
             # 添加按钮信号槽
-            bt.click_connect(i['id'], self.frame, tab_ids=[item["id"] for item in menu_config])
-           
+            bt.click_connect(i['id'], self, tab_ids=[item["id"] for item in menu_config])
+
             btn_obj['btn'] = bt
             btn_obj['id'] = i['id']
             btn_obj['tab'] = Tab(id=i['id'])
@@ -168,24 +168,14 @@ class MainWindow(ThemedWidget):
     # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码 应该是可以统一将文字改为其他语言
     def _retranslateUi(self, **kwargs):
         _translate = QtCore.QCoreApplication.translate
-        self.frame.setWindowTitle(
-            _translate(self.frame.objectName(), kwargs['windows_title'] if 'windows_title' in kwargs else ""))
-
-    # 添加子UI组件
-    def set_child(self, child: QWidget, geometry: QRect, visible: bool = True):
-        # 添加子组件
-        child.setParent(self.frame)
-        # 添加子组件位置
-        child.setGeometry(geometry)
-        # 添加子组件可见性
-        child.setVisible(visible)
-        pass
+        self.setWindowTitle(
+            _translate(self.objectName(), kwargs['windows_title'] if 'windows_title' in kwargs else ""))
 
     # 添加logo组件和信息
     def setLogo(self, logo_title='', logo_path="", logo_width=0, logo_height=0):
         _translate = QtCore.QCoreApplication.translate
         # Label组件添加文字
-        self.ui.logolabel_btn.setText(_translate(self.frame.objectName(), logo_title))
+        self.ui.logolabel_btn.setText(_translate(self.objectName(), logo_title))
         # lable中的icon实例化
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("./resource/" + logo_path), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -207,7 +197,7 @@ class MainWindow(ThemedWidget):
     # 更新时间功能 界面更新
     def update_time_function_start_gui_update(self, timeStr=""):
         #  获取控件
-        time_label: QLabel = self.frame.findChild(QLabel, "time_label")
+        time_label: QLabel = self.findChild(QLabel, "time_label")
         # 设置文本
         time_label.setText(timeStr)
         pass
@@ -216,9 +206,9 @@ class MainWindow(ThemedWidget):
     def toggle_style_mode(self):
         _translate = QtCore.QCoreApplication.translate
         # 获取按钮组件
-        style_btn = self.frame.findChild(QPushButton, "mode_btn")
+        style_btn = self.findChild(QPushButton, "mode_btn")
         # 设置默认文字
-        style_btn.setText(_translate(self.frame.objectName(), "白天模式" if global_setting.get_setting(
+        style_btn.setText(_translate(self.objectName(), "白天模式" if global_setting.get_setting(
             "style") == "light" else "暗夜模式"))
         # 绑定事件
         style_btn.clicked.connect(self.toggle_theme)
@@ -228,7 +218,7 @@ class MainWindow(ThemedWidget):
     def toggle_theme(self):
         _translate = QtCore.QCoreApplication.translate
         # 获取按钮
-        style_btn: QPushButton = self.frame.findChild(QPushButton, "mode_btn")
+        style_btn: QPushButton = self.findChild(QPushButton, "mode_btn")
         # 根据当前主题变换主题
 
         new_theme = "dark" if global_setting.get_setting("theme_manager").current_theme == "light" else "light"
@@ -236,12 +226,12 @@ class MainWindow(ThemedWidget):
         global_setting.set_setting('style', new_theme)
         global_setting.get_setting("theme_manager").current_theme = new_theme
         # 更改样式
-        self.frame.setStyleSheet(global_setting.get_setting("theme_manager").get_style_sheet())
+        self.setStyleSheet(global_setting.get_setting("theme_manager").get_style_sheet())
         # 更改自定义组件样式
         # 更改图标样式
         self.init_icon_style()
         # 给默认菜单项设置样式
-        default_menu_btn = self.frame.findChild(QPushButton, "btn" + str(global_setting.get_setting("menu_id_now")))
+        default_menu_btn = self.findChild(QPushButton, "btn" + str(global_setting.get_setting("menu_id_now")))
         default_menu_btn.setStyleSheet(
             global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
         # 给每个QPushButton对象 添加相关样式 end
@@ -258,7 +248,7 @@ class MainWindow(ThemedWidget):
             for chart in charts:
                 chart.set_style()
         # 按钮设置显示文字
-        style_btn.setText(_translate(self.frame.objectName(), "白天模式" if global_setting.get_setting(
+        style_btn.setText(_translate(self.objectName(), "白天模式" if global_setting.get_setting(
             "theme_manager").current_theme == "light" else "暗夜模式"))
 
         pass
@@ -266,7 +256,7 @@ class MainWindow(ThemedWidget):
     # logo按钮返回主页功能
     def logo_return_default_page(self):
         # 获取按钮组件
-        logo_label_btn = self.frame.findChild(QPushButton, "logolabel_btn")
+        logo_label_btn = self.findChild(QPushButton, "logolabel_btn")
         # 绑定事件
         logo_label_btn.clicked.connect(self.logo_return_default_page_click_method)
 
@@ -277,8 +267,8 @@ class MainWindow(ThemedWidget):
         # 找到与之对应的tab组件
         base_objectname_pre = "tab"
         base_objectname_suff = "_frame"
-        current_tab = self.frame.findChild(QtWidgets.QWidget,
-                                           base_objectname_pre + str(default_btn_id) + base_objectname_suff)
+        current_tab = self.findChild(QtWidgets.QWidget,
+                                     base_objectname_pre + str(default_btn_id) + base_objectname_suff)
         # 并将tab页设为可见
         current_tab.setVisible(True)
         # 找到所有的菜单按钮的id
@@ -286,21 +276,16 @@ class MainWindow(ThemedWidget):
         # 将其他tab页设为不可见
         for i in tab_ids:
             if i != default_btn_id:
-                other_tab = self.frame.findChild(QtWidgets.QWidget,
-                                                 base_objectname_pre + str(i) + base_objectname_suff)
+                other_tab = self.findChild(QtWidgets.QWidget,
+                                           base_objectname_pre + str(i) + base_objectname_suff)
                 other_tab.setVisible(False)
         # 更改当前按钮的样式
         base_objectname_pre_btn = "btn"
-        current_btn = self.frame.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(default_btn_id))
+        current_btn = self.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(default_btn_id))
         current_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=True))
         # 更改其他按钮的样式
         for i in tab_ids:
             if i != default_btn_id:
-                other_btn = self.frame.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(i))
+                other_btn = self.findChild(QtWidgets.QPushButton, base_objectname_pre_btn + str(i))
                 other_btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
-        pass
-
-    # 显示窗口
-    def show(self):
-        self.frame.show()
         pass

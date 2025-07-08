@@ -1,6 +1,7 @@
 import os
 import time
 import traceback
+import typing
 from datetime import datetime, timedelta
 
 from PyQt6.QtGui import QPixmap
@@ -9,7 +10,7 @@ from loguru import logger
 from config.global_setting import global_setting
 from dao.data_read import data_read
 from theme.ThemeQt6 import ThemedWidget
-from PyQt6 import QtCore
+from PyQt6 import QtCore, QtGui
 from PyQt6.QtCore import QRect, Qt, QThread, pyqtSignal
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QGraphicsView, QGraphicsScene, QGraphicsPixmapItem, QPushButton, \
     QLabel
@@ -24,6 +25,13 @@ class ImageLoaderThread(QThread):
     连续获取早几秒钟的文件路径
     """
     image_loaded = pyqtSignal(dict)
+
+    def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
+        # 加载qss样式表
+        logger.warning("tab4——show")
+
+    def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
+        logger.warning("tab4--hide")
 
     def __init__(self):
         super().__init__()
@@ -151,12 +159,12 @@ class Tab_4(ThemedWidget):
         # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码
         # 有父窗口添加父窗口
         if parent != None and geometry != None:
-            self.frame = QWidget(parent=parent)
-            self.frame.setGeometry(geometry)
+            self.setParent(parent)
+            self.setGeometry(geometry)
         else:
-            self.frame = QWidget()
+            pass
         self.ui = Ui_tab4_frame()
-        self.ui.setupUi(self.frame)
+        self.ui.setupUi(self)
 
         self._retranslateUi()
         pass
@@ -176,9 +184,9 @@ class Tab_4(ThemedWidget):
         初始化按钮和label的初始信息
         :return:
         """
-        start_btn: QPushButton = self.frame.findChild(QPushButton, "start_btn")
-        stop_btn: QPushButton = self.frame.findChild(QPushButton, "stop_btn")
-        state_label: QLabel = self.frame.findChild(QLabel, "state_label")
+        start_btn: QPushButton = self.findChild(QPushButton, "start_btn")
+        stop_btn: QPushButton = self.findChild(QPushButton, "stop_btn")
+        state_label: QLabel = self.findChild(QLabel, "state_label")
         start_btn.setDisabled(False)
         stop_btn.setDisabled(True)
         state_label.setText("未连接")
@@ -246,8 +254,8 @@ class Tab_4(ThemedWidget):
         实例化图片组件
         :return:
         """
-        self.parent_layout = self.frame.findChild(QHBoxLayout, "tab4_layout")
-        self.graphics_view_list = self.frame.findChildren(QGraphicsView)
+        self.parent_layout = self.findChild(QHBoxLayout, "tab4_layout")
+        self.graphics_view_list = self.findChildren(QGraphicsView)
         self.graphics_view_left = []
         self.graphics_view_right = []
         for i in range(len(self.graphics_view_list)):
@@ -280,9 +288,9 @@ class Tab_4(ThemedWidget):
         将按钮绑定功能函数
         """
         # 找到两个按钮 和状态显示label
-        start_btn = self.frame.findChild(QPushButton, "start_btn")
-        stop_btn = self.frame.findChild(QPushButton, "stop_btn")
-        state_label: QLabel = self.frame.findChild(QLabel, "state_label")
+        start_btn = self.findChild(QPushButton, "start_btn")
+        stop_btn = self.findChild(QPushButton, "stop_btn")
+        state_label: QLabel = self.findChild(QLabel, "state_label")
         # 绑定功能
         start_btn.clicked.connect(lambda: self.start_btn_func(start_btn, stop_btn, state_label))
         stop_btn.clicked.connect(lambda: self.stop_btn_func(start_btn, stop_btn, state_label))
@@ -308,20 +316,4 @@ class Tab_4(ThemedWidget):
         state_label.setText("未连接")
         stop_btn.setDisabled(True)
         start_btn.setDisabled(False)
-        pass
-
-    # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码 应该是可以统一将文字改为其他语言
-    def _retranslateUi(self, **kwargs):
-        _translate = QtCore.QCoreApplication.translate
-
-    # 添加子组件
-    def set_child(self, child: QWidget, geometry: QRect, visible: bool = True):
-        child.setParent(self.frame)
-        child.setGeometry(geometry)
-        child.setVisible(visible)
-        pass
-
-    # 显示窗口
-    def show(self):
-        self.frame.show()
         pass

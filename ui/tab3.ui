@@ -45,8 +45,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>290</y>
+     <x>0</x>
+     <y>350</y>
      <width>54</width>
      <height>16</height>
     </rect>
@@ -116,7 +116,7 @@
      <x>0</x>
      <y>130</y>
      <width>921</width>
-     <height>151</height>
+     <height>211</height>
     </rect>
    </property>
   </widget>
@@ -200,9 +200,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>320</y>
+     <y>370</y>
      <width>921</width>
-     <height>271</height>
+     <height>221</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="chart_layout">

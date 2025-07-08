@@ -1,9 +1,11 @@
+import typing
+
 from loguru import logger
 
 from theme.ThemeQt6 import ThemedWidget
 from ui.tab5 import Ui_tab5_frame
 
-from PyQt6 import QtCore
+from PyQt6 import QtCore, QtGui
 from PyQt6.QtCore import QRect
 from PyQt6.QtWidgets import QWidget
 
@@ -11,6 +13,13 @@ from theme.ThemeQt6 import ThemedWidget
 
 
 class Tab_5(ThemedWidget):
+    def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
+        # 加载qss样式表
+        logger.warning("tab5——show")
+
+    def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
+        logger.warning("tab5--hide")
+
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
         # 图像列表
@@ -31,12 +40,12 @@ class Tab_5(ThemedWidget):
         # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码
         # 有父窗口添加父窗口
         if parent != None and geometry != None:
-            self.frame = QWidget(parent=parent)
-            self.frame.setGeometry(geometry)
+            self.setParent(parent)
+            self.setGeometry(geometry)
         else:
-            self.frame = QWidget()
+            pass
         self.ui = Ui_tab5_frame()
-        self.ui.setupUi(self.frame)
+        self.ui.setupUi(self)
 
         self._retranslateUi()
         pass
@@ -47,20 +56,4 @@ class Tab_5(ThemedWidget):
 
     # 实例化功能
     def _init_function(self):
-        pass
-
-    # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码 应该是可以统一将文字改为其他语言
-    def _retranslateUi(self, **kwargs):
-        _translate = QtCore.QCoreApplication.translate
-
-    # 添加子组件
-    def set_child(self, child: QWidget, geometry: QRect, visible: bool = True):
-        child.setParent(self.frame)
-        child.setGeometry(geometry)
-        child.setVisible(visible)
-        pass
-
-    # 显示窗口
-    def show(self):
-        self.frame.show()
         pass

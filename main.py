@@ -13,7 +13,6 @@ import main_deep_camera
 import main_gui
 import main_infrared_camera
 import main_response_Modbus
-import main_smart_device
 
 
 def run_comm_program():
@@ -30,10 +29,6 @@ def run_deep_camera_program():
 
 def run_infrared_camera_program():
     subprocess.run([sys.executable, "./main_infrared_camera.py"])
-
-
-def run_smart_device_program():
-    subprocess.run([sys.executable, "./main_smart_device.py"])
 
 
 """
@@ -87,14 +82,14 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
     # p_comm = Process(target=run_comm_program, name="p_comm")
     # p_gui = Process(target=run_gui_program, name="p_gui")
-    # p_smart_device = Process(target=run_smart_device_program, name="p_smart_device")
+
     # p_deep_camera = Process(target=run_deep_camera_program, name="p_deep_camera")
     # p_infrared_camera = Process(target=run_infrared_camera_program, name="p_infrared_camera")
 
     # p_comm = Process(target=main_comm.main, name="p_comm")
-    p_response_comm = Process(target=main_response_Modbus.main,name="p_response_comm")
+    p_response_comm = Process(target=main_response_Modbus.main, name="p_response_comm")
     p_gui = Process(target=main_gui.main, name="p_gui")
-    # p_smart_device = Process(target=main_smart_device.main, name="p_smart_device")
+
     p_deep_camera = Process(target=main_deep_camera.main, name="p_deep_camera")
     p_infrared_camera = Process(target=main_infrared_camera.main, name="p_infrared_camera")
     # try:
@@ -106,14 +101,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     #         kill_process_tree(p_comm.pid)
     #         p_comm.join(timeout=5)
     #     pass
-    # try:
-    #     logger.info(f"p_smart_device子进程开始运行")
-    #     p_smart_device.start()
-    # except Exception as e:
-    #     logger.error(f"p_smart_device子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
-    #     if p_smart_device.is_alive():
-    #         kill_process_tree(p_smart_device.pid)
-    #         p_smart_device.join(timeout=5)
+
     try:
         logger.info(f"p_response_comm子进程开始运行")
         p_response_comm.start()
@@ -168,12 +156,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
                 logger.error(f"终止p_response_comm子进程")
                 p_response_comm.join(timeout=5)
                 pass
-            # if p_smart_device.is_alive():
-            #     # 先尝试正常终止
-            #     kill_process_tree(p_smart_device.pid)
-            #     logger.error(f"终止p_smart_device子进程")
-            #     # 等待一会儿，确保结束
-            #     p_smart_device.join(timeout=5)
+
             # if p_comm.is_alive():
             #     # 先尝试正常终止
             #     kill_process_tree(p_comm.pid)
@@ -186,7 +169,6 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
 
     # 等待所有子进程退出
     # p_comm.join()
-    # p_smart_device.join()
     p_response_comm.join()
     p_infrared_camera.join()
     p_deep_camera.join()

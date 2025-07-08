@@ -1,16 +1,18 @@
 import re
 import time
 import traceback
+import typing
 from datetime import datetime
 
 from loguru import logger
 
 from Modbus.COM_Scan import scan_serial_ports_with_id
 from Modbus.Modbus import ModbusRTUMaster
+from entity.MyQThread import MyQThread
 from theme.ThemeQt6 import ThemedWidget
 from ui.customize_ui.tab2_tab0_charts import tab2_tab0_charts
 from ui.tab3 import Ui_tab3_frame
-from PyQt6 import QtCore
+from PyQt6 import QtCore, QtGui
 from PyQt6.QtCore import QRect, pyqtSignal, QThread
 from PyQt6.QtWidgets import QWidget, QComboBox, QTextBrowser, QListWidget, QPushButton, QLineEdit, QVBoxLayout, QFrame
 
@@ -18,16 +20,28 @@ from theme.ThemeQt6 import ThemedWidget
 from util.time_util import time_util
 
 
-class Send_thread(QThread):
+class Send_thread(MyQThread):
     # 线程信号
 
-    def __init__(self, update_time_main_signal, modbus, send_message):
-        super().__init__()
+    def __init__(self, name, update_time_main_signal, modbus, send_message):
+        super().__init__(name)
         # 获取主线程更新界面信号
         self.update_time_main_signal: pyqtSignal = update_time_main_signal
         self.modbus = modbus
         self.send_message = send_message
-        self.is_strat = True
+        self.is_start = True
+        pass
+
+    def __del__(self):
+        logger.debug(f"线程 被销毁!")
+
+    def init_modBus(self):
+        try:
+            if self.modbus is None:
+                self.modbus = ModbusRTUMaster(port=self.send_message['port'], timeout=self.send_message['timeout'],
+                                              update_status_main_signal=self.update_time_main_signal)
+        except:
+            pass
         pass
 
     def set_send_message(self, send_message):
@@ -36,27 +50,24 @@ class Send_thread(QThread):
     def set_modbus(self, modbus):
         self.modbus = modbus
 
-    def run(self):
-        while True:
-
-            if self.is_strat:
-                self.modbus = ModbusRTUMaster(port=self.send_message['port'], timeout=self.send_message['timeout'],
-                                              update_status_main_signal=self.update_time_main_signal)
-                try:
-                    logger.info(self.send_message)
-                    response, response_hex, send_state = self.modbus.send_command(
-                        slave_id=self.send_message['slave_id'],
-                        function_code=self.send_message['function_code'],
-                        data_hex_list=self.send_message['data'])
-                    # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
-                    if send_state:
-                        pass
-                    self.is_strat = False
-                except Exception as e:
-                    logger.error(e)
-                    self.update_time_main_signal.emit(f"{time_util.get_format_from_time(time.time())}-{e}")
-                finally:
-                    self.is_strat = False
+    def dosomething(self):
+        if self.is_start:
+            self.init_modBus()
+            try:
+                logger.info(self.send_message)
+                response, response_hex, send_state = self.modbus.send_command(
+                    slave_id=self.send_message['slave_id'],
+                    function_code=self.send_message['function_code'],
+                    data_hex_list=self.send_message['data'])
+                # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
+                if send_state:
+                    pass
+                self.is_start = False
+            except Exception as e:
+                logger.error(e)
+                self.update_time_main_signal.emit(f"{time_util.get_format_from_time(time.time())}-{e}")
+            finally:
+                self.is_start = False
             time.sleep(1)
         pass
 
@@ -65,6 +76,16 @@ class Send_thread(QThread):
 
 class Tab_3(ThemedWidget):
     update_status_main_signal_gui_update = pyqtSignal(str)
+
+    def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
+        logger.warning(f"tab3——show")
+        if self.send_thread is not None and self.send_thread.isRunning():
+            self.send_thread.resume()
+
+    def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
+        logger.warning(f"tab3——hidden")
+        if self.send_thread is not None and self.send_thread.isRunning():
+            self.send_thread.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
@@ -81,7 +102,7 @@ class Tab_3(ThemedWidget):
             'timeout': 0
         }
         self.modbus = None
-        self.send_thread = None
+        self.send_thread: Send_thread = None
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 获得相关数据
@@ -101,12 +122,12 @@ class Tab_3(ThemedWidget):
         # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码
         # 有父窗口添加父窗口
         if parent != None and geometry != None:
-            self.frame = QWidget(parent=parent)
-            self.frame.setGeometry(geometry)
+            self.setParent(parent)
+            self.setGeometry(geometry)
         else:
-            self.frame = QWidget()
+            pass
         self.ui = Ui_tab3_frame()
-        self.ui.setupUi(self.frame)
+        self.ui.setupUi(self)
 
         self._retranslateUi()
         pass
@@ -116,7 +137,7 @@ class Tab_3(ThemedWidget):
         # 实例化下拉框
         self.init_port_combox()
         # 实例化图表
-        chart_layout_frame: QFrame = self.frame.findChild(QFrame, "chart_layout_frame")
+        chart_layout_frame: QFrame = self.findChild(QFrame, "chart_layout_frame")
         charts = tab2_tab0_charts(datas=None,
                                   parent=chart_layout_frame,
                                   title=f"数据情况",
@@ -126,7 +147,7 @@ class Tab_3(ThemedWidget):
 
     # 实例化下拉框
     def init_port_combox(self):
-        port_combox: QComboBox = self.frame.findChild(QComboBox, "port_combox")
+        port_combox: QComboBox = self.findChild(QComboBox, "port_combox")
         if port_combox == None:
             logger.error("实例化端口下拉框失败！")
             return
@@ -154,7 +175,7 @@ class Tab_3(ThemedWidget):
 
     def send_response_text(self, text):
         # 往状态栏发消息
-        response_text: QListWidget = self.frame.findChild(QListWidget, "responselist")
+        response_text: QListWidget = self.findChild(QListWidget, "responselist")
         if response_text == None:
             logger.error("response_text状态栏未找到！")
             return
@@ -177,11 +198,11 @@ class Tab_3(ThemedWidget):
     # 实例化按钮信号槽绑定
     def init_btn_func(self):
         # 重新获取端口按钮
-        refresh_port_btn: QPushButton = self.frame.findChild(QPushButton, "refresh_port_btn")
+        refresh_port_btn: QPushButton = self.findChild(QPushButton, "refresh_port_btn")
 
         refresh_port_btn.clicked.connect(self.refresh_port)
         # 发送数据按钮
-        send_btn: QPushButton = self.frame.findChild(QPushButton, "send_btn")
+        send_btn: QPushButton = self.findChild(QPushButton, "send_btn")
 
         send_btn.clicked.connect(self.send_data)
         pass
@@ -195,17 +216,18 @@ class Tab_3(ThemedWidget):
                 if self.send_thread is None:
                     logger.info("初始化串口")
                     self.send_thread = None
-                    self.send_thread = Send_thread(update_time_main_signal=self.update_status_main_signal_gui_update,
+                    self.send_thread = Send_thread(name="tab_3_COM_Send_Thread",
+                                                   update_time_main_signal=self.update_status_main_signal_gui_update,
                                                    modbus=self.modbus, send_message=self.send_message)
                     self.send_thread.set_send_message(self.send_message)
-                    self.send_thread.is_strat = True
+                    self.send_thread.is_start = True
                     self.send_thread.start()
 
                     return
                 # 发送
-                logger.info("未初始化串口")
+                logger.info("未初始化串口对象,使用之前串口实例化对象")
                 self.send_thread.set_send_message(self.send_message)
-                self.send_thread.is_strat = True
+                self.send_thread.is_start = True
 
                 pass
                 pass
@@ -224,10 +246,10 @@ class Tab_3(ThemedWidget):
     # 验证发送数据
     def validate_data(self):
         # 获取输入控件
-        data_line: QLineEdit = self.frame.findChild(QLineEdit, "data_line")
-        timeout_line: QLineEdit = self.frame.findChild(QLineEdit, "timeout_line")
-        slave_line: QLineEdit = self.frame.findChild(QLineEdit, "slave_line")
-        function_line: QLineEdit = self.frame.findChild(QLineEdit, "function_line")
+        data_line: QLineEdit = self.findChild(QLineEdit, "data_line")
+        timeout_line: QLineEdit = self.findChild(QLineEdit, "timeout_line")
+        slave_line: QLineEdit = self.findChild(QLineEdit, "slave_line")
+        function_line: QLineEdit = self.findChild(QLineEdit, "function_line")
 
         if len(data_line.text().strip()) != 0 and (not self.is_hex(data_line.text().strip(),
                                                                    allow_prefix=True) or len(
@@ -277,20 +299,4 @@ class Tab_3(ThemedWidget):
     def _init_data(self):
         # 获得下拉框数据
         self.ports = scan_serial_ports_with_id()
-        pass
-
-    # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码 应该是可以统一将文字改为其他语言
-    def _retranslateUi(self, **kwargs):
-        _translate = QtCore.QCoreApplication.translate
-
-    # 添加子组件
-    def set_child(self, child: QWidget, geometry: QRect, visible: bool = True):
-        child.setParent(self.frame)
-        child.setGeometry(geometry)
-        child.setVisible(visible)
-        pass
-
-    # 显示窗口
-    def show(self):
-        self.frame.show()
         pass

@@ -35,12 +35,12 @@ class Tab_2(ThemedWidget):
         # 将ui文件转成py文件后 直接实例化该py文件里的类对象  uic工具转换之后就是这一段代码
         # 有父窗口添加父窗口
         if parent != None and geometry != None:
-            self.frame = QWidget(parent=parent)
-            self.frame.setGeometry(geometry)
+            self.setParent(parent)
+            self.setGeometry(geometry)
         else:
-            self.frame = QWidget()
+            pass
         self.ui = Ui_tab2_frame()
-        self.ui.setupUi(self.frame)
+        self.ui.setupUi(self)
 
         self._retranslateUi()
         pass
@@ -54,7 +54,7 @@ class Tab_2(ThemedWidget):
     # 根据监测数据项配置tab页
     def _init_monitor_data_tab_page(self):
         # tab页布局
-        content_layout_son: QVBoxLayout = self.frame.findChild(QVBoxLayout, "content_layout_son")
+        content_layout_son: QVBoxLayout = self.findChild(QVBoxLayout, "content_layout_son")
 
         self.tabWidget = QtWidgets.QTabWidget()
         self.tabWidget.setObjectName("tab_2_tabWidget")
@@ -84,12 +84,12 @@ class Tab_2(ThemedWidget):
 
     # 添加子组件
     def set_child(self, child: QWidget, geometry: QRect, visible: bool = True):
-        child.setParent(self.frame)
+        child.setParent(self)
         child.setGeometry(geometry)
         child.setVisible(visible)
         pass
 
     # 显示窗口
-    def show(self):
-        self.frame.show()
+    def show_frame(self):
+        self.show()
         pass
