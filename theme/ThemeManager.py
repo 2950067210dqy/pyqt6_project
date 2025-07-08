@@ -39,7 +39,7 @@ class ThemeManager(QObject):
         cls._themes = {
             "dark": {
                 "--primary": "#283041",
-                "--secondary": "#283041",
+                "--secondary": "#1B2431",
                 "--text": "#E1E1E1",
                 "--text_disabled": "#969696",
                 "--text_hover": "#C3C3C3",
@@ -217,10 +217,27 @@ class ThemeManager(QObject):
                 color: {theme['--text']};
                
             }}
+            QTabBar::tab {{
+                background: {theme['--primary']};         /* 标签按钮的背景颜色 */
+                padding: 10px;               /* 标签按钮的内边距 */
+                margin: 5px;                 /* 标签按钮的外边距 */
+                border: 1px solid transparent; /* 标签按钮的边框 */
+            }}
+           QTabBar::tab:selected {{
+                background: {theme['--secondary']};         /* 选中标签的背景颜色 */
+                border-bottom-color: {theme['--border']}; /* 选中标签的底边框颜色 */
+            }}
+             QTabBar::tab:hover {{
+                background: {theme['--highlight']};         /* 鼠标悬停时的背景颜色 */
+            }}
             QLineEdit {{
                 background-color: {theme['--secondary']};
                 border: 2px solid {theme['--border']};
                 padding: 5px;
+            }}
+            QGroupBox {{
+                border: 2px solid {theme['--border']};
+            
             }}
         """ + self.get_button_style(isSelected=False)
         # logger_diy.log.info("ThemeManager的get_style_sheet：" + style_sheet)

@@ -73,7 +73,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QComboBox" name="port_combox">
+     <widget class="QComboBox" name="tab_3_port_combox">
       <property name="minimumSize">
        <size>
         <width>250</width>
@@ -83,7 +83,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="refresh_port_btn">
+     <widget class="QPushButton" name="tab_3_refresh_port_btn">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -110,7 +110,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QListWidget" name="responselist">
+  <widget class="QListWidget" name="tab_3_responselist">
    <property name="geometry">
     <rect>
      <x>0</x>

@@ -43,7 +43,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="port_combox">
+      <widget class="QComboBox" name="tab_2_port_combox">
        <property name="minimumSize">
         <size>
          <width>250</width>
@@ -53,7 +53,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="now_data_comboBox">
+      <widget class="QComboBox" name="tab_2_mouse_cage_combox">
        <property name="minimumSize">
         <size>
          <width>100</width>
@@ -80,7 +80,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="refresh_port_btn">
+      <widget class="QPushButton" name="tab_2_refresh_port_btn">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -105,17 +105,6 @@
        </property>
       </spacer>
      </item>
-     <item>
-      <widget class="QPushButton" name="export_all_btn">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="../resource/mainPage.qrc">
-         <normaloff>:/dark/export.svg</normaloff>:/dark/export.svg</iconset>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
@@ -139,9 +128,9 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>440</y>
-      <width>911</width>
+      <width>901</width>
       <height>141</height>
      </rect>
     </property>
@@ -151,12 +140,12 @@
        <property name="title">
         <string>状态栏</string>
        </property>
-       <widget class="QListWidget" name="responselist">
+       <widget class="QListWidget" name="tab_2_responselist">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>18</y>
-          <width>891</width>
+          <width>881</width>
           <height>111</height>
          </rect>
         </property>

@@ -5,7 +5,7 @@ from loguru import logger
 from theme.ThemeQt6 import ThemedWidget
 from PyQt6 import QtCore, QtGui
 from PyQt6.QtCore import QRect
-from PyQt6.QtWidgets import QWidget, QMainWindow
+from PyQt6.QtWidgets import QWidget, QMainWindow, QPushButton
 
 from theme.ThemeQt6 import ThemedWidget
 from ui.customize_ui.tab.tab2_tab0 import Ui_tab_0_frame
@@ -31,6 +31,7 @@ class Tab2_tab0(ThemedWidget):
         self._init_function()
         # 加载qss样式表
         self._init_style_sheet()
+
         pass
 
         # 实例化ui
@@ -56,3 +57,4 @@ class Tab2_tab0(ThemedWidget):
     # 实例化功能
     def _init_function(self):
         pass
+        # 个性化css

@@ -89,8 +89,7 @@ class Tab_3(ThemedWidget):
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
-        # 图像列表
-        self.charts_list = []
+
         # 下拉框数据列表
         self.ports = []
         # 发送的数据结构
@@ -147,7 +146,7 @@ class Tab_3(ThemedWidget):
 
     # 实例化下拉框
     def init_port_combox(self):
-        port_combox: QComboBox = self.findChild(QComboBox, "port_combox")
+        port_combox: QComboBox = self.findChild(QComboBox, "tab_3_port_combox")
         if port_combox == None:
             logger.error("实例化端口下拉框失败！")
             return
@@ -175,7 +174,7 @@ class Tab_3(ThemedWidget):
 
     def send_response_text(self, text):
         # 往状态栏发消息
-        response_text: QListWidget = self.findChild(QListWidget, "responselist")
+        response_text: QListWidget = self.findChild(QListWidget, "tab_3_responselist")
         if response_text == None:
             logger.error("response_text状态栏未找到！")
             return
@@ -198,7 +197,7 @@ class Tab_3(ThemedWidget):
     # 实例化按钮信号槽绑定
     def init_btn_func(self):
         # 重新获取端口按钮
-        refresh_port_btn: QPushButton = self.findChild(QPushButton, "refresh_port_btn")
+        refresh_port_btn: QPushButton = self.findChild(QPushButton, "tab_3_refresh_port_btn")
 
         refresh_port_btn.clicked.connect(self.refresh_port)
         # 发送数据按钮

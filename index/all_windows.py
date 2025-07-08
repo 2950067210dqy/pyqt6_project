@@ -51,11 +51,11 @@ class AllWindows():
 
     #  私有方法 给左侧菜单项按钮添加按钮鼠标按压悬浮样式
     def _set_btn_style_hover_pressed(self):
-        # 找到主窗口中的所有QPushButton对象
-        pushBtns = self.mainWindow.findChildren(QPushButton)
-        # 给每个QPushButton对象 添加相关样式
-        for btn in pushBtns:
-            btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
+        # # 找到主窗口中的所有QPushButton对象
+        # pushBtns = self.mainWindow.findChildren(QPushButton)
+        # # 给每个QPushButton对象 添加相关样式
+        # for btn in pushBtns:
+        #     btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         # 给默认菜单项设置样式
         default_menu_btn = self.mainWindow.findChild(QPushButton,
                                                      "btn" + str(global_setting.get_setting("menu_id_now")))
