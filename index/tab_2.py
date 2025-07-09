@@ -84,8 +84,10 @@ class Send_thread(MyQThread):
 
 
 class Tab_2(ThemedWidget):
+    # 状态栏更新信息信号
     update_status_main_signal_gui_update = pyqtSignal(str)
-
+    # 更新btn css样式
+    update_btn_css_signal = pyqtSignal()
     def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
         # 线程重新响应
         logger.warning("tab2——show")
@@ -174,7 +176,8 @@ class Tab_2(ThemedWidget):
 
         # 将更新status信号绑定更新status界面函数
         self.update_status_main_signal_gui_update.connect(self.send_response_text)
-
+        # 更新btn css
+        self.update_btn_css_signal.connect(self._init_customize_style_sheet)
         # 串口通讯线程实例化
         self.init_send_thread()
         # 让tab页面找到自己 为后续数据交流做准备
@@ -312,7 +315,7 @@ class Tab_2(ThemedWidget):
                 self.tab_frames.append(tab_frame)
                 content_widget = QWidget()
                 content_widget.setObjectName(f"scroll_tab_{i}_content_widget")
-                content_widget.setFixedSize(tab_frame.tab.size().width() + 100, tab_frame.tab.size().height() + 200)
+                content_widget.setFixedSize(tab_frame.tab.size().width()+20 , tab_frame.tab.size().height() + 200)
                 layout = QVBoxLayout(content_widget)
                 layout.setObjectName(f"scroll_tab_{i}_content_widget_layout")
 

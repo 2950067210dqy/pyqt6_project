@@ -98,8 +98,8 @@ class ModbusRTUMaster:
             time.sleep(0.3)
 
             response = self.ser.read(256)
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到消息-{response.hex()}")
+            # self.update_status_main_signal.emit(
+            #     f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到消息-{response.hex()}")
             # 超时判断
             if not response:
                 self.update_status_main_signal.emit(
@@ -151,7 +151,7 @@ class ModbusRTUMaster:
                 f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
             logger.info(f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
             self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到消息-{response.hex()}-数据部分{data_part.hex()}")
+                f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到响应消息-{response.hex()}-数据部分{data_part.hex()}")
             if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                 self.ser.close()
                 self.ser = None

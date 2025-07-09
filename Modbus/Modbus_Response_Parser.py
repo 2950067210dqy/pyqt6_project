@@ -922,7 +922,7 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         for data_single in self.response_struct['data']:
             return_datas.append({
                 "desc": port_types[index],
-                'value': f"{data_single:016b}"
+                'value': f"{data_single:04X}"
             }
             )
             index += 1
@@ -1090,7 +1090,7 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
         for data_single in self.response_struct['data']:
             return_datas.append({
                 "desc": port_types[index],
-                'value': f"{data_single:016b}"
+                'value': f"{data_single:04X}"
             }
             )
             index += 1
@@ -1309,7 +1309,7 @@ class Modbus_Response_EM(Modbus_Response_Parents):
                     )
                     j += 1
                     pass
-                case 3:
+                case 2:
 
                     return_datas.append({
                         "desc": port_types[j],
@@ -1351,7 +1351,7 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         for data_single in self.response_struct['data']:
             return_datas.append({
                 "desc": port_types[index],
-                'value': f"{data_single:016b}"
+                'value': f"{data_single:04X}"
             }
             )
             index += 1
@@ -1519,7 +1519,7 @@ class Modbus_Response_WM(Modbus_Response_Parents):
         for data_single in self.response_struct['data']:
             return_datas.append({
                 "desc": port_types[index],
-                'value': f"{data_single:016b}"
+                'value': f"{data_single:04X}"
             }
             )
             index += 1
@@ -1896,7 +1896,7 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         for data_single in self.response_struct['data']:
             return_datas.append({
                 "desc": port_types[index],
-                'value': f"{data_single:016b}"
+                'value': f"{data_single:04X}"
             }
             )
             index += 1
@@ -2345,7 +2345,7 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         for data_single in self.response_struct['data']:
             return_datas.append({
                 "desc": port_types[index],
-                'value': f"{data_single:016b}"
+                'value': f"{data_single:04X}"
             }
             )
             index += 1
@@ -2802,7 +2802,7 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         for data_single in self.response_struct['data']:
             return_datas.append({
                 "desc": port_types[index],
-                'value': f"{data_single:016b}"
+                'value': f"{data_single:04X}"
             }
             )
             index += 1

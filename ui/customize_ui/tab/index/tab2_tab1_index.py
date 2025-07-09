@@ -47,48 +47,55 @@ class Tab2_tab1(ThemedWidget):
         self.type = Modbus_Slave_Ids.UGC
         # 获取tab2 frame组件
         self.ancestor: QFrame = None
+        # 找到开始获取信息按钮
+        self.start_btn: QPushButton = None
+        # 找到停止获取信息按钮
+        self.stop_btn: QPushButton = None
+        # 找到刷新全部信息按钮
+        self.refresh_btn: QPushButton = None
         # 要发送的数据
         self.send_thread_for_tab_frame = None
         self.send_datas = []
         self.send_datas = [
-            Send_Message(slave_address=Modbus_Slave_Ids.UFC.value['address'],
-                         slave_desc=Modbus_Slave_Ids.UFC.value['description'], function_code=1,
-                         function_desc="读输出端口状态信息", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(10),
-                    'slave_id': format(int(Modbus_Slave_Ids.UFC.value['address']), '02X'),
-                    'function_code': format(int(f"{1}", 16), '02X'),
-                }),
-            Send_Message(slave_address=Modbus_Slave_Ids.UFC.value['address'],
-                         slave_desc=Modbus_Slave_Ids.UFC.value['description'], function_code=2,
-                         function_desc="读传感器状态信息", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(6),
-                    'slave_id': format(int(Modbus_Slave_Ids.UFC.value['address']), '02X'),
-                    'function_code': format(int(f"{2}", 16), '02X'),
-                }),
-            Send_Message(slave_address=Modbus_Slave_Ids.UFC.value['address'],
-                         slave_desc=Modbus_Slave_Ids.UFC.value['description'], function_code=3,
-                         function_desc="读配置寄存器", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(3),
-                    'slave_id': format(int(Modbus_Slave_Ids.UFC.value['address']), '02X'),
-                    'function_code': format(int(f"{3}", 16), '02X'),
-                }),
-            Send_Message(slave_address=Modbus_Slave_Ids.UFC.value['address'],
-                         slave_desc=Modbus_Slave_Ids.UFC.value['description'], function_code=4,
+            Send_Message(slave_address=self.type.value['address'],
+                         slave_desc=self.type.value['description'], function_code=4,
                          function_desc="读传感器测量值", message={
                     'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(6),
-                    'slave_id': format(int(Modbus_Slave_Ids.UFC.value['address']), '02X'),
+                    'data': number_util.set_int_to_4_bytes_list(8),
+                    'slave_id': format(int(self.type.value['address']), '02X'),
                     'function_code': format(int(f"{4}", 16), '02X'),
                 }),
-            Send_Message(slave_address=Modbus_Slave_Ids.UFC.value['address'],
-                         slave_desc=Modbus_Slave_Ids.UFC.value['description'], function_code=17,
+            Send_Message(slave_address=self.type.value['address'],
+                         slave_desc=self.type.value['description'], function_code=1,
+                         function_desc="读输出端口状态信息", message={
+                    'port': global_setting.get_setting("tab2_select_port"),
+                    'data': number_util.set_int_to_4_bytes_list(16),
+                    'slave_id': format(int(self.type.value['address']), '02X'),
+                    'function_code': format(int(f"{1}", 16), '02X'),
+                }),
+            Send_Message(slave_address=self.type.value['address'],
+                         slave_desc=self.type.value['description'], function_code=2,
+                         function_desc="读传感器状态信息", message={
+                    'port': global_setting.get_setting("tab2_select_port"),
+                    'data': number_util.set_int_to_4_bytes_list(16),
+                    'slave_id': format(int(self.type.value['address']), '02X'),
+                    'function_code': format(int(f"{2}", 16), '02X'),
+                }),
+            Send_Message(slave_address=self.type.value['address'],
+                         slave_desc=self.type.value['description'], function_code=3,
+                         function_desc="读配置寄存器", message={
+                    'port': global_setting.get_setting("tab2_select_port"),
+                    'data': number_util.set_int_to_4_bytes_list(8),
+                    'slave_id': format(int(self.type.value['address']), '02X'),
+                    'function_code': format(int(f"{3}", 16), '02X'),
+                }),
+
+            Send_Message(slave_address=self.type.value['address'],
+                         slave_desc=self.type.value['description'], function_code=17,
                          function_desc="读取模块ID信息等", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list(0),
-                    'slave_id': format(int(Modbus_Slave_Ids.UFC.value['address']), '02X'),
+                    'slave_id': format(int(self.type.value['address']), '02X'),
                     'function_code': format(int(f"{11}", 16), '02X'),
                 }),
         ]
@@ -140,8 +147,75 @@ class Tab2_tab1(ThemedWidget):
                 send_message=self.send_datas,
                 send_thread=self.ancestor.send_thread if self.ancestor is not None else None)
 
+        # 实例化按钮功能
+        self.init_btn_func()
         pass
 
+    def init_btn_func(self):
+        # 实例化按钮功能
+        # 找到开始获取信息按钮
+        self.start_btn: QPushButton = self.findChild(QPushButton, 'start')
+        # 找到停止获取信息按钮
+        self.stop_btn: QPushButton = self.findChild(QPushButton, 'stop')
+        # 找到刷新全部信息按钮
+        self.refresh_btn: QPushButton = self.findChild(QPushButton, 'refresh')
+        self.start_btn.setDisabled(True)
+        self.start_btn.clicked.connect(self.start_btn_func)
+        self.stop_btn.clicked.connect(self.stop_btn_func)
+        self.refresh_btn.clicked.connect(self.refresh_btn_func)
+        pass
+
+    def start_btn_func(self):
+        """
+        开始获取信息按钮功能
+        :return:
+        """
+        if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
+            self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
+            self.send_thread_for_tab_frame.send_message = self.send_datas
+            self.send_thread_for_tab_frame.resume()
+        elif not self.send_thread_for_tab_frame.isRunning():
+            self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
+            self.send_thread_for_tab_frame.send_message = self.send_datas
+            self.send_thread_for_tab_frame.start()
+        else:
+            # 实例化发送查询报文线程
+            self.send_thread_for_tab_frame = Send_thread_for_tab_frame(
+                name=self.objectName(),
+                send_message=self.send_datas,
+                send_thread=self.ancestor.send_thread if self.ancestor is not None else None)
+            self.send_thread_for_tab_frame.start()
+        self.stop_btn.setDisabled(False)
+        self.start_btn.setDisabled(True)
+
+    def stop_btn_func(self):
+        """
+        停止获取信息按钮功能
+        :return:
+        """
+        if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
+            self.send_thread_for_tab_frame.pause()
+        self.start_btn.setDisabled(False)
+        self.stop_btn.setDisabled(True)
+
+    def refresh_btn_func(self):
+        """
+        刷新全部信息按钮功能
+        :return:
+        """
+        # 实例化发送查询报文线程
+        self.refresh_btn.setDisabled(True)
+        self.send_thread_for_tab_frame.stop()
+        self.send_thread_for_tab_frame.terminate()
+        self.send_thread_for_tab_frame = None
+        self.send_thread_for_tab_frame = Send_thread_for_tab_frame(
+            name=self.objectName(),
+            send_message=self.send_datas,
+            send_thread=self.ancestor.send_thread if self.ancestor is not None else None)
+        self.send_thread_for_tab_frame.start()
+        self.start_btn.setDisabled(True)
+        self.stop_btn.setDisabled(False)
+        self.refresh_btn.setDisabled(False)
     def update_send_data(self):
         # 更新senddata的port和mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
@@ -328,21 +402,10 @@ class Tab2_tab1(ThemedWidget):
                         desc_label = QLabel()
                         desc_label.setText(data[row * cols + col]['desc'] + ":")
                         value_label = QLabel()
-                        match row * cols + col:
-                            case 0:
-                                value_label.setText(
-                                    f"{'0~10L/min' if data[row * cols + col]['value'] == 1 else '0~3L/min'}")
-                                pass
-                            case 1:
-                                value_label.setText(
-                                    f"{data[row * cols + col]['value']}%")
-                                pass
-                            case 2:
-                                value_label.setText(
-                                    f"{data[row * cols + col]['value']}%")
-                                pass
-                            case _:
-                                pass
+
+                        value_label.setText(
+                            f"{data[row * cols + col]['value']}%")
+
 
                         content_frame_layout.addWidget(desc_label)
                         content_frame_layout.addWidget(value_label)
@@ -363,22 +426,9 @@ class Tab2_tab1(ThemedWidget):
                     labels = label_layout.parent().findChildren(QLabel)
                     if labels is not None and len(labels) != 0:
                         labels[0].setText(data[i]['desc'] + ":")
-                        match i:
-                            case 0:
-                                labels[1].setText(
-                                    f"{'0~10L/min' if data[i]['value'] == 1 else '0~3L/min'}")
-                                pass
-                            case 1:
-                                labels[1].setText(
-                                    f"{data[i]['value']}%")
-                                pass
-                            case 2:
-                                labels[1].setText(
-                                    f"{data[i]['value']}%")
-                                pass
-                            case _:
-                                pass
-                        pass
+                        labels[1].setText(
+                            f"{data[i]['value']}%")
+
                     i += 1
 
             pass
@@ -408,9 +458,10 @@ class Tab2_tab1(ThemedWidget):
                         content_frame_layout = QHBoxLayout()
 
                         desc_label = QLabel()
-                        desc_label.setText(data[row * cols + col]['desc'] + ":")
+                        desc_label.setText(f"<span style=''>{data[row * cols + col]['desc']}:</span>")
                         value_label = QLabel()
-                        value_label.setText(f"{data[row * cols + col]['value']}")
+                        value_label.setText(
+                            f"<span style='font-weight: bold;font-size:17px;'>{data[row * cols + col]['value']}</span>")
 
                         content_frame_layout.addWidget(desc_label)
                         content_frame_layout.addWidget(value_label)
@@ -430,8 +481,8 @@ class Tab2_tab1(ThemedWidget):
                 for label_layout in labels_layout:
                     labels = label_layout.parent().findChildren(QLabel)
                     if labels is not None and len(labels) != 0:
-                        labels[0].setText(data[i]['desc'] + ":")
-                        labels[1].setText(f"{data[i]['value']}")
+                        labels[0].setText(f"<span style=''>{data[i]['desc']}:</span>")
+                        labels[1].setText(f"<span style='font-weight: bold;font-size:17px;'>{data[i]['value']}</span>")
                         pass
                     i += 1
 
@@ -453,7 +504,7 @@ class Tab2_tab1(ThemedWidget):
             grid_layout.setContentsMargins(10, 20, 10, 10)
             grid_layout.setObjectName(f"function_11_gird_layout")
             # 3列 n行
-            cols = 6
+            cols = 3
             rows = math.ceil(len(data) / cols)
             for row in range(rows):
                 for col in range(cols):

@@ -110,18 +110,20 @@ class MainWindow(ThemedWidget):
             else:
                 #  获得其他图标的objectname的前缀 注意我们的带有图标的QPushButton的ObjectName的前缀必须要和我们所设置得图标文件的名字一样，否则这里将不起效果
                 other_btn_object_name_prefix = btn.objectName().split("_")[0]
-                path = f":/{global_setting.get_setting('style')}/{other_btn_object_name_prefix}.svg"
-                # 找不到图标文件就写进日志
-                if not QFile.exists(path):
-                    logger.warning(f"{btn.objectName()} button's icon resource file was not found！")
-                # 否则就更新图标
-                else:
-                    icon = QtGui.QIcon()
-                    icon.addPixmap(QtGui.QPixmap(path),
-                                   QtGui.QIcon.Mode.Normal,
-                                   QtGui.QIcon.State.Off)
-                    btn.setIcon(icon)
-                    btn.setIconSize(QtCore.QSize(20, 20))
+                # 导出的图标不进行处理
+                if other_btn_object_name_prefix !="export":
+                    path = f":/{global_setting.get_setting('style')}/{other_btn_object_name_prefix}.svg"
+                    # 找不到图标文件就写进日志
+                    if not QFile.exists(path):
+                        logger.warning(f"{btn.objectName()} button's icon resource file was not found！")
+                    # 否则就更新图标
+                    else:
+                        icon = QtGui.QIcon()
+                        icon.addPixmap(QtGui.QPixmap(path),
+                                       QtGui.QIcon.Mode.Normal,
+                                       QtGui.QIcon.State.Off)
+                        btn.setIcon(icon)
+                        btn.setIconSize(QtCore.QSize(20, 20))
             # 给每个QPushButton对象 添加相关样式
             btn.setStyleSheet(global_setting.get_setting("theme_manager").get_button_style(isSelected=False))
         pass
@@ -227,6 +229,7 @@ class MainWindow(ThemedWidget):
         global_setting.get_setting("theme_manager").current_theme = new_theme
         # 更改样式
         self.setStyleSheet(global_setting.get_setting("theme_manager").get_style_sheet())
+
         # 更改自定义组件样式
         # 更改图标样式
         self.init_icon_style()
@@ -238,7 +241,11 @@ class MainWindow(ThemedWidget):
 
         # 给图表进行主题更新 每个tab里的图表都更新
         for menu in self.left_menu_btns:
+
             tab = menu['tab']
+            # 给tab2页面进行按钮样式更新信号
+            if menu['id'] == 2:
+                tab.tab.update_btn_css_signal.emit()
             # 找到每个chart对象
             if 'charts_list' not in tab.tab.__dict__:
                 logger.warning(f"menu{menu['id']}'s tab page not exists charts_list ！")
