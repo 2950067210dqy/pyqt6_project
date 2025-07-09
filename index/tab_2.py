@@ -25,7 +25,7 @@ from util.time_util import time_util
 class Send_thread(MyQThread):
     # 线程信号
 
-    def __init__(self, name=None, update_time_main_signal=None, modbus=None, send_message=None,
+    def __init__(self, name=None, update_time_main_signal=None, modbus=None, send_messages=None,
                  tab_frame_show_data_signal_list=[]):
         super().__init__(name)
         # 获取主线程更新界面信号
@@ -33,7 +33,7 @@ class Send_thread(MyQThread):
         # tab子页面更新数据的信号槽
         self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
         self.modbus = modbus
-        self.send_message = send_message
+        self.send_messages = send_messages
         self.is_start = True
         pass
 
@@ -43,16 +43,17 @@ class Send_thread(MyQThread):
     def init_modBus(self):
         try:
             if self.modbus is None:
-                self.modbus = ModbusRTUMaster(port=self.send_message['port'], timeout=self.send_message['timeout'],
+                self.modbus = ModbusRTUMaster(port=self.send_messages[0]['port'], timeout=1,
                                               update_status_main_signal=self.update_time_main_signal,
                                               tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
                                               )
-        except:
+        except Exception as e:
+            logger.error(f"{self.name},实例化modbus错误：{e}")
             pass
         pass
 
-    def set_send_message(self, send_message):
-        self.send_message = send_message
+    def set_send_messages(self, send_messages):
+        self.send_messages = send_messages
 
     def set_modbus(self, modbus):
         self.modbus = modbus
@@ -61,14 +62,15 @@ class Send_thread(MyQThread):
         if self.is_start:
             self.init_modBus()
             try:
-                logger.info(self.send_message)
-                response, response_hex, send_state = self.modbus.send_command(
-                    slave_id=self.send_message['slave_id'],
-                    function_code=self.send_message['function_code'],
-                    data_hex_list=self.send_message['data'])
-                # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
-                if send_state:
-                    pass
+                logger.info(self.send_messages)
+                for send_message in self.send_messages:
+                    response, response_hex, send_state = self.modbus.send_command(
+                        slave_id=send_message['slave_id'],
+                        function_code=send_message['function_code'],
+                        data_hex_list=send_message['data'])
+                    # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
+                    if send_state:
+                        pass
                 self.is_start = False
             except Exception as e:
                 logger.error(e)
@@ -175,6 +177,10 @@ class Tab_2(ThemedWidget):
 
         # 串口通讯线程实例化
         self.init_send_thread()
+        # 让tab页面找到自己 为后续数据交流做准备
+        for tab_frame in self.tab_frames:
+            tab_frame.tab.get_ancestor("tab2_frame")
+            tab_frame.tab.update_ancestor_and_send_thread_signal.emit()
         pass
 
     def _init_customize_style_sheet(self):
@@ -325,9 +331,6 @@ class Tab_2(ThemedWidget):
                 pass
                 pass
             content_layout_son.addWidget(self.tabWidget)
-            # 让tab页面找到自己 为后续数据交流做准备
-            for tab_frame in self.tab_frames:
-                tab_frame.tab.get_ancestor("tab2_frame")
 
     def init_send_thread(self):
         # 串口发送信息线程实例化
@@ -336,8 +339,10 @@ class Tab_2(ThemedWidget):
             self.send_thread = None
             self.send_thread = Send_thread(name="tab_2_COM_Send_Thread",
                                            update_time_main_signal=self.update_status_main_signal_gui_update,
-                                           tab_frame_show_data_signal_list=[tab_frame.tab.show_data_signal for tab_frame
-                                                                            in self.tab_frames],
+                                           tab_frame_show_data_signal_list=[
+                                               {'type': tab_frame.tab.type,
+                                                'signal': tab_frame.tab.show_data_signal} for tab_frame
+                                               in self.tab_frames],
                                            modbus=self.modbus)
             # self.send_thread.set_send_message(self.send_message)
             # self.send_thread.is_start = True

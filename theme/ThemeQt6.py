@@ -53,7 +53,7 @@ class ThemedWidget(QWidget):
             logger.info(f"{self.objectName()}未找到祖先{ancestor_obj_name}")
         else:
             logger.info(f"{self.objectName()}找到祖先{ancestor_obj_name}")
-        return ancestor
+        self.ancestor = ancestor
 
     # 显示窗口
     def show_frame(self):

@@ -1,6 +1,7 @@
 """
 模拟响应串口
 """
+import random
 import struct
 import threading
 import time
@@ -729,10 +730,26 @@ class communication(threading.Thread):
                                             return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='2',
-                                                                            data_hex_list=[
-                                                                                self.binary_to_hex_for_all("00000010"),
-                                                                                self.binary_to_hex_for_all("10011001")
-                                                                            ],
+                                                                            data_hex_list=random.choice([
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00000010"),
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "10011001")
+                                                                                ],
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00000001"),
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "11100011")
+                                                                                ],
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00000000"),
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00101100")
+                                                                                ],
+                                                                            ]),
                                                                             struct_type="B"
                                                                             )
                                             pass
@@ -745,8 +762,16 @@ class communication(threading.Thread):
                                             return_bytes = self.build_frame(slave_id=f"{slave_id_int:X}",
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='1',
-                                                                            data_hex_list=[
-                                                                                self.binary_to_hex_for_all("00011111")],
+                                                                            data_hex_list=random.choice([
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00011111")
+                                                                                ],
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00001010")
+                                                                                ],
+                                                                            ]),
                                                                             struct_type="B"
                                                                             )
                                             pass
@@ -760,11 +785,18 @@ class communication(threading.Thread):
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='6',
 
-                                                                            data_hex_list=[
-                                                                                "0x0001",
-                                                                                "0x0063",
-                                                                                "0x0048",
-                                                                            ],
+                                                                            data_hex_list=random.choice([
+                                                                                [
+                                                                                    "0x0000",
+                                                                                    "0x0021",
+                                                                                    "0x003d",
+                                                                                ],
+                                                                                [
+                                                                                    "0x0001",
+                                                                                    "0x0063",
+                                                                                    "0x0048",
+                                                                                ],
+                                                                            ]),
                                                                             struct_type="H"
 
                                                                             )
@@ -778,20 +810,51 @@ class communication(threading.Thread):
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='C',
 
-                                                                            data_hex_list=[
-                                                                                "0x01",
-                                                                                "0x1F",
-                                                                                "0x05",
-                                                                                "0x08",
-                                                                                "0x1F",
-                                                                                "0x04",
-                                                                                "0x1a",
-                                                                                "0x01",
-                                                                                "0xAC",
-                                                                                "0xB1",
-                                                                                "0xC2",
-                                                                                "0x41",
-                                                                            ],
+                                                                            data_hex_list=random.choice([
+                                                                                [
+                                                                                    "0x11",
+                                                                                    "0x3d",
+                                                                                    "0x08",
+                                                                                    "0x02",
+                                                                                    "0x3a",
+                                                                                    "0x01",
+                                                                                    "0x2d",
+                                                                                    "0x05",
+                                                                                    "0xde",
+                                                                                    "0xac",
+                                                                                    "0x2b",
+                                                                                    "0x32",
+                                                                                ],
+                                                                                [
+                                                                                    "0x01",
+                                                                                    "0x1F",
+                                                                                    "0x05",
+                                                                                    "0x08",
+                                                                                    "0x1F",
+                                                                                    "0x04",
+                                                                                    "0x1a",
+                                                                                    "0x01",
+                                                                                    "0xAC",
+                                                                                    "0xB1",
+                                                                                    "0xC2",
+                                                                                    "0x41",
+                                                                                ],
+                                                                                [
+                                                                                    "0x03",
+                                                                                    "0x2F",
+                                                                                    "0x07",
+                                                                                    "0x11",
+                                                                                    "0x2f",
+                                                                                    "0x07",
+                                                                                    "0x2d",
+                                                                                    "0x06",
+                                                                                    "0xbe",
+                                                                                    "0xad",
+                                                                                    "0xcd",
+                                                                                    "0xa1",
+                                                                                ],
+
+                                                                            ]),
                                                                             struct_type="B"
                                                                             )
                                             pass

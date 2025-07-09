@@ -507,32 +507,41 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         else:
             function_code = self.function_code
         logger.info(f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析功能码：{self.function_code}")
+        return_data = None
         match function_code:
             case 1:
-                self.parser_function_code_1()
+                return_data = self.parser_function_code_1()
                 pass
             case 2:
-                self.parser_function_code_2()
+                return_data = self.parser_function_code_2()
 
             case 3:
-                self.parser_function_code_3()
+                return_data = self.parser_function_code_3()
 
             case 4:
-                self.parser_function_code_4()
+                return_data = self.parser_function_code_4()
 
             case 5:
-                self.parser_function_code_5()
+                return_data = self.parser_function_code_5()
 
             case 6:
-                self.parser_function_code_6()
+                return_data = self.parser_function_code_6()
 
             case 17:
-                self.parser_function_code_17()
+                return_data = self.parser_function_code_17()
 
             case _:
                 self.parser_function_code_others()
-
-                pass
+        return_data_struct = {}
+        return_data_struct['data'] = return_data
+        return_data_struct['slave_id'] = self.origin_slave_id
+        return_data_struct['mouse_cage_number'] = self.mouse_cage_number
+        return_data_struct['function_code'] = function_code
+        if len(self.tab_frame_show_data_signal_list) != 0:
+            for tab_frame_show_data_signal in self.tab_frame_show_data_signal_list:
+                if tab_frame_show_data_signal['type'] == self.type:
+                    tab_frame_show_data_signal['signal'].emit(return_data_struct)
+                    break
 
     pass
     """
@@ -958,21 +967,30 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
         else:
             function_code = self.function_code
         logger.info(f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析功能码：{self.function_code}")
+        return_data = None
         match function_code:
             case 2:
-                self.parser_function_code_2()
+                return_data = self.parser_function_code_2()
+
             case 4:
-                self.parser_function_code_4()
+                return_data = self.parser_function_code_4()
 
             case 17:
-                self.parser_function_code_17()
+                return_data = self.parser_function_code_17()
 
             case _:
                 self.parser_function_code_others()
+        return_data_struct = {}
+        return_data_struct['data'] = return_data
+        return_data_struct['slave_id'] = self.origin_slave_id
+        return_data_struct['mouse_cage_number'] = self.mouse_cage_number
+        return_data_struct['function_code'] = function_code
+        if len(self.tab_frame_show_data_signal_list) != 0:
+            for tab_frame_show_data_signal in self.tab_frame_show_data_signal_list:
+                if tab_frame_show_data_signal['type'] == self.type:
+                    tab_frame_show_data_signal['signal'].emit(return_data_struct)
+                    break
 
-                pass
-
-    pass
     pass
     """
            12 02 X
@@ -1116,22 +1134,34 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         else:
             function_code = self.function_code
         logger.info(f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析功能码：{self.function_code}")
+        return_data = None
         match function_code:
             case 1:
-                self.parser_function_code_1()
+                return_data = self.parser_function_code_1()
+                pass
             case 2:
-                self.parser_function_code_2()
+                return_data = self.parser_function_code_2()
+
             case 4:
-                self.parser_function_code_4()
+                return_data = self.parser_function_code_4()
+
             case 5:
-                self.parser_function_code_5()
+                return_data = self.parser_function_code_5()
             case 17:
-                self.parser_function_code_17()
+                return_data = self.parser_function_code_17()
 
             case _:
                 self.parser_function_code_others()
-
-                pass
+        return_data_struct = {}
+        return_data_struct['data'] = return_data
+        return_data_struct['slave_id'] = self.origin_slave_id
+        return_data_struct['mouse_cage_number'] = self.mouse_cage_number
+        return_data_struct['function_code'] = function_code
+        if len(self.tab_frame_show_data_signal_list) != 0:
+            for tab_frame_show_data_signal in self.tab_frame_show_data_signal_list:
+                if tab_frame_show_data_signal['type'] == self.type:
+                    tab_frame_show_data_signal['signal'].emit(return_data_struct)
+                    break
 
     pass
     """
@@ -1366,19 +1396,29 @@ class Modbus_Response_WM(Modbus_Response_Parents):
         else:
             function_code = self.function_code
         logger.info(f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析功能码：{self.function_code}")
+        return_data = None
         match function_code:
             case 2:
-                self.parser_function_code_2()
+                return_data = self.parser_function_code_2()
 
             case 4:
-                self.parser_function_code_4()
+                return_data = self.parser_function_code_4()
+
             case 17:
-                self.parser_function_code_17()
+                return_data = self.parser_function_code_17()
 
             case _:
                 self.parser_function_code_others()
-
-                pass
+        return_data_struct = {}
+        return_data_struct['data'] = return_data
+        return_data_struct['slave_id'] = self.origin_slave_id
+        return_data_struct['mouse_cage_number'] = self.mouse_cage_number
+        return_data_struct['function_code'] = function_code
+        if len(self.tab_frame_show_data_signal_list) != 0:
+            for tab_frame_show_data_signal in self.tab_frame_show_data_signal_list:
+                if tab_frame_show_data_signal['type'] == self.type:
+                    tab_frame_show_data_signal['signal'].emit(return_data_struct)
+                    break
 
     pass
     """
@@ -1518,32 +1558,41 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         else:
             function_code = self.function_code
         logger.info(f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析功能码：{self.function_code}")
+        return_data = None
         match function_code:
             case 1:
-                self.parser_function_code_1()
+                return_data = self.parser_function_code_1()
                 pass
             case 2:
-                self.parser_function_code_2()
+                return_data = self.parser_function_code_2()
 
             case 3:
-                self.parser_function_code_3()
+                return_data = self.parser_function_code_3()
 
             case 4:
-                self.parser_function_code_4()
+                return_data = self.parser_function_code_4()
 
             case 5:
-                self.parser_function_code_5()
+                return_data = self.parser_function_code_5()
 
             case 6:
-                self.parser_function_code_6()
+                return_data = self.parser_function_code_6()
 
             case 17:
-                self.parser_function_code_17()
+                return_data = self.parser_function_code_17()
 
             case _:
                 self.parser_function_code_others()
-
-                pass
+        return_data_struct = {}
+        return_data_struct['data'] = return_data
+        return_data_struct['slave_id'] = self.slave_id
+        return_data_struct['mouse_cage_number'] = 0
+        return_data_struct['function_code'] = function_code
+        if len(self.tab_frame_show_data_signal_list) != 0:
+            for tab_frame_show_data_signal in self.tab_frame_show_data_signal_list:
+                if tab_frame_show_data_signal['type'] == self.type:
+                    tab_frame_show_data_signal['signal'].emit(return_data_struct)
+                    break
 
     """
            04 01 X
@@ -1884,32 +1933,41 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         else:
             function_code = self.function_code
         logger.info(f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析功能码：{self.function_code}")
+        return_data = None
         match function_code:
             case 1:
-                self.parser_function_code_1()
+                return_data = self.parser_function_code_1()
                 pass
             case 2:
-                self.parser_function_code_2()
+                return_data = self.parser_function_code_2()
 
             case 3:
-                self.parser_function_code_3()
+                return_data = self.parser_function_code_3()
 
             case 4:
-                self.parser_function_code_4()
+                return_data = self.parser_function_code_4()
 
             case 5:
-                self.parser_function_code_5()
+                return_data = self.parser_function_code_5()
 
             case 6:
-                self.parser_function_code_6()
+                return_data = self.parser_function_code_6()
 
             case 17:
-                self.parser_function_code_17()
+                return_data = self.parser_function_code_17()
 
             case _:
                 self.parser_function_code_others()
-
-                pass
+        return_data_struct = {}
+        return_data_struct['data'] = return_data
+        return_data_struct['slave_id'] = self.slave_id
+        return_data_struct['mouse_cage_number'] = 0
+        return_data_struct['function_code'] = function_code
+        if len(self.tab_frame_show_data_signal_list) != 0:
+            for tab_frame_show_data_signal in self.tab_frame_show_data_signal_list:
+                if tab_frame_show_data_signal['type'] == self.type:
+                    tab_frame_show_data_signal['signal'].emit(return_data_struct)
+                    break
 
     """
            03 01 X
@@ -2325,25 +2383,41 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         else:
             function_code = self.function_code
         logger.info(f"响应报文-{self.type.value['name']}-{self.type.value['description']}-开始解析功能码：{self.function_code}")
+        return_data = None
         match function_code:
             case 1:
-                self.parser_function_code_1()
+                return_data = self.parser_function_code_1()
                 pass
             case 2:
-                self.parser_function_code_2()
+                return_data = self.parser_function_code_2()
+
             case 3:
-                self.parser_function_code_3()
+                return_data = self.parser_function_code_3()
+
             case 4:
-                self.parser_function_code_4()
+                return_data = self.parser_function_code_4()
+
             case 5:
-                self.parser_function_code_5()
+                return_data = self.parser_function_code_5()
+
             case 6:
-                self.parser_function_code_6()
+                return_data = self.parser_function_code_6()
+
             case 17:
-                self.parser_function_code_17()
+                return_data = self.parser_function_code_17()
+
             case _:
                 self.parser_function_code_others()
-                pass
+        return_data_struct = {}
+        return_data_struct['data'] = return_data
+        return_data_struct['slave_id'] = self.slave_id
+        return_data_struct['mouse_cage_number'] = 0
+        return_data_struct['function_code'] = function_code
+        if len(self.tab_frame_show_data_signal_list) != 0:
+            for tab_frame_show_data_signal in self.tab_frame_show_data_signal_list:
+                if tab_frame_show_data_signal['type'] == self.type:
+                    tab_frame_show_data_signal['signal'].emit(return_data_struct)
+                    break
 
     def parser_function_code_others(self):
         self.update_status_main_signal.emit(
@@ -2366,8 +2440,8 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         data_binary_str_list = self.int_to_8bit_binary(num_list=self.response_struct['data'])
         data_binary_str_list_all = "".join(data_binary_str_list)
         return_datas = []
-        port_types = ['参考气', '输出阀', '鼠笼0的电磁阀', '鼠笼1的电磁阀', '鼠笼2的电磁阀', '鼠笼3的电磁阀', '鼠笼4的电磁阀', '鼠笼5的电磁阀', '鼠笼6的电磁阀',
-                      '鼠笼7的电磁阀']
+        port_types = ['参考气', '输出阀', '鼠笼1的电磁阀', '鼠笼2的电磁阀', '鼠笼3的电磁阀', '鼠笼4的电磁阀', '鼠笼5的电磁阀', '鼠笼6的电磁阀', '鼠笼7的电磁阀',
+                      '鼠笼8的电磁阀']
         index = 0
         for str_single in data_binary_str_list_all:
             if index >= 6:
