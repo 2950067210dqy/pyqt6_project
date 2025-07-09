@@ -46,24 +46,31 @@ monitoring_data: #监测数据项
   - id: 1 #对应相应的tab
     title: '气流' #菜单名称
     object_name: 'airflow' #菜单object_name 取title的英文名即可
+    delay: 3 #每隔多少秒获取一次数据
   - id: 2
     title: '二氧化碳'
     object_name: 'carbon'
+    delay: 3 #每隔多少秒获取一次数据
   - id: 3
     title: '氧气'
     object_name: 'oxgen'
+    delay: 3 #每隔多少秒获取一次数据
   - id: 4
     title: '鼠笼环境'
     object_name: 'mouse_evr'
+    delay: 3 #每隔多少秒获取一次数据
   - id: 5
     title: '进食'
     object_name: 'eat'
+    delay: 3 #每隔多少秒获取一次数据
   - id: 6
     title: '饮水'
     object_name: 'drink'
+    delay: 3 #每隔多少秒获取一次数据
   - id: 7
     title: '称重'
     object_name: 'weight'
+    delay: 3 #每隔多少秒获取一次数据
 mouse_cage: #鼠笼
   nums: 8 #鼠笼数量
 graphic: #图表项

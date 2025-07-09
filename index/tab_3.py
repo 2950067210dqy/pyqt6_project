@@ -17,29 +17,35 @@ from PyQt6.QtCore import QRect, pyqtSignal, QThread
 from PyQt6.QtWidgets import QWidget, QComboBox, QTextBrowser, QListWidget, QPushButton, QLineEdit, QVBoxLayout, QFrame
 
 from theme.ThemeQt6 import ThemedWidget
+from util.number_util import number_util
 from util.time_util import time_util
 
 
 class Send_thread(MyQThread):
     # 线程信号
 
-    def __init__(self, name, update_time_main_signal, modbus, send_message):
+    def __init__(self, name=None, update_time_main_signal=None, modbus=None, send_message=None,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(name)
         # 获取主线程更新界面信号
         self.update_time_main_signal: pyqtSignal = update_time_main_signal
+        # tab子页面更新数据的信号槽
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
         self.modbus = modbus
         self.send_message = send_message
         self.is_start = True
         pass
 
     def __del__(self):
-        logger.debug(f"线程 被销毁!")
+        logger.debug(f"线程{self.name}被销毁!")
 
     def init_modBus(self):
         try:
             if self.modbus is None:
                 self.modbus = ModbusRTUMaster(port=self.send_message['port'], timeout=self.send_message['timeout'],
-                                              update_status_main_signal=self.update_time_main_signal)
+                                              update_status_main_signal=self.update_time_main_signal,
+                                              tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+                                              )
         except:
             pass
         pass
@@ -217,6 +223,7 @@ class Tab_3(ThemedWidget):
                     self.send_thread = None
                     self.send_thread = Send_thread(name="tab_3_COM_Send_Thread",
                                                    update_time_main_signal=self.update_status_main_signal_gui_update,
+                                                   tab_frame_show_data_signal_list=[],
                                                    modbus=self.modbus, send_message=self.send_message)
                     self.send_thread.set_send_message(self.send_message)
                     self.send_thread.is_start = True
@@ -276,11 +283,8 @@ class Tab_3(ThemedWidget):
         logger.info(data_line.text().strip())
         logger.info(type(data_line.text().strip()))
 
-        self.send_message['data'] = re.findall(r'.{1,2}',
-                                               format(int(data_line.text().strip(), 16),
-                                                      '08X')) if data_line.text().strip() != '' else re.findall(
-            r'.{1,2}',
-            format(int('0', 16), '08X'))  # 每 1~2 字符一组
+        self.send_message['data'] = number_util.set_int_to_4_bytes_list(data_line.text().strip())
+
         logger.info(self.send_message['data'])
         self.send_message['slave_id'] = format(int(slave_line.text().strip(), 16), '02X')
         self.send_message['function_code'] = format(int(function_line.text().strip(), 16), '02X')

@@ -42,6 +42,19 @@ class ThemedWidget(QWidget):
         child.setVisible(visible)
         pass
 
+    def get_ancestor(self, ancestor_obj_name):
+        # 获取当前对象的祖先对象
+        ancestor = self
+        while ancestor is not None and ancestor.objectName() != ancestor_obj_name:
+            ancestor = ancestor.parent()
+        if ancestor == self:
+            logger.info(f"{self.objectName()}没有祖先组件")
+        elif ancestor is None:
+            logger.info(f"{self.objectName()}未找到祖先{ancestor_obj_name}")
+        else:
+            logger.info(f"{self.objectName()}找到祖先{ancestor_obj_name}")
+        return ancestor
+
     # 显示窗口
     def show_frame(self):
         self.show()

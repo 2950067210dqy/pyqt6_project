@@ -86,7 +86,8 @@ class Modbus_Response_Parser():
 响应报文解析
     """
 
-    def __init__(self, slave_id, function_code, response, response_hex, update_status_main_signal):
+    def __init__(self, slave_id, function_code, response, response_hex, update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         """
 
         :param slave_id: 地址码
@@ -95,6 +96,8 @@ class Modbus_Response_Parser():
         :param response_hex: 响应报文16进制
         """
         self.update_status_main_signal = update_status_main_signal
+        # tab子页面更新数据的信号槽
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
         self.slave_id = slave_id
         self.function_code = function_code
         self.response = response
@@ -131,7 +134,9 @@ class Modbus_Response_Parser():
                                                                                    response=self.response,
                                                                                    response_hex=self.response_hex,
                                                                                    function_code=self.function_code,
-                                                                                   update_status_main_signal=self.update_status_main_signal)
+                                                                                   update_status_main_signal=self.update_status_main_signal,
+                                                                                   tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+                                                                                   )
                     break
             else:
                 logger.info(f"type.value['name'] Each:{'ERROR'}|mouse_cage_number:{mouse_cage_number}")
@@ -142,7 +147,10 @@ class Modbus_Response_Parser():
                                                                                response=self.response,
                                                                                response_hex=self.response_hex,
                                                                                function_code=self.function_code,
-                                                                               update_status_main_signal=self.update_status_main_signal)
+                                                                               update_status_main_signal=self.update_status_main_signal,
+                                                                               tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+
+                                                                               )
                 pass
             pass
         else:
@@ -155,7 +163,10 @@ class Modbus_Response_Parser():
                                                                                        response=self.response,
                                                                                        response_hex=self.response_hex,
                                                                                        function_code=self.function_code,
-                                                                                       update_status_main_signal=self.update_status_main_signal)
+                                                                                       update_status_main_signal=self.update_status_main_signal
+                                                                                       ,
+                                                                                       tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+                                                                                       )
                     break
             else:
                 logger.info(f"type.value['name'] Not_Each:{'ERROR'}")
@@ -164,7 +175,10 @@ class Modbus_Response_Parser():
                                                                                    response=self.response,
                                                                                    response_hex=self.response_hex,
                                                                                    function_code=self.function_code,
-                                                                                   update_status_main_signal=self.update_status_main_signal)
+                                                                                   update_status_main_signal=self.update_status_main_signal
+                                                                                   ,
+                                                                                   tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+                                                                                   )
             pass
         return response_parser
         pass
@@ -176,9 +190,11 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
     """
 
     def __init__(self, name, origin_slave_id, mouse_cage_number, slave_id, response,
-                 response_hex, function_code, update_status_main_signal):
+                 response_hex, function_code, update_status_main_signal, tab_frame_show_data_signal_list=[]):
         # 更新状态text框
         self.update_status_main_signal = update_status_main_signal
+        # tab子页面更新数据的信号槽
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
         self.name = name
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
@@ -204,7 +220,9 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+            )
             pass
         elif self.name == Modbus_Slave_Ids.EM.value['name']:
             self.specific_response = Modbus_Response_EM(
@@ -214,7 +232,10 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+
+            )
             pass
             pass
         elif self.name == Modbus_Slave_Ids.DWM.value['name']:
@@ -225,7 +246,10 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal
+                ,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+            )
             pass
             pass
         elif self.name == Modbus_Slave_Ids.WM.value['name']:
@@ -236,7 +260,10 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+
+            )
             pass
             pass
         else:
@@ -247,7 +274,10 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+
+            )
             pass
 
     pass
@@ -259,9 +289,13 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
     """
 
     def __init__(self, name, slave_id, response,
-                 response_hex, function_code, update_status_main_signal):
+                 response_hex, function_code, update_status_main_signal
+                 ,
+                 tab_frame_show_data_signal_list=[]
+                 ):
         # 更新状态text框
         self.update_status_main_signal = update_status_main_signal
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
         self.name = name
         self.slave_id = slave_id
         self.response = response
@@ -282,7 +316,8 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list)
             pass
         elif self.name == Modbus_Slave_Ids.UGC.value['name']:
             self.specific_response = Modbus_Response_UGC(
@@ -290,7 +325,8 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list)
             pass
             pass
         elif self.name == Modbus_Slave_Ids.ZOS.value['name']:
@@ -299,7 +335,8 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list)
             pass
             pass
         else:
@@ -308,7 +345,8 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal)
+                update_status_main_signal=self.update_status_main_signal,
+                tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list)
             pass
 
     pass
@@ -422,13 +460,16 @@ class Modbus_Response_NOT_EXISTENCE(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal):
+                 update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
 
         self.update_status_main_signal = update_status_main_signal
+
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if self.mouse_cage_number is None or self.origin_slave_id is None:
@@ -449,13 +490,16 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal):
+                 update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]
+                 ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.ENM
         self.update_status_main_signal = update_status_main_signal
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -897,13 +941,16 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal):
+                 update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.DWM
         self.update_status_main_signal = update_status_main_signal
+
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1053,13 +1100,15 @@ class Modbus_Response_EM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal):
+                 update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.EM
         self.update_status_main_signal = update_status_main_signal
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1300,13 +1349,16 @@ class Modbus_Response_WM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal):
+                 update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.WM
         self.update_status_main_signal = update_status_main_signal
+
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1452,11 +1504,13 @@ class Modbus_Response_WM(Modbus_Response_Parents):
 
 class Modbus_Response_ZOS(Modbus_Response_Parents):
     def __init__(self, slave_id, response,
-                 response_hex, function_code, update_status_main_signal):
+                 response_hex, function_code, update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.type = Modbus_Slave_Ids.ZOS
         self.update_status_main_signal = update_status_main_signal
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1816,11 +1870,13 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
 
 class Modbus_Response_UGC(Modbus_Response_Parents):
     def __init__(self, slave_id, response,
-                 response_hex, function_code, update_status_main_signal):
+                 response_hex, function_code, update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.type = Modbus_Slave_Ids.UGC
         self.update_status_main_signal = update_status_main_signal
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -2254,11 +2310,14 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
 
 class Modbus_Response_URC(Modbus_Response_Parents):
     def __init__(self, slave_id, response,
-                 response_hex, function_code, update_status_main_signal):
+                 response_hex, function_code, update_status_main_signal,
+                 tab_frame_show_data_signal_list=[]):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.type = Modbus_Slave_Ids.UFC
         self.update_status_main_signal = update_status_main_signal
+
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):

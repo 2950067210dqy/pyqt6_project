@@ -13,12 +13,15 @@ from util.time_util import time_util
 
 class ModbusRTUMaster:
     # 初始化后代表着连接串口，只有当close以后才会释放
-    def __init__(self, port='COM1', timeout=1, update_status_main_signal=pyqtSignal(str)):
+    def __init__(self, port='COM1', timeout=1, update_status_main_signal=pyqtSignal(str),
+                 tab_frame_show_data_signal_list=[]):
         # 可修改参数
         self.sport = port  # 这里是随便写的，要配合前端选框来
         self.timeout = timeout  # 可能需要修改
         # 获取主线程更新界面信号
         self.update_status_main_signal: pyqtSignal = update_status_main_signal
+        # tab子页面更新数据的信号槽
+        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
         self.ser = None
 
     def close(self):
@@ -176,5 +179,7 @@ class ModbusRTUMaster:
             modbus_response_parser = Modbus_Response_Parser(slave_id=slave_id,
                                                             function_code=function_code, response=response,
                                                             response_hex=response_hex,
-                                                            update_status_main_signal=self.update_status_main_signal)
+                                                            update_status_main_signal=self.update_status_main_signal,
+                                                            tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
+                                                            )
             modbus_response_parser.parser()
