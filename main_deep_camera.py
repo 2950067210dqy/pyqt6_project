@@ -1,14 +1,18 @@
-import asyncio
 import json
-import os
+import sys
 import threading
 import traceback
 from threading import Thread
 
+from PyQt6.QtWidgets import QApplication
 from loguru import logger
 
 from communication.ini_pareser.ini_parser import ini_parser
 from config.global_setting import global_setting
+
+from ui.dialog.index.deep_camera_config_dialog_index import deep_camera_config_dialog
+from util.folder_util import folder_util
+from util.json_util import json_util
 
 from util.time_util import time_util
 import pyrealsense2 as rs
@@ -24,7 +28,11 @@ import numpy as np
 修改：连接相机时间优化
 """
 
-# 总图像帧数量
+# 删除文件线程
+delete_file_thread = None
+# 相机线程
+camera_list = []
+
 frame_nums = 0
 lock = threading.Lock()
 
@@ -358,7 +366,8 @@ class Delete_file(Thread):
                         else:
                             os.remove(file_path)  # 删除文件
                         # 删除文件后释放锁
-                        del file_locks[file]
+                        if file in file_locks:
+                            del file_locks[file]
                     else:
                         os.remove(file_path)  # 删除文件
                 except Exception as e:
@@ -403,8 +412,9 @@ class RealSenseProcessor(Thread):
     相机线程
     """
 
-    def __init__(self, path='', id=1):
+    def __init__(self, path='', id=1, serial_number=""):
         super().__init__()
+        self.serial_number = serial_number
         self.running = None
         self.id = id
         self.path = path
@@ -413,7 +423,7 @@ class RealSenseProcessor(Thread):
     def check_pipeline_status(self):
         try:
             # 获取当前的传输状态
-            frames = self.pipeline.wait_for_frames(timeout_ms=500)
+            frames = self.pipeline.wait_for_frames(timeout_ms=5000)
             return True
         except Exception as e:
             return False
@@ -427,12 +437,14 @@ class RealSenseProcessor(Thread):
         self.fps = 30
         self.pipeline = rs.pipeline()
         self.config = rs.config()
+        self.config.enable_device(self.serial_number)
         self.config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, self.fps)
         self.config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, self.fps)
         self.align = rs.align(rs.stream.color)
         try:
             # 尝试启动 RealSense 流
             self.pipeline.start(self.config)
+
             # logger.info(f"深度相机_{self.id} | 设备已连接。")
             return True
         except Exception as e:
@@ -480,6 +492,7 @@ class RealSenseProcessor(Thread):
             self.running = True
             last_frame_number = None
             while self.running:
+
                 # 如果初始化相机失败，则一直尝试初始化相机
                 if not self.init_state:
                     self.init_state = self.init_camera()
@@ -493,8 +506,11 @@ class RealSenseProcessor(Thread):
                 # asyncio.run()
                 # 本来wait_for_frames就是同步等待帧，
                 start_time = time.time()
+                frames = None
                 try:
-                    frames = self.pipeline.wait_for_frames()
+                    frames = self.pipeline.wait_for_frames(timeout_ms=500)
+                except RuntimeError as e:
+                    logger.error(f"deep_camera{self.id}获取帧失败，RuntimeError: {e}")
                 except Exception as e:
                     logger.error(f"deep_camera{self.id}获取帧失败，异常原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
                     self.init_state = False
@@ -570,9 +586,95 @@ def load_global_setting():
     return config
 
 
+def check_setting_cameras_each_number():
+    """
+    检测是否有相机与鼠笼编号一一对应的文件，如果没有就显示界面让用户选完在进行相机连接，如果有文件则根据文件来一一对应
+    :return:
+    """
+    config_file_path = f"./{global_setting.get_setting('camera_config')['DEEP_CAMERA']['camera_to_mouse_cage_number_file_name']}"
+    if folder_util.is_exist_file(
+            config_file_path):
+        # 存在配置文件
+        # 读取配置文件
+        serials = json_util.read_json_to_dict_list(config_file_path)
+        init_camera_and_image_handle_thread(serials)
+        pass
+    else:
+        # 不存在配置文件
+        app = QApplication(sys.argv)
+
+        dialog_frame = deep_camera_config_dialog(title="深度相机配置")
+        dialog_frame.camera_config_finished_signal.connect(init_camera_and_image_handle_thread)
+        dialog_frame.show_frame()
+
+        sys.exit(app.exec())
+        pass
+
+
+def init_camera_and_image_handle_thread(serials):
+    global camera_list
+    camera_list = []
+    # 初始化保存路径
+    path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+           global_setting.get_setting("camera_config")['DEEP_CAMERA']['path']
+    # 相机和图像处理线程初始化
+    # camera_nums = int(global_setting.get_setting("camera_config")['DEEP_CAMERA']['nums'])
+    camera_nums = len(serials)
+    # 更改相机数量全局变量
+    camera_config_temp = global_setting.get_setting("camera_config")
+    camera_config_temp['DEEP_CAMERA']['nums'] = camera_nums
+    global_setting.set_setting("camera_config", camera_config_temp)
+
+    # serials = ["230322273703", "230322274766"]
+    for num in range(camera_nums):
+        camera_struct = {}
+        camera = None
+        try:
+            # 相机初始化
+            camera = RealSenseProcessor(
+                path=path + f"{global_setting.get_setting('camera_config')['DEEP_CAMERA']['mouse_cage_prefix']}{serials[num]['mouse_cage_number']}/",
+                id=serials[num]['mouse_cage_number'],
+                serial_number=serials[num]['serial'])
+        except Exception as e:
+            logger.error(f"deep相机{serials[num]['mouse_cage_number']}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
+            # 所有线程停止
+            delete_file_thread.stop()
+            for camera_struct_l in camera_list:
+                if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
+                    camera_struct_l['camera'].stop()
+                if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
+                    camera_struct_l['img_process'].stop()
+            continue
+        img_process = None
+        try:
+            # 图像处理初始化
+            img_process = Img_process(
+                path=path + f"{global_setting.get_setting('camera_config')['DEEP_CAMERA']['mouse_cage_prefix']}{serials[num]['mouse_cage_number']}/",
+                camera_id=serials[num]['mouse_cage_number'])
+        except Exception as e:
+            logger.error(
+                f"deep 图像处理相机{serials[num]['mouse_cage_number']}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
+            # 所有线程停止
+            delete_file_thread.stop()
+            for camera_struct_l in camera_list:
+                if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
+                    camera_struct_l['camera'].stop()
+                if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
+                    camera_struct_l['img_process'].stop()
+            continue
+        camera.start()
+        img_process.start()
+        camera_struct['id'] = num + 1
+        camera_struct['camera'] = camera
+        camera_struct['img_process'] = img_process
+        camera_list.append(camera_struct)
+        pass
+    pass
+
+
 def main():
     # 加载日志配置
-    logger.remove(0)
+    # logger.remove(0)
     logger.add(
         "./log/deep_camera/d_camera_{time:YYYY-MM-DD}.log",
         rotation="00:00",
@@ -590,45 +692,7 @@ def main():
     delete_file_thread = Delete_file(path=path, start_time=global_setting.get_setting("start_time"))
     delete_file_thread.start()
     # 根据设置的相机数量来连接
-    camera_nums = int(global_setting.get_setting("camera_config")['DEEP_CAMERA']['nums'])
-    camera_list = []
-    for num in range(camera_nums):
-        camera_struct = {}
-        camera = None
-        try:
-            # 相机初始化
-            camera = RealSenseProcessor(path=path + f"camera_{num + 1}/", id=num + 1)
-        except Exception as e:
-            logger.error(f"deep相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
-            # 所有线程停止
-            delete_file_thread.stop()
-            for camera_struct_l in camera_list:
-                if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
-                    camera_struct_l['camera'].stop()
-                if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
-                    camera_struct_l['img_process'].stop()
-            continue
-        img_process = None
-        try:
-            # 图像处理初始化
-            img_process = Img_process(path=path + f"camera_{num + 1}/", camera_id=num + 1)
-        except Exception as e:
-            logger.error(f"deep 图像处理相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
-            # 所有线程停止
-            delete_file_thread.stop()
-            for camera_struct_l in camera_list:
-                if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
-                    camera_struct_l['camera'].stop()
-                if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
-                    camera_struct_l['img_process'].stop()
-            continue
-        camera.start()
-        img_process.start()
-        camera_struct['id'] = num + 1
-        camera_struct['camera'] = camera
-        camera_struct['img_process'] = img_process
-        camera_list.append(camera_struct)
-        pass
+    check_setting_cameras_each_number()
 
     # stop
     # camera1.pipeline.stop()

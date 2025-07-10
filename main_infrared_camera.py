@@ -483,7 +483,9 @@ def main():
         camera = None
         try:
             # 初始化
-            camera = Thermal_process(path=path + f"camera_{num + 1}/", id=num + 1)
+            camera = Thermal_process(
+                path=path + f"{global_setting.get_setting('camera_config')['INFRARED_CAMERA']['mouse_cage_prefix']}{num + 1}/",
+                id=num + 1)
         except Exception as e:
             logger.error(f"红外相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止

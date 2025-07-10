@@ -77,9 +77,17 @@ class folder_util():
         return os.path.exists(folder_path)
 
     @classmethod
-    def is_exist_file(self, file_path):
+    def is_exist_file(cls, file_path):
         """
         判断是否存在文件
         :return:True False
         """
         return os.path.isfile(file_path)
+
+    @classmethod
+    def list_directories(cls, path):
+        if not os.path.exists(path):
+            os.makedirs(path)
+        # 获取指定路径下的所有文件夹名称
+        directories = [name for name in os.listdir(path) if os.path.isdir(os.path.join(path, name))]
+        return directories

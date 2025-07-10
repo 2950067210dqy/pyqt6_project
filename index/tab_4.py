@@ -9,6 +9,7 @@ from loguru import logger
 
 from config.global_setting import global_setting
 from dao.data_read import data_read
+from main_deep_camera import init_camera_and_image_handle_thread
 from theme.ThemeQt6 import ThemedWidget
 from PyQt6 import QtCore, QtGui
 from PyQt6.QtCore import QRect, Qt, QThread, pyqtSignal
@@ -16,8 +17,9 @@ from PyQt6.QtWidgets import QWidget, QHBoxLayout, QGraphicsView, QGraphicsScene,
     QLabel
 
 from theme.ThemeQt6 import ThemedWidget
+from ui.dialog.index.deep_camera_config_dialog_index import deep_camera_config_dialog
 from ui.tab4 import Ui_tab4_frame
-from util.folder_util import File_Types
+from util.folder_util import File_Types, folder_util
 
 
 class ImageLoaderThread(QThread):
@@ -39,18 +41,26 @@ class ImageLoaderThread(QThread):
         self.infrared_camera_nums = int(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['nums'])
         self.deep_camera_nums = int(global_setting.get_setting("camera_config")['DEEP_CAMERA']['nums'])
         # 每个相机的图片路径
+        infrared_folder_list = folder_util.list_directories(
+            global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+            global_setting.get_setting("camera_config")['INFRARED_CAMERA'][
+                'path'])
+        deep_folder_list = folder_util.list_directories(
+            global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+            global_setting.get_setting("camera_config")['DEEP_CAMERA'][
+                'path'])
         self.infrared_path = [global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
                               global_setting.get_setting("camera_config")['INFRARED_CAMERA'][
-                                  'path'] + f"camera_{i + 1}/" +
+                                  'path'] + f"{i}/" +
                               global_setting.get_setting("camera_config")['INFRARED_CAMERA']['pic_dir']
-                              for i in range(self.infrared_camera_nums)
+                              for i in infrared_folder_list
                               ]
         self.deep_path = [global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
                           global_setting.get_setting("camera_config")['DEEP_CAMERA'][
-                              'path'] + f"camera_{i + 1}/" +
+                              'path'] + f"{i}/" +
                           global_setting.get_setting("camera_config")['DEEP_CAMERA']['result_dir'] +
                           global_setting.get_setting("camera_config")['DEEP_CAMERA']['result_img_dir']
-                          for i in range(self.deep_camera_nums)
+                          for i in deep_folder_list
                           ]
         self.images = {"deep_camera": [], "infrared_camera": []}
         self.running = True
@@ -199,51 +209,69 @@ class Tab_4(ThemedWidget):
             return
         for i in range(len(pixmap_path_dict['deep_camera'])):
             # logger.critical(f"deep_camera | {pixmap_path_dict['deep_camera'][i]}")
+            position = pixmap_path_dict['deep_camera'][i].find(
+                global_setting.get_setting('camera_config')['DEEP_CAMERA']['mouse_cage_prefix']) + len(
+                global_setting.get_setting('camera_config')['DEEP_CAMERA']['mouse_cage_prefix'])
             if pixmap_path_dict['deep_camera'][i] == "":
                 pixmap = QPixmap()
             else:
                 # 按比例缩放到目标宽高内
                 pixmap = QPixmap(pixmap_path_dict['deep_camera'][i]).scaled(200, 200,
                                                                             Qt.AspectRatioMode.KeepAspectRatio)
-            if self.graphics_view_left[i].scene() is None:
-                # 无就创建
-                scene = QGraphicsScene()
-                pixmap_item = QGraphicsPixmapItem(pixmap)
-                scene.addItem(pixmap_item)
+            for graphics_view in self.graphics_view_left:
 
-                # 设置场景给视图
-                self.graphics_view_left[i].setScene(scene)
+                if position < len(pixmap_path_dict['deep_camera'][i]) and graphics_view.objectName() != "" and \
+                        graphics_view.objectName()[-1] == \
+                        pixmap_path_dict['deep_camera'][i][position]:
+                    if graphics_view.scene() is None:
+                        # 无就创建
+                        scene = QGraphicsScene()
+                        pixmap_item = QGraphicsPixmapItem(pixmap)
+                        scene.addItem(pixmap_item)
+
+                        # 设置场景给视图
+                        graphics_view.setScene(scene)
+                    else:
+                        # 有就更新
+                        graphics_view.scene().clear()
+                        graphics_view.scene().addPixmap(pixmap)
+
             else:
-                # 有就更新
-                self.graphics_view_left[i].scene().clear()
-                self.graphics_view_left[i].scene().addPixmap(pixmap)
-
                 pass
 
-            pass
         for i in range(len(pixmap_path_dict['infrared_camera'])):
             # logger.critical(f"infrared_camera | {pixmap_path_dict['infrared_camera'][i]}")
+            position = pixmap_path_dict['infrared_camera'][i].find(
+                global_setting.get_setting('camera_config')['INFRARED_CAMERA']['mouse_cage_prefix']) + len(
+                global_setting.get_setting('camera_config')['INFRARED_CAMERA']['mouse_cage_prefix'])
             if pixmap_path_dict['infrared_camera'][i] == "":
                 pixmap = QPixmap()
             else:
                 # 按比例缩放到目标宽高内
                 pixmap = QPixmap(pixmap_path_dict['infrared_camera'][i]).scaled(200, 200,
                                                                                 Qt.AspectRatioMode.KeepAspectRatio)
-            if self.graphics_view_right[i].scene() is None:
-                # 无就创建
-                scene = QGraphicsScene()
-                pixmap_item = QGraphicsPixmapItem(pixmap)
-                scene.addItem(pixmap_item)
+            for graphics_view in self.graphics_view_right:
 
-                # 设置场景给视图
-                self.graphics_view_right[i].setScene(scene)
+                if position < len(pixmap_path_dict['infrared_camera'][i]) and graphics_view.objectName() != "" and \
+                        graphics_view.objectName()[-1] == \
+                        pixmap_path_dict['infrared_camera'][i][position]:
+                    if graphics_view.scene() is None:
+                        # 无就创建
+                        scene = QGraphicsScene()
+                        pixmap_item = QGraphicsPixmapItem(pixmap)
+                        scene.addItem(pixmap_item)
+
+                        # 设置场景给视图
+                        graphics_view.setScene(scene)
+                    else:
+                        # 有就更新
+                        graphics_view.scene().clear()
+                        graphics_view.scene().addPixmap(pixmap)
+                        pass
+
             else:
-                # 有就更新
-                self.graphics_view_right[i].scene().clear()
-                self.graphics_view_right[i].scene().addPixmap(pixmap)
                 pass
-
-            pass
+        pass
 
     def closeEvent(self, event):
         self.loader_thread.stop()
@@ -290,10 +318,12 @@ class Tab_4(ThemedWidget):
         # 找到两个按钮 和状态显示label
         start_btn = self.findChild(QPushButton, "start_btn")
         stop_btn = self.findChild(QPushButton, "stop_btn")
+        config_btn = self.findChild(QPushButton, "config")
         state_label: QLabel = self.findChild(QLabel, "state_label")
         # 绑定功能
         start_btn.clicked.connect(lambda: self.start_btn_func(start_btn, stop_btn, state_label))
         stop_btn.clicked.connect(lambda: self.stop_btn_func(start_btn, stop_btn, state_label))
+        config_btn.clicked.connect(lambda: self.config_btn_func(config_btn))
         pass
 
     def start_btn_func(self, start_btn: QPushButton, stop_btn: QPushButton, state_label: QLabel):
@@ -316,4 +346,15 @@ class Tab_4(ThemedWidget):
         state_label.setText("未连接")
         stop_btn.setDisabled(True)
         start_btn.setDisabled(False)
+        pass
+
+    def config_btn_func(self, config_btn):
+        """
+        config按钮函数 打开dialog
+        :param config_btn:
+        :return:
+        """
+        dialog_frame = deep_camera_config_dialog(title="深度相机配置")
+        # dialog_frame.camera_config_finished_signal.connect(init_camera_and_image_handle_thread)
+        dialog_frame.show_frame()
         pass
