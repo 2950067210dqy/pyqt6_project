@@ -1,3 +1,4 @@
+import multiprocessing
 import traceback
 from multiprocessing import Process, freeze_support
 import os
@@ -80,6 +81,8 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     )
     logger.info(f"{'-' * 40}main_start{'-' * 40}")
     logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
+
+    q = multiprocessing.Queue()  # 创建 Queue 消息传递
     # p_comm = Process(target=run_comm_program, name="p_comm")
     # p_gui = Process(target=run_gui_program, name="p_gui")
 
@@ -88,10 +91,10 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
 
     # p_comm = Process(target=main_comm.main, name="p_comm")
     p_response_comm = Process(target=main_response_Modbus.main, name="p_response_comm")
-    p_gui = Process(target=main_gui.main, name="p_gui")
+    p_gui = Process(target=main_gui.main, name="p_gui",args=(q,))
 
-    p_deep_camera = Process(target=main_deep_camera.main, name="p_deep_camera")
-    p_infrared_camera = Process(target=main_infrared_camera.main, name="p_infrared_camera")
+    p_deep_camera = Process(target=main_deep_camera.main, name="p_deep_camera",args=(q,))
+    p_infrared_camera = Process(target=main_infrared_camera.main, name="p_infrared_camera",args=(q,))
     # try:
     #     logger.info(f"p_comm子进程开始运行")
     #     p_comm.start()

@@ -9,7 +9,9 @@ from loguru import logger
 
 from config.global_setting import global_setting
 from dao.data_read import data_read
-from main_deep_camera import init_camera_and_image_handle_thread
+from entity.MyQThread import MyQThread
+from main_deep_camera import RealSenseProcessor, Img_process, init_camera_and_image_handle_thread
+
 from theme.ThemeQt6 import ThemedWidget
 from PyQt6 import QtCore, QtGui
 from PyQt6.QtCore import QRect, Qt, QThread, pyqtSignal
@@ -18,25 +20,22 @@ from PyQt6.QtWidgets import QWidget, QHBoxLayout, QGraphicsView, QGraphicsScene,
 
 from theme.ThemeQt6 import ThemedWidget
 from ui.dialog.index.deep_camera_config_dialog_index import deep_camera_config_dialog
+from ui.dialog.index.infrared_camera_config_dialog_index import infrared_camera_config_dialog
+from ui.dialog.index.infrared_camera_read_SN_dialog_index import infrared_camera_read_SN_dialog
 from ui.tab4 import Ui_tab4_frame
 from util.folder_util import File_Types, folder_util
 
 
-class ImageLoaderThread(QThread):
+class ImageLoaderThread(MyQThread):
     """
     连续获取早几秒钟的文件路径
     """
     image_loaded = pyqtSignal(dict)
 
-    def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
-        # 加载qss样式表
-        logger.warning("tab4——show")
 
-    def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
-        logger.warning("tab4--hide")
 
     def __init__(self):
-        super().__init__()
+        super().__init__(name="tab4_image_loader")
         # 相机数量
         self.infrared_camera_nums = int(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['nums'])
         self.deep_camera_nums = int(global_setting.get_setting("camera_config")['DEEP_CAMERA']['nums'])
@@ -97,37 +96,37 @@ class ImageLoaderThread(QThread):
         else:
             return result_files[len(result_files) - 1]
 
-    def run(self):
-        while self.running:
-            try:
-                deep_camera_list = []
-                infrared_camera_list = []
-                for path in self.deep_path:
-                    if not os.path.exists(path):
-                        os.makedirs(path)
-                    file_name_path = self.filter_files_earlier_than(folder=path, delta_seconds=float(
-                        global_setting.get_setting("configer")['tab4_pic']['data_delay']))
-                    if file_name_path is None:
-                        deep_camera_list.append("")
-                    else:
-                        deep_camera_list.append(path + file_name_path)
-                    pass
-                for path in self.infrared_path:
-                    if not os.path.exists(path):
-                        os.makedirs(path)
-                    file_name_path = self.filter_files_earlier_than(folder=path, delta_seconds=float(
-                        global_setting.get_setting("configer")['tab4_pic']['data_delay']))
-                    if file_name_path is None:
-                        infrared_camera_list.append("")
-                    else:
-                        infrared_camera_list.append(path + "/" + file_name_path)
-                    pass
-                self.images["deep_camera"] = deep_camera_list
-                self.images["infrared_camera"] = infrared_camera_list
-                self.image_loaded.emit(self.images)
-                time.sleep(float(global_setting.get_setting("configer")['tab4_pic']['delay']))
-            except Exception as e:
-                logger.error(f"tab4线程异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
+    def dosomething(self):
+
+        try:
+            deep_camera_list = []
+            infrared_camera_list = []
+            for path in self.deep_path:
+                if not os.path.exists(path):
+                    os.makedirs(path)
+                file_name_path = self.filter_files_earlier_than(folder=path, delta_seconds=float(
+                    global_setting.get_setting("configer")['tab4_pic']['data_delay']))
+                if file_name_path is None:
+                    deep_camera_list.append("")
+                else:
+                    deep_camera_list.append(path + file_name_path)
+                pass
+            for path in self.infrared_path:
+                if not os.path.exists(path):
+                    os.makedirs(path)
+                file_name_path = self.filter_files_earlier_than(folder=path, delta_seconds=float(
+                    global_setting.get_setting("configer")['tab4_pic']['data_delay']))
+                if file_name_path is None:
+                    infrared_camera_list.append("")
+                else:
+                    infrared_camera_list.append(path + "/" + file_name_path)
+                pass
+            self.images["deep_camera"] = deep_camera_list
+            self.images["infrared_camera"] = infrared_camera_list
+            self.image_loaded.emit(self.images)
+            time.sleep(float(global_setting.get_setting("configer")['tab4_pic']['delay']))
+        except Exception as e:
+            logger.error(f"tab4线程异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
 
     def stop(self):
         self.running = False
@@ -135,12 +134,25 @@ class ImageLoaderThread(QThread):
 
 
 class Tab_4(ThemedWidget):
+    def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
+        # 加载qss样式表
+        logger.warning("tab4——show")
+        if self.loader_thread is not None and self.loader_thread.isRunning():
+            self.loader_thread.resume()
+
+    def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
+        logger.warning("tab4--hide")
+        if self.loader_thread is not None and self.loader_thread.isRunning():
+            self.loader_thread.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
         # 图像列表
         self.charts_list = []
-
+        # 对话框
+        self.deep_camera_config_dialog_frame=None
+        self.infrared_camera_config_dialog_frame=None
+        self.infrared_camera_read_SN_dialog_frame=None
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 实例化自定义ui
@@ -318,12 +330,17 @@ class Tab_4(ThemedWidget):
         # 找到两个按钮 和状态显示label
         start_btn = self.findChild(QPushButton, "start_btn")
         stop_btn = self.findChild(QPushButton, "stop_btn")
-        config_btn = self.findChild(QPushButton, "config")
         state_label: QLabel = self.findChild(QLabel, "state_label")
+
+        deep_camera_config_btn = self.findChild(QPushButton, "deep_camera_config")
+        infrared_camera_config_btn = self.findChild(QPushButton, "infrared_camera_config")
+        infrared_camera_setting_btn = self.findChild(QPushButton, "infrared_camera_setting")
         # 绑定功能
         start_btn.clicked.connect(lambda: self.start_btn_func(start_btn, stop_btn, state_label))
         stop_btn.clicked.connect(lambda: self.stop_btn_func(start_btn, stop_btn, state_label))
-        config_btn.clicked.connect(lambda: self.config_btn_func(config_btn))
+        deep_camera_config_btn.clicked.connect(lambda: self.deep_camera_config_btn_func(deep_camera_config_btn))
+        infrared_camera_config_btn.clicked.connect(lambda: self.infrared_camera_config_btn_func(infrared_camera_config_btn))
+        infrared_camera_setting_btn.clicked.connect(lambda: self.infrared_camera_setting_btn_func(infrared_camera_setting_btn))
         pass
 
     def start_btn_func(self, start_btn: QPushButton, stop_btn: QPushButton, state_label: QLabel):
@@ -348,13 +365,36 @@ class Tab_4(ThemedWidget):
         start_btn.setDisabled(False)
         pass
 
-    def config_btn_func(self, config_btn):
+    def deep_camera_config_btn_func(self, config_btn):
         """
         config按钮函数 打开dialog
         :param config_btn:
         :return:
         """
-        dialog_frame = deep_camera_config_dialog(title="深度相机配置")
-        # dialog_frame.camera_config_finished_signal.connect(init_camera_and_image_handle_thread)
-        dialog_frame.show_frame()
+        self.deep_camera_config_dialog_frame = deep_camera_config_dialog(title="深度相机配置",tip="\n设置好后要重新启动程序！！！！！！")
+        # self.deep_camera_config_dialog_frame.camera_config_finished_signal.connect(init_camera_and_image_handle_thread)
+        self.deep_camera_config_dialog_frame.show_frame()
+
+        pass
+    def infrared_camera_config_btn_func(self, config_btn):
+        """
+        config按钮函数 打开dialog
+        :param config_btn:
+        :return:
+        """
+        self.infrared_camera_config_dialog_frame = infrared_camera_config_dialog(title="红外相机配置",tip="\n设置好后要重新启动程序！！！！！！")
+        # self.infrared_camera_config_dialog_frame.camera_config_finished_signal.connect(init_camera_and_image_handle_thread)
+        self.infrared_camera_config_dialog_frame.show_frame()
+
+        pass
+    def infrared_camera_setting_btn_func(self, config_btn):
+        """
+        config按钮函数 打开dialog
+        :param config_btn:
+        :return:
+        """
+        self.infrared_camera_read_SN_dialog_frame = infrared_camera_read_SN_dialog(title="红外相机获取SN码")
+
+        self.infrared_camera_read_SN_dialog_frame.show_frame()
+
         pass

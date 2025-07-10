@@ -8,10 +8,17 @@ from pathlib import Path
 from threading import Thread
 
 import numpy as np
+from PyQt6.QtWidgets import QApplication
 from loguru import logger
 import cv2 as cv
+from pyrealsense2 import camera_info
+
 from communication.ini_pareser.ini_parser import ini_parser
 from config.global_setting import global_setting
+from entity.MyQThread import MyQThread
+from ui.dialog.index.infrared_camera_config_dialog_index import infrared_camera_config_dialog
+from util.folder_util import folder_util
+from util.json_util import json_util
 from util.time_util import time_util
 import sys
 import logging
@@ -25,6 +32,10 @@ from equipment.infrared_camera.senxor.utils import connect_senxor, data_to_frame
 from equipment.infrared_camera.senxor.utils import CVSegment
 from imutils.video import VideoStream
 
+# 删除线程
+delete_file_thread=None
+# 被其他红外相机已经使用的串口
+is_used_ports=[]
 np.set_printoptions(precision=1)
 
 # global constants
@@ -52,7 +63,27 @@ TIP_SEGM_PARAM = {
 frame_nums = 0
 lock = threading.Lock()
 
-
+class read_queue_data_Thread(MyQThread):
+    def __init__(self, name):
+        super().__init__(name)
+        self.queue=None
+        self.camera_list = None
+        pass
+    def dosomething(self):
+        if not self.queue.empty():
+            message = self.queue.get()
+            print(f"infrared_{message}")
+            if message is not None and isinstance(message, dict) and len(message) > 0 and 'to' in message and message[
+                'to'] == 'main_infrared_camera':
+                if 'data' in message and message['data'] == 'stop':
+                    if self.camera_list is not None:
+                        for camera_struct_l in self.camera_list:
+                            if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
+                                camera_struct_l['camera'].stop()
+                        print("main_infrared_camera stop")
+                        pass
+        pass
+read_queue_data_thread=read_queue_data_Thread(name="main_infrared_camera_read_queue_data_thread")
 class coordinate_writing:
     """
     将处理的坐标写入csv文件
@@ -187,8 +218,9 @@ class Thermal_process(Thread):
     温度处理线程
     """
 
-    def __init__(self, path, id):
+    def __init__(self, path, id,serial_number):
         super().__init__()
+        self.serial_number = serial_number
         self.path = path
         self.id = id
         self.running = None
@@ -242,11 +274,13 @@ class Thermal_process(Thread):
         温度传感器初始化
         :return:True or False
         """
+        global is_used_ports
         args = self.parse_args()
         save_dir = args.save_dir if hasattr(args, 'save_dir') else './data'
         os.makedirs(save_dir, exist_ok=True)
 
-        self.mi48, connected_port, port_names = connect_senxor(src=args.tis_id)
+        self.mi48, connected_port, port_names = connect_senxor(src=args.tis_id,name=f"infrared_camera_{self.id}",is_used_ports=is_used_ports,serial_number = self.serial_number)
+        is_used_ports.append(connected_port)
         if self.mi48 is None:
             if not self.init_error_log_show:
                 logger.error(
@@ -457,35 +491,54 @@ def load_global_setting():
     return config
 
 
-def main():
-    logger.remove(0)
-    logger.add(
-        "./log/infrared_camera/i_camera_{time:YYYY-MM-DD}.log",
-        rotation="00:00",
-        retention="30 days",
-        enqueue=True,
-        format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
-    )
-    logger.info(f"{'-' * 30}infrared_camera_start{'-' * 30}")
-    # 设置全局变量
-    load_global_setting()
+
+
+def check_setting_cameras_each_number():
+    """
+    检测是否有相机与鼠笼编号一一对应的文件，如果没有就显示界面让用户选完在进行相机连接，如果有文件则根据文件来一一对应
+    :return:
+    """
+    config_file_path = f"./{global_setting.get_setting('camera_config')['INFRARED_CAMERA']['camera_to_mouse_cage_number_file_name']}"
+    if folder_util.is_exist_file(
+            config_file_path):
+        # 存在配置文件
+        # 读取配置文件
+        serials = json_util.read_json_to_dict_list(config_file_path)
+        init_camera_and_image_handle_thread(serials)
+        pass
+    else:
+        # 不存在配置文件
+        app = QApplication(sys.argv)
+
+        dialog_frame = infrared_camera_config_dialog(title="红外相机配置")
+        dialog_frame.camera_config_finished_signal.connect(init_camera_and_image_handle_thread)
+        dialog_frame.show_frame()
+
+        sys.exit(app.exec())
+        pass
+
+def init_camera_and_image_handle_thread(serials):
+    global camera_list,read_queue_data_thread
+    # global_setting.get_setting("queue").put({'data':'stop','to':'main_infrared_camera'})
     # 初始化保存路径
     path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
            global_setting.get_setting("camera_config")['INFRARED_CAMERA']['path']
-    # 删除文件线程
-    delete_file_thread = Delete_file(path=path, start_time=global_setting.get_setting("start_time"))
-    delete_file_thread.start()
-
-    camera_nums = int(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['nums'])
+    # camera_nums = int(global_setting.get_setting("camera_config")['INFRARED_CAMERA']['nums'])
+    camera_nums = len(serials)
+    # 更改相机数量全局变量
+    camera_config_temp = global_setting.get_setting("camera_config")
+    camera_config_temp['INFRARED_CAMERA']['nums'] = camera_nums
+    global_setting.set_setting("camera_config", camera_config_temp)
     camera_list = []
     for num in range(camera_nums):
+
         camera_struct = {}
         camera = None
         try:
             # 初始化
             camera = Thermal_process(
-                path=path + f"{global_setting.get_setting('camera_config')['INFRARED_CAMERA']['mouse_cage_prefix']}{num + 1}/",
-                id=num + 1)
+                path=path + f"{global_setting.get_setting('camera_config')['INFRARED_CAMERA']['mouse_cage_prefix']}{serials[num]['mouse_cage_number']}/",
+                id=serials[num]['mouse_cage_number'],serial_number=serials[num]['serial'])
         except Exception as e:
             logger.error(f"红外相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止
@@ -500,7 +553,37 @@ def main():
         camera_struct['id'] = num + 1
         camera_struct['camera'] = camera
         camera_list.append(camera_struct)
-        pass
+    read_queue_data_thread.camera_list=camera_list
+    pass
+def main(q):
+    # logger.remove(0)
+    logger.add(
+        "./log/infrared_camera/i_camera_{time:YYYY-MM-DD}.log",
+        rotation="00:00",
+        retention="30 days",
+        enqueue=True,
+        format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
+    )
+    logger.info(f"{'-' * 30}infrared_camera_start{'-' * 30}")
+    # 设置全局变量
+    load_global_setting()
+    # 读取共享信息线程
+    global read_queue_data_thread
+    read_queue_data_thread.queue = q
+    read_queue_data_thread.start()
+    global_setting.set_setting("queue", q)
+    # 初始化保存路径
+    path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
+           global_setting.get_setting("camera_config")['INFRARED_CAMERA']['path']
+    # 删除文件线程
+    delete_file_thread = Delete_file(path=path, start_time=global_setting.get_setting("start_time"))
+    delete_file_thread.start()
+
+    # 根据设置的相机数量来连接
+    check_setting_cameras_each_number()
+
+
+
 
 
 if __name__ == "__main__":

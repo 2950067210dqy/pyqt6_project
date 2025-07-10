@@ -10,13 +10,24 @@ from loguru import logger
 from communication.ini_pareser.ini_parser import ini_parser
 from config.global_setting import global_setting
 from config.yamlParser import YamlParserObject
+from entity.MyQThread import MyQThread
 from index.all_windows import AllWindows
 # Author: Qinyou Deng
 # Create Time:2025-03-01
 # Update Time:2025-04-07
 from theme.ThemeManager import ThemeManager
 
-
+class read_queue_data_Thread(MyQThread):
+    def __init__(self, name):
+        super().__init__(name)
+        self.queue=None
+        self.camera_list = None
+        pass
+    def dosomething(self):
+        if not self.queue.empty():
+            print(f"gui_{self.queue.get()}")
+        pass
+read_queue_data_thread=read_queue_data_Thread(name="main_gui_camera_read_queue_data_thread")
 def load_global_setting():
     # 加载相机配置
     config_file_path = os.getcwd() + "/camera_config.ini"
@@ -113,9 +124,9 @@ def get_communiation_project_path():
     logger.info(f"HOST_COMPUTER_DATA_STORAGE_LOC={value}")
 
 
-def main():
+def main(q):
     # 移除默认的控制台处理器（默认id是0）
-    logger.remove()
+    logger.remove(0)
     # 加载日志配置
     logger.add(
         "./log/gui/gui_{time:YYYY-MM-DD}.log",
@@ -131,6 +142,11 @@ def main():
     # 加载全局配置
     logger.info("loading config start")
     load_global_setting()
+    # 读取共享信息线程
+    global read_queue_data_thread
+    read_queue_data_thread.queue = q
+    read_queue_data_thread.start()
+    global_setting.set_setting("queue", q)
     logger.info("loading config finish")
     # # 接收串口数据
     # receive_serial_port_data()

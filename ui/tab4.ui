@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>911</width>
-    <height>591</height>
+    <width>913</width>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -445,7 +445,7 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="sizeConstraint">
-     <enum>QLayout::SetFixedSize</enum>
+     <enum>QLayout::SizeConstraint::SetFixedSize</enum>
     </property>
     <item>
      <widget class="QLabel" name="label">
@@ -476,19 +476,33 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="config">
+     <widget class="QPushButton" name="deep_camera_config">
       <property name="text">
-       <string>相机对应鼠笼配置</string>
+       <string>深度相机对应鼠笼配置</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="infrared_camera_config">
+      <property name="text">
+       <string>红外相机对应鼠笼配置</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="infrared_camera_setting">
+      <property name="text">
+       <string>红外相机序列号获取</string>
       </property>
      </widget>
     </item>
     <item>
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Orientation::Horizontal</enum>
       </property>
       <property name="sizeType">
-       <enum>QSizePolicy::Expanding</enum>
+       <enum>QSizePolicy::Policy::Expanding</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>

@@ -9,6 +9,7 @@ from loguru import logger
 
 from communication.ini_pareser.ini_parser import ini_parser
 from config.global_setting import global_setting
+from entity.MyQThread import MyQThread
 
 from ui.dialog.index.deep_camera_config_dialog_index import deep_camera_config_dialog
 from util.folder_util import folder_util
@@ -30,8 +31,7 @@ import numpy as np
 
 # 删除文件线程
 delete_file_thread = None
-# 相机线程
-camera_list = []
+camera_list=[]
 
 frame_nums = 0
 lock = threading.Lock()
@@ -47,6 +47,31 @@ intrinsics = "./deep_camera_intrinsics.json"
 file_locks = {}
 
 
+class read_queue_data_Thread(MyQThread):
+    def __init__(self, name):
+        super().__init__(name)
+        self.queue=None
+        self.camera_list = None
+        pass
+    def dosomething(self):
+        if not self.queue.empty():
+            message =self.queue.get()
+            print(f"deep_{message}")
+            if message is not None and isinstance(message, dict) and  len(message) > 0 and 'to' in message and message['to'] == 'main_deep_camera':
+                if 'data' in message and message['data'] == 'stop':
+                    if self.camera_list is not None:
+                        for camera_struct_l in self.camera_list:
+                            if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
+                                camera_struct_l['camera'].stop()
+                                camera_struct_l['camera'].terminal()
+                            if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
+                                camera_struct_l['img_process'].stop()
+                                camera_struct_l['img_process'].terminal()
+                        print("main_deep_camera stop")
+                        pass
+
+        pass
+read_queue_data_thread=read_queue_data_Thread(name="main_deep_camera_read_queue_data_thread")
 class coordinate_writing:
     """
     将处理的坐标写入csv文件
@@ -612,8 +637,11 @@ def check_setting_cameras_each_number():
 
 
 def init_camera_and_image_handle_thread(serials):
-    global camera_list
-    camera_list = []
+
+
+
+    global camera_list,read_queue_data_thread
+    # global_setting.get_setting("queue").put({'data': 'stop', 'to': 'main_deep_camera'})
     # 初始化保存路径
     path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
            global_setting.get_setting("camera_config")['DEEP_CAMERA']['path']
@@ -624,7 +652,7 @@ def init_camera_and_image_handle_thread(serials):
     camera_config_temp = global_setting.get_setting("camera_config")
     camera_config_temp['DEEP_CAMERA']['nums'] = camera_nums
     global_setting.set_setting("camera_config", camera_config_temp)
-
+    camera_list=[]
     # serials = ["230322273703", "230322274766"]
     for num in range(camera_nums):
         camera_struct = {}
@@ -639,11 +667,14 @@ def init_camera_and_image_handle_thread(serials):
             logger.error(f"deep相机{serials[num]['mouse_cage_number']}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止
             delete_file_thread.stop()
+            delete_file_thread.terminal()
             for camera_struct_l in camera_list:
                 if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
                     camera_struct_l['camera'].stop()
+                    camera_struct_l['camera'].terminal()
                 if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
                     camera_struct_l['img_process'].stop()
+                    camera_struct_l['img_process'].terminal()
             continue
         img_process = None
         try:
@@ -656,11 +687,14 @@ def init_camera_and_image_handle_thread(serials):
                 f"deep 图像处理相机{serials[num]['mouse_cage_number']}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止
             delete_file_thread.stop()
+            delete_file_thread.terminal()
             for camera_struct_l in camera_list:
                 if len(camera_struct_l) != 0 and 'camera' in camera_struct_l:
                     camera_struct_l['camera'].stop()
+                    camera_struct_l['camera'].terminal()
                 if len(camera_struct_l) != 0 and 'img_process' in camera_struct_l:
                     camera_struct_l['img_process'].stop()
+                    camera_struct_l['img_process'].terminal()
             continue
         camera.start()
         img_process.start()
@@ -669,12 +703,13 @@ def init_camera_and_image_handle_thread(serials):
         camera_struct['img_process'] = img_process
         camera_list.append(camera_struct)
         pass
+    read_queue_data_thread.camera_list=camera_list
     pass
 
 
-def main():
+def main(q):
     # 加载日志配置
-    # logger.remove(0)
+    logger.remove(0)
     logger.add(
         "./log/deep_camera/d_camera_{time:YYYY-MM-DD}.log",
         rotation="00:00",
@@ -685,6 +720,11 @@ def main():
     logger.info(f"{'-' * 30}deep_camera_start{'-' * 30}")
     # 设置全局变量
     load_global_setting()
+    # 读取共享信息线程
+    global read_queue_data_thread
+    read_queue_data_thread.queue=q
+    read_queue_data_thread.start()
+    global_setting.set_setting("queue",q)
     # 初始化保存路径
     path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
            global_setting.get_setting("camera_config")['DEEP_CAMERA']['path']

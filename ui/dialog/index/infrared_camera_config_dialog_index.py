@@ -1,5 +1,6 @@
 import traceback
 import typing
+from queue import Queue
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import QRect, Qt, pyqtSignal
@@ -8,34 +9,31 @@ from loguru import logger
 
 from config.global_setting import global_setting
 from entity.MyQThread import MyQThread
+from equipment.infrared_camera.senxor.utils import query_devices
 
 from theme.ThemeQt6 import ThemedWidget
-from ui.dialog.deep_camera_config_dialog import Ui_deep_camera_config_dialog
+
 import pyrealsense2 as rs
 
+from ui.dialog.infrared_camera_config_dialog import Ui_infrared_camera_config_dialog
 from util.folder_util import folder_util
 from util.json_util import json_util
 
 
 
-class deep_camera_config_dialog(QDialog):
+class infrared_camera_config_dialog(QDialog):
     """
 
     """
 
     camera_config_finished_signal = pyqtSignal(list)
-    def scan_realsense(self):
-        # 搜索相机
-        ctx = rs.context()
-        devices = ctx.query_devices()
-        # 返回插在电脑上的相机的序列号
-        camera_series_in_computer = []
+    def scan_realsense(self):  # 搜索相机
+        global_setting.get_setting("queue").put({'data': 'stop', 'to': 'main_infrared_camera'})
+        camera_series_in_computer=[]
+        devices = query_devices()
         id = 1
         for dev in devices:
-            serial = dev.get_info(rs.camera_info.serial_number)
-            usb_port_id = dev.get_info(rs.camera_info.physical_port)
-            camera_series_in_computer.append({'id': id, 'serial': serial})
-            logger.info(f"serial:{serial}|usb_port_id:{usb_port_id} |len:{len(devices)}")
+            camera_series_in_computer.append({'id': id, 'serial': dev})
             id += 1
         return camera_series_in_computer
 
@@ -113,7 +111,7 @@ class deep_camera_config_dialog(QDialog):
             self.setGeometry(geometry)
         else:
             pass
-        self.ui = Ui_deep_camera_config_dialog()
+        self.ui = Ui_infrared_camera_config_dialog()
         self.ui.setupUi(self)
         # 窗口总是在最顶层
         self.setWindowFlag(Qt.WindowType.WindowStaysOnTopHint)
@@ -124,7 +122,7 @@ class deep_camera_config_dialog(QDialog):
         pass
 
     def init_data(self):
-        config_file_path = f"./{global_setting.get_setting('camera_config')['DEEP_CAMERA']['camera_to_mouse_cage_number_file_name']}"
+        config_file_path = f"./{global_setting.get_setting('camera_config')['INFRARED_CAMERA']['camera_to_mouse_cage_number_file_name']}"
         if folder_util.is_exist_file(
                 config_file_path):
             # 读取配置文件
@@ -779,7 +777,7 @@ class deep_camera_config_dialog(QDialog):
         logger.debug(f"选择的数据为：{choose_data}")
 
         # 1.把选择的数据存到json中
-        config_file_path = f"./{global_setting.get_setting('camera_config')['DEEP_CAMERA']['camera_to_mouse_cage_number_file_name']}"
+        config_file_path = f"./{global_setting.get_setting('camera_config')['INFRARED_CAMERA']['camera_to_mouse_cage_number_file_name']}"
         json_util.store_json_from_dict_list(filename=config_file_path, data=choose_data)
         # 2.激活外面主函数的信号 实例化相机线程
         self.camera_config_finished_signal.emit(choose_data)

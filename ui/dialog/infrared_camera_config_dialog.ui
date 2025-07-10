@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>deep_camera_config_dialog</class>
- <widget class="QDialog" name="deep_camera_config_dialog">
+ <class>infrared_camera_config_dialog</class>
+ <widget class="QDialog" name="infrared_camera_config_dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -26,7 +26,7 @@
     <string>tip：请配置好各个鼠笼与各个相机的序列号的对应关系，相机序列号在相机上有贴，设置好之后可以将鼠笼编号贴在相机上来更好的区分。</string>
    </property>
   </widget>
-  <widget class="QGroupBox" name="deep_camera_group">
+  <widget class="QGroupBox" name="infrared_camera_group">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>深度相机</string>
+    <string>红外相机</string>
    </property>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -515,7 +515,7 @@
   <connection>
    <sender>dialog_btn</sender>
    <signal>accepted()</signal>
-   <receiver>deep_camera_config_dialog</receiver>
+   <receiver>infrared_camera_config_dialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -531,7 +531,7 @@
   <connection>
    <sender>dialog_btn</sender>
    <signal>rejected()</signal>
-   <receiver>deep_camera_config_dialog</receiver>
+   <receiver>infrared_camera_config_dialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

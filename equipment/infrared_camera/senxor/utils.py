@@ -120,8 +120,72 @@ colormaps = {
     'ironbow': lut_ironbow[-256:],
 }
 
+def query_single_devices():
+    """
+    查询单个红外设备的sn码
+    :return:
+    """
+    # 返回数据。结构体为{}
+    camera_id =''
+    # 1,找到所有的红外设备
+    infrared_device_port=''
+    infrared_device=''
+    for p in list_ports.comports():
 
-def connect_senxor(src=None, name=None):
+        if p.vid == MI_VID and p.pid in MI_PIDs:
+            # 红外设备
+            port = p.description.split()[-1][1:-1]
+            infrared_device_port=port
+            infrared_device=p.device
+            break
+    #2.连接串口
+
+    ser=None
+    try:
+        ser = Serial(infrared_device)
+    except Exception as e:
+        logging.warning(f'query_devices error :{e}')
+    if ser is not None:
+        usb = USB_Interface(ser)
+        mi48 = MI48([usb, usb], name=infrared_device_port, read_raw=False)
+
+        if mi48.camera_id is not None :
+            camera_id=mi48.camera_id
+        mi48.stop()
+    return camera_id
+
+def query_devices():
+    """
+    查询所有红外设备的sn码
+    :return:
+    """
+    # 返回数据。结构体为{}
+    camera_ids =[]
+    # 1,找到所有的红外设备
+    infrared_devices_port=[]
+    infrared_devices=[]
+    for p in list_ports.comports():
+
+        if p.vid == MI_VID and p.pid in MI_PIDs:
+            # 红外设备
+            port = p.description.split()[-1][1:-1]
+            infrared_devices_port.append(port)
+            infrared_devices.append(p.device)
+    #2.连接串口
+    for i in range(len(infrared_devices)):
+        ser=None
+        try:
+            ser = Serial(infrared_devices[i])
+        except Exception as e:
+            logging.warning(f'query_devices error :{e}')
+        if ser is not None:
+            usb = USB_Interface(ser)
+            mi48 = MI48([usb, usb], name=infrared_devices_port[i], read_raw=False)
+            if  mi48.camera_id is not None :
+                camera_ids.append(mi48.camera_id)
+            mi48.stop()
+    return camera_ids
+def connect_senxor(src=None, name=None,is_used_ports=[],serial_number =''):
     """
     Return an MI48 instance corresponding to the SenXor module connected to `src`
 
@@ -129,7 +193,7 @@ def connect_senxor(src=None, name=None):
     number, e.g. 0, 1, etc.
     if `name` (stirng) is not None, it will be assigned to mi48.name instance, else
     the name of the virtual comport will be assigned to the mi48.name.
-
+    is_used_ports 是已经被其他红外传感器使用的串口
     Return None, if no connection to SenXor can be established.
     """
     cam_index, port_name = None, None
@@ -144,8 +208,12 @@ def connect_senxor(src=None, name=None):
     connected_port = None
     port_names = []
     for p in list_ports.comports():
+
         if p.vid == MI_VID and p.pid in MI_PIDs:
             port = p.description.split()[-1][1:-1]
+            # 被使用过的串口则跳过
+            if port in is_used_ports:
+                continue
             port_names.append(port)
             if port_name is not None and port_name != port: continue
             if cam_index is not None and cam_index != len(port_names) - 1: continue
@@ -163,6 +231,12 @@ def connect_senxor(src=None, name=None):
             connected_port = port
             if name is None: name = connected_port
             mi48 = MI48([usb, usb], name=name, read_raw=False)
+            # 序列号不一致找下一个
+            if mi48 is not None and mi48.camera_id is not None and serial_number!=mi48.camera_id:
+                mi48.stop()
+                continue
+            break
+
     return mi48, connected_port, port_names
 
 
