@@ -17,17 +17,23 @@ from index.all_windows import AllWindows
 # Update Time:2025-04-07
 from theme.ThemeManager import ThemeManager
 
+
 class read_queue_data_Thread(MyQThread):
     def __init__(self, name):
         super().__init__(name)
-        self.queue=None
+        self.queue = None
         self.camera_list = None
         pass
+
     def dosomething(self):
         if not self.queue.empty():
             print(f"gui_{self.queue.get()}")
         pass
-read_queue_data_thread=read_queue_data_Thread(name="main_gui_camera_read_queue_data_thread")
+
+
+read_queue_data_thread = read_queue_data_Thread(name="main_gui_camera_read_queue_data_thread")
+
+
 def load_global_setting():
     # 加载相机配置
     config_file_path = os.getcwd() + "/camera_config.ini"
@@ -156,3 +162,7 @@ def main(q):
     start_qt_application()
     # except Exception as e:
     #     logger.error(f"gui程序运行异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}，终止gui进程和comm进程")
+
+
+if __name__ == "__main__":
+    main()

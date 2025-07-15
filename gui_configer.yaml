@@ -71,7 +71,7 @@ monitoring_data: #监测数据项
     title: '称重传感器模块'
     object_name: 'weight'
     delay: 3 #每隔多少秒获取一次数据
-mouse_cage: #鼠笼
+mouse_cage: #鼠笼 tab2的鼠笼下拉框
   nums: 8 #鼠笼数量
 graphic: #图表项
   data_read_nums: 1 #每次读几个数据

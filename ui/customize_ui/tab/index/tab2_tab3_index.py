@@ -2,7 +2,7 @@ import typing, math
 
 from loguru import logger
 
-from Modbus.Modbus_Response_Parser import Modbus_Slave_Ids
+from Modbus.Modbus_Type import Modbus_Slave_Ids
 from config.global_setting import global_setting
 from entity.send_message import Send_Message
 from theme.ThemeQt6 import ThemedWidget
@@ -73,7 +73,9 @@ class Tab2_tab3(ThemedWidget):
                          function_desc="读输出端口状态信息", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list(2),
-                    'slave_id': format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X'),
+                    'slave_id': format(
+                        int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"),
+                        '02X'),
                     'function_code': format(int(f"{1}", 16), '02X'),
                 }),
             Send_Message(slave_address=self.type.value['address'],
@@ -81,7 +83,9 @@ class Tab2_tab3(ThemedWidget):
                          function_desc="读传感器状态信息", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list(3),
-                    'slave_id': format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X'),
+                    'slave_id': format(
+                        int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"),
+                        '02X'),
                     'function_code': format(int(f"{2}", 16), '02X'),
                 }),
             Send_Message(slave_address=self.type.value['address'],
@@ -89,7 +93,9 @@ class Tab2_tab3(ThemedWidget):
                          function_desc="读配置寄存器", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list(3),
-                    'slave_id': format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X'),
+                    'slave_id': format(
+                        int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"),
+                        '02X'),
                     'function_code': format(int(f"{3}", 16), '02X'),
                 }),
 
@@ -98,7 +104,9 @@ class Tab2_tab3(ThemedWidget):
                          function_desc="读取模块ID信息等", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list(0),
-                    'slave_id': format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X'),
+                    'slave_id': format(
+                        int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"),
+                        '02X'),
                     'function_code': format(int(f"{11}", 16), '02X'),
                 }),
         ]
@@ -224,7 +232,8 @@ class Tab2_tab3(ThemedWidget):
         logger.info(f"{self.objectName()}触发发送报文更新数据")
         for send_data_single in self.send_datas:
             send_data_single.message['port'] = global_setting.get_setting("tab2_select_port")
-            send_data_single.message['slave_id']= format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X')
+            send_data_single.message['slave_id'] = format(
+                int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"), '02X')
             pass
         pass
 
@@ -329,13 +338,13 @@ class Tab2_tab3(ThemedWidget):
                         match i:
                             case 0:
                                 labels[1].setText(f"<span style='color: green;'>已刹车</span>"
-                                                    if data[i][
-                                                           'value'] == 1 else f"<span style='color: red;'>未刹车</span>")
+                                                  if data[i][
+                                                         'value'] == 1 else f"<span style='color: red;'>未刹车</span>")
                                 pass
                             case 1:
                                 labels[1].setText(f"<span style='color: green;'>已开灯</span>"
-                                                    if data[i][
-                                                           'value'] == 1 else f"<span style='color: red;'>未开灯</span>")
+                                                  if data[i][
+                                                         'value'] == 1 else f"<span style='color: red;'>未开灯</span>")
                                 pass
                             case _:
                                 pass
@@ -422,7 +431,6 @@ class Tab2_tab3(ThemedWidget):
             for row in range(rows):
                 for col in range(cols):
                     if row * cols + col < len(data):
-
                         content_frame = QWidget()
                         content_frame_layout = QHBoxLayout()
 
@@ -431,7 +439,6 @@ class Tab2_tab3(ThemedWidget):
                         value_label = QLabel()
                         value_label.setText(
                             f"{data[row * cols + col]['value']}")
-
 
                         content_frame_layout.addWidget(desc_label)
                         content_frame_layout.addWidget(value_label)

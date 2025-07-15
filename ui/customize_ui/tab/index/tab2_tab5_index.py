@@ -1,9 +1,8 @@
-
 import typing, math
 
 from loguru import logger
 
-from Modbus.Modbus_Response_Parser import Modbus_Slave_Ids
+from Modbus.Modbus_Type import Modbus_Slave_Ids
 from config.global_setting import global_setting
 from entity.send_message import Send_Message
 from theme.ThemeQt6 import ThemedWidget
@@ -76,7 +75,9 @@ class Tab2_tab5(ThemedWidget):
                          function_desc="读输出端口状态信息", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list(1),
-                    'slave_id': format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X'),
+                    'slave_id': format(
+                        int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"),
+                        '02X'),
                     'function_code': format(int(f"{1}", 16), '02X'),
                 }),
             Send_Message(slave_address=self.type.value['address'],
@@ -84,7 +85,9 @@ class Tab2_tab5(ThemedWidget):
                          function_desc="读传感器状态信息", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list('00800002'),
-                    'slave_id': format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X'),
+                    'slave_id': format(
+                        int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"),
+                        '02X'),
                     'function_code': format(int(f"{2}", 16), '02X'),
                 }),
 
@@ -93,7 +96,9 @@ class Tab2_tab5(ThemedWidget):
                          function_desc="读取模块ID信息等", message={
                     'port': global_setting.get_setting("tab2_select_port"),
                     'data': number_util.set_int_to_4_bytes_list('00540008'),
-                    'slave_id': format(int(self.type.value['address'])+16*global_setting.get_setting("tab2_select_mouse_cage"), '02X'),
+                    'slave_id': format(
+                        int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"),
+                        '02X'),
                     'function_code': format(int(f"{11}", 16), '02X'),
                 }),
         ]
@@ -371,8 +376,6 @@ class Tab2_tab5(ThemedWidget):
 
             pass
         pass
-
-
 
     def show_data_by_function_code_4(self, data):
         #  根据不同功能码显示数据

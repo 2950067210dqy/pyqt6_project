@@ -3,7 +3,7 @@ import typing
 
 from loguru import logger
 
-from Modbus.Modbus_Response_Parser import Modbus_Slave_Ids
+from Modbus.Modbus_Type import Modbus_Slave_Ids
 from config.global_setting import global_setting
 from entity.send_message import Send_Message
 from theme.ThemeQt6 import ThemedWidget
@@ -216,6 +216,7 @@ class Tab2_tab1(ThemedWidget):
         self.start_btn.setDisabled(True)
         self.stop_btn.setDisabled(False)
         self.refresh_btn.setDisabled(False)
+
     def update_send_data(self):
         # 更新senddata的port和mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
@@ -395,7 +396,6 @@ class Tab2_tab1(ThemedWidget):
             for row in range(rows):
                 for col in range(cols):
                     if row * cols + col < len(data):
-
                         content_frame = QWidget()
                         content_frame_layout = QHBoxLayout()
 
@@ -405,7 +405,6 @@ class Tab2_tab1(ThemedWidget):
 
                         value_label.setText(
                             f"{data[row * cols + col]['value']}%")
-
 
                         content_frame_layout.addWidget(desc_label)
                         content_frame_layout.addWidget(value_label)

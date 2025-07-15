@@ -4,7 +4,7 @@ import typing
 
 from loguru import logger
 
-from Modbus.Modbus_Response_Parser import Modbus_Slave_Ids
+from Modbus.Modbus_Type import Modbus_Slave_Ids
 from config.global_setting import global_setting
 from entity.MyQThread import MyQThread
 from entity.send_message import Send_Message
@@ -60,7 +60,7 @@ class Tab2_tab0(ThemedWidget):
         logger.warning(f"{self.objectName()}——show")
         if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
             self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
-            self.send_thread_for_tab_frame.send_message=self.send_datas
+            self.send_thread_for_tab_frame.send_message = self.send_datas
             self.send_thread_for_tab_frame.resume()
         elif not self.send_thread_for_tab_frame.isRunning():
             self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
@@ -79,11 +79,11 @@ class Tab2_tab0(ThemedWidget):
         # 获取tab2 frame组件
         self.ancestor: QFrame = None
         # 找到开始获取信息按钮
-        self.start_btn:QPushButton =None
+        self.start_btn: QPushButton = None
         # 找到停止获取信息按钮
-        self.stop_btn:QPushButton = None
+        self.stop_btn: QPushButton = None
         # 找到刷新全部信息按钮
-        self.refresh_btn:QPushButton = None
+        self.refresh_btn: QPushButton = None
         # 要发送的数据
         self.send_thread_for_tab_frame = None
         self.send_datas = []
@@ -182,19 +182,21 @@ class Tab2_tab0(ThemedWidget):
         # 实例化按钮功能
         self.init_btn_func()
         pass
+
     def init_btn_func(self):
         # 实例化按钮功能
         # 找到开始获取信息按钮
-        self.start_btn:QPushButton = self.findChild(QPushButton, 'start')
+        self.start_btn: QPushButton = self.findChild(QPushButton, 'start')
         # 找到停止获取信息按钮
-        self.stop_btn :QPushButton= self.findChild(QPushButton, 'stop')
+        self.stop_btn: QPushButton = self.findChild(QPushButton, 'stop')
         # 找到刷新全部信息按钮
-        self.refresh_btn:QPushButton = self.findChild(QPushButton, 'refresh')
+        self.refresh_btn: QPushButton = self.findChild(QPushButton, 'refresh')
         self.start_btn.setDisabled(True)
         self.start_btn.clicked.connect(self.start_btn_func)
         self.stop_btn.clicked.connect(self.stop_btn_func)
         self.refresh_btn.clicked.connect(self.refresh_btn_func)
         pass
+
     def start_btn_func(self):
         """
         开始获取信息按钮功能
@@ -202,7 +204,7 @@ class Tab2_tab0(ThemedWidget):
         """
         if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
             self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
-            self.send_thread_for_tab_frame.send_message=self.send_datas
+            self.send_thread_for_tab_frame.send_message = self.send_datas
             self.send_thread_for_tab_frame.resume()
         elif not self.send_thread_for_tab_frame.isRunning():
             self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
@@ -217,6 +219,7 @@ class Tab2_tab0(ThemedWidget):
             self.send_thread_for_tab_frame.start()
         self.stop_btn.setDisabled(False)
         self.start_btn.setDisabled(True)
+
     def stop_btn_func(self):
         """
         停止获取信息按钮功能
@@ -226,6 +229,7 @@ class Tab2_tab0(ThemedWidget):
             self.send_thread_for_tab_frame.pause()
         self.start_btn.setDisabled(False)
         self.stop_btn.setDisabled(True)
+
     def refresh_btn_func(self):
         """
         刷新全部信息按钮功能
@@ -235,7 +239,7 @@ class Tab2_tab0(ThemedWidget):
         self.refresh_btn.setDisabled(True)
         self.send_thread_for_tab_frame.stop()
         self.send_thread_for_tab_frame.terminate()
-        self.send_thread_for_tab_frame=None
+        self.send_thread_for_tab_frame = None
         self.send_thread_for_tab_frame = Send_thread_for_tab_frame(
             name=self.objectName(),
             send_message=self.send_datas,
@@ -244,6 +248,7 @@ class Tab2_tab0(ThemedWidget):
         self.start_btn.setDisabled(True)
         self.stop_btn.setDisabled(False)
         self.refresh_btn.setDisabled(False)
+
     def update_send_data(self):
         # 更新senddata的port和mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
@@ -512,7 +517,8 @@ class Tab2_tab0(ThemedWidget):
                         desc_label = QLabel()
                         desc_label.setText(f"<span style=''>{data[row * cols + col]['desc']}:</span>")
                         value_label = QLabel()
-                        value_label.setText(f"<span style='font-weight: bold;font-size:17px;'>{data[row * cols + col]['value']}</span>")
+                        value_label.setText(
+                            f"<span style='font-weight: bold;font-size:17px;'>{data[row * cols + col]['value']}</span>")
 
                         content_frame_layout.addWidget(desc_label)
                         content_frame_layout.addWidget(value_label)
@@ -554,8 +560,8 @@ class Tab2_tab0(ThemedWidget):
             grid_layout = QGridLayout()
             grid_layout.setContentsMargins(10, 20, 10, 10)
             grid_layout.setObjectName(f"function_11_gird_layout")
-            #3列 n行
-            cols =3
+            # 3列 n行
+            cols = 3
             rows = math.ceil(len(data) / cols)
             for row in range(rows):
                 for col in range(cols):

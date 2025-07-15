@@ -1,0 +1,129 @@
+import sqlite3
+
+
+class SQLiteManager():
+    def __init__(self, db_name):
+        """初始化数据库连接."""
+        self.connection = sqlite3.connect(db_name)
+        self.cursor = self.connection.cursor()
+
+    def create_table(self, table_name, columns):
+        """创建表."""
+        columns_with_types = ', '.join(f"{name} {datatype}" for name, datatype in columns.items())
+        sql = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns_with_types}) ;"
+        self.cursor.execute(sql)
+        self.connection.commit()
+
+    def insert(self, table_name, **kwargs):
+        """插入数据，防止 SQL 注入."""
+        columns = ', '.join(kwargs.keys())
+        placeholders = ', '.join('?' * len(kwargs))  # 使用 ? 占位符
+        sql = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders});"
+        self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
+        self.connection.commit()
+
+    def query(self, table_name, **kwargs):
+        """查询数据，防止 SQL 注入."""
+        sql = f"SELECT * FROM {table_name}"
+        if kwargs:
+            conditions = ' AND '.join(f"{key} = ?" for key in kwargs.keys())
+            sql += f" WHERE {conditions};"
+            self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
+        else:
+            self.cursor.execute(sql)
+
+        return self.cursor.fetchall()
+
+    def update(self, table_name, criteria, **kwargs):
+        """更新数据，防止 SQL 注入."""
+        set_clause = ', '.join(f"{key} = ?" for key in kwargs.keys())
+        conditions = ' AND '.join(f"{key} = ?" for key in criteria.keys())
+        sql = f"UPDATE {table_name} SET {set_clause} WHERE {conditions};"
+        self.cursor.execute(sql, tuple(kwargs.values()) + tuple(criteria.values()))  # 使用参数化查询
+        self.connection.commit()
+
+    def delete(self, table_name, **kwargs):
+        """删除数据，防止 SQL 注入."""
+        conditions = ' AND '.join(f"{key} = ?" for key in kwargs.keys())
+        sql = f"DELETE FROM {table_name} WHERE {conditions};"
+        self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
+        self.connection.commit()
+
+    def close(self):
+        """关闭数据库连接."""
+        self.connection.close()
+
+
+class ReadOnlyUser(SQLiteManager):
+    """读取用户类."""
+
+    def __init__(self, db_name):
+        super().__init__(db_name)
+
+    def insert(self, *args, **kwargs):
+        raise PermissionError("该用户没有写入权限。")
+
+    def update(self, *args, **kwargs):
+        raise PermissionError("该用户没有写入权限。")
+
+    def delete(self, *args, **kwargs):
+        raise PermissionError("该用户没有写入权限。")
+
+
+class WriteOnlyUser(SQLiteManager):
+    """写入用户类."""
+
+    def __init__(self, db_name):
+        super().__init__(db_name)
+
+    def query(self, *args, **kwargs):
+        raise PermissionError("该用户没有读取权限。")
+
+
+def test():
+    db = SQLiteManager('example.db')
+
+    # 创建表
+    db.create_table('users', {'id': 'INTEGER PRIMARY KEY AUTOINCREMENT', 'name': 'TEXT', 'age': 'INTEGER'})
+
+    # 插入数据
+    db.insert('users', name='Alice', age=30)
+    db.insert('users', name='Bob', age=25)
+
+    # 查询数据
+    print("所有用户:", db.query('users'))
+    print("查询年龄为30的用户:", db.query('users', age=30))
+
+    # 更新数据
+    db.update('users', {'name': 'Alice'}, age=31)
+
+    # 查询更新后的数据
+    print("更新后所有用户:", db.query('users'))
+
+    # 删除数据
+    db.delete('users', name='Bob')
+
+    # 查询删除后的数据
+    print("删除后所有用户:", db.query('users'))
+
+    # 关闭数据库连接
+    db.close()
+    # 读取用户示例
+    read_user = ReadOnlyUser('example.db')
+    # 尝试写入读取用户（会引发权限错误）
+    try:
+        read_user.insert('users', name='Charlie', age=40)
+    except PermissionError as e:
+        print(e)
+
+    # 写入用户示例
+    write_user = WriteOnlyUser('example.db')
+    # 尝试读取写入用户（会引发权限错误）
+    try:
+        print(write_user.query('users'))
+    except PermissionError as e:
+        print(e)
+
+
+if __name__ == "__main__":
+    test()

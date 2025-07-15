@@ -31,7 +31,7 @@ import numpy as np
 
 # 删除文件线程
 delete_file_thread = None
-camera_list=[]
+camera_list = []
 
 frame_nums = 0
 lock = threading.Lock()
@@ -50,14 +50,16 @@ file_locks = {}
 class read_queue_data_Thread(MyQThread):
     def __init__(self, name):
         super().__init__(name)
-        self.queue=None
+        self.queue = None
         self.camera_list = None
         pass
+
     def dosomething(self):
         if not self.queue.empty():
-            message =self.queue.get()
+            message = self.queue.get()
             print(f"deep_{message}")
-            if message is not None and isinstance(message, dict) and  len(message) > 0 and 'to' in message and message['to'] == 'main_deep_camera':
+            if message is not None and isinstance(message, dict) and len(message) > 0 and 'to' in message and message[
+                'to'] == 'main_deep_camera':
                 if 'data' in message and message['data'] == 'stop':
                     if self.camera_list is not None:
                         for camera_struct_l in self.camera_list:
@@ -71,7 +73,11 @@ class read_queue_data_Thread(MyQThread):
                         pass
 
         pass
-read_queue_data_thread=read_queue_data_Thread(name="main_deep_camera_read_queue_data_thread")
+
+
+read_queue_data_thread = read_queue_data_Thread(name="main_deep_camera_read_queue_data_thread")
+
+
 class coordinate_writing:
     """
     将处理的坐标写入csv文件
@@ -637,10 +643,7 @@ def check_setting_cameras_each_number():
 
 
 def init_camera_and_image_handle_thread(serials):
-
-
-
-    global camera_list,read_queue_data_thread
+    global camera_list, read_queue_data_thread
     # global_setting.get_setting("queue").put({'data': 'stop', 'to': 'main_deep_camera'})
     # 初始化保存路径
     path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
@@ -652,7 +655,7 @@ def init_camera_and_image_handle_thread(serials):
     camera_config_temp = global_setting.get_setting("camera_config")
     camera_config_temp['DEEP_CAMERA']['nums'] = camera_nums
     global_setting.set_setting("camera_config", camera_config_temp)
-    camera_list=[]
+    camera_list = []
     # serials = ["230322273703", "230322274766"]
     for num in range(camera_nums):
         camera_struct = {}
@@ -703,7 +706,7 @@ def init_camera_and_image_handle_thread(serials):
         camera_struct['img_process'] = img_process
         camera_list.append(camera_struct)
         pass
-    read_queue_data_thread.camera_list=camera_list
+    read_queue_data_thread.camera_list = camera_list
     pass
 
 
@@ -722,9 +725,9 @@ def main(q):
     load_global_setting()
     # 读取共享信息线程
     global read_queue_data_thread
-    read_queue_data_thread.queue=q
+    read_queue_data_thread.queue = q
     read_queue_data_thread.start()
-    global_setting.set_setting("queue",q)
+    global_setting.set_setting("queue", q)
     # 初始化保存路径
     path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
            global_setting.get_setting("camera_config")['DEEP_CAMERA']['path']
@@ -736,3 +739,7 @@ def main(q):
 
     # stop
     # camera1.pipeline.stop()
+
+
+if __name__ == "__main__":
+    main()
