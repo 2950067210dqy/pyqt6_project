@@ -1,5 +1,6 @@
 # 加载日志配置
 import csv
+import multiprocessing
 import os
 import threading
 import time
@@ -33,9 +34,9 @@ from equipment.infrared_camera.senxor.utils import CVSegment
 from imutils.video import VideoStream
 
 # 删除线程
-delete_file_thread=None
+delete_file_thread = None
 # 被其他红外相机已经使用的串口
-is_used_ports=[]
+is_used_ports = []
 np.set_printoptions(precision=1)
 
 # global constants
@@ -63,12 +64,14 @@ TIP_SEGM_PARAM = {
 frame_nums = 0
 lock = threading.Lock()
 
+
 class read_queue_data_Thread(MyQThread):
     def __init__(self, name):
         super().__init__(name)
-        self.queue=None
+        self.queue = None
         self.camera_list = None
         pass
+
     def dosomething(self):
         if not self.queue.empty():
             message = self.queue.get()
@@ -83,7 +86,11 @@ class read_queue_data_Thread(MyQThread):
                         print("main_infrared_camera stop")
                         pass
         pass
-read_queue_data_thread=read_queue_data_Thread(name="main_infrared_camera_read_queue_data_thread")
+
+
+read_queue_data_thread = read_queue_data_Thread(name="main_infrared_camera_read_queue_data_thread")
+
+
 class coordinate_writing:
     """
     将处理的坐标写入csv文件
@@ -218,7 +225,7 @@ class Thermal_process(Thread):
     温度处理线程
     """
 
-    def __init__(self, path, id,serial_number):
+    def __init__(self, path, id, serial_number):
         super().__init__()
         self.serial_number = serial_number
         self.path = path
@@ -279,7 +286,9 @@ class Thermal_process(Thread):
         save_dir = args.save_dir if hasattr(args, 'save_dir') else './data'
         os.makedirs(save_dir, exist_ok=True)
 
-        self.mi48, connected_port, port_names = connect_senxor(src=args.tis_id,name=f"infrared_camera_{self.id}",is_used_ports=is_used_ports,serial_number = self.serial_number)
+        self.mi48, connected_port, port_names = connect_senxor(src=args.tis_id, name=f"infrared_camera_{self.id}",
+                                                               is_used_ports=is_used_ports,
+                                                               serial_number=self.serial_number)
         is_used_ports.append(connected_port)
         if self.mi48 is None:
             if not self.init_error_log_show:
@@ -491,8 +500,6 @@ def load_global_setting():
     return config
 
 
-
-
 def check_setting_cameras_each_number():
     """
     检测是否有相机与鼠笼编号一一对应的文件，如果没有就显示界面让用户选完在进行相机连接，如果有文件则根据文件来一一对应
@@ -517,8 +524,9 @@ def check_setting_cameras_each_number():
         sys.exit(app.exec())
         pass
 
+
 def init_camera_and_image_handle_thread(serials):
-    global camera_list,read_queue_data_thread
+    global camera_list, read_queue_data_thread
     # global_setting.get_setting("queue").put({'data':'stop','to':'main_infrared_camera'})
     # 初始化保存路径
     path = global_setting.get_setting("camera_config")['STORAGE']['fold_path'] + \
@@ -538,7 +546,7 @@ def init_camera_and_image_handle_thread(serials):
             # 初始化
             camera = Thermal_process(
                 path=path + f"{global_setting.get_setting('camera_config')['INFRARED_CAMERA']['mouse_cage_prefix']}{serials[num]['mouse_cage_number']}/",
-                id=serials[num]['mouse_cage_number'],serial_number=serials[num]['serial'])
+                id=serials[num]['mouse_cage_number'], serial_number=serials[num]['serial'])
         except Exception as e:
             logger.error(f"红外相机{num + 1}初始化失败，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
             # 所有线程停止
@@ -553,8 +561,10 @@ def init_camera_and_image_handle_thread(serials):
         camera_struct['id'] = num + 1
         camera_struct['camera'] = camera
         camera_list.append(camera_struct)
-    read_queue_data_thread.camera_list=camera_list
+    read_queue_data_thread.camera_list = camera_list
     pass
+
+
 def main(q):
     # logger.remove(0)
     logger.add(
@@ -583,8 +593,6 @@ def main(q):
     check_setting_cameras_each_number()
 
 
-
-
-
 if __name__ == "__main__":
-    main()
+    q = multiprocessing.Queue()
+    main(q)

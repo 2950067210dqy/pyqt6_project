@@ -1,16 +1,43 @@
 import sqlite3
 
+from loguru import logger
+
 
 class SQLiteManager():
     def __init__(self, db_name):
         """初始化数据库连接."""
         self.connection = sqlite3.connect(db_name)
+        logger.info(f"数据库{db_name}连接成功")
         self.cursor = self.connection.cursor()
+
+    def is_exist_table(self, table_name):
+        """查询数据表是否存在"""
+        sql = f"""
+        SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}';
+        """
+        self.cursor.execute(sql)
+
+        # 获取结果
+        result = self.cursor.fetchone()
+        # 如果结果不为 None，则表存在
+        return result is not None
 
     def create_table(self, table_name, columns):
         """创建表."""
         columns_with_types = ', '.join(f"{name} {datatype}" for name, datatype in columns.items())
         sql = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns_with_types}) ;"
+        self.cursor.execute(sql)
+        self.connection.commit()
+
+    def create_meta_table(self, table_name):
+        """创建描述表"""
+        sql = f"""
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            item_name TEXT PRIMARY KEY,
+            item_struct TEXT, --数据类型 比如TEXT REAL等
+            description TEXT
+            );   
+        """
         self.cursor.execute(sql)
         self.connection.commit()
 
@@ -51,6 +78,7 @@ class SQLiteManager():
 
     def close(self):
         """关闭数据库连接."""
+        self.cursor.close()
         self.connection.close()
 
 

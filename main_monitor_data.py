@@ -1,3 +1,4 @@
+import multiprocessing
 import os
 import time
 
@@ -6,6 +7,7 @@ from loguru import logger
 from communication.ini_pareser.ini_parser import ini_parser
 from config.global_setting import global_setting
 from config.yamlParser import YamlParserObject
+from dao.SQLite.Monitor_Datas_Handle import Monitor_Datas_Handle
 
 
 def load_global_setting():
@@ -17,7 +19,7 @@ def load_global_setting():
         logger.info("监控配置文件读取成功。")
     else:
         logger.error("监控配置文件读取失败。")
-    global_setting.set_setting("monitor_datas", config)
+    global_setting.set_setting("monitor_data", config)
     # 加载gui配置存储到全局类中
     configer = YamlParserObject.yaml_parser.load_single("./gui_configer.yaml")
     if configer is None:
@@ -38,8 +40,12 @@ def main(q):
     logger.info(f"{'-' * 30}monitor_data_start{'-' * 30}")
     # 设置全局变量
     load_global_setting()
-    # 读取共享信息线程
-    global read_queue_data_thread
-    read_queue_data_thread.queue = q
-    read_queue_data_thread.start()
     global_setting.set_setting("queue", q)
+
+    # 创建数据库
+    handle = Monitor_Datas_Handle()
+
+
+if __name__ == "__main__":
+    q = multiprocessing.Queue()
+    main(q)

@@ -1,3 +1,4 @@
+import multiprocessing
 import os
 import sys
 import time
@@ -165,4 +166,5 @@ def main(q):
 
 
 if __name__ == "__main__":
-    main()
+    q = multiprocessing.Queue()
+    main(q)
