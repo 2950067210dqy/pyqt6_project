@@ -46,7 +46,7 @@ monitoring_data: #监测数据项
   - id: 1 #对应相应的tab
     title: '气流传感器模块' #菜单名称
     object_name: 'airflow' #菜单object_name 取title的英文名即可
-    delay: 1 #每隔多少秒获取一次数据
+    delay: 3 #每隔多少秒获取一次数据
   - id: 2
     title: '二氧化碳传感器模块'
     object_name: 'carbon'

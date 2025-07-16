@@ -27,10 +27,10 @@ class Tab2_tab3(ThemedWidget):
     def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
         logger.warning(f"{self.objectName()}——show")
         if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
-
+            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
             self.store_thread_for_tab_frame.resume()
         elif not self.store_thread_for_tab_frame.isRunning():
-
+            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
             self.store_thread_for_tab_frame.start()
 
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
@@ -95,7 +95,10 @@ class Tab2_tab3(ThemedWidget):
         if self.store_thread_for_tab_frame is None:
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
+                type=self.type,
+                show_data_signal=self.show_data_signal
             )
+            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
         # 实例化按钮功能
         self.init_btn_func()
         pass
@@ -129,7 +132,10 @@ class Tab2_tab3(ThemedWidget):
             # 实例化发送查询报文线程
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
+                type=self.type,
+                show_data_signal=self.show_data_signal
             )
+            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
             self.store_thread_for_tab_frame.start()
         self.stop_btn.setDisabled(False)
         self.start_btn.setDisabled(True)
@@ -156,7 +162,10 @@ class Tab2_tab3(ThemedWidget):
         self.store_thread_for_tab_frame = None
         self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
             name=self.objectName(),
+            type=self.type,
+            show_data_signal=self.show_data_signal
         )
+        self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
         self.store_thread_for_tab_frame.start()
         self.start_btn.setDisabled(True)
         self.stop_btn.setDisabled(False)
@@ -165,14 +174,19 @@ class Tab2_tab3(ThemedWidget):
     def update_send_data(self):
         # 更新mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
-        # for send_data_single in self.send_datas:
-        #     send_data_single.message['port'] = global_setting.get_setting("tab2_select_port")
-        #     send_data_single.message['slave_id'] = format(
-        #         int(self.type.value['address']) + 16 * global_setting.get_setting("tab2_select_mouse_cage"), '02X')
-        #     pass
+        if self.store_thread_for_tab_frame is not None:
+            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+        else:
+            self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
+                name=self.objectName(),
+                type=self.type,
+                show_data_signal=self.show_data_signal
+            )
+            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+            self.store_thread_for_tab_frame.start()
         pass
 
-    def show_data(self, data: list):
+    def show_data(self, data:dict):
         # 显示数据
         logger.info(f"{self.objectName()}显示数据：{data}")
         if data is not None and len(data) != 0:

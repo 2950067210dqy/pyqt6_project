@@ -49,7 +49,7 @@ class Monitor_Datas_Handle():
         for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage.value:
             for table_name_short in data_type.value['table']:
                 # 列
-                columns = {item[0]: item[2] for item in data_type.value['table'][table_name_short]}
+                columns = {item[0]: item[2] for item in data_type.value['table'][table_name_short]['column']}
                 # 表名称
                 table_name = f"{data_type.value['name']}_{table_name_short}"
                 # 创建表
@@ -64,7 +64,7 @@ class Monitor_Datas_Handle():
                     self.sqlite_manager.create_meta_table(table_meta_name)
                     logger.info(f"数据库{self.db_name}创建表结构描述数据表{table_meta_name}成功！")
                     # 插入描述信息
-                    for item in data_type.value['table'][table_name_short]:
+                    for item in data_type.value['table'][table_name_short]['column']:
                         self.sqlite_manager.insert(table_meta_name, item_name=item[0], item_struct=item[2],
                                                    description=item[1])
             pass
@@ -74,7 +74,7 @@ class Monitor_Datas_Handle():
             global_setting.get_setting("configer")['mouse_cage']['nums'] is not None else 2):
                 for table_name_short in data_type.value['table']:
                     # 列
-                    columns = {item[0]: item[2] for item in data_type.value['table'][table_name_short]}
+                    columns = {item[0]: item[2] for item in data_type.value['table'][table_name_short]['column']}
                     # 表名称
                     table_name = f"{data_type.value['name']}_{table_name_short}_cage_{carge_number}"
                     # 创建表
@@ -89,7 +89,7 @@ class Monitor_Datas_Handle():
                         logger.info(f"数据库{self.db_name}创建表结构描述数据表{table_meta_name}成功！")
                         self.sqlite_manager.create_meta_table(table_meta_name)
                         # 插入描述信息
-                        for item in data_type.value['table'][table_name_short]:
+                        for item in data_type.value['table'][table_name_short]['column']:
                             self.sqlite_manager.insert(table_meta_name, item_name=item[0], item_struct=item[2],
                                                        description=item[1])
         pass
@@ -130,3 +130,17 @@ class Monitor_Datas_Handle():
                     logger.info(f"数据插入表{table_name}失败！")
                 pass
             pass
+    def query_data(self,table_name):
+        results_query = self.sqlite_manager.query_current_Data(table_name)
+        columns_query = self.sqlite_manager.query(f"{table_name}_meta")
+        return_data = []
+        results=[]
+        columns=[]
+        if results_query is not None and len(results_query) > 0:
+            results = list(results_query[0])[1:-1]
+        if columns_query is not None and len(columns_query) > 0:
+            columns = [ i[2] for i in columns_query][1:-1]
+        for value,description in zip(results,columns):
+            return_data.append({'desc':description,'value':value})
+        return return_data
+        pass

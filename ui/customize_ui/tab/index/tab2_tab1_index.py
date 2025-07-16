@@ -94,6 +94,8 @@ class Tab2_tab1(ThemedWidget):
         if self.store_thread_for_tab_frame is None:
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
+                type=self.type,
+                show_data_signal=self.show_data_signal
             )
 
         # 实例化按钮功能
@@ -129,6 +131,8 @@ class Tab2_tab1(ThemedWidget):
             # 实例化发送查询报文线程
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
+                type=self.type,
+                show_data_signal=self.show_data_signal
             )
             self.store_thread_for_tab_frame.start()
         self.stop_btn.setDisabled(False)
@@ -156,6 +160,8 @@ class Tab2_tab1(ThemedWidget):
         self.store_thread_for_tab_frame = None
         self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
             name=self.objectName(),
+            type=self.type,
+            show_data_signal=self.show_data_signal
         )
         self.store_thread_for_tab_frame.start()
         self.start_btn.setDisabled(True)
@@ -165,12 +171,19 @@ class Tab2_tab1(ThemedWidget):
     def update_send_data(self):
         # 更新mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
-        # for send_data_single in self.send_datas:
-        #     send_data_single.message['port'] = global_setting.get_setting("tab2_select_port")
-        #     pass
+        # if self.store_thread_for_tab_frame is not None:
+        #     self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+        # else:
+        #     self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
+        #         name=self.objectName(),
+        #         type=self.type,
+        #         show_data_signal=self.show_data_signal
+        #     )
+        #     self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+        #     self.store_thread_for_tab_frame.start()
         pass
 
-    def show_data(self, data: list):
+    def show_data(self, data: dict):
         # 显示数据
         logger.info(f"{self.objectName()}显示数据：{data}")
         if data is not None and len(data) != 0:

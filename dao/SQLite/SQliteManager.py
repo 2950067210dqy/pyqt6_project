@@ -78,7 +78,19 @@ class SQLiteManager():
             self.cursor.execute(sql)
 
         return self.cursor.fetchall()
+    def query_current_Data(self, table_name, **kwargs):
+        """查询数据，防止 SQL 注入."""
+        sql = f"SELECT * FROM {table_name}"
+        if kwargs:
+            conditions = ' AND '.join(f"{key} = ?" for key in kwargs.keys())
+            sql += f" WHERE {conditions} "
+            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
+        else:
+            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            self.cursor.execute(sql)
 
+        return self.cursor.fetchall()
     def update(self, table_name, criteria, **kwargs):
         """更新数据，防止 SQL 注入."""
         set_clause = ', '.join(f"{key} = ?" for key in kwargs.keys())

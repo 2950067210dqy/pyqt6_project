@@ -6,6 +6,7 @@ from loguru import logger
 
 from Modbus.Modbus_Type import Modbus_Slave_Ids
 from config.global_setting import global_setting
+from dao.SQLite.Monitor_Datas_Handle import Monitor_Datas_Handle
 from entity.MyQThread import MyQThread
 from entity.send_message import Send_Message
 
@@ -24,22 +25,40 @@ from util.number_util import number_util
 class Store_thread_for_tab_frame(MyQThread):
     # 线程信号
 
-    def __init__(self, name=None):
+    def __init__(self, name=None,type=None,show_data_signal=None):
         super().__init__(name)
+        self.show_data_signal:pyqtSignal(dict)  =show_data_signal
+        # type 是Modbus_Slave_Ids.UFC等的枚举类
+        self.type = type
+        self.mouse_cage_number = 0
         # 数据库操作类
-        self.handle = None
+        self.handle: Monitor_Datas_Handle= None
 
         pass
 
-    def __del__(self):
-        logger.debug(f"线程{self.name}被销毁!")
-
     def dosomething(self):
+        if self.handle is not None:
+            self.handle.stop()
+        self.handle = Monitor_Datas_Handle()  # # 创建数据库
+        self.query_data()
         time.sleep(float(global_setting.get_setting("configer")['monitoring_data'][0]['delay']))
 
     pass
 
-    pass
+    def query_data(self):
+        # 查询数据
+        for table_name in self.type.value['table']:
+            # 看是不是鼠笼内传感器还是外面传感器
+
+            if self.mouse_cage_number == 0:
+                table_name_full = f"{self.type.value['name']}_{table_name}"
+            else:
+                table_name_full = f"{self.type.value['name']}_{table_name}_cage_{self.mouse_cage_number}"
+            data = self.handle.query_data(table_name_full)
+            emit_data={'function_code':self.type.value['table'][table_name]['function_code'],'data':data}
+            logger.info(f"{table_name_full}数据查询成功！")
+            self.show_data_signal.emit(emit_data)
+        pass
 
 
 class Tab2_tab0(ThemedWidget):
@@ -66,7 +85,6 @@ class Tab2_tab0(ThemedWidget):
         super().__init__()
         # 类型
         self.type = Modbus_Slave_Ids.UFC
-
         # 找到开始获取信息按钮
         self.start_btn: QPushButton = None
         # 找到停止获取信息按钮
@@ -116,6 +134,8 @@ class Tab2_tab0(ThemedWidget):
         if self.store_thread_for_tab_frame is None:
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
+                type=self.type,
+                show_data_signal=self.show_data_signal
             )
 
         # 实例化按钮功能
@@ -151,6 +171,8 @@ class Tab2_tab0(ThemedWidget):
             # 实例化发送查询报文线程
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
+                type=self.type,
+                show_data_signal=self.show_data_signal
             )
             self.store_thread_for_tab_frame.start()
         self.stop_btn.setDisabled(False)
@@ -178,6 +200,8 @@ class Tab2_tab0(ThemedWidget):
         self.store_thread_for_tab_frame = None
         self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
             name=self.objectName(),
+            type=self.type,
+            show_data_signal=self.show_data_signal
         )
         self.store_thread_for_tab_frame.start()
         self.start_btn.setDisabled(True)
@@ -187,12 +211,19 @@ class Tab2_tab0(ThemedWidget):
     def update_send_data(self):
         # 更新mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
-        # for send_data_single in self.send_datas:
-        #     send_data_single.message['port'] = global_setting.get_setting("tab2_select_port")
-        #     pass
+        # if self.store_thread_for_tab_frame is not None:
+        #     self.store_thread_for_tab_frame.mouse_cage_number=global_setting.get_setting("tab2_select_mouse_cage")
+        # else:
+        #     self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
+        #         name=self.objectName(),
+        #         type=self.type,
+        #         show_data_signal=self.show_data_signal
+        #     )
+        #     self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+        #     self.store_thread_for_tab_frame.start()
         pass
 
-    def show_data(self, data: list):
+    def show_data(self, data: dict):
         # 显示数据
         logger.info(f"{self.objectName()}显示数据：{data}")
         if data is not None and len(data) != 0:

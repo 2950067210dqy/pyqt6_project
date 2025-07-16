@@ -133,7 +133,7 @@ def get_communiation_project_path():
 
 def main(q):
     # 移除默认的控制台处理器（默认id是0）
-    logger.remove(0)
+    # logger.remove(0)
     # 加载日志配置
     logger.add(
         "./log/gui/gui_{time:YYYY-MM-DD}.log",
