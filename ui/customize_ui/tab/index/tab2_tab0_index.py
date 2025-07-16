@@ -21,26 +21,20 @@ from ui.tab7 import Ui_tab7_frame
 from util.number_util import number_util
 
 
-class Send_thread_for_tab_frame(MyQThread):
+class Store_thread_for_tab_frame(MyQThread):
     # 线程信号
 
-    def __init__(self, name=None, send_message=None, send_thread=None):
+    def __init__(self, name=None):
         super().__init__(name)
-        self.send_message = send_message
-        self.send_thread = send_thread
+        # 数据库操作类
+        self.handle = None
+
         pass
 
     def __del__(self):
         logger.debug(f"线程{self.name}被销毁!")
 
     def dosomething(self):
-        logger.info(f"{self.name}|send_thread:{self.send_thread}")
-        if self.send_thread is not None:
-            logger.info(f"{self.name}开始发送")
-            self.send_thread.send_messages = [send_message_single.message for send_message_single in self.send_message]
-            self.send_thread.is_start = True
-        else:
-            logger.info(f"{self.name}self.send_thread is None")
         time.sleep(float(global_setting.get_setting("configer")['monitoring_data'][0]['delay']))
 
     pass
@@ -53,88 +47,36 @@ class Tab2_tab0(ThemedWidget):
     update_port_and_mouse_cage = pyqtSignal()
     # 显示数据
     show_data_signal = pyqtSignal(dict)
-    # 更新ancestor以及ancestor的send_thread
-    update_ancestor_and_send_thread_signal = pyqtSignal()
 
     def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
         logger.warning(f"{self.objectName()}——show")
-        if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
-            self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
-            self.send_thread_for_tab_frame.send_message = self.send_datas
-            self.send_thread_for_tab_frame.resume()
-        elif not self.send_thread_for_tab_frame.isRunning():
-            self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
-            self.send_thread_for_tab_frame.send_message = self.send_datas
-            self.send_thread_for_tab_frame.start()
+        if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
+
+            self.store_thread_for_tab_frame.resume()
+        elif not self.store_thread_for_tab_frame.isRunning():
+
+            self.store_thread_for_tab_frame.start()
 
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
         logger.warning(f"{self.objectName()}--hidden")
-        if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
-            self.send_thread_for_tab_frame.pause()
+        if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
+            self.store_thread_for_tab_frame.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
         # 类型
         self.type = Modbus_Slave_Ids.UFC
-        # 获取tab2 frame组件
-        self.ancestor: QFrame = None
+
         # 找到开始获取信息按钮
         self.start_btn: QPushButton = None
         # 找到停止获取信息按钮
         self.stop_btn: QPushButton = None
         # 找到刷新全部信息按钮
         self.refresh_btn: QPushButton = None
-        # 要发送的数据
-        self.send_thread_for_tab_frame = None
-        self.send_datas = []
-        self.send_datas = [
-            Send_Message(slave_address=self.type.value['address'],
-                         slave_desc=self.type.value['description'], function_code=4,
-                         function_desc="读传感器测量值", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(6),
-                    'slave_id': format(int(self.type.value['address']), '02X'),
-                    'function_code': format(int(f"{4}", 16), '02X'),
-                }),
-            Send_Message(slave_address=self.type.value['address'],
-                         slave_desc=self.type.value['description'], function_code=1,
-                         function_desc="读输出端口状态信息", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(10),
-                    'slave_id': format(int(self.type.value['address']), '02X'),
-                    'function_code': format(int(f"{1}", 16), '02X'),
-                }),
-            Send_Message(slave_address=self.type.value['address'],
-                         slave_desc=self.type.value['description'], function_code=2,
-                         function_desc="读传感器状态信息", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(6),
-                    'slave_id': format(int(self.type.value['address']), '02X'),
-                    'function_code': format(int(f"{2}", 16), '02X'),
-                }),
-            Send_Message(slave_address=self.type.value['address'],
-                         slave_desc=self.type.value['description'], function_code=3,
-                         function_desc="读配置寄存器", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(3),
-                    'slave_id': format(int(self.type.value['address']), '02X'),
-                    'function_code': format(int(f"{3}", 16), '02X'),
-                }),
-
-            Send_Message(slave_address=self.type.value['address'],
-                         slave_desc=self.type.value['description'], function_code=17,
-                         function_desc="读取模块ID信息等", message={
-                    'port': global_setting.get_setting("tab2_select_port"),
-                    'data': number_util.set_int_to_4_bytes_list(0),
-                    'slave_id': format(int(self.type.value['address']), '02X'),
-                    'function_code': format(int(f"{11}", 16), '02X'),
-                }),
-        ]
-
+        self.store_thread_for_tab_frame = None
         # 实例化ui
         self._init_ui(parent, geometry, title)
-        # # 获取祖先组件
-        # self.get_ancestor()
+
         # 实例化自定义ui
         self._init_customize_ui()
         # 实例化功能
@@ -169,15 +111,12 @@ class Tab2_tab0(ThemedWidget):
         self.update_port_and_mouse_cage.connect(self.update_send_data)
         # 绑定显示数据的槽
         self.show_data_signal.connect(self.show_data)
-        # 更新ancestor以及ancestor的send_thread
-        self.update_ancestor_and_send_thread_signal.connect(self.update_ancestor_and_send_thread)
 
         # 实例化发送查询报文线程
-        if self.send_thread_for_tab_frame is None:
-            self.send_thread_for_tab_frame = Send_thread_for_tab_frame(
+        if self.store_thread_for_tab_frame is None:
+            self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
-                send_message=self.send_datas,
-                send_thread=self.ancestor.send_thread if self.ancestor is not None else None)
+            )
 
         # 实例化按钮功能
         self.init_btn_func()
@@ -202,21 +141,18 @@ class Tab2_tab0(ThemedWidget):
         开始获取信息按钮功能
         :return:
         """
-        if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
-            self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
-            self.send_thread_for_tab_frame.send_message = self.send_datas
-            self.send_thread_for_tab_frame.resume()
-        elif not self.send_thread_for_tab_frame.isRunning():
-            self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread if self.ancestor is not None else None
-            self.send_thread_for_tab_frame.send_message = self.send_datas
-            self.send_thread_for_tab_frame.start()
+        if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
+
+            self.store_thread_for_tab_frame.resume()
+        elif not self.store_thread_for_tab_frame.isRunning():
+
+            self.store_thread_for_tab_frame.start()
         else:
             # 实例化发送查询报文线程
-            self.send_thread_for_tab_frame = Send_thread_for_tab_frame(
+            self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
-                send_message=self.send_datas,
-                send_thread=self.ancestor.send_thread if self.ancestor is not None else None)
-            self.send_thread_for_tab_frame.start()
+            )
+            self.store_thread_for_tab_frame.start()
         self.stop_btn.setDisabled(False)
         self.start_btn.setDisabled(True)
 
@@ -225,8 +161,8 @@ class Tab2_tab0(ThemedWidget):
         停止获取信息按钮功能
         :return:
         """
-        if self.send_thread_for_tab_frame is not None and self.send_thread_for_tab_frame.isRunning():
-            self.send_thread_for_tab_frame.pause()
+        if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
+            self.store_thread_for_tab_frame.pause()
         self.start_btn.setDisabled(False)
         self.stop_btn.setDisabled(True)
 
@@ -237,39 +173,23 @@ class Tab2_tab0(ThemedWidget):
         """
         # 实例化发送查询报文线程
         self.refresh_btn.setDisabled(True)
-        self.send_thread_for_tab_frame.stop()
-        self.send_thread_for_tab_frame.terminate()
-        self.send_thread_for_tab_frame = None
-        self.send_thread_for_tab_frame = Send_thread_for_tab_frame(
+        self.store_thread_for_tab_frame.stop()
+        self.store_thread_for_tab_frame.terminate()
+        self.store_thread_for_tab_frame = None
+        self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
             name=self.objectName(),
-            send_message=self.send_datas,
-            send_thread=self.ancestor.send_thread if self.ancestor is not None else None)
-        self.send_thread_for_tab_frame.start()
+        )
+        self.store_thread_for_tab_frame.start()
         self.start_btn.setDisabled(True)
         self.stop_btn.setDisabled(False)
         self.refresh_btn.setDisabled(False)
 
     def update_send_data(self):
-        # 更新senddata的port和mouse_cage_number
+        # 更新mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
-        for send_data_single in self.send_datas:
-            send_data_single.message['port'] = global_setting.get_setting("tab2_select_port")
-            pass
-        pass
-
-    def update_ancestor_and_send_thread(self):
-        # 更新ancestor以及ancestor的send_thread
-        logger.info(f"{self.objectName()}更新ancestor以及ancestor的send_thread")
-        if self.send_thread_for_tab_frame is not None and self.ancestor is not None:
-            self.send_thread_for_tab_frame.send_thread = self.ancestor.send_thread
-        else:
-            logger.info(f"{self.objectName()}|self.ancestor.send_thread:{self.ancestor.send_thread}")
-            # 实例化发送查询报文线程
-            self.send_thread_for_tab_frame = Send_thread_for_tab_frame(
-                name=self.objectName(),
-                send_message=self.send_datas,
-                send_thread=self.ancestor.send_thread if self.ancestor is not None else None)
-            self.send_thread_for_tab_frame.start()
+        # for send_data_single in self.send_datas:
+        #     send_data_single.message['port'] = global_setting.get_setting("tab2_select_port")
+        #     pass
         pass
 
     def show_data(self, data: list):

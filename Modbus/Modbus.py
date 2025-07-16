@@ -13,7 +13,7 @@ from util.time_util import time_util
 
 class ModbusRTUMaster:
     # 初始化后代表着连接串口，只有当close以后才会释放
-    def __init__(self, port='COM1', timeout=1, update_status_main_signal=pyqtSignal(str),
+    def __init__(self, port='COM1', timeout=1, update_status_main_signal=None,
                  tab_frame_show_data_signal_list=[]):
         # 可修改参数
         self.sport = port  # 这里是随便写的，要配合前端选框来
@@ -51,7 +51,7 @@ class ModbusRTUMaster:
             slave_id = int(slave_id, 16)
             function_code = int(function_code, 16)
             data_bytes = [int(x, 16) for x in data_hex_list]
-            logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
+            # logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
             # 组装帧
             frame = struct.pack('>B B B B B B', slave_id, function_code, *data_bytes)
             crc = self.calculate_crc(frame)
@@ -64,10 +64,11 @@ class ModbusRTUMaster:
             logger.error(f"{time_util.get_format_from_time(time.time())}-{self.sport}-构造报文出错: {e}")
             return None
 
-    def send_command(self, slave_id, function_code, data_hex_list):
+    def send_command(self, slave_id, function_code, data_hex_list, is_parse_response=True):
         """
         发送Modbus RTU命令帧，接收并解析响应。
-        :param frame: 完整的字节报文（含CRC）
+        :param data_hex_list ['00','00','00','00'] 16进制
+        :param is_parse_response 是否解析响应报文 默认解析
         :return: (response_hex: str, success: bool)
         """
         try:
@@ -80,12 +81,14 @@ class ModbusRTUMaster:
                 stopbits=1,
                 timeout=self.timeout
             )
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-连接成功")
+            if self.update_status_main_signal is not None:
+                self.update_status_main_signal.emit(
+                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-连接成功")
             logger.info(f"{self.sport}-连接成功")
             frame = self.build_frame(slave_id, function_code, data_hex_list)
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-发送数据帧{frame.hex()}")
+            if self.update_status_main_signal is not None:
+                self.update_status_main_signal.emit(
+                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-发送数据帧{frame.hex()}")
             logger.info(f"{time_util.get_format_from_time(time.time())}-{self.sport}-发送数据帧{frame.hex()}")
             try:
 
@@ -95,15 +98,16 @@ class ModbusRTUMaster:
 
             except Exception as e:
                 print(e)
-            time.sleep(0.3)
+            time.sleep(1)
 
             response = self.ser.read(256)
             # self.update_status_main_signal.emit(
             #     f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到消息-{response.hex()}")
             # 超时判断
             if not response:
-                self.update_status_main_signal.emit(
-                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT1-未获取到响应数据")
+                if self.update_status_main_signal is not None:
+                    self.update_status_main_signal.emit(
+                        f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT1-未获取到响应数据")
                 logger.error(f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT1-未获取到响应数据")
                 if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                     logger.error("关闭连接")
@@ -113,8 +117,9 @@ class ModbusRTUMaster:
 
             # 数据错误
             if len(response) < 5:
-                self.update_status_main_signal.emit(
-                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT2-返回数据位数错误")
+                if self.update_status_main_signal is not None:
+                    self.update_status_main_signal.emit(
+                        f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT2-返回数据位数错误")
                 logger.error(f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT2-返回数据位数错误")
                 if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                     self.ser.close()
@@ -127,8 +132,9 @@ class ModbusRTUMaster:
 
             # 数据错误，CRC验证失败
             if crc_received != crc_expected:
-                self.update_status_main_signal.emit(
-                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT3-数据错误，CRC验证失败")
+                if self.update_status_main_signal is not None:
+                    self.update_status_main_signal.emit(
+                        f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT3-数据错误，CRC验证失败")
                 logger.error(f"{time_util.get_format_from_time(time.time())}-{self.sport}-Time OUT3-数据错误，CRC验证失败")
                 if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                     self.ser.close()
@@ -139,32 +145,37 @@ class ModbusRTUMaster:
             function_code = response[1]
             if function_code & 0x80:
                 exception_code = response[2]
-                self.update_status_main_signal.emit(
-                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-异常：功能码=0x{function_code:02X}, 异常码=0x{exception_code:02X}")
+                if self.update_status_main_signal is not None:
+                    self.update_status_main_signal.emit(
+                        f"{time_util.get_format_from_time(time.time())}-{self.sport}-异常：功能码=0x{function_code:02X}, 异常码=0x{exception_code:02X}")
                 logger.error(
                     f"{time_util.get_format_from_time(time.time())}-{self.sport}-异常：功能码=0x{function_code:02X}, 异常码=0x{exception_code:02X}")
                 if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                     self.ser.close()
                     self.ser = None
                 return response, response.hex(), False
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
+            if self.update_status_main_signal is not None:
+                self.update_status_main_signal.emit(
+                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
             logger.info(f"{time_util.get_format_from_time(time.time())}-{self.sport}-CRC校验通过，正常响应")
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到响应消息-{response.hex()}-数据部分{data_part.hex()}")
+            if self.update_status_main_signal is not None:
+                self.update_status_main_signal.emit(
+                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-收到响应消息-{response.hex()}-数据部分{data_part.hex()}")
             if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                 self.ser.close()
                 self.ser = None
             """
             解析响应报文
             """
-            self.parse_response(response=response, response_hex=response.hex(), send_state=True, slave_id=slave_id,
-                                function_code=function_code)
-            return data_part, data_part.hex(), True
+            if is_parse_response:
+                self.parse_response(response=response, response_hex=response.hex(), send_state=True, slave_id=slave_id,
+                                    function_code=function_code)
+            return response, response.hex(), True
 
         except Exception as e:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-{self.sport}-❗ 串口通信异常: {e}")
+            if self.update_status_main_signal is not None:
+                self.update_status_main_signal.emit(
+                    f"{time_util.get_format_from_time(time.time())}-{self.sport}-❗ 串口通信异常: {e}")
             logger.error(f"❗ 串口通信异常: {e}")
             if self.ser is not None and self.ser.is_open:  # 确保关闭连接
                 self.ser.close()
@@ -182,4 +193,5 @@ class ModbusRTUMaster:
                                                             update_status_main_signal=self.update_status_main_signal,
                                                             tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
                                                             )
-            modbus_response_parser.parser()
+            return modbus_response_parser.parser()
+        return None

@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 from loguru import logger
 
@@ -12,13 +13,19 @@ from util.time_util import time_util
 
 class Monitor_Datas_Handle():
     def __init__(self):
+        self.sqlite_manager: SQLiteManager = None
         self.init_construct()
 
     def init_construct(self):
         self.db_name = self.create_db()
+        if self.sqlite_manager is not None:
+            self.stop()
         self.sqlite_manager = SQLiteManager(db_name=self.db_name)
         self.create_tables()
         pass
+
+    def stop(self):
+        self.sqlite_manager.close()
 
     def create_db(self):
         """
@@ -87,3 +94,39 @@ class Monitor_Datas_Handle():
                                                        description=item[1])
         pass
 
+    def insert_data(self, data):
+        # 添加数据到表里
+        if data is not None:
+            # 公共传感器：
+            if data['mouse_cage_number'] == 0:
+                # 获取该表名称
+                table_name = f"{data['module_name']}_{data['table_name']}"
+                # # 获取该表的column项
+                table_name_meta = f"{table_name}_meta"
+                columns_query = self.sqlite_manager.query(table_name_meta)
+                columns = [i[0] for i in columns_query if i[0] != 'id']
+                datas = [i['value'] for i in data['data']]
+                current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 本地时间格式
+                datas.append(current_time)
+                result = self.sqlite_manager.insert_2(table_name, columns, datas)
+                if result == 1:
+                    logger.info(f"数据插入表{table_name}成功！")
+                else:
+                    logger.info(f"数据插入表{table_name}失败！")
+            else:  # 每个鼠笼传感器：
+                # 获取该表名称
+                table_name = f"{data['module_name']}_{data['table_name']}_cage_{data['mouse_cage_number']}"
+                # # 获取该表的column项
+                table_name_meta = f"{table_name}_meta"
+                columns_query = self.sqlite_manager.query(table_name_meta)
+                columns = [i[0] for i in columns_query if i[0] != 'id']
+                datas = [i['value'] for i in data['data']]
+                current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # 本地时间格式
+                datas.append(current_time)
+                result = self.sqlite_manager.insert_2(table_name, columns, datas)
+                if result == 1:
+                    logger.info(f"数据插入表{table_name}成功！")
+                else:
+                    logger.info(f"数据插入表{table_name}失败！")
+                pass
+            pass

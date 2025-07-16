@@ -159,10 +159,10 @@ def main(q):
     # receive_serial_port_data()
 
     # qt程序开始
-    # try:
-    start_qt_application()
-    # except Exception as e:
-    #     logger.error(f"gui程序运行异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}，终止gui进程和comm进程")
+    try:
+        start_qt_application()
+    except Exception as e:
+        logger.error(f"gui程序运行异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}，终止gui进程")
 
 
 if __name__ == "__main__":

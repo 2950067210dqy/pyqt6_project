@@ -48,6 +48,24 @@ class SQLiteManager():
         sql = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders});"
         self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
         self.connection.commit()
+        return self.cursor.rowcount
+
+    def insert_2(self, table_name, columns_flag, datas):
+        """插入数据，防止 SQL 注入."""
+        columns = ', '.join(columns_flag)
+        placeholders = ', '.join('?' * len(datas))  # 使用 ? 占位符
+        sql = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders});"
+        self.cursor.execute(sql, tuple(datas))  # 使用参数化查询
+        self.connection.commit()
+        return self.cursor.rowcount
+
+    def insert_not_columns(self, table_name, datas):
+        placeholders = ', '.join('?' * len(datas))  # 使用 ? 占位符
+        sql = f"INSERT INTO {table_name}  VALUES ({placeholders});"
+        self.cursor.execute(sql, tuple(datas))  # 使用参数化查询
+        self.connection.commit()
+        return self.cursor.rowcount
+        pass
 
     def query(self, table_name, **kwargs):
         """查询数据，防止 SQL 注入."""

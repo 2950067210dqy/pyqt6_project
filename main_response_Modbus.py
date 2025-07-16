@@ -218,9 +218,9 @@ class communication(threading.Thread):
             function_code = int(function_code, 16)
             if return_bytes_nums is not None:
                 return_bytes_nums = int(return_bytes_nums, 16)
-            logger.info(f"slave_id：{slave_id}|function_code：{function_code}|data_hex_list: {data_hex_list}")
+            # logger.info(f"slave_id：{slave_id}|function_code：{function_code}|data_hex_list: {data_hex_list}")
             data_bytes = [int(x, 16) for x in data_hex_list]
-            logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
+            # logger.info(f"data_hex_list: {data_hex_list}|data_bytes: {data_bytes}")
             # 组装帧
             if return_bytes_nums is not None:
                 pack_struct = ">B B B"
@@ -235,15 +235,15 @@ class communication(threading.Thread):
                 for i in range(return_bytes_nums):
                     pack_struct += " B"
                 pass
-                logger.info(
-                    f"struct_type: {struct_type}|struct_type is B | pack_struct: {pack_struct}| return_bytes_nums: {return_bytes_nums}")
+                # logger.info(
+                #     f"struct_type: {struct_type}|struct_type is B | pack_struct: {pack_struct}| return_bytes_nums: {return_bytes_nums}")
             else:
-                logger.info(f"struct_type: {struct_type}|struct_type is H")
+                # logger.info(f"struct_type: {struct_type}|struct_type is H")
                 for i in range(return_bytes_nums // 2):
                     pack_struct += " H"
                 pass
-                logger.info(
-                    f"struct_type: {struct_type}|struct_type is H | pack_struct: {pack_struct} |  return_bytes_nums: {return_bytes_nums}")
+                # logger.info(
+                #     f"struct_type: {struct_type}|struct_type is H | pack_struct: {pack_struct} |  return_bytes_nums: {return_bytes_nums}")
             if is_pack_return_bytes_nums:
                 frame = struct.pack(pack_struct, slave_id, function_code, return_bytes_nums, *data_bytes)
             else:
@@ -251,7 +251,7 @@ class communication(threading.Thread):
             crc = self.calculate_crc(frame)
             str_frame = frame.hex()
             str_crc = crc.hex()
-            logger.info(f"frame: {frame} , {str_frame}|crc: {crc} , {str_crc}")
+            logger.info(f"构造响应报文：frame: {frame} , {str_frame}|crc: {crc} , {str_crc}")
             return frame + crc
         except Exception as e:
             logger.error(f"{time_util.get_format_from_time(time.time())}-{self.port}-构造报文出错: {e}")
@@ -286,7 +286,7 @@ class communication(threading.Thread):
                             send_struct['function_code']
                         slave_id_int = int(send_struct['slave_id'], 16) if isinstance(send_struct['slave_id'], str) else \
                             send_struct['slave_id']
-                        logger.info(f"slave_id_handle:{slave_id_int}")
+                        # logger.info(f"slave_id_handle:{slave_id_int}")
                         return_bytes = 0
                         if slave_id_int > 16:
                             # 鼠笼内传感器
