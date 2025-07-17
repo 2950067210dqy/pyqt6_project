@@ -16,7 +16,7 @@ class Modbus_Response_Parser():
 响应报文解析
     """
 
-    def __init__(self, slave_id, function_code, response, response_hex, update_status_main_signal,
+    def __init__(self, slave_id, function_code, response, response_hex,
                  ):
         """
 
@@ -25,7 +25,6 @@ class Modbus_Response_Parser():
         :param response: 响应报文
         :param response._hex: 响应报文16进制
         """
-        self.update_status_main_signal = update_status_main_signal
 
         self.slave_id = slave_id
         self.function_code = function_code
@@ -63,7 +62,6 @@ class Modbus_Response_Parser():
                                                                                    response=self.response,
                                                                                    response_hex=self.response_hex,
                                                                                    function_code=self.function_code,
-                                                                                   update_status_main_signal=self.update_status_main_signal,
 
                                                                                    )
                     break
@@ -76,7 +74,6 @@ class Modbus_Response_Parser():
                                                                                response=self.response,
                                                                                response_hex=self.response_hex,
                                                                                function_code=self.function_code,
-                                                                               update_status_main_signal=self.update_status_main_signal,
 
                                                                                )
                 pass
@@ -91,8 +88,6 @@ class Modbus_Response_Parser():
                                                                                        response=self.response,
                                                                                        response_hex=self.response_hex,
                                                                                        function_code=self.function_code,
-                                                                                       update_status_main_signal=self.update_status_main_signal
-                                                                                       ,
 
                                                                                        )
                     break
@@ -103,8 +98,6 @@ class Modbus_Response_Parser():
                                                                                    response=self.response,
                                                                                    response_hex=self.response_hex,
                                                                                    function_code=self.function_code,
-                                                                                   update_status_main_signal=self.update_status_main_signal
-                                                                                   ,
 
                                                                                    )
             pass
@@ -118,9 +111,7 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
     """
 
     def __init__(self, name, origin_slave_id, mouse_cage_number, slave_id, response,
-                 response_hex, function_code, update_status_main_signal, ):
-        # 更新状态text框
-        self.update_status_main_signal = update_status_main_signal
+                 response_hex, function_code):
 
         self.name = name
         self.origin_slave_id = origin_slave_id
@@ -147,7 +138,6 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
 
             )
             pass
@@ -159,7 +149,6 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
 
             )
             pass
@@ -172,7 +161,6 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal
 
             )
             pass
@@ -185,7 +173,6 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
 
             )
             pass
@@ -198,7 +185,6 @@ class Modbus_Response_Diffent_Type_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
 
             )
             pass
@@ -212,11 +198,9 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
     """
 
     def __init__(self, name, slave_id, response,
-                 response_hex, function_code, update_status_main_signal
+                 response_hex, function_code
 
                  ):
-        # 更新状态text框
-        self.update_status_main_signal = update_status_main_signal
 
         self.name = name
         self.slave_id = slave_id
@@ -238,7 +222,7 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
+
             )
             pass
         elif self.name == Modbus_Slave_Ids.UGC.value['name']:
@@ -247,7 +231,7 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
+
             )
             pass
             pass
@@ -257,17 +241,19 @@ class Modbus_Response_Diffent_Type_Not_Each_Mouse_Cage():
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
+
             )
             pass
             pass
         else:
             self.specific_response = Modbus_Response_NOT_EXISTENCE(
+                origin_slave_id=self.slave_id,
+                mouse_cage_number=0,
                 slave_id=self.slave_id,
                 response=self.response,
                 response_hex=self.response_hex,
                 function_code=self.function_code,
-                update_status_main_signal=self.update_status_main_signal,
+
             )
             pass
 
@@ -382,33 +368,26 @@ class Modbus_Response_NOT_EXISTENCE(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal,
+
                  ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
 
-        self.update_status_main_signal = update_status_main_signal
-
     def function_code_parser(self):
         if self.mouse_cage_number is None or self.origin_slave_id is None:
-            if self.update_status_main_signal is not None:
-                self.update_status_main_signal.emit(
-                    f"{time_util.get_format_from_time(time.time())}-传感器地址不存在：{self.slave_id}")
-            logger.error(
-                f"{time_util.get_format_from_time(time.time())}-传感器地址不存在：{self.slave_id}")
+            parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-传感器地址不存在：{self.slave_id}"
+            logger.error(parser_message)
+
             pass
         else:
-            if self.update_status_main_signal is not None:
-                self.update_status_main_signal.emit(
-                    f"{time_util.get_format_from_time(time.time())}-传感器地址不存在：{self.origin_slave_id}")
-            logger.error(
-                f"{time_util.get_format_from_time(time.time())}-传感器地址不存在：{self.origin_slave_id}")
+            parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-传感器地址不存在：{self.origin_slave_id}"
+            logger.error(parser_message)
             pass
         pass
 
-        return None
+        return None, parser_message
 
 
 class Modbus_Response_ENM(Modbus_Response_Parents):
@@ -418,7 +397,6 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal,
 
                  ):
         super().__init__(slave_id, response,
@@ -426,7 +404,6 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.ENM
-        self.update_status_main_signal = update_status_main_signal
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -438,30 +415,30 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         table_name = ""
         match function_code:
             case 1:
-                return_data = self.parser_function_code_1()
+                return_data, parser_message = self.parser_function_code_1()
                 table_name = "out_port_state"
                 pass
             case 2:
-                return_data = self.parser_function_code_2()
+                return_data, parser_message = self.parser_function_code_2()
                 table_name = "sensor_status"
 
             case 3:
-                return_data = self.parser_function_code_3()
+                return_data, parser_message = self.parser_function_code_3()
                 table_name = "sensor_config"
             case 4:
-                return_data = self.parser_function_code_4()
+                return_data, parser_message = self.parser_function_code_4()
                 table_name = "monitor_data"
             case 5:
-                return_data = self.parser_function_code_5()
+                return_data, parser_message = self.parser_function_code_5()
 
             case 6:
-                return_data = self.parser_function_code_6()
+                return_data, parser_message = self.parser_function_code_6()
 
             case 17:
-                return_data = self.parser_function_code_17()
+                return_data, parser_message = self.parser_function_code_17()
                 table_name = "module_information"
             case _:
-                self.parser_function_code_others()
+                return_data, parser_message = self.parser_function_code_others()
         return_data_struct = {}
         return_data_struct['table_name'] = table_name
         return_data_struct['module_name'] = self.type.value['name']
@@ -470,7 +447,7 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         return_data_struct['slave_id'] = self.origin_slave_id
         return_data_struct['function_code'] = function_code
 
-        return return_data_struct
+        return return_data_struct, parser_message
 
     pass
     """
@@ -509,12 +486,10 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+
+        return return_datas, parser_message
         pass
 
     """
@@ -548,12 +523,9 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'正常' if return_data['value'] == 1 else '故障'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
         pass
 
@@ -588,14 +560,9 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
             else:
                 return_data_str += f"{return_data['desc']}:{return_data['value']} | "
             index += 1
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -672,13 +639,9 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -739,13 +702,9 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
         pass
 
@@ -829,13 +788,9 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-响应报文解析-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -864,21 +819,15 @@ class Modbus_Response_ENM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-响应报文解析-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     def parser_function_code_others(self):
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        logger.error(
-            f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}"
+        logger.error(parser_message)
+        return None, parser_message
         pass
 
 
@@ -889,14 +838,13 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal,
+
                  ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.DWM
-        self.update_status_main_signal = update_status_main_signal
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -908,19 +856,19 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
         table_name = ""
         match function_code:
             case 2:
-                return_data = self.parser_function_code_2()
+                return_data, parser_message = self.parser_function_code_2()
                 table_name = "sensor_status"
 
             case 4:
-                return_data = self.parser_function_code_4()
+                return_data, parser_message = self.parser_function_code_4()
                 table_name = "monitor_data"
 
             case 17:
-                return_data = self.parser_function_code_17()
+                return_data, parser_message = self.parser_function_code_17()
                 table_name = "module_information"
 
             case _:
-                self.parser_function_code_others()
+                return_data, parser_message = self.parser_function_code_others()
         return_data_struct = {}
         return_data_struct['table_name'] = table_name
         return_data_struct['module_name'] = self.type.value['name']
@@ -929,7 +877,7 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
         return_data_struct['slave_id'] = self.origin_slave_id
         return_data_struct['function_code'] = function_code
 
-        return return_data_struct
+        return return_data_struct, parser_message
 
     pass
     """
@@ -963,12 +911,9 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'正常' if return_data['value'] == 1 else '故障'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1005,12 +950,9 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1039,22 +981,15 @@ class Modbus_Response_DWM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-响应报文解析-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     def parser_function_code_others(self):
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        logger.error(
-            f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        pass
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-{self.response_hex}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}"
+        logger.error(parser_message)
+        return None, parser_message
 
 
 class Modbus_Response_EM(Modbus_Response_Parents):
@@ -1064,14 +999,13 @@ class Modbus_Response_EM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal,
+
                  ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.EM
-        self.update_status_main_signal = update_status_main_signal
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1083,25 +1017,25 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         table_name = ""
         match function_code:
             case 1:
-                return_data = self.parser_function_code_1()
+                return_data, parser_message = self.parser_function_code_1()
                 table_name = "out_port_state"
                 pass
             case 2:
-                return_data = self.parser_function_code_2()
+                return_data, parser_message = self.parser_function_code_2()
                 table_name = "sensor_status"
 
             case 4:
-                return_data = self.parser_function_code_4()
+                return_data, parser_message = self.parser_function_code_4()
                 table_name = "monitor_data"
             case 5:
-                return_data = self.parser_function_code_5()
+                return_data, parser_message = self.parser_function_code_5()
 
             case 17:
-                return_data = self.parser_function_code_17()
+                return_data, parser_message = self.parser_function_code_17()
                 table_name = "module_information"
 
             case _:
-                self.parser_function_code_others()
+                return_data, parser_message = self.parser_function_code_others()
         return_data_struct = {}
         return_data_struct['table_name'] = table_name
         return_data_struct['module_name'] = self.type.value['name']
@@ -1110,7 +1044,7 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         return_data_struct['slave_id'] = self.origin_slave_id
         return_data_struct['function_code'] = function_code
 
-        return return_data_struct
+        return return_data_struct, parser_message
 
     pass
     """
@@ -1144,12 +1078,9 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'打开' if return_data['value'] == 1 else '关闭'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1183,12 +1114,9 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'正常' if return_data['value'] == 1 else '故障'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1225,12 +1153,9 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1276,13 +1201,9 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1311,22 +1232,15 @@ class Modbus_Response_EM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-响应报文解析-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     def parser_function_code_others(self):
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        logger.error(
-            f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        pass
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}"
+        logger.error(parser_message)
+        return None, parser_message
 
 
 class Modbus_Response_WM(Modbus_Response_Parents):
@@ -1336,14 +1250,13 @@ class Modbus_Response_WM(Modbus_Response_Parents):
                  response,
                  response_hex,
                  function_code,
-                 update_status_main_signal,
+
                  ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.origin_slave_id = origin_slave_id
         self.mouse_cage_number = mouse_cage_number
         self.type = Modbus_Slave_Ids.WM
-        self.update_status_main_signal = update_status_main_signal
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1356,19 +1269,19 @@ class Modbus_Response_WM(Modbus_Response_Parents):
         match function_code:
 
             case 2:
-                return_data = self.parser_function_code_2()
+                return_data, parser_message = self.parser_function_code_2()
                 table_name = "sensor_status"
 
             case 4:
-                return_data = self.parser_function_code_4()
+                return_data, parser_message = self.parser_function_code_4()
                 table_name = "monitor_data"
 
             case 17:
-                return_data = self.parser_function_code_17()
+                return_data, parser_message = self.parser_function_code_17()
                 table_name = "module_information"
 
             case _:
-                self.parser_function_code_others()
+                return_data, parser_message = self.parser_function_code_others()
         return_data_struct = {}
         return_data_struct['table_name'] = table_name
         return_data_struct['module_name'] = self.type.value['name']
@@ -1377,7 +1290,7 @@ class Modbus_Response_WM(Modbus_Response_Parents):
         return_data_struct['slave_id'] = self.origin_slave_id
         return_data_struct['function_code'] = function_code
 
-        return return_data_struct
+        return return_data_struct, parser_message
 
     pass
     """
@@ -1411,12 +1324,9 @@ class Modbus_Response_WM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'正常' if return_data['value'] == 1 else '故障'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1453,12 +1363,9 @@ class Modbus_Response_WM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1487,34 +1394,26 @@ class Modbus_Response_WM(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-响应报文解析-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     def parser_function_code_others(self):
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        logger.error(
-            f"{time_util.get_format_from_time(time.time())}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        pass
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文-鼠笼{self.mouse_cage_number}-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}"
+        logger.error(parser_message)
+        return None, parser_message
 
     pass
 
 
 class Modbus_Response_ZOS(Modbus_Response_Parents):
     def __init__(self, slave_id, response,
-                 response_hex, function_code, update_status_main_signal,
+                 response_hex, function_code
                  ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.type = Modbus_Slave_Ids.ZOS
-        self.update_status_main_signal = update_status_main_signal
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1526,31 +1425,31 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         table_name = ""
         match function_code:
             case 1:
-                return_data = self.parser_function_code_1()
+                return_data, parser_message = self.parser_function_code_1()
                 table_name = "out_port_state"
                 pass
             case 2:
-                return_data = self.parser_function_code_2()
+                return_data, parser_message = self.parser_function_code_2()
                 table_name = "sensor_status"
 
             case 3:
-                return_data = self.parser_function_code_3()
+                return_data, parser_message = self.parser_function_code_3()
                 table_name = "sensor_config"
             case 4:
-                return_data = self.parser_function_code_4()
+                return_data, parser_message = self.parser_function_code_4()
                 table_name = "monitor_data"
             case 5:
-                return_data = self.parser_function_code_5()
+                return_data, parser_message = self.parser_function_code_5()
 
             case 6:
-                return_data = self.parser_function_code_6()
+                return_data, parser_message = self.parser_function_code_6()
 
             case 17:
-                return_data = self.parser_function_code_17()
+                return_data, parser_message = self.parser_function_code_17()
                 table_name = "module_information"
 
             case _:
-                self.parser_function_code_others()
+                return_data, parser_message = self.parser_function_code_others()
         return_data_struct = {}
         return_data_struct['table_name'] = table_name
         return_data_struct['module_name'] = self.type.value['name']
@@ -1559,7 +1458,7 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_struct['slave_id'] = self.slave_id
         return_data_struct['function_code'] = function_code
 
-        return return_data_struct
+        return return_data_struct, parser_message
 
     """
            04 01 X
@@ -1591,12 +1490,11 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'ON' if return_data['value'] == 1 else 'OFF'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
+
         pass
 
     """
@@ -1630,12 +1528,9 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'ON' if return_data['value'] == 1 else 'OFF'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
         pass
 
@@ -1665,14 +1560,9 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1716,13 +1606,9 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -1765,13 +1651,10 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
         pass
 
@@ -1842,13 +1725,9 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
     """
                04 11 X
@@ -1876,32 +1755,25 @@ class Modbus_Response_ZOS(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     def parser_function_code_others(self):
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        logger.error(
-            f"{time_util.get_format_from_time(time.time())}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}"
+        logger.error(parser_message)
+        return None, parser_message
         pass
 
 
 class Modbus_Response_UGC(Modbus_Response_Parents):
     def __init__(self, slave_id, response,
-                 response_hex, function_code, update_status_main_signal,
+                 response_hex, function_code
                  ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.type = Modbus_Slave_Ids.UGC
-        self.update_status_main_signal = update_status_main_signal
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -1913,31 +1785,31 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         table_name = ""
         match function_code:
             case 1:
-                return_data = self.parser_function_code_1()
+                return_data, parser_message = self.parser_function_code_1()
                 table_name = "out_port_state"
                 pass
             case 2:
-                return_data = self.parser_function_code_2()
+                return_data, parser_message = self.parser_function_code_2()
                 table_name = "sensor_status"
 
             case 3:
-                return_data = self.parser_function_code_3()
+                return_data, parser_message = self.parser_function_code_3()
                 table_name = "sensor_config"
             case 4:
-                return_data = self.parser_function_code_4()
+                return_data, parser_message = self.parser_function_code_4()
                 table_name = "monitor_data"
             case 5:
-                return_data = self.parser_function_code_5()
+                return_data, parser_message = self.parser_function_code_5()
 
             case 6:
-                return_data = self.parser_function_code_6()
+                return_data, parser_message = self.parser_function_code_6()
 
             case 17:
-                return_data = self.parser_function_code_17()
+                return_data, parser_message = self.parser_function_code_17()
                 table_name = "module_information"
 
             case _:
-                self.parser_function_code_others()
+                return_data, parser_message = self.parser_function_code_others()
         return_data_struct = {}
         return_data_struct['table_name'] = table_name
         return_data_struct['module_name'] = self.type.value['name']
@@ -1946,7 +1818,7 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_struct['slave_id'] = self.slave_id
         return_data_struct['function_code'] = function_code
 
-        return return_data_struct
+        return return_data_struct, parser_message
 
     """
            03 01 X
@@ -1978,12 +1850,9 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'ON' if return_data['value'] == 1 else 'OFF'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -2016,12 +1885,9 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}状态：{'ON' if return_data['value'] == 1 else 'OFF'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
         pass
 
@@ -2051,14 +1917,9 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']}% | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -2175,13 +2036,9 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -2224,13 +2081,9 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
         pass
 
@@ -2302,13 +2155,9 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     """
@@ -2337,32 +2186,24 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
         pass
 
     def parser_function_code_others(self):
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        logger.error(
-            f"{time_util.get_format_from_time(time.time())}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        pass
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}"
+        logger.error(parser_message)
+        return None, parser_message
 
 
 class Modbus_Response_URC(Modbus_Response_Parents):
     def __init__(self, slave_id, response,
-                 response_hex, function_code, update_status_main_signal,
+                 response_hex, function_code
                  ):
         super().__init__(slave_id, response,
                          response_hex, function_code)
         self.type = Modbus_Slave_Ids.UFC
-        self.update_status_main_signal = update_status_main_signal
 
     def function_code_parser(self):
         if isinstance(self.function_code, str):
@@ -2374,31 +2215,31 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         table_name = ""
         match function_code:
             case 1:
-                return_data = self.parser_function_code_1()
+                return_data, parser_message = self.parser_function_code_1()
                 table_name = "out_port_state"
                 pass
             case 2:
-                return_data = self.parser_function_code_2()
+                return_data, parser_message = self.parser_function_code_2()
                 table_name = "sensor_status"
 
             case 3:
-                return_data = self.parser_function_code_3()
+                return_data, parser_message = self.parser_function_code_3()
                 table_name = "sensor_config"
             case 4:
-                return_data = self.parser_function_code_4()
+                return_data, parser_message = self.parser_function_code_4()
                 table_name = "monitor_data"
             case 5:
-                return_data = self.parser_function_code_5()
+                return_data, parser_message = self.parser_function_code_5()
 
             case 6:
-                return_data = self.parser_function_code_6()
+                return_data, parser_message = self.parser_function_code_6()
 
             case 17:
-                return_data = self.parser_function_code_17()
+                return_data, parser_message = self.parser_function_code_17()
                 table_name = "module_information"
 
             case _:
-                self.parser_function_code_others()
+                return_data, parser_message = self.parser_function_code_others()
         return_data_struct = {}
         return_data_struct['table_name'] = table_name
         return_data_struct['module_name'] = self.type.value['name']
@@ -2407,15 +2248,12 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         return_data_struct['slave_id'] = self.slave_id
         return_data_struct['function_code'] = function_code
 
-        return return_data_struct
+        return return_data_struct, parser_message
 
     def parser_function_code_others(self):
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        logger.error(
-            f"{time_util.get_format_from_time(time.time())}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}")
-        pass
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-{self.response_hex}-响应报文-{self.type.value['name']}-{self.type.value['description']}-无法解析功能码：{self.function_code}"
+        logger.error(parser_message)
+        return None, parser_message
 
     """
         02 01 X
@@ -2448,12 +2286,9 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}输出端口状态：{'正常' if return_data['value'] == 1 else '故障'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
     pass
     """
@@ -2485,13 +2320,9 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}传感器状态：{'正常' if return_data['value'] == 1 else '故障'} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
     """
         02 03 X
@@ -2533,14 +2364,9 @@ class Modbus_Response_URC(Modbus_Response_Parents):
                     pass
 
             index += 1
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
     """
         02 04 X
@@ -2621,13 +2447,9 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
     """
         02 05 X
@@ -2669,13 +2491,9 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
     """
     02 06 X
@@ -2774,13 +2592,9 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} |"
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message
 
     """
         02 11 X
@@ -2808,10 +2622,6 @@ class Modbus_Response_URC(Modbus_Response_Parents):
         return_data_str = ""
         for return_data in return_datas:
             return_data_str += f"{return_data['desc']}:{return_data['value']} | "
-        logger.info(
-            f"响应报文-{self.type.value['name']}-{self.type.value['description']}-解析成功：{function_desc}-{return_data_str}")
-        if self.update_status_main_signal is not None:
-            self.update_status_main_signal.emit(
-                f"{time_util.get_format_from_time(time.time())}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}")
-        pass
-        return return_datas
+        parser_message = f"{time_util.get_format_from_time(time.time())}-{self.response_hex}-响应报文解析-{self.type.value['name']}-{self.type.value['description']}-{function_desc}-{return_data_str}"
+        logger.info(parser_message)
+        return return_datas, parser_message

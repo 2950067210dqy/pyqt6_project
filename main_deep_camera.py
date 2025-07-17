@@ -75,6 +75,7 @@ class read_queue_data_Thread(MyQThread):
             else:
                 # 把消息放回去
                 self.queue.put(message)
+    
         pass
 
 

@@ -77,7 +77,7 @@ class read_queue_data_Thread(MyQThread):
             message = self.queue.get()
             if message is not None and isinstance(message, dict) and len(message) > 0 and 'to' in message and message[
                 'to'] == 'main_infrared_camera':
-                logger.error(f"{self.name}_message:{message}")
+                logger.error(f"{self.name}_get_message:{message}")
                 if 'data' in message and message['data'] == 'stop':
                     if self.camera_list is not None:
                         for camera_struct_l in self.camera_list:
@@ -88,6 +88,7 @@ class read_queue_data_Thread(MyQThread):
             else:
                 # 把消息放回去
                 self.queue.put(message)
+
         pass
 
 

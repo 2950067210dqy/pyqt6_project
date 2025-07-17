@@ -36,13 +36,14 @@ class read_queue_data_Thread(MyQThread):
 
             if message is not None and isinstance(message, dict) and len(message) > 0 and 'to' in message and message[
                 'to'] == 'tab_3':
-                logger.error(f"{self.name}_message:{message}")
+                logger.error(f"{self.name}_get_message:{message}")
                 if 'data' in message:
                     self.update_status_main_signal_gui_update.emit(message['data'])
                     pass
             else:
                 # 把消息放回去
                 self.queue.put(message)
+
         pass
 
 
@@ -165,7 +166,7 @@ class Tab_3(ThemedWidget):
         self.update_status_main_signal_gui_update.connect(self.send_response_text)
         global read_queue_data_thread
         read_queue_data_thread.update_status_main_signal_gui_update = self.update_status_main_signal_gui_update
-        read_queue_data_thread.queue = global_setting.get_setting("queue")
+        read_queue_data_thread.queue = global_setting.get_setting("send_message_queue")
         if read_queue_data_thread is not None and not read_queue_data_thread.isRunning():
             read_queue_data_thread.start()
             pass
@@ -187,9 +188,9 @@ class Tab_3(ThemedWidget):
         # 验证数据有效性
         try:
             if self.validate_data():
-                logger.info("开始发送")
                 message = {'to': 'main_monitor_data', 'data': self.send_message, 'from': 'tab_3'}
-                global_setting.get_setting("queue").put(message)
+                global_setting.get_setting("send_message_queue").put(message)
+                logger.debug(f"tab_3开始发送消息:{message}")
                 pass
         except Exception as e:
             logger.error(e)

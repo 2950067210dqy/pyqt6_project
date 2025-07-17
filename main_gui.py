@@ -131,7 +131,7 @@ def get_communiation_project_path():
     logger.info(f"HOST_COMPUTER_DATA_STORAGE_LOC={value}")
 
 
-def main(q):
+def main(q, send_message_q):
     # 移除默认的控制台处理器（默认id是0）
     # logger.remove(0)
     # 加载日志配置
@@ -154,6 +154,7 @@ def main(q):
     read_queue_data_thread.queue = q
     read_queue_data_thread.start()
     global_setting.set_setting("queue", q)
+    global_setting.set_setting("send_message_queue", send_message_q)
     logger.info("loading config finish")
     # # 接收串口数据
     # receive_serial_port_data()

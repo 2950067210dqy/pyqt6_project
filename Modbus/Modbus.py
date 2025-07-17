@@ -190,8 +190,7 @@ class ModbusRTUMaster:
             modbus_response_parser = Modbus_Response_Parser(slave_id=slave_id,
                                                             function_code=function_code, response=response,
                                                             response_hex=response_hex,
-                                                            update_status_main_signal=self.update_status_main_signal,
 
                                                             )
             return modbus_response_parser.parser()
-        return None
+        return None, None

@@ -382,7 +382,7 @@
            <item>
             <widget class="QLabel" name="nowdata_trend_label">
              <property name="text">
-              <string>当前湿度趋势</string>
+              <string>当前趋势</string>
              </property>
             </widget>
            </item>
@@ -409,15 +409,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QGraphicsView" name="nowdata_trend_charts">
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QHBoxLayout" name="now_data_layout"/>
          </item>
         </layout>
        </widget>

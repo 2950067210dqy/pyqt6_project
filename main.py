@@ -84,6 +84,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
     logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
 
     q = multiprocessing.Queue()  # 创建 Queue 消息传递
+    send_message_q = multiprocessing.Queue()  # 发送查询报文的消息传递单独一个通道
     # p_comm = Process(target=run_comm_program, name="p_comm")
     # p_gui = Process(target=run_gui_program, name="p_gui")
 
@@ -92,9 +93,9 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
 
     # p_comm = Process(target=main_comm.main, name="p_comm")
     p_response_comm = Process(target=main_response_Modbus.main, name="p_response_comm")
-    p_monitor_data = Process(target=main_monitor_data.main, name="p_monitor_data", args=(q,))
+    p_monitor_data = Process(target=main_monitor_data.main, name="p_monitor_data", args=(q, send_message_q))
 
-    p_gui = Process(target=main_gui.main, name="p_gui", args=(q,))
+    p_gui = Process(target=main_gui.main, name="p_gui", args=(q, send_message_q))
 
     p_deep_camera = Process(target=main_deep_camera.main, name="p_deep_camera", args=(q,))
     p_infrared_camera = Process(target=main_infrared_camera.main, name="p_infrared_camera", args=(q,))

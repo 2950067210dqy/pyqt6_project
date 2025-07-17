@@ -43,7 +43,7 @@ class read_queue_data_Thread(MyQThread):
             # message 结构{'to'发往哪个线程，'data'数据,'from'从哪发的}
             if message is not None and isinstance(message, dict) and len(message) > 0 and 'to' in message and message[
                 'to'] == 'main_monitor_data':
-                logger.error(f"{self.name}_get_message:{message}")
+                logger.error(f"{self.name}_message:{message}")
                 if 'data' in message:
                     if self.send_thread is not None and self.send_thread.isRunning():
                         # 发送优先级高的报文
@@ -107,17 +107,18 @@ class Send_thread(MyQThread):
     """
 
     def __init__(self, name=None, update_time_main_signal=None, modbus=None,
-                 ):
+                 port=None):
         super().__init__(name)
         # 获取主线程更新界面信号
         self.update_time_main_signal: pyqtSignal = update_time_main_signal
 
-        self.modbus: ModbusRTUMaster = modbus
+        self.modbus = modbus
         # 正常队列和紧急队列 紧急队列的消息立即处理
         self.normal_queue = queue.Queue()
         self.priority_queue = queue.Queue()
         self.lock = threading.Lock()
 
+        self.port = port
         pass
 
     def add_message(self, message, urgent=False, origin=""):
@@ -127,14 +128,17 @@ class Send_thread(MyQThread):
         else:
             self.normal_queue.put(message)
 
-    def init_modBus(self, port):
+    def set_port(self, port):
+        self.port = port
+
+    def init_modBus(self):
         try:
+            if self.modbus is None:
+                self.modbus = ModbusRTUMaster(port=self.port, timeout=float(
+                    global_setting.get_setting('monitor_data')['Serial']['timeout']),
+                                              update_status_main_signal=self.update_time_main_signal,
 
-            self.modbus = ModbusRTUMaster(port=port, timeout=float(
-                global_setting.get_setting('monitor_data')['Serial']['timeout']),
-                                          update_status_main_signal=self.update_time_main_signal,
-
-                                          )
+                                              )
         except Exception as e:
             logger.error(f"{self.name},实例化modbus错误：{e}")
             pass
@@ -153,6 +157,7 @@ class Send_thread(MyQThread):
                 self.condition.wait(self.mutex)  # 等待条件变量
             self.mutex.unlock()
 
+            self.init_modBus()
             try:
                 # logger.info(self.send_messages)
 
@@ -160,8 +165,6 @@ class Send_thread(MyQThread):
                 try:
                     message = self.priority_queue.get_nowait()
                     send_message = message['message']
-                    self.init_modBus(port=send_message['port'])
-                    logger.debug(f"{self.name}接收到查询报文。正在发送查询报文：{send_message}")
                     response, response_hex, send_state = self.modbus.send_command(
                         slave_id=send_message['slave_id'],
                         function_code=send_message['function_code'],
@@ -180,10 +183,8 @@ class Send_thread(MyQThread):
                                                                                  send_message['function_code'], )
 
                         # 把返回数据返回给源头
-
                         message_struct = {'to': message['origin'], 'data': parser_message, 'from': 'main_monitor_data'}
-                        global_setting.get_setting("send_message_queue").put(message_struct)
-                        logger.debug(f"main_monitor_data将响应报文的解析数据返回源头：{message_struct}")
+                        global_setting.get_setting("queue").put(message_struct)
                         pass
                 except queue.Empty:
                     pass
@@ -191,7 +192,6 @@ class Send_thread(MyQThread):
                 # 处理普通消息
                 try:
                     send_message = self.normal_queue.get(timeout=0.1)
-                    self.init_modBus(port=send_message['port'])
                     response, response_hex, send_state = self.modbus.send_command(
                         slave_id=send_message['slave_id'],
                         function_code=send_message['function_code'],
@@ -226,7 +226,7 @@ class Send_thread(MyQThread):
                     break
             except Exception as e:
                 logger.error(e)
-
+                self.update_time_main_signal.emit(f"{time_util.get_format_from_time(time.time())}-{e}")
             time.sleep(float(global_setting.get_setting('monitor_data')['SEND']['delay']))
 
 
@@ -280,7 +280,7 @@ def load_global_setting():
     return config
 
 
-def main(q, send_message_q):
+def main(q):
     # logger.remove(0)
     logger.add(
         "./log/monitor_data/monitor_{time:YYYY-MM-DD}.log",
@@ -294,9 +294,8 @@ def main(q, send_message_q):
     load_global_setting()
     # 读取共享信息线程
     global read_queue_data_thread
-    read_queue_data_thread.queue = send_message_q
+    read_queue_data_thread.queue = q
     global_setting.set_setting("queue", q)
-    global_setting.set_setting("send_message_queue", send_message_q)
 
     # 寻找通信端口
     port = auto_detect_port()
@@ -310,7 +309,7 @@ def main(q, send_message_q):
     store_thread.start()
 
     # 发送报文线程
-    send_thread = Send_thread(name="monitor_data_send_message")
+    send_thread = Send_thread(name="monitor_data_send_message", port=port)
     send_thread.start()
 
     read_queue_data_thread.send_thread = send_thread
@@ -318,45 +317,39 @@ def main(q, send_message_q):
 
     # 发送消息
     global MESSAGE_BATCH_SIZE
-    message_type = 0  # 0是只要传感器数值查询报文 1是所有查询报文
     while True:
         send_messages = []
         # 公共传感器数据的send_messages
         for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message.value:
-            if message_type == 1:
-                # 所有消息
-                for message_struct in data_type.value['send_messages']:
-                    message_temp = message_struct.message
-                    message_temp['port'] = port
-                    send_thread.add_message(message=message_temp, urgent=False)
-                    send_messages.append(message_temp)
-                    MESSAGE_BATCH_SIZE += 1
-            else:
-                # 单个传感器值消息
-                message_temp = data_type.value['send_messages'][0].message
-                message_temp['port'] = port
-                send_thread.add_message(message=message_temp, urgent=False)
-                send_messages.append(message_temp)
-                MESSAGE_BATCH_SIZE += 1
+            # # 所有消息
+            # for message_struct in data_type.value['send_messages']:
+            #     message_temp = message_struct.message
+            #     message_temp['port'] = port
+            #     send_thread.add_message(message=message_temp, urgent=False)
+            #     send_messages.append(message_temp)
+            # 单个传感器值消息
+            message_temp = data_type.value['send_messages'][0].message
+            message_temp['port'] = port
+            send_thread.add_message(message=message_temp, urgent=False)
+            send_messages.append(message_temp)
+            MESSAGE_BATCH_SIZE += 1
             pass
         # 每个笼子里的传感器的send_messages
         for data_type in Modbus_Slave_Type.Each_Mouse_Cage_Message.value:
             for mouse_cage in data_type.value['send_messages']:
-                if message_type == 1:
-                    # 所有消息
-                    for message_struct in mouse_cage:
-                        message_temp = message_struct.message
-                        message_temp['port'] = port
-                        send_thread.add_message(message=message_temp, urgent=False)
-                        send_messages.append(message_temp)
-                        MESSAGE_BATCH_SIZE += 1
-                else:
-                    # 单个传感器值消息
-                    message_temp = mouse_cage[0].message
-                    message_temp['port'] = port
-                    send_thread.add_message(message=message_temp, urgent=False)
-                    send_messages.append(message_temp)
-                    MESSAGE_BATCH_SIZE += 1
+                # # 所有消息
+                # for message_struct in mouse_cage:
+                #     message_temp = message_struct.message
+                #     message_temp['port'] = port
+                #     send_thread.add_message(message=message_temp, urgent=False)
+                #     send_messages.append(message_temp)
+                #     MESSAGE_BATCH_SIZE += 1
+                # 单个传感器值消息
+                message_temp = mouse_cage[0].message
+                message_temp['port'] = port
+                send_thread.add_message(message=message_temp, urgent=False)
+                send_messages.append(message_temp)
+                MESSAGE_BATCH_SIZE += 1
             pass
             # 等待从线程处理完当前批次
         logger.info(f"数据请求报文：一共{len(send_messages)}条报文！")
