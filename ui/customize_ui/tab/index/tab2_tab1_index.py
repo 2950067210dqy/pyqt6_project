@@ -95,7 +95,8 @@ class Tab2_tab1(ThemedWidget):
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
                 type=self.type,
-                show_data_signal=self.show_data_signal
+                show_data_signal=self.show_data_signal,
+                tab_int=1
             )
 
         # 实例化按钮功能
@@ -132,7 +133,8 @@ class Tab2_tab1(ThemedWidget):
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
                 type=self.type,
-                show_data_signal=self.show_data_signal
+                show_data_signal=self.show_data_signal,
+                tab_int=1
             )
             self.store_thread_for_tab_frame.start()
         self.stop_btn.setDisabled(False)
@@ -161,7 +163,8 @@ class Tab2_tab1(ThemedWidget):
         self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
             name=self.objectName(),
             type=self.type,
-            show_data_signal=self.show_data_signal
+            show_data_signal=self.show_data_signal,
+            tab_int=1
         )
         self.store_thread_for_tab_frame.start()
         self.start_btn.setDisabled(True)

@@ -25,14 +25,22 @@ from util.number_util import number_util
 class Store_thread_for_tab_frame(MyQThread):
     # 线程信号
 
-    def __init__(self, name=None,type=None,show_data_signal=None):
+    def __init__(self, name=None, type=None, show_data_signal=None, tab_int=0):
+        """
+
+        :param name:线程名字
+        :param type: Modbus_Slave_Ids哪个传感器模块枚举类
+        :param show_data_signal: 显示数据信号
+        :param tab_int: 当前是第几个tab
+        """
         super().__init__(name)
-        self.show_data_signal:pyqtSignal(dict)  =show_data_signal
+        self.tab_int = tab_int
+        self.show_data_signal: pyqtSignal(dict) = show_data_signal
         # type 是Modbus_Slave_Ids.UFC等的枚举类
         self.type = type
         self.mouse_cage_number = 0
         # 数据库操作类
-        self.handle: Monitor_Datas_Handle= None
+        self.handle: Monitor_Datas_Handle = None
 
         pass
 
@@ -41,7 +49,7 @@ class Store_thread_for_tab_frame(MyQThread):
             self.handle.stop()
         self.handle = Monitor_Datas_Handle()  # # 创建数据库
         self.query_data()
-        time.sleep(float(global_setting.get_setting("configer")['monitoring_data'][0]['delay']))
+        time.sleep(float(global_setting.get_setting("configer")['monitoring_data'][self.tab_int]['delay']))
 
     pass
 
@@ -55,7 +63,7 @@ class Store_thread_for_tab_frame(MyQThread):
             else:
                 table_name_full = f"{self.type.value['name']}_{table_name}_cage_{self.mouse_cage_number}"
             data = self.handle.query_data(table_name_full)
-            emit_data={'function_code':self.type.value['table'][table_name]['function_code'],'data':data}
+            emit_data = {'function_code': self.type.value['table'][table_name]['function_code'], 'data': data}
             logger.info(f"{table_name_full}数据查询成功！")
             self.show_data_signal.emit(emit_data)
         pass
@@ -135,7 +143,8 @@ class Tab2_tab0(ThemedWidget):
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
                 type=self.type,
-                show_data_signal=self.show_data_signal
+                show_data_signal=self.show_data_signal,
+                tab_int=0
             )
 
         # 实例化按钮功能
@@ -172,7 +181,8 @@ class Tab2_tab0(ThemedWidget):
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
                 type=self.type,
-                show_data_signal=self.show_data_signal
+                show_data_signal=self.show_data_signal,
+                tab_int=0
             )
             self.store_thread_for_tab_frame.start()
         self.stop_btn.setDisabled(False)
@@ -201,7 +211,8 @@ class Tab2_tab0(ThemedWidget):
         self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
             name=self.objectName(),
             type=self.type,
-            show_data_signal=self.show_data_signal
+            show_data_signal=self.show_data_signal,
+            tab_int=0
         )
         self.store_thread_for_tab_frame.start()
         self.start_btn.setDisabled(True)

@@ -8,6 +8,7 @@ from loguru import logger
 
 from Modbus.COM_Scan import scan_serial_ports_with_id
 from Modbus.Modbus import ModbusRTUMaster
+from config.global_setting import global_setting
 from entity.MyQThread import MyQThread
 from theme.ThemeQt6 import ThemedWidget
 from ui.customize_ui.tab2_tab0_charts import tab2_tab0_charts
@@ -21,63 +22,31 @@ from util.number_util import number_util
 from util.time_util import time_util
 
 
-class Send_thread(MyQThread):
-    # 线程信号
-
-    def __init__(self, name=None, update_time_main_signal=None, modbus=None, send_message=None,
-                 tab_frame_show_data_signal_list=[]):
+class read_queue_data_Thread(MyQThread):
+    def __init__(self, name):
         super().__init__(name)
-        # 获取主线程更新界面信号
-        self.update_time_main_signal: pyqtSignal = update_time_main_signal
-        # tab子页面更新数据的信号槽
-        self.tab_frame_show_data_signal_list = tab_frame_show_data_signal_list
-        self.modbus = modbus
-        self.send_message = send_message
-        self.is_start = True
+        self.queue = None
+        self.update_status_main_signal_gui_update: pyqtSignal(str) = None
         pass
-
-    def __del__(self):
-        logger.debug(f"线程{self.name}被销毁!")
-
-    def init_modBus(self):
-        try:
-            if self.modbus is None:
-                self.modbus = ModbusRTUMaster(port=self.send_message['port'], timeout=self.send_message['timeout'],
-                                              update_status_main_signal=self.update_time_main_signal,
-                                              tab_frame_show_data_signal_list=self.tab_frame_show_data_signal_list
-                                              )
-        except:
-            pass
-        pass
-
-    def set_send_message(self, send_message):
-        self.send_message = send_message
-
-    def set_modbus(self, modbus):
-        self.modbus = modbus
 
     def dosomething(self):
-        if self.is_start:
-            self.init_modBus()
-            try:
-                logger.info(self.send_message)
-                response, response_hex, send_state = self.modbus.send_command(
-                    slave_id=self.send_message['slave_id'],
-                    function_code=self.send_message['function_code'],
-                    data_hex_list=self.send_message['data'])
-                # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
-                if send_state:
+        if not self.queue.empty():
+            message = self.queue.get()
+            # message 结构{'to'发往哪个线程，'data'数据，‘from'从哪来}
+
+            if message is not None and isinstance(message, dict) and len(message) > 0 and 'to' in message and message[
+                'to'] == 'tab_3':
+                logger.error(f"{self.name}_message:{message}")
+                if 'data' in message:
+                    self.update_status_main_signal_gui_update.emit(message['data'])
                     pass
-                self.is_start = False
-            except Exception as e:
-                logger.error(e)
-                self.update_time_main_signal.emit(f"{time_util.get_format_from_time(time.time())}-{e}")
-            finally:
-                self.is_start = False
-            time.sleep(1)
+            else:
+                # 把消息放回去
+                self.queue.put(message)
         pass
 
-    pass
+
+read_queue_data_thread = read_queue_data_Thread(name="tab_3_read_queue_data_thread")
 
 
 class Tab_3(ThemedWidget):
@@ -85,13 +54,9 @@ class Tab_3(ThemedWidget):
 
     def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
         logger.warning(f"tab3——show")
-        if self.send_thread is not None and self.send_thread.isRunning():
-            self.send_thread.resume()
 
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
         logger.warning(f"tab3——hidden")
-        if self.send_thread is not None and self.send_thread.isRunning():
-            self.send_thread.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
@@ -107,7 +72,7 @@ class Tab_3(ThemedWidget):
             'timeout': 0
         }
         self.modbus = None
-        self.send_thread: Send_thread = None
+
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 获得相关数据
@@ -198,7 +163,12 @@ class Tab_3(ThemedWidget):
         # 实例化信号
         # 将更新status信号绑定更新status界面函数
         self.update_status_main_signal_gui_update.connect(self.send_response_text)
-        pass
+        global read_queue_data_thread
+        read_queue_data_thread.update_status_main_signal_gui_update = self.update_status_main_signal_gui_update
+        read_queue_data_thread.queue = global_setting.get_setting("queue")
+        if read_queue_data_thread is not None and not read_queue_data_thread.isRunning():
+            read_queue_data_thread.start()
+            pass
 
     # 实例化按钮信号槽绑定
     def init_btn_func(self):
@@ -218,24 +188,8 @@ class Tab_3(ThemedWidget):
         try:
             if self.validate_data():
                 logger.info("开始发送")
-                if self.send_thread is None:
-                    logger.info("初始化串口")
-                    self.send_thread = None
-                    self.send_thread = Send_thread(name="tab_3_COM_Send_Thread",
-                                                   update_time_main_signal=self.update_status_main_signal_gui_update,
-                                                   tab_frame_show_data_signal_list=[],
-                                                   modbus=self.modbus, send_message=self.send_message)
-                    self.send_thread.set_send_message(self.send_message)
-                    self.send_thread.is_start = True
-                    self.send_thread.start()
-
-                    return
-                # 发送
-                logger.info("未初始化串口对象,使用之前串口实例化对象")
-                self.send_thread.set_send_message(self.send_message)
-                self.send_thread.is_start = True
-
-                pass
+                message = {'to': 'main_monitor_data', 'data': self.send_message, 'from': 'tab_3'}
+                global_setting.get_setting("queue").put(message)
                 pass
         except Exception as e:
             logger.error(e)

@@ -96,7 +96,8 @@ class Tab2_tab3(ThemedWidget):
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
                 type=self.type,
-                show_data_signal=self.show_data_signal
+                show_data_signal=self.show_data_signal,
+                tab_int=3
             )
             self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
         # 实例化按钮功能
@@ -133,7 +134,8 @@ class Tab2_tab3(ThemedWidget):
             self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
                 name=self.objectName(),
                 type=self.type,
-                show_data_signal=self.show_data_signal
+                show_data_signal=self.show_data_signal,
+                tab_int=3
             )
             self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
             self.store_thread_for_tab_frame.start()
@@ -163,7 +165,8 @@ class Tab2_tab3(ThemedWidget):
         self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
             name=self.objectName(),
             type=self.type,
-            show_data_signal=self.show_data_signal
+            show_data_signal=self.show_data_signal,
+            tab_int=3
         )
         self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
         self.store_thread_for_tab_frame.start()
@@ -186,7 +189,7 @@ class Tab2_tab3(ThemedWidget):
             self.store_thread_for_tab_frame.start()
         pass
 
-    def show_data(self, data:dict):
+    def show_data(self, data: dict):
         # 显示数据
         logger.info(f"{self.objectName()}显示数据：{data}")
         if data is not None and len(data) != 0:

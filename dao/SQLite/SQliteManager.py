@@ -7,6 +7,8 @@ class SQLiteManager():
     def __init__(self, db_name):
         """初始化数据库连接."""
         self.connection = sqlite3.connect(db_name)
+        # WAL模式提供更好的并发性，读取器不会阻塞写入器，反之亦然
+        self.connection.execute('PRAGMA journal_mode=WAL')  # 启用WAL模式
         logger.info(f"数据库{db_name}连接成功")
         self.cursor = self.connection.cursor()
 
@@ -78,6 +80,7 @@ class SQLiteManager():
             self.cursor.execute(sql)
 
         return self.cursor.fetchall()
+
     def query_current_Data(self, table_name, **kwargs):
         """查询数据，防止 SQL 注入."""
         sql = f"SELECT * FROM {table_name}"
@@ -91,6 +94,7 @@ class SQLiteManager():
             self.cursor.execute(sql)
 
         return self.cursor.fetchall()
+
     def update(self, table_name, criteria, **kwargs):
         """更新数据，防止 SQL 注入."""
         set_clause = ', '.join(f"{key} = ?" for key in kwargs.keys())
