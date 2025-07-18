@@ -149,7 +149,7 @@ class Monitor_Datas_Handle():
         pass
 
     def query_data_one_column_current(self, table_name, columns_flag):
-        results_query = self.sqlite_manager.query_current_Data_columns(table_name, columns_flag)
+
         if len(columns_flag > 0):
             conditions = "  where "
         else:
@@ -160,13 +160,27 @@ class Monitor_Datas_Handle():
             else:
                 conditions += f" item_name = '{columns_signle}' or "
         columns_query = self.sqlite_manager.query_conditions(f"{table_name}_meta", conditions)
+
+        results_query = self.sqlite_manager.query_current_Data_columns(table_name, [i[0] for i in columns_query])
         return_data = {}
         results = []
-        columns = []
+        columns_name = []
+        columns_desc = []
         if results_query is not None and len(results_query) > 0:
             results = list(results_query[0])
-
-        for value, description in zip(results, columns, columns_flag):
-            return_data.append({'desc': description, 'value': value})
+        if columns_query is not None and len(columns_query) > 0:
+            columns_name = [i[0] for i in columns_query]
+            columns_desc = [i[2] for i in columns_query]
+            pass
+        for value, column_name, column_desc in zip(results, columns_name, columns_desc):
+            return_data[column_name] = {'desc': column_desc, 'value': value}
+        """
+        {
+            'temperature':{
+            'desc':'温度',
+            'value':1
+            },
+            .....
+        }
+        """
         return return_data
-        pass

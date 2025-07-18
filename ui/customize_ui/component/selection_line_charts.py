@@ -1,22 +1,26 @@
 # 下拉选择框的折线图
 
 import sqlite3
+import sys
 import threading
+import time
 
 from PyQt6.QtGui import QPainter
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QComboBox, QLabel, QScrollArea
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QComboBox, QLabel, QScrollArea, QApplication
 from PyQt6.QtCharts import QChart, QChartView, QLineSeries, QValueAxis
 from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot
 
 from dao.SQLite.Monitor_Datas_Handle import Monitor_Datas_Handle
+from dao.SQLite.SQliteManager import SQLiteManager
 from entity.MyQThread import MyQThread
 
 
 class DataFetcher(MyQThread):
-    data_fetched = pyqtSignal(float, float)  # 信号传递时间和值
+    data_fetched = pyqtSignal(dict)  # 信号传递时间和值
 
-    def __init__(self, data_type, data_types):
+    def __init__(self, table_name, data_type, data_types):
         super().__init__()
+        self.table_name = table_name
         # 选中的数据类型
         self.data_type = data_type
         # 所有的数据类型
@@ -38,22 +42,44 @@ class DataFetcher(MyQThread):
         if self.handle is not None:
             self.handle.stop()
         self.handle = Monitor_Datas_Handle()  # # 创建数据库
+        data = {}
+        """
+                {
+                    'temperature':{
+                    'desc':'温度',
+                    'value':1
+                    },
+                    'time':{
+                    'desc':'获取时间',
+                    'value':1
+                    },
+                }
+        """
         for data_type_temp in self.data_types:
             if self.data_type == data_type_temp:
+                data = self.handle.query_data_one_column_current(table_name=self.table_name,
+                                                                 columns_flag=[data_type_temp,
+                                                                               SQLiteManager.TIME_COLUMN_NAME])
                 break
         else:
             pass
-        if data:
-            time, value = data
-            self.data_fetched.emit(time, value)
+
+        self.data_fetched.emit(data)
 
         time.sleep(1)  # 每秒获取一次数据
 
 
 class LineChartWidget(QWidget):
 
-    def __init__(self):
+    def __init__(self, type, data_type):
+        """
+
+        :param type:模块类型 UFC,UGC等 枚举类
+        :param data_type: 数据类型 比如monitor_data senior_state等
+        """
         super().__init__()
+        self.type = type
+        self.data_type = data_type
         self.initUI()
 
     def initUI(self):
@@ -120,10 +146,7 @@ class LineChartWidget(QWidget):
         # 启动新线程来获取新的数据类型
         self.data_fetcher = DataFetcher(data_type)
         self.data_fetcher.data_fetched.connect(self.update_chart)
-
-        self.thread = threading.Thread(target=self.data_fetcher.run)
-        self.data_fetcher.stop_thread = False
-        self.thread.start()
+        self.data_fetcher.start()
 
     @pyqtSlot(float, float)
     def update_chart(self, time, value):
@@ -140,3 +163,37 @@ class LineChartWidget(QWidget):
         self.axis_x.setRange(max(0, time - 10), time)  # X轴范围设置为最近10个数据点
         self.axis_y.setRange(min(val for _, val in self.data_points) - 1,
                              max(val for _, val in self.data_points) + 1)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    # 创建一个示例 SQLite 数据库和表格以进行演示
+    conn = sqlite3.connect('data.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS sensor_data (
+            datetime REAL,
+            temperature REAL,
+            humidity REAL
+        )
+    ''')
+    # 插入一些示例数据
+    for i in range(100):
+        cursor.execute("INSERT INTO sensor_data (datetime, temperature, humidity) VALUES (?, ?, ?)",
+                       (i, 20 + i * 0.1, 50 + i * 0.2))
+    conn.commit()
+    conn.close()
+
+    main_window = QWidget()
+    main_layout = QVBoxLayout(main_window)
+
+    chart_widget = LineChartWidget()
+    main_layout.addWidget(chart_widget)
+
+    main_window.setLayout(main_layout)
+    main_window.setWindowTitle("Line Chart with Scroll Area")
+    main_window.resize(800, 600)
+    main_window.show()
+
+    sys.exit(app.exec())
