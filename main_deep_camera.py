@@ -75,7 +75,7 @@ class read_queue_data_Thread(MyQThread):
             else:
                 # 把消息放回去
                 self.queue.put(message)
-    
+
         pass
 
 
@@ -716,7 +716,7 @@ def init_camera_and_image_handle_thread(serials):
 
 def main(q):
     # 加载日志配置
-    logger.remove(0)
+    # logger.remove(0)
     logger.add(
         "./log/deep_camera/d_camera_{time:YYYY-MM-DD}.log",
         rotation="00:00",

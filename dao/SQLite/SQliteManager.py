@@ -4,6 +4,8 @@ from loguru import logger
 
 
 class SQLiteManager():
+    TIME_COLUMN_NAME = 'time'
+
     def __init__(self, db_name):
         """初始化数据库连接."""
         self.connection = sqlite3.connect(db_name)
@@ -69,6 +71,14 @@ class SQLiteManager():
         return self.cursor.rowcount
         pass
 
+    def query_conditions(self, table_name, conditions=""):
+        """查询数据，."""
+        sql = f"SELECT * FROM {table_name} "
+        sql += conditions
+        self.cursor.execute(sql)
+
+        return self.cursor.fetchall()
+
     def query(self, table_name, **kwargs):
         """查询数据，防止 SQL 注入."""
         sql = f"SELECT * FROM {table_name}"
@@ -84,6 +94,21 @@ class SQLiteManager():
     def query_current_Data(self, table_name, **kwargs):
         """查询数据，防止 SQL 注入."""
         sql = f"SELECT * FROM {table_name}"
+        if kwargs:
+            conditions = ' AND '.join(f"{key} = ?" for key in kwargs.keys())
+            sql += f" WHERE {conditions} "
+            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
+        else:
+            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            self.cursor.execute(sql)
+
+        return self.cursor.fetchall()
+
+    def query_current_Data_columns(self, table_name, columns, **kwargs):
+        """查询数据，防止 SQL 注入."""
+        columns_sql = ', '.join(columns)
+        sql = f"SELECT {columns_sql} FROM {table_name}"
         if kwargs:
             conditions = ' AND '.join(f"{key} = ?" for key in kwargs.keys())
             sql += f" WHERE {conditions} "

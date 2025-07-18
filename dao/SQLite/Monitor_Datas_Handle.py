@@ -130,17 +130,43 @@ class Monitor_Datas_Handle():
                     logger.info(f"数据插入表{table_name}失败！")
                 pass
             pass
-    def query_data(self,table_name):
+
+    def query_data(self, table_name):
         results_query = self.sqlite_manager.query_current_Data(table_name)
         columns_query = self.sqlite_manager.query(f"{table_name}_meta")
         return_data = []
-        results=[]
-        columns=[]
+        results = []
+        columns = []
         if results_query is not None and len(results_query) > 0:
+            # 不要id 和time
             results = list(results_query[0])[1:-1]
         if columns_query is not None and len(columns_query) > 0:
-            columns = [ i[2] for i in columns_query][1:-1]
-        for value,description in zip(results,columns):
-            return_data.append({'desc':description,'value':value})
+            # 不要id 和time
+            columns = [i[2] for i in columns_query][1:-1]
+        for value, description in zip(results, columns):
+            return_data.append({'desc': description, 'value': value})
+        return return_data
+        pass
+
+    def query_data_one_column_current(self, table_name, columns_flag):
+        results_query = self.sqlite_manager.query_current_Data_columns(table_name, columns_flag)
+        if len(columns_flag > 0):
+            conditions = "  where "
+        else:
+            conditions = ""
+        for columns_signle in columns_flag:
+            if columns_signle == columns_flag[-1]:
+                conditions += f" item_name = '{columns_signle}' "
+            else:
+                conditions += f" item_name = '{columns_signle}' or "
+        columns_query = self.sqlite_manager.query_conditions(f"{table_name}_meta", conditions)
+        return_data = {}
+        results = []
+        columns = []
+        if results_query is not None and len(results_query) > 0:
+            results = list(results_query[0])
+
+        for value, description in zip(results, columns, columns_flag):
+            return_data.append({'desc': description, 'value': value})
         return return_data
         pass

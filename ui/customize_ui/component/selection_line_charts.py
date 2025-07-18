@@ -8,35 +8,46 @@ from PyQt6.QtWidgets import QWidget, QVBoxLayout, QComboBox, QLabel, QScrollArea
 from PyQt6.QtCharts import QChart, QChartView, QLineSeries, QValueAxis
 from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot
 
+from dao.SQLite.Monitor_Datas_Handle import Monitor_Datas_Handle
 from entity.MyQThread import MyQThread
 
 
 class DataFetcher(MyQThread):
     data_fetched = pyqtSignal(float, float)  # 信号传递时间和值
 
-    def __init__(self, data_type):
+    def __init__(self, data_type, data_types):
         super().__init__()
+        # 选中的数据类型
         self.data_type = data_type
-        self.stop_thread = False
+        # 所有的数据类型
+        self.data_types = data_types
+        # 数据库操作类
+        self.handle: Monitor_Datas_Handle = None
 
-    def run(self):
-        conn = sqlite3.connect('data.db')
-        cursor = conn.cursor()
+    def stop(self):
+        super().stop()
+        if self.handle is not None:
+            self.handle.stop()
 
-        while not self.stop_thread:
-            if self.data_type == "Temperature":
-                cursor.execute("SELECT datetime, temperature FROM sensor_data ORDER BY datetime DESC LIMIT 1")
-            elif self.data_type == "Humidity":
-                cursor.execute("SELECT datetime, humidity FROM sensor_data ORDER BY datetime DESC LIMIT 1")
+    def pause(self):
+        super().pause()
+        if self.handle is not None:
+            self.handle.stop()
 
-            data = cursor.fetchone()
-            if data:
-                time, value = data
-                self.data_fetched.emit(time, value)
+    def dosomething(self):
+        if self.handle is not None:
+            self.handle.stop()
+        self.handle = Monitor_Datas_Handle()  # # 创建数据库
+        for data_type_temp in self.data_types:
+            if self.data_type == data_type_temp:
+                break
+        else:
+            pass
+        if data:
+            time, value = data
+            self.data_fetched.emit(time, value)
 
-            time.sleep(1)  # 每秒获取一次数据
-
-        conn.close()
+        time.sleep(1)  # 每秒获取一次数据
 
 
 class LineChartWidget(QWidget):
