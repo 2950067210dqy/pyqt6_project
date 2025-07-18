@@ -8,7 +8,7 @@ import time
 from PyQt6.QtGui import QPainter
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QComboBox, QLabel, QScrollArea, QApplication
 from PyQt6.QtCharts import QChart, QChartView, QLineSeries, QValueAxis
-from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot
+from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot, Qt
 
 from dao.SQLite.Monitor_Datas_Handle import Monitor_Datas_Handle
 from dao.SQLite.SQliteManager import SQLiteManager
@@ -18,8 +18,8 @@ from entity.MyQThread import MyQThread
 class DataFetcher(MyQThread):
     data_fetched = pyqtSignal(dict)  # 信号传递时间和值
 
-    def __init__(self, table_name, data_type, data_types):
-        super().__init__()
+    def __init__(self, name, table_name, data_type, data_types):
+        super().__init__(name=name)
         self.table_name = table_name
         # 选中的数据类型
         self.data_type = data_type
@@ -71,16 +71,35 @@ class DataFetcher(MyQThread):
 
 class LineChartWidget(QWidget):
 
-    def __init__(self, type, data_type):
+    def __init__(self, type, data_type, mouse_cage_number=0):
         """
 
         :param type:模块类型 UFC,UGC等 枚举类
         :param data_type: 数据类型 比如monitor_data senior_state等
         """
         super().__init__()
+        self.mouse_cage_number = mouse_cage_number
         self.type = type
         self.data_type = data_type
+        self.columns_desc_combobox_data = []
+        if self.mouse_cage_number == 0:
+            self.table_name = f"{self.type.value['name']}_{self.data_type}"
+        else:
+            self.table_name = f"{self.type.value['name']}_{self.data_type}_cage_{self.mouse_cage_number}"
+
+        # 数据库操作类
+        self.handle: Monitor_Datas_Handle = None
+        self.get_combobox_data()
         self.initUI()
+
+    def get_combobox_data(self):
+        """
+        获取combobox 下拉框数据
+        :return:
+        """
+        self.handle = Monitor_Datas_Handle()  # # 创建数据库
+        self.columns_desc_combobox_data = self.handle.query_meta_table_data(self.table_name)
+        # 获取表格column数据
 
     def initUI(self):
         # 设置布局
@@ -88,7 +107,7 @@ class LineChartWidget(QWidget):
 
         # 创建下拉框
         self.combo_box = QComboBox()
-        self.combo_box.addItems(["Temperature", "Humidity"])
+        self.combo_box.addItems(self.columns_desc_combobox_data)
         self.combo_box.currentTextChanged.connect(self.change_data_type)
 
         # 添加下拉框到布局
@@ -105,7 +124,7 @@ class LineChartWidget(QWidget):
 
         # 创建图表
         self.chart = QChart()
-        self.chart.setTitle("Real-time Temperature and Humidity Data")
+        self.chart.setTitle("Real-time  Data")
 
         self.series = QLineSeries()
         self.chart.addSeries(self.series)
@@ -113,9 +132,10 @@ class LineChartWidget(QWidget):
         # 设置坐标轴
         self.axis_x = QValueAxis()
         self.axis_y = QValueAxis()
-        self.chart.setAxisX(self.axis_x, self.series)
-        self.chart.setAxisY(self.axis_y, self.series)
-
+        self.chart.addAxis(self.axis_x, Qt.AlignmentFlag.AlignLeft)
+        self.chart.addAxis(self.axis_y, Qt.AlignmentFlag.AlignBottom)
+        self.series.attachAxis(self.axis_x)
+        self.series.attachAxis(self.axis_y)
         # 创建图表视图
         self.chart_view = QChartView(self.chart)
         self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)
@@ -128,29 +148,29 @@ class LineChartWidget(QWidget):
         layout.addWidget(scroll_area)
 
         # 初始化数据获取线程
-        self.data_fetcher = None
-        self.thread = None
+        self.data_fetcher_thread: DataFetcher = None
         self.data_points = []  # 用于存储最新数据点
 
         self.change_data_type(self.combo_box.currentText())  # 初始化为默认数据类型
 
     @pyqtSlot(str)
     def change_data_type(self, data_type):
-        if self.data_fetcher and self.data_fetcher.isRunning():
-            self.data_fetcher.stop_thread = True
-            self.thread.join()
+        if self.data_fetcher_thread and self.data_fetcher_thread.isRunning():
+            self.data_fetcher_thread.stop()
 
         self.series.clear()  # 清除现有数据
         self.data_points.clear()  # 清除历史数据
 
         # 启动新线程来获取新的数据类型
-        self.data_fetcher = DataFetcher(data_type)
-        self.data_fetcher.data_fetched.connect(self.update_chart)
-        self.data_fetcher.start()
+        self.data_fetcher_thread = DataFetcher(name="tab_2_tab_0_data_fetch_thread", table_name=self.table_name,
+                                               data_type=self.data_type,
+                                               data_types=self.columns_desc_combobox_data)
+        self.data_fetcher_thread.data_fetched.connect(self.update_chart)
+        self.data_fetcher_thread.start()
 
-    @pyqtSlot(float, float)
-    def update_chart(self, time, value):
-        self.data_points.append((time, value))
+    @pyqtSlot(dict)
+    def update_chart(self, data):
+        self.data_points.append((data['time']['value'], data[self.data_type]['value']))
         # 保持最多 10 个数据点
         if len(self.data_points) > 10:
             self.data_points.pop(0)

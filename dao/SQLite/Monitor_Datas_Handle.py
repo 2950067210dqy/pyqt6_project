@@ -132,6 +132,11 @@ class Monitor_Datas_Handle():
             pass
 
     def query_data(self, table_name):
+        """
+        获取数据库的数据表的单行最新的数据
+        :param table_name:
+        :return:
+        """
         results_query = self.sqlite_manager.query_current_Data(table_name)
         columns_query = self.sqlite_manager.query(f"{table_name}_meta")
         return_data = []
@@ -149,7 +154,12 @@ class Monitor_Datas_Handle():
         pass
 
     def query_data_one_column_current(self, table_name, columns_flag):
-
+        """
+        获取指定列的单个最新的数据
+        :param table_name:
+        :param columns_flag:
+        :return:
+        """
         if len(columns_flag > 0):
             conditions = "  where "
         else:
@@ -184,3 +194,15 @@ class Monitor_Datas_Handle():
         }
         """
         return return_data
+
+    def query_meta_table_data(self, table_name):
+        """
+        获取表结构数据 item_desc
+        :param table_name:
+        :return:
+        """
+        columns_query = self.sqlite_manager.query(f"{table_name}_meta")
+        columns_desc = []
+        if columns_query is not None and len(columns_query) > 0:
+            columns_desc = [i[2] for i in columns_query]
+        return columns_desc

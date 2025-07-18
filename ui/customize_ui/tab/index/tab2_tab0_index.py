@@ -17,6 +17,7 @@ from PyQt6.QtWidgets import QWidget, QMainWindow, QPushButton, QFrame, QGroupBox
     QVBoxLayout, QScrollArea
 
 from theme.ThemeQt6 import ThemedWidget
+from ui.customize_ui.component.selection_line_charts import LineChartWidget
 from ui.customize_ui.tab.tab2_tab0 import Ui_tab_0_frame
 from ui.tab7 import Ui_tab7_frame
 from util.number_util import number_util
@@ -129,7 +130,13 @@ class Tab2_tab0(ThemedWidget):
 
     # 实例化自定义ui
     def _init_customize_ui(self):
-        pass
+        # 添加最新数据图表charts
+        self.now_data_layout = self.findChild(QHBoxLayout, "now_data_layout")
+        # self.now_data_chart_widget = LineChartWidget(type=self.type, data_type='monitor_data', mouse_cage_number=0)
+        # if self.now_data_layout is not None:
+        #     self.now_data_layout.addWidget(self.now_data_chart_widget)
+        #     pass
+        # pass
 
     # 实例化功能
     def _init_function(self):
