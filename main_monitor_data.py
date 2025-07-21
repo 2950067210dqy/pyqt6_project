@@ -106,11 +106,9 @@ class Send_thread(MyQThread):
     请求数据线程
     """
 
-    def __init__(self, name=None, update_time_main_signal=None, modbus=None,
+    def __init__(self, name=None, modbus=None,
                  ):
         super().__init__(name)
-        # 获取主线程更新界面信号
-        self.update_time_main_signal: pyqtSignal = update_time_main_signal
 
         self.modbus: ModbusRTUMaster = modbus
         # 正常队列和紧急队列 紧急队列的消息立即处理
@@ -127,13 +125,12 @@ class Send_thread(MyQThread):
         else:
             self.normal_queue.put(message)
 
-    def init_modBus(self, port):
+    def init_modBus(self, port, origin=None):
         try:
 
             self.modbus = ModbusRTUMaster(port=port, timeout=float(
                 global_setting.get_setting('monitor_data')['Serial']['timeout']),
-                                          update_status_main_signal=self.update_time_main_signal,
-
+                                          origin=origin
                                           )
         except Exception as e:
             logger.error(f"{self.name},实例化modbus错误：{e}")
@@ -160,12 +157,13 @@ class Send_thread(MyQThread):
                 try:
                     message = self.priority_queue.get_nowait()
                     send_message = message['message']
-                    self.init_modBus(port=send_message['port'])
+                    self.init_modBus(port=send_message['port'], origin=message['origin'])
                     logger.debug(f"{self.name}接收到查询报文。正在发送查询报文：{send_message}")
                     response, response_hex, send_state = self.modbus.send_command(
                         slave_id=send_message['slave_id'],
                         function_code=send_message['function_code'],
                         data_hex_list=send_message['data'],
+
                         is_parse_response=False
                     )
                     # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
@@ -180,7 +178,6 @@ class Send_thread(MyQThread):
                                                                                  send_message['function_code'], )
 
                         # 把返回数据返回给源头
-
                         message_struct = {'to': message['origin'], 'data': parser_message, 'from': 'main_monitor_data'}
                         global_setting.get_setting("send_message_queue").put(message_struct)
                         logger.debug(f"main_monitor_data将响应报文的解析数据返回源头：{message_struct}")

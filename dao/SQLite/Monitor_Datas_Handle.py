@@ -160,7 +160,7 @@ class Monitor_Datas_Handle():
         :param columns_flag:
         :return:
         """
-        if len(columns_flag > 0):
+        if len(columns_flag) > 0:
             conditions = "  where "
         else:
             conditions = ""
@@ -184,7 +184,8 @@ class Monitor_Datas_Handle():
             pass
         for value, column_name, column_desc in zip(results, columns_name, columns_desc):
             return_data[column_name] = {'desc': column_desc, 'value': value}
-        """
+        """\
+        return_data
         {
             'temperature':{
             'desc':'温度',
@@ -193,7 +194,7 @@ class Monitor_Datas_Handle():
             .....
         }
         """
-        return return_data
+        return [return_data]
 
     def query_meta_table_data(self, table_name):
         """
@@ -204,5 +205,5 @@ class Monitor_Datas_Handle():
         columns_query = self.sqlite_manager.query(f"{table_name}_meta")
         columns_desc = []
         if columns_query is not None and len(columns_query) > 0:
-            columns_desc = [i[2] for i in columns_query]
+            columns_desc = [{'desc':i[2],'name':i[0]} for i in columns_query][1:-1]
         return columns_desc

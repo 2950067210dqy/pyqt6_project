@@ -4,19 +4,23 @@ import sqlite3
 import sys
 import threading
 import time
+from datetime import datetime
 
 from PyQt6.QtGui import QPainter
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QComboBox, QLabel, QScrollArea, QApplication
-from PyQt6.QtCharts import QChart, QChartView, QLineSeries, QValueAxis
-from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot, Qt
+from PyQt6.QtCharts import QChart, QChartView, QLineSeries, QValueAxis, QSplineSeries, QDateTimeAxis
+from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot, Qt, QDateTime, QPointF
+from loguru import logger
 
+from config.global_setting import global_setting
 from dao.SQLite.Monitor_Datas_Handle import Monitor_Datas_Handle
 from dao.SQLite.SQliteManager import SQLiteManager
 from entity.MyQThread import MyQThread
+from theme.ThemeManager import Charts_Style_Name
 
 
 class DataFetcher(MyQThread):
-    data_fetched = pyqtSignal(dict)  # 信号传递时间和值
+    data_fetched = pyqtSignal(list)  # 信号传递时间和值
 
     def __init__(self, name, table_name, data_type, data_types):
         super().__init__(name=name)
@@ -30,20 +34,21 @@ class DataFetcher(MyQThread):
 
     def stop(self):
         super().stop()
-        if self.handle is not None:
-            self.handle.stop()
+        # if self.handle is not None:
+        #     self.handle.stop()
 
     def pause(self):
         super().pause()
-        if self.handle is not None:
-            self.handle.stop()
+        # if self.handle is not None:
+        #     self.handle.stop()
 
     def dosomething(self):
         if self.handle is not None:
             self.handle.stop()
         self.handle = Monitor_Datas_Handle()  # # 创建数据库
-        data = {}
-        """
+        data =[]
+        # 可能会有多个数据源
+        """[
                 {
                     'temperature':{
                     'desc':'温度',
@@ -54,26 +59,33 @@ class DataFetcher(MyQThread):
                     'value':1
                     },
                 }
+            ]
         """
+
         for data_type_temp in self.data_types:
-            if self.data_type == data_type_temp:
+            if self.data_type['name'] == data_type_temp['name']:
                 data = self.handle.query_data_one_column_current(table_name=self.table_name,
-                                                                 columns_flag=[data_type_temp,
+                                                                 columns_flag=[data_type_temp['name'],
                                                                                SQLiteManager.TIME_COLUMN_NAME])
                 break
         else:
             pass
-
+        logger.error(f"get_data:{data}")
         self.data_fetched.emit(data)
 
         time.sleep(1)  # 每秒获取一次数据
 
 
 class LineChartWidget(QWidget):
-
-    def __init__(self, type, data_type, mouse_cage_number=0):
+    def __init__(self, parent: QVBoxLayout = None, object_name: str = "", data_read_counts=10, data_origin_nums=1,
+                 is_span=False, type=None, data_type="", mouse_cage_number=0):
         """
 
+        :param parent:父组件
+        :param object_name:图表objectName
+        :param data_read_counts:图表数据展示的总数量
+        :param is_span:图表是否平滑
+        :param data_origin_nums:数据源数量
         :param type:模块类型 UFC,UGC等 枚举类
         :param data_type: 数据类型 比如monitor_data senior_state等
         """
@@ -81,7 +93,10 @@ class LineChartWidget(QWidget):
         self.mouse_cage_number = mouse_cage_number
         self.type = type
         self.data_type = data_type
+        # [{'name':'','desc':''}]
         self.columns_desc_combobox_data = []
+        # 选中
+        self.columns_desc_combobox_selected={}
         if self.mouse_cage_number == 0:
             self.table_name = f"{self.type.value['name']}_{self.data_type}"
         else:
@@ -89,8 +104,40 @@ class LineChartWidget(QWidget):
 
         # 数据库操作类
         self.handle: Monitor_Datas_Handle = None
+        # 数据源数量
+        self.data_origin_nums = data_origin_nums
+        self.data_points=[]
+        for i in range(data_origin_nums):
+            self.data_points.append([])   # 用于存储最新数据点
+        # 主题颜色
+        self.theme = global_setting.get_setting("theme_manager").get_charts_style()
+        # 当前样式名
+        self.theme_name = Charts_Style_Name.NORMAL.value
+        # 是否平滑图表
+        self.is_span = is_span
+
+        # obejctName
+        self.object_name = object_name
+        # 父布局
+        self.parent_layout = parent
+        # 图表对象
+        self.chart: QChart = None
+        # 数据系列对象 可能有多个数据源 所以设置为列表
+        self.series: [QLineSeries| QSplineSeries] = []
+        # x轴
+        self.x_axis: QValueAxis = None
+        # y轴
+        self.y_axis: QValueAxis = None
+
+        # 图表每次读取的数据数量
+        self.data_read_counts = data_read_counts
+
+        # 数据的最大值 和最小值
+        self.min_and_max_x = [0, 0]
+        self.min_and_max_y = [0, 0]
+
         self.get_combobox_data()
-        self.initUI()
+        self._init_ui()
 
     def get_combobox_data(self):
         """
@@ -101,13 +148,16 @@ class LineChartWidget(QWidget):
         self.columns_desc_combobox_data = self.handle.query_meta_table_data(self.table_name)
         # 获取表格column数据
 
-    def initUI(self):
+    def _init_ui(self):
         # 设置布局
         layout = QVBoxLayout(self)
 
         # 创建下拉框
         self.combo_box = QComboBox()
-        self.combo_box.addItems(self.columns_desc_combobox_data)
+        if len(self.columns_desc_combobox_data) != 0:
+            # 默认下拉项
+            self.columns_desc_combobox_selected =self.columns_desc_combobox_data[0]
+        self.combo_box.addItems([data['desc'] for data in self.columns_desc_combobox_data])
         self.combo_box.currentTextChanged.connect(self.change_data_type)
 
         # 添加下拉框到布局
@@ -121,24 +171,17 @@ class LineChartWidget(QWidget):
         # 创建一个新的 QWidget 用于图表
         self.chart_widget = QWidget()
         self.chart_layout = QVBoxLayout(self.chart_widget)
+        # 创建布局和图表视图
+        self.chart_view = QChartView()
+        self.chart_view.setMouseTracking(True)  # 开启鼠标追踪
 
-        # 创建图表
-        self.chart = QChart()
-        self.chart.setTitle("Real-time  Data")
+        # self.chart_view.setFixedSize(500 + 200, 400)  # 固定大小
 
-        self.series = QLineSeries()
-        self.chart.addSeries(self.series)
+        self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)  # 关键设置 抗锯齿
+        self.chart_view.setObjectName(f"{self.object_name}")
 
-        # 设置坐标轴
-        self.axis_x = QValueAxis()
-        self.axis_y = QValueAxis()
-        self.chart.addAxis(self.axis_x, Qt.AlignmentFlag.AlignLeft)
-        self.chart.addAxis(self.axis_y, Qt.AlignmentFlag.AlignBottom)
-        self.series.attachAxis(self.axis_x)
-        self.series.attachAxis(self.axis_y)
-        # 创建图表视图
-        self.chart_view = QChartView(self.chart)
-        self.chart_view.setRenderHint(QPainter.RenderHint.Antialiasing)
+        # 初始化图表
+        self._init_chart()
 
         # 将图表视图添加到 layout，并添加到滚动区域
         self.chart_layout.addWidget(self.chart_view)
@@ -146,45 +189,196 @@ class LineChartWidget(QWidget):
 
         # 将滚动区域添加到布局
         layout.addWidget(scroll_area)
+        self.parent_layout.addWidget(self)
 
+    def _init_chart(self):
+        theme = self.theme
+        # 创建图表对象
+        self.chart = QChart()
+        self.chart.setObjectName(f"{self.object_name}_chart")
+        self.chart.setTitle("自定义图表")
+
+        # 设置序列 和图表类型
+        self._set_series()
         # 初始化数据获取线程
         self.data_fetcher_thread: DataFetcher = None
-        self.data_points = []  # 用于存储最新数据点
 
         self.change_data_type(self.combo_box.currentText())  # 初始化为默认数据类型
 
+
+
+
+
+        # 添加到视图
+        self.chart_view.setChart(self.chart)
+
     @pyqtSlot(str)
     def change_data_type(self, data_type):
-        if self.data_fetcher_thread and self.data_fetcher_thread.isRunning():
+        if self.data_fetcher_thread is not None and self.data_fetcher_thread.isRunning():
             self.data_fetcher_thread.stop()
 
-        self.series.clear()  # 清除现有数据
+        # self.series.clear()  # 清除现有数据
+        for data in self.columns_desc_combobox_data:
+            if data['desc'] == data_type:
+                self.columns_desc_combobox_selected=data
+                break
         self.data_points.clear()  # 清除历史数据
-
+        self.data_points=[]  # 清除历史数据
+        for i in range(self.data_origin_nums):
+            self.data_points.append([])  # 用于存储最新数据点
         # 启动新线程来获取新的数据类型
         self.data_fetcher_thread = DataFetcher(name="tab_2_tab_0_data_fetch_thread", table_name=self.table_name,
-                                               data_type=self.data_type,
+                                               data_type=self.columns_desc_combobox_selected,
                                                data_types=self.columns_desc_combobox_data)
         self.data_fetcher_thread.data_fetched.connect(self.update_chart)
         self.data_fetcher_thread.start()
 
-    @pyqtSlot(dict)
+    @pyqtSlot(list)
     def update_chart(self, data):
-        self.data_points.append((data['time']['value'], data[self.data_type]['value']))
-        # 保持最多 10 个数据点
-        if len(self.data_points) > 10:
-            self.data_points.pop(0)
+        """[
+                        {
+                            'temperature':{
+                            'desc':'温度',
+                            'value':1
+                            },
+                            'time':{
+                            'desc':'获取时间',
+                            'value':1
+                            },
+                        }
+            ]
+                """
+        logger.error(f"update_data:{data}")
+        if len(data)>0 and len(data)==self.data_origin_nums:
+            for i in range(len(data)):
+                self.data_points[i].append(QPointF( int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'], "%Y-%m-%d %H:%M:%S").timestamp() ),
+                                                    data[i][self.columns_desc_combobox_selected['name']]['value']
+                                                    )
+                                        )
+                # 保持最多 10 个数据点
+                if len(self.data_points[i]) >self.data_read_counts:
+                    self.data_points[i].pop(0)
+        # 获取 x 和y值的最大值和最小值来确定坐标轴范围
 
-        self.series.clear()
-        for time, value in self.data_points:
-            self.series.append(time, value)
+        self.get_max_and_min_data()
+        self.update_series()
+        # 将数据放入series中 更新数据
+        self.set_data_to_series()
+        # 设置坐标轴
+        self._set_x_axis()
+        self._set_y_axis()
 
-        # 更新坐标轴范围
-        self.axis_x.setRange(max(0, time - 10), time)  # X轴范围设置为最近10个数据点
-        self.axis_y.setRange(min(val for _, val in self.data_points) - 1,
-                             max(val for _, val in self.data_points) + 1)
+    # 更新series中的数据
+    def update_series(self):
+        if len(self.series) > 0 and len(self.data_points) > 0:
+            for i in range(self.data_origin_nums):
+                self.series[i].replace(
+                    self.data_points[i])
+                # 移出该序列
+                self.chart.removeSeries(self.series[i])
+                # 添加该序列
+                self.chart.addSeries(self.series[i])
+        pass
+    #   设置图表类型 line 折线图
+    def _set_series(self):
+
+        # 折线图
+        # 添加数据系列n
+        for i in range(self.data_origin_nums):
+            if self.is_span:
+                single_series = QSplineSeries()
+            else:
+                single_series = QLineSeries()
+            single_series.setObjectName(f"{self.object_name}_series_{i + 1}")
+            single_series.setName(f"源{i}")
+            self.series.append(single_series)
+        pass
+
+    # 将数据放入series中
+    def set_data_to_series(self):
+        if len(self.series) > 0 and len(self.data_points) > 0:
+            for i in range(self.data_origin_nums):
+                self.series[i].replace(
+                    self.data_points[i])
+                # 添加该序列
+                self.chart.addSeries(self.series[i])
+            pass
+    # 设置x轴
+    def _set_x_axis(self):
+        # 将坐标轴关联到图表
+        if self.x_axis == None:
+            self.x_axis = QDateTimeAxis()
+            self.x_axis.setFormat("HH:mm:ss")  # 设置日期时间格式，可以根据需求调整
+
+        # 设置坐标轴范围
+        # self.x_axis.setLabelsAngle(90)  # 旋转90°竖着显示日期
+        self.x_axis.setRange(QDateTime.fromSecsSinceEpoch(int(self.min_and_max_x[0])),
+                             QDateTime.fromSecsSinceEpoch(int(self.min_and_max_x[1])))
+        self.chart.removeAxis(self.x_axis)
+        self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
+        for i in range(len(self.series)):
+            self.series[i].attachAxis(self.x_axis)
+
+        pass
+
+    # 设置y轴
+    def _set_y_axis(self):
+        # 将坐标轴关联到图表
+        if self.y_axis == None:
+            self.y_axis = QValueAxis()
+        # 设置坐标轴范围
+        self.y_axis.setRange(self.min_and_max_y[0], self.min_and_max_y[1])
+        # self.y_axis.setLabelFormat("%.3f")
+        self.chart.removeAxis(self.y_axis)
+        self.chart.addAxis(self.y_axis, Qt.AlignmentFlag.AlignLeft)
+        for i in range(len(self.series)):
+            self.series[i].attachAxis(self.y_axis)
+
+        pass
+    # 获取数据的最大x最小x最大y最小y
+    def get_max_and_min_data(self):
+        rows = len(self.data_points)
+        # 如果没有数据 直接传0为最大最小值
+        if rows == 0:
+            self.min_and_max_x = [0, 0]
+            self.min_and_max_y = [0, 0]
+            return
+
+        # 找一个初始值
+        max_x = 0
+        max_y = 0
+        min_x = 0
+        min_y = 0
+        for row in range(rows):
+            if len(self.data_points[0]) != 0:
+                max_y = self.data_points[row][0].y()
+                min_y = self.data_points[row][0].y()
+                max_x = self.data_points[row][0].x()
+                min_x = self.data_points[row][0].x()
 
 
+        for row in range(rows):
+            if len(self.data_points[row]) != 0:
+                for column in range(len(self.data_points[row])):
+                    max_y = max(max_y, self.data_points[row][column].y())
+                    max_x = max(max_x, self.data_points[row][column].x())
+                    min_y = min(min_y, self.data_points[row][column].y())
+                    min_x = min(min_x, self.data_points[row][column].x())
+        # 如果调整的数据的最大值和最小值都还是比之前的最大值和最小值小或大就不进行改变 大部分时间固定坐标轴 x轴不需要大部分时间固定
+        # if min_x < self.min_and_max_x[0]:
+        #     self.min_and_max_x[0] = min_x
+        # if max_x > self.min_and_max_x[1]:
+        #     self.min_and_max_x[1] = max_x
+        # 将毫秒转换成秒
+        self.min_and_max_x[0] = min_x
+        self.min_and_max_x[1] = max_x
+        if min_y < self.min_and_max_y[0]:
+            self.min_and_max_y[0] = min_y
+        if max_y > self.min_and_max_y[1]:
+            self.min_and_max_y[1] = max_y
+
+        # logger.info(
+        #     f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_y[1]}]")
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

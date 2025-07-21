@@ -16,11 +16,14 @@ class ThemeManager(QObject):
     _instance = None
     theme_changed = pyqtSignal()
 
-    def __new__(cls):
-        if not cls._instance:
-            cls._instance = super().__new__(cls)
-            cls._init_themes(cls._instance)
-        return cls._instance
+    # def __new__(cls):
+    #     if not cls._instance:
+    #         cls._instance = super().__new__(cls)
+    #         cls._init_themes(cls._instance)
+    #     return cls._instance
+    def __init__(self):
+        super().__init__()
+        self._init_themes(self)
 
     @pyqtProperty(str)
     def current_theme(self):

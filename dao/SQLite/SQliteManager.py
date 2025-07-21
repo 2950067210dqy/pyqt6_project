@@ -97,10 +97,10 @@ class SQLiteManager():
         if kwargs:
             conditions = ' AND '.join(f"{key} = ?" for key in kwargs.keys())
             sql += f" WHERE {conditions} "
-            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            sql += f" ORDER BY time DESC LIMIT 1 ;"
             self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
         else:
-            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            sql += f" ORDER BY time DESC LIMIT 1 ;"
             self.cursor.execute(sql)
 
         return self.cursor.fetchall()
@@ -112,10 +112,10 @@ class SQLiteManager():
         if kwargs:
             conditions = ' AND '.join(f"{key} = ?" for key in kwargs.keys())
             sql += f" WHERE {conditions} "
-            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            sql += f" ORDER BY time DESC LIMIT 1 ;"
             self.cursor.execute(sql, tuple(kwargs.values()))  # 使用参数化查询
         else:
-            sql += f" ORDER BY 'time' DESC LIMIT 1 ;"
+            sql += f" ORDER BY time DESC LIMIT 1 ;"
             self.cursor.execute(sql)
 
         return self.cursor.fetchall()

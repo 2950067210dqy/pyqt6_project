@@ -85,7 +85,7 @@ def quit_qt_application():
     退出QT程序
     :return:
     """
-    logger.info(f"{'-' * 40}quit Qt application{'-' * 40}")
+    logger.error(f"{'-' * 40}quit Qt application{'-' * 40}")
     #
     # 等待5秒系统退出
     step = 5
@@ -106,11 +106,11 @@ def start_qt_application():
     # 绑定突出事件
     app.aboutToQuit.connect(quit_qt_application)
     # 主窗口实例化
-    # try:
-    allWindows = AllWindows()
-    # except Exception as e:
-    #     logger.error(f"gui程序实例化失败，原因:{e} |  异常堆栈跟踪：{traceback.print_exc()}")
-    #     return
+    try:
+        allWindows = AllWindows()
+    except Exception as e:
+        logger.error(f"gui程序实例化失败，原因:{e} |  异常堆栈跟踪：{traceback.print_exc()}")
+        return
     # 主窗口显示
     logger.info("Appliacation start")
     allWindows.show()
@@ -160,12 +160,13 @@ def main(q, send_message_q):
     # receive_serial_port_data()
 
     # qt程序开始
-    try:
-        start_qt_application()
-    except Exception as e:
-        logger.error(f"gui程序运行异常，原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}，终止gui进程")
+
+    start_qt_application()
+
+
 
 
 if __name__ == "__main__":
     q = multiprocessing.Queue()
-    main(q)
+    send_message_q = multiprocessing.Queue()
+    main(q,send_message_q)

@@ -101,6 +101,8 @@ class Tab2_tab0(ThemedWidget):
         # 找到刷新全部信息按钮
         self.refresh_btn: QPushButton = None
         self.store_thread_for_tab_frame = None
+        #图表widget
+        self.now_data_chart_widget: LineChartWidget=None
         # 实例化ui
         self._init_ui(parent, geometry, title)
 
@@ -132,11 +134,12 @@ class Tab2_tab0(ThemedWidget):
     def _init_customize_ui(self):
         # 添加最新数据图表charts
         self.now_data_layout = self.findChild(QHBoxLayout, "now_data_layout")
-        # self.now_data_chart_widget = LineChartWidget(type=self.type, data_type='monitor_data', mouse_cage_number=0)
-        # if self.now_data_layout is not None:
-        #     self.now_data_layout.addWidget(self.now_data_chart_widget)
-        #     pass
-        # pass
+        #charts!
+        try:
+            self.now_data_chart_widget = LineChartWidget(type=self.type, data_type='monitor_data', mouse_cage_number=0,parent=self.now_data_layout)
+        except Exception as e:
+            logger.error(f"tab_tab0_index图表创建错误：{e}")
+        pass
 
     # 实例化功能
     def _init_function(self):
