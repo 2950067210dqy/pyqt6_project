@@ -1,13 +1,15 @@
 # 下拉选择框的折线图
-
+import random
 import sqlite3
 import sys
 import threading
 import time
 from datetime import datetime
 
-from PyQt6.QtGui import QPainter
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QComboBox, QLabel, QScrollArea, QApplication
+from PyQt6 import QtCore
+from PyQt6.QtGui import QPainter, QColor, QBrush, QFont, QPen
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QComboBox, QLabel, QScrollArea, QApplication, QHBoxLayout, \
+    QSpacerItem, QSizePolicy
 from PyQt6.QtCharts import QChart, QChartView, QLineSeries, QValueAxis, QSplineSeries, QDateTimeAxis
 from PyQt6.QtCore import QObject, pyqtSignal, pyqtSlot, Qt, QDateTime, QPointF
 from loguru import logger
@@ -161,9 +163,11 @@ class LineChartWidget(QWidget):
         self.combo_box.currentTextChanged.connect(self.change_data_type)
 
         # 添加下拉框到布局
-        layout.addWidget(QLabel("Select Data Type:"))
-        layout.addWidget(self.combo_box)
-
+        sub_layout = QHBoxLayout(self)
+        sub_layout.addWidget(QLabel("选择数据："))
+        sub_layout.addWidget(self.combo_box)
+        sub_layout.addItem(QSpacerItem(20,40, QSizePolicy.Policy.Expanding,  QSizePolicy.Policy.Expanding))
+        layout.addLayout(sub_layout)
         # 创建 QScrollArea
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
@@ -196,14 +200,23 @@ class LineChartWidget(QWidget):
         # 创建图表对象
         self.chart = QChart()
         self.chart.setObjectName(f"{self.object_name}_chart")
-        self.chart.setTitle("自定义图表")
+        # self.chart.setTitle("自定义图表")
 
-        # 设置序列 和图表类型
-        self._set_series()
         # 初始化数据获取线程
         self.data_fetcher_thread: DataFetcher = None
 
         self.change_data_type(self.combo_box.currentText())  # 初始化为默认数据类型
+        self.get_max_and_min_data()
+        # 设置序列 和图表类型
+        self._set_series()
+        # 将数据放入series中 更新数据
+        self.set_data_to_series()
+        # 设置坐标轴
+        self._set_x_axis()
+        self._set_y_axis()
+        # 设置样式
+        # self.set_style()
+
 
 
 
@@ -225,7 +238,8 @@ class LineChartWidget(QWidget):
         self.data_points.clear()  # 清除历史数据
         self.data_points=[]  # 清除历史数据
         for i in range(self.data_origin_nums):
-            self.data_points.append([])  # 用于存储最新数据点
+            self.data_points.append([])
+            # self.data_points.append([QPointF(random.randint(120000,130000),random.randint(1,10))  for i in range(random.randint(5,10))])  # 用于存储最新数据点
         # 启动新线程来获取新的数据类型
         self.data_fetcher_thread = DataFetcher(name="tab_2_tab_0_data_fetch_thread", table_name=self.table_name,
                                                data_type=self.columns_desc_combobox_selected,
@@ -251,10 +265,24 @@ class LineChartWidget(QWidget):
         logger.error(f"update_data:{data}")
         if len(data)>0 and len(data)==self.data_origin_nums:
             for i in range(len(data)):
-                self.data_points[i].append(QPointF( int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'], "%Y-%m-%d %H:%M:%S").timestamp() ),
-                                                    data[i][self.columns_desc_combobox_selected['name']]['value']
-                                                    )
-                                        )
+                if len(data[i])!=0:
+                    # self.data_points[i].append(QPointF( int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'], "%Y-%m-%d %H:%M:%S").timestamp() ),
+                    #                                     data[i][self.columns_desc_combobox_selected['name']]['value']
+                    #                                     )
+
+                    self.data_points[i].append(QPointF(
+                        int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'],
+                                              "%Y-%m-%d %H:%M:%S").timestamp()),
+                        data[i][self.columns_desc_combobox_selected['name']]['value']
+                        )
+                                            )
+                    #添加虚拟点保持折线可见
+                    self.data_points[i].append(QPointF(
+                        int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'],
+                                              "%Y-%m-%d %H:%M:%S").timestamp())+0.1,
+                        data[i][self.columns_desc_combobox_selected['name']]['value']+0.1
+                    )
+                    )
                 # 保持最多 10 个数据点
                 if len(self.data_points[i]) >self.data_read_counts:
                     self.data_points[i].pop(0)
@@ -267,7 +295,8 @@ class LineChartWidget(QWidget):
         # 设置坐标轴
         self._set_x_axis()
         self._set_y_axis()
-
+        # 更新样式
+        # self.set_series_lenged_style()
     # 更新series中的数据
     def update_series(self):
         if len(self.series) > 0 and len(self.data_points) > 0:
@@ -276,6 +305,7 @@ class LineChartWidget(QWidget):
                     self.data_points[i])
                 # 移出该序列
                 self.chart.removeSeries(self.series[i])
+                self.series[i].setName(f"{self.columns_desc_combobox_selected['desc']}")
                 # 添加该序列
                 self.chart.addSeries(self.series[i])
         pass
@@ -290,7 +320,7 @@ class LineChartWidget(QWidget):
             else:
                 single_series = QLineSeries()
             single_series.setObjectName(f"{self.object_name}_series_{i + 1}")
-            single_series.setName(f"源{i}")
+            single_series.setName(f"{self.columns_desc_combobox_selected['desc']}")
             self.series.append(single_series)
         pass
 
@@ -379,6 +409,103 @@ class LineChartWidget(QWidget):
 
         # logger.info(
         #     f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_y[1]}]")
+
+# 设置标题字体和颜色
+    def set_title_style(self, font_style: QFont = QFont("Arial", 8, QFont.Weight.Bold),
+                        font_color: QColor = QColor("#2C3E50")):
+        # 设置标题字体和颜色
+        self.chart.setTitleFont(font_style)
+        self.chart.setTitleBrush(QBrush(font_color))  # 深蓝色
+
+    # 设置x坐标轴样式
+    def set_x_axis_style(self, root_object_name: str = "", x_axis_title: str = "x",
+                         title_font_style: QFont = QFont("微软雅黑", 6),
+                         labels_color: QColor = QColor("#34495E"), grid_line_color: QColor = QColor("#BDC3C7")):
+        _translate = QtCore.QCoreApplication.translate
+
+        # self.x_axis.setTitleText(_translate(root_object_name, x_axis_title))
+        self.x_axis.setTitleText(x_axis_title)
+        self.x_axis.setTitleFont(title_font_style)
+
+        self.x_axis.setLabelsColor(labels_color)  # 标签颜色
+        self.x_axis.setGridLineColor(grid_line_color)  # 网格线颜色
+        pass
+
+    # 设置y坐标轴样式
+    def set_y_axis_style(self, root_object_name: str = "", y_axis_title: str = "y",
+                         title_font_style: QFont = QFont("微软雅黑", 6),
+                         labels_color: QColor = QColor("#34495E"), grid_line_color: QColor = QColor("#BDC3C7")):
+        _translate = QtCore.QCoreApplication.translate
+        # self.y_axis.setTitleText(_translate(root_object_name, y_axis_title))
+        self.y_axis.setTitleText(y_axis_title)
+        self.y_axis.setTitleFont(title_font_style)
+        self.y_axis.setLabelsColor(labels_color)  # 标签颜色
+        self.y_axis.setGridLineColor(grid_line_color)  # 网格线颜色
+        pass
+
+    # 设置图例样式
+    def set_legend_style(self, align=Qt.AlignmentFlag.AlignTop,
+                         font_colors: [QColor] = [QColor("#121212")]):
+        self.chart.legend().setVisible(True)
+        self.chart.legend().setAlignment(align)
+        # 将图例放置在图表内部右上角，偏移一点距离
+        self.chart.legend().setPos(QPointF(self.chart.plotArea().right() - 150, self.chart.plotArea().top() + 10))
+
+        markers = self.chart.legend().markers()
+        for i in range(len(markers)):
+            markers[i].setLabelBrush(QBrush(font_colors[i]))
+
+    # 设置series样式
+    def set_series_style(self, font_colors: [QColor] = [QColor("#121212")]):
+        for i in range(self.data_origin_nums):
+            self.series[i].setColor(font_colors[i])
+            self.series[i].setPen(QPen(font_colors[i]))
+            self.series[i].setBrush(QBrush(font_colors[i]))
+
+    # 设置chart样式
+    def set_chart_style(self, backgroud_color: QBrush = QBrush(QColor("#121212")),
+                        plotarea_color: QBrush = QBrush(QColor("#121212")),
+                        title_font_style: QFont = QFont("Arial", 8, QFont.Weight.Bold),
+                        title_font_color: QColor = QColor("#ffffff")):
+        self.chart.setPlotAreaBackgroundBrush(backgroud_color)
+        self.chart.setBackgroundBrush(plotarea_color)
+        self.set_title_style(font_color=title_font_color, font_style=title_font_style)
+
+    # 设置series和legend样式
+    def set_series_lenged_style(self):
+        theme_manager = global_setting.get_setting("theme_manager")
+        series_colors = theme_manager.get_neighbor_color(
+            colorHex=self.theme[self.theme_name]['series']['series_color'], color_delta_start=-60, color_delta_end=60,
+            color_nums=self.data_origin_nums)
+        legend_font_colors = theme_manager.get_neighbor_color(
+            colorHex=self.theme[self.theme_name]['legend']['legend_font_color'], color_delta_start=-60,
+            color_delta_end=60,
+            color_nums=self.data_origin_nums)
+
+        self.set_series_style(font_colors=[QColor(color) for color in
+                                           series_colors])
+        self.set_legend_style(font_colors=[QColor(color) for color in
+                                           legend_font_colors
+                                           ])
+        pass
+
+    # 设置样式
+    def set_style(self):
+        self.theme = global_setting.get_setting("theme_manager").get_charts_style()
+        self.set_chart_style(
+            backgroud_color=QBrush(QColor(QColor(self.theme[self.theme_name]['chart']['chart_background_color']))),
+            plotarea_color=QBrush(QColor(self.theme[self.theme_name]['chart']['plot_area_color'])),
+            title_font_color=QColor(self.theme[self.theme_name]['chart']['title_font_color']),
+            title_font_style=QFont("Arial", 8, QFont.Weight.Bold))
+        self.set_series_lenged_style()
+        self.set_x_axis_style(root_object_name=self.parent_layout.objectName(),
+                              labels_color=QColor(self.theme[self.theme_name]['axis']['axis_label_color']),
+                              grid_line_color=QColor(self.theme[self.theme_name]['axis']['axis_grid_line_color']))
+        self.set_y_axis_style(root_object_name=self.parent_layout.objectName(),
+                              labels_color=QColor(self.theme[self.theme_name]['axis']['axis_label_color']),
+                              grid_line_color=QColor(self.theme[self.theme_name]['axis']['axis_grid_line_color']))
+
+        pass
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 

@@ -85,10 +85,17 @@ class Tab2_tab0(ThemedWidget):
 
             self.store_thread_for_tab_frame.start()
 
+        if self.now_data_chart_widget is not None and self.now_data_chart_widget.data_fetcher_thread is not None and self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.resume()
+        elif not self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.start()
+
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
         logger.warning(f"{self.objectName()}--hidden")
         if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
             self.store_thread_for_tab_frame.pause()
+        if self.now_data_chart_widget is not None and self.now_data_chart_widget.data_fetcher_thread is not None and self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
@@ -247,7 +254,7 @@ class Tab2_tab0(ThemedWidget):
     def show_data(self, data: dict):
         # 显示数据
         logger.info(f"{self.objectName()}显示数据：{data}")
-        if data is not None and len(data) != 0:
+        if data is not None and len(data) != 0 and 'data' in data and  len(data['data']) != 0:
             match data['function_code']:
                 case 1:
                     self.show_data_by_function_code_1(data['data'])

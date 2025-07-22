@@ -12,18 +12,20 @@ left_menu: #左侧菜单项
     title: '动物概况' #菜单名称
     icon_path: 'generate.svg' #菜单图标路径
     default: true #默认显示菜单
+
   - id: 2
-    title: '其他数据'
+    title: '监测数据'
     icon_path: 'marketAnalysis.svg'
-    default: false
-  - id: 3
-    title: '实验配置'
-    icon_path: 'settingConfig.svg'
     default: false
   - id: 4
     title: '设备监控'
     icon_path: 'materialThree.svg'
     default: false
+  - id: 3
+    title: '串口调试'
+    icon_path: 'settingConfig.svg'
+    default: false
+
   - id: 5
     title: '视频监控'
     icon_path: 'monitor.svg'

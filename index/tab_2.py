@@ -32,10 +32,32 @@ class Tab_2(ThemedWidget):
         # 线程重新响应
         logger.warning("tab2——show")
 
+        for tab_frame in  self.tab_frames:
+            tab_current = tab_frame.tab
+            if tab_current is not None:
+                if tab_current.store_thread_for_tab_frame is not None and tab_current.store_thread_for_tab_frame.isRunning():
+
+                    tab_current.store_thread_for_tab_frame.resume()
+                elif not tab_current.store_thread_for_tab_frame.isRunning():
+
+                    tab_current.store_thread_for_tab_frame.start()
+
+                if tab_current.now_data_chart_widget is not None and tab_current.now_data_chart_widget.data_fetcher_thread is not None and tab_current.now_data_chart_widget.data_fetcher_thread.isRunning():
+                    tab_current.now_data_chart_widget.data_fetcher_thread.resume()
+                elif not tab_current.now_data_chart_widget.data_fetcher_thread.isRunning():
+                    tab_current.now_data_chart_widget.data_fetcher_thread.start()
+                pass
+
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
         # 线程暂停
         logger.warning("tab2--hide")
-
+        for tab_frame in  self.tab_frames:
+            tab_current = tab_frame.tab
+            if tab_current is not None:
+                if tab_current.store_thread_for_tab_frame is not None and tab_current.store_thread_for_tab_frame.isRunning():
+                    tab_current.store_thread_for_tab_frame.pause()
+                if tab_current.now_data_chart_widget is not None and tab_current.now_data_chart_widget.data_fetcher_thread is not None and tab_current.now_data_chart_widget.data_fetcher_thread.isRunning():
+                    tab_current.now_data_chart_widget.data_fetcher_thread.pause()
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
 

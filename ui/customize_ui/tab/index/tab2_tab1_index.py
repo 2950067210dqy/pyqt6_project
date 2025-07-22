@@ -13,6 +13,7 @@ from PyQt6.QtWidgets import QWidget, QMainWindow, QPushButton, QFrame, QGroupBox
     QVBoxLayout, QScrollArea
 
 from theme.ThemeQt6 import ThemedWidget
+from ui.customize_ui.component.selection_line_charts import LineChartWidget
 from ui.customize_ui.tab.index.tab2_tab0_index import Store_thread_for_tab_frame
 from ui.customize_ui.tab.tab2_tab1 import Ui_tab_1_frame
 from ui.tab7 import Ui_tab7_frame
@@ -81,6 +82,14 @@ class Tab2_tab1(ThemedWidget):
 
     # 实例化自定义ui
     def _init_customize_ui(self):
+        # 添加最新数据图表charts
+        self.now_data_layout = self.findChild(QHBoxLayout, "now_data_layout")
+        # charts!
+        try:
+            self.now_data_chart_widget = LineChartWidget(type=self.type, data_type='monitor_data',
+                                                         mouse_cage_number=0, parent=self.now_data_layout)
+        except Exception as e:
+            logger.error(f"tab_tab1_index图表创建错误：{e}")
         pass
 
     # 实例化功能
@@ -189,7 +198,7 @@ class Tab2_tab1(ThemedWidget):
     def show_data(self, data: dict):
         # 显示数据
         logger.info(f"{self.objectName()}显示数据：{data}")
-        if data is not None and len(data) != 0:
+        if data is not None and len(data) != 0 and 'data' in data and  len(data['data']) != 0:
             match data['function_code']:
                 case 1:
                     self.show_data_by_function_code_1(data['data'])
