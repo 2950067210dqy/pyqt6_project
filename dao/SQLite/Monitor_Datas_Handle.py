@@ -152,7 +152,53 @@ class Monitor_Datas_Handle():
             return_data.append({'desc': description, 'value': value})
         return return_data
         pass
+    def query_data_all(self, table_name):
+        """
+        获取数据库的数据表的所有的数据
+        :param table_name:
+        :return:
+        """
+        results_query = self.sqlite_manager.query(table_name)
 
+        results = []
+
+        if results_query is not None and len(results_query) > 0:
+            # 不要id 和time
+            results = results_query
+        return results
+        pass
+    def query_data_counts(self, table_name):
+        """
+        获取数据库的数据表的所有的数据的数量
+        :param table_name:
+        :return:
+        """
+        results_query = self.sqlite_manager.query_counts_conditions(table_name)
+
+        results = 0
+
+        if results_query is not None:
+            # 不要id 和time
+            results = results_query
+        return results
+        pass
+    def query_data_paging(self, table_name,rows_per_page,start_row):
+        """
+        获取数据库的数据表的分页的数据
+        :param table_name:
+        :param rows_per_page:每一页几行
+        :param start_row:第几行开始
+        :return:
+        """
+        results_query = self.sqlite_manager.query_paging(table_name,rows_per_page,start_row)
+
+        results = []
+
+        if results_query is not None and len(results_query) > 0:
+            # 不要id 和time
+            results = results_query
+        return results
+        pass
     def query_data_one_column_current(self, table_name, columns_flag):
         """
         获取指定列的单个最新的数据
@@ -206,4 +252,16 @@ class Monitor_Datas_Handle():
         columns_desc = []
         if columns_query is not None and len(columns_query) > 0:
             columns_desc = [{'desc':i[2],'name':i[0]} for i in columns_query][1:-1]
+        return columns_desc
+
+    def query_meta_table_data_all(self, table_name):
+        """
+        获取表结构数据 item_desc
+        :param table_name:
+        :return:
+        """
+        columns_query = self.sqlite_manager.query(f"{table_name}_meta")
+        columns_desc = []
+        if columns_query is not None and len(columns_query) > 0:
+            columns_desc = [{'desc': i[2], 'name': i[0]} for i in columns_query]
         return columns_desc

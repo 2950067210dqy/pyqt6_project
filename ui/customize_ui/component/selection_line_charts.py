@@ -72,7 +72,7 @@ class DataFetcher(MyQThread):
                 break
         else:
             pass
-        logger.error(f"get_data:{data}")
+        # logger.error(f"get_data:{data}")
         self.data_fetched.emit(data)
 
         time.sleep(1)  # 每秒获取一次数据
@@ -262,7 +262,7 @@ class LineChartWidget(QWidget):
                         }
             ]
                 """
-        logger.error(f"update_data:{data}")
+        # logger.error(f"update_data:{data}")
         if len(data)>0 and len(data)==self.data_origin_nums:
             for i in range(len(data)):
                 if len(data[i])!=0:
@@ -399,13 +399,12 @@ class LineChartWidget(QWidget):
         #     self.min_and_max_x[0] = min_x
         # if max_x > self.min_and_max_x[1]:
         #     self.min_and_max_x[1] = max_x
-        # 将毫秒转换成秒
         self.min_and_max_x[0] = min_x
         self.min_and_max_x[1] = max_x
         if min_y < self.min_and_max_y[0]:
-            self.min_and_max_y[0] = min_y
+            self.min_and_max_y[0] = min_y-50
         if max_y > self.min_and_max_y[1]:
-            self.min_and_max_y[1] = max_y
+            self.min_and_max_y[1] = max_y+50
 
         # logger.info(
         #     f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_y[1]}]")

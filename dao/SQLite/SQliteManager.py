@@ -11,7 +11,7 @@ class SQLiteManager():
         self.connection = sqlite3.connect(db_name)
         # WAL模式提供更好的并发性，读取器不会阻塞写入器，反之亦然
         self.connection.execute('PRAGMA journal_mode=WAL')  # 启用WAL模式
-        logger.info(f"数据库{db_name}连接成功")
+        # logger.info(f"数据库{db_name}连接成功")
         self.cursor = self.connection.cursor()
 
     def is_exist_table(self, table_name):
@@ -78,7 +78,13 @@ class SQLiteManager():
         self.cursor.execute(sql)
 
         return self.cursor.fetchall()
+    def query_counts_conditions(self, table_name, conditions=""):
+        """查询数据，."""
+        sql = f"SELECT COUNT(*) FROM {table_name} "
+        sql += conditions
+        self.cursor.execute(sql)
 
+        return self.cursor.fetchone()[0]
     def query(self, table_name, **kwargs):
         """查询数据，防止 SQL 注入."""
         sql = f"SELECT * FROM {table_name}"
@@ -119,7 +125,15 @@ class SQLiteManager():
             self.cursor.execute(sql)
 
         return self.cursor.fetchall()
+    def query_paging(self, table_name, rows_per_page, start_row,conditions=""):
+        """查询数据，."""
+        sql = f"SELECT * FROM {table_name} "
+        sql += conditions
+        sql+=f" ORDER BY id DESC LIMIT {rows_per_page} OFFSET {start_row}"
+        self.cursor.execute(sql)
 
+        return self.cursor.fetchall()
+        pass
     def update(self, table_name, criteria, **kwargs):
         """更新数据，防止 SQL 注入."""
         set_clause = ', '.join(f"{key} = ?" for key in kwargs.keys())
@@ -139,6 +153,8 @@ class SQLiteManager():
         """关闭数据库连接."""
         self.cursor.close()
         self.connection.close()
+
+
 
 
 class ReadOnlyUser(SQLiteManager):

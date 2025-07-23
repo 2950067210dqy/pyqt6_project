@@ -77,41 +77,16 @@
            <property name="flat">
             <bool>false</bool>
            </property>
-           <widget class="QScrollArea" name="detaildata_scroll_2">
+           <widget class="QWidget" name="verticalLayoutWidget">
             <property name="geometry">
              <rect>
-              <x>0</x>
-              <y>30</y>
-              <width>501</width>
+              <x>10</x>
+              <y>20</y>
+              <width>491</width>
               <height>401</height>
              </rect>
             </property>
-            <property name="widgetResizable">
-             <bool>true</bool>
-            </property>
-            <widget class="QWidget" name="detaildata_scroll_content_2">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>499</width>
-               <height>399</height>
-              </rect>
-             </property>
-            </widget>
-           </widget>
-           <widget class="QPushButton" name="export_detaildata_btn_2">
-            <property name="geometry">
-             <rect>
-              <x>440</x>
-              <y>10</y>
-              <width>61</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>导出</string>
-            </property>
+            <layout class="QVBoxLayout" name="detaildata_layout"/>
            </widget>
           </widget>
          </item>
@@ -148,9 +123,6 @@
            </item>
            <item>
             <spacer name="horizontalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
-             </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>40</width>
@@ -207,9 +179,6 @@
            </item>
            <item>
             <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
-             </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>20</width>

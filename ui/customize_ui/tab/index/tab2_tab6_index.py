@@ -14,6 +14,7 @@ from theme.ThemeQt6 import ThemedWidget
 from PyQt6.QtWidgets import QWidget, QMainWindow, QPushButton, QFrame, QGroupBox, QGridLayout, QHBoxLayout, QLabel, \
     QVBoxLayout, QScrollArea
 
+from ui.customize_ui.component.paging_exportcsv_table_widget import TableWidgetPaging
 from ui.customize_ui.component.selection_line_charts import LineChartWidget
 from ui.customize_ui.tab.index.tab2_tab0_index import Store_thread_for_tab_frame
 from ui.customize_ui.tab.tab2_tab6 import Ui_tab_6_frame
@@ -30,16 +31,30 @@ class Tab2_tab6(ThemedWidget):
     def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
         logger.warning(f"{self.objectName()}——show")
         if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
-            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+
             self.store_thread_for_tab_frame.resume()
         elif not self.store_thread_for_tab_frame.isRunning():
-            self.store_thread_for_tab_frame.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+
             self.store_thread_for_tab_frame.start()
+
+        if self.now_data_chart_widget is not None and self.now_data_chart_widget.data_fetcher_thread is not None and self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.resume()
+        elif not self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.start()
+
+        if self.detaildata_table is not None and self.detaildata_table.data_fetcher_thread is not None and self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.resume()
+        elif not self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.start()
 
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
         logger.warning(f"{self.objectName()}--hidden")
         if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
             self.store_thread_for_tab_frame.pause()
+        if self.now_data_chart_widget is not None and self.now_data_chart_widget.data_fetcher_thread is not None and self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.pause()
+        if self.detaildata_table is not None and self.detaildata_table.data_fetcher_thread is not None and self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
@@ -47,7 +62,10 @@ class Tab2_tab6(ThemedWidget):
         self.type = Modbus_Slave_Ids.WM
         # 图表：
         self.now_data_layout: QHBoxLayout = None
+        # 图表widget
         self.now_data_chart_widget: LineChartWidget = None
+        # table
+        self.detaildata_table: TableWidgetPaging = None
         # 找到开始获取信息按钮
         self.start_btn: QPushButton = None
         # 找到停止获取信息按钮
@@ -94,6 +112,17 @@ class Tab2_tab6(ThemedWidget):
                                                          mouse_cage_number=global_setting.get_setting("tab2_select_mouse_cage"), parent=self.now_data_layout)
         except Exception as e:
             logger.error(f"tab_tab6_index图表创建错误：{e}")
+
+        # 添加最新数据表格table
+        self.detaildata_layout: QVBoxLayout = self.findChild(QVBoxLayout, "detaildata_layout")
+        try:
+            self.detaildata_table = TableWidgetPaging(type=self.type, data_type='monitor_data',
+                                                      mouse_cage_number=global_setting.get_setting(
+                                                          "tab2_select_mouse_cage"),
+                                                      parent=self.detaildata_layout)
+        except Exception as e:
+            logger.error(f"tab_tab6_index table创建错误：{e}")
+        pass
         pass
 
     # 实例化功能
@@ -189,6 +218,12 @@ class Tab2_tab6(ThemedWidget):
     def update_send_data(self):
         # 更新mouse_cage_number
         logger.info(f"{self.objectName()}触发发送报文更新数据")
+        # 更新表格的鼠笼号
+        if self.detaildata_table is not None:
+            self.detaildata_table.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")
+            self.detaildata_table.table_name = f"{self.detaildata_table.type.value['name']}_{self.detaildata_table.data_type}_cage_{self.detaildata_table.mouse_cage_number}"
+            if self.detaildata_table.data_fetcher_thread is not None:
+                self.detaildata_table.data_fetcher_thread.table_name = self.detaildata_table.table_name
         # 更新图表的鼠笼号
         if self.now_data_chart_widget is not None:
             self.now_data_chart_widget.mouse_cage_number = global_setting.get_setting("tab2_select_mouse_cage")

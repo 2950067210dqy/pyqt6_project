@@ -17,6 +17,7 @@ from PyQt6.QtWidgets import QWidget, QMainWindow, QPushButton, QFrame, QGroupBox
     QVBoxLayout, QScrollArea
 
 from theme.ThemeQt6 import ThemedWidget
+from ui.customize_ui.component.paging_exportcsv_table_widget import TableWidgetPaging
 from ui.customize_ui.component.selection_line_charts import LineChartWidget
 from ui.customize_ui.tab.tab2_tab0 import Ui_tab_0_frame
 from ui.tab7 import Ui_tab7_frame
@@ -90,12 +91,19 @@ class Tab2_tab0(ThemedWidget):
         elif not self.now_data_chart_widget.data_fetcher_thread.isRunning():
             self.now_data_chart_widget.data_fetcher_thread.start()
 
+        if self.detaildata_table is not None and self.detaildata_table.data_fetcher_thread is not None and self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.resume()
+        elif not self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.start()
+
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
         logger.warning(f"{self.objectName()}--hidden")
         if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
             self.store_thread_for_tab_frame.pause()
         if self.now_data_chart_widget is not None and self.now_data_chart_widget.data_fetcher_thread is not None and self.now_data_chart_widget.data_fetcher_thread.isRunning():
             self.now_data_chart_widget.data_fetcher_thread.pause()
+        if self.detaildata_table is not None and self.detaildata_table.data_fetcher_thread is not None and self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
@@ -110,6 +118,8 @@ class Tab2_tab0(ThemedWidget):
         self.store_thread_for_tab_frame = None
         #图表widget
         self.now_data_chart_widget: LineChartWidget=None
+        # table
+        self.detaildata_table:TableWidgetPaging=None
         # 实例化ui
         self._init_ui(parent, geometry, title)
 
@@ -148,6 +158,15 @@ class Tab2_tab0(ThemedWidget):
             logger.error(f"tab_tab0_index图表创建错误：{e}")
         pass
 
+        # 添加最新数据表格table
+        self.detaildata_layout:QVBoxLayout = self.findChild(QVBoxLayout, "detaildata_layout")
+        # charts!
+        try:
+            self.detaildata_table = TableWidgetPaging(type=self.type, data_type='monitor_data', mouse_cage_number=0,
+                                                         parent=self.detaildata_layout)
+        except Exception as e:
+            logger.error(f"tab_tab0_index table创建错误：{e}")
+        pass
     # 实例化功能
     def _init_function(self):
         # 绑定更新发送数据的槽

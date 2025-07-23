@@ -42,6 +42,12 @@ class Tab_2(ThemedWidget):
 
                     tab_current.store_thread_for_tab_frame.start()
 
+                if tab_current.detaildata_table is not None and tab_current.detaildata_table.data_fetcher_thread is not None and tab_current.detaildata_table.data_fetcher_thread.isRunning():
+                    tab_current.detaildata_table.data_fetcher_thread.resume()
+                elif not tab_current.detaildata_table.data_fetcher_thread.isRunning():
+                    tab_current.detaildata_table.data_fetcher_thread.start()
+                pass
+
                 if tab_current.now_data_chart_widget is not None and tab_current.now_data_chart_widget.data_fetcher_thread is not None and tab_current.now_data_chart_widget.data_fetcher_thread.isRunning():
                     tab_current.now_data_chart_widget.data_fetcher_thread.resume()
                 elif not tab_current.now_data_chart_widget.data_fetcher_thread.isRunning():
@@ -58,6 +64,9 @@ class Tab_2(ThemedWidget):
                     tab_current.store_thread_for_tab_frame.pause()
                 if tab_current.now_data_chart_widget is not None and tab_current.now_data_chart_widget.data_fetcher_thread is not None and tab_current.now_data_chart_widget.data_fetcher_thread.isRunning():
                     tab_current.now_data_chart_widget.data_fetcher_thread.pause()
+                if tab_current.detaildata_table is not None and tab_current.detaildata_table.data_fetcher_thread is not None and tab_current.detaildata_table.data_fetcher_thread.isRunning():
+                    tab_current.detaildata_table.data_fetcher_thread.pause()
+
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
 
