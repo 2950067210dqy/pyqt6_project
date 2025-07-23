@@ -4,6 +4,7 @@ import sqlite3
 import sys
 import threading
 import time
+import traceback
 from datetime import datetime
 
 from PyQt6 import QtCore
@@ -75,7 +76,7 @@ class DataFetcher(MyQThread):
         # logger.error(f"get_data:{data}")
         self.data_fetched.emit(data)
 
-        time.sleep(0.3)  # 每秒获取一次数据
+        time.sleep(1)  # 每秒获取一次数据
 
 
 class LineChartWidget(QWidget):
@@ -120,6 +121,7 @@ class LineChartWidget(QWidget):
 
         # obejctName
         self.object_name = object_name
+        self.setObjectName(self.object_name)
         # 父布局
         self.parent_layout = parent
         # 图表对象
@@ -202,15 +204,14 @@ class LineChartWidget(QWidget):
         self.chart.setObjectName(f"{self.object_name}_chart")
         # self.chart.setTitle("自定义图表")
 
+
+        # 设置序列 和图表类型
+        self._set_series()
         # 初始化数据获取线程
         self.data_fetcher_thread: DataFetcher = None
 
         self.change_data_type(self.combo_box.currentText())  # 初始化为默认数据类型
         self.get_max_and_min_data()
-        # 设置序列 和图表类型
-        self._set_series()
-        # 将数据放入series中 更新数据
-        self.set_data_to_series()
         # 设置坐标轴
         self._set_x_axis()
         self._set_y_axis()
@@ -235,6 +236,12 @@ class LineChartWidget(QWidget):
             if data['desc'] == data_type:
                 self.columns_desc_combobox_selected=data
                 break
+        # 数据的最大值 和最小值
+        self.min_and_max_x = [0, 0]
+        self.min_and_max_y = [0, 0]
+        for i in range(self.data_origin_nums):
+            self.series[i].clear()
+            self.series[i].setName(f"{self.columns_desc_combobox_selected['desc']}")
         self.data_points.clear()  # 清除历史数据
         self.data_points=[]  # 清除历史数据
         for i in range(self.data_origin_nums):
@@ -262,53 +269,63 @@ class LineChartWidget(QWidget):
                         }
             ]
                 """
-        # logger.error(f"update_data:{data}")
-        if len(data)>0 and len(data)==self.data_origin_nums:
+
+        if len(data)>0 and len(data)==self.data_origin_nums and len(data[0])>0:
             for i in range(len(data)):
                 if len(data[i])!=0:
                     # self.data_points[i].append(QPointF( int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'], "%Y-%m-%d %H:%M:%S").timestamp() ),
                     #                                     data[i][self.columns_desc_combobox_selected['name']]['value']
                     #                                     )
 
-                    self.data_points[i].append(QPointF(
-                        int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'],
-                                              "%Y-%m-%d %H:%M:%S").timestamp()),
-                        data[i][self.columns_desc_combobox_selected['name']]['value']
+                    date_data = int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'],
+                                              "%Y-%m-%d %H:%M:%S").timestamp()* 1000)
+                    point =QPointF(
+                            date_data,
+                            data[i][self.columns_desc_combobox_selected['name']]['value']
                         )
-                                            )
-                    #添加虚拟点保持折线可见
-                    self.data_points[i].append(QPointF(
-                        int(datetime.strptime(data[i][SQLiteManager.TIME_COLUMN_NAME]['value'],
-                                              "%Y-%m-%d %H:%M:%S").timestamp())+0.1,
-                        data[i][self.columns_desc_combobox_selected['name']]['value']+0.1
-                    )
-                    )
-                # 保持最多 10 个数据点
-                if len(self.data_points[i]) >self.data_read_counts:
-                    self.data_points[i].pop(0)
-        # 获取 x 和y值的最大值和最小值来确定坐标轴范围
+                    # 如果原来是空直接插入
+                    if len(self.data_points[i])==0:
+                        self.data_points[i].append(
+                            point
+                        )
+                        self.series[i].append(
+                            point
+                        )
 
+                    # 如果数据一样就不放进去 ，日期一样
+                    elif len(self.data_points[i])!=0 and  self.data_points[i][len(self.data_points[i])-1] is not None and self.data_points[i][len(self.data_points[i])-1].x() !=date_data:
+                        self.data_points[i].append(point)
+                        self.series[i].append(
+                            point
+                        )
+
+                    else:
+                        return
+
+
+        else:
+            return
+        try:
+            for origin_data_index in range(len(self.data_points)):
+                # 每个数据源需要遵守的规则
+                if len(self.data_points[origin_data_index]) > self.data_read_counts and len(self.data_points[origin_data_index]) != 0:
+                    # logger.info(f"图表{self.object_name}持数据源{origin_data_index}长度为{len(self.data[origin_data_index])}")
+                    self.data_points[origin_data_index].pop(0)  # 保持数据长度为data_read_counts
+                    self.series[origin_data_index].remove(0)
+        except Exception as e:
+            logger.error(
+                f"图表{self.object_name}持数据长度为data_read_counts失败，series[0]数据长度{len(self.data_points[0])}，失败原因：{e} |  异常堆栈跟踪：{traceback.print_exc()}")
+        logger.error(f"{self.objectName()}|update_data:{data}")
+        # 获取 x 和y值的最大值和最小值来确定坐标轴范围
+        logger.debug(f"{self.objectName()}|len()={len(self.data_points[0])}|{self.data_points}")
         self.get_max_and_min_data()
-        self.update_series()
-        # 将数据放入series中 更新数据
-        self.set_data_to_series()
+        # self.update_series()
         # 设置坐标轴
         self._set_x_axis()
         self._set_y_axis()
         # 更新样式
         # self.set_series_lenged_style()
-    # 更新series中的数据
-    def update_series(self):
-        if len(self.series) > 0 and len(self.data_points) > 0:
-            for i in range(self.data_origin_nums):
-                self.series[i].replace(
-                    self.data_points[i])
-                # 移出该序列
-                self.chart.removeSeries(self.series[i])
-                self.series[i].setName(f"{self.columns_desc_combobox_selected['desc']}")
-                # 添加该序列
-                self.chart.addSeries(self.series[i])
-        pass
+
     #   设置图表类型 line 折线图
     def _set_series(self):
 
@@ -322,28 +339,24 @@ class LineChartWidget(QWidget):
             single_series.setObjectName(f"{self.object_name}_series_{i + 1}")
             single_series.setName(f"{self.columns_desc_combobox_selected['desc']}")
             self.series.append(single_series)
+            self.chart.addSeries(self.series[i])
         pass
 
-    # 将数据放入series中
-    def set_data_to_series(self):
-        if len(self.series) > 0 and len(self.data_points) > 0:
-            for i in range(self.data_origin_nums):
-                self.series[i].replace(
-                    self.data_points[i])
-                # 添加该序列
-                self.chart.addSeries(self.series[i])
-            pass
     # 设置x轴
     def _set_x_axis(self):
         # 将坐标轴关联到图表
         if self.x_axis == None:
             self.x_axis = QDateTimeAxis()
-            self.x_axis.setFormat("HH:mm:ss")  # 设置日期时间格式，可以根据需求调整
+            self.x_axis.setFormat("hh:mm:ss")  # 设置日期时间格式，可以根据需求调整
+            # self.x_axis = QValueAxis()
+
 
         # 设置坐标轴范围
         # self.x_axis.setLabelsAngle(90)  # 旋转90°竖着显示日期
         self.x_axis.setRange(QDateTime.fromSecsSinceEpoch(int(self.min_and_max_x[0])),
                              QDateTime.fromSecsSinceEpoch(int(self.min_and_max_x[1])))
+        # self.x_axis.setRange(int(self.min_and_max_x[0]),
+        #                     int(self.min_and_max_x[1]))
         self.chart.removeAxis(self.x_axis)
         self.chart.addAxis(self.x_axis, Qt.AlignmentFlag.AlignBottom)
         for i in range(len(self.series)):
@@ -399,15 +412,16 @@ class LineChartWidget(QWidget):
         #     self.min_and_max_x[0] = min_x
         # if max_x > self.min_and_max_x[1]:
         #     self.min_and_max_x[1] = max_x
-        self.min_and_max_x[0] = min_x
-        self.min_and_max_x[1] = max_x
+        self.min_and_max_x[0] = min_x/1000
+        self.min_and_max_x[1] = max_x/1000
         if min_y < self.min_and_max_y[0]:
-            self.min_and_max_y[0] = min_y-50
+            self.min_and_max_y[0] = min_y-20
         if max_y > self.min_and_max_y[1]:
-            self.min_and_max_y[1] = max_y+50
+            self.min_and_max_y[1] = max_y+20
 
-        # logger.info(
-        #     f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_y[1]}]")
+
+        logger.warning(
+            f"{self.object_name}‘s data’s min&max x=[{self.min_and_max_x[0]},{self.min_and_max_x[1]}] y=[{self.min_and_max_y[0]},{self.min_and_max_y[1]}]")
 
 # 设置标题字体和颜色
     def set_title_style(self, font_style: QFont = QFont("Arial", 8, QFont.Weight.Bold),

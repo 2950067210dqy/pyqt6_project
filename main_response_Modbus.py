@@ -360,7 +360,9 @@ class communication(threading.Thread):
                                                                             function_code=f"{function_code_int:X}",
                                                                             return_bytes_nums='C',
 
-                                                                            data_hex_list=[
+                                                                            data_hex_list=random.choice([
+                                                                                [
+                                                                                #    有符号数 可以是负数
                                                                                 self.binary_to_hex_for_all("10001001"),
                                                                                 "0x05",
                                                                                 "0x1F",
@@ -376,7 +378,80 @@ class communication(threading.Thread):
                                                                                 "0x21",
                                                                                 "0x07",
 
-                                                                            ],
+                                                                                ],
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00001001"),
+                                                                                    "0x02",
+                                                                                    "0x3d",
+                                                                                    "0x06",
+                                                                                    "0xbd",
+                                                                                    "0x07",
+
+                                                                                    "0x05",
+                                                                                    "0x2c",
+                                                                                    "0x09",
+
+                                                                                    "0x17",
+                                                                                    "0x3a",
+                                                                                    "0x06",
+
+                                                                                ],
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "10101011"),
+                                                                                    "0x09",
+                                                                                    "0x5d",
+                                                                                    "0x09",
+                                                                                    "0xbe",
+                                                                                    "0x01",
+
+                                                                                    "0x08",
+                                                                                    "0xe3",
+                                                                                    "0x06",
+
+                                                                                    "0x21",
+                                                                                    "0x35",
+                                                                                    "0x01",
+
+                                                                                ],
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "00101011"),
+                                                                                    "0x03",
+                                                                                    "0x5d",
+                                                                                    "0x02",
+                                                                                    "0xee",
+                                                                                    "0x07",
+
+                                                                                    "0x08",
+                                                                                    "0x42",
+                                                                                    "0x05",
+
+                                                                                    "0x31",
+                                                                                    "0x15",
+                                                                                    "0x08",
+
+                                                                                ],
+                                                                                [
+                                                                                    self.binary_to_hex_for_all(
+                                                                                        "10111011"),
+                                                                                    "0x01",
+                                                                                    "0x11",
+                                                                                    "0x03",
+                                                                                    "0x21",
+                                                                                    "0x06",
+
+                                                                                    "0x03",
+                                                                                    "0x2d",
+                                                                                    "0x06",
+
+                                                                                    "0x35",
+                                                                                    "0x27",
+                                                                                    "0x02",
+
+                                                                                ],
+                                                                            ]),
                                                                             struct_type="B"
                                                                             )
                                             pass

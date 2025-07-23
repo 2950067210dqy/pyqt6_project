@@ -34,7 +34,7 @@ class Monitor_Datas_Handle():
         """
         year, week_number, weekday = time_util.get_current_week_info()
         # 定义文件夹路径
-        folder_path = global_setting.get_setting('monitor_data')['STORAGE']['fold_path'] + os.path.join(
+        folder_path =os.getcwd()+ global_setting.get_setting('monitor_data')['STORAGE']['fold_path'] + os.path.join(
 
             global_setting.get_setting('monitor_data')['STORAGE']['sub_fold_path'], f'{year}', f'{week_number:02}')
 

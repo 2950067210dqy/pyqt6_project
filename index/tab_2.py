@@ -24,7 +24,6 @@ from util.time_util import time_util
 
 class Tab_2(ThemedWidget):
     # 状态栏更新信息信号
-    update_status_main_signal_gui_update = pyqtSignal(str)
     # 更新btn css样式
     update_btn_css_signal = pyqtSignal()
 
@@ -137,8 +136,7 @@ class Tab_2(ThemedWidget):
         # 实例化按钮信号槽绑定
         self.init_btn_func()
 
-        # 将更新status信号绑定更新status界面函数
-        self.update_status_main_signal_gui_update.connect(self.send_response_text)
+
         # 更新btn css
         self.update_btn_css_signal.connect(self._init_customize_style_sheet)
 
@@ -178,8 +176,7 @@ class Tab_2(ThemedWidget):
         if len(self.mouse_cages) != 0:
             # 默认下拉项
             global_setting.set_setting("tab2_select_mouse_cage", self.mouse_cages[0]['id'])
-            self.send_response_text(
-                f"{time_util.get_format_from_time(time.time())}- {self.mouse_cages[0]['description']}" + "  默认已被选中!")
+
         mouse_cage_combox.disconnect()
         mouse_cage_combox.currentIndexChanged.connect(self.selection_change_mouse_cage_combox)
 
@@ -189,24 +186,12 @@ class Tab_2(ThemedWidget):
             # 发送信号给子tab页面进行更新数据
             for tab_frame in self.tab_frames:
                 tab_frame.tab.update_port_and_mouse_cage.emit()
-            self.send_response_text(
-                f"{time_util.get_format_from_time(time.time())}- {self.mouse_cages[index]['description']}" + "  已被选中!")
+
         except Exception as e:
             logger.error(e)
         pass
 
-    def send_response_text(self, text):
-        # 往状态栏发消息
-        response_text: QListWidget = self.findChild(QListWidget, "tab_2_responselist")
-        if response_text == None:
-            logger.error("response_text状态栏未找到！")
-            return
-        response_text.addItem(text)
-        # 滑动滚动条到最底下
-        scroll_bar = response_text.verticalScrollBar()
-        if scroll_bar != None:
-            scroll_bar.setValue(scroll_bar.maximum())
-        pass
+
 
     # 根据监测数据项配置tab页
     def _init_monitor_data_tab_page(self):

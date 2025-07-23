@@ -104,7 +104,7 @@ class Tab2_tab2(ThemedWidget):
         self.now_data_layout = self.findChild(QHBoxLayout, "now_data_layout")
         # charts!
         try:
-            self.now_data_chart_widget = LineChartWidget(type=self.type, data_type='monitor_data',
+            self.now_data_chart_widget = LineChartWidget(type=self.type, object_name=f"{self.type.value['name']}_monitor_data_line_chart",data_type='monitor_data',
                                                          mouse_cage_number=0, parent=self.now_data_layout)
         except Exception as e:
             logger.error(f"tab_tab2_index图表创建错误：{e}")
@@ -164,15 +164,17 @@ class Tab2_tab2(ThemedWidget):
         elif not self.store_thread_for_tab_frame.isRunning():
 
             self.store_thread_for_tab_frame.start()
-        else:
-            # 实例化发送查询报文线程
-            self.store_thread_for_tab_frame = Store_thread_for_tab_frame(
-                name=self.objectName(),
-                type=self.type,
-                show_data_signal=self.show_data_signal,
-                tab_int=2
-            )
-            self.store_thread_for_tab_frame.start()
+
+        if self.now_data_chart_widget is not None and self.now_data_chart_widget.data_fetcher_thread is not None and self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.resume()
+        elif not self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.start()
+
+        if self.detaildata_table is not None and self.detaildata_table.data_fetcher_thread is not None and self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.resume()
+        elif not self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.start()
+
         self.stop_btn.setDisabled(False)
         self.start_btn.setDisabled(True)
 
@@ -183,6 +185,10 @@ class Tab2_tab2(ThemedWidget):
         """
         if self.store_thread_for_tab_frame is not None and self.store_thread_for_tab_frame.isRunning():
             self.store_thread_for_tab_frame.pause()
+        if self.now_data_chart_widget is not None and self.now_data_chart_widget.data_fetcher_thread is not None and self.now_data_chart_widget.data_fetcher_thread.isRunning():
+            self.now_data_chart_widget.data_fetcher_thread.pause()
+        if self.detaildata_table is not None and self.detaildata_table.data_fetcher_thread is not None and self.detaildata_table.data_fetcher_thread.isRunning():
+            self.detaildata_table.data_fetcher_thread.pause()
         self.start_btn.setDisabled(False)
         self.stop_btn.setDisabled(True)
 
