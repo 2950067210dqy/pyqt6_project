@@ -870,8 +870,8 @@ class communication(threading.Thread):
                                                                             data_hex_list=[
                                                                                 "0x00",
                                                                                 "0x02",
-                                                                                "0xFF",
                                                                                 "0x00",
+                                                                                "0xFF",
                                                                             ],
                                                                             struct_type="B"
                                                                             )

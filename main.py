@@ -93,7 +93,7 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
 
     # p_comm = Process(target=main_comm.main, name="p_comm")
     p_response_comm = Process(target=main_response_Modbus.main, name="p_response_comm")
-    p_monitor_data = Process(target=main_monitor_data.main, name="p_monitor_data", args=(q, send_message_q))
+    # p_monitor_data = Process(target=main_monitor_data.main, name="p_monitor_data", args=(q, send_message_q))
 
     p_gui = Process(target=main_gui.main, name="p_gui", args=(q, send_message_q))
 
@@ -118,14 +118,14 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
             kill_process_tree(p_response_comm.pid)
             p_response_comm.join(timeout=5)
 
-    try:
-        logger.info(f"p_monitor_data子进程开始运行")
-        p_monitor_data.start()
-    except Exception as e:
-        logger.error(f"p_monitor_data子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
-        if p_monitor_data.is_alive():
-            kill_process_tree(p_monitor_data.pid)
-            p_monitor_data.join(timeout=5)
+    # try:
+    #     logger.info(f"p_monitor_data子进程开始运行")
+    #     p_monitor_data.start()
+    # except Exception as e:
+    #     logger.error(f"p_monitor_data子进程发生异常：{e} |  异常堆栈跟踪：{traceback.print_exc()}，准备终止该子进程")
+    #     if p_monitor_data.is_alive():
+    #         kill_process_tree(p_monitor_data.pid)
+    #         p_monitor_data.join(timeout=5)
     try:
         logger.info(f"p_deep_camera子进程开始运行")
         p_deep_camera.start()
@@ -172,11 +172,11 @@ if __name__ == "__main__" and os.path.basename(__file__) == "main.py":
                 logger.error(f"终止p_response_comm子进程")
                 p_response_comm.join(timeout=5)
                 pass
-            if p_monitor_data.is_alive():
-                kill_process_tree(p_monitor_data.pid)
-                logger.error(f"终止p_monitor_data子进程")
-                p_monitor_data.join(timeout=5)
-                pass
+            # if p_monitor_data.is_alive():
+            #     kill_process_tree(p_monitor_data.pid)
+            #     logger.error(f"终止p_monitor_data子进程")
+            #     p_monitor_data.join(timeout=5)
+            #     pass
             # if p_comm.is_alive():
             #     # 先尝试正常终止
             #     kill_process_tree(p_comm.pid)

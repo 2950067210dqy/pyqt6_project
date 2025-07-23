@@ -13,6 +13,7 @@ from index.tab_4 import Tab_4
 from index.tab_5 import Tab_5
 from index.tab_6 import Tab_6
 from index.tab_7 import Tab_7
+
 from resource_py import mainPage_rc
 from theme.ThemeQt6 import ThemedWidget
 

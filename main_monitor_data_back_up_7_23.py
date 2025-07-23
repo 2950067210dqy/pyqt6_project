@@ -49,8 +49,6 @@ class read_queue_data_Thread(MyQThread):
                         # 发送优先级高的报文
                         self.send_thread.add_message(message=message['data'], urgent=True, origin=message['from'])
                         pass
-
-
             else:
                 # 把消息放回去
                 self.queue.put(message)
@@ -99,9 +97,8 @@ class Store_Thread(MyQThread):
         pass
 
     def stop(self):
-        if self.handle is not None:
-            self.handle.stop()
         super().stop()
+        self.handle.stop()
 
 
 class Send_thread(MyQThread):
@@ -139,10 +136,6 @@ class Send_thread(MyQThread):
             logger.error(f"{self.name},实例化modbus错误：{e}")
             pass
         pass
-    def stop(self):
-        if self.modbus is not None:
-            self.modbus.close()
-        super().stop()
 
     def set_modbus(self, modbus):
         self.modbus = modbus
@@ -234,71 +227,38 @@ class Send_thread(MyQThread):
             time.sleep(float(global_setting.get_setting('monitor_data')['SEND']['delay']))
 
 
+def auto_detect_port():
+    """
+    自动检测通信串口
+    :param baudrate:
+    :param test_cmd:
+    :param expected_response:
+    :param timeout:
+    :return:
+    """
+    ports = list_ports.comports()
+    for port in ports:
+
+        try:
+            modbus = ModbusRTUMaster(port=port.device, timeout=1)
+            response, response_hex, send_state = modbus.send_command(
+                slave_id=Modbus_Slave_Send_Messages.UFC.value['send_messages'][0].message['slave_id'],
+                function_code=Modbus_Slave_Send_Messages.UFC.value['send_messages'][0].message['function_code'],
+                data_hex_list=Modbus_Slave_Send_Messages.UFC.value['send_messages'][0].message['data'],
+                is_parse_response=False
+            )
+
+            # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
+            if send_state:
+                return port.device
+            # if modbus is not None:
+            #     modbus.close()
+        except Exception as e:
+            logger.error(e)
+            continue
+    return None
 
 
-
-
-class Add_message_thread(MyQThread):
-    def __init__(self,name,send_thread, port):
-        super().__init__(name=name)
-        self.send_thread = send_thread
-        self.port=port
-        pass
-    def run(self):
-        logger.warning(f"{self.name} thread has been started！")
-        # 发送消息
-        global MESSAGE_BATCH_SIZE
-        message_type = 0  # 0是只要传感器数值查询报文 1是所有查询报文
-        while self._running:
-            self.mutex.lock()
-            if self._paused:
-                self.condition.wait(self.mutex)  # 等待条件变量
-            self.mutex.unlock()
-
-            send_messages = []
-            # 公共传感器数据的send_messages
-            for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message.value:
-                if message_type == 1:
-                    # 所有消息
-                    for message_struct in data_type.value['send_messages']:
-                        message_temp = message_struct.message
-                        message_temp['port'] =  self.port
-                        self.send_thread.add_message(message=message_temp, urgent=False)
-                        send_messages.append(message_temp)
-                        MESSAGE_BATCH_SIZE += 1
-                else:
-                    # 单个传感器值消息
-                    message_temp = data_type.value['send_messages'][0].message
-                    message_temp['port'] =  self.port
-                    self.send_thread.add_message(message=message_temp, urgent=False)
-                    send_messages.append(message_temp)
-                    MESSAGE_BATCH_SIZE += 1
-                pass
-            # 每个笼子里的传感器的send_messages
-            for data_type in Modbus_Slave_Type.Each_Mouse_Cage_Message.value:
-                for mouse_cage in data_type.value['send_messages']:
-                    if message_type == 1:
-                        # 所有消息
-                        for message_struct in mouse_cage:
-                            message_temp = message_struct.message
-                            message_temp['port'] =  self.port
-                            self.send_thread.add_message(message=message_temp, urgent=False)
-                            send_messages.append(message_temp)
-                            MESSAGE_BATCH_SIZE += 1
-                    else:
-                        # 单个传感器值消息
-                        message_temp = mouse_cage[0].message
-                        message_temp['port'] =  self.port
-                        self.send_thread.add_message(message=message_temp, urgent=False)
-                        send_messages.append(message_temp)
-                        MESSAGE_BATCH_SIZE += 1
-                pass
-                # 等待从线程处理完当前批次
-            logger.info(f"数据请求报文：一共{len(send_messages)}条报文！")
-            # print(f"send_messages:{send_messages}")
-            batch_complete_event.wait()
-            batch_complete_event.clear()  # 重置事件
-            logger.info(f"从线程已处理完上批消息，主线程继续发送下一批\n")
 def load_global_setting():
     # 加载监控数据配置
     config_file_path = os.getcwd() + "/monitor_datas_config.ini"
@@ -315,7 +275,9 @@ def load_global_setting():
         logger.error(f"./gui_configer.yaml配置文件读取失败")
     global_setting.set_setting("configer", configer)
     return config
-def main(port,q,send_message_q):
+
+
+def main(q, send_message_q):
     # logger.remove(0)
     logger.add(
         "./log/monitor_data/monitor_{time:YYYY-MM-DD}.log",
@@ -333,6 +295,12 @@ def main(port,q,send_message_q):
     global_setting.set_setting("queue", q)
     global_setting.set_setting("send_message_queue", send_message_q)
 
+    # 寻找通信端口
+    port = auto_detect_port()
+    while port is None:
+        logger.error("未找到通讯串口！！！！！！！！！！！！！，正在重新寻找")
+        port = auto_detect_port()
+        time.sleep(2)
 
     # 存储线程
     store_thread = Store_Thread(name="monitor_data_store_message")
@@ -345,14 +313,56 @@ def main(port,q,send_message_q):
     read_queue_data_thread.send_thread = send_thread
     read_queue_data_thread.start()
 
-    add_message_thread=Add_message_thread("monitor_data_add_message",send_thread, port)
-    add_message_thread.start()
-
-    return store_thread,send_thread,read_queue_data_thread,add_message_thread
-
+    # 发送消息
+    global MESSAGE_BATCH_SIZE
+    message_type = 0  # 0是只要传感器数值查询报文 1是所有查询报文
+    while True:
+        send_messages = []
+        # 公共传感器数据的send_messages
+        for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message.value:
+            if message_type == 1:
+                # 所有消息
+                for message_struct in data_type.value['send_messages']:
+                    message_temp = message_struct.message
+                    message_temp['port'] = port
+                    send_thread.add_message(message=message_temp, urgent=False)
+                    send_messages.append(message_temp)
+                    MESSAGE_BATCH_SIZE += 1
+            else:
+                # 单个传感器值消息
+                message_temp = data_type.value['send_messages'][0].message
+                message_temp['port'] = port
+                send_thread.add_message(message=message_temp, urgent=False)
+                send_messages.append(message_temp)
+                MESSAGE_BATCH_SIZE += 1
+            pass
+        # 每个笼子里的传感器的send_messages
+        for data_type in Modbus_Slave_Type.Each_Mouse_Cage_Message.value:
+            for mouse_cage in data_type.value['send_messages']:
+                if message_type == 1:
+                    # 所有消息
+                    for message_struct in mouse_cage:
+                        message_temp = message_struct.message
+                        message_temp['port'] = port
+                        send_thread.add_message(message=message_temp, urgent=False)
+                        send_messages.append(message_temp)
+                        MESSAGE_BATCH_SIZE += 1
+                else:
+                    # 单个传感器值消息
+                    message_temp = mouse_cage[0].message
+                    message_temp['port'] = port
+                    send_thread.add_message(message=message_temp, urgent=False)
+                    send_messages.append(message_temp)
+                    MESSAGE_BATCH_SIZE += 1
+            pass
+            # 等待从线程处理完当前批次
+        logger.info(f"数据请求报文：一共{len(send_messages)}条报文！")
+        # print(f"send_messages:{send_messages}")
+        batch_complete_event.wait()
+        batch_complete_event.clear()  # 重置事件
+        logger.info(f"从线程已处理完上批消息，主线程继续发送下一批\n")
 
 
 if __name__ == "__main__":
     q = multiprocessing.Queue()
-    send_message_q = multiprocessing.Queue()
-    main("COM5",q,send_message_q)
+    main(q)

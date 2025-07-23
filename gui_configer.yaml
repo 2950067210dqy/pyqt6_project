@@ -12,7 +12,10 @@ left_menu: #左侧菜单项
     title: '动物概况' #菜单名称
     icon_path: 'generate.svg' #菜单图标路径
     default: true #默认显示菜单
-
+  - id: 7
+    title: '实验配置'
+    icon_path: 'settingConfig.svg'
+    default: false
   - id: 2
     title: '监测数据'
     icon_path: 'marketAnalysis.svg'
@@ -34,10 +37,6 @@ left_menu: #左侧菜单项
     title: '系统设置'
     icon_path: 'settingSystem.svg'
     default: false
-#  - id: 7
-#    title: '智能设备'
-#    icon_path: 'settingSystem.svg'
-#    default: false
 tab: #菜单窗口项
   position: #显示位置
     x: 120 #菜单窗口基于父窗口的左上角的点的x坐标 单位px

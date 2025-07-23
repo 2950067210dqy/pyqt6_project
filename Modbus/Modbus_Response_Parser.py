@@ -2477,7 +2477,7 @@ class Modbus_Response_URC(Modbus_Response_Parents):
                     )
                     j += 1
                     pass
-                case 2:
+                case 3:
                     return_datas.append({
                         "desc": port_types[j],
                         'value': "ON" if int(self.response_struct['data'][i]) == 255 else "OFF"

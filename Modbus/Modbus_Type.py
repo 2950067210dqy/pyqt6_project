@@ -21,7 +21,7 @@ def load_global_setting():
         logger.error("监控配置文件读取失败。")
     global_setting.set_setting("monitor_data", config)
     # 加载gui配置存储到全局类中
-    configer = YamlParserObject.yaml_parser.load_single("./gui_configer.yaml")
+    configer = YamlParserObject.yaml_parser.load_single(os.getcwd() +"./gui_configer.yaml")
     if configer is None:
         logger.error(f"./gui_configer.yaml配置文件读取失败")
     global_setting.set_setting("configer", configer)
