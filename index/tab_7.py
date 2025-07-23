@@ -64,7 +64,7 @@ class Send_thread(MyQThread):
 
     def init_modBus(self):
         try:
-            if self.modbus is None:
+
                 self.modbus = ModbusRTUMaster(
                     port=self.send_message['port'],
                     timeout=float(
@@ -212,6 +212,7 @@ class Tab_7(ThemedWidget):
     def selectionchange(self, index):
         try:
             self.send_message['port'] = self.ports[index]['device']
+
 
             self.send_response_text(
                 f"{time_util.get_format_from_time(time.time())}- 设备: {self.ports[index]['device']}" + f" #{self.ports[index]['description']}" + "  已被选中!")
@@ -453,7 +454,7 @@ class Tab_7(ThemedWidget):
 
                 radio_on = QRadioButton(f"{module_value['config'][0]['value'][1]['refer_value']['0']['desc']}")
                 radio_on.setObjectName("on")
-                radio_off = QRadioButton(f"{module_value['config'][0]['value'][1]['refer_value']['0']['desc']}")
+                radio_off = QRadioButton(f"{module_value['config'][0]['value'][1]['refer_value']['1']['desc']}")
                 radio_off.setObjectName("off")
                 radio_off.setChecked(True)
                 # 创建一个 ButtonGroup

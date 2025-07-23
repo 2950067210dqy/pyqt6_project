@@ -75,7 +75,7 @@ class DataFetcher(MyQThread):
         # logger.error(f"get_data:{data}")
         self.data_fetched.emit(data)
 
-        time.sleep(1)  # 每秒获取一次数据
+        time.sleep(0.3)  # 每秒获取一次数据
 
 
 class LineChartWidget(QWidget):

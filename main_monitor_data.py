@@ -257,26 +257,27 @@ class Add_message_thread(MyQThread):
 
             send_messages = []
             # 公共传感器数据的send_messages
-            for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message.value:
-                if message_type == 1:
-                    # 所有消息
-                    for message_struct in data_type.value['send_messages']:
-                        message_temp = message_struct.message
-                        message_temp['port'] =  self.port
-                        self.send_thread.add_message(message=message_temp, urgent=False)
-                        send_messages.append(message_temp)
-                        MESSAGE_BATCH_SIZE += 1
-                else:
-                    # 单个传感器值消息
-                    message_temp = data_type.value['send_messages'][0].message
-                    message_temp['port'] =  self.port
-                    self.send_thread.add_message(message=message_temp, urgent=False)
-                    send_messages.append(message_temp)
-                    MESSAGE_BATCH_SIZE += 1
-                pass
+            # for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message.value:
+            #     if message_type == 1:
+            #         # 所有消息
+            #         for message_struct in data_type.value['send_messages']:
+            #             message_temp = message_struct.message
+            #             message_temp['port'] =  self.port
+            #             self.send_thread.add_message(message=message_temp, urgent=False)
+            #             send_messages.append(message_temp)
+            #             MESSAGE_BATCH_SIZE += 1
+            #     else:
+            #         # 单个传感器值消息
+            #         message_temp = data_type.value['send_messages'][0].message
+            #         message_temp['port'] =  self.port
+            #         self.send_thread.add_message(message=message_temp, urgent=False)
+            #         send_messages.append(message_temp)
+            #         MESSAGE_BATCH_SIZE += 1
+            #     pass
             # 每个笼子里的传感器的send_messages
             for data_type in Modbus_Slave_Type.Each_Mouse_Cage_Message.value:
                 for mouse_cage in data_type.value['send_messages']:
+
                     if message_type == 1:
                         # 所有消息
                         for message_struct in mouse_cage:
@@ -292,6 +293,8 @@ class Add_message_thread(MyQThread):
                         self.send_thread.add_message(message=message_temp, urgent=False)
                         send_messages.append(message_temp)
                         MESSAGE_BATCH_SIZE += 1
+                        #测试专用 只拿一个笼子鼠笼1里的数据
+                        break
                 pass
                 # 等待从线程处理完当前批次
             logger.info(f"数据请求报文：一共{len(send_messages)}条报文！")

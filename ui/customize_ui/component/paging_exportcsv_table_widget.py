@@ -60,7 +60,7 @@ class DataFetcher(MyQThread):
         # logger.error(f"get_data:{datas}")
         self.data_fetched.emit(datas)
 
-        time.sleep(1)  # 每秒获取一次数据
+        time.sleep(0.3)  # 每秒获取一次数据
 
 class TableWidgetPaging(QtWidgets.QWidget):
     def __init__(self,parent: QVBoxLayout = None, object_name: str = "",rows_per_page=10,type=None, data_type="", mouse_cage_number=0):
@@ -110,7 +110,7 @@ class TableWidgetPaging(QtWidgets.QWidget):
         self.prev_button = QtWidgets.QPushButton("上一页")
         self.next_button = QtWidgets.QPushButton("下一页")
         self.last_button = QtWidgets.QPushButton("尾页")
-        self.export_button = QtWidgets.QPushButton("导出CSV")
+        self.export_button = QtWidgets.QPushButton("导出当页CSV")
 
         # 分页指示器
         self.page_info_label = QtWidgets.QLabel()
