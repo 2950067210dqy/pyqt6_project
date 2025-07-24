@@ -260,7 +260,7 @@ class TableWidgetPaging(QtWidgets.QWidget):
             with open(file_path, mode='w', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
                 # 写入表头
-                headers = [self.table_widget.horizontalHeaderItem(i).text() for i in range(self.total_columns)]
+                headers = [self.table_widget.horizontalHeaderItem(i).text() for i in range(self.total_columns)][:-1]
                 writer.writerow(headers)
 
                 # 写入数据
@@ -269,7 +269,7 @@ class TableWidgetPaging(QtWidgets.QWidget):
                     for column in range(self.total_columns):
                         item = self.table_widget.item(row, column)
                         row_data.append(item.text() if item is not None else "")
-                    writer.writerow(row_data)
+                    writer.writerow(row_data[:-1])
 
 
 

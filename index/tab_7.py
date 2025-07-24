@@ -187,7 +187,7 @@ class Tab_7(ThemedWidget):
         self.init_port_combox()
         # 读取默认config json
         self.config = get_default_config()
-        logger.error(self.config)
+        # logger.error(self.config)
         self.init_config_ui()
         pass
 
@@ -277,7 +277,7 @@ class Tab_7(ThemedWidget):
 
                     pass
                 elif module_key  ==Modbus.Modbus_Type.Modbus_Slave_Ids.EM.value['name']:
-
+                    self.init_em_config_ui(module_key, module_value, self.scroll_area_layout)
                     pass
                 elif module_key  ==Modbus.Modbus_Type.Modbus_Slave_Ids.WM.value['name']:
 
@@ -351,9 +351,9 @@ class Tab_7(ThemedWidget):
         # 获得下拉框数据
         self.ports = scan_serial_ports_with_id()
         pass
-    def update_slider_label(self, address,mouse_cage_number,function_code,data_lists, label,slider:QSlider):
+    def update_slider(self, address,mouse_cage_number,function_code,data_lists,slider:QSlider):
         value = slider.value()
-        label.setText(f"当前值: {value}")  # 更新当前值标签的文本
+
         data_list = ['00', '00', '00', '00']
         if str(value) in data_lists:
             data_list=[hex_str[2:] for hex_str in data_lists[str(value)]['value']]
@@ -366,6 +366,10 @@ class Tab_7(ThemedWidget):
 
         self.send_data()
 
+    def update_slider_label(self,value,label):
+        label.setText(f"当前值: {value}")  # 更新当前值标签的文本
+        # 更新label
+        pass
     def on_radio_button_clicked(self, button,address,mouse_cage_number,function_code,data_lists):
         btn_object_name:str = button.objectName()
         """处理按钮点击事件"""
@@ -403,6 +407,45 @@ class Tab_7(ThemedWidget):
             self.send_thread.is_start = True
         except Exception as e:
             logger.error(e)
+
+    def init_em_config_ui(self, module_key, module_value, scroll_area_layout):
+        # 创建 GroupBox
+        group_box = QGroupBox(f"{module_value['desc']}-{module_value['config'][0]['value'][0]['desc']}")
+        group_box.setContentsMargins(10, 10, 10, 10)
+        scroll_area_layout.addWidget(group_box)
+
+        # 创建第一个 GridLayout
+        grid_layout1 = QGridLayout()
+        grid_layout1.setContentsMargins(10, 30, 10, 10)
+        group_box.setLayout(grid_layout1)
+
+        # 添加鼠笼和 radio buttons
+        for i in range(4):  # 行
+            for j in range(2):  # 列
+                index = i * 2 + j + 1  # 计算鼠笼编号
+                label = QLabel(f"鼠笼 {index}")
+
+                radio_on = QRadioButton(f"{module_value['config'][0]['value'][0]['refer_value']['0']['desc']}")
+                radio_on.setObjectName("on")
+                radio_off = QRadioButton(f"{module_value['config'][0]['value'][0]['refer_value']['1']['desc']}")
+                radio_off.setObjectName("off")
+                radio_off.setChecked(True)
+                # 创建一个 ButtonGroup
+                button_group = QButtonGroup(grid_layout1)  # 绑定到主窗口以便于管理
+                # 添加到 ButtonGroup 中
+                button_group.addButton(radio_on)
+                button_group.addButton(radio_off)
+                # 连接信号
+                button_group.buttonClicked.connect(
+                    lambda button, address=module_value['address'], mouse_cage_number=index,
+                           function_code=module_value['config'][0]['function_code'],
+                           data_lists=module_value['config'][0]['value'][0]['refer_value']:
+                    self.on_radio_button_clicked(button, address, mouse_cage_number, function_code, data_lists))
+                # 这里的3代表组件数量  label  radio_on radio_off 3个
+                grid_layout1.addWidget(label, i, j * 3)  # 标签在 (i, j * 3)
+                grid_layout1.addWidget(radio_on, i, j * 3 + 1)  # ON 按钮在 (i, j * 3 + 1)
+                grid_layout1.addWidget(radio_off, i, j * 3 + 2)  # OFF 按钮在 (i, j * 3 + 2)
+        pass
     def init_enm_config_ui(self, module_key, module_value,scroll_area_layout):
         # 创建 GroupBox
         group_box = QGroupBox(f"{module_value['desc']}-{module_value['config'][0]['value'][0]['desc']}")
@@ -495,8 +538,9 @@ class Tab_7(ThemedWidget):
                 current_value_label = QLabel("当前值: 1")
 
                 # 连接滑块的值变化信号到更新标签的槽
-                slider.sliderReleased.connect(lambda address=module_value['address'],mouse_cage_number=index,function_code=module_value['config'][1]['function_code'],data_lists=module_value['config'][1]['value'][0]['refer_value'], label=current_value_label,slider=slider
-                                            : self.update_slider_label(address,mouse_cage_number,function_code,data_lists, label,slider))
+                slider.valueChanged.connect(lambda value, label=current_value_label:self.update_slider_label(value, label))
+                slider.sliderReleased.connect(lambda address=module_value['address'],mouse_cage_number=index,function_code=module_value['config'][1]['function_code'],data_lists=module_value['config'][1]['value'][0]['refer_value'], slider=slider
+                                            : self.update_slider(address,mouse_cage_number,function_code,data_lists,slider))
 
                 # 添加到布局中
                 grid_layout3.addWidget(label, i, j * 3)  # 标签在 (i, j * 3)
@@ -525,12 +569,14 @@ class Tab_7(ThemedWidget):
                 current_value_label = QLabel("当前值: 1")
 
                 # 连接滑块的值变化信号到更新标签的槽
+                slider.valueChanged.connect(
+                    lambda value, label=current_value_label: self.update_slider_label(value, label))
                 slider.sliderReleased.connect(lambda address=module_value['address'], mouse_cage_number=index,
-                                                   function_code=module_value['config'][1]['function_code'],
-                                                   data_lists=module_value['config'][1]['value'][1]['refer_value'],
-                                                   label=current_value_label,slider=slider
-                                            : self.update_slider_label( address, mouse_cage_number, function_code,
-                                                                       data_lists, label,slider))
+                                                     function_code=module_value['config'][1]['function_code'],
+                                                     data_lists=module_value['config'][1]['value'][1]['refer_value'],
+                                                     slider=slider
+                                              : self.update_slider(address, mouse_cage_number, function_code,
+                                                                   data_lists, slider))
 
                 # 添加到布局中
                 grid_layout4.addWidget(label, i, j * 3)  # 标签在 (i, j * 3)

@@ -725,6 +725,7 @@ def main(q):
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
     )
     logger.info(f"{'-' * 30}deep_camera_start{'-' * 30}")
+    logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
     # 设置全局变量
     load_global_setting()
     # 读取共享信息线程

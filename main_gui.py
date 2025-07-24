@@ -143,6 +143,7 @@ def main(q, send_message_q):
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
     )
     logger.info(f"{'-' * 40}gui_start{'-' * 40}")
+    logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
     # 获取串口通讯项目路径
     get_communiation_project_path()
 

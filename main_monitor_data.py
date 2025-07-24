@@ -10,7 +10,7 @@ from PyQt6.QtCore import pyqtSignal
 from loguru import logger
 
 from Modbus.Modbus import ModbusRTUMaster
-from Modbus.Modbus_Type import Modbus_Slave_Type, Modbus_Slave_Ids, Modbus_Slave_Send_Messages
+from Modbus.Modbus_Type import Modbus_Slave_Type
 from communication.ini_pareser.ini_parser import ini_parser
 from config.global_setting import global_setting
 from config.yamlParser import YamlParserObject
@@ -248,7 +248,7 @@ class Add_message_thread(MyQThread):
         logger.warning(f"{self.name} thread has been started！")
         # 发送消息
         global MESSAGE_BATCH_SIZE
-        message_type = 0  # 0是只要传感器数值查询报文 1是所有查询报文
+
         while self._running:
             self.mutex.lock()
             if self._paused:
@@ -256,45 +256,27 @@ class Add_message_thread(MyQThread):
             self.mutex.unlock()
 
             send_messages = []
-            # 公共传感器数据的send_messages
-            # for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message.value:
-            #     if message_type == 1:
-            #         # 所有消息
-            #         for message_struct in data_type.value['send_messages']:
-            #             message_temp = message_struct.message
-            #             message_temp['port'] =  self.port
-            #             self.send_thread.add_message(message=message_temp, urgent=False)
-            #             send_messages.append(message_temp)
-            #             MESSAGE_BATCH_SIZE += 1
-            #     else:
-            #         # 单个传感器值消息
-            #         message_temp = data_type.value['send_messages'][0].message
+            # 公共传感器数据的send_messages  现在只发传感器数值查询报文DEBUGGER
+            # for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message_Senior_Data.value:
+            #     # 所有消息
+            #     for message_struct in data_type.value['send_messages']:
+            #         message_temp = message_struct.message
             #         message_temp['port'] =  self.port
             #         self.send_thread.add_message(message=message_temp, urgent=False)
             #         send_messages.append(message_temp)
             #         MESSAGE_BATCH_SIZE += 1
-            #     pass
             # 每个笼子里的传感器的send_messages
-            for data_type in Modbus_Slave_Type.Each_Mouse_Cage_Message.value:
+            for data_type in Modbus_Slave_Type.Each_Mouse_Cage_Message_Senior_Data.value:
                 for mouse_cage in data_type.value['send_messages']:
-
-                    if message_type == 1:
-                        # 所有消息
-                        for message_struct in mouse_cage:
-                            message_temp = message_struct.message
-                            message_temp['port'] =  self.port
-                            self.send_thread.add_message(message=message_temp, urgent=False)
-                            send_messages.append(message_temp)
-                            MESSAGE_BATCH_SIZE += 1
-                    else:
-                        # 单个传感器值消息
-                        message_temp = mouse_cage[0].message
+                    # 所有消息
+                    for message_struct in mouse_cage:
+                        message_temp = message_struct.message
                         message_temp['port'] =  self.port
                         self.send_thread.add_message(message=message_temp, urgent=False)
                         send_messages.append(message_temp)
                         MESSAGE_BATCH_SIZE += 1
-                        #测试专用 只拿一个笼子鼠笼1里的数据
-                        break
+                    # 测试专用 只拿一个笼子鼠笼1里的数据 DEBUGGER
+                    break
                 pass
                 # 等待从线程处理完当前批次
             logger.info(f"数据请求报文：一共{len(send_messages)}条报文！")
@@ -328,6 +310,7 @@ def main(port,q,send_message_q):
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} |{process.name} | {thread.name} |  {name} : {module}:{line} | {message}"
     )
     logger.info(f"{'-' * 30}monitor_data_start{'-' * 30}")
+    logger.info(f"{__name__} | {os.path.basename(__file__)}|{os.getpid()}|{os.getppid()}")
     # 设置全局变量
     load_global_setting()
     # 读取共享信息线程

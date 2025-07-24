@@ -1,6 +1,7 @@
 2025-05-20
 1.将3d和红外集成到项目里
 2.每个半个小时删除一次照片 ，删除之前把照片大小记录一次 记录坐标处理的运行时间
+
 .\Scripts\activate
 pyinstaller -d main.py --hidden-import=pyqt6-plugin
 
@@ -17,3 +18,8 @@ pipreqs . --encoding=utf8 --ignore ./build,./dist,./entity,./log,./model,./resou
 35条消息  一共用时70.04秒 而且每条消息要休息1秒 70-35 =35     0.5秒
 2.更新3d和红外的视频显示为opencv的video
 3.监测数据显示图表
+
+2025-07-24
+1.响应式界面
+2.实验配置读取各传感器配置信息
+3.数据处理
