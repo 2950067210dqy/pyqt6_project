@@ -48,6 +48,74 @@ class read_queue_data_Thread(MyQThread):
 
 
 read_queue_data_thread = read_queue_data_Thread(name="tab_3_read_queue_data_thread")
+class Send_thread(MyQThread):
+    # 线程信号
+
+    def __init__(self, name=None,  modbus=None, send_message=None):
+        super().__init__(name)
+
+        self.modbus = modbus
+        self.send_message = send_message
+        self.is_start = True
+        pass
+
+    def __del__(self):
+        logger.debug(f"线程{self.name}被销毁!")
+
+    def init_modBus(self):
+        try:
+
+                self.modbus = ModbusRTUMaster(
+                    port=self.send_message['port'],
+                    timeout=float(
+                        global_setting.get_setting('monitor_data')['Serial']['timeout']),
+                    origin="tab_3"
+                                              )
+        except:
+            pass
+        pass
+
+    def set_send_message(self, send_message):
+        self.send_message = send_message
+
+    def set_modbus(self, modbus):
+        self.modbus = modbus
+
+    def dosomething(self):
+        if self.is_start:
+            self.init_modBus()
+            try:
+                logger.info(self.send_message)
+                response, response_hex, send_state = self.modbus.send_command(
+                    slave_id=self.send_message['slave_id'],
+                    function_code=self.send_message['function_code'],
+                    data_hex_list=self.send_message['data']
+                    ,is_parse_response=False
+                )
+                # 响应报文是正确的，即发送状态时正确的 进行解析响应报文
+                if send_state:
+                    return_data, parser_message = self.modbus.parse_response(response=response,
+                                                                             response_hex=response.hex(),
+                                                                             send_state=True,
+                                                                             slave_id=
+                                                                             self.send_message['slave_id'],
+                                                                             function_code=
+                                                                             self.send_message['function_code'], )
+
+                    # 把返回数据返回给源头
+                    message_struct = {'to': "tab_3", 'data': parser_message, 'from': 'tab_3_send_thread'}
+                    global_setting.get_setting("send_message_queue").put(message_struct)
+                    logger.debug(f"tab_3_send_thread将响应报文的解析数据返回源头：{message_struct}")
+                    pass
+                self.is_start = False
+            except Exception as e:
+                logger.error(e)
+            finally:
+                self.is_start = False
+            time.sleep(1)
+        pass
+
+    pass
 
 
 class Tab_3(ThemedWidget):
@@ -55,9 +123,13 @@ class Tab_3(ThemedWidget):
 
     def showEvent(self, a0: typing.Optional[QtGui.QShowEvent]) -> None:
         logger.warning(f"tab3——show")
+        if self.send_thread is not None and self.send_thread.isRunning():
+            self.send_thread.resume()
 
     def hideEvent(self, a0: typing.Optional[QtGui.QHideEvent]) -> None:
         logger.warning(f"tab3——hidden")
+        if self.send_thread is not None and self.send_thread.isRunning():
+            self.send_thread.pause()
 
     def __init__(self, parent=None, geometry: QRect = None, title=""):
         super().__init__()
@@ -73,7 +145,8 @@ class Tab_3(ThemedWidget):
             'timeout': 0
         }
         self.modbus = None
-
+        # 发送报文线程
+        self.send_thread: Send_thread = None
         # 实例化ui
         self._init_ui(parent, geometry, title)
         # 获得相关数据
@@ -185,12 +258,35 @@ class Tab_3(ThemedWidget):
 
     # 发送数据
     def send_data(self):
+
         # 验证数据有效性
         try:
             if self.validate_data():
-                message = {'to': 'main_monitor_data', 'data': self.send_message, 'from': 'tab_3'}
-                global_setting.get_setting("send_message_queue").put(message)
-                logger.debug(f"tab_3开始发送消息:{message}")
+                state = global_setting.get_setting("experiment")
+                # 根据是否已经实验来发送到自己还是main_monitor_data
+                if state is None or not state:
+                    # 发送数据
+                    try:
+                        if self.send_thread is None:
+                            logger.info("初始化串口")
+                            self.send_thread = None
+                            self.send_thread = Send_thread(name="tab_3_COM_Send_Thread",
+                                                           modbus=None, send_message=self.send_message)
+
+                            self.send_thread.is_start = True
+                            self.send_thread.start()
+
+                            return
+                            # 发送
+                        logger.info("未初始化串口对象,使用之前串口实例化对象")
+                        self.send_thread.set_send_message(self.send_message)
+                        self.send_thread.is_start = True
+                    except Exception as e:
+                        logger.error(e)
+                else:
+                    message = {'to': 'main_monitor_data', 'data': self.send_message, 'from': 'tab_3'}
+                    global_setting.get_setting("send_message_queue").put(message)
+                    logger.debug(f"tab_3开始发送消息:{message}")
                 pass
         except Exception as e:
             logger.error(e)

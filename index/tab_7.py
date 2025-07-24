@@ -105,7 +105,7 @@ class Send_thread(MyQThread):
                     # 把返回数据返回给源头
                     message_struct = {'to': "tab_7", 'data': parser_message, 'from': 'tab_7_send_thread'}
                     global_setting.get_setting("send_message_queue").put(message_struct)
-                    logger.debug(f"main_monitor_data将响应报文的解析数据返回源头：{message_struct}")
+                    logger.debug(f"tab_7_send_thread将响应报文的解析数据返回源头：{message_struct}")
                     pass
                 self.is_start = False
             except Exception as e:
@@ -318,13 +318,14 @@ class Tab_7(ThemedWidget):
         pass
     def start_experiment(self):
         # 开始实验
-
+        global_setting.set_setting("experiment",True)
         self.store_thread_sub,self.send_thread_sub,self.read_queue_data_thread_sub,self.add_message_thread_sub=main_monitor_data.main(port=self.send_message['port'],q=global_setting.get_setting("queue"),send_message_q=global_setting.get_setting("send_message_queue"))
         self.start_btn.setEnabled(False)
         self.stop_btn.setEnabled(True)
         pass
 
     def stop_experiment(self):
+        global_setting.set_setting("experiment", False)
         try:
             if self.add_message_thread_sub is not None and self.add_message_thread_sub.isRunning():
                 self.add_message_thread_sub.stop()
@@ -389,24 +390,31 @@ class Tab_7(ThemedWidget):
 
 
     def send_data(self):
-        # 发送数据
-        try:
-            if self.send_thread is None:
-                logger.info("初始化串口")
-                self.send_thread = None
-                self.send_thread = Send_thread(name="tab_3_COM_Send_Thread",
-                                               modbus=None, send_message=self.send_message)
+        state = global_setting.get_setting("experiment")
+        # 根据是否已经实验来发送到自己还是main_monitor_data
+        if state is None or not state:
+            # 发送数据
+            try:
+                if self.send_thread is None:
+                    logger.info("初始化串口")
+                    self.send_thread = None
+                    self.send_thread = Send_thread(name="tab_3_COM_Send_Thread",
+                                                   modbus=None, send_message=self.send_message)
 
+                    self.send_thread.is_start = True
+                    self.send_thread.start()
+
+                    return
+                    # 发送
+                logger.info("未初始化串口对象,使用之前串口实例化对象")
+                self.send_thread.set_send_message(self.send_message)
                 self.send_thread.is_start = True
-                self.send_thread.start()
-
-                return
-                # 发送
-            logger.info("未初始化串口对象,使用之前串口实例化对象")
-            self.send_thread.set_send_message(self.send_message)
-            self.send_thread.is_start = True
-        except Exception as e:
-            logger.error(e)
+            except Exception as e:
+                logger.error(e)
+        else:
+            message = {'to': 'main_monitor_data', 'data': self.send_message, 'from': 'tab_7'}
+            global_setting.get_setting("send_message_queue").put(message)
+            logger.debug(f"tab_7开始发送消息:{message}")
 
     def init_em_config_ui(self, module_key, module_value, scroll_area_layout):
         # 创建 GroupBox
