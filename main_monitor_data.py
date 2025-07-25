@@ -156,7 +156,7 @@ class Send_thread(MyQThread):
             if self._paused:
                 self.condition.wait(self.mutex)  # 等待条件变量
             self.mutex.unlock()
-
+            send_message =None
             try:
                 # logger.info(self.send_messages)
 
@@ -191,9 +191,10 @@ class Send_thread(MyQThread):
                         pass
                 except queue.Empty:
                     pass
-
+                send_message=None
                 # 处理普通消息
                 try:
+
                     send_message = self.normal_queue.get(timeout=0.1)
                     self.init_modBus(port=send_message['port'])
                     response, response_hex, send_state = self.modbus.send_command(
@@ -217,7 +218,14 @@ class Send_thread(MyQThread):
                             store_Q.put(return_data)  # 修改全局变量
                         # logger.info(f"{total_messages_processed}|{return_data}")
                         pass
-                    logger.info(f"响应报文{total_messages_processed}响应结束{'-' * 100}")
+
+                except queue.Empty:
+                    break
+            except Exception as e:
+                logger.error(e)
+            finally:
+                if send_message is not None:
+                    logger.info(f"响应报文{total_messages_processed}/{MESSAGE_BATCH_SIZE}响应结束{'-' * 100}")
                     with lock:
                         if total_messages_processed % MESSAGE_BATCH_SIZE == 0:
 
@@ -226,11 +234,6 @@ class Send_thread(MyQThread):
                             batch_complete_event.set()  # 通知主线程当前批次完成
                         else:
                             total_messages_processed += 1
-                except queue.Empty:
-                    break
-            except Exception as e:
-                logger.error(e)
-
             time.sleep(float(global_setting.get_setting('monitor_data')['SEND']['delay']))
 
 
@@ -257,14 +260,14 @@ class Add_message_thread(MyQThread):
 
             send_messages = []
             # 公共传感器数据的send_messages  现在只发传感器数值查询报文DEBUGGER
-            # for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message_Senior_Data.value:
-            #     # 所有消息
-            #     for message_struct in data_type.value['send_messages']:
-            #         message_temp = message_struct.message
-            #         message_temp['port'] =  self.port
-            #         self.send_thread.add_message(message=message_temp, urgent=False)
-            #         send_messages.append(message_temp)
-            #         MESSAGE_BATCH_SIZE += 1
+            for data_type in Modbus_Slave_Type.Not_Each_Mouse_Cage_Message_Senior_Data.value:
+                # 所有消息
+                for message_struct in data_type.value['send_messages']:
+                    message_temp = message_struct.message
+                    message_temp['port'] =  self.port
+                    self.send_thread.add_message(message=message_temp, urgent=False)
+                    send_messages.append(message_temp)
+                    MESSAGE_BATCH_SIZE += 1
             # 每个笼子里的传感器的send_messages
             for data_type in Modbus_Slave_Type.Each_Mouse_Cage_Message_Senior_Data.value:
                 for mouse_cage in data_type.value['send_messages']:
@@ -276,7 +279,7 @@ class Add_message_thread(MyQThread):
                         send_messages.append(message_temp)
                         MESSAGE_BATCH_SIZE += 1
                     # 测试专用 只拿一个笼子鼠笼1里的数据 DEBUGGER
-                    break
+                    # break
                 pass
                 # 等待从线程处理完当前批次
             logger.info(f"数据请求报文：一共{len(send_messages)}条报文！")

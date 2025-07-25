@@ -168,6 +168,7 @@ class ThemeManager(QObject):
                    padding:20px;
                     border-radius: 4px;
                     font-size:13px;
+                    
                 }}
                 QPushButton:hover{{
                     background:{theme['--highlight']};
@@ -218,7 +219,7 @@ class ThemeManager(QObject):
             QWidget {{
                 background-color: {theme['--primary']};
                 color: {theme['--text']};
-               
+                border:none;
             }}
             QTabBar::tab {{
                 background: {theme['--primary']};         /* 标签按钮的背景颜色 */

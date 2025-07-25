@@ -86,6 +86,7 @@ class MainWindow(ThemedWidget):
 
     # 实例化自定义ui
     def _init_customize_ui(self):
+
         #  实例化左侧菜单
         self._init_left_menu()
         pass

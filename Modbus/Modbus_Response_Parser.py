@@ -1961,8 +1961,8 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
                 case 5:
                     return_datas.append({
                         "desc": port_types[j],
-                        'value': float(
-                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                        'value': int("".join(self.int_to_8bit_binary(
+                            num_list=[self.response_struct['data'][i - 1], self.response_struct['data'][i]])), 2)/10
                     }
                     )
                     j += 1
@@ -1970,8 +1970,8 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
                 case 7:
                     return_datas.append({
                         "desc": port_types[j],
-                        'value': float(
-                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                        'value': int("".join(self.int_to_8bit_binary(
+                            num_list=[self.response_struct['data'][i - 1], self.response_struct['data'][i]])), 2)/10
                     }
                     )
                     j += 1
@@ -1979,8 +1979,8 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
                 case 9:
                     return_datas.append({
                         "desc": port_types[j],
-                        'value': float(
-                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                        'value': int("".join(self.int_to_8bit_binary(
+                            num_list=[self.response_struct['data'][i - 1], self.response_struct['data'][i]])), 2)/10
                     }
                     )
                     j += 1
@@ -1989,8 +1989,8 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
                 case 11:
                     return_datas.append({
                         "desc": port_types[j],
-                        'value': float(
-                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                        'value': int("".join(self.int_to_8bit_binary(
+                            num_list=[self.response_struct['data'][i - 1], self.response_struct['data'][i]])), 2)/10
                     }
                     )
                     j += 1
@@ -1998,8 +1998,8 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
                 case 13:
                     return_datas.append({
                         "desc": port_types[j],
-                        'value': float(
-                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                        'value': int("".join(self.int_to_8bit_binary(
+                            num_list=[self.response_struct['data'][i - 1], self.response_struct['data'][i]])), 2)/10
                     }
                     )
                     j += 1
@@ -2007,8 +2007,8 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
                 case 15:
                     return_datas.append({
                         "desc": port_types[j],
-                        'value': float(
-                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                        'value': int("".join(self.int_to_8bit_binary(
+                            num_list=[self.response_struct['data'][i - 1], self.response_struct['data'][i]])), 2)/10
                     }
                     )
                     j += 1
@@ -2016,8 +2016,8 @@ class Modbus_Response_UGC(Modbus_Response_Parents):
                 case 17:
                     return_datas.append({
                         "desc": port_types[j],
-                        'value': float(
-                            str(self.response_struct['data'][i - 1]) + "." + str(self.response_struct['data'][i]))
+                        'value':int("".join(self.int_to_8bit_binary(
+                            num_list=[self.response_struct['data'][i - 1], self.response_struct['data'][i]])), 2)/1000
                     }
                     )
                     j += 1
